@@ -27,6 +27,18 @@ object WorkbookAnswers {
     fun choices(step: LearningStep, row: Int): List<String> =
         step.pairs[row].choices.ifEmpty { step.matchChoices.ifEmpty { step.pairs.map { it.right }.distinct() } }
 
+    /** Identify rows to revisit, without exposing their reference answers. */
+    fun incorrectRows(step: LearningStep, answers: List<String>): List<Int> {
+        val references = when (step.kind) {
+            StepKind.MATCH -> listOf(step.pairs.map { it.right }) + step.acceptedPairOrders
+            StepKind.CLASSIFY -> listOf(step.classifyItems.map { it.category })
+            else -> return emptyList()
+        }
+        return references.map { reference ->
+            reference.indices.filter { answers.getOrNull(it) != reference[it] }
+        }.minByOrNull { it.size }.orEmpty()
+    }
+
     fun initialOrder(step: LearningStep): List<String> {
         val shuffled = step.orderItems.indices.shuffled(kotlin.random.Random(step.id.hashCode()))
         val accepted = step.acceptedOrders + listOf(step.correctOrder)
@@ -35,4 +47,3 @@ object WorkbookAnswers {
         return start.map { it.toString() }
     }
 }
-

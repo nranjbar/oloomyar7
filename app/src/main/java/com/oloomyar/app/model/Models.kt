@@ -52,9 +52,9 @@ data class ChapterQuestion(
     val visualCaption: String? = null,
     /** Additional source figures when one workbook question contains several distinct images. */
     val visuals: List<QuestionVisual> = emptyList(),
-    val legacyProgress: List<LegacyProgress> = emptyList()
+    val legacyProgress: List<LegacyProgress> = emptyList(),
+    val answerVisualCaption: String? = null
 )
 
 data class QuestionVisual(val asset: String, val caption: String? = null)
 data class LegacyProgress(val store: String, val id: String)
-

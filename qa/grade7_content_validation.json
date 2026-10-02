@@ -2,7 +2,10 @@
   "status": "PASS",
   "questions": 28,
   "steps": 41,
-  "images": 11,
+  "images": 18,
+  "questionImages": 11,
+  "answerImages": 7,
+  "reviewedHintPairs": 41,
   "interactionKinds": {
     "match": 15,
     "multi": 6,
@@ -14,8 +17,10 @@
     20
   ],
   "notes": [
-    "Source-first questions and all source subparts covered",
-    "Two source ambiguities disclosed: length unit and question 9 figure",
-    "Native emulator checks are reported separately"
+    "All original source prompts retained",
+    "Both hints individually reviewed for all 41 steps",
+    "Source question 9 figure corrected by the supplied image",
+    "Image numbers in questions 12, 14 and 15 aligned with interactions",
+    "Native attempt-policy tests are reported separately"
   ]
 }

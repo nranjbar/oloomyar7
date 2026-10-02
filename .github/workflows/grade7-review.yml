@@ -62,5 +62,6 @@ jobs:
           path: |
             app/build/reports/androidTests/
             app/build/outputs/androidTest-results/
+            app/build/test-results/testDebugUnitTest/
             app/build/grade7-screenshots/
             qa/grade7_content_validation.json

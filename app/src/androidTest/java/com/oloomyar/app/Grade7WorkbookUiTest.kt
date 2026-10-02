@@ -14,6 +14,7 @@ import androidx.test.core.app.ActivityScenario
 import com.oloomyar.app.data.*
 import com.oloomyar.app.model.StepKind
 import com.oloomyar.app.model.WorkbookAnswers
+import com.oloomyar.app.model.ChapterQuestion
 import com.oloomyar.app.ui.AuditedWorkbookApp
 import com.oloomyar.app.ui.theme.OloomYarTheme
 import org.junit.Assert.*
@@ -22,6 +23,8 @@ import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
+import org.json.JSONObject
+import org.json.JSONArray
 
 @RunWith(AndroidJUnit4::class)
 class Grade7WorkbookUiTest {
@@ -103,8 +106,8 @@ class Grade7WorkbookUiTest {
         val qs=Grade7Chapter1Repository(context).questions+Grade7Chapter2Repository(context).questions
         assertEquals(28,qs.size)
         assertEquals(41,qs.sumOf { it.steps.size })
-        val images=qs.mapNotNull { it.visual }.toSet()
-        assertEquals(11,images.size)
+        val images=qs.flatMap { listOfNotNull(it.visual, it.answerVisual) }.toSet()
+        assertEquals(18,images.size)
         images.forEach { name ->
             val bitmap=context.assets.open("images/$name").use { BitmapFactory.decodeStream(it) }
             assertNotNull("Could not decode $name",bitmap)
@@ -126,6 +129,127 @@ class Grade7WorkbookUiTest {
                 assertTrue("Valid alternative rejected: ${s.id}",WorkbookAnswers.isCorrect(s,alternative))
             }
         }
+    }
+
+    private fun openPractice(question: ChapterQuestion) {
+        val progress = WorkbookProgress(context, "g7_ui", listOf(question))
+        compose.setContent {
+            OloomYarTheme { AuditedWorkbookApp("فصل ${question.relatedChapter}", listOf(question), progress, onExit = {}) }
+        }
+        compose.onNodeWithText("ورود به این بخش").performClick()
+        scrollTo("سؤال ${fa(question.sourceNumber)} •")
+        compose.onNodeWithText("سؤال ${fa(question.sourceNumber)} •", substring = true).performClick()
+        compose.onNodeWithText("رفتن به پاسخ تعاملی").performClick()
+    }
+
+    private fun choose(text: String) {
+        compose.onNode(hasScrollAction()).performScrollToNode(hasText(text))
+        compose.onNodeWithText(text).performClick()
+    }
+
+    private fun checkAnswer() {
+        scrollTo("بررسی پاسخ")
+        compose.onNodeWithText("بررسی پاسخ").assertIsEnabled().performClick()
+        compose.waitForIdle()
+    }
+
+    private fun fa(value: Int) = value.toString().map { if (it in '0'..'9') "۰۱۲۳۴۵۶۷۸۹"[it - '0'] else it }.joinToString("")
+
+    @Test fun referenceAnswerRequiresTwoDifferentFailuresAndHintsSurviveReturningToTheQuestion() {
+        val q = Grade7Chapter2Repository(context).questions.first { it.sourceNumber == 8 }
+        val s = q.steps.first()
+        openPractice(q)
+        scrollTo("دیدن پاسخ")
+        compose.onNodeWithText("دیدن پاسخ").assertIsNotEnabled()
+        compose.onNodeWithText("راهنمایی ۱").assertDoesNotExist()
+        compose.onNodeWithText("راهنمایی ۲").assertDoesNotExist()
+        val wrong = s.options.filter { !it.correct }
+        choose(wrong[0].text)
+        checkAnswer()
+        compose.onNodeWithText("راهنمایی ۱").assertExists()
+        compose.onNodeWithText("راهنمایی ۲").assertDoesNotExist()
+        capture("grade7-06-first-attempt-hint1")
+        scrollTo("بررسی پاسخ")
+        compose.onNodeWithText("بررسی پاسخ").assertIsNotEnabled()
+        scrollTo("دیدن پاسخ")
+        compose.onNodeWithText("دیدن پاسخ").assertIsNotEnabled()
+        val progress = WorkbookProgress(context, "g7_ui", listOf(q))
+        val draft = JSONObject(checkNotNull(progress.draft(q.id)))
+        assertEquals(1, draft.getJSONObject("attempts").getInt(s.id))
+        compose.onNodeWithText("برگشت").performClick()
+        scrollTo("سؤال ۸ •")
+        compose.onNodeWithText("سؤال ۸ •", substring = true).performClick()
+        compose.onNodeWithText("راهنمایی ۱").assertExists()
+        scrollTo("دیدن پاسخ")
+        compose.onNodeWithText("دیدن پاسخ").assertIsNotEnabled()
+        choose(wrong[1].text)
+        checkAnswer()
+        compose.onNodeWithText("راهنمایی ۱").assertExists()
+        compose.onNodeWithText("راهنمایی ۲").assertExists()
+        capture("grade7-07-second-attempt-hint2")
+        scrollTo("دیدن پاسخ")
+        compose.onNodeWithText("دیدن پاسخ").assertIsEnabled().performClick()
+        compose.onNodeWithText("پاسخ و توضیح").assertExists()
+    }
+
+    @Test fun wholeAnswerImageWaitsUntilEveryPartIsFinishedAndRevealIsRequested() {
+        val q = Grade7Chapter2Repository(context).questions.first { it.sourceNumber == 9 && it.section == "تمرین‌های اصلی" }
+        val image = "تصویر پاسخ سؤال ۹"
+        openPractice(q)
+        compose.onNodeWithContentDescription(image).assertDoesNotExist()
+        choose(q.steps[0].options.first { it.correct }.text)
+        checkAnswer()
+        compose.onNodeWithContentDescription(image).assertDoesNotExist()
+        scrollTo("مرحلهٔ بعد")
+        compose.onNodeWithText("مرحلهٔ بعد").performClick()
+        val wrong = q.steps[1].options.filter { !it.correct }
+        choose(wrong[0].text); checkAnswer()
+        compose.onNodeWithContentDescription(image).assertDoesNotExist()
+        choose(wrong[1].text); checkAnswer()
+        compose.onNodeWithContentDescription(image).assertDoesNotExist()
+        scrollTo("دیدن پاسخ")
+        compose.onNodeWithText("دیدن پاسخ").assertIsEnabled().performClick()
+        compose.waitUntil(10000) { compose.onAllNodesWithContentDescription(image).fetchSemanticsNodes().isNotEmpty() }
+        compose.onNodeWithContentDescription(image).performScrollTo().assertIsDisplayed()
+        capture("grade7-08-answer-image-after-parts")
+    }
+
+    @Test fun examResultsDoNotProvideAShortcutToReferenceAnswers() {
+        val q = Grade7Chapter2Repository(context).questions.first { it.sourceNumber == 9 && it.section == "تمرین‌های اصلی" }
+        val progress = WorkbookProgress(context, "g7_ui", listOf(q))
+        compose.setContent { OloomYarTheme { AuditedWorkbookApp("فصل ۲", listOf(q), progress, onExit = {}) } }
+        compose.onNodeWithText("ورود به این بخش").performClick()
+        scrollTo("آزمون همین بخش")
+        compose.onNodeWithText("آزمون همین بخش").performClick()
+        choose(q.steps[0].options.first { it.correct }.text)
+        scrollTo("ثبت و مرحلهٔ بعد")
+        compose.onNodeWithText("ثبت و مرحلهٔ بعد").performClick()
+        choose(q.steps[1].options.first { !it.correct }.text)
+        scrollTo("ثبت پاسخ این سؤال")
+        compose.onNodeWithText("ثبت پاسخ این سؤال").performClick()
+        compose.onNodeWithText("نتیجهٔ آزمون").assertExists()
+        compose.onNodeWithText(q.steps[0].explanation).assertDoesNotExist()
+        compose.onNodeWithContentDescription("تصویر پاسخ سؤال ۹").assertDoesNotExist()
+        scrollTo("تمرین سؤال ۹ با راهنما")
+        compose.onNodeWithText("تمرین سؤال ۹ با راهنما").performClick()
+        scrollTo("دیدن پاسخ")
+        compose.onNodeWithText("دیدن پاسخ").assertIsNotEnabled()
+    }
+
+    @Test fun oldDraftRevealedBeforeTryingCannotBypassTheNewPolicy() {
+        val q = Grade7Chapter2Repository(context).questions.first { it.sourceNumber == 8 }
+        val s = q.steps.first()
+        val progress = WorkbookProgress(context, "g7_ui", listOf(q))
+        progress.saveDraft(q.id, JSONObject().apply {
+            put("status", JSONObject().put(s.id, 3))
+            put("hints", JSONObject().put(s.id, 2))
+            put("answers", JSONObject().put(s.id, JSONArray(listOf(s.options.indexOfFirst { !it.correct }.toString()))))
+        }.toString())
+        openPractice(q)
+        scrollTo("دیدن پاسخ")
+        compose.onNodeWithText("دیدن پاسخ").assertIsNotEnabled()
+        compose.onNodeWithText("پاسخ و توضیح").assertDoesNotExist()
+        compose.onNodeWithText("راهنمایی ۱").assertDoesNotExist()
     }
 
     private fun capture(name: String) {

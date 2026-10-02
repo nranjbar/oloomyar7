@@ -359,6 +359,9 @@ for n,title,prompt,opts,correct,h1,h2,exp,img,cap in mcqs:
     book=prompt+'\n'+'\n'.join(f'{label}) {x}' for label,x in zip(['الف','ب','ج','د'],opts))
     c2.append(question(2,n,6,title,'کاربرد اندازه‌گیری',book,[single('گزینه درست را انتخاب کن.',opts[correct],[],h1,h2,exp,source_options=opts,correct_index=correct)],visual=img,caption=cap,mcq=True,difficulty=3 if n==5 else 2))
 
+from grade7_refinements import apply_refinements
+apply_refinements([c1, c2])
+
 for ch,data in [(1,c1),(2,c2)]:
     (OUT/f'chapter{ch}.json').write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n')
     print(f'Grade 7 chapter {ch}: {len(data)} source questions; {sum(len(q["steps"]) for q in data)} interaction steps')

@@ -2,6 +2,8 @@ package com.oloomyar.app.ui
 
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.relocation.BringIntoViewRequester
+import androidx.compose.foundation.relocation.bringIntoViewRequester
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -184,7 +186,7 @@ fun AuditedWorkbookApp(
                             Spacer(Modifier.width(6.dp))
                             Text("آزمون همین بخش")
                         }
-                        Text("در آزمون، نتیجه و پاسخ‌ها پس از پایان نمایش داده می‌شوند.", color = Muted, style = MaterialTheme.typography.bodySmall)
+                        Text("در آزمون، نتیجه پس از پایان نمایش داده می‌شود. برای پاسخ تشریحی، سؤال را در مسیر تمرین با راهنما مرور کن.", color = Muted, style = MaterialTheme.typography.bodySmall)
                         progress.lastExam(part)?.let { (correct, count) -> Text("آخرین آزمون: ${workbookFa(correct)} پاسخ درست از ${workbookFa(count)} مرحله", color = Muted) }
                     }
                 }
@@ -259,20 +261,16 @@ fun AuditedWorkbookApp(
                     }
                 }
                 if (exam) {
-                    item { OloomSectionHeader("پاسخ‌های تشریحی آزمون", "پاسخ مرجع و دلیل هر مرحله را مرور کن.", Purple) }
+                    item { OloomSectionHeader("مرور سؤال‌های آزمون", "برای یادگیری پاسخ، هر سؤال را با دو تلاش و راهنمای مرحله‌ای تمرین کن.", Purple) }
                     items(sessionIds) { id ->
                         val question = questions.first { it.id == id }
                         WorkbookPanel(accent = Purple) {
                             Text("سؤال ${workbookFa(question.sourceNumber)}", style = MaterialTheme.typography.titleLarge)
                             WorkbookText(question.bookPrompt.orEmpty())
                             WorkbookQuestionVisuals(question, "تصویر سؤال ${workbookFa(question.sourceNumber)}")
-                            HorizontalDivider()
-                            question.steps.forEachIndexed { index, step ->
-                                Text("مرحلهٔ ${workbookFa(index + 1)}", color = Blue)
-                                WorkbookText(step.answer, bold = true)
-                                WorkbookText(step.explanation)
+                            OutlinedButton(onClick = { start(listOf(question), false) }, modifier = Modifier.fillMaxWidth()) {
+                                Text("تمرین سؤال ${workbookFa(question.sourceNumber)} با راهنما")
                             }
-                            question.answerVisual?.let { WorkbookImage(it, "تصویر پاسخ سؤال ${workbookFa(question.sourceNumber)}") }
                         }
                     }
                 }
@@ -300,22 +298,33 @@ private fun WorkbookQuestion(
     modifier: Modifier,
     onFinish: (Int, Boolean) -> Unit
 ) {
-    var json by rememberSaveable(question.id, sessionToken) { mutableStateOf(if (exam) "{}" else progress.draft(question.id) ?: "{}") }
+    var json by rememberSaveable(question.id, sessionToken) {
+        mutableStateOf(if (exam) "{}" else upgradedPracticeDraft(progress.draft(question.id)))
+    }
     val state = remember(json) { runCatching { JSONObject(json) }.getOrElse { JSONObject() } }
     val current = state.optInt("step").coerceIn(question.steps.indices)
     val step = question.steps[current]
     val answers = state.optJSONObject("answers")?.takeIf { it.has(step.id) }?.stringList(step.id)
         ?: if (step.kind == StepKind.ORDER) WorkbookAnswers.initialOrder(step) else emptyList()
-    val status = state.optJSONObject("status")?.optInt(step.id) ?: 0
+    val failedAttempts = state.optJSONObject("attempts")?.optInt(step.id) ?: 0
     val hints = state.optJSONObject("hints")?.optInt(step.id) ?: 0
+    val canReveal = PracticeAttempts.canReveal(failedAttempts, hints)
+    val rawStatus = state.optJSONObject("status")?.optInt(step.id) ?: 0
+    val status = if (rawStatus == 3 && !canReveal) 0 else rawStatus
     val locked = status >= 2
     val complete = WorkbookAnswers.isComplete(step, answers)
+    val lastSubmitted = state.optJSONObject("lastSubmitted")?.takeIf { it.has(step.id) }?.stringList(step.id)
+    val canSubmit = complete && (exam || PracticeAttempts.canSubmit(step, answers, lastSubmitted))
+    val hintView = remember(step.id) { BringIntoViewRequester() }
     val list = rememberLazyListState()
     val coroutine = rememberCoroutineScope()
     val update: (JSONObject.() -> Unit) -> Unit = { mutation ->
         val changed = JSONObject(json).apply(mutation)
         json = changed.toString()
         if (!exam) progress.saveDraft(question.id, json)
+    }
+    LaunchedEffect(step.id, hints) {
+        if (!exam && hints > 0 && !locked) hintView.bringIntoView()
     }
     val advance: () -> Unit = {
         if (current < question.steps.lastIndex) {
@@ -391,7 +400,7 @@ private fun WorkbookQuestion(
                     }
                 }
                 if (!exam) {
-                    if (hints >= 1) Surface(color = OrangeSoft, shape = RoundedCornerShape(18.dp), border = androidx.compose.foundation.BorderStroke(1.dp, Orange.copy(alpha = .18f))) {
+                    if (hints >= 1) Surface(modifier = Modifier.bringIntoViewRequester(hintView), color = OrangeSoft, shape = RoundedCornerShape(18.dp), border = androidx.compose.foundation.BorderStroke(1.dp, Orange.copy(alpha = .18f))) {
                         Column(Modifier.padding(14.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
                             Row(verticalAlignment = Alignment.CenterVertically) {
                                 Icon(Icons.Default.Lightbulb, null, tint = Orange, modifier = Modifier.size(19.dp))
@@ -407,22 +416,32 @@ private fun WorkbookQuestion(
                         }
                     }
                     if (!locked) {
-                        Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
-                            TextButton(enabled = hints < 2, onClick = { update { child("hints").put(step.id, hints + 1) } }) {
-                                Text(if (hints == 0) "راهنمایی اول" else "راهنمایی دوم")
-                            }
-                            TextButton(onClick = {
+                        Text(
+                            if (canReveal) "هر دو راهنما را داری؛ می‌توانی دوباره تلاش کنی یا پاسخ و دلیل آن را ببینی."
+                            else "پس از تلاش نادرست اول، راهنمایی ۱ و پس از تلاش نادرست دوم، راهنمایی ۲ نمایش داده می‌شود؛ سپس دیدن پاسخ فعال می‌شود.",
+                            color = Muted, style = MaterialTheme.typography.bodySmall
+                        )
+                        TextButton(enabled = canReveal, modifier = Modifier.align(Alignment.End), onClick = {
+                            val latest = JSONObject(json)
+                            if (PracticeAttempts.canReveal(latest.child("attempts").optInt(step.id), latest.child("hints").optInt(step.id))) {
                                 update { child("status").put(step.id, 3) }
                                 progress.markMistake(question.id)
-                            }) { Text("دیدن پاسخ") }
+                            }
+                        }) {
+                            Icon(if (canReveal) Icons.Default.Visibility else Icons.Default.Lock, null, modifier = Modifier.size(18.dp))
+                            Spacer(Modifier.width(6.dp))
+                            Text("دیدن پاسخ")
                         }
                     }
                     if (status == 1) Surface(color = Danger.copy(alpha = .08f), shape = RoundedCornerShape(16.dp)) {
                         Row(Modifier.fillMaxWidth().padding(13.dp), verticalAlignment = Alignment.CenterVertically) {
                             Icon(Icons.Default.Refresh, null, tint = Danger, modifier = Modifier.size(20.dp))
                             Spacer(Modifier.width(7.dp))
-                            Text("هنوز کامل درست نیست. انتخاب‌ها را بررسی کن یا از راهنمایی کمک بگیر.",
-                                color = Danger, modifier = Modifier.weight(1f).semantics { liveRegion = LiveRegionMode.Polite })
+                            Column(Modifier.weight(1f).semantics { liveRegion = LiveRegionMode.Polite }) {
+                                Text("پاسخ هنوز کامل درست نیست. راهنمایی ${workbookFa(hints)} را بخوان و انتخاب‌ها را بازبینی کن.", color = Danger)
+                                val rows = WorkbookAnswers.incorrectRows(step, answers)
+                                if (rows.isNotEmpty()) Text("در این مرحله، جای خالی‌های ${rows.joinToString("، ") { workbookFa(it + 1) }} نیاز به بازبینی دارند.", color = Danger)
+                            }
                         }
                     }
                     if (locked) Surface(color = if (status == 2) GreenSoft else OrangeSoft, shape = RoundedCornerShape(18.dp), border = androidx.compose.foundation.BorderStroke(1.dp, (if (status == 2) Green else Orange).copy(alpha = .2f))) {
@@ -438,19 +457,38 @@ private fun WorkbookQuestion(
                         }
                     }
                 }
-                if (current == question.steps.lastIndex && locked && !exam) {
-                    question.answerVisual?.let { WorkbookImage(it, "تصویر پاسخ سؤال ${workbookFa(question.sourceNumber)}") }
+                val allPartsFinished = question.steps.all { s ->
+                    val result = state.optJSONObject("status")?.optInt(s.id) ?: 0
+                    result == 2 || (result == 3 && PracticeAttempts.canReveal(
+                        state.optJSONObject("attempts")?.optInt(s.id) ?: 0,
+                        state.optJSONObject("hints")?.optInt(s.id) ?: 0
+                    ))
+                }
+                if (current == question.steps.lastIndex && locked && !exam && allPartsFinished) {
+                    question.answerVisual?.let { WorkbookImage(it, "تصویر پاسخ سؤال ${workbookFa(question.sourceNumber)}", question.answerVisualCaption) }
                 }
                 Button(
                     modifier = Modifier.fillMaxWidth().heightIn(min = 54.dp),
-                    enabled = locked || complete,
+                    enabled = locked || canSubmit,
                     shape = RoundedCornerShape(17.dp),
-                    onClick = {
+                    onClick = submit@{
                         if (!locked) {
-                            val correct = WorkbookAnswers.isCorrect(step, answers)
+                            val latest = JSONObject(json)
+                            val latestAnswers = latest.optJSONObject("answers")?.takeIf { it.has(step.id) }?.stringList(step.id) ?: answers
+                            val latestSubmitted = latest.optJSONObject("lastSubmitted")?.takeIf { it.has(step.id) }?.stringList(step.id)
+                            if (!exam && (latest.child("status").optInt(step.id) >= 2 || !PracticeAttempts.canSubmit(step, latestAnswers, latestSubmitted))) return@submit
+                            val correct = WorkbookAnswers.isCorrect(step, latestAnswers)
                             update {
-                                child("answers").put(step.id, JSONArray(answers))
+                                child("answers").put(step.id, JSONArray(latestAnswers))
                                 child("status").put(step.id, if (correct) 2 else 1)
+                                if (!exam) {
+                                    child("lastSubmitted").put(step.id, JSONArray(PracticeAttempts.signature(step, latestAnswers)))
+                                    if (!correct) {
+                                        val count = child("attempts").optInt(step.id) + 1
+                                        child("attempts").put(step.id, count)
+                                        child("hints").put(step.id, PracticeAttempts.hintLevel(count))
+                                    }
+                                }
                                 if (!correct) put("wrong", JSONArray((stringList("wrong") + step.id).distinct()))
                             }
                             if (!correct && !exam) progress.markMistake(question.id)
@@ -467,6 +505,7 @@ private fun WorkbookQuestion(
                     Icon(if (locked || exam) Icons.AutoMirrored.Filled.ArrowBack else Icons.Default.CheckCircle, null, modifier = Modifier.size(19.dp))
                 }
                 if (!complete && !locked) Text("برای بررسی، همهٔ انتخاب‌های این مرحله را کامل کن.", color = Muted)
+                if (!exam && complete && !canSubmit && !locked) Text("برای تلاش بعدی، دست‌کم یک انتخاب را تغییر بده؛ ارسال دوباره همان پاسخ، تلاش تازه نیست.", color = Muted)
             }
         }
         item {
@@ -513,3 +552,20 @@ private fun OloomHeroFact(label: String, icon: androidx.compose.ui.graphics.vect
 private fun JSONObject.child(key: String): JSONObject = optJSONObject(key) ?: JSONObject().also { put(key, it) }
 private fun JSONObject.stringList(key: String): List<String> = optJSONArray(key)?.let { array -> List(array.length()) { array.getString(it) } } ?: emptyList()
 
+private fun upgradedPracticeDraft(raw: String?): String {
+    val data = runCatching { JSONObject(raw ?: "{}") }.getOrElse { JSONObject() }
+    if (data.optInt("attemptPolicyVersion") != PracticeAttempts.VERSION) {
+        // Old drafts could reveal answers or request hints before any attempt.
+        // Preserve selections and successful steps; reset that old reveal path.
+        data.optJSONObject("status")?.let { results ->
+            results.keys().asSequence().toList().forEach { id ->
+                if (results.optInt(id) == 3) results.put(id, 0)
+            }
+        }
+        data.remove("attempts")
+        data.remove("hints")
+        data.remove("lastSubmitted")
+        data.put("attemptPolicyVersion", PracticeAttempts.VERSION)
+    }
+    return data.toString()
+}

@@ -58,6 +58,7 @@ abstract class AssetQuestionRepository(
                         steps = steps,
                         visual = optionalText(q, "visual"),
                         answerVisual = optionalText(q, "answerVisual"),
+                        answerVisualCaption = optionalText(q, "answerVisualCaption"),
                         bookPrompt = optionalText(q, "bookPrompt") ?: q.getString("source"),
                         sourceNumber = q.optInt("sourceNumber", q.getInt("number")),
                         sourcePage = q.optInt("sourcePage"),
