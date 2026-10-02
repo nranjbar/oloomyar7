@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "questions": 28,
+  "steps": 41,
+  "images": 11,
+  "interactionKinds": {
+    "match": 15,
+    "multi": 6,
+    "single": 19,
+    "order": 1
+  },
+  "chapterCounts": [
+    8,
+    20
+  ],
+  "notes": [
+    "Source-first questions and all source subparts covered",
+    "Two source ambiguities disclosed: length unit and question 9 figure",
+    "Native emulator checks are reported separately"
+  ]
+}

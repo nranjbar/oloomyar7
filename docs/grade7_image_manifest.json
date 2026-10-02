@@ -1,0 +1,312 @@
+[
+  {
+    "file": "g7_ch01_q07.png",
+    "chapter": 1,
+    "sourceNumber": 7,
+    "section": "main",
+    "sourcePage": 2,
+    "cropPdfPoints": [
+      37,
+      688,
+      146,
+      761
+    ],
+    "renderScale": null,
+    "width": 403,
+    "height": 236,
+    "caption": "رایانه",
+    "qualityNote": "کم؛ تصویر کوچک کتاب، برای تشخیص رایانه کافی است.",
+    "originalImages": [
+      {
+        "file": "g7_ch01_q07_xref23.jpeg",
+        "width": 403,
+        "height": 236
+      }
+    ],
+    "sha256": "c5a982797f6bdf69cec08fff50d82cb0038354d48c1524c466180d846101278f",
+    "extractionMethod": "embedded image decoded losslessly to PNG"
+  },
+  {
+    "file": "g7_ch02_q02.png",
+    "chapter": 2,
+    "sourceNumber": 2,
+    "section": "main",
+    "sourcePage": 3,
+    "cropPdfPoints": [
+      32,
+      341,
+      548,
+      639
+    ],
+    "renderScale": 3,
+    "width": 1548,
+    "height": 894,
+    "caption": "جدول کمیت، تعریف، یکا و وسیله اندازه‌گیری",
+    "qualityNote": "خوب؛ متن و جدول از خود PDF با حفظ بردارها رندر شده‌اند.",
+    "originalImages": [],
+    "sha256": "bb2f417aacec20c5d53a57a21b3803124cafe800f548937645bfc089ef10656b",
+    "extractionMethod": "source PDF crop rendered at 3x; neighbouring question text excluded"
+  },
+  {
+    "file": "g7_ch02_q07.png",
+    "chapter": 2,
+    "sourceNumber": 7,
+    "section": "main",
+    "sourcePage": 4,
+    "cropPdfPoints": [
+      32,
+      351,
+      94,
+      449
+    ],
+    "renderScale": 3,
+    "width": 186,
+    "height": 294,
+    "caption": "استوانه مدرج",
+    "qualityNote": "کم؛ نمونه اصلی ۵۷×۱۸۹ پیکسل است.",
+    "originalImages": [
+      {
+        "file": "g7_ch02_q07_xref49.png",
+        "width": 57,
+        "height": 189
+      }
+    ],
+    "sha256": "5b66582475d18815c3d69eed8d212b2726be95e7e81172be61aad29f9e2fd8dc",
+    "extractionMethod": "source PDF crop rendered at 3x; neighbouring question text excluded"
+  },
+  {
+    "file": "g7_ch02_q09.png",
+    "chapter": 2,
+    "sourceNumber": 9,
+    "section": "main",
+    "sourcePage": 4,
+    "cropPdfPoints": [
+      37,
+      597,
+      205,
+      759
+    ],
+    "renderScale": 3,
+    "width": 504,
+    "height": 486,
+    "caption": "ترازو و جابه‌جایی آب",
+    "qualityNote": "نیازمند جایگزینی؛ عددهای تصویر با ۳۶ گرم و ۶۰ و ۷۲ متن هماهنگ نیستند.",
+    "originalImages": [
+      {
+        "file": "g7_ch02_q09_xref48.jpeg",
+        "width": 171,
+        "height": 147
+      }
+    ],
+    "sha256": "ed3953abaac88b25b81c5d710796d261aee9b3eb10077eda6b0d1510d5aa5b6b",
+    "extractionMethod": "source PDF crop rendered at 3x; neighbouring question text excluded"
+  },
+  {
+    "file": "g7_ch02_q11.png",
+    "chapter": 2,
+    "sourceNumber": 11,
+    "section": "main",
+    "sourcePage": 5,
+    "cropPdfPoints": [
+      83,
+      219,
+      244,
+      316
+    ],
+    "renderScale": 3,
+    "width": 483,
+    "height": 291,
+    "caption": "گلوله‌های A و B و C در آب",
+    "qualityNote": "خوب؛ شکل برداری، هر سه حرف و خط آب حفظ شده‌اند.",
+    "originalImages": [],
+    "sha256": "0e1486991149937df7f7f5abe99519feab4ebfd83ac8480d157bf6984cccccaf",
+    "extractionMethod": "source PDF crop rendered at 3x; neighbouring question text excluded"
+  },
+  {
+    "file": "g7_ch02_q12.png",
+    "chapter": 2,
+    "sourceNumber": 12,
+    "section": "main",
+    "sourcePage": 5,
+    "cropPdfPoints": [
+      34,
+      388,
+      164,
+      467
+    ],
+    "renderScale": 3,
+    "width": 390,
+    "height": 237,
+    "caption": "ساعت و زمان‌سنج؛ ساعت چپ، زمان‌سنج راست",
+    "qualityNote": "متوسط؛ اصل تصویر ۱۵۴×۸۶ پیکسل است.",
+    "originalImages": [
+      {
+        "file": "g7_ch02_q12_xref61.jpeg",
+        "width": 154,
+        "height": 86
+      }
+    ],
+    "sha256": "d9c083158bf7ece6621b4616c0acbf2227a39c5bdf4255d5d98685f3658afa65",
+    "extractionMethod": "source PDF crop rendered at 3x; neighbouring question text excluded"
+  },
+  {
+    "file": "g7_ch02_q14.png",
+    "chapter": 2,
+    "sourceNumber": 14,
+    "section": "main",
+    "sourcePage": 5,
+    "cropPdfPoints": [
+      27,
+      683,
+      419,
+      789
+    ],
+    "renderScale": 3,
+    "width": 1176,
+    "height": 318,
+    "caption": "دو مداد و خط‌کش، شکل‌های ۱ و ۲",
+    "qualityNote": "متوسط؛ دو تصویر اصلی حدود ۴۸۵×۷۷ و ۴۸۹×۶۹ پیکسل‌اند.",
+    "originalImages": [
+      {
+        "file": "g7_ch02_q14_xref59.jpeg",
+        "width": 485,
+        "height": 77
+      },
+      {
+        "file": "g7_ch02_q14_xref60.jpeg",
+        "width": 489,
+        "height": 69
+      }
+    ],
+    "sha256": "b16c2c18b1495de353c5c2e7e952daf202984bc8103b273715fcd7ef78f55239",
+    "extractionMethod": "source PDF crop rendered at 3x; neighbouring question text excluded"
+  },
+  {
+    "file": "g7_ch02_q15.png",
+    "chapter": 2,
+    "sourceNumber": 15,
+    "section": "main",
+    "sourcePage": 6,
+    "cropPdfPoints": [
+      38,
+      46,
+      542,
+      215
+    ],
+    "renderScale": 3,
+    "width": 1512,
+    "height": 507,
+    "caption": "از راست: انواع نیروسنج، استوانه مدرج، ترازو",
+    "qualityNote": "متوسط؛ ابزارها و پرانتز گروه نیروسنج حفظ شده‌اند.",
+    "originalImages": [
+      {
+        "file": "g7_ch02_q15_xref64.jpeg",
+        "width": 50,
+        "height": 192
+      },
+      {
+        "file": "g7_ch02_q15_xref49.png",
+        "width": 57,
+        "height": 189
+      },
+      {
+        "file": "g7_ch02_q15_xref67.jpeg",
+        "width": 70,
+        "height": 210
+      },
+      {
+        "file": "g7_ch02_q15_xref68.jpeg",
+        "width": 305,
+        "height": 483
+      },
+      {
+        "file": "g7_ch02_q15_xref69.jpeg",
+        "width": 280,
+        "height": 280
+      }
+    ],
+    "sha256": "6edc8c590c84ece312ee76b896ee480a3f5359f798ad47ad84725981eefec6c2",
+    "extractionMethod": "source PDF crop rendered at 3x; neighbouring question text excluded"
+  },
+  {
+    "file": "g7_ch02_mcq03.png",
+    "chapter": 2,
+    "sourceNumber": 3,
+    "section": "mcq",
+    "sourcePage": 6,
+    "cropPdfPoints": [
+      55,
+      446,
+      125,
+      549
+    ],
+    "renderScale": 3,
+    "width": 210,
+    "height": 309,
+    "caption": "جسم ۱۰۰ گرمی آویزان به نیروسنج",
+    "qualityNote": "متوسط؛ شکل و نوشته ۱۰۰ گرم حفظ شده‌اند.",
+    "originalImages": [
+      {
+        "file": "g7_ch02_mcq03_xref66.png",
+        "width": 129,
+        "height": 277
+      }
+    ],
+    "sha256": "4c68e0d8a2f76592dbf6b1e7518bb5d71576e1dae5ba5a72d38752ebb78922d5",
+    "extractionMethod": "source PDF crop rendered at 3x; neighbouring question text excluded"
+  },
+  {
+    "file": "g7_ch02_mcq04.png",
+    "chapter": 2,
+    "sourceNumber": 4,
+    "section": "mcq",
+    "sourcePage": 6,
+    "cropPdfPoints": [
+      110,
+      541,
+      222,
+      632
+    ],
+    "renderScale": 3,
+    "width": 336,
+    "height": 273,
+    "caption": "ظرف مکعبی با طول ضلع ۱۰ سانتی‌متر",
+    "qualityNote": "متوسط؛ هر سه برچسب ۱۰ سانتی‌متر حفظ شده‌اند.",
+    "originalImages": [
+      {
+        "file": "g7_ch02_mcq04_xref70.png",
+        "width": 144,
+        "height": 118
+      }
+    ],
+    "sha256": "4d525ec0114a77ddde2e8cf2c5f0180088e9ebb0a597a1ae703816a35659657c",
+    "extractionMethod": "source PDF crop rendered at 3x; neighbouring question text excluded"
+  },
+  {
+    "file": "g7_ch02_mcq05.png",
+    "chapter": 2,
+    "sourceNumber": 5,
+    "section": "mcq",
+    "sourcePage": 6,
+    "cropPdfPoints": [
+      40,
+      671,
+      147,
+      787
+    ],
+    "renderScale": null,
+    "width": 200,
+    "height": 240,
+    "caption": "ترازوی دیجیتالی",
+    "qualityNote": "متوسط؛ برای تشخیص ابزار کافی است.",
+    "originalImages": [
+      {
+        "file": "g7_ch02_mcq05_xref65.jpeg",
+        "width": 200,
+        "height": 240
+      }
+    ],
+    "sha256": "939b2ac7ac563113be5372ef2638a7d8a43e83504bd7422230e7a3980ad5d623",
+    "extractionMethod": "embedded image decoded losslessly to PNG"
+  }
+]
