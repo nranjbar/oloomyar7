@@ -17,6 +17,17 @@ android {
         buildConfigField("int", "WORKBOOK_GRADE", "7")
     }
 
+    // Public, review-only key: make debug updates installable across CI runners.
+    // Production/release builds must use a separately protected signing key.
+    signingConfigs {
+        getByName("debug") {
+            storeFile = rootProject.file("qa/signing/grade7-review.keystore")
+            storePassword = "android"
+            keyAlias = "androiddebugkey"
+            keyPassword = "android"
+        }
+    }
+
     buildFeatures {
         compose = true
         buildConfig = true
