@@ -57,3 +57,7 @@ APK در `app/build/outputs/apk/debug/app-debug.apk` ساخته می‌شود. �
 ## بررسی‌ها
 
 `python3 scripts/validate_grade7.py` پوشش شماره سؤال‌ها و صفحه‌ها، همه انواع تعامل، یکتایی شناسه‌ها، ساختار جواب‌ها، صحت PNG، ممیزها و محاسبات را بررسی می‌کند. workflow اختصاصی `Grade 7 Review` ساخت APK، آزمون واحد، آزمون فارسی روی شبیه‌ساز و ثبت اسکرین‌شات‌های واقعی را اجرا می‌کند. وضعیت اجرای این بررسی‌ها در گزارش نهایی اعلام می‌شود.
+
+ساخت مستقل مخزن هفتم و چهار آزمون رابط فارسی در [اجرای 36974677673](https://github.com/nranjbar/oloomyar7/actions/runs/36974677673) موفق شدند؛ هیچ آزمونی ناموفق یا رد نشده است. گزارش شامل هش فایل نصب و شناسه کد آزموده‌شده در `qa/grade7_android_verification.json` و پنج تصویر واقعی در `review/app_screenshots` قرار دارد.
+
+برای بازتولید بسته بازبینی: `python3 scripts/build_review.py`. خروجی‌ها در `dist` ساخته می‌شوند. استخراج دوباره تصاویر منبع با `python3 scripts/extract_grade7_images.py PATH_TO_WORKBOOK.pdf` و نصب وابستگی‌های `scripts/requirements-images.txt` ممکن است.

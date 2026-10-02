@@ -55,6 +55,8 @@ readme='''# بازبینی تصاویر فصل‌های ۱ و ۲ علوم‌یا
 پس از بررسی، پوشه `question_images` را با تصویرهای جایگزین‌شده ZIP کنید و ارسال کنید. اگر تصویر پاسخ جدید هم تهیه کردید، از نام پیشنهادی فهرست استفاده کنید. هیچ تصویر جدیدی از طرف برنامه فرض نشده است.
 '''
 (FOLDER/'README_FA.md').write_text(readme)
+if (FOLDER/'app_screenshots').exists():
+    (FOLDER/'README_FA.md').write_text(readme+'\nپوشه `app_screenshots` پنج تصویر واقعی از برنامه دارد. گزارش ساخت و چهار آزمون موفق اندروید در `android_verification.json` آمده است.\n')
 
 kinds={'single':'انتخاب یک پاسخ','multi':'انتخاب چند پاسخ','match':'جای خالی / تطبیق به ترتیب','order':'مرتب‌کردن مراحل','classify':'دسته‌بندی'}
 cards=[]
@@ -62,7 +64,7 @@ for q in qs:
     ch=q['relatedChapter'];n=q['sourceNumber'];section=q['section']
     body=f'<article class="question" data-ch="{ch}" data-section="{esc(section)}"><div class="tags"><span>فصل {fa(ch)}</span><span>{esc(section)}</span><span>صفحه {fa(q["sourcePage"])}</span></div><h2>سؤال {fa(n)} · {esc(q["title"])}</h2><h3>صورت اصلی سؤال کتاب</h3><div class="source">{esc(q["bookPrompt"])}</div>'
     if q.get('visual'):
-        body+=f'<figure><a href="{inline_image(q["visual"])}" target="_blank" aria-label="باز کردن تصویر در اندازه کامل"><img src="{inline_image(q["visual"])}" alt="{esc(q.get("visualCaption",q["title"]))}"></a><figcaption>{esc(q.get("visualCaption", ""))}<br><code dir="ltr">{q["visual"]}</code></figcaption></figure>'
+        body+=f'<figure><img src="{inline_image(q["visual"])}" alt="{esc(q.get("visualCaption",q["title"]))}"><figcaption>{esc(q.get("visualCaption", ""))}<br><code dir="ltr">{q["visual"]}</code></figcaption></figure>'
     for note in q.get('editorialNotes',[]): body+=f'<p class="notice">{esc(note)}</p>'
     body+=f'<details><summary>مراحل پاسخ تعاملی · {fa(len(q["steps"]))} مرحله</summary>'
     for i,s in enumerate(q['steps'],1):
@@ -113,6 +115,8 @@ page+='''</main><style>.screen-grid{display:grid;grid-template-columns:repeat(au
 (OUT/'OloomYar7_Review.html').write_text(page)
 (FOLDER/'index.html').write_text(page)
 shutil.copy2(PROJECT/'qa/grade7_content_validation.json',FOLDER/'content_validation.json')
+if (PROJECT/'qa/grade7_android_verification.json').exists():
+    shutil.copy2(PROJECT/'qa/grade7_android_verification.json',FOLDER/'android_verification.json')
 with zipfile.ZipFile(OUT/'Grade7_Images_Review.zip','w',zipfile.ZIP_DEFLATED) as z:
     for p in sorted(FOLDER.rglob('*')):
         if p.is_file():z.write(p,Path('Grade7_Images_Review')/p.relative_to(FOLDER))

@@ -1,0 +1,33 @@
+{
+  "status": "PASS",
+  "repository": "nranjbar/oloomyar7",
+  "sourceCommit": "538122957c6df02044204d0515c8b2fc18ddd657",
+  "workflowRun": 36974677673,
+  "package": "com.oloomyar.app.grade7",
+  "apkSize": 20302931,
+  "apkSha256": "5399b9cbd858b47f062015f5ea541d683899efaf9845c04206387e68aee58ff3",
+  "contentQuestions": 28,
+  "interactionSteps": 41,
+  "images": 11,
+  "grade9ActivitiesPackaged": false,
+  "emulatorTests": {
+    "tests": "4",
+    "failures": "0",
+    "errors": "0",
+    "skipped": "0",
+    "time": "15.591"
+  },
+  "testNames": [
+    "orderedBlanksKeepTheSourceFirstSaveDraftAndCompletePractice",
+    "everySourceImageDecodesAndCorrectAlternativeSelectionsAreAccepted",
+    "gradeSevenHomeUsesSharedDesignAndOnlyTheTwoImplementedChapters",
+    "chapterTwoHasSeparateSectionsAndSourceFigureCanBeEnlarged"
+  ],
+  "screenshots": [
+    "grade7-01-home.png",
+    "grade7-02-source-question.png",
+    "grade7-03-ordered-blanks.png",
+    "grade7-04-chapter2-sections.png",
+    "grade7-05-source-figure-zoom.png"
+  ]
+}
