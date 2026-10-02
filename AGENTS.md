@@ -11,3 +11,4 @@
 - Figure numbers are authoritative: chapter 2 question 12 uses 1=watch and 2=stopwatch; question 15 uses 1=balance, 2=graduated cylinder and 3=the group of force meters. Keep question 14's two pencil diagrams numbered 1 and 2.
 - Keep `review/` assets and answer-image recommendations synchronized with app content. Avoid linking a missing answer-image file.
 - Validate content with `python3 scripts/validate_grade7.py`. Use the repository's Grade 7 Review workflow for Android builds and native UI checks when application code changes.
+- Keep the committed, public debug/review signing key stable so future Grade 7 review updates preserve progress. This key is for review APKs only; production signing requires a separately protected key.

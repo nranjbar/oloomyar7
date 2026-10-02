@@ -1,0 +1,86 @@
+[
+  {
+    "file": "g7_ch01_q05_answer.png",
+    "chapter": 1,
+    "sourceNumber": 5,
+    "sourcePage": 2,
+    "width": 2163,
+    "height": 727,
+    "sha256": "36ca15cc4638f64471f667bd5fd8ad3d5251ec14b9bce682189bb48f5e90c828",
+    "source": "Grade7_Images_New.zip",
+    "caption": "",
+    "displayRule": "after every part is correct or legitimately revealed"
+  },
+  {
+    "file": "g7_ch02_q02_answer.png",
+    "chapter": 2,
+    "sourceNumber": 2,
+    "sourcePage": 3,
+    "width": 1672,
+    "height": 941,
+    "sha256": "c33e6f6246fc7c932522d169276e6901be85a5a1d8a65d67b9a7d8ea65e9415b",
+    "source": "Grade7_Images_New.zip",
+    "caption": "",
+    "displayRule": "after every part is correct or legitimately revealed"
+  },
+  {
+    "file": "g7_ch02_q07_answer.png",
+    "chapter": 2,
+    "sourceNumber": 7,
+    "sourcePage": 4,
+    "width": 1536,
+    "height": 1024,
+    "sha256": "eba2a97d0b3dcb190547464ef7c6502907f16f4c522096438e9ac8e71fe25e76",
+    "source": "Grade7_Images_New.zip",
+    "caption": "یک نمونه عددی برای توضیح روش آزمایش؛ مقدارهای این تصویر مثال‌اند، نه داده‌های الزامی سؤال طراحی آزمایش.",
+    "displayRule": "after every part is correct or legitimately revealed"
+  },
+  {
+    "file": "g7_ch02_q09_answer.png",
+    "chapter": 2,
+    "sourceNumber": 9,
+    "sourcePage": 4,
+    "width": 1672,
+    "height": 941,
+    "sha256": "b820872e12afa37de02bfddab0769f0d4191fa28d5a640e36f8ee337cc556267",
+    "source": "Grade7_Images_New.zip",
+    "caption": "",
+    "displayRule": "after every part is correct or legitimately revealed"
+  },
+  {
+    "file": "g7_ch02_q10_answer.png",
+    "chapter": 2,
+    "sourceNumber": 10,
+    "sourcePage": 5,
+    "width": 1448,
+    "height": 1086,
+    "sha256": "ef303ca88e672c9f2274ab07871ba3b949f719c8f3cfdf3048b8979da3c64848",
+    "source": "Grade7_Images_New.zip",
+    "caption": "",
+    "displayRule": "after every part is correct or legitimately revealed"
+  },
+  {
+    "file": "g7_ch02_q11_answer.png",
+    "chapter": 2,
+    "sourceNumber": 11,
+    "sourcePage": 5,
+    "width": 1448,
+    "height": 1086,
+    "sha256": "1f4ad5b897ccfc98646a720841cfd93a302034981b1ff40712ab24e96835c895",
+    "source": "Grade7_Images_New.zip",
+    "caption": "",
+    "displayRule": "after every part is correct or legitimately revealed"
+  },
+  {
+    "file": "g7_ch02_q14_answer.png",
+    "chapter": 2,
+    "sourceNumber": 14,
+    "sourcePage": 5,
+    "width": 1672,
+    "height": 941,
+    "sha256": "6c08fbaa43ad7ef69de494b2ce02be489dbd450560ab5079664d1cf231458a16",
+    "source": "Grade7_Images_New.zip",
+    "caption": "عددهای اعشاری این تصویر، روش گرد کردن را توضیح می‌دهند؛ گزارش خواسته‌شده سؤال در حد سانتی‌متر کامل است.",
+    "displayRule": "after every part is correct or legitimately revealed"
+  }
+]

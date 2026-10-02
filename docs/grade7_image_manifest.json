@@ -14,8 +14,8 @@
     "renderScale": null,
     "width": 403,
     "height": 236,
-    "caption": "رایانه",
-    "qualityNote": "کم؛ تصویر کوچک کتاب، برای تشخیص رایانه کافی است.",
+    "caption": "تصویر رایانه از همان صفحه کتاب",
+    "qualityNote": "نسخه ارسالی کاربر؛ بدون کاهش کیفیت. مشخصات نسخه استخراج اولیه در originalExtraction نگه داشته شده است.",
     "originalImages": [
       {
         "file": "g7_ch01_q07_xref23.jpeg",
@@ -24,7 +24,21 @@
       }
     ],
     "sha256": "c5a982797f6bdf69cec08fff50d82cb0038354d48c1524c466180d846101278f",
-    "extractionMethod": "embedded image decoded losslessly to PNG"
+    "extractionMethod": "Supplied in Grade7_Images_New.zip; preserved byte-for-byte",
+    "originalExtraction": {
+      "width": 403,
+      "height": 236,
+      "sha256": "c5a982797f6bdf69cec08fff50d82cb0038354d48c1524c466180d846101278f",
+      "extractionMethod": "embedded image decoded losslessly to PNG",
+      "qualityNote": "کم؛ تصویر کوچک کتاب، برای تشخیص رایانه کافی است.",
+      "cropPdfPoints": [
+        37,
+        688,
+        146,
+        761
+      ],
+      "renderScale": null
+    }
   },
   {
     "file": "g7_ch02_q02.png",
@@ -41,11 +55,25 @@
     "renderScale": 3,
     "width": 1548,
     "height": 894,
-    "caption": "جدول کمیت، تعریف، یکا و وسیله اندازه‌گیری",
-    "qualityNote": "خوب؛ متن و جدول از خود PDF با حفظ بردارها رندر شده‌اند.",
+    "caption": "جدول اصلی کتاب؛ چهار ردیف و چهار ستون، بدون پاسخ",
+    "qualityNote": "نسخه ارسالی کاربر؛ بدون کاهش کیفیت. مشخصات نسخه استخراج اولیه در originalExtraction نگه داشته شده است.",
     "originalImages": [],
     "sha256": "bb2f417aacec20c5d53a57a21b3803124cafe800f548937645bfc089ef10656b",
-    "extractionMethod": "source PDF crop rendered at 3x; neighbouring question text excluded"
+    "extractionMethod": "Supplied in Grade7_Images_New.zip; preserved byte-for-byte",
+    "originalExtraction": {
+      "width": 1548,
+      "height": 894,
+      "sha256": "bb2f417aacec20c5d53a57a21b3803124cafe800f548937645bfc089ef10656b",
+      "extractionMethod": "source PDF crop rendered at 3x; neighbouring question text excluded",
+      "qualityNote": "خوب؛ متن و جدول از خود PDF با حفظ بردارها رندر شده‌اند.",
+      "cropPdfPoints": [
+        32,
+        341,
+        548,
+        639
+      ],
+      "renderScale": 3
+    }
   },
   {
     "file": "g7_ch02_q07.png",
@@ -60,10 +88,10 @@
       449
     ],
     "renderScale": 3,
-    "width": 186,
-    "height": 294,
-    "caption": "استوانه مدرج",
-    "qualityNote": "کم؛ نمونه اصلی ۵۷×۱۸۹ پیکسل است.",
+    "width": 1448,
+    "height": 1086,
+    "caption": "چپ: پیش از قرار دادن سنگ؛ راست: پس از آن. عددها نمونه‌اند؛ این سؤال فقط طراحی و ترتیب مراحل آزمایش را می‌خواهد.",
+    "qualityNote": "نسخه ارسالی کاربر؛ بدون کاهش کیفیت. مشخصات نسخه استخراج اولیه در originalExtraction نگه داشته شده است.",
     "originalImages": [
       {
         "file": "g7_ch02_q07_xref49.png",
@@ -71,8 +99,22 @@
         "height": 189
       }
     ],
-    "sha256": "5b66582475d18815c3d69eed8d212b2726be95e7e81172be61aad29f9e2fd8dc",
-    "extractionMethod": "source PDF crop rendered at 3x; neighbouring question text excluded"
+    "sha256": "2f0823554f6b5362f44d59f99d83bfc27c275406f4dbb647331863047da06b65",
+    "extractionMethod": "Supplied in Grade7_Images_New.zip; preserved byte-for-byte",
+    "originalExtraction": {
+      "width": 186,
+      "height": 294,
+      "sha256": "5b66582475d18815c3d69eed8d212b2726be95e7e81172be61aad29f9e2fd8dc",
+      "extractionMethod": "source PDF crop rendered at 3x; neighbouring question text excluded",
+      "qualityNote": "کم؛ نمونه اصلی ۵۷×۱۸۹ پیکسل است.",
+      "cropPdfPoints": [
+        32,
+        351,
+        94,
+        449
+      ],
+      "renderScale": 3
+    }
   },
   {
     "file": "g7_ch02_q09.png",
@@ -87,10 +129,10 @@
       759
     ],
     "renderScale": 3,
-    "width": 504,
-    "height": 486,
-    "caption": "ترازو و جابه‌جایی آب",
-    "qualityNote": "نیازمند جایگزینی؛ عددهای تصویر با ۳۶ گرم و ۶۰ و ۷۲ متن هماهنگ نیستند.",
+    "width": 1448,
+    "height": 1086,
+    "caption": "جرم سنگ ۳۶ گرم؛ استوانه چپ پیش از افزودن سنگ و استوانه راست پس از آن است. واحد درجه‌های استوانه میلی‌لیتر است و هر میلی‌لیتر برابر یک سانتی‌متر مکعب است.",
+    "qualityNote": "نسخه ارسالی کاربر؛ بدون کاهش کیفیت. مشخصات نسخه استخراج اولیه در originalExtraction نگه داشته شده است.",
     "originalImages": [
       {
         "file": "g7_ch02_q09_xref48.jpeg",
@@ -98,8 +140,22 @@
         "height": 147
       }
     ],
-    "sha256": "ed3953abaac88b25b81c5d710796d261aee9b3eb10077eda6b0d1510d5aa5b6b",
-    "extractionMethod": "source PDF crop rendered at 3x; neighbouring question text excluded"
+    "sha256": "1edad61993cb32716569e63730d17d7e0f2dd9e6bdd2a2cecb937fa848b2d6c6",
+    "extractionMethod": "Supplied in Grade7_Images_New.zip; preserved byte-for-byte",
+    "originalExtraction": {
+      "width": 504,
+      "height": 486,
+      "sha256": "ed3953abaac88b25b81c5d710796d261aee9b3eb10077eda6b0d1510d5aa5b6b",
+      "extractionMethod": "source PDF crop rendered at 3x; neighbouring question text excluded",
+      "qualityNote": "نیازمند جایگزینی؛ عددهای تصویر با ۳۶ گرم و ۶۰ و ۷۲ متن هماهنگ نیستند.",
+      "cropPdfPoints": [
+        37,
+        597,
+        205,
+        759
+      ],
+      "renderScale": 3
+    }
   },
   {
     "file": "g7_ch02_q11.png",
@@ -116,11 +172,25 @@
     "renderScale": 3,
     "width": 483,
     "height": 291,
-    "caption": "گلوله‌های A و B و C در آب",
-    "qualityNote": "خوب؛ شکل برداری، هر سه حرف و خط آب حفظ شده‌اند.",
+    "caption": "حرف‌های A و B و C و خط سطح آب از شکل اصلی حفظ شده‌اند.",
+    "qualityNote": "نسخه ارسالی کاربر؛ بدون کاهش کیفیت. مشخصات نسخه استخراج اولیه در originalExtraction نگه داشته شده است.",
     "originalImages": [],
     "sha256": "0e1486991149937df7f7f5abe99519feab4ebfd83ac8480d157bf6984cccccaf",
-    "extractionMethod": "source PDF crop rendered at 3x; neighbouring question text excluded"
+    "extractionMethod": "Supplied in Grade7_Images_New.zip; preserved byte-for-byte",
+    "originalExtraction": {
+      "width": 483,
+      "height": 291,
+      "sha256": "0e1486991149937df7f7f5abe99519feab4ebfd83ac8480d157bf6984cccccaf",
+      "extractionMethod": "source PDF crop rendered at 3x; neighbouring question text excluded",
+      "qualityNote": "خوب؛ شکل برداری، هر سه حرف و خط آب حفظ شده‌اند.",
+      "cropPdfPoints": [
+        83,
+        219,
+        244,
+        316
+      ],
+      "renderScale": 3
+    }
   },
   {
     "file": "g7_ch02_q12.png",
@@ -135,10 +205,10 @@
       467
     ],
     "renderScale": 3,
-    "width": 390,
-    "height": 237,
-    "caption": "ساعت و زمان‌سنج؛ ساعت چپ، زمان‌سنج راست",
-    "qualityNote": "متوسط؛ اصل تصویر ۱۵۴×۸۶ پیکسل است.",
+    "width": 1448,
+    "height": 1086,
+    "caption": "نام وسیله‌های شماره ۱ و ۲ را مطابق شماره‌های زیر شکل انتخاب کن.",
+    "qualityNote": "نسخه ارسالی کاربر؛ بدون کاهش کیفیت. مشخصات نسخه استخراج اولیه در originalExtraction نگه داشته شده است.",
     "originalImages": [
       {
         "file": "g7_ch02_q12_xref61.jpeg",
@@ -146,8 +216,22 @@
         "height": 86
       }
     ],
-    "sha256": "d9c083158bf7ece6621b4616c0acbf2227a39c5bdf4255d5d98685f3658afa65",
-    "extractionMethod": "source PDF crop rendered at 3x; neighbouring question text excluded"
+    "sha256": "f779b18ab53609a97908bde24e65dcb1880ae15142d7419b11a0414cdb76588e",
+    "extractionMethod": "Supplied in Grade7_Images_New.zip; preserved byte-for-byte",
+    "originalExtraction": {
+      "width": 390,
+      "height": 237,
+      "sha256": "d9c083158bf7ece6621b4616c0acbf2227a39c5bdf4255d5d98685f3658afa65",
+      "extractionMethod": "source PDF crop rendered at 3x; neighbouring question text excluded",
+      "qualityNote": "متوسط؛ اصل تصویر ۱۵۴×۸۶ پیکسل است.",
+      "cropPdfPoints": [
+        34,
+        388,
+        164,
+        467
+      ],
+      "renderScale": 3
+    }
   },
   {
     "file": "g7_ch02_q14.png",
@@ -164,8 +248,8 @@
     "renderScale": 3,
     "width": 1176,
     "height": 318,
-    "caption": "دو مداد و خط‌کش، شکل‌های ۱ و ۲",
-    "qualityNote": "متوسط؛ دو تصویر اصلی حدود ۴۸۵×۷۷ و ۴۸۹×۶۹ پیکسل‌اند.",
+    "caption": "هر دو خط‌کش، صفر خط‌کش، نوک مدادها و شماره شکل‌های ۱ و ۲ حفظ شده‌اند.",
+    "qualityNote": "نسخه ارسالی کاربر؛ بدون کاهش کیفیت. مشخصات نسخه استخراج اولیه در originalExtraction نگه داشته شده است.",
     "originalImages": [
       {
         "file": "g7_ch02_q14_xref59.jpeg",
@@ -179,7 +263,21 @@
       }
     ],
     "sha256": "b16c2c18b1495de353c5c2e7e952daf202984bc8103b273715fcd7ef78f55239",
-    "extractionMethod": "source PDF crop rendered at 3x; neighbouring question text excluded"
+    "extractionMethod": "Supplied in Grade7_Images_New.zip; preserved byte-for-byte",
+    "originalExtraction": {
+      "width": 1176,
+      "height": 318,
+      "sha256": "b16c2c18b1495de353c5c2e7e952daf202984bc8103b273715fcd7ef78f55239",
+      "extractionMethod": "source PDF crop rendered at 3x; neighbouring question text excluded",
+      "qualityNote": "متوسط؛ دو تصویر اصلی حدود ۴۸۵×۷۷ و ۴۸۹×۶۹ پیکسل‌اند.",
+      "cropPdfPoints": [
+        27,
+        683,
+        419,
+        789
+      ],
+      "renderScale": 3
+    }
   },
   {
     "file": "g7_ch02_q15.png",
@@ -194,10 +292,10 @@
       215
     ],
     "renderScale": 3,
-    "width": 1512,
-    "height": 507,
-    "caption": "از راست: انواع نیروسنج، استوانه مدرج، ترازو",
-    "qualityNote": "متوسط؛ ابزارها و پرانتز گروه نیروسنج حفظ شده‌اند.",
+    "width": 2166,
+    "height": 726,
+    "caption": "۱: ابزار سمت چپ؛ ۲: ابزار وسط؛ ۳: گروه سه ابزار سمت راست. پاسخ‌ها را به ترتیب همین شماره‌ها انتخاب کن.",
+    "qualityNote": "نسخه ارسالی کاربر؛ بدون کاهش کیفیت. مشخصات نسخه استخراج اولیه در originalExtraction نگه داشته شده است.",
     "originalImages": [
       {
         "file": "g7_ch02_q15_xref64.jpeg",
@@ -225,8 +323,22 @@
         "height": 280
       }
     ],
-    "sha256": "6edc8c590c84ece312ee76b896ee480a3f5359f798ad47ad84725981eefec6c2",
-    "extractionMethod": "source PDF crop rendered at 3x; neighbouring question text excluded"
+    "sha256": "33c650a14626693dc5ac335e7cfc0ef489a20d60a68ce4a9a80adb5448636491",
+    "extractionMethod": "Supplied in Grade7_Images_New.zip; preserved byte-for-byte",
+    "originalExtraction": {
+      "width": 1512,
+      "height": 507,
+      "sha256": "6edc8c590c84ece312ee76b896ee480a3f5359f798ad47ad84725981eefec6c2",
+      "extractionMethod": "source PDF crop rendered at 3x; neighbouring question text excluded",
+      "qualityNote": "متوسط؛ ابزارها و پرانتز گروه نیروسنج حفظ شده‌اند.",
+      "cropPdfPoints": [
+        38,
+        46,
+        542,
+        215
+      ],
+      "renderScale": 3
+    }
   },
   {
     "file": "g7_ch02_mcq03.png",
@@ -243,8 +355,8 @@
     "renderScale": 3,
     "width": 210,
     "height": 309,
-    "caption": "جسم ۱۰۰ گرمی آویزان به نیروسنج",
-    "qualityNote": "متوسط؛ شکل و نوشته ۱۰۰ گرم حفظ شده‌اند.",
+    "caption": "جسم ۱۰۰ گرمی و نیروسنج از شکل اصلی",
+    "qualityNote": "نسخه ارسالی کاربر؛ بدون کاهش کیفیت. مشخصات نسخه استخراج اولیه در originalExtraction نگه داشته شده است.",
     "originalImages": [
       {
         "file": "g7_ch02_mcq03_xref66.png",
@@ -253,7 +365,21 @@
       }
     ],
     "sha256": "4c68e0d8a2f76592dbf6b1e7518bb5d71576e1dae5ba5a72d38752ebb78922d5",
-    "extractionMethod": "source PDF crop rendered at 3x; neighbouring question text excluded"
+    "extractionMethod": "Supplied in Grade7_Images_New.zip; preserved byte-for-byte",
+    "originalExtraction": {
+      "width": 210,
+      "height": 309,
+      "sha256": "4c68e0d8a2f76592dbf6b1e7518bb5d71576e1dae5ba5a72d38752ebb78922d5",
+      "extractionMethod": "source PDF crop rendered at 3x; neighbouring question text excluded",
+      "qualityNote": "متوسط؛ شکل و نوشته ۱۰۰ گرم حفظ شده‌اند.",
+      "cropPdfPoints": [
+        55,
+        446,
+        125,
+        549
+      ],
+      "renderScale": 3
+    }
   },
   {
     "file": "g7_ch02_mcq04.png",
@@ -270,8 +396,8 @@
     "renderScale": 3,
     "width": 336,
     "height": 273,
-    "caption": "ظرف مکعبی با طول ضلع ۱۰ سانتی‌متر",
-    "qualityNote": "متوسط؛ هر سه برچسب ۱۰ سانتی‌متر حفظ شده‌اند.",
+    "caption": "ظرف با سه ضلع ۱۰ سانتی‌متری",
+    "qualityNote": "نسخه ارسالی کاربر؛ بدون کاهش کیفیت. مشخصات نسخه استخراج اولیه در originalExtraction نگه داشته شده است.",
     "originalImages": [
       {
         "file": "g7_ch02_mcq04_xref70.png",
@@ -280,7 +406,21 @@
       }
     ],
     "sha256": "4d525ec0114a77ddde2e8cf2c5f0180088e9ebb0a597a1ae703816a35659657c",
-    "extractionMethod": "source PDF crop rendered at 3x; neighbouring question text excluded"
+    "extractionMethod": "Supplied in Grade7_Images_New.zip; preserved byte-for-byte",
+    "originalExtraction": {
+      "width": 336,
+      "height": 273,
+      "sha256": "4d525ec0114a77ddde2e8cf2c5f0180088e9ebb0a597a1ae703816a35659657c",
+      "extractionMethod": "source PDF crop rendered at 3x; neighbouring question text excluded",
+      "qualityNote": "متوسط؛ هر سه برچسب ۱۰ سانتی‌متر حفظ شده‌اند.",
+      "cropPdfPoints": [
+        110,
+        541,
+        222,
+        632
+      ],
+      "renderScale": 3
+    }
   },
   {
     "file": "g7_ch02_mcq05.png",
@@ -297,8 +437,8 @@
     "renderScale": null,
     "width": 200,
     "height": 240,
-    "caption": "ترازوی دیجیتالی",
-    "qualityNote": "متوسط؛ برای تشخیص ابزار کافی است.",
+    "caption": "ترازوی دیجیتالی؛ علامت / در عددهای کتاب به صورت ممیز اعشاری نمایش داده شده است.",
+    "qualityNote": "نسخه ارسالی کاربر؛ بدون کاهش کیفیت. مشخصات نسخه استخراج اولیه در originalExtraction نگه داشته شده است.",
     "originalImages": [
       {
         "file": "g7_ch02_mcq05_xref65.jpeg",
@@ -307,6 +447,20 @@
       }
     ],
     "sha256": "939b2ac7ac563113be5372ef2638a7d8a43e83504bd7422230e7a3980ad5d623",
-    "extractionMethod": "embedded image decoded losslessly to PNG"
+    "extractionMethod": "Supplied in Grade7_Images_New.zip; preserved byte-for-byte",
+    "originalExtraction": {
+      "width": 200,
+      "height": 240,
+      "sha256": "939b2ac7ac563113be5372ef2638a7d8a43e83504bd7422230e7a3980ad5d623",
+      "extractionMethod": "embedded image decoded losslessly to PNG",
+      "qualityNote": "متوسط؛ برای تشخیص ابزار کافی است.",
+      "cropPdfPoints": [
+        40,
+        671,
+        147,
+        787
+      ],
+      "renderScale": null
+    }
   }
 ]

@@ -1,26 +1,45 @@
 {
   "status": "PASS",
   "repository": "nranjbar/oloomyar7",
-  "sourceCommit": "538122957c6df02044204d0515c8b2fc18ddd657",
-  "workflowRun": 36974677673,
+  "sourceCommit": "103ac3baaa62e8cb445fbaf66bcffdcb55127c3a",
+  "workflowRun": 36992327398,
   "package": "com.oloomyar.app.grade7",
-  "apkSize": 20302931,
-  "apkSha256": "5399b9cbd858b47f062015f5ea541d683899efaf9845c04206387e68aee58ff3",
+  "versionName": "0.2.0-grade7-guided-attempts",
+  "versionCode": 2,
+  "apkSize": 34069644,
+  "apkSha256": "d0ee1b08a44056b79716994d4403aac3f0714c609b121da582499e106aa269d2",
+  "signingCertificateSha256": "aee8bc4482b0cc935148a5f0aabaf105d5e7c42f31efaf080473a04d33335ab4",
+  "stableReviewSigning": true,
+  "previousReviewApkUpdateCompatible": false,
   "contentQuestions": 28,
   "interactionSteps": 41,
-  "images": 11,
+  "hintPairs": 41,
+  "hints": 82,
+  "questionImages": 11,
+  "answerImages": 7,
+  "images": 18,
   "grade9ActivitiesPackaged": false,
   "emulatorTests": {
-    "tests": "4",
+    "tests": "8",
     "failures": "0",
     "errors": "0",
     "skipped": "0",
-    "time": "15.591"
+    "time": "36.619"
+  },
+  "unitTests": {
+    "tests": 15,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
   },
   "testNames": [
+    "oldDraftRevealedBeforeTryingCannotBypassTheNewPolicy",
+    "examResultsDoNotProvideAShortcutToReferenceAnswers",
+    "wholeAnswerImageWaitsUntilEveryPartIsFinishedAndRevealIsRequested",
     "orderedBlanksKeepTheSourceFirstSaveDraftAndCompletePractice",
     "everySourceImageDecodesAndCorrectAlternativeSelectionsAreAccepted",
     "gradeSevenHomeUsesSharedDesignAndOnlyTheTwoImplementedChapters",
+    "referenceAnswerRequiresTwoDifferentFailuresAndHintsSurviveReturningToTheQuestion",
     "chapterTwoHasSeparateSectionsAndSourceFigureCanBeEnlarged"
   ],
   "screenshots": [
@@ -28,6 +47,20 @@
     "grade7-02-source-question.png",
     "grade7-03-ordered-blanks.png",
     "grade7-04-chapter2-sections.png",
-    "grade7-05-source-figure-zoom.png"
+    "grade7-05-source-figure-zoom.png",
+    "grade7-06-first-attempt-hint1.png",
+    "grade7-07-second-attempt-hint2.png",
+    "grade7-08-answer-image-after-parts.png"
+  ],
+  "checks": [
+    "APK content JSON byte-identical to reviewed source",
+    "All 18 APK image assets byte-identical to supplied images",
+    "Artifact archive digests verified",
+    "APK certificate matches the committed review key",
+    "Two attempts and both hints required to reveal",
+    "Incomplete or unchanged response cannot count as new attempt",
+    "Draft survives return; old ungated draft cannot reveal",
+    "Full answer image hidden until all parts completed",
+    "Exam review routes to guided practice"
   ]
 }
