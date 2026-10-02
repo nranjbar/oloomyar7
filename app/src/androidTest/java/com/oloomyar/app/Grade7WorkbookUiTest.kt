@@ -16,6 +16,7 @@ import com.oloomyar.app.model.StepKind
 import com.oloomyar.app.model.WorkbookAnswers
 import com.oloomyar.app.model.ChapterQuestion
 import com.oloomyar.app.ui.AuditedWorkbookApp
+import com.oloomyar.app.ui.workbookBidi
 import com.oloomyar.app.ui.theme.OloomYarTheme
 import org.junit.Assert.*
 import org.junit.Assume.assumeTrue
@@ -143,8 +144,10 @@ class Grade7WorkbookUiTest {
     }
 
     private fun choose(text: String) {
-        compose.onNode(hasScrollAction()).performScrollToNode(hasText(text))
-        compose.onNodeWithText(text).performClick()
+        // The UI isolates numeric runs for correct Persian/Latin direction.
+        val displayed = workbookBidi(text)
+        compose.onNode(hasScrollAction()).performScrollToNode(hasText(displayed))
+        compose.onNodeWithText(displayed).performClick()
     }
 
     private fun checkAnswer() {
@@ -228,7 +231,7 @@ class Grade7WorkbookUiTest {
         scrollTo("ثبت پاسخ این سؤال")
         compose.onNodeWithText("ثبت پاسخ این سؤال").performClick()
         compose.onNodeWithText("نتیجهٔ آزمون").assertExists()
-        compose.onNodeWithText(q.steps[0].explanation).assertDoesNotExist()
+        compose.onNodeWithText(workbookBidi(q.steps[0].explanation)).assertDoesNotExist()
         compose.onNodeWithContentDescription("تصویر پاسخ سؤال ۹").assertDoesNotExist()
         scrollTo("تمرین سؤال ۹ با راهنما")
         compose.onNodeWithText("تمرین سؤال ۹ با راهنما").performClick()
