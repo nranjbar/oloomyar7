@@ -43,6 +43,9 @@ class Grade7WorkbookUiTest {
 
     private fun scrollTo(text: String) {
         // Action controls stay outside the scrolling question body.
+        // Prefer the exact label: instructional text can mention the same button.
+        val exact = hasText(text)
+        if (compose.onAllNodes(exact).fetchSemanticsNodes().size == 1 && compose.onNode(exact).isDisplayed()) return
         val match = hasText(text, substring = true)
         if (compose.onAllNodes(match).fetchSemanticsNodes().size == 1 && compose.onNode(match).isDisplayed()) return
         compose.onNode(hasScrollAction()).performScrollToNode(hasText(text, substring = true))
