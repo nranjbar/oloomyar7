@@ -15,6 +15,7 @@ import com.oloomyar.app.data.*
 import com.oloomyar.app.model.StepKind
 import com.oloomyar.app.model.WorkbookAnswers
 import com.oloomyar.app.model.ChapterQuestion
+import com.oloomyar.app.model.LearningStep
 import com.oloomyar.app.ui.AuditedWorkbookApp
 import com.oloomyar.app.ui.workbookBidi
 import com.oloomyar.app.ui.theme.OloomYarTheme
@@ -253,6 +254,123 @@ class Grade7WorkbookUiTest {
         compose.onNodeWithText("دیدن پاسخ").assertIsNotEnabled()
         compose.onNodeWithText("پاسخ و توضیح").assertDoesNotExist()
         compose.onNodeWithText("راهنمایی ۱").assertDoesNotExist()
+    }
+
+    private fun fillFreshMatch(step: LearningStep, values: List<String> = step.pairs.map { it.right }) {
+        step.pairs.forEachIndexed { index, pair ->
+            scrollTo("جای خالی ${fa(index + 1)} از ${fa(step.pairs.size)}")
+            compose.onNodeWithText("جای خالی ${fa(index + 1)} از ${fa(step.pairs.size)}").assertExists()
+            compose.onNodeWithText(workbookBidi(pair.left)).assertExists()
+            choose(values[index])
+        }
+    }
+
+    private fun changeFirstMatch(value: String) {
+        compose.onNode(hasContentDescription("جای خالی ۱،", substring = true)).performScrollTo().performClick()
+        choose(value)
+    }
+
+    private fun nextPart(number: Int, total: Int) {
+        scrollTo("مرحلهٔ بعد")
+        compose.onNodeWithText("مرحلهٔ بعد").assertIsEnabled().performClick()
+        compose.waitForIdle()
+        scrollTo("مرحلهٔ ${fa(number)} از ${fa(total)}")
+        compose.onNodeWithText("مرحلهٔ ${fa(number)} از ${fa(total)}").assertExists()
+        scrollTo("دیدن پاسخ")
+        compose.onNodeWithText("دیدن پاسخ").assertIsNotEnabled()
+        compose.onNodeWithText("راهنمایی ۱").assertDoesNotExist()
+        compose.onNodeWithText("راهنمایی ۲").assertDoesNotExist()
+    }
+
+    private fun revealAfterTwoMatchAttempts(step: LearningStep) {
+        val correct = step.pairs.map { it.right }
+        val wrong = WorkbookAnswers.choices(step, 0).filter { it != correct.first() }
+        require(wrong.size >= 2)
+        fillFreshMatch(step, correct.toMutableList().also { it[0] = wrong[0] })
+        checkAnswer()
+        compose.onNodeWithText("راهنمایی ۱").assertExists()
+        compose.onNodeWithText("راهنمایی ۲").assertDoesNotExist()
+        scrollTo("دیدن پاسخ")
+        compose.onNodeWithText("دیدن پاسخ").assertIsNotEnabled()
+        changeFirstMatch(wrong[1])
+        checkAnswer()
+        compose.onNodeWithText("راهنمایی ۲").assertExists()
+        scrollTo("دیدن پاسخ")
+        compose.onNodeWithText("دیدن پاسخ").assertIsEnabled().performClick()
+        scrollTo("پاسخ و توضیح")
+        compose.onNodeWithText("پاسخ و توضیح").assertExists()
+    }
+
+    private fun finishPractice() {
+        scrollTo("ثبت تمرین و ادامه")
+        compose.onNodeWithText("ثبت تمرین و ادامه").assertIsEnabled().performClick()
+        compose.onNodeWithText("تمرین کامل شد").assertExists()
+    }
+
+    @Test fun lastChapterTwoQuestionMovesFromInstrumentNamesToQuantitiesAndShowsBothHints() {
+        val q = Grade7Chapter2Repository(context).questions.first { it.sourceNumber == 15 }
+        openPractice(q)
+        fillFreshMatch(q.steps[0]); checkAnswer()
+        nextPart(2, 2)
+        revealAfterTwoMatchAttempts(q.steps[1])
+        capture("grade7-09-last-question-quantities-answer")
+        finishPractice()
+    }
+
+    @Test fun clockQuestionMovesThroughTwoMatchPartsAndTheMultipleChoicePart() {
+        val q = Grade7Chapter2Repository(context).questions.first { it.sourceNumber == 12 }
+        openPractice(q)
+        revealAfterTwoMatchAttempts(q.steps[0])
+        nextPart(2, 3)
+        fillFreshMatch(q.steps[1]); checkAnswer()
+        nextPart(3, 3)
+        val step = q.steps[2]
+        step.options.filter { it.correct }.take(step.pick).forEach { choose(it.text) }
+        checkAnswer(); finishPractice()
+    }
+
+    @Test fun rulerQuestionMovesFromLengthsToReasonAndUnlocksItsSecondPartIndependently() {
+        val q = Grade7Chapter2Repository(context).questions.first { it.sourceNumber == 14 }
+        openPractice(q)
+        revealAfterTwoMatchAttempts(q.steps[0])
+        nextPart(2, 2)
+        val wrong = q.steps[1].options.filter { !it.correct }
+        choose(wrong[0].text); checkAnswer()
+        compose.onNodeWithText("راهنمایی ۱").assertExists()
+        choose(wrong[1].text); checkAnswer()
+        compose.onNodeWithText("راهنمایی ۲").assertExists()
+        scrollTo("دیدن پاسخ")
+        compose.onNodeWithText("دیدن پاسخ").assertIsEnabled().performClick()
+        finishPractice()
+    }
+
+    @Test fun chapterOneTechnologyQuestionMovesFromDefinitionToThreeExamples() {
+        val q = Grade7Chapter1Repository(context).questions.first { it.sourceNumber == 6 }
+        openPractice(q)
+        choose(q.steps[0].options.first { it.correct }.text); checkAnswer()
+        nextPart(2, 2)
+        val step = q.steps[1]
+        step.options.filter { it.correct }.takeLast(step.pick).forEach { choose(it.text) }
+        checkAnswer(); finishPractice()
+    }
+
+    @Test fun lastChapterOneQuestionCanRevealAfterTwoDifferentCompleteMultipleSelections() {
+        val q = Grade7Chapter1Repository(context).questions.first { it.sourceNumber == 8 }
+        val step = q.steps.single()
+        openPractice(q)
+        val selected = step.options.filter { it.correct }.take(step.pick - 1)
+        val wrong = step.options.filter { !it.correct }
+        selected.forEach { choose(it.text) }
+        choose(wrong[0].text); checkAnswer()
+        compose.onNodeWithText("راهنمایی ۱").assertExists()
+        scrollTo("دیدن پاسخ")
+        compose.onNodeWithText("دیدن پاسخ").assertIsNotEnabled()
+        choose(wrong[0].text)
+        choose(wrong[1].text); checkAnswer()
+        compose.onNodeWithText("راهنمایی ۲").assertExists()
+        scrollTo("دیدن پاسخ")
+        compose.onNodeWithText("دیدن پاسخ").assertIsEnabled().performClick()
+        finishPractice()
     }
 
     private fun capture(name: String) {
