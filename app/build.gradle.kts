@@ -11,8 +11,8 @@ android {
         applicationId = "com.oloomyar.app.grade7"
         minSdk = 23
         targetSdk = 37
-        versionCode = 2
-        versionName = "0.2.0-grade7-guided-attempts"
+        versionCode = 3
+        versionName = "0.2.1-grade7-step-navigation"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         buildConfigField("int", "WORKBOOK_GRADE", "7")
     }

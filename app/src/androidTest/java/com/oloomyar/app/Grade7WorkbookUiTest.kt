@@ -8,6 +8,9 @@ import android.provider.MediaStore
 import android.os.SystemClock
 import androidx.compose.ui.test.*
 import androidx.compose.ui.test.junit4.createComposeRule
+import androidx.compose.runtime.CompositionLocalProvider
+import androidx.compose.ui.platform.LocalDensity
+import androidx.compose.ui.unit.Density
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.core.app.ActivityScenario
@@ -39,6 +42,9 @@ class Grade7WorkbookUiTest {
     }
 
     private fun scrollTo(text: String) {
+        // Action controls stay outside the scrolling question body.
+        val match = hasText(text, substring = true)
+        if (compose.onAllNodes(match).fetchSemanticsNodes().size == 1 && compose.onNode(match).isDisplayed()) return
         compose.onNode(hasScrollAction()).performScrollToNode(hasText(text, substring = true))
     }
 
@@ -133,14 +139,21 @@ class Grade7WorkbookUiTest {
         }
     }
 
-    private fun openPractice(question: ChapterQuestion) {
+    private fun openPractice(question: ChapterQuestion, fontScale: Float = 1f) {
         val progress = WorkbookProgress(context, "g7_ui", listOf(question))
         compose.setContent {
-            OloomYarTheme { AuditedWorkbookApp("فصل ${question.relatedChapter}", listOf(question), progress, onExit = {}) }
+            val density = LocalDensity.current
+            CompositionLocalProvider(LocalDensity provides Density(density.density, fontScale)) {
+                OloomYarTheme { AuditedWorkbookApp("فصل ${question.relatedChapter}", listOf(question), progress, onExit = {}) }
+            }
         }
         compose.onNodeWithText("ورود به این بخش").performClick()
         scrollTo("سؤال ${fa(question.sourceNumber)} •")
         compose.onNodeWithText("سؤال ${fa(question.sourceNumber)} •", substring = true).performClick()
+        // Reading a long source or figure must not hide the check/help controls.
+        compose.onNodeWithText("بررسی پاسخ").assertIsDisplayed()
+        compose.onNodeWithText("راهنما").assertIsDisplayed().assertIsNotEnabled()
+        compose.onNodeWithText("دیدن پاسخ").assertIsDisplayed().assertIsNotEnabled()
         compose.onNodeWithText("رفتن به پاسخ تعاملی").performClick()
     }
 
@@ -170,7 +183,7 @@ class Grade7WorkbookUiTest {
         val wrong = s.options.filter { !it.correct }
         choose(wrong[0].text)
         checkAnswer()
-        compose.onNodeWithText("راهنمایی ۱").assertExists()
+        compose.onNodeWithText("راهنمایی ۱").assertIsDisplayed()
         compose.onNodeWithText("راهنمایی ۲").assertDoesNotExist()
         capture("grade7-06-first-attempt-hint1")
         scrollTo("بررسی پاسخ")
@@ -183,13 +196,13 @@ class Grade7WorkbookUiTest {
         compose.onNodeWithText("برگشت").performClick()
         scrollTo("سؤال ۸ •")
         compose.onNodeWithText("سؤال ۸ •", substring = true).performClick()
-        compose.onNodeWithText("راهنمایی ۱").assertExists()
+        compose.onNodeWithText("راهنمایی ۱").assertIsDisplayed()
         scrollTo("دیدن پاسخ")
         compose.onNodeWithText("دیدن پاسخ").assertIsNotEnabled()
         choose(wrong[1].text)
         checkAnswer()
         compose.onNodeWithText("راهنمایی ۱").assertExists()
-        compose.onNodeWithText("راهنمایی ۲").assertExists()
+        compose.onNodeWithText("راهنمایی ۲").assertIsDisplayed()
         capture("grade7-07-second-attempt-hint2")
         scrollTo("دیدن پاسخ")
         compose.onNodeWithText("دیدن پاسخ").assertIsEnabled().performClick()
@@ -271,8 +284,7 @@ class Grade7WorkbookUiTest {
     }
 
     private fun nextPart(number: Int, total: Int) {
-        scrollTo("مرحلهٔ بعد")
-        compose.onNodeWithText("مرحلهٔ بعد").assertIsEnabled().performClick()
+        compose.onNodeWithText("مرحلهٔ بعد").assertIsDisplayed().assertIsEnabled().performClick()
         compose.waitForIdle()
         scrollTo("مرحلهٔ ${fa(number)} از ${fa(total)}")
         compose.onNodeWithText("مرحلهٔ ${fa(number)} از ${fa(total)}").assertExists()
@@ -288,13 +300,13 @@ class Grade7WorkbookUiTest {
         require(wrong.size >= 2)
         fillFreshMatch(step, correct.toMutableList().also { it[0] = wrong[0] })
         checkAnswer()
-        compose.onNodeWithText("راهنمایی ۱").assertExists()
+        compose.onNodeWithText("راهنمایی ۱").assertIsDisplayed()
         compose.onNodeWithText("راهنمایی ۲").assertDoesNotExist()
         scrollTo("دیدن پاسخ")
         compose.onNodeWithText("دیدن پاسخ").assertIsNotEnabled()
         changeFirstMatch(wrong[1])
         checkAnswer()
-        compose.onNodeWithText("راهنمایی ۲").assertExists()
+        compose.onNodeWithText("راهنمایی ۲").assertIsDisplayed()
         scrollTo("دیدن پاسخ")
         compose.onNodeWithText("دیدن پاسخ").assertIsEnabled().performClick()
         scrollTo("پاسخ و توضیح")
@@ -336,9 +348,9 @@ class Grade7WorkbookUiTest {
         nextPart(2, 2)
         val wrong = q.steps[1].options.filter { !it.correct }
         choose(wrong[0].text); checkAnswer()
-        compose.onNodeWithText("راهنمایی ۱").assertExists()
+        compose.onNodeWithText("راهنمایی ۱").assertIsDisplayed()
         choose(wrong[1].text); checkAnswer()
-        compose.onNodeWithText("راهنمایی ۲").assertExists()
+        compose.onNodeWithText("راهنمایی ۲").assertIsDisplayed()
         scrollTo("دیدن پاسخ")
         compose.onNodeWithText("دیدن پاسخ").assertIsEnabled().performClick()
         finishPractice()
@@ -362,14 +374,38 @@ class Grade7WorkbookUiTest {
         val wrong = step.options.filter { !it.correct }
         selected.forEach { choose(it.text) }
         choose(wrong[0].text); checkAnswer()
-        compose.onNodeWithText("راهنمایی ۱").assertExists()
+        compose.onNodeWithText("راهنمایی ۱").assertIsDisplayed()
         scrollTo("دیدن پاسخ")
         compose.onNodeWithText("دیدن پاسخ").assertIsNotEnabled()
         choose(wrong[0].text)
         choose(wrong[1].text); checkAnswer()
-        compose.onNodeWithText("راهنمایی ۲").assertExists()
+        compose.onNodeWithText("راهنمایی ۲").assertIsDisplayed()
         scrollTo("دیدن پاسخ")
         compose.onNodeWithText("دیدن پاسخ").assertIsEnabled().performClick()
+        finishPractice()
+    }
+
+    @Test fun longLastQuestionKeepsActionsVisibleWithLargeTextAndHasExplicitBlankNavigation() {
+        val q = Grade7Chapter2Repository(context).questions.first { it.sourceNumber == 15 }
+        openPractice(q, fontScale = 1.4f)
+        scrollTo("جای خالی بعدی")
+        compose.onNodeWithText("جای خالی بعدی").assertIsEnabled().performClick()
+        compose.onNodeWithText(workbookBidi(q.steps[0].pairs[1].left)).assertExists()
+        compose.onNodeWithText("بررسی پاسخ").assertIsDisplayed().assertIsNotEnabled()
+        scrollTo("جای خالی قبلی")
+        compose.onNodeWithText("جای خالی قبلی").assertIsEnabled().performClick()
+        fillFreshMatch(q.steps[0])
+        compose.onNodeWithText("بررسی پاسخ").assertIsDisplayed().assertIsEnabled()
+        compose.onNodeWithText("بررسی پاسخ").performClick()
+        compose.waitForIdle()
+        compose.onNodeWithText("مرحلهٔ بعد").assertIsDisplayed().assertIsEnabled()
+        capture("grade7-10-fixed-next-part-large-text")
+        nextPart(2, 2)
+        compose.onNodeWithText("انتخاب‌ها").assertIsDisplayed().performClick()
+        fillFreshMatch(q.steps[1])
+        compose.onNodeWithText("بررسی پاسخ").assertIsDisplayed().assertIsEnabled().performClick()
+        compose.waitForIdle()
+        compose.onNodeWithText("ثبت تمرین و ادامه").assertIsDisplayed().assertIsEnabled()
         finishPractice()
     }
 

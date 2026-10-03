@@ -65,6 +65,14 @@ internal fun WorkbookInput(step: LearningStep, answers: List<String>, locked: Bo
                     WorkbookText("انتخاب شما: ${answers.getOrElse(active) { "" }.ifBlank { "هنوز انتخاب نشده" }}")
                 }
             }
+            Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
+                TextButton(enabled = active > 0, onClick = { active-- }) {
+                    Text("$label قبلی")
+                }
+                TextButton(enabled = active < rows.lastIndex, onClick = { active++ }) {
+                    Text("$label بعدی")
+                }
+            }
             if (!locked) {
                 Text(if (isBlank) "همهٔ گزینه‌ها • یک گزینه برای این جای خالی انتخاب کن" else "گروه مناسب این عبارت را انتخاب کن", style = MaterialTheme.typography.titleMedium)
                 if (isBlank) Text("در صورت نیاز، انتخاب تکراری هم ممکن است.", color = Muted)
@@ -83,7 +91,11 @@ internal fun WorkbookInput(step: LearningStep, answers: List<String>, locked: Bo
                         }, label = { WorkbookText(choice) }, modifier = Modifier.heightIn(min = 48.dp))
                     }
                 }
-                if (lastFilled >= 0) Text("پاسخ $label ${workbookFa(lastFilled + 1)} ثبت شد؛ برای تغییر، شمارهٔ آن را لمس کن.", color = Muted)
+                if (lastFilled >= 0) Text(
+                    if (answers.any { it.isBlank() }) "پاسخ $label ${workbookFa(lastFilled + 1)} ثبت شد؛ اکنون $label ${workbookFa(active + 1)} را کامل کن."
+                    else "همهٔ پاسخ‌ها ثبت شده‌اند؛ «بررسی پاسخ» را بزن. برای تغییر، شمارهٔ جای خالی را لمس کن.",
+                    color = Muted
+                )
             }
             TextButton(onClick = { showSummary = !showSummary }) { Text(if (showSummary) "بستن مرور انتخاب‌ها" else "مرور همهٔ انتخاب‌ها") }
             if (showSummary || locked) rows.indices.forEach { index ->
@@ -140,4 +152,3 @@ private fun ChoiceSurface(text: String, selected: Boolean, enabled: Boolean, mul
         }
     }
 }
-
