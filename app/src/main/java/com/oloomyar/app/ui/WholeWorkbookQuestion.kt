@@ -120,18 +120,15 @@ internal fun WholeWorkbookQuestion(
                             practice = if (exam) state.copy(checked = emptyMap(), revealed = false) else state) {
                             update(state.change(inlineStep, it))
                         }
-                        TextButton(onClick = { showOriginal = !showOriginal }) {
-                            Text(if (showOriginal) "بستن تصویر کتاب" else "مشاهدهٔ تصویر خود کتاب")
-                        }
+                    } else if (question.readablePrompt != null) {
+                        WorkbookText(question.readablePrompt, Modifier.fillMaxWidth().testTag("readable-book-prompt"))
                     }
-                    if (inlineStep == null || showOriginal) {
+                    if (showOriginal || (inlineStep == null && question.readablePrompt == null)) {
                         (if (showOriginal) question.sourceQuestionVisual else question.promptVisual ?: question.sourceQuestionVisual)?.let { WorkbookImage(it, "صورت سؤال ${workbookFa(question.sourceNumber)} از کتاب") }
                             ?: WorkbookText(question.bookPrompt.orEmpty())
                     }
-                    if (inlineStep == null && question.promptVisual != null) {
-                        TextButton(onClick = { showOriginal = !showOriginal }) {
-                            Text(if (showOriginal) "بستن تصویر کتاب" else "مشاهدهٔ تصویر خود کتاب")
-                        }
+                    TextButton(onClick = { showOriginal = !showOriginal }) {
+                        Text(if (showOriginal) "بستن تصویر کتاب" else "مشاهدهٔ تصویر خود کتاب")
                     }
                 }
             }

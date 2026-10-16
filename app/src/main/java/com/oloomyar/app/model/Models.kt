@@ -60,7 +60,10 @@ data class ChapterQuestion(
     /** Unedited workbook crop, authoritative when PDF text extraction reorders Persian. */
     val sourceQuestionVisual: String? = null,
     /** Original PDF text layer with the old raster figure omitted when a replacement is supplied. */
-    val promptVisual: String? = null
+    val promptVisual: String? = null,
+    /** Manually checked reading transcription; scientific layouts remain in their source figure. */
+    val readablePrompt: String? = null,
+    val originalFigureVisual: String? = null
 )
 
 data class QuestionVisual(val asset: String, val caption: String? = null)

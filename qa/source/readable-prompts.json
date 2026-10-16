@@ -1,0 +1,418 @@
+{
+  "policy": "Verbatim reading transcription, preserving source typos. Original PDF question figures and mathematical layouts remain authoritative.",
+  "questions": {
+    "g7_ch01_q02": {
+      "text": "۲- جملات صحیح را با ( ص ) و جملات غلط را با ( غ ) مشخص نمایید .\nالف– سؤال کردن و تلاش برای یافتن پاسخ ، از مراحل مهم در یادگیری علوم تجربی است . (                 )\nب- موفقیت و پیشرفت سریع علم و فناوری ، نتیجه فعالیت مشترک دانشمندان و متخصصان با یکدیگر است . (                 )\nج- فناوری ها فقط مفیدند و هیچ ضرری ندارند . (                 )",
+      "sourceQuestionSha256": "fa141722e6d770296c2a734fadadb18341e2dbcd54cc3c3e269a19bda99b0ccc",
+      "formatKeptInSourceFigure": false,
+      "sourceFigureText": "",
+      "sourceCharacterInventoryPreserved": true
+    },
+    "g7_ch01_q03": {
+      "text": "۳- متخصصان علوم تجربی با بهره گیری از چه چیز هایی ، برای مسائل مختلف زندگی ، پاسخ مناسبی پیدا می کنند ؟ ( سه مورد )",
+      "sourceQuestionSha256": "69a651a1978f48eba55157e26f39cd712ce9d552b1c115e629032d5c19e88482",
+      "formatKeptInSourceFigure": false,
+      "sourceFigureText": "",
+      "sourceCharacterInventoryPreserved": true
+    },
+    "g7_ch01_q04": {
+      "text": "۴- متن زیر را به دقت بخوانید و به سؤالات مطرح شده پاسخ دهید .\nمعلم دانش آموزان را به آزمایشگاه برد . آن ها بر روی میز تعدادی ماده را مشاهده کردند ( نمک– براده آهن– جوهر نمک– اتانول– گوگرد– نشاسته- روغن مایع ) . معلم گفت می خواهیم ببینیم کدام در آب حل می شود و کدام حل نمی شود ، ولی در ابتدا هر گروه با مشورت یکدیگر جواب سؤال را بر روی کاغذ بنویسد .\n۱- این مرحله چه نام دارد ؟\nالف- نتیجه گیری □     ب- مشاهده □     ج- پیش بینی □\nسپس دانش آموزان با انجام آزمایش ، فهمیدند که نمک ، اتانول و جوهر نمک در آب حل می شوند ولی گوگرد ، براده آهن روغن مایع و نشاسته در آب حل نمی شوند .\n۲- این مرحله آخر چه نام دارد ؟\nالف- طرح پرسش □     ب- نتیجه گیری □     ج- پیش بینی □",
+      "sourceQuestionSha256": "ec1427872ef54b6f1eff5721819ea19f6473351fac26132d7819f0780885bbf4",
+      "formatKeptInSourceFigure": false,
+      "sourceFigureText": "",
+      "sourceCharacterInventoryPreserved": true
+    },
+    "g7_ch01_q06": {
+      "text": "۶- فناوری را تعریف کنید و سه مثال بزنید .",
+      "sourceQuestionSha256": "d6242e61a95e771cef2b5bf17676f591fb709c3c78de5eefdebdb4f17165e660",
+      "formatKeptInSourceFigure": false,
+      "sourceFigureText": "",
+      "sourceCharacterInventoryPreserved": true
+    },
+    "g7_ch01_q07": {
+      "text": "۷- اختراع رایانه ( کامپیوتر ) یک فناوری محسوب می شود . یک فایده و یک ضرر این فناوری را بنویسید .\nفایده : .................................................................\nضرر : .................................................................",
+      "sourceQuestionSha256": "e25938399afc764b2ce8e505bd309ce58906184fe6fa26d97d05e9e17ddfcf08",
+      "formatKeptInSourceFigure": false,
+      "sourceFigureText": "",
+      "sourceCharacterInventoryPreserved": true
+    },
+    "g7_ch01_q08": {
+      "text": "۸- چهار شاخه علوم تجربی را نام ببرید . ......................................................................................................",
+      "sourceQuestionSha256": "d9182030c2fb28d0ce2694b06c7ac5b51747022d1639be37e0f944f444a01b00",
+      "formatKeptInSourceFigure": false,
+      "sourceFigureText": "",
+      "sourceCharacterInventoryPreserved": true
+    },
+    "g7_ch02_q02": {
+      "text": "۲- جدول زیر را تکمیل کنید :",
+      "sourceQuestionSha256": "9c1cb20a7f078875f780a18f5ed9ec31170abc8ee238971db41a82ea2949e2e3",
+      "formatKeptInSourceFigure": true,
+      "sourceFigureText": "کمیت تعریف ) یکا ( واحد ببب وسیله اندازه\nبلبببببببببببببببببببببببببببببببببببببب گیری\n............................ ....... ................ ............... ..... .............. ........................................................ ..... . ..... ... ...... ...................\nجرم .....................\n................................... ................ ................................... ...................................................... ................ ...................\nوزن\n- سانتی متر مکعب - ظروف مدرج\n. .................................... .................. ........... .................................. ......................................\n- متر مکعب - محاسبات\nحجم\n- لیتر و میلی لیتر و ریاضی\nسی (  سیcc )\n. مقدار جرمی است که در حجم معینی از یک جسم وجود دارد محاسبات\n.. ....... .... ... .. .... ...............\n.... ..... .... یا ) (  نسبت جرم جسم به حجم آن ریاضی\n.....................................",
+      "sourceCharacterInventoryPreserved": true
+    },
+    "g7_ch02_q03": {
+      "text": "۳- چرا جرم بعضی چیز ها ( مانند سی دی ، یک موز ، یک مداد ) را با گرم و جرم بعضی چیز های دیگر ( مانند گوسفند و لپ تاپ ) را با کیلو گرم بیان می کنیم ؟",
+      "sourceQuestionSha256": "e8cf6ff11e13a3b56dc08fa2d108db3e1d2700f4957c808298089f4fd5c436f8",
+      "formatKeptInSourceFigure": false,
+      "sourceFigureText": "",
+      "sourceCharacterInventoryPreserved": true
+    },
+    "g7_ch02_q04": {
+      "text": "۴- هر کدام از اجسام زیر ، تقریباً معادل چند نیوتون وزن دارند ؟\nالف– یک صندلی ۶ کیلو گرمی ( ........................................ )\nب- یک تلفن همراه ۲۰۰ گرمی ( ........................................ )\nج- یک کتاب ۶۰۰ گرمی ( ........................................ )\nد- یک موتور سیکلت ۳۰۰ کیلو گرمی ( ........................................ )",
+      "sourceQuestionSha256": "52b31005c81df653a28aa41346fc256a7b75cf4fe6f527ed3e24c8bcb51fbf95",
+      "formatKeptInSourceFigure": false,
+      "sourceFigureText": "",
+      "sourceCharacterInventoryPreserved": true
+    },
+    "g7_ch02_q05": {
+      "text": "۵– یکا های متداول طول را نام ببرید . ......................................................................................................",
+      "sourceQuestionSha256": "99c0f513eb5ff97b4f9e93cbf670f64c5af21775460f07dee82c0de67be0a6d1",
+      "formatKeptInSourceFigure": false,
+      "sourceFigureText": "",
+      "sourceCharacterInventoryPreserved": true
+    },
+    "g7_ch02_q06": {
+      "text": "۶- طول هرکدام از موارد زیر را با چه یکایی اندازه می گیریم ؟ چرا ؟\nالف- قطر نوک مداد ( ........................................ )\nب- مسافت اصفهان تا تهران ( ........................................ )\nج- طول خود کار ( ........................................ )\nد- طول حیاط مدرسه ( ........................................ )\nزیرا : ......................................................................................................\n......................................................................................................",
+      "sourceQuestionSha256": "5263f56b0d0119649b87256f62a34c30ad26d120e109014231fbb9aa1cdafb51",
+      "formatKeptInSourceFigure": false,
+      "sourceFigureText": "",
+      "sourceCharacterInventoryPreserved": true
+    },
+    "g7_ch02_q07": {
+      "text": "۷- به وسیله یک استوانه مدرج و آب ، آزمایشی طرح کنید که با انجام آن بتوانید حجم یک سنگ کوچک را اندازه بگیرید .",
+      "sourceQuestionSha256": "c6635d682d84955f5966a7a0dd1c44b8117721113594fa2a478952b7657c4bd9",
+      "formatKeptInSourceFigure": false,
+      "sourceFigureText": "",
+      "sourceCharacterInventoryPreserved": true
+    },
+    "g7_ch02_q08": {
+      "text": "۸- جرم یک پاک کن ۱۲ گرم و حجم آن ۸ سانتی متر مکعب است . چگالی آن چقدر است ؟",
+      "sourceQuestionSha256": "1ea49da2aa080c8d70fc98147174da61478bb9e37a2997ad1e070d3a7cd752db",
+      "formatKeptInSourceFigure": false,
+      "sourceFigureText": "",
+      "sourceCharacterInventoryPreserved": true
+    },
+    "g7_ch02_q09": {
+      "text": "۹- نیما جرم یک سنگ کوچک را با ترازو ۳۶ گرم اندازه گرفت . سپس آن را داخل یک استوانه مدرج که ۶۰ سانتی متر مکعب آب داشت ، انداخت . سطح آب روی ۷۲ سانتی متر مکعب قرار گرفت .\nالف- حجم سنگ چند سانتی متر مکعب است ؟\nب- چگالی سنگ را حساب کنید .",
+      "sourceQuestionSha256": "e041da3f1c40b598c4021d29ed72e33408a267bf08f20738baf1d21210c2ffec",
+      "formatKeptInSourceFigure": false,
+      "sourceFigureText": "",
+      "sourceCharacterInventoryPreserved": true
+    },
+    "g7_ch02_q10": {
+      "text": "۱۰- جرم یک جسم ۱۶۰ گرم و حجم آن ۴۰۰ سانتی متر مکعب است .\nالف– چگالی آن را حساب کنید .\nب- آیا این جسم در آب فرو می رود ؟ چرا ؟",
+      "sourceQuestionSha256": "e63f95dd0d119dd93a5d711d289359b377d1af83753103a59ecf954c8dc84998",
+      "formatKeptInSourceFigure": false,
+      "sourceFigureText": "",
+      "sourceCharacterInventoryPreserved": true
+    },
+    "g7_ch02_q11": {
+      "text": "۱۱- سه گلوله A ,B ,C را در آب انداخته ایم . وضعیت قرار گرفتن آن ها در آب ، در شکل مشخص است ؛\nبرای مقایسه چگالی این سه گلوله نسبت به آب ، در جاهای خالی از کلمات ( بیشتر از– کمنر از- برابر ) استفاده کنید .\n- چگالی گلوله A ........................................ آب است .\n- چگالی گلوله B ........................................ آب است .\n- چگالی گلوله C ........................................ آب است .",
+      "sourceQuestionSha256": "c9558200582002e33714de0e4951302d3795cf67c1fd920f5d10daa845f51dbb",
+      "formatKeptInSourceFigure": false,
+      "sourceFigureText": "A B C آب",
+      "sourceCharacterInventoryPreserved": true
+    },
+    "g7_ch02_q12": {
+      "text": "۱۲- در مورد زمان به سؤالات زیر پاسخ دهید .\nالف– برای اندازه گیری زمان از چه وسیله هایی استفاده می شود ؟ ( نام هر کدام را زیرشان بنویسید )\n........................................     ........................................\nب- برای پاسخ دادن به سؤال « چه وقت » معمولا از ........................................ استفاده می کنیم .\nولی برای پاسخ دادن به سؤال « چه مدت » از ........................................ استفاده می شود .\nج- یکا های اندازه گیری زمان که در زندگی روز مره از آنها استفاده می کنیم را نام ببرید .",
+      "sourceQuestionSha256": "b2e38c529ba1866c73fb5dd960a0d3083246fc88e4d3456f793b921769522155",
+      "formatKeptInSourceFigure": false,
+      "sourceFigureText": "",
+      "sourceCharacterInventoryPreserved": true
+    },
+    "g7_ch02_q13": {
+      "text": "۱۳- دقت اندازه گیری به چه عواملی بستگی دارد ؟\n۱- ........................................\n۲- ........................................",
+      "sourceQuestionSha256": "7217b7f23e79be8b95de7c1098e6379712ab478de0fd38a16e2794ca14bac6c3",
+      "formatKeptInSourceFigure": false,
+      "sourceFigureText": "",
+      "sourceCharacterInventoryPreserved": true
+    },
+    "g7_ch02_q14": {
+      "text": "۱۴- با توجه به این که دقت اندازه گیری خط کش ۱ سانتی متر است ، در شکل های زیر طول مداد چند سانتی متر گزارش می شود ؟ چرا ؟",
+      "sourceQuestionSha256": "aa592c7d3a58ca784e0a9fb0bf4526cf1479086c8e4d019a4eb240fe332e5ef9",
+      "formatKeptInSourceFigure": false,
+      "sourceFigureText": "شکل 1 شکل 2",
+      "sourceCharacterInventoryPreserved": true
+    },
+    "g7_ch02_q15": {
+      "text": "۱۵- هر کدام از وسایل زیر چه نام دارد و چه چیزی را اندازه می گیرد ؟",
+      "sourceQuestionSha256": "b221afb3a2270a9c7f44c528c8f732d8199aeca59bead23e2c84d046672e070c",
+      "formatKeptInSourceFigure": true,
+      "sourceFigureText": ": نام انواع ...... ............ ............ ...........    : نام.... ..................    : .......                                        نام\n......... اندازه گیری.......... ............ .......... اندازه گیری ...... .................... ..........                            اندازه گیری",
+      "sourceCharacterInventoryPreserved": true
+    },
+    "g7_ch02_mcq01": {
+      "text": "۱- جرم یک عدد پرتقال را بهتر است با چه واحدی ( یکا ) بیان کنیم ؟\nالف- نیوتون     ب- کیلو گرم     ج- گرم     د- سانتی متر مکعب",
+      "sourceQuestionSha256": "a1fc7ffb08dcca4657910a21a82bf70948791cff918f25ddc4acf52b0c9190da",
+      "formatKeptInSourceFigure": false,
+      "sourceFigureText": "",
+      "sourceCharacterInventoryPreserved": true
+    },
+    "g7_ch02_mcq02": {
+      "text": "۲- جرم مهران ۴۸ کیلو گرم است . وزن او تقریباً چند نیوتون است ؟\nالف– ۴۸     ب- ۴/۸     ج- ۴۸۰     د- ۴۸۰۰",
+      "sourceQuestionSha256": "9e865e888babab9f78be450f17a1043884c3103be1e6122a68a44a0a87baa884",
+      "formatKeptInSourceFigure": false,
+      "sourceFigureText": "",
+      "sourceCharacterInventoryPreserved": true
+    },
+    "g7_ch02_mcq03": {
+      "text": "۳- یک جسم ۱۰۰ گرمی را به یک نیروسنج ( شکل مقابل ) آویزان کرده ایم . نیروسنج وزن آن را چند نیوتون نشان می دهد ؟\nالف- ۱     ب- ۱۰     ج- ۱۰۰     د- ۱۰۰۰",
+      "sourceQuestionSha256": "5c2985592fb24a3bc593367dab536822c4f42a66129109f4edd71ae45f31a329",
+      "formatKeptInSourceFigure": false,
+      "sourceFigureText": "100 گرم",
+      "sourceCharacterInventoryPreserved": true
+    },
+    "g7_ch02_mcq04": {
+      "text": "۴- در یک ظرف یک لیتری ، چند سانتی متر مکعب آب قرار می گیرد تا کاملاً پر شود ؟\nالف– ۱۰۰۰۰     ب- ۱۰۰     ج- ۱۰     د- ۱۰۰۰",
+      "sourceQuestionSha256": "ff03f2e925d022c5c0088c180bec1bcb3021c2ef2e5b072939d89431aa59c64c",
+      "formatKeptInSourceFigure": false,
+      "sourceFigureText": "",
+      "sourceCharacterInventoryPreserved": true
+    },
+    "g7_ch02_mcq05": {
+      "text": "۵- دقت اندازه گیری یک ترازوی دیجیتالی ( شکل مقابل ) ۰/۱ گرم است .\nکدام یک از موارد زیر نمی تواند اندازه گیری این ترازو باشد ؟\nالف- ۴ کیلوگرم     ب- ۲/۳۶ گرم     ج- ۲۲۵/۸ گرم     د- ۵/۵ کیلوگرم",
+      "sourceQuestionSha256": "9051cad802644bfb3ddac72e0647e387f4366dd8c6ebe61414874fd45de76bff",
+      "formatKeptInSourceFigure": false,
+      "sourceFigureText": "",
+      "sourceCharacterInventoryPreserved": true
+    },
+    "g7_ch03_q02": {
+      "text": "۲- دو کاربرد سنگ مرمر را بنویسید .\n۱- ........................................     ۲- ........................................",
+      "sourceQuestionSha256": "f5d321712fedd1ee2dec0270b512c93e7087210d385648e22161fda050937149",
+      "formatKeptInSourceFigure": false,
+      "sourceFigureText": "",
+      "sourceCharacterInventoryPreserved": true
+    },
+    "g7_ch03_q03": {
+      "text": "۳- کشور ما جزء کشور های دارای منابع نفت وگاز فراوان است .\n۶ مورد از کاربرد های نفت خام را بنویسید .",
+      "sourceQuestionSha256": "8996c9e1185f49bbf16128337c056fea23839dcae9a466e358065873439c8915",
+      "formatKeptInSourceFigure": false,
+      "sourceFigureText": "",
+      "sourceCharacterInventoryPreserved": true
+    },
+    "g7_ch03_q04": {
+      "text": "۴- چهار مورد از کاربرد های نمک خوراکی را بنویسید .",
+      "sourceQuestionSha256": "2064023d41ef1ec57a77fe53c96d73b549b3314f1470ace3dbbfa0d129a78a3a",
+      "formatKeptInSourceFigure": false,
+      "sourceFigureText": "",
+      "sourceCharacterInventoryPreserved": true
+    },
+    "g7_ch03_q05": {
+      "text": "۵- آزمایشی طرح کنید، که نشان دهد در هوای اتاق بخار آب وجود دارد .",
+      "sourceQuestionSha256": "7f2b51cc6b2a35b3e71c5d40b03950c3928b8a99706cff8fae5fee5fa873ebd2",
+      "formatKeptInSourceFigure": false,
+      "sourceFigureText": "",
+      "sourceCharacterInventoryPreserved": true
+    },
+    "g7_ch03_q06": {
+      "text": "۶- ویژگی های فلز ها را بنویسید . ( ۴ مورد )",
+      "sourceQuestionSha256": "7262095f73902dcd31e0fa8ae4fb7196785fbdecc82a1183daf73db669e44381",
+      "formatKeptInSourceFigure": false,
+      "sourceFigureText": "",
+      "sourceCharacterInventoryPreserved": true
+    },
+    "g7_ch03_q07": {
+      "text": "۷- ویژگی های نافلز ها را بنویسید . ( ۴ مورد )",
+      "sourceQuestionSha256": "563bf7565f6e3b0c0eb0f4d4c8fcaea7f3bd17c6eb7361828637be4c4930aa16",
+      "formatKeptInSourceFigure": false,
+      "sourceFigureText": "",
+      "sourceCharacterInventoryPreserved": true
+    },
+    "g7_ch03_q09": {
+      "text": "۹- عنصر های زیر را به دو گروه فلز و نا فلز طبقه بندی کنید .\n(( نیتروژن ، آلومینیم ، مس ، گوگرد ، آهن ، اکسیژن ، طلا ، نقره ، کربن ))\nعنصر\n۱- فلز : ......................................................................................................\n۲- نا فلز : ......................................................................................................",
+      "sourceQuestionSha256": "991124f887e4f0364f3000f02baf130b7e335b7e22d19193ed1103dbd24e32fa",
+      "formatKeptInSourceFigure": false,
+      "sourceFigureText": "",
+      "sourceCharacterInventoryPreserved": true
+    },
+    "g7_ch03_q11": {
+      "text": "۱۱- ذره های سازنده مواد از اتم و یا از مولکول می باشند . مواد زیر را به این دو گروه طبقه بندی کنید .\n)( کربن دی اکسید– نقره– آلومینیم– کلر– گوگرد– آهن– آب- متان- مس– جیوه- اکسیژن– طلا– نیتروژن )(\nذره های سازنده مواد\nاز اتم : .................................................................\nاز مولکول : .................................................................",
+      "sourceQuestionSha256": "ee83ccc59836f3efd0a42ba7d4cb7067076f054f6354e6bbdd19756d96704491",
+      "formatKeptInSourceFigure": false,
+      "sourceFigureText": "",
+      "sourceCharacterInventoryPreserved": true
+    },
+    "g7_ch03_q12": {
+      "text": "۱۲- هریک از شکل ها نشان دهنده ساختار اتمی کدام یک از مواد داخل پرانتز است ؟ ( عنصر فلز- عنصر نافلز– ترکیب )",
+      "sourceQuestionSha256": "0bf8ca57829d9ca26bd8028a2d5df190f3adb8eb7f163e0d10151de2105c76b5",
+      "formatKeptInSourceFigure": false,
+      "sourceFigureText": "",
+      "sourceCharacterInventoryPreserved": true
+    },
+    "g7_ch03_q13": {
+      "text": "۱۳- به نظر شما موادی که مصرف می کنیم یا با آن ها سر و کار داریم ، عنصرند یا ترکیب ؟ دلیل خود را بنویسید .",
+      "sourceQuestionSha256": "d4e6b8de7bd3a68eabffdcf95c326dcfa765fa388fc92689de6b87d7b5fee299",
+      "formatKeptInSourceFigure": false,
+      "sourceFigureText": "",
+      "sourceCharacterInventoryPreserved": true
+    },
+    "g7_ch03_q14": {
+      "text": "۱۴- تعریف کنید ؛\nالف– عنصر : .................................................................\nب- ترکیب : .................................................................",
+      "sourceQuestionSha256": "359695641c84f33224780f3022bb72bf0809d524535c9a8a5421bf94c0efb00a",
+      "formatKeptInSourceFigure": false,
+      "sourceFigureText": "",
+      "sourceCharacterInventoryPreserved": true
+    },
+    "g7_ch03_q15": {
+      "text": "۱۵- ذره های سازنده کربن دی اکسید در زیر نمایش داده شده است . شما جاهای خالی را تکمیل کنید .",
+      "sourceQuestionSha256": "5ca09bd00967ddf655d612cd36ff4e07148465eb5320f9dab3ce2878c1a1957f",
+      "formatKeptInSourceFigure": true,
+      "sourceFigureText": "",
+      "sourceCharacterInventoryPreserved": true
+    },
+    "g7_ch03_q16": {
+      "text": "۱۶- ویژگی های کلی اتم ها را بنویسید .",
+      "sourceQuestionSha256": "ad50e3a26920e763e3961b7c343b43d544e02d44650c7445f9a0f189baf59d1c",
+      "formatKeptInSourceFigure": false,
+      "sourceFigureText": "",
+      "sourceCharacterInventoryPreserved": true
+    },
+    "g7_ch03_q18": {
+      "text": "۱۸– الف- آزمایشی طرح کنید که با انجام آن بتوانید حجم ۵ گرم شکر ،آب و هوا را با هم مقایسه کنید .\nب- آیا از این آزمایش می توان نتیجه گرفت که حجم ۵ گرم از این سه ماده به ترتیب زیر است ؟",
+      "sourceQuestionSha256": "30a3bef68d4d4a4848baa64c48dd6ae1b43635700b94d9ff1b7eb9df8c15b21c",
+      "formatKeptInSourceFigure": true,
+      "sourceFigureText": "شکر < آب < هوا",
+      "sourceCharacterInventoryPreserved": true
+    },
+    "g7_ch03_q19": {
+      "text": "۱۹- آزمایشی طراحی کنید که نشان دهد می توان یک گاز را به راحتی متراکم ( فشرده ) کرد ولی جامد و مایع را نمی توان به آسانی و به مقدار زیاد متراکم کرد .",
+      "sourceQuestionSha256": "06980e9aab0c4a539f68373f127ae1f9aa2c915455f9915f09788b973d754f1b",
+      "formatKeptInSourceFigure": false,
+      "sourceFigureText": "",
+      "sourceCharacterInventoryPreserved": true
+    },
+    "g7_ch03_q20": {
+      "text": "۲۰- کدام یک از این مواد را به آسانی می توان متراکم ( فشرده ) کرد ؟ دلیل انتخاب خود را بنویسید .\nالف– سنگ     ب- هوا     ج- آب\nدلیل : ......................................................................................................",
+      "sourceQuestionSha256": "fb0f8fb7b3eecaf538273722b9836db3c033e5a6fb0e71918b3ad5dc9b2299f1",
+      "formatKeptInSourceFigure": false,
+      "sourceFigureText": "",
+      "sourceCharacterInventoryPreserved": true
+    },
+    "g7_ch03_q21": {
+      "text": "۲۱- نمودار زیر ، میزان افزایش حجم مقدار یکسانی از مواد زیر را در اثر گرمای یکسان ، نشان می دهد .\nالف- هر کدام از آن ها در زیر ستون مربوطه بنویسید . ( اکسیژن– شیشه– مس– آب )\nب- آیا از این نمودار می توان نتیجه گرفت که اگر مقدار یکسانی از مواد را گرمای یکسان بدهیم ، میزان افزایش حجم آن ها به ترتیب زیر است : .................................................................",
+      "sourceQuestionSha256": "eddb628f06c616d7531bf51d4c1ad52f45acc0fe70b346234923078298909230",
+      "formatKeptInSourceFigure": true,
+      "sourceFigureText": "میزان افزایش حجم جامدات نافلز > جامدات فلز > مایعات > گازها",
+      "sourceCharacterInventoryPreserved": true
+    },
+    "g7_ch03_q22": {
+      "text": "۲۲- شکل مقابل را تفسیر کنید :",
+      "sourceQuestionSha256": "434e6979698000f7f42d5b3fedc18983bc8e77be58bc0d5b9ce741b784fef43b",
+      "formatKeptInSourceFigure": false,
+      "sourceFigureText": "مخلوط آب و یخ آب داغ",
+      "sourceCharacterInventoryPreserved": true
+    },
+    "g7_ch03_q23": {
+      "text": "۲۳- در متن زیر دو غلط علمی وجود دارد . زیر آن ها خط کشیده و صحیح هر کدام را بالای آن بنویسید .\n« وقتی یخ گرم می شود ، انرژی مولکول های یخ کاهش می یابد و جنبش آن ها کمتر می شود . اگر این عمل را ادامه دهیم ، یخ به آهستگی ذوب و به مایع تبدیل می شود . »",
+      "sourceQuestionSha256": "12f19ead360d92afdce7f3c4f2ed930d32d78e72c2005871c0ba583de390668e",
+      "formatKeptInSourceFigure": false,
+      "sourceFigureText": "",
+      "sourceCharacterInventoryPreserved": true
+    },
+    "g7_ch03_q24": {
+      "text": "۲۴– کدام شکل وضعیت مولکول های آب را در حالت گاز ( بخار ) نشان می دهد ؟ دلیل انتخاب خود را بنویسید .\nشکل : ........................................\nدلیل : ......................................................................................................",
+      "sourceQuestionSha256": "45669cce3320b282eb4707cd9d73acb6bbc1bdfcf7b86460defe68660896d022",
+      "formatKeptInSourceFigure": false,
+      "sourceFigureText": "",
+      "sourceCharacterInventoryPreserved": true
+    },
+    "g7_ch03_mcq01": {
+      "text": "۱- کدام ماده در طبیعت به هر سه حالت جامد و مایع و گاز وجود دارد ؟\nالف- هوا     ب- آب     ج- سنگ     د- چوب",
+      "sourceQuestionSha256": "2ef107d5e2094af7e83f3746d9771f3784a907aaf339d18a48b1139c2e583189",
+      "formatKeptInSourceFigure": false,
+      "sourceFigureText": "",
+      "sourceCharacterInventoryPreserved": true
+    },
+    "g7_ch03_mcq02": {
+      "text": "۲- همه مواد موجود در عالم هستی تقریباً از چند نوع اتم ( عنصر ) ساخته شده اند ؟\nالف- میلیارد ها     ب- ۱۰۰۰     ج- ۸۰     د- ۹۰",
+      "sourceQuestionSha256": "d85f1a7b38bab85e3e8793ce6733360e56cacc16b1dabebb738c759b360b0483",
+      "formatKeptInSourceFigure": false,
+      "sourceFigureText": "",
+      "sourceCharacterInventoryPreserved": true
+    },
+    "g7_ch03_mcq03": {
+      "text": "۳- از آزمایش مربوط به گلوله های خمیری که درون آن ها مواد مختلف قرار دادید و با انجام آزمایش های گوناگون به نوع مواد موجود در آن ها پی بردید ( بدون اینکه درون آن ها را ببینید ) می توان نتیجه گرفت که :\nالف- اتم ها کنار هم قرار می گیرند و مواد را می سازند . □\nب- هرماده از دو یا چند نوع اتم تشکیل شده است . □\nج- دانشمندان با مشاهده غیر مستقیم ، اتم ها را بررسی و خواص آن ها را کشف کرده اند . □\nد- همه موارد □",
+      "sourceQuestionSha256": "231ac838651f8793056abae8712124d024fb18ef98fada564d4fa8bab8068e6a",
+      "formatKeptInSourceFigure": false,
+      "sourceFigureText": "",
+      "sourceCharacterInventoryPreserved": true
+    },
+    "g7_ch03_mcq04": {
+      "text": "۴- کدام عبارت ، صحیح است ؟\nالف– جیوه فلزی مایع و سمی است . (     )\nب- هر مولکول آب ۳ اتمی است . (     )\nج- گوگرد ، نافلز جامد و زرد رنگ و هر مولکول آن ۸ اتمی است .\nد- همه موارد صحیح است .",
+      "sourceQuestionSha256": "55dab1e907c97dab315c99afc04c33018fb250638a4120d076897a827d74929b",
+      "formatKeptInSourceFigure": false,
+      "sourceFigureText": "",
+      "sourceCharacterInventoryPreserved": true
+    },
+    "g7_ch03_mcq05": {
+      "text": "۵- کدام یک از موارد زیر ، از ویژگی های کلی اتم ها می باشد ؟\nالف– اتم ها کروی شکل اند ، هسته دارند و حجم متفاوتی دارند .\nب- هسته اتم از پروتون و نوترون تشکیل شده است .\nج- در حالت عادی ، تعداد الکترون ها و پروتون ها با هم برابرند .\nد- همه موارد صحیح است .",
+      "sourceQuestionSha256": "b46ef4c67f0e57eb6bc8db085a67c70f6b8748e7de4c83ecabca2a3617cf07ce",
+      "formatKeptInSourceFigure": false,
+      "sourceFigureText": "",
+      "sourceCharacterInventoryPreserved": true
+    },
+    "g7_ch03_mcq06": {
+      "text": "۶- هر اتم نیتروژن ۷ پروتون ( p ) دارد . تعداد الکترون های ( e ) آن چه تعداد است ؟\nالف- ۷     ب- ۲۱     ج- ۲۸     د- ۱۴",
+      "sourceQuestionSha256": "785aa43a6596deb145c92d695755b178e60b6c716112a91473b2e5216f3f6dbb",
+      "formatKeptInSourceFigure": false,
+      "sourceFigureText": "",
+      "sourceCharacterInventoryPreserved": true
+    },
+    "g7_ch03_mcq07": {
+      "text": "۷- در کپسول های گاز پیک نیک مقدر زیادی گاز را در یک حجم کمی قرار می دهند .\nعلت اینکه می توان گاز ها را زیاد متراکم ( فشرده ) کرد ، چیست ؟\nالف- گاز ها حجم معینی دارند .\nب- فاصله بین ذره های گاز زیاد است .\nج- فاصله بین ذره های گاز کم است .\nد- ربایش بین ذره های گاز زیاد است .",
+      "sourceQuestionSha256": "fddc07a498629139a7a3ce7bd7f055fc6bb1da663f351535abac91d8a2834c86",
+      "formatKeptInSourceFigure": false,
+      "sourceFigureText": "",
+      "sourceCharacterInventoryPreserved": true
+    },
+    "g7_ch01_q01": {
+      "text": "۱- از بین کلمات داخل پرانتز ، کلمه مناسب برای هر جمله را انتخاب کنید . ( آزمایش – کنجکاوی – فناوری – دانش – فرضیه سازی )\na – شما می توانید با یادگیری انواع ................ و پرورش مهارت های خود ، به حل مسائلی بپردازید که در زندگی با آن ها روبرو می شوید .\nb – با طراحی و انجام ................ و بررسی نتایج آن ، درستی یا نادرستی پیش بینی خود را می توان بررسی کرد .\nc – تبدیل علم به عمل ، ................ نام دارد .",
+      "sourceQuestionSha256": "75d2f78f0597419569ad58a42c7145e0b83fb583cee28a4a8807300d4660f9e1",
+      "formatKeptInSourceFigure": false,
+      "sourceFigureText": "",
+      "sourceCharacterInventoryPreserved": true
+    },
+    "g7_ch01_q05": {
+      "text": "۵- با استفاده از کلمات داخل پرانتز ، مراحل حل یک مسئله به روش علمی را به ترتیب کامل کنید . ( فرضیه سازی – نتیجه گیری – آزمایش )\n۱- مشاهده     ۲- طرح پرسش     ۳- ................     ۴- ................     ۵- ................",
+      "sourceQuestionSha256": "c51293b21d15b0be8794bdb698563e993e97b4b9d3b61c5627693141c0508f5a",
+      "formatKeptInSourceFigure": false,
+      "sourceFigureText": "",
+      "sourceCharacterInventoryPreserved": true
+    },
+    "g7_ch02_q01": {
+      "text": "۱- از بین کلمات داخل کادر ، کلمه مناسب برای هر جمله را انتخاب کنید .\n(( طول – ظرف های مدرج – جرم – ثانیه – فرضیه سازی – زمان – لیتر – اندازه گیری – حجم – کیلو گرم ))\na – مقدار ماده تشکیل دهنده جسم ، ................ نام دارد .\nb – فاصله بین دو نقطه و مسافتی را که یک جسم طی می کند ، با یکای ................ اندازه می گیریم .\nc – یک ................ برابر حجم ظرف مکعبی شکل به طول ، عرض و ارتفاع ۱۰ سانتی متر است . یعنی معادل ۱۰۰۰ سانتی متر مکعب است .\nd – از ................ برای اندازه گیری حجم مقدارهای کم مایع استفاده می کنیم .\ne – یک مرحله مهم برای جمع آوری اطلاعات ، ................ است که دقت آن به دقت شخص و دقت وسیله بستگی دارد .\nf – برای اینکه بتوانیم به سؤال « چه وقت » و « چه مدت » پاسخ دهیم ، ................ را اندازه می گیریم .\ng – یکای اندازه گیری زمان ، ................ است .",
+      "sourceQuestionSha256": "6e3ef865989cfd353df24da251575b6330c9c082ebff93aa5429ea75b606fbf1",
+      "formatKeptInSourceFigure": false,
+      "sourceFigureText": "",
+      "sourceCharacterInventoryPreserved": true
+    },
+    "g7_ch03_q01": {
+      "text": "۱- جملات زیر را با استفاده از کلمات داده شده کامل کنید ( فلز – ترکیب – مایع – اتم – گاز – مولکول – جامد – عنصر – نافلز )\na – به ذره های ریز سازنده مواد ، ................ می گویند .\nb – شکل خالصی از ماده که از یک نوع اتم ساخته شده است ، ................ نام دارد .\nc – مولکول ها از پیوند دو یا چند ................ به وجود می آیند .\nd – ذره های سازنده عنصر های ................ فقط اتم است .\ne – ماده ای که از دو یا چند نوع اتم متفاوت تشکیل شده است ، ................ نام دارد .\nf – ................ شکل مشخص و حجم معینی دارد ولی ................ به شکل ظرف در می آید و حجم معینی دارد\nدر حالی که ................ به شکل ظرف در می آید و حجم معینی ندارد .",
+      "sourceQuestionSha256": "ef3ff54f476ce546ab0faa1205996ad95e500d51b34af8dfef08090397ac8c7f",
+      "formatKeptInSourceFigure": false,
+      "sourceFigureText": "",
+      "sourceCharacterInventoryPreserved": true
+    },
+    "g7_ch03_q08": {
+      "text": "۸- کدام یک از ویژگی های زیر مربوط به فلز ها و کدام مربوط به نا فلز ها است ؟\na – رسانای الکتریکی هستند ( ................ )\nb – سطح براق ندارند ( ................ )\nc – اغلب آن ها شکننده اند ( ................ )\nd – چکش خوارند یعنی با ضربه به شکل های گوناگون در می آیند . ( ................ )\ne – اغلب در آب فرو می روند ( ................ )\nf – نارسانا ( عایق ) هستند ( ................ )\ng – سطح براق دارند ( ................ )\nh – اغلب روی آب شناور می مانند. ( ................ )",
+      "sourceQuestionSha256": "c9f29c345c8a90d25ac7176eeb22f3100bdb0e4d4e0d30b90f4abdc0c598eacb",
+      "formatKeptInSourceFigure": false,
+      "sourceFigureText": "",
+      "sourceCharacterInventoryPreserved": true
+    },
+    "g7_ch03_q10": {
+      "text": "۱۰- نام اتم های سازنده مولکول های زیر را بنویسید .\nالف- متان ( ................ و ................ )\nب- کربن دی اکسید ( ................ و ................ )\nج- آب ( ................ و ................ )",
+      "sourceQuestionSha256": "193cd6e03b7aaec783fdd71e0dcc40280ffc0ffb1cd7d20e51e8e818d6c4173b",
+      "formatKeptInSourceFigure": false,
+      "sourceFigureText": "",
+      "sourceCharacterInventoryPreserved": true
+    },
+    "g7_ch03_q17": {
+      "text": "۱۷- در مورد ساختار اتم به سؤالات زیر پاسخ دهید :\nالف – سه ذره سازنده اتم را نام ببرید . ۱- ................ ۲- ................ ۳- ................\nب – هسته اتم از کدام ذرات تشکیل شده است ؟ ................ و ................\nج – در یک اتم در حالت عادی ( خنثی ) ، تعداد ................ با تعداد ................ با هم برابر است .",
+      "sourceQuestionSha256": "ce58da67b083e28aa4ccdc26a4eb16833b0da11171477ffa3f4b98ad24c97e69",
+      "formatKeptInSourceFigure": false,
+      "sourceFigureText": "هسته اتم",
+      "sourceCharacterInventoryPreserved": true
+    }
+  }
+}

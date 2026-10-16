@@ -88,6 +88,7 @@ internal fun InlineFillBlanksQuestion(
 
     val template = step.clozeTemplate
     if (template != null) {
+        val document = remember(step.id, template) { ClozeDocument.parse(template, step.id) }
         val measurer = rememberTextMeasurer()
         val density = LocalDensity.current
         val style = MaterialTheme.typography.bodyLarge.copy(textDirection = TextDirection.Rtl, lineHeight = 58.sp)
@@ -100,13 +101,11 @@ internal fun InlineFillBlanksQuestion(
                 "blank$index" to InlineTextContent(Placeholder(width, 48.sp, PlaceholderVerticalAlign.Center)) { blank(index) }
             }
             val content = buildAnnotatedString {
-                var cursor = 0
-                Regex("""\{\{([0-9]+)\}\}""").findAll(template).forEach { match ->
-                    append(template.substring(cursor, match.range.first))
-                    appendInlineContent("blank${match.groupValues[1]}", "................")
-                    cursor = match.range.last + 1
+                document.tokens.forEach { token -> when (token) {
+                    is ClozeToken.Text -> append(token.value)
+                    is ClozeToken.Blank -> appendInlineContent("blank${token.index}", "................")
                 }
-                append(template.substring(cursor))
+                }
             }
             Text(content, Modifier.fillMaxWidth(), style = style, inlineContent = placeholders)
         }

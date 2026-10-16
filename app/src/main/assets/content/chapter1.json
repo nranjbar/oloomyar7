@@ -55,7 +55,9 @@
     "sourcePolicy": "verbatim_original_pdf",
     "sourceAnswerTextExtracted": "1 – : به ترتیب a - دانش b - آزمایش c – فناوری",
     "visualCaption": null,
-    "promptVisual": null
+    "promptVisual": null,
+    "readablePrompt": "۱- از بین کلمات داخل پرانتز ، کلمه مناسب برای هر جمله را انتخاب کنید . ( آزمایش – کنجکاوی – فناوری – دانش – فرضیه سازی )\na – شما می توانید با یادگیری انواع ................ و پرورش مهارت های خود ، به حل مسائلی بپردازید که در زندگی با آن ها روبرو می شوید .\nb – با طراحی و انجام ................ و بررسی نتایج آن ، درستی یا نادرستی پیش بینی خود را می توان بررسی کرد .\nc – تبدیل علم به عمل ، ................ نام دارد .",
+    "originalFigureVisual": null
   },
   {
     "id": "g7-ch01-main-002-1405",
@@ -109,7 +111,9 @@
     "sourcePolicy": "verbatim_original_pdf",
     "sourceAnswerTextExtracted": "2 - الف– صحیح    ب- صحیح    ج- غلط",
     "visualCaption": null,
-    "promptVisual": null
+    "promptVisual": null,
+    "readablePrompt": "۲- جملات صحیح را با ( ص ) و جملات غلط را با ( غ ) مشخص نمایید .\nالف– سؤال کردن و تلاش برای یافتن پاسخ ، از مراحل مهم در یادگیری علوم تجربی است . (                 )\nب- موفقیت و پیشرفت سریع علم و فناوری ، نتیجه فعالیت مشترک دانشمندان و متخصصان با یکدیگر است . (                 )\nج- فناوری ها فقط مفیدند و هیچ ضرری ندارند . (                 )",
+    "originalFigureVisual": null
   },
   {
     "id": "g7-ch01-main-003-1405",
@@ -167,7 +171,9 @@
     "sourcePolicy": "verbatim_original_pdf",
     "sourceAnswerTextExtracted": "3 - ، تفکر تجربه  و  به کار بستن مهارت های گوناگون در برخورد با مسائل زندگی",
     "visualCaption": null,
-    "promptVisual": null
+    "promptVisual": null,
+    "readablePrompt": "۳- متخصصان علوم تجربی با بهره گیری از چه چیز هایی ، برای مسائل مختلف زندگی ، پاسخ مناسبی پیدا می کنند ؟ ( سه مورد )",
+    "originalFigureVisual": null
   },
   {
     "id": "g7-ch01-main-004-1405",
@@ -239,7 +245,9 @@
     "sourcePolicy": "verbatim_original_pdf",
     "sourceAnswerTextExtracted": "4 – 1 - ج2 - ب",
     "visualCaption": null,
-    "promptVisual": null
+    "promptVisual": null,
+    "readablePrompt": "۴- متن زیر را به دقت بخوانید و به سؤالات مطرح شده پاسخ دهید .\nمعلم دانش آموزان را به آزمایشگاه برد . آن ها بر روی میز تعدادی ماده را مشاهده کردند ( نمک– براده آهن– جوهر نمک– اتانول– گوگرد– نشاسته- روغن مایع ) . معلم گفت می خواهیم ببینیم کدام در آب حل می شود و کدام حل نمی شود ، ولی در ابتدا هر گروه با مشورت یکدیگر جواب سؤال را بر روی کاغذ بنویسد .\n۱- این مرحله چه نام دارد ؟\nالف- نتیجه گیری □     ب- مشاهده □     ج- پیش بینی □\nسپس دانش آموزان با انجام آزمایش ، فهمیدند که نمک ، اتانول و جوهر نمک در آب حل می شوند ولی گوگرد ، براده آهن روغن مایع و نشاسته در آب حل نمی شوند .\n۲- این مرحله آخر چه نام دارد ؟\nالف- طرح پرسش □     ب- نتیجه گیری □     ج- پیش بینی □",
+    "originalFigureVisual": null
   },
   {
     "id": "g7-ch01-main-005-1405",
@@ -295,7 +303,9 @@
     "sourcePolicy": "verbatim_original_pdf",
     "sourceAnswerTextExtracted": "5 - : به ترتیب 3 - فرضیه سازی 4 - آزمایش     5 – نتیجه گیری",
     "visualCaption": null,
-    "promptVisual": null
+    "promptVisual": null,
+    "readablePrompt": "۵- با استفاده از کلمات داخل پرانتز ، مراحل حل یک مسئله به روش علمی را به ترتیب کامل کنید . ( فرضیه سازی – نتیجه گیری – آزمایش )\n۱- مشاهده     ۲- طرح پرسش     ۳- ................     ۴- ................     ۵- ................",
+    "originalFigureVisual": null
   },
   {
     "id": "g7-ch01-main-006-1405",
@@ -384,7 +394,9 @@
     "sourcePolicy": "verbatim_original_pdf",
     "sourceAnswerTextExtracted": "6 - تبدیل علم به عمل را فناوری گویند . مانند اختراع خودرو  ، قطار  ، کامپیوتر .... ، هواپیما و",
     "visualCaption": null,
-    "promptVisual": null
+    "promptVisual": null,
+    "readablePrompt": "۶- فناوری را تعریف کنید و سه مثال بزنید .",
+    "originalFigureVisual": null
   },
   {
     "id": "g7-ch01-main-007-1405",
@@ -467,7 +479,9 @@
     "answerVisualCaption": null,
     "sourcePolicy": "verbatim_original_pdf",
     "sourceAnswerTextExtracted": "7 - ، فایده : استفاده از اطالعات موجود در اینترنت...ذخیره سازی اطالعات  و\nضرر :  ضعیف شدن چشم ، کم تحرکی و تنبلی ... و",
-    "promptVisual": "g7_ch01_q07_source_prompt.png"
+    "promptVisual": "g7_ch01_q07_source_prompt.png",
+    "readablePrompt": "۷- اختراع رایانه ( کامپیوتر ) یک فناوری محسوب می شود . یک فایده و یک ضرر این فناوری را بنویسید .\nفایده : .................................................................\nضرر : .................................................................",
+    "originalFigureVisual": null
   },
   {
     "id": "g7-ch01-main-008-1405",
@@ -529,6 +543,8 @@
     "sourcePolicy": "verbatim_original_pdf",
     "sourceAnswerTextExtracted": "8 - فیزیک ، شیمی ، زیست شناسی ، زمین شناسی",
     "visualCaption": null,
-    "promptVisual": null
+    "promptVisual": null,
+    "readablePrompt": "۸- چهار شاخه علوم تجربی را نام ببرید . ......................................................................................................",
+    "originalFigureVisual": null
   }
 ]

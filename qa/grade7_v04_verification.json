@@ -1,0 +1,19 @@
+{
+  "version": "0.4.0-grade7-discovery",
+  "applicationId": "com.oloomyar.app.grade7",
+  "status": "PENDING_NATIVE_CI",
+  "contentValidation": "PASS",
+  "questions": 59,
+  "interactionGroups": 76,
+  "referencedImages": 157,
+  "note": "Readability and viewport assertions added after baseline design passed; final current-source execution pending.",
+  "readableQuestions": 59,
+  "baselineDesignRun": {
+    "runId": 38867998638,
+    "head": "52befb6b08b4d2743fb9cab07e60494d3819820d",
+    "unitTests": 29,
+    "nativeUiTests": 23,
+    "persistenceTests": 3,
+    "status": "PASS"
+  }
+}

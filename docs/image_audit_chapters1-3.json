@@ -8,7 +8,7 @@
       ],
       "status": "انجام شد؛ سه تصویر تازه متصل‌اند",
       "reason": "سه فایل تازهٔ a و b و c دریافت و با ترتیب راست، وسط، چپِ کتاب متصل شدند. تصویر کامل منبع نیز در دسترس است.",
-      "prompt": "با استفاده از تصویر سؤال اصلی به عنوان مرجع، فقط سه مدل ذره‌ای را با همان ترتیب و ساختار بازطراحی کن: سمت راست هفت مولکول دواتمی هم‌نوع، وسط آرایش فشرده و منظم اتم‌های هم‌نوع فلز، سمت چپ چهار مولکول آب مطابق مرجع. تعداد، رنگ و اتصال ذره‌ها را حفظ کن. پس‌زمینه سفید، خطوط واضح و خروجی حداقل ۱۶۰۰ پیکسل عرض. هیچ نام ماده، شماره، پاسخ یا نوشتهٔ جدیدی اضافه نکن. زیر هر شکل فقط خط جای خالی مطابق مرجع بماند."
+      "prompt": "با استفاده از تصویر سؤال اصلی به عنوان مرجع، فقط سه مدل ذره‌ای را با همان ترتیب و ساختار بازطراحی کن: سمت راست هفت مولکول دواتمی هم‌نوع، وسط آرایش فشرده و منظم اتم‌های هم‌نوع فلز، سمت چپ پنج مولکول آب مطابق مرجع. تعداد، رنگ و اتصال ذره‌ها را حفظ کن. پس‌زمینه سفید، خطوط واضح و خروجی حداقل ۱۶۰۰ پیکسل عرض. هیچ نام ماده، شماره، پاسخ یا نوشتهٔ جدیدی اضافه نکن. زیر هر شکل فقط خط جای خالی مطابق مرجع بماند."
     },
     {
       "ids": [
@@ -90,7 +90,10 @@
       "promptAsset": null,
       "promptSha256": null,
       "promptTextPreserved": true,
-      "promptTextSha256": null
+      "promptTextSha256": null,
+      "originalFigureAsset": null,
+      "originalFigureSha256": null,
+      "originalFigureSegments": []
     },
     {
       "id": "g7_ch01_q02",
@@ -128,7 +131,10 @@
       "promptAsset": null,
       "promptSha256": null,
       "promptTextPreserved": true,
-      "promptTextSha256": null
+      "promptTextSha256": null,
+      "originalFigureAsset": null,
+      "originalFigureSha256": null,
+      "originalFigureSegments": []
     },
     {
       "id": "g7_ch01_q05",
@@ -167,7 +173,10 @@
       "promptAsset": null,
       "promptSha256": null,
       "promptTextPreserved": true,
-      "promptTextSha256": null
+      "promptTextSha256": null,
+      "originalFigureAsset": null,
+      "originalFigureSha256": null,
+      "originalFigureSegments": []
     },
     {
       "id": "g7_ch02_q01",
@@ -206,7 +215,10 @@
       "promptAsset": null,
       "promptSha256": null,
       "promptTextPreserved": true,
-      "promptTextSha256": null
+      "promptTextSha256": null,
+      "originalFigureAsset": null,
+      "originalFigureSha256": null,
+      "originalFigureSegments": []
     },
     {
       "id": "g7_ch02_q02",
@@ -245,7 +257,10 @@
       "promptAsset": "g7_ch02_q02_source_prompt.png",
       "promptSha256": "9c1cb20a7f078875f780a18f5ed9ec31170abc8ee238971db41a82ea2949e2e3",
       "promptTextPreserved": true,
-      "promptTextSha256": "66546f963ede187fd332f59fe9590f38278ed5ea3d73979c32651368a4355a5d"
+      "promptTextSha256": "66546f963ede187fd332f59fe9590f38278ed5ea3d73979c32651368a4355a5d",
+      "originalFigureAsset": null,
+      "originalFigureSha256": null,
+      "originalFigureSegments": []
     },
     {
       "id": "g7_ch02_q04",
@@ -283,7 +298,10 @@
       "promptAsset": null,
       "promptSha256": null,
       "promptTextPreserved": true,
-      "promptTextSha256": null
+      "promptTextSha256": null,
+      "originalFigureAsset": null,
+      "originalFigureSha256": null,
+      "originalFigureSegments": []
     },
     {
       "id": "g7_ch02_q06",
@@ -321,7 +339,10 @@
       "promptAsset": null,
       "promptSha256": null,
       "promptTextPreserved": true,
-      "promptTextSha256": null
+      "promptTextSha256": null,
+      "originalFigureAsset": null,
+      "originalFigureSha256": null,
+      "originalFigureSegments": []
     },
     {
       "id": "g7_ch02_q07",
@@ -359,7 +380,10 @@
       "promptAsset": "g7_ch02_q07_source_prompt.png",
       "promptSha256": "98f77be6b50c12332a59375dd955aa7f06f5aa462a30390d0b94a1b21b36a4df",
       "promptTextPreserved": true,
-      "promptTextSha256": "22478640a59e80182b5f0ff707e31b32e8bed9d8d63ecd7bc8a2b99869c3a752"
+      "promptTextSha256": "22478640a59e80182b5f0ff707e31b32e8bed9d8d63ecd7bc8a2b99869c3a752",
+      "originalFigureAsset": null,
+      "originalFigureSha256": null,
+      "originalFigureSegments": []
     },
     {
       "id": "g7_ch02_q08",
@@ -397,7 +421,10 @@
       "promptAsset": null,
       "promptSha256": null,
       "promptTextPreserved": true,
-      "promptTextSha256": null
+      "promptTextSha256": null,
+      "originalFigureAsset": null,
+      "originalFigureSha256": null,
+      "originalFigureSegments": []
     },
     {
       "id": "g7_ch02_q09",
@@ -445,7 +472,10 @@
       "promptAsset": "g7_ch02_q09_source_prompt.png",
       "promptSha256": "2af746b6c9fcf9c771473275bff10a073e07090924584ab985cb4bc18572cad2",
       "promptTextPreserved": true,
-      "promptTextSha256": "6efcdb2fd7e2ebc07858013ab10a10edbf66faf3f405ecdd2bdd1b1fe5254324"
+      "promptTextSha256": "6efcdb2fd7e2ebc07858013ab10a10edbf66faf3f405ecdd2bdd1b1fe5254324",
+      "originalFigureAsset": null,
+      "originalFigureSha256": null,
+      "originalFigureSegments": []
     },
     {
       "id": "g7_ch02_q10",
@@ -484,7 +514,10 @@
       "promptAsset": null,
       "promptSha256": null,
       "promptTextPreserved": true,
-      "promptTextSha256": null
+      "promptTextSha256": null,
+      "originalFigureAsset": null,
+      "originalFigureSha256": null,
+      "originalFigureSegments": []
     },
     {
       "id": "g7_ch02_q11",
@@ -524,7 +557,10 @@
       "promptAsset": "g7_ch02_q11_source_prompt.png",
       "promptSha256": "c9558200582002e33714de0e4951302d3795cf67c1fd920f5d10daa845f51dbb",
       "promptTextPreserved": true,
-      "promptTextSha256": "966dba7faf14c022a34f1976f5bb116e97c0eccae3624b472efd56b4b3213cb8"
+      "promptTextSha256": "966dba7faf14c022a34f1976f5bb116e97c0eccae3624b472efd56b4b3213cb8",
+      "originalFigureAsset": null,
+      "originalFigureSha256": null,
+      "originalFigureSegments": []
     },
     {
       "id": "g7_ch02_q12",
@@ -562,7 +598,10 @@
       "promptAsset": "g7_ch02_q12_source_prompt.png",
       "promptSha256": "9d6c501743e53ebdf531aab6789a87e3b671c436be0dd5474e8ebfd73fffe435",
       "promptTextPreserved": true,
-      "promptTextSha256": "99d2d8cfa1be9081547d17562be45cff9d9bc604b13ed2dbdae4141aadf9df52"
+      "promptTextSha256": "99d2d8cfa1be9081547d17562be45cff9d9bc604b13ed2dbdae4141aadf9df52",
+      "originalFigureAsset": null,
+      "originalFigureSha256": null,
+      "originalFigureSegments": []
     },
     {
       "id": "g7_ch02_q14",
@@ -610,7 +649,10 @@
       "promptAsset": "g7_ch02_q14_source_prompt.png",
       "promptSha256": "23af4324b6b4fbf316b0fade1b34ab7d95af442dcce6266f779f01d5e22c1e8c",
       "promptTextPreserved": true,
-      "promptTextSha256": "4a0a63b08142b9c87bd1d4fae4a3a1fbdcb76e34eb07064a258351a4a8a00290"
+      "promptTextSha256": "4a0a63b08142b9c87bd1d4fae4a3a1fbdcb76e34eb07064a258351a4a8a00290",
+      "originalFigureAsset": null,
+      "originalFigureSha256": null,
+      "originalFigureSegments": []
     },
     {
       "id": "g7_ch02_q15",
@@ -649,7 +691,10 @@
       "promptAsset": "g7_ch02_q15_source_prompt.png",
       "promptSha256": "c6fb47fbd1229dad0cde86f403a3e6b81c9e6910f223ccb3c1722af78c9a4539",
       "promptTextPreserved": true,
-      "promptTextSha256": "2ec7cb5206f62039133043b9698b8a2e917308088eff3375a0642cf54be1f4ea"
+      "promptTextSha256": "2ec7cb5206f62039133043b9698b8a2e917308088eff3375a0642cf54be1f4ea",
+      "originalFigureAsset": null,
+      "originalFigureSha256": null,
+      "originalFigureSegments": []
     },
     {
       "id": "g7_ch02_mcq02",
@@ -687,7 +732,10 @@
       "promptAsset": null,
       "promptSha256": null,
       "promptTextPreserved": true,
-      "promptTextSha256": null
+      "promptTextSha256": null,
+      "originalFigureAsset": null,
+      "originalFigureSha256": null,
+      "originalFigureSegments": []
     },
     {
       "id": "g7_ch02_mcq03",
@@ -725,7 +773,10 @@
       "promptAsset": "g7_ch02_mcq03_source_prompt.png",
       "promptSha256": "5140262405a86222b16efe1400594a658f47bd51bf9701e3039e0a6c51989298",
       "promptTextPreserved": true,
-      "promptTextSha256": "b9a8327255cc4e6cb676526c7d011445afe4ea9d3fe42c4c7f8a0470efffed58"
+      "promptTextSha256": "b9a8327255cc4e6cb676526c7d011445afe4ea9d3fe42c4c7f8a0470efffed58",
+      "originalFigureAsset": null,
+      "originalFigureSha256": null,
+      "originalFigureSegments": []
     },
     {
       "id": "g7_ch02_mcq04",
@@ -763,7 +814,10 @@
       "promptAsset": "g7_ch02_mcq04_source_prompt.png",
       "promptSha256": "9f1b32eedff4400748ec31c283dbe9616c66f97169f0b2273f3d75182b5a112e",
       "promptTextPreserved": true,
-      "promptTextSha256": "491bb229c5db536ce782f61b217a799467931d4501486ae6b5b926ac880c40aa"
+      "promptTextSha256": "491bb229c5db536ce782f61b217a799467931d4501486ae6b5b926ac880c40aa",
+      "originalFigureAsset": null,
+      "originalFigureSha256": null,
+      "originalFigureSegments": []
     },
     {
       "id": "g7_ch02_mcq05",
@@ -801,7 +855,10 @@
       "promptAsset": "g7_ch02_mcq05_source_prompt.png",
       "promptSha256": "771486959cbc237677baef8bfebc63c109085223e03a64d53911fe06583f13eb",
       "promptTextPreserved": true,
-      "promptTextSha256": "ffa6c9a0aa3a0a630446ce682cd1c753b847f9d4aea48f70964c1af39f213a90"
+      "promptTextSha256": "ffa6c9a0aa3a0a630446ce682cd1c753b847f9d4aea48f70964c1af39f213a90",
+      "originalFigureAsset": null,
+      "originalFigureSha256": null,
+      "originalFigureSegments": []
     },
     {
       "id": "g7_ch03_q01",
@@ -839,7 +896,10 @@
       "promptAsset": null,
       "promptSha256": null,
       "promptTextPreserved": true,
-      "promptTextSha256": null
+      "promptTextSha256": null,
+      "originalFigureAsset": null,
+      "originalFigureSha256": null,
+      "originalFigureSegments": []
     },
     {
       "id": "g7_ch03_q08",
@@ -877,7 +937,10 @@
       "promptAsset": null,
       "promptSha256": null,
       "promptTextPreserved": true,
-      "promptTextSha256": null
+      "promptTextSha256": null,
+      "originalFigureAsset": null,
+      "originalFigureSha256": null,
+      "originalFigureSegments": []
     },
     {
       "id": "g7_ch03_q09",
@@ -915,7 +978,10 @@
       "promptAsset": null,
       "promptSha256": null,
       "promptTextPreserved": true,
-      "promptTextSha256": null
+      "promptTextSha256": null,
+      "originalFigureAsset": "g7_ch03_q09_source_question.png",
+      "originalFigureSha256": "991124f887e4f0364f3000f02baf130b7e335b7e22d19193ed1103dbd24e32fa",
+      "originalFigureSegments": []
     },
     {
       "id": "g7_ch03_q11",
@@ -953,7 +1019,10 @@
       "promptAsset": null,
       "promptSha256": null,
       "promptTextPreserved": true,
-      "promptTextSha256": null
+      "promptTextSha256": null,
+      "originalFigureAsset": "g7_ch03_q11_source_question.png",
+      "originalFigureSha256": "ee83ccc59836f3efd0a42ba7d4cb7067076f054f6354e6bbdd19756d96704491",
+      "originalFigureSegments": []
     },
     {
       "id": "g7_ch03_q12",
@@ -991,7 +1060,10 @@
       "promptAsset": "g7_ch03_q12_source_prompt.png",
       "promptSha256": "824484fefc50f5fb49ffe3e73e9afc9bbf30a7d2ad472dbebe25b1e43ac9e4b7",
       "promptTextPreserved": true,
-      "promptTextSha256": "0f15ee285a71eb0ba36a6bfc8a28b457150b2f6d89fe27b4178f79497a93a3f6"
+      "promptTextSha256": "0f15ee285a71eb0ba36a6bfc8a28b457150b2f6d89fe27b4178f79497a93a3f6",
+      "originalFigureAsset": null,
+      "originalFigureSha256": null,
+      "originalFigureSegments": []
     },
     {
       "id": "g7_ch03_q15",
@@ -1031,7 +1103,10 @@
       "promptAsset": "g7_ch03_q15_source_prompt.png",
       "promptSha256": "fe376fc4745eeac9d7844689edc1fde08d6df6176da44841eaf0b350d05aa0a1",
       "promptTextPreserved": true,
-      "promptTextSha256": "9cf2ce723139a3ff21f01346480bc3bca063d811453ac7327c7cf84c82f7b99e"
+      "promptTextSha256": "9cf2ce723139a3ff21f01346480bc3bca063d811453ac7327c7cf84c82f7b99e",
+      "originalFigureAsset": null,
+      "originalFigureSha256": null,
+      "originalFigureSegments": []
     },
     {
       "id": "g7_ch03_q17",
@@ -1069,7 +1144,10 @@
       "promptAsset": "g7_ch03_q17_source_prompt.png",
       "promptSha256": "9889e406967127011a5321d4660baaf74b4ad6e8d7e61e2277a5dfa630ea717b",
       "promptTextPreserved": true,
-      "promptTextSha256": "4d1d25c387e89cec743253b1ae5a684db41e5d6ad9bd74a7e6f26c53260c5c87"
+      "promptTextSha256": "4d1d25c387e89cec743253b1ae5a684db41e5d6ad9bd74a7e6f26c53260c5c87",
+      "originalFigureAsset": null,
+      "originalFigureSha256": null,
+      "originalFigureSegments": []
     },
     {
       "id": "g7_ch03_q18",
@@ -1116,7 +1194,20 @@
       "promptAsset": null,
       "promptSha256": null,
       "promptTextPreserved": true,
-      "promptTextSha256": null
+      "promptTextSha256": null,
+      "originalFigureAsset": "g7_ch03_q18_source_figure.png",
+      "originalFigureSha256": "71ceffb30cf1860427a4c584e6342506eb8a976dd91167cb477dc413d2ab8aec",
+      "originalFigureSegments": [
+        {
+          "page": 9,
+          "bbox": [
+            114,
+            753,
+            246,
+            782
+          ]
+        }
+      ]
     },
     {
       "id": "g7_ch03_q21",
@@ -1154,7 +1245,29 @@
       "promptAsset": null,
       "promptSha256": null,
       "promptTextPreserved": true,
-      "promptTextSha256": null
+      "promptTextSha256": null,
+      "originalFigureAsset": "g7_ch03_q21_source_figure.png",
+      "originalFigureSha256": "ef6cf34bbcaf0e1825863a94c8b345d0fbc33b7c96033e5396c752fc7e1a41b7",
+      "originalFigureSegments": [
+        {
+          "page": 10,
+          "bbox": [
+            0,
+            367,
+            267,
+            505
+          ]
+        },
+        {
+          "page": 10,
+          "bbox": [
+            265,
+            511,
+            570,
+            534
+          ]
+        }
+      ]
     },
     {
       "id": "g7_ch03_q22",
@@ -1192,7 +1305,20 @@
       "promptAsset": null,
       "promptSha256": null,
       "promptTextPreserved": true,
-      "promptTextSha256": null
+      "promptTextSha256": null,
+      "originalFigureAsset": "g7_ch03_q22_source_figure.png",
+      "originalFigureSha256": "fd08f618745af86c9769989eda1b7da398ef5bb3b4bef83a92cc58c4776a61a2",
+      "originalFigureSegments": [
+        {
+          "page": 10,
+          "bbox": [
+            34,
+            526,
+            266,
+            685
+          ]
+        }
+      ]
     },
     {
       "id": "g7_ch03_q24",
@@ -1231,7 +1357,20 @@
       "promptAsset": null,
       "promptSha256": null,
       "promptTextPreserved": true,
-      "promptTextSha256": null
+      "promptTextSha256": null,
+      "originalFigureAsset": "g7_ch03_q24_source_figure.png",
+      "originalFigureSha256": "6c0c1f296e5be68b0721bcb6df006fd1b16dc17b4488d0d055a2bd0004f87d88",
+      "originalFigureSegments": [
+        {
+          "page": 11,
+          "bbox": [
+            32.150001525878906,
+            54.899986267089844,
+            293.4599914550781,
+            137.29998779296875
+          ]
+        }
+      ]
     },
     {
       "id": "g7_ch03_mcq02",
@@ -1269,7 +1408,10 @@
       "promptAsset": null,
       "promptSha256": null,
       "promptTextPreserved": true,
-      "promptTextSha256": null
+      "promptTextSha256": null,
+      "originalFigureAsset": null,
+      "originalFigureSha256": null,
+      "originalFigureSegments": []
     },
     {
       "id": "g7_ch03_mcq06",
@@ -1307,7 +1449,10 @@
       "promptAsset": null,
       "promptSha256": null,
       "promptTextPreserved": true,
-      "promptTextSha256": null
+      "promptTextSha256": null,
+      "originalFigureAsset": null,
+      "originalFigureSha256": null,
+      "originalFigureSegments": []
     }
   ],
   "answerImagesPrepared": true

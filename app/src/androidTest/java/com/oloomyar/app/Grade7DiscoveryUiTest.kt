@@ -10,6 +10,9 @@ import android.provider.MediaStore
 import android.os.ParcelFileDescriptor
 import androidx.compose.ui.test.*
 import androidx.compose.ui.test.junit4.createComposeRule
+import androidx.compose.ui.semantics.SemanticsActions
+import androidx.compose.ui.text.TextLayoutResult
+import androidx.compose.ui.unit.sp
 import androidx.test.core.app.ActivityScenario
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
@@ -35,6 +38,8 @@ class Grade7DiscoveryUiTest {
         FileInputStream(p.fileDescriptor).bufferedReader().use { it.readText() }
     }
     private fun capture(name: String) {
+        compose.waitForIdle()
+        InstrumentationRegistry.getInstrumentation().uiAutomation.waitForIdle(100,5000)
         val values = ContentValues().apply { put(MediaStore.Images.Media.DISPLAY_NAME,"$name.png");put(MediaStore.Images.Media.MIME_TYPE,"image/png");put(MediaStore.Images.Media.RELATIVE_PATH,"Download/grade7-screenshots") }
         val uri = context.contentResolver.insert(MediaStore.Downloads.EXTERNAL_CONTENT_URI, values)!!
         val bmp = checkNotNull(InstrumentationRegistry.getInstrumentation().uiAutomation.takeScreenshot())
@@ -167,11 +172,37 @@ class Grade7DiscoveryUiTest {
         ActivityScenario.launch<Grade7Chapter3Activity>(intent).use {
             compose.onNodeWithTag("question-body").performScrollToIndex(2)
             compose.waitUntil(10000) { compose.onAllNodesWithText("بزرگ‌نمایی").fetchSemanticsNodes().size == 3 }
+            compose.onAllNodesWithText("بزرگ‌نمایی").fetchSemanticsNodes().forEachIndexed { index, _ -> compose.onAllNodesWithText("بزرگ‌نمایی")[index].assertIsDisplayed() }
             capture("discovery-10-new-particle-images")
             compose.onAllNodesWithText("بزرگ‌نمایی")[0].performClick();compose.onNodeWithText("بزرگ‌تر").assertIsDisplayed()
             compose.onNodeWithText("بستن").performClick();compose.onNodeWithTag("reveal-answer").assertIsNotEnabled()
         }
         val info = context.packageManager.getPackageInfo(BuildConfig.APPLICATION_ID,android.content.pm.PackageManager.GET_PERMISSIONS)
         assertTrue(info.requestedPermissions.orEmpty().none { it == "android.permission.INTERNET" || it == "com.google.android.gms.permission.AD_ID" })
+    }
+    @Test fun readingTextUsesSixteenSpAndScalesWithoutChangingTheBookWording() {
+        shell("wm size 1080x2160");shell("wm density 480")
+        LearningPreferences(context).textScale(1.5f)
+        val q = Grade7Chapter2Repository(context).questions.first { it.sourceNumber == 8 && it.section == "تمرین‌های اصلی" }
+        val intent = Intent(context,Grade7Chapter2Activity::class.java).putExtra("question_id",q.id)
+        ActivityScenario.launch<Grade7Chapter2Activity>(intent).use {
+            val prompt = compose.onNodeWithTag("readable-book-prompt").performScrollTo().assertIsDisplayed()
+            prompt.assertTextEquals(workbookBidi(checkNotNull(q.readablePrompt)))
+            val layouts = mutableListOf<TextLayoutResult>()
+            prompt.performSemanticsAction(SemanticsActions.GetTextLayoutResult) { it(layouts) }
+            assertEquals(16.sp,layouts.single().layoutInput.style.fontSize)
+            assertEquals(1.5f,layouts.single().layoutInput.density.fontScale,.01f)
+            compose.onNodeWithTag("reveal-answer").assertIsDisplayed().assertIsNotEnabled()
+            capture("discovery-14-readable-question-360-font150")
+            compose.onNodeWithText("مشاهدهٔ تصویر خود کتاب").performScrollTo().performClick()
+            compose.waitUntil(10000) { compose.onAllNodesWithContentDescription("صورت سؤال ۸ از کتاب").fetchSemanticsNodes().isNotEmpty() }
+            compose.onNodeWithContentDescription("صورت سؤال ۸ از کتاب").performScrollTo().assertIsDisplayed()
+        }
+        Grade7Catalog(context).chapters.flatMap { it.questions }.forEach { question ->
+            assertFalse(question.id,question.readablePrompt.isNullOrBlank())
+            question.steps.filter { it.clozeTemplate != null }.forEach { step ->
+                assertEquals(step.clozeTemplate,ClozeDocument.parse(step.clozeTemplate!!,step.id).toTemplate())
+            }
+        }
     }
 }

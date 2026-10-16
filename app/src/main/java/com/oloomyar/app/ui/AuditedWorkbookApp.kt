@@ -308,6 +308,7 @@ internal fun WorkbookQuestionVisuals(question: ChapterQuestion, description: Str
     val visuals = buildList {
         question.visual?.let { add(QuestionVisual(it, question.visualCaption)) }
         addAll(question.visuals)
+        if (isEmpty()) question.originalFigureVisual?.let { add(QuestionVisual(it)) }
     }
     if (question.relatedChapter == 3 && question.section == "تمرین‌های اصلی" && question.sourceNumber == 12 && visuals.size == 3) {
         Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(6.dp)) {

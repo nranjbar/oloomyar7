@@ -80,6 +80,8 @@
     "answerVisualCaption": null,
     "sourcePolicy": "verbatim_original_pdf",
     "sourceAnswerTextExtracted": "1 – : به ترتیب a - ا تمb - عنصر c – اتمd - فلز e – ترکیب\nf - به ترتیب :  جامد- مایع– گاز",
+    "readablePrompt": "۱- جملات زیر را با استفاده از کلمات داده شده کامل کنید ( فلز – ترکیب – مایع – اتم – گاز – مولکول – جامد – عنصر – نافلز )\na – به ذره های ریز سازنده مواد ، ................ می گویند .\nb – شکل خالصی از ماده که از یک نوع اتم ساخته شده است ، ................ نام دارد .\nc – مولکول ها از پیوند دو یا چند ................ به وجود می آیند .\nd – ذره های سازنده عنصر های ................ فقط اتم است .\ne – ماده ای که از دو یا چند نوع اتم متفاوت تشکیل شده است ، ................ نام دارد .\nf – ................ شکل مشخص و حجم معینی دارد ولی ................ به شکل ظرف در می آید و حجم معینی دارد\nدر حالی که ................ به شکل ظرف در می آید و حجم معینی ندارد .",
+    "originalFigureVisual": null,
     "visualCaption": null,
     "promptVisual": null
   },
@@ -136,6 +138,8 @@
     "answerVisualCaption": null,
     "sourcePolicy": "verbatim_original_pdf",
     "sourceAnswerTextExtracted": "2 - مجسمه سازی- نمای ساختمان ها",
+    "readablePrompt": "۲- دو کاربرد سنگ مرمر را بنویسید .\n۱- ........................................     ۲- ........................................",
+    "originalFigureVisual": null,
     "visualCaption": null,
     "promptVisual": null
   },
@@ -212,6 +216,8 @@
     "answerVisualCaption": null,
     "sourcePolicy": "verbatim_original_pdf",
     "sourceAnswerTextExtracted": "3 - سوخت خودرو ها– پالستیک سازی– بعضی حشره کش ها– بعضی دارو ها– الستیک سازی\n–\nتهیه پوشاک",
+    "readablePrompt": "۳- کشور ما جزء کشور های دارای منابع نفت وگاز فراوان است .\n۶ مورد از کاربرد های نفت خام را بنویسید .",
+    "originalFigureVisual": "g7_ch03_q03_source_figure.png",
     "visualCaption": null,
     "promptVisual": null
   },
@@ -280,6 +286,8 @@
     "answerVisualCaption": null,
     "sourcePolicy": "verbatim_original_pdf",
     "sourceAnswerTextExtracted": "4 – طعم دهنده غذاها- - )... تهیه شور ها ( خیار شور و– تهیه سرم نمکی– ذوب کردن برف و یخ\nدر زمستان",
+    "readablePrompt": "۴- چهار مورد از کاربرد های نمک خوراکی را بنویسید .",
+    "originalFigureVisual": null,
     "visualCaption": null,
     "promptVisual": null
   },
@@ -331,6 +339,8 @@
     "answerVisualCaption": null,
     "sourcePolicy": "verbatim_original_pdf",
     "sourceAnswerTextExtracted": "5 - یک پارچ فلزی پر از آب یخ را مدتی  دراتاق قرارمی دهیم  ، قطرات آب روی سطح بیرونی پارچ\n. جمع  می شوند . زیرا بخار های هوا به پارچ برخورد کرده و سرد شده و به قطرات آب تبدیل شده اند\n. پس هوای اتاق ، بخار آب دارد",
+    "readablePrompt": "۵- آزمایشی طرح کنید، که نشان دهد در هوای اتاق بخار آب وجود دارد .",
+    "originalFigureVisual": null,
     "visualCaption": null,
     "promptVisual": null
   },
@@ -403,6 +413,8 @@
     "answerVisualCaption": null,
     "sourcePolicy": "verbatim_original_pdf",
     "sourceAnswerTextExtracted": "6 – رسانای الکتریکی هستند - سطح براق دارند - چکش خوارند یعنی با ضربه به شکل های\n. گوناگون در می آیند- اغلب در آب فرو می روند",
+    "readablePrompt": "۶- ویژگی های فلز ها را بنویسید . ( ۴ مورد )",
+    "originalFigureVisual": null,
     "visualCaption": null,
     "promptVisual": null
   },
@@ -475,6 +487,8 @@
     "answerVisualCaption": null,
     "sourcePolicy": "verbatim_original_pdf",
     "sourceAnswerTextExtracted": "7 - نارسانا ( عایق ) هستند- سطح براق ندارند- اغلب آن ها شکننده اند\n- .اغلب روی آب شناور می مانند",
+    "readablePrompt": "۷- ویژگی های نافلز ها را بنویسید . ( ۴ مورد )",
+    "originalFigureVisual": null,
     "visualCaption": null,
     "promptVisual": null
   },
@@ -552,6 +566,8 @@
     "answerVisualCaption": null,
     "sourcePolicy": "verbatim_original_pdf",
     "sourceAnswerTextExtracted": "8 - به ترتیب :   فلز– نافلز– نا فلز– فلز– فلز– نافلز– فلز– نافلز\n–",
+    "readablePrompt": "۸- کدام یک از ویژگی های زیر مربوط به فلز ها و کدام مربوط به نا فلز ها است ؟\na – رسانای الکتریکی هستند ( ................ )\nb – سطح براق ندارند ( ................ )\nc – اغلب آن ها شکننده اند ( ................ )\nd – چکش خوارند یعنی با ضربه به شکل های گوناگون در می آیند . ( ................ )\ne – اغلب در آب فرو می روند ( ................ )\nf – نارسانا ( عایق ) هستند ( ................ )\ng – سطح براق دارند ( ................ )\nh – اغلب روی آب شناور می مانند. ( ................ )",
+    "originalFigureVisual": null,
     "visualCaption": null,
     "promptVisual": null
   },
@@ -631,6 +647,8 @@
     "answerVisualCaption": null,
     "sourcePolicy": "verbatim_original_pdf",
     "sourceAnswerTextExtracted": "9 فلز :    آلومینیم ، مس ،آهن ، طال ،  نقره\nنافلز :     نیتروژن ،  گوگرد ،  اکسیژن ،   کربن",
+    "readablePrompt": "۹- عنصر های زیر را به دو گروه فلز و نا فلز طبقه بندی کنید .\n(( نیتروژن ، آلومینیم ، مس ، گوگرد ، آهن ، اکسیژن ، طلا ، نقره ، کربن ))\nعنصر\n۱- فلز : ......................................................................................................\n۲- نا فلز : ......................................................................................................",
+    "originalFigureVisual": "g7_ch03_q09_source_question.png",
     "visualCaption": null,
     "promptVisual": null
   },
@@ -767,6 +785,8 @@
     "answerVisualCaption": null,
     "sourcePolicy": "verbatim_original_pdf",
     "sourceAnswerTextExtracted": "10 - الف– کربن و هیدروژن        ب- کربن و اکسیژن         ج– هیدروژن و اکسیژن",
+    "readablePrompt": "۱۰- نام اتم های سازنده مولکول های زیر را بنویسید .\nالف- متان ( ................ و ................ )\nب- کربن دی اکسید ( ................ و ................ )\nج- آب ( ................ و ................ )",
+    "originalFigureVisual": null,
     "visualCaption": null,
     "promptVisual": null
   },
@@ -862,6 +882,8 @@
     "answerVisualCaption": null,
     "sourcePolicy": "verbatim_original_pdf",
     "sourceAnswerTextExtracted": "11 - از اتم :   نقره– آلومینیم- آهن– مس– جیوه- طال\nاز مولکول :  کربن دی اکسید– کلر– گوگرد– آب– متان– اکسیژن– نیتروژن",
+    "readablePrompt": "۱۱- ذره های سازنده مواد از اتم و یا از مولکول می باشند . مواد زیر را به این دو گروه طبقه بندی کنید .\n)( کربن دی اکسید– نقره– آلومینیم– کلر– گوگرد– آهن– آب- متان- مس– جیوه- اکسیژن– طلا– نیتروژن )(\nذره های سازنده مواد\nاز اتم : .................................................................\nاز مولکول : .................................................................",
+    "originalFigureVisual": "g7_ch03_q11_source_question.png",
     "visualCaption": null,
     "promptVisual": null
   },
@@ -929,6 +951,8 @@
     "answerVisualCaption": null,
     "sourcePolicy": "verbatim_original_pdf",
     "sourceAnswerTextExtracted": "12 – به ترتیب از راست به چپ  :   عنصر نافلز- عنصر فلز- ترکیب",
+    "readablePrompt": "۱۲- هریک از شکل ها نشان دهنده ساختار اتمی کدام یک از مواد داخل پرانتز است ؟ ( عنصر فلز- عنصر نافلز– ترکیب )",
+    "originalFigureVisual": null,
     "visualCaption": null,
     "promptVisual": "g7_ch03_q12_source_prompt.png"
   },
@@ -980,6 +1004,8 @@
     "answerVisualCaption": null,
     "sourcePolicy": "verbatim_original_pdf",
     "sourceAnswerTextExtracted": "13 - بعضی از : آن ها عنصرند مانند طال ،  آلومینیم ،  اکسیژن و... و   بعضی هم ترکیب اند مانند\n.... آب ، نمک ، شکر و",
+    "readablePrompt": "۱۳- به نظر شما موادی که مصرف می کنیم یا با آن ها سر و کار داریم ، عنصرند یا ترکیب ؟ دلیل خود را بنویسید .",
+    "originalFigureVisual": null,
     "visualCaption": null,
     "promptVisual": null
   },
@@ -1033,6 +1059,8 @@
     "answerVisualCaption": null,
     "sourcePolicy": "verbatim_original_pdf",
     "sourceAnswerTextExtracted": "14 - الف– : عنصر ، شکل خالصی از ماده که از یک نوع اتم ساخته شده است\nب- : ترکیب ماده ای که از دو یا چند نوع اتم متفاوت تشکیل شده است",
+    "readablePrompt": "۱۴- تعریف کنید ؛\nالف– عنصر : .................................................................\nب- ترکیب : .................................................................",
+    "originalFigureVisual": null,
     "visualCaption": null,
     "promptVisual": null
   },
@@ -1115,6 +1143,8 @@
     "answerVisualCaption": null,
     "sourcePolicy": "verbatim_original_pdf",
     "sourceAnswerTextExtracted": "15 - از2 اتم اکسیژن و یک اتم کربن- هر اتم اکسیژن از8 الکترون و8 پروتون و8 نوترون-\nهر اتم کربن از6 الکترون و6 پروتون و6 نوترون\n–",
+    "readablePrompt": "۱۵- ذره های سازنده کربن دی اکسید در زیر نمایش داده شده است . شما جاهای خالی را تکمیل کنید .",
+    "originalFigureVisual": null,
     "visualCaption": null,
     "promptVisual": "g7_ch03_q15_source_prompt.png"
   },
@@ -1179,6 +1209,8 @@
     "answerVisualCaption": null,
     "sourcePolicy": "verbatim_original_pdf",
     "sourceAnswerTextExtracted": "16 . .اتم ها کروی شکل اند ،  هسته دارند و حجم متفاوتی دارند\n- . هسته اتم از پروتون و نوترون تشکیل شده است\n- . در حالت عادی ، تعداد الکترون ها و پروتون ها با هم برابرند",
+    "readablePrompt": "۱۶- ویژگی های کلی اتم ها را بنویسید .",
+    "originalFigureVisual": null,
     "visualCaption": null,
     "promptVisual": "g7_ch03_q16_source_prompt.png"
   },
@@ -1471,6 +1503,8 @@
     "answerVisualCaption": null,
     "sourcePolicy": "verbatim_original_pdf",
     "sourceAnswerTextExtracted": "17 - الف– ( الکترونe ) – (  پروتونp ) – (  نوترونn )\nب- پروتون و نوترون\nج– الکترون  با پروتون\n– الف -",
+    "readablePrompt": "۱۷- در مورد ساختار اتم به سؤالات زیر پاسخ دهید :\nالف – سه ذره سازنده اتم را نام ببرید . ۱- ................ ۲- ................ ۳- ................\nب – هسته اتم از کدام ذرات تشکیل شده است ؟ ................ و ................\nج – در یک اتم در حالت عادی ( خنثی ) ، تعداد ................ با تعداد ................ با هم برابر است .",
+    "originalFigureVisual": null,
     "visualCaption": null,
     "promptVisual": "g7_ch03_q17_source_prompt.png"
   },
@@ -1539,6 +1573,8 @@
     "answerVisualCaption": null,
     "sourcePolicy": "verbatim_original_pdf",
     "sourceAnswerTextExtracted": "18 ، به وسیله ترازو5 گرم شکر در یک ظرف  و5 .  گرم آب  در ظرفی دیگر بر می داریم\nولی برای اندازه گیری5 گرم هوا  ، ابتدا جرم یک توپ خالی را اندازه می گیریم و سپس آن را با تلمبه\nبه اندازه ای باد می کنیم که جرمش5 گرم  افزایش  یابد  یعنی  هوای داخل آن5 گرم    .  شود\nمشاهده می کنیم که حجم5 گرم هوا   بیشر از آب و حجم آب هم بیشتر از  شکر است .  ب- بله",
+    "readablePrompt": "۱۸– الف- آزمایشی طرح کنید که با انجام آن بتوانید حجم ۵ گرم شکر ،آب و هوا را با هم مقایسه کنید .\nب- آیا از این آزمایش می توان نتیجه گرفت که حجم ۵ گرم از این سه ماده به ترتیب زیر است ؟",
+    "originalFigureVisual": "g7_ch03_q18_source_figure.png",
     "visualCaption": null,
     "promptVisual": null
   },
@@ -1588,6 +1624,8 @@
     "answerVisualCaption": null,
     "sourcePolicy": "verbatim_original_pdf",
     "sourceAnswerTextExtracted": "19 - یک سرنگ را سوزنش را بر می داریم و پیستون آن را بیرون کشیده و  داخل سرنگ شن\nمی ریزیم و نوک آن را با انگشت می گیریم و  پیستون آن را فشار می دهیم  ، فشرده نمی شود . سپس\nهمین کار را با آب می کنیم باز هم فشرده نمی شود . ولی وقتی به داخل سرنگ هوا می کشیم و نوک\nآن را با انگشت می بندیم و پیستون را فشار می دهیم به مقدار زیادی فشرده  ( مت . راکم ) می شود",
+    "readablePrompt": "۱۹- آزمایشی طراحی کنید که نشان دهد می توان یک گاز را به راحتی متراکم ( فشرده ) کرد ولی جامد و مایع را نمی توان به آسانی و به مقدار زیاد متراکم کرد .",
+    "originalFigureVisual": null,
     "visualCaption": null,
     "promptVisual": null
   },
@@ -1662,6 +1700,8 @@
     "answerVisualCaption": null,
     "sourcePolicy": "verbatim_original_pdf",
     "sourceAnswerTextExtracted": "20 - ب- هوا    ، زیرا  فاصله بین  مولکول های هوا ( گاز ) زیاد است  در نتیجه بر اثر فشار به هم\n. نزدیک  و فشرده می شوند",
+    "readablePrompt": "۲۰- کدام یک از این مواد را به آسانی می توان متراکم ( فشرده ) کرد ؟ دلیل انتخاب خود را بنویسید .\nالف– سنگ     ب- هوا     ج- آب\nدلیل : ......................................................................................................",
+    "originalFigureVisual": null,
     "visualCaption": null,
     "promptVisual": null
   },
@@ -1743,6 +1783,8 @@
     "answerVisualCaption": null,
     "sourcePolicy": "verbatim_original_pdf",
     "sourceAnswerTextExtracted": "21 – به ترتیب از راست به چپ :      آب– شیشه- اکسیژن – مس           ب- بله",
+    "readablePrompt": "۲۱- نمودار زیر ، میزان افزایش حجم مقدار یکسانی از مواد زیر را در اثر گرمای یکسان ، نشان می دهد .\nالف- هر کدام از آن ها در زیر ستون مربوطه بنویسید . ( اکسیژن– شیشه– مس– آب )\nب- آیا از این نمودار می توان نتیجه گرفت که اگر مقدار یکسانی از مواد را گرمای یکسان بدهیم ، میزان افزایش حجم آن ها به ترتیب زیر است : .................................................................",
+    "originalFigureVisual": "g7_ch03_q21_source_figure.png",
     "visualCaption": null,
     "promptVisual": null
   },
@@ -1796,6 +1838,8 @@
     "answerVisualCaption": null,
     "sourcePolicy": "verbatim_original_pdf",
     "sourceAnswerTextExtracted": "22 - در آب داغ ،  هوای داخل بطری  گرم شده و حجمش بیشتر م ی شود و به داخل بادکنک می رود\n. و بادکنک باد می شود . ولی در مخلوط آب و یخ این اتفاق  نمی افتد و برعکس است",
+    "readablePrompt": "۲۲- شکل مقابل را تفسیر کنید :",
+    "originalFigureVisual": "g7_ch03_q22_source_figure.png",
     "visualCaption": null,
     "promptVisual": null
   },
@@ -1850,6 +1894,8 @@
     "answerVisualCaption": null,
     "sourcePolicy": "verbatim_original_pdf",
     "sourceAnswerTextExtracted": "23 - به جای کاهش :  افزایش    و به جای کمتر : بیشتر",
+    "readablePrompt": "۲۳- در متن زیر دو غلط علمی وجود دارد . زیر آن ها خط کشیده و صحیح هر کدام را بالای آن بنویسید .\n« وقتی یخ گرم می شود ، انرژی مولکول های یخ کاهش می یابد و جنبش آن ها کمتر می شود . اگر این عمل را ادامه دهیم ، یخ به آهستگی ذوب و به مایع تبدیل می شود . »",
+    "originalFigureVisual": null,
     "visualCaption": null,
     "promptVisual": null
   },
@@ -1924,6 +1970,8 @@
     "answerVisualCaption": null,
     "sourcePolicy": "verbatim_original_pdf",
     "sourceAnswerTextExtracted": "24 - شکل3 ،  زیرا  در حالت گاز ( بخار )  ،  بر اثر گرما جنبش مولکول های آب زیاد تر شده و در\n. نتیجه فاصله مولکول های آب  زیاد تر می شود",
+    "readablePrompt": "۲۴– کدام شکل وضعیت مولکول های آب را در حالت گاز ( بخار ) نشان می دهد ؟ دلیل انتخاب خود را بنویسید .\nشکل : ........................................\nدلیل : ......................................................................................................",
+    "originalFigureVisual": "g7_ch03_q24_source_figure.png",
     "visualCaption": null,
     "promptVisual": null
   },
@@ -1979,6 +2027,8 @@
     "answerVisualCaption": null,
     "sourcePolicy": "verbatim_original_pdf",
     "sourceAnswerTextExtracted": ":  سؤاالت چها ر گزینه ای1 – ب2 – د3 - ج4 – د5 – د6 - الف7 - ب",
+    "readablePrompt": "۱- کدام ماده در طبیعت به هر سه حالت جامد و مایع و گاز وجود دارد ؟\nالف- هوا     ب- آب     ج- سنگ     د- چوب",
+    "originalFigureVisual": null,
     "visualCaption": null,
     "promptVisual": null
   },
@@ -2034,6 +2084,8 @@
     "answerVisualCaption": null,
     "sourcePolicy": "verbatim_original_pdf",
     "sourceAnswerTextExtracted": ":  سؤاالت چها ر گزینه ای1 – ب2 – د3 - ج4 – د5 – د6 - الف7 - ب",
+    "readablePrompt": "۲- همه مواد موجود در عالم هستی تقریباً از چند نوع اتم ( عنصر ) ساخته شده اند ؟\nالف- میلیارد ها     ب- ۱۰۰۰     ج- ۸۰     د- ۹۰",
+    "originalFigureVisual": null,
     "visualCaption": null,
     "promptVisual": null
   },
@@ -2089,6 +2141,8 @@
     "answerVisualCaption": null,
     "sourcePolicy": "verbatim_original_pdf",
     "sourceAnswerTextExtracted": ":  سؤاالت چها ر گزینه ای1 – ب2 – د3 - ج4 – د5 – د6 - الف7 - ب",
+    "readablePrompt": "۳- از آزمایش مربوط به گلوله های خمیری که درون آن ها مواد مختلف قرار دادید و با انجام آزمایش های گوناگون به نوع مواد موجود در آن ها پی بردید ( بدون اینکه درون آن ها را ببینید ) می توان نتیجه گرفت که :\nالف- اتم ها کنار هم قرار می گیرند و مواد را می سازند . □\nب- هرماده از دو یا چند نوع اتم تشکیل شده است . □\nج- دانشمندان با مشاهده غیر مستقیم ، اتم ها را بررسی و خواص آن ها را کشف کرده اند . □\nد- همه موارد □",
+    "originalFigureVisual": null,
     "visualCaption": null,
     "promptVisual": null
   },
@@ -2144,6 +2198,8 @@
     "answerVisualCaption": null,
     "sourcePolicy": "verbatim_original_pdf",
     "sourceAnswerTextExtracted": ":  سؤاالت چها ر گزینه ای1 – ب2 – د3 - ج4 – د5 – د6 - الف7 - ب",
+    "readablePrompt": "۴- کدام عبارت ، صحیح است ؟\nالف– جیوه فلزی مایع و سمی است . (     )\nب- هر مولکول آب ۳ اتمی است . (     )\nج- گوگرد ، نافلز جامد و زرد رنگ و هر مولکول آن ۸ اتمی است .\nد- همه موارد صحیح است .",
+    "originalFigureVisual": "g7_ch03_mcq04_source_question.png",
     "visualCaption": null,
     "promptVisual": null
   },
@@ -2199,6 +2255,8 @@
     "answerVisualCaption": null,
     "sourcePolicy": "verbatim_original_pdf",
     "sourceAnswerTextExtracted": ":  سؤاالت چها ر گزینه ای1 – ب2 – د3 - ج4 – د5 – د6 - الف7 - ب",
+    "readablePrompt": "۵- کدام یک از موارد زیر ، از ویژگی های کلی اتم ها می باشد ؟\nالف– اتم ها کروی شکل اند ، هسته دارند و حجم متفاوتی دارند .\nب- هسته اتم از پروتون و نوترون تشکیل شده است .\nج- در حالت عادی ، تعداد الکترون ها و پروتون ها با هم برابرند .\nد- همه موارد صحیح است .",
+    "originalFigureVisual": null,
     "visualCaption": null,
     "promptVisual": "g7_ch03_mcq05_source_prompt.png"
   },
@@ -2254,6 +2312,8 @@
     "answerVisualCaption": null,
     "sourcePolicy": "verbatim_original_pdf",
     "sourceAnswerTextExtracted": ":  سؤاالت چها ر گزینه ای1 – ب2 – د3 - ج4 – د5 – د6 - الف7 - ب",
+    "readablePrompt": "۶- هر اتم نیتروژن ۷ پروتون ( p ) دارد . تعداد الکترون های ( e ) آن چه تعداد است ؟\nالف- ۷     ب- ۲۱     ج- ۲۸     د- ۱۴",
+    "originalFigureVisual": null,
     "visualCaption": null,
     "promptVisual": null
   },
@@ -2309,6 +2369,8 @@
     "answerVisualCaption": null,
     "sourcePolicy": "verbatim_original_pdf",
     "sourceAnswerTextExtracted": ":  سؤاالت چها ر گزینه ای1 – ب2 – د3 - ج4 – د5 – د6 - الف7 - ب",
+    "readablePrompt": "۷- در کپسول های گاز پیک نیک مقدر زیادی گاز را در یک حجم کمی قرار می دهند .\nعلت اینکه می توان گاز ها را زیاد متراکم ( فشرده ) کرد ، چیست ؟\nالف- گاز ها حجم معینی دارند .\nب- فاصله بین ذره های گاز زیاد است .\nج- فاصله بین ذره های گاز کم است .\nد- ربایش بین ذره های گاز زیاد است .",
+    "originalFigureVisual": "g7_ch03_mcq07_source_figure.png",
     "visualCaption": null,
     "promptVisual": null
   }

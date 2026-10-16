@@ -7,6 +7,7 @@ import android.graphics.Bitmap
 import android.provider.MediaStore
 import androidx.compose.ui.test.*
 import androidx.compose.ui.test.junit4.createComposeRule
+import androidx.compose.ui.semantics.SemanticsProperties
 import androidx.test.core.app.ActivityScenario
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
@@ -16,6 +17,7 @@ import com.oloomyar.app.ui.workbookBidi
 import org.junit.Assert.*
 import org.junit.*
 import org.junit.runner.RunWith
+import org.json.JSONObject
 
 /** Invoked individually by the host harness, across real APK replacement / process termination. */
 @RunWith(AndroidJUnit4::class)
@@ -55,7 +57,10 @@ class Grade7PersistenceUiTest {
             compose.onNodeWithTag("reveal-answer").assertIsNotEnabled()
             compose.onNodeWithTag("question-body").performScrollToIndex(0)
             compose.onNodeWithTag("bookmark-question").performClick()
+            compose.onNodeWithTag("question-body").performScrollToIndex(3)
+            compose.waitForIdle()
             val raw = checkNotNull(store.draft(q.id))
+            assertTrue(JSONObject(raw).getInt("scrollIndex") >= 3)
             context.getSharedPreferences("grade7_checkpoint_test",Context.MODE_PRIVATE).edit().putString("expected",raw).commit()
             capture("discovery-12-before-process-termination")
         }
@@ -67,11 +72,14 @@ class Grade7PersistenceUiTest {
         assertEquals(expected,QuestionDraftCodec.decode(store.draft(q.id)));assertTrue(store.bookmarked(q.id))
         assertEquals(q.id,LearningPreferences(context).lastLocation()!!.questionId)
         assertEquals(DisplaySettings(1.25f,true),LearningPreferences(context).display())
+        assertTrue(JSONObject(checkNotNull(store.draft(q.id))).getInt("scrollIndex") >= 3)
         ActivityScenario.launch(MainActivity::class.java).use {
             compose.onNodeWithTag("home-start").performClick()
             compose.onNodeWithTag("reveal-answer").assertIsNotEnabled()
             compose.onNodeWithContentDescription("تصویر پاسخ سؤال ۸").assertDoesNotExist()
             assertEquals(expected,QuestionDraftCodec.decode(store.draft(q.id)));capture("discovery-13-after-process-termination")
+            val scroll = compose.onNodeWithTag("question-body").fetchSemanticsNode().config[SemanticsProperties.VerticalScrollAxisRange]
+            assertTrue("Restored viewport must remain at the interaction",scroll.value() >= 3f)
         }
     }
 }

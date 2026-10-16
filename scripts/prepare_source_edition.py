@@ -77,6 +77,16 @@ def crops(doc,segments,dest):
         for im in images:out.paste(im,(0,y));y+=im.height+12
     png(dest,out)
 
+def figure_crops(doc,segments,dest):
+    """Only original PDF pixels; keep diagrams and comparison signs out of text bidi."""
+    images=[]
+    for s in segments:
+        pix=doc[s['page']-1].get_pixmap(matrix=fitz.Matrix(3,3),clip=fitz.Rect(s['bbox']),alpha=False)
+        images.append(Image.frombytes('RGB',[pix.width,pix.height],pix.samples))
+    out=Image.new('RGB',(max(im.width for im in images),sum(im.height for im in images)+12*(len(images)-1)),'white');y=0
+    for im in images:out.paste(im,((out.width-im.width)//2,y));y+=im.height+12
+    png(dest,out)
+
 def main():
     ap=argparse.ArgumentParser();ap.add_argument('--prepared',type=Path);ap.add_argument('--pdfs',type=Path);ap.add_argument('--uploads',type=Path);args=ap.parse_args()
     PINNED.mkdir(parents=True,exist_ok=True)
@@ -84,6 +94,7 @@ def main():
         records=[q for q in json.loads((args.prepared/'data/grade7_1405_questions.json').read_text()) if q['chapter'] in (1,2,3)]
         dump(PINNED/'chapters1-3-index.json',records)
     records=json.loads((PINNED/'chapters1-3-index.json').read_text())
+    reading=json.loads((PINNED/'readable-prompts.json').read_text())['questions']
     if args.pdfs:
         for n in ['کتاب کار علوم هفتم 1405.pdf']+[f'پاسخ فصل {c} هفتم.pdf' for c in (1,2,3)]:
             shutil.copyfile(next(args.pdfs.rglob(n)),PINNED/n)
@@ -112,6 +123,8 @@ def main():
         q.update(grade=7,relatedChapter=c,sourceEdition='1405',sourcePage=r['page'],source=f'کتاب کار علوم هفتم ۱۴۰۵ • صفحهٔ {r["page"]}',
             bookPrompt=r['search_text'],canonicalId=canonical,sourceQuestionVisual=f'{canonical}_source_question.png',
             answerVisual=f'{canonical}_source_answer.png',answerVisualCaption=None,sourcePolicy='verbatim_original_pdf',sourceAnswerTextExtracted=r['answer_source']['text'])
+        q['readablePrompt']=reading[canonical]['text']
+        q['originalFigureVisual']=q['sourceQuestionVisual'] if not (q.get('visual') or q.get('visuals')) and (r['has_question_visual'] or canonical=='g7_ch03_q18') else None
         crops(workbook,r['segments'],ASSETS/'images'/q['sourceQuestionVisual'])
         segs=json.loads(json.dumps(r['answer_source']['segments']))
         # A formula extends below the normal text baseline; the earlier crops included
@@ -134,7 +147,18 @@ def main():
         if c==3 and not ismcq and n==12 and (PINNED/'replacement-images/g7_ch03_q12_a_question.png').exists():
             q['visual']=None
             q['visuals']=[dict(asset=f'g7_ch03_q12_{v}_question.png') for v in ['c','b','a']]
+        q['originalFigureVisual']=q['sourceQuestionVisual'] if not (q.get('visual') or q.get('visuals')) and (r['has_question_visual'] or canonical=='g7_ch03_q18') else None
         q['visualCaption']=None
+        figure_segments=[]
+        if q['originalFigureVisual']:
+            if canonical in ['g7_ch02_q07','g7_ch03_q03','g7_ch03_q24','g7_ch03_mcq07']:
+                figure_segments=[dict(page=f['page'],bbox=f['bbox']) for f in r['figures']]
+            if canonical=='g7_ch03_q18':figure_segments=[dict(page=9,bbox=[114,753,246,782])]
+            if canonical=='g7_ch03_q21':figure_segments=[dict(page=10,bbox=[0,367,267,505]),dict(page=10,bbox=[265,511,570,534])]
+            if canonical=='g7_ch03_q22':figure_segments=[dict(page=10,bbox=[34,526,266,685])]
+            if figure_segments:
+                q['originalFigureVisual']=f'{canonical}_source_figure.png'
+                figure_crops(workbook,figure_segments,ASSETS/'images'/q['originalFigureVisual'])
         q['promptVisual']=None
         prompt_text_hash=None
         if q.get('visual') or q.get('visuals'):
@@ -179,7 +203,8 @@ def main():
             if 'واژه «یکا»' in s['prompt']:raise AssertionError('editorial correction leaked')
         manifest.append(dict(id=canonical,questionAsset=q['sourceQuestionVisual'],questionSha256=sha(ASSETS/'images'/q['sourceQuestionVisual']),
             answerAsset=q['answerVisual'],answerSha256=sha(ASSETS/'images'/q['answerVisual']),questionSourceSegments=r['segments'],answerSourceSegments=segs,
-            answerImageRecommended=r.get('answer_image_recommended',False),formattingRisks=r.get('formatting_risks',[]),sharedAnswerStrip=False,promptAsset=q['promptVisual'],promptSha256=sha(ASSETS/'images'/q['promptVisual']) if q['promptVisual'] else None,promptTextPreserved=True,promptTextSha256=prompt_text_hash))
+            answerImageRecommended=r.get('answer_image_recommended',False),formattingRisks=r.get('formatting_risks',[]),sharedAnswerStrip=False,promptAsset=q['promptVisual'],promptSha256=sha(ASSETS/'images'/q['promptVisual']) if q['promptVisual'] else None,promptTextPreserved=True,promptTextSha256=prompt_text_hash,
+            originalFigureAsset=q['originalFigureVisual'],originalFigureSha256=sha(ASSETS/'images'/q['originalFigureVisual']) if q['originalFigureVisual'] else None,originalFigureSegments=figure_segments))
         collections[c].append(q)
     for c,qs in collections.items():dump(ASSETS/f'content/chapter{c}.json',qs)
     dump(ROOT/'docs/source_fidelity_manifest.json',dict(policy='Author instruction: original questions and answers unchanged; original PDF crops only for reference answers.',

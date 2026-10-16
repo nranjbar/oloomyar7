@@ -1,5 +1,6 @@
 """Validate the source-faithful three-chapter edition, controls, hints and referenced PNGs."""
 import hashlib, json, re, struct, zlib
+from collections import Counter
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 ASSETS=ROOT/'app/src/main/assets'
@@ -8,6 +9,10 @@ assert [len(q) for q in collections]==[8,20,31]
 assert [sum(len(q['steps']) for q in qs) for qs in collections]==[11,30,35]
 manifest=json.loads((ROOT/'docs/source_fidelity_manifest.json').read_text())
 provenance={r['id']:r for r in manifest['questions']}
+reading=json.loads((ROOT/'qa/source/readable-prompts.json').read_text())['questions']
+original_records={r['id']:r for r in json.loads((ROOT/'qa/source/chapters1-3-index.json').read_text())}
+digits=str.maketrans('۰۱۲۳۴۵۶۷۸۹٠١٢٣٤٥٦٧٨٩يك','01234567890123456789یک')
+def source_characters(text):return Counter(re.sub(r'[^آ-یA-Za-z0-9]','',text.translate(digits)))
 assert len(provenance)==59
 for src in manifest['sourcePdfs']:
     assert hashlib.sha256((ROOT/'qa/source'/src['file']).read_bytes()).hexdigest()==src['sha256']
@@ -21,6 +26,9 @@ for chapter,qs in enumerate(collections,1):
         assert q['grade']==7 and q['relatedChapter']==chapter and q['sourceEdition']=='1405'
         assert q['sourcePolicy']=='verbatim_original_pdf'
         r=provenance[q['canonicalId']]
+        transcript=reading[q['canonicalId']]
+        assert q['readablePrompt']==transcript['text'] and transcript['sourceQuestionSha256']==r['questionSha256']
+        assert source_characters(transcript['text']+transcript.get('sourceFigureText',''))==source_characters(original_records[q['canonicalId']]['source_text_extracted'])
         for field,key in [('sourceQuestionVisual','question'),('answerVisual','answer')]:
             name=q[field];assert name==r[key+'Asset']
             assert hashlib.sha256((ASSETS/'images'/name).read_bytes()).hexdigest()==r[key+'Sha256']
@@ -30,7 +38,9 @@ for chapter,qs in enumerate(collections,1):
         if q['section']=='چهارگزینه‌ای':
             assert not r['sharedAnswerStrip']
             assert r['answerSourceSegments'][0]['bbox'][2]-r['answerSourceSegments'][0]['bbox'][0]<60
-        images.update(x for x in [q.get('visual'),q.get('answerVisual'),q.get('sourceQuestionVisual'),q.get('promptVisual')]+[v['asset'] for v in q.get('visuals',[])] if x)
+        if q.get('originalFigureVisual'):
+            assert hashlib.sha256((ASSETS/'images'/q['originalFigureVisual']).read_bytes()).hexdigest()==r['originalFigureSha256']
+        images.update(x for x in [q.get('visual'),q.get('answerVisual'),q.get('sourceQuestionVisual'),q.get('promptVisual'),q.get('originalFigureVisual')]+[v['asset'] for v in q.get('visuals',[])] if x)
         for s in q['steps']:
             assert s['id'] not in steps;steps.add(s['id'])
             assert all(s.get(k,'').strip() for k in ['prompt','answer','hint1','hint2'])
@@ -80,7 +90,7 @@ assert collections[2][14]['visual']=='g7_ch03_q15_question.png'
 assert [v['asset'] for v in collections[2][11]['visuals']]==[f'g7_ch03_q12_{v}_question.png' for v in ['c','b','a']]
 for p in (ROOT/'qa/source/replacement-images').glob('*.png'):
     assert (ASSETS/'images'/p.name).read_bytes()==p.read_bytes()
-report=dict(status='PASS',questions=len(ids),steps=len(steps),chapterCounts=[len(q) for q in collections],
+report=dict(status='PASS',questions=len(ids),steps=len(steps),chapterCounts=[len(q) for q in collections],readableSourcePrompts=len(reading),sourceCharacterInventoriesPreserved=59,
     sourceQuestionCrops=59,isolatedSourceAnswers=59,inlineQuestions=inline,images=len(images),reviewedHintPairs=len(steps),interactionKinds=counts,
     notes=['Original PDF crops are authoritative','No editorial answer cards or explanations displayed','MCQ crops contain only the current question key','Formula and adjacent-answer crop boundaries checked','Native UI and attempt tests are reported separately'])
 (ROOT/'qa/grade7_content_validation.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
