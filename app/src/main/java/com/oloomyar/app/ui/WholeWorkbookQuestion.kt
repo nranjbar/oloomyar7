@@ -126,16 +126,16 @@ internal fun WholeWorkbookQuestion(
                 }
             }
             item(key = "feedback") {
-                if (!exam && state.checked.isNotEmpty()) {
+                if (!exam && state.checked.isNotEmpty() && !state.revealed) {
                     val correctParts = question.steps.sumOf { step ->
                         when (step.kind) {
                             StepKind.MATCH -> step.pairs.indices.count { state.mark(step, it) == ResponseMark.CORRECT }
                             StepKind.CLASSIFY -> step.classifyItems.indices.count { state.mark(step, it) == ResponseMark.CORRECT }
-                            else -> if (state.locked(step)) 1 else 0
+                            else -> if (state.mark(step, 0) == ResponseMark.CORRECT) 1 else 0
                         }
                     }
                     Surface(color = if (allCorrect) GreenSoft else SelectionSoft, shape = RoundedCornerShape(16.dp)) {
-                        Text(if (allCorrect) "پاسخ درست است" else "${workbookFa(correctParts)} پاسخ درست؛ موارد قرمز را اصلاح کن و دوباره بررسی کن.",
+                        Text(if (allCorrect) "پاسخ درست است" else "${workbookFa(correctParts)} پاسخ درست؛ پاسخ‌های نادرست را اصلاح کن و دوباره بررسی کن.",
                             Modifier.fillMaxWidth().padding(14.dp).semantics { liveRegion = LiveRegionMode.Polite },
                             color = if (allCorrect) Green else SelectionInk)
                     }
@@ -147,7 +147,7 @@ internal fun WholeWorkbookQuestion(
                     WorkbookPanel(accent = Green) {
                         Text("پاسخ کتاب‌کار", color = Green, style = MaterialTheme.typography.titleLarge)
                         Box(if (question.section == "چهارگزینه‌ای") Modifier.width(180.dp) else Modifier.fillMaxWidth()) {
-                            question.answerVisual?.let { WorkbookImage(it, "تصویر پاسخ سؤال ${workbookFa(question.sourceNumber)}") }
+                            question.answerVisual?.let { WorkbookImage(it, "تصویر پاسخ سؤال ${workbookFa(question.sourceNumber)}", trimAnswerWhitespace = true) }
                         }
                     }
                 }

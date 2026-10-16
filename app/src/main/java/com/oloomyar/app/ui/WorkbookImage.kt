@@ -29,9 +29,9 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
 @Composable
-internal fun WorkbookImage(asset: String, description: String, caption: String? = null) {
+internal fun WorkbookImage(asset: String, description: String, caption: String? = null, trimAnswerWhitespace: Boolean = false) {
     val context = LocalContext.current
-    val loaded by produceState<Pair<Bitmap?, Boolean>>(null to false, asset) {
+    val loaded by produceState<Pair<Bitmap?, Boolean>>(null to false, asset, trimAnswerWhitespace) {
         value = withContext(Dispatchers.IO) {
             val bitmap = runCatching {
                 val bounds = BitmapFactory.Options().apply { inJustDecodeBounds = true }
@@ -42,7 +42,8 @@ internal fun WorkbookImage(asset: String, description: String, caption: String? 
                 }
                 context.assets.open("images/$asset").use { BitmapFactory.decodeStream(it, null, options) }
             }.getOrNull()
-            bitmap to true
+            val display = if (bitmap != null && trimAnswerWhitespace) cropWorkbookAnswer(bitmap) else bitmap
+            display to true
         }
     }
     var enlarged by remember { mutableStateOf(false) }

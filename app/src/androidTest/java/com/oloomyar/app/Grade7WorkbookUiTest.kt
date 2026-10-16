@@ -17,6 +17,7 @@ import com.oloomyar.app.data.*
 import com.oloomyar.app.model.*
 import com.oloomyar.app.ui.AuditedWorkbookApp
 import com.oloomyar.app.ui.workbookBidi
+import com.oloomyar.app.ui.cropWorkbookAnswer
 import com.oloomyar.app.ui.theme.OloomYarTheme
 import org.junit.Assert.*
 import org.junit.Before
@@ -181,6 +182,21 @@ class Grade7WorkbookUiTest {
         assertEquals(state,QuestionDraftCodec.decode(QuestionDraftCodec.encode(state)))
         val shown=state.reveal();assertEquals(shown,QuestionDraftCodec.decode(QuestionDraftCodec.encode(shown)))
         assertFalse(QuestionDraftCodec.decode("""{"questionPracticeVersion":3,"revealed":true}""").revealed)
+    }
+    @Test fun tightAnswerDisplayPreservesEveryDarkPixelOfTheOriginalFormulaAndKey() {
+        fun ink(bitmap:Bitmap):Int {
+            val p=IntArray(bitmap.width*bitmap.height);bitmap.getPixels(p,0,bitmap.width,0,0,bitmap.width,bitmap.height)
+            return p.count { pixel ->
+                val r=(pixel ushr 16) and 255;val g=(pixel ushr 8) and 255;val b=pixel and 255
+                maxOf(r,g,b)<210 && maxOf(r,g,b)-minOf(r,g,b)<40
+            }
+        }
+        for (id in listOf("g7_ch02_q08","g7_ch02_q09","g7_ch02_q10","g7_ch03_q17")) {
+            val original=context.assets.open("images/${id}_source_answer.png").use { BitmapFactory.decodeStream(it) }!!
+            val cropped=cropWorkbookAnswer(original)
+            assertEquals(id,ink(original),ink(cropped));assertTrue(cropped.width<=original.width)
+            if(cropped!==original)cropped.recycle();original.recycle()
+        }
     }
     @Test fun examResultDoesNotProvideAReferenceAnswerShortcut() {
         val q=Grade7Chapter2Repository(context).questions.first { it.sourceNumber==8 && it.section=="تمرین‌های اصلی" }
