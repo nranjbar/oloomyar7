@@ -30,7 +30,10 @@ data class LearningStep(
     val explanation: String,
     /** Equally valid source orders, e.g. the two reactants of ammonia. */
     val acceptedPairOrders: List<List<String>> = emptyList(),
-    val acceptedOrders: List<List<Int>> = emptyList()
+    val acceptedOrders: List<List<Int>> = emptyList(),
+    /** Verbatim source text; {{0}}, {{1}}, ... replace only the printed blank marks. */
+    val clozeTemplate: String? = null,
+    val allowTokenReuse: Boolean = true
 )
 
 data class ChapterQuestion(
@@ -53,7 +56,14 @@ data class ChapterQuestion(
     /** Additional source figures when one workbook question contains several distinct images. */
     val visuals: List<QuestionVisual> = emptyList(),
     val legacyProgress: List<LegacyProgress> = emptyList(),
-    val answerVisualCaption: String? = null
+    val answerVisualCaption: String? = null,
+    /** Unedited workbook crop, authoritative when PDF text extraction reorders Persian. */
+    val sourceQuestionVisual: String? = null,
+    /** Original PDF text layer with the old raster figure omitted when a replacement is supplied. */
+    val promptVisual: String? = null,
+    /** Manually checked reading transcription; scientific layouts remain in their source figure. */
+    val readablePrompt: String? = null,
+    val originalFigureVisual: String? = null
 )
 
 data class QuestionVisual(val asset: String, val caption: String? = null)

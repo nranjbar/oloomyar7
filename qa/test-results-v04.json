@@ -1,0 +1,139 @@
+{
+  "unit": [
+    {
+      "name": "com.oloomyar.app.model.ClozeDocumentTest",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "testCases": [
+        "sourceWithoutSlotsRemainsUnchanged",
+        "persianLatinUnitsPunctuationAndSourceSpacingRoundTripExactly",
+        "adjacentSlotsAndLiteralPrintedDotsAreNotLost"
+      ]
+    },
+    {
+      "name": "com.oloomyar.app.model.LearningSummaryTest",
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "testCases": [
+        "legacyCompletionWithoutEvidenceDoesNotInventIndependentSolvesOrAttempts",
+        "lookingAtAKeyIsNotIndependentSolving",
+        "guidedIndependentAndBookmarksUseOnlyTheirOwnRecords",
+        "aNewInstallHasNoInventedProgressOrAwards"
+      ]
+    },
+    {
+      "name": "com.oloomyar.app.model.PracticeAttemptsTest",
+      "tests": 6,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "testCases": [
+        "rowFeedbackAcceptsValidAlternativeOrderAndOnlyFlagsTheMismatch",
+        "reselectingTheSameMultipleChoicesInAnotherOrderDoesNotCount",
+        "swappedMatchRowsAreDifferentAnswers",
+        "bothAttemptsAndBothHintsAreRequiredForAReferenceAnswer",
+        "incompleteSelectionIsNotAnAttempt",
+        "submittingTheSameChoiceAgainIsNotANewAttempt"
+      ]
+    },
+    {
+      "name": "com.oloomyar.app.model.QuestionPracticeTest",
+      "tests": 10,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "testCases": [
+        "revealLocksTheQuestionButDoesNotNavigateOrModifyTheSource",
+        "incompleteWholeQuestionDoesNotCountAnAttempt",
+        "checkMarksEachBlankAndChangingOnlyAWrongBlankReturnsItToYellow",
+        "bothHintsAndAnExplicitRequestAreRequired",
+        "editingAndCheckingPreserveTheRandomOrderSeed",
+        "validRepeatedWordsAndAlternativeOrdersRemainCorrect",
+        "aCorrectAnswerAloneNeverRevealsTheOriginalKey",
+        "changingOnePartCannotUnlockAnotherUnchangedWrongPart",
+        "aCorrectLockedPartDoesNotRequireIntentionalWrongAnswers",
+        "unchangedAndPreviouslySubmittedResponsesCannotUnlockAnAnswer"
+      ]
+    },
+    {
+      "name": "com.oloomyar.app.model.WorkbookAnswersTest",
+      "tests": 6,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "testCases": [
+        "blanksRequireEveryPositionAndAcceptBothValidReactantOrders",
+        "twoOfThreeValidExamplesAreAcceptedButExtraOrDuplicateSelectionsAreNot",
+        "repeatedCorrectWordCanFillSeveralBlanksWithoutBeingConsumed",
+        "sourceRowChoicesAndVisualOrderAreEnforced",
+        "independentCrystalPlacementsAreAcceptedAndOrderingDoesNotStartSolved",
+        "orderRequiresAPermutationAndClassifyRequiresEveryItem"
+      ]
+    },
+    {
+      "name": "com.oloomyar.app.ui.WorkbookTextTest",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "testCases": [
+        "ionChargesAndMixedDigitEquationsRemainLeftToRight",
+        "reactionArrowKeepsItsDirectionBetweenPersianSubstanceNames",
+        "persianArithmeticKeepsItsOperatorLeftToRightInsidePersianProse"
+      ]
+    }
+  ],
+  "native": [
+    {
+      "name": "com.oloomyar.app.Grade7WorkbookUiTest",
+      "tests": 14,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "testCases": [
+        "selectionsFeedbackHintsAndRandomSeedSurviveLeavingAndReturning",
+        "fullCheckColorsRowsLocksCorrectOnesAndNeedsTwoDistinctFailures",
+        "allFiftyNineOriginalQuestionsAndIsolatedAnswersDecodeAndAllControlsHaveAValidAnswer",
+        "draftSerializationRetainsHistoryAndOnlyAcceptsAValidReveal",
+        "sourceFigureCanBeEnlargedWithoutShowingAnyAnswer",
+        "blankSelectionStaysAtTheChosenBlankAndIsYellowBeforeChecking",
+        "correctSubmissionWaitsForExplicitNextAndDoesNotRevealTheKey",
+        "oldDraftSelectionsSurviveButOldRevealAndAttemptsCannotUnlockTheAnswer",
+        "enlargedPersianFontKeepsTheBlankAndActionControlsUsable",
+        "chapterThreeAllowsTheRepeatedSourceWordAndKeepsAllEightBlanks",
+        "allPartsMustBeAnsweredBeforeTheWholeQuestionCanBeChecked",
+        "examResultDoesNotProvideAReferenceAnswerShortcut",
+        "realHomeOpensTheThreeImplementedChapters",
+        "tightAnswerDisplayPreservesEveryDarkPixelOfTheOriginalFormulaAndKey"
+      ]
+    },
+    {
+      "name": "com.oloomyar.app.Grade7DiscoveryUiTest",
+      "tests": 10,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "testCases": [
+        "homeAndSettingsRemainUsableOn393dpAndTablet",
+        "statisticsSeparateIndependentGuidedAndReferenceAnswers",
+        "freshHomeStartsTheActualFirstQuestionAndCanBookmarkIt",
+        "readingTextUsesSixteenSpAndScalesWithoutChangingTheBookWording",
+        "continuationOpensTheActualSavedQuestionWithItsDraft",
+        "bazaarRoutingUsesOnlyGradeSevenAndHandlesEveryMissingHandler",
+        "bookmarkReviewHasRealEntriesAndOpensTheExactQuestion",
+        "largeFontReduceMotionAndFourTabsSurviveRecreationAt360dp",
+        "rotatingAQuestionKeepsTheDraftAndCannotUnlockAnAnswer",
+        "replacementFiguresAreOfflineAvailableAndAnswerRemainsLocked"
+      ]
+    }
+  ],
+  "hostPersistenceMethods": [
+    "upgradeKeepsLegacyCompletionSelectionsAndLockedHints",
+    "restoreCheckpointAfterRealProcessTermination",
+    "prepareCheckpointForRealProcessTermination"
+  ]
+}

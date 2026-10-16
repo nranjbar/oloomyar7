@@ -15,7 +15,10 @@ class Grade7Chapter2Activity : ComponentActivity() {
         val progress = WorkbookProgress(applicationContext, "grade7_chapter2", repository.questions)
         setContent {
             OloomYarTheme {
-                AuditedWorkbookApp("فصل ۲ • اندازه‌گیری در علوم و ابزارهای آن", repository.questions, progress, onExit = { finish() })
+                AuditedWorkbookApp("فصل ۲ • اندازه‌گیری در علوم و ابزارهای آن", repository.questions, progress,
+                    initialQuestionId = intent.getStringExtra("question_id"),
+                    initialSection = intent.getStringExtra("section"),
+                    continueSequence = intent.getBooleanExtra("continue_sequence", false), onExit = { finish() })
             }
         }
     }

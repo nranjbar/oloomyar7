@@ -1,0 +1,21 @@
+{
+  "selected": "selected_1405_workbook",
+  "reason": "Preserve prior explicit 1405 edition and new image numbering; no reply to optional source choice",
+  "files": [
+    {
+      "role": "selected_1405_workbook",
+      "pages": 63,
+      "sha256": "c67f3709bc3134ae50566722257b38f38726d64f4620d7800da71ec8c8800321"
+    },
+    {
+      "role": "alternate_attached_workbook",
+      "pages": 48,
+      "sha256": "8da1ec2bed809e838519c989cf74c015dfea852d851820a4a8db53c8c729770f"
+    },
+    {
+      "role": "alternate_attached_answers",
+      "pages": 22,
+      "sha256": "671d574f2197899ca7c19dfa2a2c3678569f1cbfec5e0d5e7bf4ed12aa922138"
+    }
+  ]
+}

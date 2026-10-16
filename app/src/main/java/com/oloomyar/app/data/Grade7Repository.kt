@@ -19,3 +19,12 @@ class Grade7Chapter2Repository(context: Context) : AssetQuestionRepository(
     expectedStepCount = 30,
     allowedSections = setOf("تمرین‌های اصلی", "چهارگزینه‌ای")
 )
+
+class Grade7Chapter3Repository(context: Context) : AssetQuestionRepository(
+    context = context,
+    assetFile = "chapter3.json",
+    collectionLabel = "Grade 7 chapter 3 workbook 1405",
+    expectedQuestionCount = 31,
+    expectedStepCount = 35,
+    allowedSections = setOf("تمرین‌های اصلی", "چهارگزینه‌ای")
+)

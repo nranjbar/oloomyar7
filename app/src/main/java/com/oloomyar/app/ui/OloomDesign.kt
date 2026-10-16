@@ -137,9 +137,15 @@ internal fun OloomCard(
         border = BorderStroke(1.dp, accent?.copy(alpha = .15f) ?: Border.copy(alpha = .9f)),
         shadowElevation = 2.dp
     ) {
-        Row(Modifier.height(IntrinsicSize.Min)) {
-            if (accent != null) Box(Modifier.width(5.dp).fillMaxHeight().background(accent))
-            Column(Modifier.weight(1f).padding(18.dp), verticalArrangement = Arrangement.spacedBy(10.dp), content = content)
+        // Measure content once. IntrinsicSize asks inline BoxWithConstraints and
+        // lazy sheet content for unsupported intrinsic measurements.
+        Box {
+            if (accent != null) Box(Modifier.matchParentSize().drawBehind {
+                val x = size.width - 2.5.dp.toPx()
+                drawLine(accent, Offset(x, 0f), Offset(x, size.height), strokeWidth = 5.dp.toPx())
+            })
+            Column(Modifier.fillMaxWidth().padding(start = if (accent != null) 5.dp else 0.dp).padding(18.dp),
+                verticalArrangement = Arrangement.spacedBy(10.dp), content = content)
         }
     }
 }
