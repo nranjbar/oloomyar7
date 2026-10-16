@@ -98,7 +98,8 @@ class Grade7WorkbookUiTest {
         compose.onNodeWithTag("reveal-answer").assertIsEnabled()
         compose.onNodeWithContentDescription("تصویر پاسخ سؤال ۱").assertDoesNotExist()
         compose.onNodeWithTag("reveal-answer").performClick()
-        compose.onNodeWithTag("question-body").performScrollToNode(hasText("پاسخ کتاب‌کار"))
+        compose.waitUntil(10000) { compose.onAllNodesWithContentDescription("تصویر پاسخ سؤال ۱").fetchSemanticsNodes().isNotEmpty() }
+        compose.onNodeWithContentDescription("تصویر پاسخ سؤال ۱").performScrollTo().assertIsDisplayed()
         compose.onNodeWithText("پاسخ کتاب‌کار").assertExists();capture("grade7-04-original-answer")
     }
     @Test fun correctSubmissionWaitsForExplicitNextAndDoesNotRevealTheKey() {
@@ -139,7 +140,8 @@ class Grade7WorkbookUiTest {
         choose(wrong0[1].text);check();compose.onNodeWithTag("reveal-answer").assertIsEnabled()
         compose.onNodeWithContentDescription("تصویر پاسخ سؤال ۹").assertDoesNotExist()
         compose.onNodeWithTag("reveal-answer").performClick()
-        compose.onNodeWithTag("question-body").performScrollToNode(hasText("پاسخ کتاب‌کار"))
+        compose.waitUntil(10000) { compose.onAllNodesWithContentDescription("تصویر پاسخ سؤال ۹").fetchSemanticsNodes().isNotEmpty() }
+        compose.onNodeWithContentDescription("تصویر پاسخ سؤال ۹").performScrollTo().assertIsDisplayed()
         capture("grade7-06-original-formula")
     }
     @Test fun enlargedPersianFontKeepsTheBlankAndActionControlsUsable() {

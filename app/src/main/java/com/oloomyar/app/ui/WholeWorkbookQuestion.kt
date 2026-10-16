@@ -165,7 +165,15 @@ internal fun WholeWorkbookQuestion(
                         }, modifier = Modifier.weight(1f)) { Text("راهنما") }
                         TextButton(enabled = state.canReveal() && !state.revealed, modifier = Modifier.weight(1f).testTag("reveal-answer"), onClick = {
                             val latest = QuestionDraftCodec.decode(json)
-                            if (latest.canReveal()) { update(latest.reveal()); progress.markMistake(question.id) }
+                            if (latest.canReveal()) {
+                                update(latest.reveal()); progress.markMistake(question.id)
+                                // Only an explicit request to view the key moves the viewport.
+                                // Selection and checking keep the current sentence in place.
+                                coroutine.launch {
+                                    withFrameNanos { }
+                                    list.animateScrollToItem(question.steps.size + 4)
+                                }
+                            }
                         }) {
                             Icon(if (state.canReveal()) Icons.Default.Visibility else Icons.Default.Lock, null, Modifier.size(16.dp))
                             Spacer(Modifier.width(4.dp)); Text("دیدن پاسخ")
