@@ -4,6 +4,8 @@ import android.content.ActivityNotFoundException
 import android.content.Context
 import android.content.Intent
 import android.content.pm.ActivityInfo
+import android.content.res.Configuration
+import android.util.Log
 import android.graphics.Bitmap
 import android.content.ContentValues
 import android.provider.MediaStore
@@ -16,6 +18,9 @@ import androidx.compose.ui.unit.sp
 import androidx.test.core.app.ActivityScenario
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
+import androidx.test.runner.lifecycle.ActivityLifecycleCallback
+import androidx.test.runner.lifecycle.ActivityLifecycleMonitorRegistry
+import androidx.test.runner.lifecycle.Stage
 import com.oloomyar.app.data.*
 import com.oloomyar.app.model.*
 import com.oloomyar.app.ui.*
@@ -23,6 +28,8 @@ import org.junit.Assert.*
 import org.junit.*
 import org.junit.runner.RunWith
 import java.io.FileInputStream
+import java.util.concurrent.CountDownLatch
+import java.util.concurrent.TimeUnit
 
 /** Native navigation, real local records, accessibility and external-intent fallback. */
 @RunWith(AndroidJUnit4::class)
@@ -47,6 +54,21 @@ class Grade7DiscoveryUiTest {
     }
     private fun hubText(text: String) { compose.onNodeWithTag("hub-list").performScrollToNode(hasText(text));compose.onNodeWithText(text).performClick() }
     private fun choose(text: String) { compose.onNodeWithTag("question-body").performScrollToNode(hasText(workbookBidi(text)));compose.onNodeWithText(workbookBidi(text)).performClick() }
+    private fun rotateAndAwaitResume(scenario: ActivityScenario<Grade7Chapter2Activity>, requested: Int, configuration: Int) {
+        val resumed = CountDownLatch(1)
+        val monitor = ActivityLifecycleMonitorRegistry.getInstance()
+        val callback = ActivityLifecycleCallback { activity, stage ->
+            if (activity is Grade7Chapter2Activity && stage == Stage.RESUMED && activity.resources.configuration.orientation == configuration) resumed.countDown()
+        }
+        monitor.addLifecycleCallback(callback)
+        try {
+            scenario.onActivity { it.requestedOrientation = requested }
+            assertTrue("The rotated activity must resume before the next rotation", resumed.await(15, TimeUnit.SECONDS))
+            InstrumentationRegistry.getInstrumentation().uiAutomation.waitForIdle(200,5000)
+            scenario.onActivity { assertEquals(configuration,it.resources.configuration.orientation) }
+            Log.i("Grade7Review","Rotation resumed in configuration $configuration")
+        } finally { monitor.removeLifecycleCallback(callback) }
+    }
     private fun correctState(q: ChapterQuestion): QuestionPractice {
         var state = QuestionPractice()
         q.steps.forEach { s ->
@@ -159,8 +181,11 @@ class Grade7DiscoveryUiTest {
         ActivityScenario.launch<Grade7Chapter2Activity>(intent).use { scenario ->
             choose(wrong.text);compose.onNodeWithText("بررسی پاسخ").performClick()
             val store = WorkbookProgress(context,"grade7_chapter2",listOf(q));val before = QuestionDraftCodec.decode(store.draft(q.id))
-            scenario.onActivity { it.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE };compose.waitForIdle()
-            scenario.onActivity { it.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT };compose.waitForIdle()
+            // Resource changes and ActivityScenario callbacks are asynchronous. Await the actual
+            // resumed replacement before asking Compose to synchronize or rotating again.
+            rotateAndAwaitResume(scenario,ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE,Configuration.ORIENTATION_LANDSCAPE)
+            rotateAndAwaitResume(scenario,ActivityInfo.SCREEN_ORIENTATION_PORTRAIT,Configuration.ORIENTATION_PORTRAIT)
+            Log.i("Grade7Review","Recreating the settled portrait activity")
             scenario.recreate();compose.onNodeWithTag("reveal-answer").assertIsNotEnabled()
             assertEquals(before,QuestionDraftCodec.decode(store.draft(q.id)));capture("discovery-09-rotation-draft")
         }

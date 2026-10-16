@@ -10,11 +10,11 @@ OUT=ROOT/'app/build/persistence-verification';OUT.mkdir(parents=True,exist_ok=Tr
 APP='com.oloomyar.app.grade7';RUNNER=f'{APP}.test/androidx.test.runner.AndroidJUnitRunner'
 
 def run(*args,input=None):
-    p=subprocess.run(args,input=input,text=True,capture_output=True,check=True)
+    p=subprocess.run(args,input=input,text=True,capture_output=True,check=True,timeout=180)
     return p.stdout+p.stderr
 
 def test(method):
-    output=run('adb','shell','am','instrument','-w','-r','-e','class',f'com.oloomyar.app.Grade7PersistenceUiTest#{method}',RUNNER)
+    output=run('adb','shell','am','instrument','-w','-r','-e','timeout_msec','120000','-e','class',f'com.oloomyar.app.Grade7PersistenceUiTest#{method}',RUNNER)
     (OUT/f'{method}.txt').write_text(output)
     assert 'OK (1 test)' in output and 'FAILURES!!!' not in output and 'INSTRUMENTATION_FAILED' not in output,output
 
