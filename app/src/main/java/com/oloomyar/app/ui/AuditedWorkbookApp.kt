@@ -39,6 +39,9 @@ fun AuditedWorkbookApp(
     questions: List<ChapterQuestion>,
     progress: WorkbookProgress,
     conceptual: Boolean = false,
+    initialQuestionId: String? = null,
+    initialSection: String? = null,
+    continueSequence: Boolean = false,
     onExit: () -> Unit
 ) {
     var screen by rememberSaveable { mutableStateOf("home") }
@@ -51,6 +54,7 @@ fun AuditedWorkbookApp(
     var completed by rememberSaveable { mutableIntStateOf(0) }
     var sessionToken by rememberSaveable { mutableIntStateOf(0) }
     var confirmExit by remember { mutableStateOf(false) }
+    var handledInitial by rememberSaveable { mutableStateOf(false) }
     val parts = if (conceptual) {
         listOf("مفهومی")
     } else {
@@ -64,9 +68,20 @@ fun AuditedWorkbookApp(
             sessionIds = ArrayList(chosen.map { it.id })
             questionIndex = 0; exam = isExam; score = 0; completed = 0
             total = chosen.sumOf { it.steps.size }; sessionToken++
-            // Completed practice may be repeated; unfinished practice keeps its draft.
-            if (!isExam) chosen.filter { progress.done(it.id) && progress.draft(it.id) == null }.forEach { progress.clearDraft(it.id) }
             screen = "question"
+        }
+    }
+    LaunchedEffect(initialQuestionId, initialSection) {
+        if (!handledInitial) {
+            handledInitial = true
+            val requested = questions.firstOrNull { it.id == initialQuestionId }
+            if (requested != null) {
+                part = requested.section
+                val sectionQuestions = questions.filter { it.section == requested.section }
+                start(if (continueSequence) sectionQuestions.dropWhile { it.id != requested.id } else listOf(requested), false)
+            } else if (initialSection in parts) {
+                part = initialSection!!; screen = "part"
+            }
         }
     }
     val goBack: () -> Unit = {
@@ -169,7 +184,7 @@ fun AuditedWorkbookApp(
                             }
                         }
                         OloomProgressBar(if (partQuestions.isEmpty()) 0f else done.toFloat() / partQuestions.size, Purple)
-                        val pending = partQuestions.indexOfFirst { progress.draft(it.id) != null }.takeIf { it >= 0 }
+                        val pending = partQuestions.indexOfFirst { !progress.done(it.id) && progress.draft(it.id) != null }.takeIf { it >= 0 }
                             ?: partQuestions.indexOfFirst { !progress.done(it.id) }.coerceAtLeast(0)
                         Button(onClick = { start(partQuestions.drop(pending), false) }, modifier = Modifier.fillMaxWidth().heightIn(min = 52.dp), shape = RoundedCornerShape(16.dp)) {
                             Icon(Icons.Default.PlayArrow, null)
@@ -233,7 +248,8 @@ fun AuditedWorkbookApp(
                         Modifier.padding(padding)
                     ) { correct, perfect ->
                         score += correct; completed++
-                        progress.save(question.id, perfect)
+                        // WholeWorkbookQuestion records real checks/reveals immediately.
+                        // Keep its draft and viewport; exam submissions never clear practice gates.
                         if (questionIndex < sessionIds.lastIndex) questionIndex++
                         else {
                             if (exam) progress.saveExam(part, score, total)
@@ -292,6 +308,14 @@ internal fun WorkbookQuestionVisuals(question: ChapterQuestion, description: Str
     val visuals = buildList {
         question.visual?.let { add(QuestionVisual(it, question.visualCaption)) }
         addAll(question.visuals)
+    }
+    if (question.relatedChapter == 3 && question.section == "تمرین‌های اصلی" && question.sourceNumber == 12 && visuals.size == 3) {
+        Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(6.dp)) {
+            visuals.forEachIndexed { index, visual ->
+                Box(Modifier.weight(1f)) { WorkbookImage(visual.asset, "$description، ${listOf("شکل سمت راست", "شکل وسط", "شکل سمت چپ")[index]}", compact = true) }
+            }
+        }
+        return
     }
     Column(Modifier.fillMaxWidth(), verticalArrangement = Arrangement.spacedBy(12.dp)) {
         visuals.forEachIndexed { index, visual ->

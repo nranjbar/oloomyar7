@@ -76,7 +76,10 @@ assert 'هوا' not in collections[2][19]['title']
 assert len(inline)==7
 assert [p['right'] for p in collections[2][0]['steps'][0]['pairs']]==['اتم','عنصر','اتم','فلز','ترکیب','جامد','مایع','گاز']
 assert 'با یکای {{1}}' in collections[1][0]['steps'][0]['clozeTemplate']
-assert collections[2][14]['visual'] is None
+assert collections[2][14]['visual']=='g7_ch03_q15_question.png'
+assert [v['asset'] for v in collections[2][11]['visuals']]==[f'g7_ch03_q12_{v}_question.png' for v in ['c','b','a']]
+for p in (ROOT/'qa/source/replacement-images').glob('*.png'):
+    assert (ASSETS/'images'/p.name).read_bytes()==p.read_bytes()
 report=dict(status='PASS',questions=len(ids),steps=len(steps),chapterCounts=[len(q) for q in collections],
     sourceQuestionCrops=59,isolatedSourceAnswers=59,inlineQuestions=inline,images=len(images),reviewedHintPairs=len(steps),interactionKinds=counts,
     notes=['Original PDF crops are authoritative','No editorial answer cards or explanations displayed','MCQ crops contain only the current question key','Formula and adjacent-answer crop boundaries checked','Native UI and attempt tests are reported separately'])

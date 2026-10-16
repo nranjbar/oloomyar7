@@ -38,7 +38,7 @@ internal fun WorkbookInput(step: LearningStep, answers: List<String>, locked: Bo
                 }
             }
         }
-        StepKind.MATCH, StepKind.CLASSIFY -> InlineClozeEditor(
+        StepKind.MATCH, StepKind.CLASSIFY -> InlineFillBlanksQuestion(
             step, answers, practice?.shuffleSeed ?: 0,
             mark = { row -> practice?.mark(step, row) ?: if (answers.getOrNull(row).isNullOrBlank()) ResponseMark.EMPTY else ResponseMark.SELECTED },
             locked = { row -> locked || practice?.locked(step, row) == true },

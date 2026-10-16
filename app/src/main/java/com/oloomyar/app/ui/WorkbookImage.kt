@@ -29,7 +29,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
 @Composable
-internal fun WorkbookImage(asset: String, description: String, caption: String? = null, trimAnswerWhitespace: Boolean = false) {
+internal fun WorkbookImage(asset: String, description: String, caption: String? = null, trimAnswerWhitespace: Boolean = false, compact: Boolean = false) {
     val context = LocalContext.current
     val loaded by produceState<Pair<Bitmap?, Boolean>>(null to false, asset, trimAnswerWhitespace) {
         value = withContext(Dispatchers.IO) {
@@ -65,7 +65,7 @@ internal fun WorkbookImage(asset: String, description: String, caption: String? 
                 )
             }
             TextButton(onClick = { enlarged = true }, modifier = Modifier.align(Alignment.End)) {
-                Text("بزرگ‌نمایی تصویر")
+                Text(if (compact) "بزرگ‌نمایی" else "بزرگ‌نمایی تصویر", style = MaterialTheme.typography.labelMedium)
             }
         } else if (!loaded.second) {
             LinearProgressIndicator(Modifier.fillMaxWidth())

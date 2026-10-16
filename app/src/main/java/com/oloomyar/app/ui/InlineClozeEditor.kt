@@ -28,7 +28,7 @@ import kotlin.random.Random
 
 /** All sentences stay in place. Opening or closing a blank never changes another blank. */
 @Composable
-internal fun InlineClozeEditor(
+internal fun InlineFillBlanksQuestion(
     step: LearningStep,
     values: List<String>,
     seed: Int,
@@ -123,36 +123,45 @@ internal fun InlineClozeEditor(
         }
     }
     if (active in rows.indices && !locked(active)) {
-        val row = active
-        val choices = if (step.kind == StepKind.MATCH) WorkbookAnswers.choices(step, row) else step.categories
-        val order = remember(step.id, row, seed) { choices.shuffled(Random(seed xor step.id.hashCode())) }
-        ModalBottomSheet(onDismissRequest = { active = -1 }, sheetState = rememberModalBottomSheetState(skipPartiallyExpanded = true)) {
-            Column(Modifier.fillMaxWidth().padding(horizontal = 20.dp).navigationBarsPadding()) {
-                Text("جای خالی ${workbookFa(row + 1)}", style = MaterialTheme.typography.titleLarge)
-                Text("یک گزینه را انتخاب کن", color = Muted, modifier = Modifier.padding(vertical = 8.dp))
-                LazyColumn(Modifier.fillMaxWidth().heightIn(max = 440.dp).testTag("choice-sheet"), verticalArrangement = Arrangement.spacedBy(8.dp)) {
-                    items(order, key = { it }) { choice ->
-                        val capacity = if (step.allowTokenReuse || step.kind == StepKind.CLASSIFY) Int.MAX_VALUE else
-                            step.pairs.count { it.right == choice }.coerceAtLeast(1)
-                        val usedElsewhere = values.indices.count { it != row && values[it] == choice }
-                        val available = usedElsewhere < capacity
-                        OutlinedButton(
-                            onClick = { replace(row, choice) }, enabled = available,
-                            modifier = Modifier.fillMaxWidth().heightIn(min = 54.dp).testTag("cloze-choice-$choice"),
-                            shape = RoundedCornerShape(14.dp),
-                            colors = ButtonDefaults.outlinedButtonColors(containerColor = if (values.getOrNull(row) == choice) SelectionSoft else MaterialTheme.colorScheme.surface)
-                        ) {
-                            Text(choice, Modifier.weight(1f), style = MaterialTheme.typography.bodyLarge)
-                            if (!available) Text("استفاده شده", style = MaterialTheme.typography.labelSmall)
-                        }
+        WordBankBottomSheet(step, active, values, seed, onSelect = { replace(active, it) }, onDismiss = { active = -1 })
+    }
+}
+
+@Composable
+internal fun WordBankBottomSheet(
+    step: LearningStep,
+    row: Int,
+    values: List<String>,
+    seed: Int,
+    onSelect: (String) -> Unit,
+    onDismiss: () -> Unit
+) {
+    val choices = if (step.kind == StepKind.MATCH) WorkbookAnswers.choices(step, row) else step.categories
+    val order = remember(step.id, row, seed) { choices.shuffled(Random(seed xor step.id.hashCode())) }
+    ModalBottomSheet(onDismissRequest = onDismiss, sheetState = rememberModalBottomSheetState(skipPartiallyExpanded = true)) {
+        Column(Modifier.fillMaxWidth().padding(horizontal = 20.dp).navigationBarsPadding()) {
+            Text("جای خالی ${workbookFa(row + 1)}", style = MaterialTheme.typography.titleLarge)
+            Text("یک گزینه را انتخاب کن", color = Muted, modifier = Modifier.padding(vertical = 8.dp))
+            LazyColumn(Modifier.fillMaxWidth().heightIn(max = 440.dp).testTag("choice-sheet"), verticalArrangement = Arrangement.spacedBy(8.dp)) {
+                items(order, key = { it }) { choice ->
+                    val capacity = if (step.allowTokenReuse || step.kind == StepKind.CLASSIFY) Int.MAX_VALUE else
+                        step.pairs.count { it.right == choice }.coerceAtLeast(1)
+                    val usedElsewhere = values.indices.count { it != row && values[it] == choice }
+                    val available = usedElsewhere < capacity
+                    OutlinedButton(onClick = { onSelect(choice) }, enabled = available,
+                        modifier = Modifier.fillMaxWidth().heightIn(min = 54.dp).testTag("cloze-choice-$choice"),
+                        shape = RoundedCornerShape(14.dp),
+                        colors = ButtonDefaults.outlinedButtonColors(containerColor = if (values.getOrNull(row) == choice) SelectionSoft else MaterialTheme.colorScheme.surface)) {
+                        Text(choice, Modifier.weight(1f), style = MaterialTheme.typography.bodyLarge)
+                        if (!available) Text("استفاده شده", style = MaterialTheme.typography.labelSmall)
                     }
-                    item {
-                        TextButton(onClick = { replace(row, "") }, enabled = values.getOrNull(row)?.isNotBlank() == true, modifier = Modifier.fillMaxWidth()) {
-                            Text("پاک‌کردن این انتخاب")
-                        }
-                    }
-                    item { Spacer(Modifier.height(14.dp)) }
                 }
+                item {
+                    TextButton(onClick = { onSelect("") }, enabled = values.getOrNull(row)?.isNotBlank() == true, modifier = Modifier.fillMaxWidth()) {
+                        Text("پاک‌کردن این انتخاب")
+                    }
+                }
+                item { Spacer(Modifier.height(14.dp)) }
             }
         }
     }

@@ -6,6 +6,13 @@ import androidx.compose.material3.Typography
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
+import androidx.compose.runtime.*
+import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalDensity
+import androidx.compose.ui.unit.Density
+import android.content.SharedPreferences
+import com.oloomyar.app.data.DisplaySettings
+import com.oloomyar.app.data.LearningPreferences
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.unit.LayoutDirection
@@ -15,22 +22,23 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
-val Blue = Color(0xFF176B78)
+val Blue = Color(0xFF087C89)
+val RoyalBlue = Color(0xFF315DC7)
 val BlueDark = Color(0xFF0D4D59)
 val BlueSoft = Color(0xFFE6F5F5)
 val Green = Color(0xFF157347)
 val GreenSoft = Color(0xFFE5F6EB)
 val Orange = Color(0xFFA64D13)
 val OrangeSoft = Color(0xFFFFF0DF)
-val Purple = Color(0xFF6250A8)
+val Purple = Color(0xFF7961C8)
 val PurpleSoft = Color(0xFFF1EDFC)
 val Aqua = Color(0xFF137E8A)
 val AquaSoft = Color(0xFFE5F5F2)
-val Yellow = Color(0xFFE8B23A)
+val Yellow = Color(0xFFFFDA76)
 val Navy = Color(0xFF113C4A)
-val Ink = Color(0xFF15323C)
+val Ink = Color(0xFF19334C)
 val Muted = Color(0xFF526773)
-val Background = Color(0xFFF4F8F6)
+val Background = Color(0xFFF2F8FC)
 val SurfaceMuted = Color(0xFFF8FAF8)
 val Border = Color(0xFFD9E6E1)
 val Danger = Color(0xFFB52E4C)
@@ -72,7 +80,18 @@ private val AppShapes = Shapes(
 
 @Composable
 fun OloomYarTheme(content: @Composable () -> Unit) {
-    CompositionLocalProvider(LocalLayoutDirection provides LayoutDirection.Rtl) {
+    val context = LocalContext.current
+    val store = remember(context) { LearningPreferences(context) }
+    var settings by remember(store) { mutableStateOf(store.display()) }
+    DisposableEffect(store) {
+        val listener = SharedPreferences.OnSharedPreferenceChangeListener { _, _ -> settings = store.display() }
+        store.preferences.registerOnSharedPreferenceChangeListener(listener)
+        onDispose { store.preferences.unregisterOnSharedPreferenceChangeListener(listener) }
+    }
+    val system = LocalDensity.current
+    CompositionLocalProvider(LocalLayoutDirection provides LayoutDirection.Rtl,
+        LocalDisplaySettings provides settings,
+        LocalDensity provides Density(system.density, system.fontScale * settings.textScale)) {
         MaterialTheme(
             colorScheme = Scheme,
             typography = AppTypography,
@@ -81,4 +100,6 @@ fun OloomYarTheme(content: @Composable () -> Unit) {
         )
     }
 }
+
+val LocalDisplaySettings = staticCompositionLocalOf { DisplaySettings() }
 

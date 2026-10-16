@@ -905,7 +905,17 @@
       }
     ],
     "visual": null,
-    "visuals": [],
+    "visuals": [
+      {
+        "asset": "g7_ch03_q12_c_question.png"
+      },
+      {
+        "asset": "g7_ch03_q12_b_question.png"
+      },
+      {
+        "asset": "g7_ch03_q12_a_question.png"
+      }
+    ],
     "legacyProgress": [],
     "grade": 7,
     "relatedChapter": 3,
@@ -920,7 +930,7 @@
     "sourcePolicy": "verbatim_original_pdf",
     "sourceAnswerTextExtracted": "12 – به ترتیب از راست به چپ  :   عنصر نافلز- عنصر فلز- ترکیب",
     "visualCaption": null,
-    "promptVisual": null
+    "promptVisual": "g7_ch03_q12_source_prompt.png"
   },
   {
     "id": "g7-ch03-main-013-1405",
@@ -1090,7 +1100,7 @@
         "allowTokenReuse": false
       }
     ],
-    "visual": null,
+    "visual": "g7_ch03_q15_question.png",
     "visuals": [],
     "legacyProgress": [],
     "grade": 7,
@@ -1106,7 +1116,7 @@
     "sourcePolicy": "verbatim_original_pdf",
     "sourceAnswerTextExtracted": "15 - از2 اتم اکسیژن و یک اتم کربن- هر اتم اکسیژن از8 الکترون و8 پروتون و8 نوترون-\nهر اتم کربن از6 الکترون و6 پروتون و6 نوترون\n–",
     "visualCaption": null,
-    "promptVisual": null
+    "promptVisual": "g7_ch03_q15_source_prompt.png"
   },
   {
     "id": "g7-ch03-main-016-1405",

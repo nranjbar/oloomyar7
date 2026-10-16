@@ -1548,10 +1548,10 @@
         "تطبیق شکل، نمودار، جدول یا توالی"
       ],
       "sharedAnswerStrip": false,
-      "promptAsset": null,
-      "promptSha256": null,
+      "promptAsset": "g7_ch03_q12_source_prompt.png",
+      "promptSha256": "824484fefc50f5fb49ffe3e73e9afc9bbf30a7d2ad472dbebe25b1e43ac9e4b7",
       "promptTextPreserved": true,
-      "promptTextSha256": null
+      "promptTextSha256": "0f15ee285a71eb0ba36a6bfc8a28b457150b2f6d89fe27b4178f79497a93a3f6"
     },
     {
       "id": "g7_ch03_q13",
@@ -1669,10 +1669,10 @@
         "تطبیق شکل، نمودار، جدول یا توالی"
       ],
       "sharedAnswerStrip": false,
-      "promptAsset": null,
-      "promptSha256": null,
+      "promptAsset": "g7_ch03_q15_source_prompt.png",
+      "promptSha256": "fe376fc4745eeac9d7844689edc1fde08d6df6176da44841eaf0b350d05aa0a1",
       "promptTextPreserved": true,
-      "promptTextSha256": null
+      "promptTextSha256": "9cf2ce723139a3ff21f01346480bc3bca063d811453ac7327c7cf84c82f7b99e"
     },
     {
       "id": "g7_ch03_q16",

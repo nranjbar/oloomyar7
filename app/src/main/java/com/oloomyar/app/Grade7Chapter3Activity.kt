@@ -15,7 +15,10 @@ class Grade7Chapter3Activity : ComponentActivity() {
         val progress = WorkbookProgress(applicationContext, "grade7_chapter3", repository.questions)
         setContent {
             OloomYarTheme {
-                AuditedWorkbookApp("فصل ۳ • اتم‌ها، الفبای مواد", repository.questions, progress, onExit = { finish() })
+                AuditedWorkbookApp("فصل ۳ • اتم‌ها، الفبای مواد", repository.questions, progress,
+                    initialQuestionId = intent.getStringExtra("question_id"),
+                    initialSection = intent.getStringExtra("section"),
+                    continueSequence = intent.getBooleanExtra("continue_sequence", false), onExit = { finish() })
             }
         }
     }

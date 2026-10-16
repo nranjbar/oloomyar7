@@ -23,7 +23,19 @@ data class QuestionPractice(
     fun signature(question: ChapterQuestion) = question.steps.map { PracticeAttempts.signature(it, values(it)) }
     fun canCheck(question: ChapterQuestion) = !revealed && !correct(question) && complete(question) &&
         signature(question) !in incorrectSubmissions
-    fun canReveal() = PracticeAttempts.canReveal(incorrectSubmissions.size, shownHints)
+    /** Whole-question failures do not unlock an unchanged, independently locked part. */
+    fun hintLevel(question: ChapterQuestion, step: LearningStep): Int {
+        val index = question.steps.indexOfFirst { it.id == step.id }
+        if (index < 0) return 0
+        return incorrectSubmissions.mapNotNull { it.getOrNull(index) }
+            .filter { WorkbookAnswers.isComplete(step, it) && !WorkbookAnswers.isCorrect(step, it) }
+            .distinct().size.coerceIn(0, 2)
+    }
+    fun canReveal(question: ChapterQuestion? = null) =
+        PracticeAttempts.canReveal(incorrectSubmissions.distinct().size, shownHints) &&
+            (question == null || question.steps.all { step ->
+                checked[step.id]?.let { WorkbookAnswers.isCorrect(step, it) } == true || hintLevel(question, step) >= 2
+            })
 
     fun mark(step: LearningStep, row: Int): ResponseMark {
         val current = values(step)
@@ -59,5 +71,5 @@ data class QuestionPractice(
             shownHints = if (wrong) PracticeAttempts.hintLevel(history.size) else shownHints)
     }
 
-    fun reveal() = if (canReveal()) copy(revealed = true) else this
+    fun reveal(question: ChapterQuestion? = null) = if (canReveal(question)) copy(revealed = true) else this
 }

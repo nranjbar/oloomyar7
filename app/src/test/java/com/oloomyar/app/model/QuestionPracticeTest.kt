@@ -58,4 +58,22 @@ class QuestionPracticeTest {
         val state=QuestionPractice(shuffleSeed=123).change(single,listOf("1")).submit(question(single))
         assertEquals(123,state.shuffleSeed);assertEquals(123,state.change(single,listOf("2")).shuffleSeed)
     }
+    @Test fun changingOnePartCannotUnlockAnotherUnchangedWrongPart() {
+        val other = single.copy(id = "other")
+        val q = question(single, other)
+        val first = QuestionPractice().change(single, listOf("1")).change(other, listOf("1")).submit(q)
+        val second = first.change(single, listOf("2")).submit(q)
+        assertEquals(2, second.hintLevel(q, single)); assertEquals(1, second.hintLevel(q, other))
+        assertFalse(second.canReveal(q)); assertFalse(second.reveal(q).revealed)
+        val third = second.change(other, listOf("2")).submit(q)
+        assertTrue(third.canReveal(q)); assertTrue(third.reveal(q).revealed)
+    }
+    @Test fun aCorrectLockedPartDoesNotRequireIntentionalWrongAnswers() {
+        val other = single.copy(id = "other")
+        val q = question(single, other)
+        val state = QuestionPractice().change(single, listOf("0")).change(other, listOf("1")).submit(q)
+            .change(other, listOf("2")).submit(q)
+        assertTrue(state.canReveal(q)); assertEquals(0, state.hintLevel(q, single))
+        assertEquals(ResponseMark.CORRECT, state.mark(single, 0))
+    }
 }

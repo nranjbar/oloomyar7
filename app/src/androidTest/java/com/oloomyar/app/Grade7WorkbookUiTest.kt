@@ -38,6 +38,7 @@ class Grade7WorkbookUiTest {
 
     @Before fun reset() {
         context.getSharedPreferences("workbook_1405_g7_ui",Context.MODE_PRIVATE).edit().clear().commit()
+        context.getSharedPreferences("grade7_learning_settings",Context.MODE_PRIVATE).edit().clear().commit()
     }
     private fun open(q:ChapterQuestion, fontScale:Float=1f, progress:WorkbookProgress=WorkbookProgress(context,"g7_ui",listOf(q))) {
         compose.setContent {
@@ -134,10 +135,11 @@ class Grade7WorkbookUiTest {
     }
     @Test fun allPartsMustBeAnsweredBeforeTheWholeQuestionCanBeChecked() {
         val q=Grade7Chapter2Repository(context).questions.first { it.sourceNumber==9 && it.section=="تمرین‌های اصلی" };open(q)
-        val wrong0=q.steps[0].options.filter { !it.correct };val wrong1=q.steps[1].options.first { !it.correct }
+        val wrong0=q.steps[0].options.filter { !it.correct };val wrong1=q.steps[1].options.filter { !it.correct }
         choose(wrong0[0].text);compose.onNodeWithText("بررسی پاسخ").assertIsNotEnabled()
-        choose(wrong1.text);check();compose.onNodeWithTag("reveal-answer").assertIsNotEnabled()
-        choose(wrong0[1].text);check();compose.onNodeWithTag("reveal-answer").assertIsEnabled()
+        choose(wrong1[0].text);check();compose.onNodeWithTag("reveal-answer").assertIsNotEnabled()
+        choose(wrong0[1].text);check();compose.onNodeWithTag("reveal-answer").assertIsNotEnabled()
+        choose(wrong1[1].text);check();compose.onNodeWithTag("reveal-answer").assertIsEnabled()
         compose.onNodeWithContentDescription("تصویر پاسخ سؤال ۹").assertDoesNotExist()
         compose.onNodeWithTag("reveal-answer").performClick()
         compose.waitUntil(10000) { compose.onAllNodesWithContentDescription("تصویر پاسخ سؤال ۹").fetchSemanticsNodes().isNotEmpty() }

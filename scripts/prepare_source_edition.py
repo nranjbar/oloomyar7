@@ -92,6 +92,8 @@ def main():
             if any(f'ch0{c}_' in p.name for c in (1,2,3)):
                 target=(PINNED/'pending-images' if p.name=='g7_ch03_q15_question.png' else ASSETS/'images')/p.name
                 target.parent.mkdir(exist_ok=True,parents=True);shutil.copyfile(p,target)
+    for p in (PINNED/'replacement-images').glob('*.png'):
+        shutil.copyfile(p,ASSETS/'images'/p.name)
     workbook=fitz.open(PINNED/'کتاب کار علوم هفتم 1405.pdf')
     answers={c:fitz.open(PINNED/f'پاسخ فصل {c} هفتم.pdf') for c in (1,2,3)}
     existing={c:json.loads((ASSETS/f'content/chapter{c}.json').read_text()) for c in (1,2)}
@@ -127,11 +129,15 @@ def main():
         else:crops(answers[c],segs,ASSETS/'images'/q['answerVisual'])
         if c==3 and n in (16,17) and not ismcq:q['visual']='g7_ch03_mcq05_question.png' if n==16 else 'g7_ch03_q17_question.png'
         if c==3 and ismcq and n==5:q['visual']='g7_ch03_mcq05_question.png'
-        if c==3 and not ismcq and n==15:q['visual']=None
+        if c==3 and not ismcq and n==15:
+            q['visual']='g7_ch03_q15_question.png' if (PINNED/'replacement-images/g7_ch03_q15_question.png').exists() else None
+        if c==3 and not ismcq and n==12 and (PINNED/'replacement-images/g7_ch03_q12_a_question.png').exists():
+            q['visual']=None
+            q['visuals']=[dict(asset=f'g7_ch03_q12_{v}_question.png') for v in ['c','b','a']]
         q['visualCaption']=None
         q['promptVisual']=None
         prompt_text_hash=None
-        if q.get('visual'):
+        if q.get('visual') or q.get('visuals'):
             prompt_doc=fitz.open(stream=(PINNED/'کتاب کار علوم هفتم 1405.pdf').read_bytes(),filetype='pdf')
             for page_number in sorted(set(seg['page'] for seg in r['segments'])):
                 page=prompt_doc[page_number-1]
