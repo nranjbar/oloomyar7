@@ -62,6 +62,22 @@ def web_review():
     atomic(OUT/'Grade7_Chapters1-3_Review_FA.html',standalone.encode())
     dump=dict(scope='chapters1-3',sourcePolicy='verbatim',requests=requests,answerImageList=answer_rows,answerImagesPrepared=True)
     atomic(ROOT/'docs/image_audit_chapters1-3.json',(json.dumps(dump,ensure_ascii=False,indent=2)+'\n').encode())
+    # Keep review manifests tied to the current assets rather than legacy generated names.
+    import hashlib
+    figure_manifest=[]
+    for q in qs:
+        figures=([q['visual']] if q.get('visual') else [])+[v['asset'] for v in q.get('visuals',[])]
+        if not figures and q.get('originalFigureVisual'):figures=[q['originalFigureVisual']]
+        for name in figures:
+            figure_manifest.append(dict(id=q['canonicalId'],file=name,asset='../app/src/main/assets/images/'+name,
+                status='original_source_in_use' if name.endswith('_source_figure.png') or name.endswith('_source_question.png') else 'supplied_in_use',
+                sha256=hashlib.sha256((ASSETS/name).read_bytes()).hexdigest()))
+    for target in [ROOT/'review/image_manifest.json',ROOT/'docs/grade7_image_manifest.json']:
+        atomic(target,(json.dumps(figure_manifest,ensure_ascii=False,indent=2)+'\n').encode())
+    answer_manifest=[dict(id=q['canonicalId'],asset='../app/src/main/assets/images/'+q['answerVisual'],status='original_source_ready',
+        newImageNeeded=False,sha256=hashlib.sha256((ASSETS/q['answerVisual']).read_bytes()).hexdigest()) for q in qs]
+    atomic(ROOT/'review/answer_image_manifest.json',(json.dumps(answer_manifest,ensure_ascii=False,indent=2)+'\n').encode())
+
     with (ROOT/'review/Grade7_Answer_Images_Needed.csv').open('w',encoding='utf-8-sig',newline='') as f:
         w=csv.writer(f,lineterminator="\n");w.writerow(['شناسه','سؤال','علت تصویر','فایل پاسخ','وضعیت'])
         w.writerows([r['id'],title(byid[r['id']]),'؛ '.join(r['formattingRisks']),r['answerAsset'],'برش اصلی آماده؛ تصویر جدید لازم نیست'] for r in answer_rows)
@@ -110,6 +126,7 @@ def pdf_review():
     im,d,y=page('گزارش تصاویر و پاسخ‌های سه فصل اول')
     y=paragraph(d,'۵۹ سؤال | ۳۲ پاسخ با نمایش تصویری | دو مورد انجام‌شده و چهار ارتقای اختیاری',y,35,color=TEAL,bold=True)
     y=paragraph(d,'اصل مورد تأکید مؤلف: هیچ سؤال یا پاسخی بازنویسی، اصلاح علمی یا کوتاه نشده است. صورت سؤال و پاسخ در این گزارش، تصویر خود PDF اصلی است.',y+20)
+    y=paragraph(d,'مرجع این گزارش کتاب ۶۳صفحه‌ای چاپ ۱۴۰۵ پروژه است. فایل تازهٔ ۴۸صفحه‌ای شماره‌ها و بندهای متفاوت دارد؛ دو نسخه با هم ترکیب نشده‌اند.',y+12,29,color=MUTED)
     y=paragraph(d,'برای پاسخ‌ها تصویر تازه لازم نیست. برش‌های اصلی همهٔ ۳۲ مورد آماده و به اپ متصل شده‌اند. چند برش قدیمی که پاسخ بعدی یا کسر ناقص داشتند از PDF دوباره استخراج شدند.',y+18)
     y=paragraph(d,'تصاویر سؤال‌ها',y+32,37,color=TEAL,bold=True)
     for r in requests:y=paragraph(d,' / '.join(title(byid[i]) for i in r['ids'])+' - '+r['status'],y+10,30)

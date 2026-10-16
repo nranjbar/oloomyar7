@@ -226,9 +226,9 @@ fun AuditedWorkbookApp(
                                 Text("سؤال ${workbookFa(question.sourceNumber)} • ${question.title}", style = MaterialTheme.typography.titleMedium, textAlign = TextAlign.Right)
                                 Text("صفحهٔ ${workbookFa(question.sourcePage)}" + if (conceptual) " • موضوع فصل ${workbookFa(question.relatedChapter)}" else "", color = Muted, style = MaterialTheme.typography.bodySmall)
                                 Text(when {
-                                    draft -> "تمرین نیمه‌تمام • ادامه از محل قبلی"
                                     mistake -> "نیازمند مرور"
-                                    done -> "تمرین شده • لمس برای تمرین دوباره"
+                                    done -> "تمرین شده • لمس برای مرور"
+                                    draft -> "تمرین نیمه‌تمام • ادامه از محل قبلی"
                                     else -> "آمادهٔ پاسخ‌دادن"
                                 }, color = statusColor, style = MaterialTheme.typography.labelMedium, modifier = Modifier.padding(top = 3.dp))
                             }

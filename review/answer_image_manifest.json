@@ -3,354 +3,413 @@
     "id": "g7_ch01_q01",
     "asset": "../app/src/main/assets/images/g7_ch01_q01_source_answer.png",
     "status": "original_source_ready",
-    "newImageNeeded": false
+    "newImageNeeded": false,
+    "sha256": "b2382055ad2ae7d2faf859a5c38c8bacd3937a22be9dbfa1f2230bf822075858"
   },
   {
     "id": "g7_ch01_q02",
     "asset": "../app/src/main/assets/images/g7_ch01_q02_source_answer.png",
     "status": "original_source_ready",
-    "newImageNeeded": false
+    "newImageNeeded": false,
+    "sha256": "09c883674abcad342bec46a317cf743dd7d8d471dd6ef163443cf34620d578a1"
   },
   {
     "id": "g7_ch01_q03",
     "asset": "../app/src/main/assets/images/g7_ch01_q03_source_answer.png",
     "status": "original_source_ready",
-    "newImageNeeded": false
+    "newImageNeeded": false,
+    "sha256": "c5b120214f301dcb4ea3c88229fece1c4fabc42d7ce8b2d90e642eaeaaf799db"
   },
   {
     "id": "g7_ch01_q04",
     "asset": "../app/src/main/assets/images/g7_ch01_q04_source_answer.png",
     "status": "original_source_ready",
-    "newImageNeeded": false
+    "newImageNeeded": false,
+    "sha256": "603092cc07177024e6253d0bb6e294caf22a34d24a17c17889e86152949353e8"
   },
   {
     "id": "g7_ch01_q05",
     "asset": "../app/src/main/assets/images/g7_ch01_q05_source_answer.png",
     "status": "original_source_ready",
-    "newImageNeeded": false
+    "newImageNeeded": false,
+    "sha256": "74551fc101b41b8641269f5b42586bd36ee4cbf3631c1ea0bbb1c27ea26ef388"
   },
   {
     "id": "g7_ch01_q06",
     "asset": "../app/src/main/assets/images/g7_ch01_q06_source_answer.png",
     "status": "original_source_ready",
-    "newImageNeeded": false
+    "newImageNeeded": false,
+    "sha256": "822caa6ab87cfd3ab1d97c13e6bad97e1d5259e54f8da399b42615ac66381665"
   },
   {
     "id": "g7_ch01_q07",
     "asset": "../app/src/main/assets/images/g7_ch01_q07_source_answer.png",
     "status": "original_source_ready",
-    "newImageNeeded": false
+    "newImageNeeded": false,
+    "sha256": "2a3030ea07bde4b4bddfa4d8bcff849365cdaf67d924aa5988f060d6cfac18bb"
   },
   {
     "id": "g7_ch01_q08",
     "asset": "../app/src/main/assets/images/g7_ch01_q08_source_answer.png",
     "status": "original_source_ready",
-    "newImageNeeded": false
+    "newImageNeeded": false,
+    "sha256": "58b964f5d8d774959483179049494b473fe2ecfa3e919e837aa2eb4c0a66238f"
   },
   {
     "id": "g7_ch02_q01",
     "asset": "../app/src/main/assets/images/g7_ch02_q01_source_answer.png",
     "status": "original_source_ready",
-    "newImageNeeded": false
+    "newImageNeeded": false,
+    "sha256": "d92b945a4a276ef2a4eae30d3e569e70fbb9a4e976f43eb4d71086b79024a554"
   },
   {
     "id": "g7_ch02_q02",
     "asset": "../app/src/main/assets/images/g7_ch02_q02_source_answer.png",
     "status": "original_source_ready",
-    "newImageNeeded": false
+    "newImageNeeded": false,
+    "sha256": "d4a8de5c4f5f1f58a426c5276bbfbe08ca3fbf67db016cf65d6a58debe37becb"
   },
   {
     "id": "g7_ch02_q03",
     "asset": "../app/src/main/assets/images/g7_ch02_q03_source_answer.png",
     "status": "original_source_ready",
-    "newImageNeeded": false
+    "newImageNeeded": false,
+    "sha256": "3afb13173cf95ed6a80c30f491416af1a51516dd469829bcbac78e53b35f4698"
   },
   {
     "id": "g7_ch02_q04",
     "asset": "../app/src/main/assets/images/g7_ch02_q04_source_answer.png",
     "status": "original_source_ready",
-    "newImageNeeded": false
+    "newImageNeeded": false,
+    "sha256": "f10da90a3108fd9fe267e40e660b8c0d1751dfd5af1a27f6aa176a5bd0a3ef60"
   },
   {
     "id": "g7_ch02_q05",
     "asset": "../app/src/main/assets/images/g7_ch02_q05_source_answer.png",
     "status": "original_source_ready",
-    "newImageNeeded": false
+    "newImageNeeded": false,
+    "sha256": "33014e0b4bdbb11c1b815178835e4ab6f741470e04797be1f40d447149082bc9"
   },
   {
     "id": "g7_ch02_q06",
     "asset": "../app/src/main/assets/images/g7_ch02_q06_source_answer.png",
     "status": "original_source_ready",
-    "newImageNeeded": false
+    "newImageNeeded": false,
+    "sha256": "e5444ef4e43675e3b639360f3e626c14456a051dd3dac2068a7bf9531d4ce8e1"
   },
   {
     "id": "g7_ch02_q07",
     "asset": "../app/src/main/assets/images/g7_ch02_q07_source_answer.png",
     "status": "original_source_ready",
-    "newImageNeeded": false
+    "newImageNeeded": false,
+    "sha256": "c1a1f84bae3f6e4804b6a10f9bf28a54e52f9b24b7f67f16b21a50183a526c30"
   },
   {
     "id": "g7_ch02_q08",
     "asset": "../app/src/main/assets/images/g7_ch02_q08_source_answer.png",
     "status": "original_source_ready",
-    "newImageNeeded": false
+    "newImageNeeded": false,
+    "sha256": "e32a4b6f5e99b440d02de660a52a7014f9753fb1d357db1be2a2cb3ecc931d5c"
   },
   {
     "id": "g7_ch02_q09",
     "asset": "../app/src/main/assets/images/g7_ch02_q09_source_answer.png",
     "status": "original_source_ready",
-    "newImageNeeded": false
+    "newImageNeeded": false,
+    "sha256": "a484352e768684f60e83f4b7eee32f176f3430985de54eeedf82b267330a5edd"
   },
   {
     "id": "g7_ch02_q10",
     "asset": "../app/src/main/assets/images/g7_ch02_q10_source_answer.png",
     "status": "original_source_ready",
-    "newImageNeeded": false
+    "newImageNeeded": false,
+    "sha256": "6c697fdd0e9c7ea3100c035dbc32f1d4ebf8882eb2c43101274463aa3f19c811"
   },
   {
     "id": "g7_ch02_q11",
     "asset": "../app/src/main/assets/images/g7_ch02_q11_source_answer.png",
     "status": "original_source_ready",
-    "newImageNeeded": false
+    "newImageNeeded": false,
+    "sha256": "e0e3662dfe079ceb5459b54a09a4bb2ddc22e47bfc05fdbf40c1f94487eb8c6c"
   },
   {
     "id": "g7_ch02_q12",
     "asset": "../app/src/main/assets/images/g7_ch02_q12_source_answer.png",
     "status": "original_source_ready",
-    "newImageNeeded": false
+    "newImageNeeded": false,
+    "sha256": "ca78e474281183620761f9455176220e26bc8b881faad57925c5175f3c31ba03"
   },
   {
     "id": "g7_ch02_q13",
     "asset": "../app/src/main/assets/images/g7_ch02_q13_source_answer.png",
     "status": "original_source_ready",
-    "newImageNeeded": false
+    "newImageNeeded": false,
+    "sha256": "979b6de72e89f5ce5fac0094a0b4e2b52453cf179e5b152c18d52541b06e6ce3"
   },
   {
     "id": "g7_ch02_q14",
     "asset": "../app/src/main/assets/images/g7_ch02_q14_source_answer.png",
     "status": "original_source_ready",
-    "newImageNeeded": false
+    "newImageNeeded": false,
+    "sha256": "2301c2853d88890e67fc28e665ba0b45581ca19277455d84ab07f30e1098a361"
   },
   {
     "id": "g7_ch02_q15",
     "asset": "../app/src/main/assets/images/g7_ch02_q15_source_answer.png",
     "status": "original_source_ready",
-    "newImageNeeded": false
+    "newImageNeeded": false,
+    "sha256": "f2476efbcf1faf3e5b67386431e527d06f892ebd677e3bd096fdd062d9aa0252"
   },
   {
     "id": "g7_ch02_mcq01",
     "asset": "../app/src/main/assets/images/g7_ch02_mcq01_source_answer.png",
     "status": "original_source_ready",
-    "newImageNeeded": false
+    "newImageNeeded": false,
+    "sha256": "9067b2637ecb79bc0cd7df7d84166ab84a90783d578178245bca66b1606ecbb6"
   },
   {
     "id": "g7_ch02_mcq02",
     "asset": "../app/src/main/assets/images/g7_ch02_mcq02_source_answer.png",
     "status": "original_source_ready",
-    "newImageNeeded": false
+    "newImageNeeded": false,
+    "sha256": "fb6fd23bc386d377bc2a10ffea1ebeec9aa26eb431ccf0733b6737dcef99e79f"
   },
   {
     "id": "g7_ch02_mcq03",
     "asset": "../app/src/main/assets/images/g7_ch02_mcq03_source_answer.png",
     "status": "original_source_ready",
-    "newImageNeeded": false
+    "newImageNeeded": false,
+    "sha256": "f4ced5ce7afc3627073e5fc9aaf548f72ede91cca9e9025ede047418ed7751d8"
   },
   {
     "id": "g7_ch02_mcq04",
     "asset": "../app/src/main/assets/images/g7_ch02_mcq04_source_answer.png",
     "status": "original_source_ready",
-    "newImageNeeded": false
+    "newImageNeeded": false,
+    "sha256": "2224d285264efccc43b80f329e924bce62ff5654610fb06cf705416ab0620698"
   },
   {
     "id": "g7_ch02_mcq05",
     "asset": "../app/src/main/assets/images/g7_ch02_mcq05_source_answer.png",
     "status": "original_source_ready",
-    "newImageNeeded": false
+    "newImageNeeded": false,
+    "sha256": "bcc17e95d06128fbb163fdb28a368cc89af3a86874e308c866157b6fa8c53758"
   },
   {
     "id": "g7_ch03_q01",
     "asset": "../app/src/main/assets/images/g7_ch03_q01_source_answer.png",
     "status": "original_source_ready",
-    "newImageNeeded": false
+    "newImageNeeded": false,
+    "sha256": "4361fef118da0070104d087564c1dc152045eed75b7f9644173cd37e172d9b9e"
   },
   {
     "id": "g7_ch03_q02",
     "asset": "../app/src/main/assets/images/g7_ch03_q02_source_answer.png",
     "status": "original_source_ready",
-    "newImageNeeded": false
+    "newImageNeeded": false,
+    "sha256": "36ed33b0e4a03c639ba0d21057c03687b2d41e3782591e471dbe0974024d87e8"
   },
   {
     "id": "g7_ch03_q03",
     "asset": "../app/src/main/assets/images/g7_ch03_q03_source_answer.png",
     "status": "original_source_ready",
-    "newImageNeeded": false
+    "newImageNeeded": false,
+    "sha256": "457c33676c9073b71c349622e24295dfc966f49e59ae6a15eef858e1261f0ff4"
   },
   {
     "id": "g7_ch03_q04",
     "asset": "../app/src/main/assets/images/g7_ch03_q04_source_answer.png",
     "status": "original_source_ready",
-    "newImageNeeded": false
+    "newImageNeeded": false,
+    "sha256": "9f405a818ad67796997466da30bebae65163d29c9844386496cec972c1568528"
   },
   {
     "id": "g7_ch03_q05",
     "asset": "../app/src/main/assets/images/g7_ch03_q05_source_answer.png",
     "status": "original_source_ready",
-    "newImageNeeded": false
+    "newImageNeeded": false,
+    "sha256": "03872f7985f01c76567558b6fad56a31df7964144ddf652902f387f8015302da"
   },
   {
     "id": "g7_ch03_q06",
     "asset": "../app/src/main/assets/images/g7_ch03_q06_source_answer.png",
     "status": "original_source_ready",
-    "newImageNeeded": false
+    "newImageNeeded": false,
+    "sha256": "fd8fe2871c1cb0d205935e79b7388a460463cb5eb8e33b0fba24dfc029e65546"
   },
   {
     "id": "g7_ch03_q07",
     "asset": "../app/src/main/assets/images/g7_ch03_q07_source_answer.png",
     "status": "original_source_ready",
-    "newImageNeeded": false
+    "newImageNeeded": false,
+    "sha256": "1f295fffd8c3435dde3619ec2623a71999b8e1d9662bed9fd05136aec51028fd"
   },
   {
     "id": "g7_ch03_q08",
     "asset": "../app/src/main/assets/images/g7_ch03_q08_source_answer.png",
     "status": "original_source_ready",
-    "newImageNeeded": false
+    "newImageNeeded": false,
+    "sha256": "0e9fb03f01dcd497128818882f91873a0e0f196508204a5627c3cb251860e126"
   },
   {
     "id": "g7_ch03_q09",
     "asset": "../app/src/main/assets/images/g7_ch03_q09_source_answer.png",
     "status": "original_source_ready",
-    "newImageNeeded": false
+    "newImageNeeded": false,
+    "sha256": "3442b08931843312de37c6610e61585da2ba2dd0fd9c8d15a02d88986c970b25"
   },
   {
     "id": "g7_ch03_q10",
     "asset": "../app/src/main/assets/images/g7_ch03_q10_source_answer.png",
     "status": "original_source_ready",
-    "newImageNeeded": false
+    "newImageNeeded": false,
+    "sha256": "ef2ce6a5c762f488f2b5ff0110dabd4f209de1e5b07087609f2041c86071d634"
   },
   {
     "id": "g7_ch03_q11",
     "asset": "../app/src/main/assets/images/g7_ch03_q11_source_answer.png",
     "status": "original_source_ready",
-    "newImageNeeded": false
+    "newImageNeeded": false,
+    "sha256": "de6abdd544883cc2052f99446e59571a11a372b665f08b89e4b70f3ee15eb3fc"
   },
   {
     "id": "g7_ch03_q12",
     "asset": "../app/src/main/assets/images/g7_ch03_q12_source_answer.png",
     "status": "original_source_ready",
-    "newImageNeeded": false
+    "newImageNeeded": false,
+    "sha256": "607ce9d928dc2d0d0877c1b1f9b661eb3b6f9492e5174e93d15dffb09fe2e4cc"
   },
   {
     "id": "g7_ch03_q13",
     "asset": "../app/src/main/assets/images/g7_ch03_q13_source_answer.png",
     "status": "original_source_ready",
-    "newImageNeeded": false
+    "newImageNeeded": false,
+    "sha256": "d4bdbde326fbd86c3b4adc34ffd1daa08305e9614a666334471fb91a488cd03e"
   },
   {
     "id": "g7_ch03_q14",
     "asset": "../app/src/main/assets/images/g7_ch03_q14_source_answer.png",
     "status": "original_source_ready",
-    "newImageNeeded": false
+    "newImageNeeded": false,
+    "sha256": "62472593b66befb8975f51a42ff85cfdd940f396e1a1561e2421a5c8ed27f944"
   },
   {
     "id": "g7_ch03_q15",
     "asset": "../app/src/main/assets/images/g7_ch03_q15_source_answer.png",
     "status": "original_source_ready",
-    "newImageNeeded": false
+    "newImageNeeded": false,
+    "sha256": "09aad4ca16db5c7a36ab7a1d8e40caa9519d47273c12fd11cd113d11f2189958"
   },
   {
     "id": "g7_ch03_q16",
     "asset": "../app/src/main/assets/images/g7_ch03_q16_source_answer.png",
     "status": "original_source_ready",
-    "newImageNeeded": false
+    "newImageNeeded": false,
+    "sha256": "80b75e65825edfcb665a0ce65cfdc89daaa7b04a597ed3eaaeb528132a352a9f"
   },
   {
     "id": "g7_ch03_q17",
     "asset": "../app/src/main/assets/images/g7_ch03_q17_source_answer.png",
     "status": "original_source_ready",
-    "newImageNeeded": false
+    "newImageNeeded": false,
+    "sha256": "d512a14ade3632d729f1163a5be64ce5283633859a08433f654d2ca6007f3224"
   },
   {
     "id": "g7_ch03_q18",
     "asset": "../app/src/main/assets/images/g7_ch03_q18_source_answer.png",
     "status": "original_source_ready",
-    "newImageNeeded": false
+    "newImageNeeded": false,
+    "sha256": "d26c2a726742b5be3663eba923a84c0b510231398a9f595c7d8ba8b865d9a18e"
   },
   {
     "id": "g7_ch03_q19",
     "asset": "../app/src/main/assets/images/g7_ch03_q19_source_answer.png",
     "status": "original_source_ready",
-    "newImageNeeded": false
+    "newImageNeeded": false,
+    "sha256": "19330ff424496e040427a3f636f89c080646b6a0fc19642cebe3e6628154bb8b"
   },
   {
     "id": "g7_ch03_q20",
     "asset": "../app/src/main/assets/images/g7_ch03_q20_source_answer.png",
     "status": "original_source_ready",
-    "newImageNeeded": false
+    "newImageNeeded": false,
+    "sha256": "5d1c0edb70fb29b6b7592702ba0ca438ecc3c0c726e80e8bc78dcf8dc8747b80"
   },
   {
     "id": "g7_ch03_q21",
     "asset": "../app/src/main/assets/images/g7_ch03_q21_source_answer.png",
     "status": "original_source_ready",
-    "newImageNeeded": false
+    "newImageNeeded": false,
+    "sha256": "49dcea947710fa9ec11898bfc50f6401e1e9e27abe45bff0a61170bbea98e01e"
   },
   {
     "id": "g7_ch03_q22",
     "asset": "../app/src/main/assets/images/g7_ch03_q22_source_answer.png",
     "status": "original_source_ready",
-    "newImageNeeded": false
+    "newImageNeeded": false,
+    "sha256": "69472a1d56a228ce5aa2ad36c0dcc142178096ca46db5173f8a4686b438100a7"
   },
   {
     "id": "g7_ch03_q23",
     "asset": "../app/src/main/assets/images/g7_ch03_q23_source_answer.png",
     "status": "original_source_ready",
-    "newImageNeeded": false
+    "newImageNeeded": false,
+    "sha256": "1b54cd616beb12651fb0a709eec1fa6fe46c6dfd93266c243f037cb7a5508400"
   },
   {
     "id": "g7_ch03_q24",
     "asset": "../app/src/main/assets/images/g7_ch03_q24_source_answer.png",
     "status": "original_source_ready",
-    "newImageNeeded": false
+    "newImageNeeded": false,
+    "sha256": "72b26355eade3794c37830792636bf76762b6c72e1111dd49f5ea05cf7d79547"
   },
   {
     "id": "g7_ch03_mcq01",
     "asset": "../app/src/main/assets/images/g7_ch03_mcq01_source_answer.png",
     "status": "original_source_ready",
-    "newImageNeeded": false
+    "newImageNeeded": false,
+    "sha256": "ceccb867a5d6cd5ccee99d58b8cc338b323930d28be0a4fc3b8561e6965b1f31"
   },
   {
     "id": "g7_ch03_mcq02",
     "asset": "../app/src/main/assets/images/g7_ch03_mcq02_source_answer.png",
     "status": "original_source_ready",
-    "newImageNeeded": false
+    "newImageNeeded": false,
+    "sha256": "168ec00fbb3b773ddc414b55467b4f1790b80b9ad652a2ca00188612681fb1fb"
   },
   {
     "id": "g7_ch03_mcq03",
     "asset": "../app/src/main/assets/images/g7_ch03_mcq03_source_answer.png",
     "status": "original_source_ready",
-    "newImageNeeded": false
+    "newImageNeeded": false,
+    "sha256": "7fa02bf94defd9a38798cd5951d60e31aa3e63e2fdb7ca2b443660688b0e4cba"
   },
   {
     "id": "g7_ch03_mcq04",
     "asset": "../app/src/main/assets/images/g7_ch03_mcq04_source_answer.png",
     "status": "original_source_ready",
-    "newImageNeeded": false
+    "newImageNeeded": false,
+    "sha256": "4a61345771c90e7535496225c7b7f6b0f9e671d1a57e41583a8113b3836d46c4"
   },
   {
     "id": "g7_ch03_mcq05",
     "asset": "../app/src/main/assets/images/g7_ch03_mcq05_source_answer.png",
     "status": "original_source_ready",
-    "newImageNeeded": false
+    "newImageNeeded": false,
+    "sha256": "fad0b2db661e198b539f467562e519e54dbfce5b25b539995fcf3ee5f54e617b"
   },
   {
     "id": "g7_ch03_mcq06",
     "asset": "../app/src/main/assets/images/g7_ch03_mcq06_source_answer.png",
     "status": "original_source_ready",
-    "newImageNeeded": false
+    "newImageNeeded": false,
+    "sha256": "e01d22d06c858b3131a40ced90b3c84475b3e2927ff8efa5fb59f6f0fdc83f3e"
   },
   {
     "id": "g7_ch03_mcq07",
     "asset": "../app/src/main/assets/images/g7_ch03_mcq07_source_answer.png",
     "status": "original_source_ready",
-    "newImageNeeded": false
+    "newImageNeeded": false,
+    "sha256": "d349b9bafaa9316e4112f08cf8dab9e2761612df5db1c0c940082556701440f2"
   }
 ]

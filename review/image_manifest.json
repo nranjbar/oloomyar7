@@ -2,71 +2,190 @@
   {
     "id": "g7_ch01_q07",
     "file": "g7_ch01_q07.png",
-    "status": "supplied_in_use"
+    "asset": "../app/src/main/assets/images/g7_ch01_q07.png",
+    "status": "supplied_in_use",
+    "sha256": "c5a982797f6bdf69cec08fff50d82cb0038354d48c1524c466180d846101278f"
   },
   {
     "id": "g7_ch02_q02",
     "file": "g7_ch02_q02.png",
-    "status": "supplied_in_use"
+    "asset": "../app/src/main/assets/images/g7_ch02_q02.png",
+    "status": "supplied_in_use",
+    "sha256": "bb2f417aacec20c5d53a57a21b3803124cafe800f548937645bfc089ef10656b"
   },
   {
     "id": "g7_ch02_q07",
     "file": "g7_ch02_q07.png",
-    "status": "supplied_in_use"
+    "asset": "../app/src/main/assets/images/g7_ch02_q07.png",
+    "status": "supplied_in_use",
+    "sha256": "2f0823554f6b5362f44d59f99d83bfc27c275406f4dbb647331863047da06b65"
   },
   {
     "id": "g7_ch02_q09",
     "file": "g7_ch02_q09.png",
-    "status": "supplied_in_use"
+    "asset": "../app/src/main/assets/images/g7_ch02_q09.png",
+    "status": "supplied_in_use",
+    "sha256": "1edad61993cb32716569e63730d17d7e0f2dd9e6bdd2a2cecb937fa848b2d6c6"
   },
   {
     "id": "g7_ch02_q11",
     "file": "g7_ch02_q11.png",
-    "status": "supplied_in_use"
+    "asset": "../app/src/main/assets/images/g7_ch02_q11.png",
+    "status": "supplied_in_use",
+    "sha256": "0e1486991149937df7f7f5abe99519feab4ebfd83ac8480d157bf6984cccccaf"
   },
   {
     "id": "g7_ch02_q12",
     "file": "g7_ch02_q12.png",
-    "status": "supplied_in_use"
+    "asset": "../app/src/main/assets/images/g7_ch02_q12.png",
+    "status": "supplied_in_use",
+    "sha256": "f779b18ab53609a97908bde24e65dcb1880ae15142d7419b11a0414cdb76588e"
   },
   {
     "id": "g7_ch02_q14",
     "file": "g7_ch02_q14.png",
-    "status": "supplied_in_use"
+    "asset": "../app/src/main/assets/images/g7_ch02_q14.png",
+    "status": "supplied_in_use",
+    "sha256": "b16c2c18b1495de353c5c2e7e952daf202984bc8103b273715fcd7ef78f55239"
   },
   {
     "id": "g7_ch02_q15",
     "file": "g7_ch02_q15.png",
-    "status": "supplied_in_use"
+    "asset": "../app/src/main/assets/images/g7_ch02_q15.png",
+    "status": "supplied_in_use",
+    "sha256": "33c650a14626693dc5ac335e7cfc0ef489a20d60a68ce4a9a80adb5448636491"
   },
   {
     "id": "g7_ch02_mcq03",
     "file": "g7_ch02_mcq03.png",
-    "status": "supplied_in_use"
+    "asset": "../app/src/main/assets/images/g7_ch02_mcq03.png",
+    "status": "supplied_in_use",
+    "sha256": "4c68e0d8a2f76592dbf6b1e7518bb5d71576e1dae5ba5a72d38752ebb78922d5"
   },
   {
     "id": "g7_ch02_mcq04",
     "file": "g7_ch02_mcq04.png",
-    "status": "supplied_in_use"
+    "asset": "../app/src/main/assets/images/g7_ch02_mcq04.png",
+    "status": "supplied_in_use",
+    "sha256": "4d525ec0114a77ddde2e8cf2c5f0180088e9ebb0a597a1ae703816a35659657c"
   },
   {
     "id": "g7_ch02_mcq05",
     "file": "g7_ch02_mcq05.png",
-    "status": "supplied_in_use"
+    "asset": "../app/src/main/assets/images/g7_ch02_mcq05.png",
+    "status": "supplied_in_use",
+    "sha256": "939b2ac7ac563113be5372ef2638a7d8a43e83504bd7422230e7a3980ad5d623"
+  },
+  {
+    "id": "g7_ch03_q03",
+    "file": "g7_ch03_q03_source_figure.png",
+    "asset": "../app/src/main/assets/images/g7_ch03_q03_source_figure.png",
+    "status": "original_source_in_use",
+    "sha256": "1dda4f4809f43f9341605c58c8dc883136dadab53037fc36b286c0e97bb8e5a5"
+  },
+  {
+    "id": "g7_ch03_q09",
+    "file": "g7_ch03_q09_source_question.png",
+    "asset": "../app/src/main/assets/images/g7_ch03_q09_source_question.png",
+    "status": "original_source_in_use",
+    "sha256": "991124f887e4f0364f3000f02baf130b7e335b7e22d19193ed1103dbd24e32fa"
+  },
+  {
+    "id": "g7_ch03_q11",
+    "file": "g7_ch03_q11_source_question.png",
+    "asset": "../app/src/main/assets/images/g7_ch03_q11_source_question.png",
+    "status": "original_source_in_use",
+    "sha256": "ee83ccc59836f3efd0a42ba7d4cb7067076f054f6354e6bbdd19756d96704491"
+  },
+  {
+    "id": "g7_ch03_q12",
+    "file": "g7_ch03_q12_c_question.png",
+    "asset": "../app/src/main/assets/images/g7_ch03_q12_c_question.png",
+    "status": "supplied_in_use",
+    "sha256": "b5c6515d126bccbf9d0ad56fb303a611d771a5edf7f6496cbe0f3267f009981d"
+  },
+  {
+    "id": "g7_ch03_q12",
+    "file": "g7_ch03_q12_b_question.png",
+    "asset": "../app/src/main/assets/images/g7_ch03_q12_b_question.png",
+    "status": "supplied_in_use",
+    "sha256": "2723a69143ecca7cb222ddc3f5df6e8989151fa8e69de30e37a8465a40ca9877"
+  },
+  {
+    "id": "g7_ch03_q12",
+    "file": "g7_ch03_q12_a_question.png",
+    "asset": "../app/src/main/assets/images/g7_ch03_q12_a_question.png",
+    "status": "supplied_in_use",
+    "sha256": "ac86084260ab0a611990531ec34fdbec1c2ffa947149e89536fcb626c69fa643"
+  },
+  {
+    "id": "g7_ch03_q15",
+    "file": "g7_ch03_q15_question.png",
+    "asset": "../app/src/main/assets/images/g7_ch03_q15_question.png",
+    "status": "supplied_in_use",
+    "sha256": "bf2f28f6f9ccbd9bd3753d95a3f88920171c501da00154bb1fce2d0ca2431d88"
   },
   {
     "id": "g7_ch03_q16",
     "file": "g7_ch03_mcq05_question.png",
-    "status": "supplied_in_use"
+    "asset": "../app/src/main/assets/images/g7_ch03_mcq05_question.png",
+    "status": "supplied_in_use",
+    "sha256": "8d83812b4a1d15936a3edf991aa2494a42c52f4e99602c5e296fbce3081439e2"
   },
   {
     "id": "g7_ch03_q17",
     "file": "g7_ch03_q17_question.png",
-    "status": "supplied_in_use"
+    "asset": "../app/src/main/assets/images/g7_ch03_q17_question.png",
+    "status": "supplied_in_use",
+    "sha256": "282f10fb9a656e6c3742c37ae8105dc68ee38f6deecc3685579c12f93a2fff02"
+  },
+  {
+    "id": "g7_ch03_q18",
+    "file": "g7_ch03_q18_source_figure.png",
+    "asset": "../app/src/main/assets/images/g7_ch03_q18_source_figure.png",
+    "status": "original_source_in_use",
+    "sha256": "71ceffb30cf1860427a4c584e6342506eb8a976dd91167cb477dc413d2ab8aec"
+  },
+  {
+    "id": "g7_ch03_q21",
+    "file": "g7_ch03_q21_source_figure.png",
+    "asset": "../app/src/main/assets/images/g7_ch03_q21_source_figure.png",
+    "status": "original_source_in_use",
+    "sha256": "ef6cf34bbcaf0e1825863a94c8b345d0fbc33b7c96033e5396c752fc7e1a41b7"
+  },
+  {
+    "id": "g7_ch03_q22",
+    "file": "g7_ch03_q22_source_figure.png",
+    "asset": "../app/src/main/assets/images/g7_ch03_q22_source_figure.png",
+    "status": "original_source_in_use",
+    "sha256": "fd08f618745af86c9769989eda1b7da398ef5bb3b4bef83a92cc58c4776a61a2"
+  },
+  {
+    "id": "g7_ch03_q24",
+    "file": "g7_ch03_q24_source_figure.png",
+    "asset": "../app/src/main/assets/images/g7_ch03_q24_source_figure.png",
+    "status": "original_source_in_use",
+    "sha256": "6c0c1f296e5be68b0721bcb6df006fd1b16dc17b4488d0d055a2bd0004f87d88"
+  },
+  {
+    "id": "g7_ch03_mcq04",
+    "file": "g7_ch03_mcq04_source_question.png",
+    "asset": "../app/src/main/assets/images/g7_ch03_mcq04_source_question.png",
+    "status": "original_source_in_use",
+    "sha256": "55dab1e907c97dab315c99afc04c33018fb250638a4120d076897a827d74929b"
   },
   {
     "id": "g7_ch03_mcq05",
     "file": "g7_ch03_mcq05_question.png",
-    "status": "supplied_in_use"
+    "asset": "../app/src/main/assets/images/g7_ch03_mcq05_question.png",
+    "status": "supplied_in_use",
+    "sha256": "8d83812b4a1d15936a3edf991aa2494a42c52f4e99602c5e296fbce3081439e2"
+  },
+  {
+    "id": "g7_ch03_mcq07",
+    "file": "g7_ch03_mcq07_source_figure.png",
+    "asset": "../app/src/main/assets/images/g7_ch03_mcq07_source_figure.png",
+    "status": "original_source_in_use",
+    "sha256": "6a4ba9f725100e202f706f11344fd8767ff14d5ea459f97416b870013053972e"
   }
 ]
