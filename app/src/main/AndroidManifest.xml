@@ -9,6 +9,7 @@
         android:theme="@style/Theme.OloomYar">
         <activity android:name=".Grade7Chapter1Activity" android:exported="false" />
         <activity android:name=".Grade7Chapter2Activity" android:exported="false" />
+        <activity android:name=".Grade7Chapter3Activity" android:exported="false" />
         <activity android:name=".MainActivity" android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

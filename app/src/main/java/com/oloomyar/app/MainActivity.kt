@@ -42,7 +42,8 @@ private data class HomeChapter(
 
 private val chapters = listOf(
     HomeChapter(1, "۱", "تجربه و تفکر", "۸ تمرین اصلی • پاسخ مرحله‌ای، راهنما و آزمون", Blue, BlueSoft, Icons.Default.Science),
-    HomeChapter(2, "۲", "اندازه‌گیری در علوم و ابزارهای آن", "۱۵ تمرین اصلی و ۵ چهارگزینه‌ای • دو بخش جدا", Purple, PurpleSoft, Icons.Default.Straighten)
+    HomeChapter(2, "۲", "اندازه‌گیری در علوم و ابزارهای آن", "۱۵ تمرین اصلی و ۵ چهارگزینه‌ای • دو بخش جدا", Purple, PurpleSoft, Icons.Default.Straighten),
+    HomeChapter(3, "۳", "اتم‌ها، الفبای مواد", "۲۴ تمرین اصلی و ۷ چهارگزینه‌ای • جای‌خالی در متن", Aqua, AquaSoft, Icons.Default.Hub)
 )
 
 class MainActivity : ComponentActivity() {
@@ -54,6 +55,7 @@ class MainActivity : ComponentActivity() {
                     val destination = when (id) {
                         1 -> Grade7Chapter1Activity::class.java
                         2 -> Grade7Chapter2Activity::class.java
+                        3 -> Grade7Chapter3Activity::class.java
                         else -> null
                     }
                     destination?.let { startActivity(Intent(this@MainActivity, it)) }
@@ -86,7 +88,7 @@ internal fun OloomYarHomeScreen(onOpen: (Int) -> Unit) {
             }
             item {
                 OloomHeroCard(
-                    eyebrow = "پایهٔ هفتم • فصل‌های ۱ و ۲",
+                    eyebrow = "پایهٔ هفتم • فصل‌های ۱ تا ۳",
                     title = "علوم را کشف کن، نه حفظ",
                     description = "صورت دقیق کتاب‌کار، پاسخ تعاملی، راهنمای مرحله‌ای و آزمون؛ همه در یک مسیر روشن و کاملاً آفلاین.",
                     icon = Icons.Default.RocketLaunch,
@@ -94,8 +96,8 @@ internal fun OloomYarHomeScreen(onOpen: (Int) -> Unit) {
                     endColor = Blue
                 ) {
                     Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                        HeroMetric("۲", "فصل", Modifier.weight(1f))
-                        HeroMetric("۲۸", "سؤال کتاب", Modifier.weight(1f))
+                        HeroMetric("۳", "فصل", Modifier.weight(1f))
+                        HeroMetric("۵۹", "سؤال کتاب", Modifier.weight(1f))
                         HeroMetric("۱۰۰٪", "آفلاین", Modifier.weight(1f))
                     }
                 }

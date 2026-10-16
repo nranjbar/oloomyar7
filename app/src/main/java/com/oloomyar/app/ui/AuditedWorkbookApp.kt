@@ -227,7 +227,7 @@ fun AuditedWorkbookApp(
             "question" -> {
                 val question = questions.first { it.id == sessionIds[questionIndex] }
                 key(question.id, sessionToken) {
-                    WorkbookQuestion(
+                    WholeWorkbookQuestion(
                         question, progress, conceptual, exam, sessionToken,
                         "سؤال ${workbookFa(questionIndex + 1)} از ${workbookFa(sessionIds.size)}",
                         Modifier.padding(padding)
@@ -266,7 +266,7 @@ fun AuditedWorkbookApp(
                         val question = questions.first { it.id == id }
                         WorkbookPanel(accent = Purple) {
                             Text("سؤال ${workbookFa(question.sourceNumber)}", style = MaterialTheme.typography.titleLarge)
-                            WorkbookText(question.bookPrompt.orEmpty())
+                            question.sourceQuestionVisual?.let { WorkbookImage(it, "صورت سؤال ${workbookFa(question.sourceNumber)} از کتاب") }
                             WorkbookQuestionVisuals(question, "تصویر سؤال ${workbookFa(question.sourceNumber)}")
                             OutlinedButton(onClick = { start(listOf(question), false) }, modifier = Modifier.fillMaxWidth()) {
                                 Text("تمرین سؤال ${workbookFa(question.sourceNumber)} با راهنما")
@@ -288,280 +288,7 @@ fun AuditedWorkbookApp(
 }
 
 @Composable
-private fun WorkbookQuestion(
-    question: ChapterQuestion,
-    progress: WorkbookProgress,
-    conceptual: Boolean,
-    exam: Boolean,
-    sessionToken: Int,
-    position: String,
-    modifier: Modifier,
-    onFinish: (Int, Boolean) -> Unit
-) {
-    var json by rememberSaveable(question.id, sessionToken) {
-        mutableStateOf(if (exam) "{}" else upgradedPracticeDraft(progress.draft(question.id)))
-    }
-    val state = remember(json) { runCatching { JSONObject(json) }.getOrElse { JSONObject() } }
-    val current = state.optInt("step").coerceIn(question.steps.indices)
-    val step = question.steps[current]
-    val answers = state.optJSONObject("answers")?.takeIf { it.has(step.id) }?.stringList(step.id)
-        ?: if (step.kind == StepKind.ORDER) WorkbookAnswers.initialOrder(step) else emptyList()
-    val failedAttempts = state.optJSONObject("attempts")?.optInt(step.id) ?: 0
-    val hints = state.optJSONObject("hints")?.optInt(step.id) ?: 0
-    val canReveal = PracticeAttempts.canReveal(failedAttempts, hints)
-    val rawStatus = state.optJSONObject("status")?.optInt(step.id) ?: 0
-    val status = if (rawStatus == 3 && !canReveal) 0 else rawStatus
-    val locked = status >= 2
-    val complete = WorkbookAnswers.isComplete(step, answers)
-    val lastSubmitted = state.optJSONObject("lastSubmitted")?.takeIf { it.has(step.id) }?.stringList(step.id)
-    val canSubmit = complete && (exam || PracticeAttempts.canSubmit(step, answers, lastSubmitted))
-    val hintView = remember(step.id) { BringIntoViewRequester() }
-    val answerView = remember(step.id) { BringIntoViewRequester() }
-    val list = rememberLazyListState()
-    val coroutine = rememberCoroutineScope()
-    val update: (JSONObject.() -> Unit) -> Unit = { mutation ->
-        val changed = JSONObject(json).apply(mutation)
-        json = changed.toString()
-        if (!exam) progress.saveDraft(question.id, json)
-    }
-    LaunchedEffect(step.id, hints, locked) {
-        if (!exam && (hints > 0 || locked)) {
-            // The interaction item may be off-screen when a draft is resumed.
-            // Compose it and wait for layout before requesting a child anchor.
-            list.scrollToItem(3)
-            withFrameNanos { }
-            if (locked) answerView.bringIntoView() else hintView.bringIntoView()
-        }
-    }
-    val advance: () -> Unit = {
-        if (current < question.steps.lastIndex) {
-            update { put("step", current + 1) }
-            coroutine.launch { list.animateScrollToItem(3) }
-        } else {
-            val final = JSONObject(json)
-            val results = final.optJSONObject("status") ?: JSONObject()
-            val hintCounts = final.optJSONObject("hints") ?: JSONObject()
-            val correct = question.steps.count { results.optInt(it.id) == 2 }
-            val perfect = correct == question.steps.size && final.stringList("wrong").isEmpty() &&
-                question.steps.all { hintCounts.optInt(it.id) == 0 }
-            onFinish(correct, perfect)
-        }
-    }
-    val submit: () -> Unit = submit@{
-        if (!locked) {
-            val latest = JSONObject(json)
-            val latestAnswers = latest.optJSONObject("answers")?.takeIf { it.has(step.id) }?.stringList(step.id) ?: answers
-            val latestSubmitted = latest.optJSONObject("lastSubmitted")?.takeIf { it.has(step.id) }?.stringList(step.id)
-            if (!exam && (latest.child("status").optInt(step.id) >= 2 || !PracticeAttempts.canSubmit(step, latestAnswers, latestSubmitted))) return@submit
-            val correct = WorkbookAnswers.isCorrect(step, latestAnswers)
-            update {
-                child("answers").put(step.id, JSONArray(latestAnswers))
-                child("status").put(step.id, if (correct) 2 else 1)
-                if (!exam) {
-                    child("lastSubmitted").put(step.id, JSONArray(PracticeAttempts.signature(step, latestAnswers)))
-                    if (!correct) {
-                        val count = child("attempts").optInt(step.id) + 1
-                        child("attempts").put(step.id, count)
-                        child("hints").put(step.id, PracticeAttempts.hintLevel(count))
-                    }
-                }
-                if (!correct) put("wrong", JSONArray((stringList("wrong") + step.id).distinct()))
-            }
-            if (!correct && !exam) progress.markMistake(question.id)
-            if (exam) advance()
-        } else advance()
-    }
-    Column(modifier.fillMaxSize()) {
-        LazyColumn(Modifier.weight(1f).fillMaxWidth(), state = list, contentPadding = PaddingValues(16.dp), verticalArrangement = Arrangement.spacedBy(16.dp)) {
-            item {
-                WorkbookPanel(accent = if (exam) Purple else Blue, color = if (exam) PurpleSoft.copy(alpha = .5f) else BlueSoft.copy(alpha = .45f)) {
-                    Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
-                        Surface(color = if (exam) PurpleSoft else BlueSoft, shape = RoundedCornerShape(17.dp)) {
-                            Icon(if (exam) Icons.Default.Assignment else Icons.Default.Quiz, null, tint = if (exam) Purple else Blue, modifier = Modifier.padding(11.dp).size(24.dp))
-                        }
-                        Spacer(Modifier.width(11.dp))
-                        Column(Modifier.weight(1f), horizontalAlignment = Alignment.End) {
-                            OloomPill(position, if (exam) Purple else Blue, if (exam) PurpleSoft else BlueSoft)
-                            Text("سؤال ${workbookFa(question.sourceNumber)} • ${question.title}", style = MaterialTheme.typography.titleLarge, textAlign = TextAlign.Right, modifier = Modifier.fillMaxWidth().padding(top = 6.dp))
-                            Text(question.source, style = MaterialTheme.typography.bodySmall, color = Muted, textAlign = TextAlign.Right, modifier = Modifier.fillMaxWidth())
-                        }
-                    }
-                    TextButton(onClick = { coroutine.launch { list.animateScrollToItem(3) } }, modifier = Modifier.align(Alignment.End)) {
-                        Icon(Icons.AutoMirrored.Filled.ArrowBack, null, modifier = Modifier.size(18.dp))
-                        Spacer(Modifier.width(5.dp))
-                        Text("رفتن به پاسخ تعاملی")
-                    }
-                }
-            }
-            item {
-                WorkbookPanel(accent = Purple) {
-                    Row(verticalAlignment = Alignment.CenterVertically) {
-                        Surface(color = PurpleSoft, shape = RoundedCornerShape(12.dp)) {
-                            Icon(Icons.Default.MenuBook, null, tint = Purple, modifier = Modifier.padding(8.dp).size(20.dp))
-                        }
-                        Spacer(Modifier.width(8.dp))
-                        Text(
-                            if (conceptual) "صورت اصلی سؤال مفهومی" else "صورت اصلی سؤال کتاب",
-                            style = MaterialTheme.typography.titleMedium,
-                            color = Purple
-                        )
-                    }
-                    WorkbookText(question.bookPrompt.orEmpty())
-                }
-            }
-            item {
-                WorkbookQuestionVisuals(question, "تصویر سؤال ${workbookFa(question.sourceNumber)}: ${question.title}")
-            }
-            item {
-                WorkbookPanel(accent = Blue) {
-                    Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
-                        Column(Modifier.weight(1f), horizontalAlignment = Alignment.End) {
-                            Text("پاسخ تعاملی", style = MaterialTheme.typography.titleMedium, color = Blue)
-                            Text("مرحلهٔ ${workbookFa(current + 1)} از ${workbookFa(question.steps.size)}", color = Muted, style = MaterialTheme.typography.bodySmall)
-                        }
-                        Surface(color = BlueSoft, shape = CircleShape) {
-                            Text(workbookFa(current + 1), color = Blue, fontWeight = FontWeight.Black, modifier = Modifier.padding(horizontal = 13.dp, vertical = 8.dp))
-                        }
-                    }
-                    OloomProgressBar((current + 1f) / question.steps.size)
-                    WorkbookText(step.prompt, bold = true)
-                    key(step.id) {
-                        WorkbookInput(step, answers, locked && !exam) { changed ->
-                            update {
-                                child("answers").put(step.id, JSONArray(changed))
-                                child("status").put(step.id, 0)
-                            }
-                        }
-                    }
-                    if (!exam) {
-                        if (hints >= 1) Surface(color = OrangeSoft, shape = RoundedCornerShape(18.dp), border = androidx.compose.foundation.BorderStroke(1.dp, Orange.copy(alpha = .18f))) {
-                            Column(Modifier.padding(14.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
-                                Column(if (hints == 1) Modifier.bringIntoViewRequester(hintView) else Modifier, verticalArrangement = Arrangement.spacedBy(8.dp)) {
-                                    Row(verticalAlignment = Alignment.CenterVertically) {
-                                        Icon(Icons.Default.Lightbulb, null, tint = Orange, modifier = Modifier.size(19.dp))
-                                        Spacer(Modifier.width(6.dp))
-                                        Text("راهنمایی ۱", color = Orange, fontWeight = FontWeight.Bold)
-                                    }
-                                    WorkbookText(step.hint1)
-                                }
-                                if (hints >= 2) {
-                                    HorizontalDivider(color = Orange.copy(alpha = .18f))
-                                    Column(Modifier.bringIntoViewRequester(hintView), verticalArrangement = Arrangement.spacedBy(8.dp)) {
-                                        Text("راهنمایی ۲", color = Orange, fontWeight = FontWeight.Bold)
-                                        WorkbookText(step.hint2)
-                                    }
-                                }
-                            }
-                        }
-                        if (status == 1) Surface(color = Danger.copy(alpha = .08f), shape = RoundedCornerShape(16.dp)) {
-                            Row(Modifier.fillMaxWidth().padding(13.dp), verticalAlignment = Alignment.CenterVertically) {
-                                Icon(Icons.Default.Refresh, null, tint = Danger, modifier = Modifier.size(20.dp))
-                                Spacer(Modifier.width(7.dp))
-                                Column(Modifier.weight(1f).semantics { liveRegion = LiveRegionMode.Polite }) {
-                                    Text("پاسخ هنوز کامل درست نیست. راهنمایی ${workbookFa(hints)} را بخوان و انتخاب‌ها را بازبینی کن.", color = Danger)
-                                    val rows = WorkbookAnswers.incorrectRows(step, answers)
-                                    if (rows.isNotEmpty()) Text("در این مرحله، جای خالی‌های ${rows.joinToString("، ") { workbookFa(it + 1) }} نیاز به بازبینی دارند.", color = Danger)
-                                }
-                            }
-                        }
-                        if (locked) Surface(modifier = Modifier.bringIntoViewRequester(answerView), color = if (status == 2) GreenSoft else OrangeSoft, shape = RoundedCornerShape(18.dp), border = androidx.compose.foundation.BorderStroke(1.dp, (if (status == 2) Green else Orange).copy(alpha = .2f))) {
-                            Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(8.dp),) {
-                                Row(verticalAlignment = Alignment.CenterVertically) {
-                                    Icon(if (status == 2) Icons.Default.CheckCircle else Icons.Default.Lightbulb, null, tint = if (status == 2) Green else Orange)
-                                    Spacer(Modifier.width(7.dp))
-                                    Text(if (status == 2) "پاسخ درست است" else "پاسخ و توضیح", color = if (status == 2) Green else Orange, fontWeight = FontWeight.Black,
-                                        modifier = Modifier.semantics { liveRegion = LiveRegionMode.Polite })
-                                }
-                                WorkbookText(step.answer, bold = true)
-                                WorkbookText(step.explanation)
-                            }
-                        }
-                    }
-                    val allPartsFinished = question.steps.all { s ->
-                        val result = state.optJSONObject("status")?.optInt(s.id) ?: 0
-                        result == 2 || (result == 3 && PracticeAttempts.canReveal(
-                            state.optJSONObject("attempts")?.optInt(s.id) ?: 0,
-                            state.optJSONObject("hints")?.optInt(s.id) ?: 0
-                        ))
-                    }
-                    if (current == question.steps.lastIndex && locked && !exam && allPartsFinished) {
-                        question.answerVisual?.let { WorkbookImage(it, "تصویر پاسخ سؤال ${workbookFa(question.sourceNumber)}", question.answerVisualCaption) }
-                    }
-                }
-            }
-            item {
-                TextButton(onClick = { coroutine.launch { list.animateScrollToItem(1) } }) {
-                    Text(if (conceptual) "بازگشت به صورت سؤال مفهومی" else "بازگشت به صورت سؤال کتاب")
-                }
-            }
-        }
-        Surface(color = MaterialTheme.colorScheme.surface, shadowElevation = 6.dp) {
-            Column(Modifier.fillMaxWidth().padding(horizontal = 16.dp, vertical = 10.dp), verticalArrangement = Arrangement.spacedBy(6.dp)) {
-                if (!exam && !locked) {
-                    Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(6.dp)) {
-                        TextButton(modifier = Modifier.weight(1f), onClick = { coroutine.launch { list.animateScrollToItem(3) } }) {
-                            Icon(Icons.Default.Edit, null, modifier = Modifier.size(16.dp))
-                            Spacer(Modifier.width(4.dp))
-                            Text("انتخاب‌ها")
-                        }
-                        TextButton(modifier = Modifier.weight(1f), enabled = hints > 0, onClick = {
-                            coroutine.launch {
-                                list.scrollToItem(3)
-                                withFrameNanos { }
-                                hintView.bringIntoView()
-                            }
-                        }) {
-                            Icon(Icons.Default.Lightbulb, null, modifier = Modifier.size(16.dp))
-                            Spacer(Modifier.width(4.dp))
-                            Text("راهنما")
-                        }
-                        TextButton(modifier = Modifier.weight(1f), enabled = canReveal, onClick = {
-                            val latest = JSONObject(json)
-                            if (latest.child("status").optInt(step.id) < 2 && PracticeAttempts.canReveal(latest.child("attempts").optInt(step.id), latest.child("hints").optInt(step.id))) {
-                                update { child("status").put(step.id, 3) }
-                                progress.markMistake(question.id)
-                            }
-                        }) {
-                            Icon(if (canReveal) Icons.Default.Visibility else Icons.Default.Lock, null, modifier = Modifier.size(16.dp))
-                            Spacer(Modifier.width(4.dp))
-                            Text("دیدن پاسخ")
-                        }
-                    }
-                }
-                val help = when {
-                    locked -> "این قسمت تکمیل شد؛ برای ادامه دکمهٔ پایین را بزن."
-                    !complete -> when (step.kind) {
-                        StepKind.MATCH -> "${workbookFa(answers.count { it.isNotBlank() })} از ${workbookFa(step.pairs.size)} جای خالی کامل شده؛ همه را کامل کن."
-                        StepKind.CLASSIFY -> "${workbookFa(answers.count { it.isNotBlank() })} از ${workbookFa(step.classifyItems.size)} عبارت کامل شده؛ همه را کامل کن."
-                        StepKind.MULTI -> "${workbookFa(answers.size)} از ${workbookFa(step.pick)} گزینه انتخاب شده؛ انتخاب‌ها را کامل کن."
-                        else -> "برای بررسی، پاسخ این قسمت را انتخاب کن."
-                    }
-                    !exam && hints >= 2 -> "هر دو راهنما را داری؛ دوباره تلاش کن یا «دیدن پاسخ» را بزن."
-                    !exam && !canSubmit -> "راهنمایی ۱ را بخوان؛ برای تلاش بعدی، دست‌کم یک انتخاب را تغییر بده."
-                    else -> "انتخاب‌ها کامل شد؛ پاسخ را بررسی کن."
-                }
-                Text(help, color = Muted, style = MaterialTheme.typography.bodySmall)
-                Button(
-                    modifier = Modifier.fillMaxWidth().heightIn(min = 54.dp),
-                    enabled = locked || canSubmit,
-                    shape = RoundedCornerShape(17.dp),
-                    onClick = submit
-                ) {
-                    Text(when {
-                        exam -> if (current == question.steps.lastIndex) "ثبت پاسخ این سؤال" else "ثبت و مرحلهٔ بعد"
-                        locked -> if (current == question.steps.lastIndex) "ثبت تمرین و ادامه" else "مرحلهٔ بعد"
-                        else -> "بررسی پاسخ"
-                    })
-                    Spacer(Modifier.width(7.dp))
-                    Icon(if (locked || exam) Icons.AutoMirrored.Filled.ArrowBack else Icons.Default.CheckCircle, null, modifier = Modifier.size(19.dp))
-                }
-            }
-        }
-    }
-}
-
-@Composable
-private fun WorkbookQuestionVisuals(question: ChapterQuestion, description: String) {
+internal fun WorkbookQuestionVisuals(question: ChapterQuestion, description: String) {
     val visuals = buildList {
         question.visual?.let { add(QuestionVisual(it, question.visualCaption)) }
         addAll(question.visuals)
@@ -576,7 +303,7 @@ private fun WorkbookQuestionVisuals(question: ChapterQuestion, description: Stri
 }
 
 @Composable
-private fun WorkbookPanel(
+internal fun WorkbookPanel(
     accent: Color? = null,
     color: Color = MaterialTheme.colorScheme.surface,
     content: @Composable ColumnScope.() -> Unit
@@ -591,25 +318,4 @@ private fun OloomHeroFact(label: String, icon: androidx.compose.ui.graphics.vect
         Spacer(Modifier.width(5.dp))
         Text(label, color = Color.White.copy(alpha = .82f), style = MaterialTheme.typography.labelMedium, maxLines = 1)
     }
-}
-
-private fun JSONObject.child(key: String): JSONObject = optJSONObject(key) ?: JSONObject().also { put(key, it) }
-private fun JSONObject.stringList(key: String): List<String> = optJSONArray(key)?.let { array -> List(array.length()) { array.getString(it) } } ?: emptyList()
-
-private fun upgradedPracticeDraft(raw: String?): String {
-    val data = runCatching { JSONObject(raw ?: "{}") }.getOrElse { JSONObject() }
-    if (data.optInt("attemptPolicyVersion") != PracticeAttempts.VERSION) {
-        // Old drafts could reveal answers or request hints before any attempt.
-        // Preserve selections and successful steps; reset that old reveal path.
-        data.optJSONObject("status")?.let { results ->
-            results.keys().asSequence().toList().forEach { id ->
-                if (results.optInt(id) == 3) results.put(id, 0)
-            }
-        }
-        data.remove("attempts")
-        data.remove("hints")
-        data.remove("lastSubmitted")
-        data.put("attemptPolicyVersion", PracticeAttempts.VERSION)
-    }
-    return data.toString()
 }
