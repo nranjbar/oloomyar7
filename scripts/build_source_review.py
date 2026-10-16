@@ -60,7 +60,7 @@ def web_review():
     dump=dict(scope='chapters1-3',sourcePolicy='verbatim',requests=requests,answerImageList=answer_rows,answerImagesPrepared=True)
     atomic(ROOT/'docs/image_audit_chapters1-3.json',(json.dumps(dump,ensure_ascii=False,indent=2)+'\n').encode())
     with (ROOT/'review/Grade7_Answer_Images_Needed.csv').open('w',encoding='utf-8-sig',newline='') as f:
-        w=csv.writer(f);w.writerow(['شناسه','سؤال','علت تصویر','فایل پاسخ','وضعیت'])
+        w=csv.writer(f,lineterminator="\n");w.writerow(['شناسه','سؤال','علت تصویر','فایل پاسخ','وضعیت'])
         w.writerows([r['id'],title(byid[r['id']]),'؛ '.join(r['formattingRisks']),r['answerAsset'],'برش اصلی آماده؛ تصویر جدید لازم نیست'] for r in answer_rows)
     lines=['# تصاویر سه فصل اول','', 'متن سؤال و پاسخ عین منبع است؛ فهرست زیر درخواست تغییر علمی نیست.','']
     for r in requests:lines+=['## '+' / '.join(title(byid[i]) for i in r['ids']),'',r['status']+'؛ '+r['reason'],'','پرامپت پیشنهادی با مرجع تصویر کتاب:','',r['prompt'],'']

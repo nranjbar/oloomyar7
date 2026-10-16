@@ -90,7 +90,7 @@ internal fun InlineClozeEditor(
     if (template != null) {
         val measurer = rememberTextMeasurer()
         val density = LocalDensity.current
-        val style = MaterialTheme.typography.bodyLarge.copy(textDirection = TextDirection.ContentOrRtl, lineHeight = 58.sp)
+        val style = MaterialTheme.typography.bodyLarge.copy(textDirection = TextDirection.Rtl, lineHeight = 58.sp)
         BoxWithConstraints(Modifier.fillMaxWidth()) {
             val maxBlankWidth = with(density) { (maxWidth - 8.dp).toSp() }.value.coerceAtMost(260f).sp
             val placeholders = rows.indices.associate { index ->
