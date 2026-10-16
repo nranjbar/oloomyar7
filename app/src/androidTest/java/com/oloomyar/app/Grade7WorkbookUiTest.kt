@@ -61,8 +61,8 @@ class Grade7WorkbookUiTest {
     private fun check() { compose.onNodeWithText("بررسی پاسخ").assertIsEnabled().performClick();compose.waitForIdle() }
     private fun capture(name:String) {
         val values=ContentValues().apply { put(MediaStore.Images.Media.DISPLAY_NAME,"$name.png");put(MediaStore.Images.Media.MIME_TYPE,"image/png");put(MediaStore.Images.Media.RELATIVE_PATH,"Download/grade7-screenshots") }
-        val uri=context.contentResolver.insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI,values)!!
-        val bitmap=InstrumentationRegistry.getInstrumentation().uiAutomation.takeScreenshot()
+        val uri=context.contentResolver.insert(MediaStore.Downloads.EXTERNAL_CONTENT_URI,values)!!
+        val bitmap=checkNotNull(InstrumentationRegistry.getInstrumentation().uiAutomation.takeScreenshot())
         context.contentResolver.openOutputStream(uri)!!.use { bitmap.compress(Bitmap.CompressFormat.PNG,100,it) };bitmap.recycle()
     }
     @Test fun realHomeOpensTheThreeImplementedChapters() {
@@ -70,7 +70,8 @@ class Grade7WorkbookUiTest {
             compose.onNodeWithText("علوم‌یار هفتم").assertIsDisplayed();capture("grade7-01-home")
             compose.onNode(hasScrollAction()).performScrollToNode(hasText("اتم‌ها، الفبای مواد"))
             compose.onNodeWithText("اتم‌ها، الفبای مواد").performClick()
-            compose.onAllNodesWithText("ورود به این بخش").assertCountEquals(2)
+            compose.onNode(hasScrollAction()).performScrollToNode(hasText("چهارگزینه‌ای"))
+            compose.onNodeWithText("چهارگزینه‌ای").assertExists()
         }
     }
     @Test fun blankSelectionStaysAtTheChosenBlankAndIsYellowBeforeChecking() {
