@@ -122,6 +122,12 @@ def pdf_review():
         y=paragraph(d,r['status'],y,32,color=TEAL,bold=True)
         y=paragraph(d,'صورت کامل سؤال کتاب',y+16,31,bold=True);y=draw_image(im,ASSETS/q['sourceQuestionVisual'],y,600)
         y=paragraph(d,'پاسخ اصلی پاسخ‌نامه',y+5,31,bold=True);y=draw_image(im,ASSETS/q['answerVisual'],y,260)
+        for extra_id in r['ids'][1:]:
+            extra=byid[extra_id]
+            y=paragraph(d,title(extra)+' - صورت کامل سؤال مشترک',y+8,29,bold=True)
+            y=draw_image(im,ASSETS/extra['sourceQuestionVisual'],y,330)
+            y=paragraph(d,'پاسخ اصلی همین سؤال',y+5,28,bold=True)
+            y=draw_image(im,ASSETS/extra['answerVisual'],y,100)
         y=paragraph(d,'علت نیاز: '+r['reason'],y+8,29)
         y=paragraph(d,'پرامپت پیشنهادی با مرجع تصویر اصلی',y+20,32,color=TEAL,bold=True)
         y=paragraph(d,r['prompt'],y+5,29)

@@ -101,7 +101,7 @@ internal fun InlineClozeEditor(
             }
             val content = buildAnnotatedString {
                 var cursor = 0
-                Regex("\\{\\{(\\d+)}}" ).findAll(template).forEach { match ->
+                Regex("""\{\{([0-9]+)\}\}""").findAll(template).forEach { match ->
                     append(template.substring(cursor, match.range.first))
                     appendInlineContent("blank${match.groupValues[1]}", "................")
                     cursor = match.range.last + 1
