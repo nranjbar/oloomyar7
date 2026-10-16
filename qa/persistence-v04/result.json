@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "oldVersion": "0.3.0",
+  "newVersion": "0.4.0",
+  "installReplacement": true,
+  "oldCompletionPreserved": true,
+  "draftSelectionsHintsAndSeedPreserved": true,
+  "viewportPreserved": true,
+  "answerStayedLocked": true,
+  "bookmarksAndDisplaySettingsPreserved": true,
+  "pidBefore": "5903",
+  "pidAfterStop": "",
+  "pidRestored": "6034",
+  "tests": 3
+}
