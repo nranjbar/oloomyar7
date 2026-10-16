@@ -52,7 +52,11 @@
         "عدد، مقدار یا محاسبه",
         "حروف لاتین یا نماد"
       ],
-      "sharedAnswerStrip": false
+      "sharedAnswerStrip": false,
+      "promptAsset": null,
+      "promptSha256": null,
+      "promptTextPreserved": true,
+      "promptTextSha256": null
     },
     {
       "id": "g7_ch01_q02",
@@ -86,7 +90,11 @@
       "formattingRisks": [
         "عدد، مقدار یا محاسبه"
       ],
-      "sharedAnswerStrip": false
+      "sharedAnswerStrip": false,
+      "promptAsset": null,
+      "promptSha256": null,
+      "promptTextPreserved": true,
+      "promptTextSha256": null
     },
     {
       "id": "g7_ch01_q03",
@@ -118,7 +126,11 @@
       ],
       "answerImageRecommended": false,
       "formattingRisks": [],
-      "sharedAnswerStrip": false
+      "sharedAnswerStrip": false,
+      "promptAsset": null,
+      "promptSha256": null,
+      "promptTextPreserved": true,
+      "promptTextSha256": null
     },
     {
       "id": "g7_ch01_q04",
@@ -150,7 +162,11 @@
       ],
       "answerImageRecommended": false,
       "formattingRisks": [],
-      "sharedAnswerStrip": false
+      "sharedAnswerStrip": false,
+      "promptAsset": null,
+      "promptSha256": null,
+      "promptTextPreserved": true,
+      "promptTextSha256": null
     },
     {
       "id": "g7_ch01_q05",
@@ -185,7 +201,11 @@
         "عدد، مقدار یا محاسبه",
         "تطبیق شکل، نمودار، جدول یا توالی"
       ],
-      "sharedAnswerStrip": false
+      "sharedAnswerStrip": false,
+      "promptAsset": null,
+      "promptSha256": null,
+      "promptTextPreserved": true,
+      "promptTextSha256": null
     },
     {
       "id": "g7_ch01_q06",
@@ -217,7 +237,11 @@
       ],
       "answerImageRecommended": false,
       "formattingRisks": [],
-      "sharedAnswerStrip": false
+      "sharedAnswerStrip": false,
+      "promptAsset": null,
+      "promptSha256": null,
+      "promptTextPreserved": true,
+      "promptTextSha256": null
     },
     {
       "id": "g7_ch01_q07",
@@ -249,7 +273,11 @@
       ],
       "answerImageRecommended": false,
       "formattingRisks": [],
-      "sharedAnswerStrip": false
+      "sharedAnswerStrip": false,
+      "promptAsset": "g7_ch01_q07_source_prompt.png",
+      "promptSha256": "c4736ee34b575791d9ea64a635602713ed3201ad939888183623f5b23d95d051",
+      "promptTextPreserved": true,
+      "promptTextSha256": "367d7a06a235029c9b5f008b96cf515cad052df6475567d3f8f4cdff93da133e"
     },
     {
       "id": "g7_ch01_q08",
@@ -281,7 +309,11 @@
       ],
       "answerImageRecommended": false,
       "formattingRisks": [],
-      "sharedAnswerStrip": false
+      "sharedAnswerStrip": false,
+      "promptAsset": null,
+      "promptSha256": null,
+      "promptTextPreserved": true,
+      "promptTextSha256": null
     },
     {
       "id": "g7_ch02_q01",
@@ -316,7 +348,11 @@
         "عدد، مقدار یا محاسبه",
         "حروف لاتین یا نماد"
       ],
-      "sharedAnswerStrip": false
+      "sharedAnswerStrip": false,
+      "promptAsset": null,
+      "promptSha256": null,
+      "promptTextPreserved": true,
+      "promptTextSha256": null
     },
     {
       "id": "g7_ch02_q02",
@@ -351,7 +387,11 @@
         "عدد، مقدار یا محاسبه",
         "تطبیق شکل، نمودار، جدول یا توالی"
       ],
-      "sharedAnswerStrip": false
+      "sharedAnswerStrip": false,
+      "promptAsset": "g7_ch02_q02_source_prompt.png",
+      "promptSha256": "9c1cb20a7f078875f780a18f5ed9ec31170abc8ee238971db41a82ea2949e2e3",
+      "promptTextPreserved": true,
+      "promptTextSha256": "66546f963ede187fd332f59fe9590f38278ed5ea3d73979c32651368a4355a5d"
     },
     {
       "id": "g7_ch02_q03",
@@ -392,7 +432,11 @@
       ],
       "answerImageRecommended": false,
       "formattingRisks": [],
-      "sharedAnswerStrip": false
+      "sharedAnswerStrip": false,
+      "promptAsset": null,
+      "promptSha256": null,
+      "promptTextPreserved": true,
+      "promptTextSha256": null
     },
     {
       "id": "g7_ch02_q04",
@@ -426,7 +470,11 @@
       "formattingRisks": [
         "عدد، مقدار یا محاسبه"
       ],
-      "sharedAnswerStrip": false
+      "sharedAnswerStrip": false,
+      "promptAsset": null,
+      "promptSha256": null,
+      "promptTextPreserved": true,
+      "promptTextSha256": null
     },
     {
       "id": "g7_ch02_q05",
@@ -458,7 +506,11 @@
       ],
       "answerImageRecommended": false,
       "formattingRisks": [],
-      "sharedAnswerStrip": false
+      "sharedAnswerStrip": false,
+      "promptAsset": null,
+      "promptSha256": null,
+      "promptTextPreserved": true,
+      "promptTextSha256": null
     },
     {
       "id": "g7_ch02_q06",
@@ -492,7 +544,11 @@
       "formattingRisks": [
         "عدد، مقدار یا محاسبه"
       ],
-      "sharedAnswerStrip": false
+      "sharedAnswerStrip": false,
+      "promptAsset": null,
+      "promptSha256": null,
+      "promptTextPreserved": true,
+      "promptTextSha256": null
     },
     {
       "id": "g7_ch02_q07",
@@ -526,7 +582,11 @@
       "formattingRisks": [
         "تطبیق شکل، نمودار، جدول یا توالی"
       ],
-      "sharedAnswerStrip": false
+      "sharedAnswerStrip": false,
+      "promptAsset": "g7_ch02_q07_source_prompt.png",
+      "promptSha256": "98f77be6b50c12332a59375dd955aa7f06f5aa462a30390d0b94a1b21b36a4df",
+      "promptTextPreserved": true,
+      "promptTextSha256": "22478640a59e80182b5f0ff707e31b32e8bed9d8d63ecd7bc8a2b99869c3a752"
     },
     {
       "id": "g7_ch02_q08",
@@ -560,7 +620,11 @@
       "formattingRisks": [
         "عدد، مقدار یا محاسبه"
       ],
-      "sharedAnswerStrip": false
+      "sharedAnswerStrip": false,
+      "promptAsset": null,
+      "promptSha256": null,
+      "promptTextPreserved": true,
+      "promptTextSha256": null
     },
     {
       "id": "g7_ch02_q09",
@@ -604,7 +668,11 @@
         "عدد، مقدار یا محاسبه",
         "تطبیق شکل، نمودار، جدول یا توالی"
       ],
-      "sharedAnswerStrip": false
+      "sharedAnswerStrip": false,
+      "promptAsset": "g7_ch02_q09_source_prompt.png",
+      "promptSha256": "2af746b6c9fcf9c771473275bff10a073e07090924584ab985cb4bc18572cad2",
+      "promptTextPreserved": true,
+      "promptTextSha256": "6efcdb2fd7e2ebc07858013ab10a10edbf66faf3f405ecdd2bdd1b1fe5254324"
     },
     {
       "id": "g7_ch02_q10",
@@ -639,7 +707,11 @@
         "عدد، مقدار یا محاسبه",
         "تطبیق شکل، نمودار، جدول یا توالی"
       ],
-      "sharedAnswerStrip": false
+      "sharedAnswerStrip": false,
+      "promptAsset": null,
+      "promptSha256": null,
+      "promptTextPreserved": true,
+      "promptTextSha256": null
     },
     {
       "id": "g7_ch02_q11",
@@ -675,7 +747,11 @@
         "حروف لاتین یا نماد",
         "تطبیق شکل، نمودار، جدول یا توالی"
       ],
-      "sharedAnswerStrip": false
+      "sharedAnswerStrip": false,
+      "promptAsset": "g7_ch02_q11_source_prompt.png",
+      "promptSha256": "c9558200582002e33714de0e4951302d3795cf67c1fd920f5d10daa845f51dbb",
+      "promptTextPreserved": true,
+      "promptTextSha256": "966dba7faf14c022a34f1976f5bb116e97c0eccae3624b472efd56b4b3213cb8"
     },
     {
       "id": "g7_ch02_q12",
@@ -709,7 +785,11 @@
       "formattingRisks": [
         "عدد، مقدار یا محاسبه"
       ],
-      "sharedAnswerStrip": false
+      "sharedAnswerStrip": false,
+      "promptAsset": "g7_ch02_q12_source_prompt.png",
+      "promptSha256": "9d6c501743e53ebdf531aab6789a87e3b671c436be0dd5474e8ebfd73fffe435",
+      "promptTextPreserved": true,
+      "promptTextSha256": "99d2d8cfa1be9081547d17562be45cff9d9bc604b13ed2dbdae4141aadf9df52"
     },
     {
       "id": "g7_ch02_q13",
@@ -741,7 +821,11 @@
       ],
       "answerImageRecommended": false,
       "formattingRisks": [],
-      "sharedAnswerStrip": false
+      "sharedAnswerStrip": false,
+      "promptAsset": null,
+      "promptSha256": null,
+      "promptTextPreserved": true,
+      "promptTextSha256": null
     },
     {
       "id": "g7_ch02_q14",
@@ -785,7 +869,11 @@
         "عدد، مقدار یا محاسبه",
         "تطبیق شکل، نمودار، جدول یا توالی"
       ],
-      "sharedAnswerStrip": false
+      "sharedAnswerStrip": false,
+      "promptAsset": "g7_ch02_q14_source_prompt.png",
+      "promptSha256": "23af4324b6b4fbf316b0fade1b34ab7d95af442dcce6266f779f01d5e22c1e8c",
+      "promptTextPreserved": true,
+      "promptTextSha256": "4a0a63b08142b9c87bd1d4fae4a3a1fbdcb76e34eb07064a258351a4a8a00290"
     },
     {
       "id": "g7_ch02_q15",
@@ -820,7 +908,11 @@
         "عدد، مقدار یا محاسبه",
         "تطبیق شکل، نمودار، جدول یا توالی"
       ],
-      "sharedAnswerStrip": false
+      "sharedAnswerStrip": false,
+      "promptAsset": "g7_ch02_q15_source_prompt.png",
+      "promptSha256": "c6fb47fbd1229dad0cde86f403a3e6b81c9e6910f223ccb3c1722af78c9a4539",
+      "promptTextPreserved": true,
+      "promptTextSha256": "2ec7cb5206f62039133043b9698b8a2e917308088eff3375a0642cf54be1f4ea"
     },
     {
       "id": "g7_ch02_mcq01",
@@ -852,7 +944,11 @@
       ],
       "answerImageRecommended": false,
       "formattingRisks": [],
-      "sharedAnswerStrip": false
+      "sharedAnswerStrip": false,
+      "promptAsset": null,
+      "promptSha256": null,
+      "promptTextPreserved": true,
+      "promptTextSha256": null
     },
     {
       "id": "g7_ch02_mcq02",
@@ -886,7 +982,11 @@
       "formattingRisks": [
         "عدد، مقدار یا محاسبه"
       ],
-      "sharedAnswerStrip": false
+      "sharedAnswerStrip": false,
+      "promptAsset": null,
+      "promptSha256": null,
+      "promptTextPreserved": true,
+      "promptTextSha256": null
     },
     {
       "id": "g7_ch02_mcq03",
@@ -920,7 +1020,11 @@
       "formattingRisks": [
         "عدد، مقدار یا محاسبه"
       ],
-      "sharedAnswerStrip": false
+      "sharedAnswerStrip": false,
+      "promptAsset": "g7_ch02_mcq03_source_prompt.png",
+      "promptSha256": "5140262405a86222b16efe1400594a658f47bd51bf9701e3039e0a6c51989298",
+      "promptTextPreserved": true,
+      "promptTextSha256": "b9a8327255cc4e6cb676526c7d011445afe4ea9d3fe42c4c7f8a0470efffed58"
     },
     {
       "id": "g7_ch02_mcq04",
@@ -954,7 +1058,11 @@
       "formattingRisks": [
         "عدد، مقدار یا محاسبه"
       ],
-      "sharedAnswerStrip": false
+      "sharedAnswerStrip": false,
+      "promptAsset": "g7_ch02_mcq04_source_prompt.png",
+      "promptSha256": "9f1b32eedff4400748ec31c283dbe9616c66f97169f0b2273f3d75182b5a112e",
+      "promptTextPreserved": true,
+      "promptTextSha256": "491bb229c5db536ce782f61b217a799467931d4501486ae6b5b926ac880c40aa"
     },
     {
       "id": "g7_ch02_mcq05",
@@ -988,7 +1096,11 @@
       "formattingRisks": [
         "عدد، مقدار یا محاسبه"
       ],
-      "sharedAnswerStrip": false
+      "sharedAnswerStrip": false,
+      "promptAsset": "g7_ch02_mcq05_source_prompt.png",
+      "promptSha256": "771486959cbc237677baef8bfebc63c109085223e03a64d53911fe06583f13eb",
+      "promptTextPreserved": true,
+      "promptTextSha256": "ffa6c9a0aa3a0a630446ce682cd1c753b847f9d4aea48f70964c1af39f213a90"
     },
     {
       "id": "g7_ch03_q01",
@@ -1022,7 +1134,11 @@
       "formattingRisks": [
         "حروف لاتین یا نماد"
       ],
-      "sharedAnswerStrip": false
+      "sharedAnswerStrip": false,
+      "promptAsset": null,
+      "promptSha256": null,
+      "promptTextPreserved": true,
+      "promptTextSha256": null
     },
     {
       "id": "g7_ch03_q02",
@@ -1054,7 +1170,11 @@
       ],
       "answerImageRecommended": false,
       "formattingRisks": [],
-      "sharedAnswerStrip": false
+      "sharedAnswerStrip": false,
+      "promptAsset": null,
+      "promptSha256": null,
+      "promptTextPreserved": true,
+      "promptTextSha256": null
     },
     {
       "id": "g7_ch03_q03",
@@ -1086,7 +1206,11 @@
       ],
       "answerImageRecommended": false,
       "formattingRisks": [],
-      "sharedAnswerStrip": false
+      "sharedAnswerStrip": false,
+      "promptAsset": null,
+      "promptSha256": null,
+      "promptTextPreserved": true,
+      "promptTextSha256": null
     },
     {
       "id": "g7_ch03_q04",
@@ -1118,7 +1242,11 @@
       ],
       "answerImageRecommended": false,
       "formattingRisks": [],
-      "sharedAnswerStrip": false
+      "sharedAnswerStrip": false,
+      "promptAsset": null,
+      "promptSha256": null,
+      "promptTextPreserved": true,
+      "promptTextSha256": null
     },
     {
       "id": "g7_ch03_q05",
@@ -1150,7 +1278,11 @@
       ],
       "answerImageRecommended": false,
       "formattingRisks": [],
-      "sharedAnswerStrip": false
+      "sharedAnswerStrip": false,
+      "promptAsset": null,
+      "promptSha256": null,
+      "promptTextPreserved": true,
+      "promptTextSha256": null
     },
     {
       "id": "g7_ch03_q06",
@@ -1182,7 +1314,11 @@
       ],
       "answerImageRecommended": false,
       "formattingRisks": [],
-      "sharedAnswerStrip": false
+      "sharedAnswerStrip": false,
+      "promptAsset": null,
+      "promptSha256": null,
+      "promptTextPreserved": true,
+      "promptTextSha256": null
     },
     {
       "id": "g7_ch03_q07",
@@ -1223,7 +1359,11 @@
       ],
       "answerImageRecommended": false,
       "formattingRisks": [],
-      "sharedAnswerStrip": false
+      "sharedAnswerStrip": false,
+      "promptAsset": null,
+      "promptSha256": null,
+      "promptTextPreserved": true,
+      "promptTextSha256": null
     },
     {
       "id": "g7_ch03_q08",
@@ -1257,7 +1397,11 @@
       "formattingRisks": [
         "حروف لاتین یا نماد"
       ],
-      "sharedAnswerStrip": false
+      "sharedAnswerStrip": false,
+      "promptAsset": null,
+      "promptSha256": null,
+      "promptTextPreserved": true,
+      "promptTextSha256": null
     },
     {
       "id": "g7_ch03_q09",
@@ -1291,7 +1435,11 @@
       "formattingRisks": [
         "تطبیق شکل، نمودار، جدول یا توالی"
       ],
-      "sharedAnswerStrip": false
+      "sharedAnswerStrip": false,
+      "promptAsset": null,
+      "promptSha256": null,
+      "promptTextPreserved": true,
+      "promptTextSha256": null
     },
     {
       "id": "g7_ch03_q10",
@@ -1323,7 +1471,11 @@
       ],
       "answerImageRecommended": false,
       "formattingRisks": [],
-      "sharedAnswerStrip": false
+      "sharedAnswerStrip": false,
+      "promptAsset": null,
+      "promptSha256": null,
+      "promptTextPreserved": true,
+      "promptTextSha256": null
     },
     {
       "id": "g7_ch03_q11",
@@ -1357,7 +1509,11 @@
       "formattingRisks": [
         "تطبیق شکل، نمودار، جدول یا توالی"
       ],
-      "sharedAnswerStrip": false
+      "sharedAnswerStrip": false,
+      "promptAsset": null,
+      "promptSha256": null,
+      "promptTextPreserved": true,
+      "promptTextSha256": null
     },
     {
       "id": "g7_ch03_q12",
@@ -1391,7 +1547,11 @@
       "formattingRisks": [
         "تطبیق شکل، نمودار، جدول یا توالی"
       ],
-      "sharedAnswerStrip": false
+      "sharedAnswerStrip": false,
+      "promptAsset": null,
+      "promptSha256": null,
+      "promptTextPreserved": true,
+      "promptTextSha256": null
     },
     {
       "id": "g7_ch03_q13",
@@ -1432,7 +1592,11 @@
       ],
       "answerImageRecommended": false,
       "formattingRisks": [],
-      "sharedAnswerStrip": false
+      "sharedAnswerStrip": false,
+      "promptAsset": null,
+      "promptSha256": null,
+      "promptTextPreserved": true,
+      "promptTextSha256": null
     },
     {
       "id": "g7_ch03_q14",
@@ -1464,7 +1628,11 @@
       ],
       "answerImageRecommended": false,
       "formattingRisks": [],
-      "sharedAnswerStrip": false
+      "sharedAnswerStrip": false,
+      "promptAsset": null,
+      "promptSha256": null,
+      "promptTextPreserved": true,
+      "promptTextSha256": null
     },
     {
       "id": "g7_ch03_q15",
@@ -1500,7 +1668,11 @@
         "حروف لاتین یا نماد",
         "تطبیق شکل، نمودار، جدول یا توالی"
       ],
-      "sharedAnswerStrip": false
+      "sharedAnswerStrip": false,
+      "promptAsset": null,
+      "promptSha256": null,
+      "promptTextPreserved": true,
+      "promptTextSha256": null
     },
     {
       "id": "g7_ch03_q16",
@@ -1532,7 +1704,11 @@
       ],
       "answerImageRecommended": false,
       "formattingRisks": [],
-      "sharedAnswerStrip": false
+      "sharedAnswerStrip": false,
+      "promptAsset": "g7_ch03_q16_source_prompt.png",
+      "promptSha256": "3cf1a50e55f593bc5e365999db772f164560174b36c928da7dc4e91a066104b9",
+      "promptTextPreserved": true,
+      "promptTextSha256": "a05c5543d0a19ee79ce36bee825946d6ed93cbbc59c64677e1325e12b620c72a"
     },
     {
       "id": "g7_ch03_q17",
@@ -1566,7 +1742,11 @@
       "formattingRisks": [
         "تطبیق شکل، نمودار، جدول یا توالی"
       ],
-      "sharedAnswerStrip": false
+      "sharedAnswerStrip": false,
+      "promptAsset": "g7_ch03_q17_source_prompt.png",
+      "promptSha256": "9889e406967127011a5321d4660baaf74b4ad6e8d7e61e2277a5dfa630ea717b",
+      "promptTextPreserved": true,
+      "promptTextSha256": "4d1d25c387e89cec743253b1ae5a684db41e5d6ad9bd74a7e6f26c53260c5c87"
     },
     {
       "id": "g7_ch03_q18",
@@ -1609,7 +1789,11 @@
       "formattingRisks": [
         "تطبیق شکل، نمودار، جدول یا توالی"
       ],
-      "sharedAnswerStrip": false
+      "sharedAnswerStrip": false,
+      "promptAsset": null,
+      "promptSha256": null,
+      "promptTextPreserved": true,
+      "promptTextSha256": null
     },
     {
       "id": "g7_ch03_q19",
@@ -1641,7 +1825,11 @@
       ],
       "answerImageRecommended": false,
       "formattingRisks": [],
-      "sharedAnswerStrip": false
+      "sharedAnswerStrip": false,
+      "promptAsset": null,
+      "promptSha256": null,
+      "promptTextPreserved": true,
+      "promptTextSha256": null
     },
     {
       "id": "g7_ch03_q20",
@@ -1673,7 +1861,11 @@
       ],
       "answerImageRecommended": false,
       "formattingRisks": [],
-      "sharedAnswerStrip": false
+      "sharedAnswerStrip": false,
+      "promptAsset": null,
+      "promptSha256": null,
+      "promptTextPreserved": true,
+      "promptTextSha256": null
     },
     {
       "id": "g7_ch03_q21",
@@ -1707,7 +1899,11 @@
       "formattingRisks": [
         "تطبیق شکل، نمودار، جدول یا توالی"
       ],
-      "sharedAnswerStrip": false
+      "sharedAnswerStrip": false,
+      "promptAsset": null,
+      "promptSha256": null,
+      "promptTextPreserved": true,
+      "promptTextSha256": null
     },
     {
       "id": "g7_ch03_q22",
@@ -1741,7 +1937,11 @@
       "formattingRisks": [
         "تطبیق شکل، نمودار، جدول یا توالی"
       ],
-      "sharedAnswerStrip": false
+      "sharedAnswerStrip": false,
+      "promptAsset": null,
+      "promptSha256": null,
+      "promptTextPreserved": true,
+      "promptTextSha256": null
     },
     {
       "id": "g7_ch03_q23",
@@ -1782,7 +1982,11 @@
       ],
       "answerImageRecommended": false,
       "formattingRisks": [],
-      "sharedAnswerStrip": false
+      "sharedAnswerStrip": false,
+      "promptAsset": null,
+      "promptSha256": null,
+      "promptTextPreserved": true,
+      "promptTextSha256": null
     },
     {
       "id": "g7_ch03_q24",
@@ -1817,7 +2021,11 @@
         "عدد، مقدار یا محاسبه",
         "تطبیق شکل، نمودار، جدول یا توالی"
       ],
-      "sharedAnswerStrip": false
+      "sharedAnswerStrip": false,
+      "promptAsset": null,
+      "promptSha256": null,
+      "promptTextPreserved": true,
+      "promptTextSha256": null
     },
     {
       "id": "g7_ch03_mcq01",
@@ -1849,7 +2057,11 @@
       ],
       "answerImageRecommended": false,
       "formattingRisks": [],
-      "sharedAnswerStrip": false
+      "sharedAnswerStrip": false,
+      "promptAsset": null,
+      "promptSha256": null,
+      "promptTextPreserved": true,
+      "promptTextSha256": null
     },
     {
       "id": "g7_ch03_mcq02",
@@ -1883,7 +2095,11 @@
       "formattingRisks": [
         "عدد، مقدار یا محاسبه"
       ],
-      "sharedAnswerStrip": false
+      "sharedAnswerStrip": false,
+      "promptAsset": null,
+      "promptSha256": null,
+      "promptTextPreserved": true,
+      "promptTextSha256": null
     },
     {
       "id": "g7_ch03_mcq03",
@@ -1915,7 +2131,11 @@
       ],
       "answerImageRecommended": false,
       "formattingRisks": [],
-      "sharedAnswerStrip": false
+      "sharedAnswerStrip": false,
+      "promptAsset": null,
+      "promptSha256": null,
+      "promptTextPreserved": true,
+      "promptTextSha256": null
     },
     {
       "id": "g7_ch03_mcq04",
@@ -1947,7 +2167,11 @@
       ],
       "answerImageRecommended": false,
       "formattingRisks": [],
-      "sharedAnswerStrip": false
+      "sharedAnswerStrip": false,
+      "promptAsset": null,
+      "promptSha256": null,
+      "promptTextPreserved": true,
+      "promptTextSha256": null
     },
     {
       "id": "g7_ch03_mcq05",
@@ -1979,7 +2203,11 @@
       ],
       "answerImageRecommended": false,
       "formattingRisks": [],
-      "sharedAnswerStrip": false
+      "sharedAnswerStrip": false,
+      "promptAsset": "g7_ch03_mcq05_source_prompt.png",
+      "promptSha256": "3b0280b5ef5d339b2dca0a06186f63e78ff493d18f0fed3074677d07207e2516",
+      "promptTextPreserved": true,
+      "promptTextSha256": "9ed66e47d41536252b151b1bb72708c100dc85ecbb3b207ad2cafb3d00fc15e0"
     },
     {
       "id": "g7_ch03_mcq06",
@@ -2013,7 +2241,11 @@
       "formattingRisks": [
         "عدد، مقدار یا محاسبه"
       ],
-      "sharedAnswerStrip": false
+      "sharedAnswerStrip": false,
+      "promptAsset": null,
+      "promptSha256": null,
+      "promptTextPreserved": true,
+      "promptTextSha256": null
     },
     {
       "id": "g7_ch03_mcq07",
@@ -2045,7 +2277,11 @@
       ],
       "answerImageRecommended": false,
       "formattingRisks": [],
-      "sharedAnswerStrip": false
+      "sharedAnswerStrip": false,
+      "promptAsset": null,
+      "promptSha256": null,
+      "promptTextPreserved": true,
+      "promptTextSha256": null
     }
   ]
 }

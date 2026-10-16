@@ -266,7 +266,7 @@ fun AuditedWorkbookApp(
                         val question = questions.first { it.id == id }
                         WorkbookPanel(accent = Purple) {
                             Text("سؤال ${workbookFa(question.sourceNumber)}", style = MaterialTheme.typography.titleLarge)
-                            question.sourceQuestionVisual?.let { WorkbookImage(it, "صورت سؤال ${workbookFa(question.sourceNumber)} از کتاب") }
+                            (question.promptVisual ?: question.sourceQuestionVisual)?.let { WorkbookImage(it, "صورت سؤال ${workbookFa(question.sourceNumber)} از کتاب") }
                             WorkbookQuestionVisuals(question, "تصویر سؤال ${workbookFa(question.sourceNumber)}")
                             OutlinedButton(onClick = { start(listOf(question), false) }, modifier = Modifier.fillMaxWidth()) {
                                 Text("تمرین سؤال ${workbookFa(question.sourceNumber)} با راهنما")

@@ -53,7 +53,9 @@
     "sourceQuestionVisual": "g7_ch01_q01_source_question.png",
     "answerVisualCaption": null,
     "sourcePolicy": "verbatim_original_pdf",
-    "sourceAnswerTextExtracted": "1 – : به ترتیب a - دانش b - آزمایش c – فناوری"
+    "sourceAnswerTextExtracted": "1 – : به ترتیب a - دانش b - آزمایش c – فناوری",
+    "visualCaption": null,
+    "promptVisual": null
   },
   {
     "id": "g7-ch01-main-002-1405",
@@ -105,7 +107,9 @@
     "sourceQuestionVisual": "g7_ch01_q02_source_question.png",
     "answerVisualCaption": null,
     "sourcePolicy": "verbatim_original_pdf",
-    "sourceAnswerTextExtracted": "2 - الف– صحیح    ب- صحیح    ج- غلط"
+    "sourceAnswerTextExtracted": "2 - الف– صحیح    ب- صحیح    ج- غلط",
+    "visualCaption": null,
+    "promptVisual": null
   },
   {
     "id": "g7-ch01-main-003-1405",
@@ -161,7 +165,9 @@
     "sourceQuestionVisual": "g7_ch01_q03_source_question.png",
     "answerVisualCaption": null,
     "sourcePolicy": "verbatim_original_pdf",
-    "sourceAnswerTextExtracted": "3 - ، تفکر تجربه  و  به کار بستن مهارت های گوناگون در برخورد با مسائل زندگی"
+    "sourceAnswerTextExtracted": "3 - ، تفکر تجربه  و  به کار بستن مهارت های گوناگون در برخورد با مسائل زندگی",
+    "visualCaption": null,
+    "promptVisual": null
   },
   {
     "id": "g7-ch01-main-004-1405",
@@ -231,7 +237,9 @@
     "sourceQuestionVisual": "g7_ch01_q04_source_question.png",
     "answerVisualCaption": null,
     "sourcePolicy": "verbatim_original_pdf",
-    "sourceAnswerTextExtracted": "4 – 1 - ج2 - ب"
+    "sourceAnswerTextExtracted": "4 – 1 - ج2 - ب",
+    "visualCaption": null,
+    "promptVisual": null
   },
   {
     "id": "g7-ch01-main-005-1405",
@@ -285,7 +293,9 @@
     "sourceQuestionVisual": "g7_ch01_q05_source_question.png",
     "answerVisualCaption": null,
     "sourcePolicy": "verbatim_original_pdf",
-    "sourceAnswerTextExtracted": "5 - : به ترتیب 3 - فرضیه سازی 4 - آزمایش     5 – نتیجه گیری"
+    "sourceAnswerTextExtracted": "5 - : به ترتیب 3 - فرضیه سازی 4 - آزمایش     5 – نتیجه گیری",
+    "visualCaption": null,
+    "promptVisual": null
   },
   {
     "id": "g7-ch01-main-006-1405",
@@ -372,7 +382,9 @@
     "sourceQuestionVisual": "g7_ch01_q06_source_question.png",
     "answerVisualCaption": null,
     "sourcePolicy": "verbatim_original_pdf",
-    "sourceAnswerTextExtracted": "6 - تبدیل علم به عمل را فناوری گویند . مانند اختراع خودرو  ، قطار  ، کامپیوتر .... ، هواپیما و"
+    "sourceAnswerTextExtracted": "6 - تبدیل علم به عمل را فناوری گویند . مانند اختراع خودرو  ، قطار  ، کامپیوتر .... ، هواپیما و",
+    "visualCaption": null,
+    "promptVisual": null
   },
   {
     "id": "g7-ch01-main-007-1405",
@@ -446,7 +458,7 @@
     ],
     "visual": "g7_ch01_q07.png",
     "answerVisual": "g7_ch01_q07_source_answer.png",
-    "visualCaption": "تصویر رایانه از همان صفحه کتاب",
+    "visualCaption": null,
     "editorialNotes": [
       "تعبیر آسیب چشم در پاسخنامه به خستگی چشم در استفاده طولانی و نامناسب دقیق‌سازی شده است."
     ],
@@ -454,7 +466,8 @@
     "sourceQuestionVisual": "g7_ch01_q07_source_question.png",
     "answerVisualCaption": null,
     "sourcePolicy": "verbatim_original_pdf",
-    "sourceAnswerTextExtracted": "7 - ، فایده : استفاده از اطالعات موجود در اینترنت...ذخیره سازی اطالعات  و\nضرر :  ضعیف شدن چشم ، کم تحرکی و تنبلی ... و"
+    "sourceAnswerTextExtracted": "7 - ، فایده : استفاده از اطالعات موجود در اینترنت...ذخیره سازی اطالعات  و\nضرر :  ضعیف شدن چشم ، کم تحرکی و تنبلی ... و",
+    "promptVisual": "g7_ch01_q07_source_prompt.png"
   },
   {
     "id": "g7-ch01-main-008-1405",
@@ -514,6 +527,8 @@
     "sourceQuestionVisual": "g7_ch01_q08_source_question.png",
     "answerVisualCaption": null,
     "sourcePolicy": "verbatim_original_pdf",
-    "sourceAnswerTextExtracted": "8 - فیزیک ، شیمی ، زیست شناسی ، زمین شناسی"
+    "sourceAnswerTextExtracted": "8 - فیزیک ، شیمی ، زیست شناسی ، زمین شناسی",
+    "visualCaption": null,
+    "promptVisual": null
   }
 ]

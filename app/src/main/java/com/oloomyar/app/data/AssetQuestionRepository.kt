@@ -60,6 +60,7 @@ abstract class AssetQuestionRepository(
                         answerVisual = optionalText(q, "answerVisual"),
                         answerVisualCaption = optionalText(q, "answerVisualCaption"),
                         sourceQuestionVisual = optionalText(q, "sourceQuestionVisual"),
+                        promptVisual = optionalText(q, "promptVisual"),
                         bookPrompt = optionalText(q, "bookPrompt") ?: q.getString("source"),
                         sourceNumber = q.optInt("sourceNumber", q.getInt("number")),
                         sourcePage = q.optInt("sourcePage"),
@@ -121,7 +122,7 @@ abstract class AssetQuestionRepository(
                 if (step.kind == StepKind.MATCH) requireValidMatchChoices(step)
             }
 
-            (listOfNotNull(q.visual, q.answerVisual, q.sourceQuestionVisual) + q.visuals.map { it.asset }).forEach { asset ->
+            (listOfNotNull(q.visual, q.answerVisual, q.sourceQuestionVisual, q.promptVisual) + q.visuals.map { it.asset }).forEach { asset ->
                 val folder = if (asset.lowercase().endsWith(".svg")) "svg" else "images"
                 require(runCatching { context.assets.open("$folder/$asset").close() }.isSuccess) {
                     "Missing $collectionLabel asset: $folder/$asset"

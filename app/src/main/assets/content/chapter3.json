@@ -79,7 +79,9 @@
     "answerVisual": "g7_ch03_q01_source_answer.png",
     "answerVisualCaption": null,
     "sourcePolicy": "verbatim_original_pdf",
-    "sourceAnswerTextExtracted": "1 – : به ترتیب a - ا تمb - عنصر c – اتمd - فلز e – ترکیب\nf - به ترتیب :  جامد- مایع– گاز"
+    "sourceAnswerTextExtracted": "1 – : به ترتیب a - ا تمb - عنصر c – اتمd - فلز e – ترکیب\nf - به ترتیب :  جامد- مایع– گاز",
+    "visualCaption": null,
+    "promptVisual": null
   },
   {
     "id": "g7-ch03-main-002-1405",
@@ -133,7 +135,9 @@
     "answerVisual": "g7_ch03_q02_source_answer.png",
     "answerVisualCaption": null,
     "sourcePolicy": "verbatim_original_pdf",
-    "sourceAnswerTextExtracted": "2 - مجسمه سازی- نمای ساختمان ها"
+    "sourceAnswerTextExtracted": "2 - مجسمه سازی- نمای ساختمان ها",
+    "visualCaption": null,
+    "promptVisual": null
   },
   {
     "id": "g7-ch03-main-003-1405",
@@ -207,7 +211,9 @@
     "answerVisual": "g7_ch03_q03_source_answer.png",
     "answerVisualCaption": null,
     "sourcePolicy": "verbatim_original_pdf",
-    "sourceAnswerTextExtracted": "3 - سوخت خودرو ها– پالستیک سازی– بعضی حشره کش ها– بعضی دارو ها– الستیک سازی\n–\nتهیه پوشاک"
+    "sourceAnswerTextExtracted": "3 - سوخت خودرو ها– پالستیک سازی– بعضی حشره کش ها– بعضی دارو ها– الستیک سازی\n–\nتهیه پوشاک",
+    "visualCaption": null,
+    "promptVisual": null
   },
   {
     "id": "g7-ch03-main-004-1405",
@@ -273,7 +279,9 @@
     "answerVisual": "g7_ch03_q04_source_answer.png",
     "answerVisualCaption": null,
     "sourcePolicy": "verbatim_original_pdf",
-    "sourceAnswerTextExtracted": "4 – طعم دهنده غذاها- - )... تهیه شور ها ( خیار شور و– تهیه سرم نمکی– ذوب کردن برف و یخ\nدر زمستان"
+    "sourceAnswerTextExtracted": "4 – طعم دهنده غذاها- - )... تهیه شور ها ( خیار شور و– تهیه سرم نمکی– ذوب کردن برف و یخ\nدر زمستان",
+    "visualCaption": null,
+    "promptVisual": null
   },
   {
     "id": "g7-ch03-main-005-1405",
@@ -322,7 +330,9 @@
     "answerVisual": "g7_ch03_q05_source_answer.png",
     "answerVisualCaption": null,
     "sourcePolicy": "verbatim_original_pdf",
-    "sourceAnswerTextExtracted": "5 - یک پارچ فلزی پر از آب یخ را مدتی  دراتاق قرارمی دهیم  ، قطرات آب روی سطح بیرونی پارچ\n. جمع  می شوند . زیرا بخار های هوا به پارچ برخورد کرده و سرد شده و به قطرات آب تبدیل شده اند\n. پس هوای اتاق ، بخار آب دارد"
+    "sourceAnswerTextExtracted": "5 - یک پارچ فلزی پر از آب یخ را مدتی  دراتاق قرارمی دهیم  ، قطرات آب روی سطح بیرونی پارچ\n. جمع  می شوند . زیرا بخار های هوا به پارچ برخورد کرده و سرد شده و به قطرات آب تبدیل شده اند\n. پس هوای اتاق ، بخار آب دارد",
+    "visualCaption": null,
+    "promptVisual": null
   },
   {
     "id": "g7-ch03-main-006-1405",
@@ -392,7 +402,9 @@
     "answerVisual": "g7_ch03_q06_source_answer.png",
     "answerVisualCaption": null,
     "sourcePolicy": "verbatim_original_pdf",
-    "sourceAnswerTextExtracted": "6 – رسانای الکتریکی هستند - سطح براق دارند - چکش خوارند یعنی با ضربه به شکل های\n. گوناگون در می آیند- اغلب در آب فرو می روند"
+    "sourceAnswerTextExtracted": "6 – رسانای الکتریکی هستند - سطح براق دارند - چکش خوارند یعنی با ضربه به شکل های\n. گوناگون در می آیند- اغلب در آب فرو می روند",
+    "visualCaption": null,
+    "promptVisual": null
   },
   {
     "id": "g7-ch03-main-007-1405",
@@ -462,7 +474,9 @@
     "answerVisual": "g7_ch03_q07_source_answer.png",
     "answerVisualCaption": null,
     "sourcePolicy": "verbatim_original_pdf",
-    "sourceAnswerTextExtracted": "7 - نارسانا ( عایق ) هستند- سطح براق ندارند- اغلب آن ها شکننده اند\n- .اغلب روی آب شناور می مانند"
+    "sourceAnswerTextExtracted": "7 - نارسانا ( عایق ) هستند- سطح براق ندارند- اغلب آن ها شکننده اند\n- .اغلب روی آب شناور می مانند",
+    "visualCaption": null,
+    "promptVisual": null
   },
   {
     "id": "g7-ch03-main-008-1405",
@@ -537,7 +551,9 @@
     "answerVisual": "g7_ch03_q08_source_answer.png",
     "answerVisualCaption": null,
     "sourcePolicy": "verbatim_original_pdf",
-    "sourceAnswerTextExtracted": "8 - به ترتیب :   فلز– نافلز– نا فلز– فلز– فلز– نافلز– فلز– نافلز\n–"
+    "sourceAnswerTextExtracted": "8 - به ترتیب :   فلز– نافلز– نا فلز– فلز– فلز– نافلز– فلز– نافلز\n–",
+    "visualCaption": null,
+    "promptVisual": null
   },
   {
     "id": "g7-ch03-main-009-1405",
@@ -614,7 +630,9 @@
     "answerVisual": "g7_ch03_q09_source_answer.png",
     "answerVisualCaption": null,
     "sourcePolicy": "verbatim_original_pdf",
-    "sourceAnswerTextExtracted": "9 فلز :    آلومینیم ، مس ،آهن ، طال ،  نقره\nنافلز :     نیتروژن ،  گوگرد ،  اکسیژن ،   کربن"
+    "sourceAnswerTextExtracted": "9 فلز :    آلومینیم ، مس ،آهن ، طال ،  نقره\nنافلز :     نیتروژن ،  گوگرد ،  اکسیژن ،   کربن",
+    "visualCaption": null,
+    "promptVisual": null
   },
   {
     "id": "g7-ch03-main-010-1405",
@@ -748,7 +766,9 @@
     "answerVisual": "g7_ch03_q10_source_answer.png",
     "answerVisualCaption": null,
     "sourcePolicy": "verbatim_original_pdf",
-    "sourceAnswerTextExtracted": "10 - الف– کربن و هیدروژن        ب- کربن و اکسیژن         ج– هیدروژن و اکسیژن"
+    "sourceAnswerTextExtracted": "10 - الف– کربن و هیدروژن        ب- کربن و اکسیژن         ج– هیدروژن و اکسیژن",
+    "visualCaption": null,
+    "promptVisual": null
   },
   {
     "id": "g7-ch03-main-011-1405",
@@ -841,7 +861,9 @@
     "answerVisual": "g7_ch03_q11_source_answer.png",
     "answerVisualCaption": null,
     "sourcePolicy": "verbatim_original_pdf",
-    "sourceAnswerTextExtracted": "11 - از اتم :   نقره– آلومینیم- آهن– مس– جیوه- طال\nاز مولکول :  کربن دی اکسید– کلر– گوگرد– آب– متان– اکسیژن– نیتروژن"
+    "sourceAnswerTextExtracted": "11 - از اتم :   نقره– آلومینیم- آهن– مس– جیوه- طال\nاز مولکول :  کربن دی اکسید– کلر– گوگرد– آب– متان– اکسیژن– نیتروژن",
+    "visualCaption": null,
+    "promptVisual": null
   },
   {
     "id": "g7-ch03-main-012-1405",
@@ -896,7 +918,9 @@
     "answerVisual": "g7_ch03_q12_source_answer.png",
     "answerVisualCaption": null,
     "sourcePolicy": "verbatim_original_pdf",
-    "sourceAnswerTextExtracted": "12 – به ترتیب از راست به چپ  :   عنصر نافلز- عنصر فلز- ترکیب"
+    "sourceAnswerTextExtracted": "12 – به ترتیب از راست به چپ  :   عنصر نافلز- عنصر فلز- ترکیب",
+    "visualCaption": null,
+    "promptVisual": null
   },
   {
     "id": "g7-ch03-main-013-1405",
@@ -945,7 +969,9 @@
     "answerVisual": "g7_ch03_q13_source_answer.png",
     "answerVisualCaption": null,
     "sourcePolicy": "verbatim_original_pdf",
-    "sourceAnswerTextExtracted": "13 - بعضی از : آن ها عنصرند مانند طال ،  آلومینیم ،  اکسیژن و... و   بعضی هم ترکیب اند مانند\n.... آب ، نمک ، شکر و"
+    "sourceAnswerTextExtracted": "13 - بعضی از : آن ها عنصرند مانند طال ،  آلومینیم ،  اکسیژن و... و   بعضی هم ترکیب اند مانند\n.... آب ، نمک ، شکر و",
+    "visualCaption": null,
+    "promptVisual": null
   },
   {
     "id": "g7-ch03-main-014-1405",
@@ -996,7 +1022,9 @@
     "answerVisual": "g7_ch03_q14_source_answer.png",
     "answerVisualCaption": null,
     "sourcePolicy": "verbatim_original_pdf",
-    "sourceAnswerTextExtracted": "14 - الف– : عنصر ، شکل خالصی از ماده که از یک نوع اتم ساخته شده است\nب- : ترکیب ماده ای که از دو یا چند نوع اتم متفاوت تشکیل شده است"
+    "sourceAnswerTextExtracted": "14 - الف– : عنصر ، شکل خالصی از ماده که از یک نوع اتم ساخته شده است\nب- : ترکیب ماده ای که از دو یا چند نوع اتم متفاوت تشکیل شده است",
+    "visualCaption": null,
+    "promptVisual": null
   },
   {
     "id": "g7-ch03-main-015-1405",
@@ -1076,7 +1104,9 @@
     "answerVisual": "g7_ch03_q15_source_answer.png",
     "answerVisualCaption": null,
     "sourcePolicy": "verbatim_original_pdf",
-    "sourceAnswerTextExtracted": "15 - از2 اتم اکسیژن و یک اتم کربن- هر اتم اکسیژن از8 الکترون و8 پروتون و8 نوترون-\nهر اتم کربن از6 الکترون و6 پروتون و6 نوترون\n–"
+    "sourceAnswerTextExtracted": "15 - از2 اتم اکسیژن و یک اتم کربن- هر اتم اکسیژن از8 الکترون و8 پروتون و8 نوترون-\nهر اتم کربن از6 الکترون و6 پروتون و6 نوترون\n–",
+    "visualCaption": null,
+    "promptVisual": null
   },
   {
     "id": "g7-ch03-main-016-1405",
@@ -1138,7 +1168,9 @@
     "answerVisual": "g7_ch03_q16_source_answer.png",
     "answerVisualCaption": null,
     "sourcePolicy": "verbatim_original_pdf",
-    "sourceAnswerTextExtracted": "16 . .اتم ها کروی شکل اند ،  هسته دارند و حجم متفاوتی دارند\n- . هسته اتم از پروتون و نوترون تشکیل شده است\n- . در حالت عادی ، تعداد الکترون ها و پروتون ها با هم برابرند"
+    "sourceAnswerTextExtracted": "16 . .اتم ها کروی شکل اند ،  هسته دارند و حجم متفاوتی دارند\n- . هسته اتم از پروتون و نوترون تشکیل شده است\n- . در حالت عادی ، تعداد الکترون ها و پروتون ها با هم برابرند",
+    "visualCaption": null,
+    "promptVisual": "g7_ch03_q16_source_prompt.png"
   },
   {
     "id": "g7-ch03-main-017-1405",
@@ -1428,7 +1460,9 @@
     "answerVisual": "g7_ch03_q17_source_answer.png",
     "answerVisualCaption": null,
     "sourcePolicy": "verbatim_original_pdf",
-    "sourceAnswerTextExtracted": "17 - الف– ( الکترونe ) – (  پروتونp ) – (  نوترونn )\nب- پروتون و نوترون\nج– الکترون  با پروتون\n– الف -"
+    "sourceAnswerTextExtracted": "17 - الف– ( الکترونe ) – (  پروتونp ) – (  نوترونn )\nب- پروتون و نوترون\nج– الکترون  با پروتون\n– الف -",
+    "visualCaption": null,
+    "promptVisual": "g7_ch03_q17_source_prompt.png"
   },
   {
     "id": "g7-ch03-main-018-1405",
@@ -1494,7 +1528,9 @@
     "answerVisual": "g7_ch03_q18_source_answer.png",
     "answerVisualCaption": null,
     "sourcePolicy": "verbatim_original_pdf",
-    "sourceAnswerTextExtracted": "18 ، به وسیله ترازو5 گرم شکر در یک ظرف  و5 .  گرم آب  در ظرفی دیگر بر می داریم\nولی برای اندازه گیری5 گرم هوا  ، ابتدا جرم یک توپ خالی را اندازه می گیریم و سپس آن را با تلمبه\nبه اندازه ای باد می کنیم که جرمش5 گرم  افزایش  یابد  یعنی  هوای داخل آن5 گرم    .  شود\nمشاهده می کنیم که حجم5 گرم هوا   بیشر از آب و حجم آب هم بیشتر از  شکر است .  ب- بله"
+    "sourceAnswerTextExtracted": "18 ، به وسیله ترازو5 گرم شکر در یک ظرف  و5 .  گرم آب  در ظرفی دیگر بر می داریم\nولی برای اندازه گیری5 گرم هوا  ، ابتدا جرم یک توپ خالی را اندازه می گیریم و سپس آن را با تلمبه\nبه اندازه ای باد می کنیم که جرمش5 گرم  افزایش  یابد  یعنی  هوای داخل آن5 گرم    .  شود\nمشاهده می کنیم که حجم5 گرم هوا   بیشر از آب و حجم آب هم بیشتر از  شکر است .  ب- بله",
+    "visualCaption": null,
+    "promptVisual": null
   },
   {
     "id": "g7-ch03-main-019-1405",
@@ -1541,7 +1577,9 @@
     "answerVisual": "g7_ch03_q19_source_answer.png",
     "answerVisualCaption": null,
     "sourcePolicy": "verbatim_original_pdf",
-    "sourceAnswerTextExtracted": "19 - یک سرنگ را سوزنش را بر می داریم و پیستون آن را بیرون کشیده و  داخل سرنگ شن\nمی ریزیم و نوک آن را با انگشت می گیریم و  پیستون آن را فشار می دهیم  ، فشرده نمی شود . سپس\nهمین کار را با آب می کنیم باز هم فشرده نمی شود . ولی وقتی به داخل سرنگ هوا می کشیم و نوک\nآن را با انگشت می بندیم و پیستون را فشار می دهیم به مقدار زیادی فشرده  ( مت . راکم ) می شود"
+    "sourceAnswerTextExtracted": "19 - یک سرنگ را سوزنش را بر می داریم و پیستون آن را بیرون کشیده و  داخل سرنگ شن\nمی ریزیم و نوک آن را با انگشت می گیریم و  پیستون آن را فشار می دهیم  ، فشرده نمی شود . سپس\nهمین کار را با آب می کنیم باز هم فشرده نمی شود . ولی وقتی به داخل سرنگ هوا می کشیم و نوک\nآن را با انگشت می بندیم و پیستون را فشار می دهیم به مقدار زیادی فشرده  ( مت . راکم ) می شود",
+    "visualCaption": null,
+    "promptVisual": null
   },
   {
     "id": "g7-ch03-main-020-1405",
@@ -1613,7 +1651,9 @@
     "answerVisual": "g7_ch03_q20_source_answer.png",
     "answerVisualCaption": null,
     "sourcePolicy": "verbatim_original_pdf",
-    "sourceAnswerTextExtracted": "20 - ب- هوا    ، زیرا  فاصله بین  مولکول های هوا ( گاز ) زیاد است  در نتیجه بر اثر فشار به هم\n. نزدیک  و فشرده می شوند"
+    "sourceAnswerTextExtracted": "20 - ب- هوا    ، زیرا  فاصله بین  مولکول های هوا ( گاز ) زیاد است  در نتیجه بر اثر فشار به هم\n. نزدیک  و فشرده می شوند",
+    "visualCaption": null,
+    "promptVisual": null
   },
   {
     "id": "g7-ch03-main-021-1405",
@@ -1692,7 +1732,9 @@
     "answerVisual": "g7_ch03_q21_source_answer.png",
     "answerVisualCaption": null,
     "sourcePolicy": "verbatim_original_pdf",
-    "sourceAnswerTextExtracted": "21 – به ترتیب از راست به چپ :      آب– شیشه- اکسیژن – مس           ب- بله"
+    "sourceAnswerTextExtracted": "21 – به ترتیب از راست به چپ :      آب– شیشه- اکسیژن – مس           ب- بله",
+    "visualCaption": null,
+    "promptVisual": null
   },
   {
     "id": "g7-ch03-main-022-1405",
@@ -1743,7 +1785,9 @@
     "answerVisual": "g7_ch03_q22_source_answer.png",
     "answerVisualCaption": null,
     "sourcePolicy": "verbatim_original_pdf",
-    "sourceAnswerTextExtracted": "22 - در آب داغ ،  هوای داخل بطری  گرم شده و حجمش بیشتر م ی شود و به داخل بادکنک می رود\n. و بادکنک باد می شود . ولی در مخلوط آب و یخ این اتفاق  نمی افتد و برعکس است"
+    "sourceAnswerTextExtracted": "22 - در آب داغ ،  هوای داخل بطری  گرم شده و حجمش بیشتر م ی شود و به داخل بادکنک می رود\n. و بادکنک باد می شود . ولی در مخلوط آب و یخ این اتفاق  نمی افتد و برعکس است",
+    "visualCaption": null,
+    "promptVisual": null
   },
   {
     "id": "g7-ch03-main-023-1405",
@@ -1795,7 +1839,9 @@
     "answerVisual": "g7_ch03_q23_source_answer.png",
     "answerVisualCaption": null,
     "sourcePolicy": "verbatim_original_pdf",
-    "sourceAnswerTextExtracted": "23 - به جای کاهش :  افزایش    و به جای کمتر : بیشتر"
+    "sourceAnswerTextExtracted": "23 - به جای کاهش :  افزایش    و به جای کمتر : بیشتر",
+    "visualCaption": null,
+    "promptVisual": null
   },
   {
     "id": "g7-ch03-main-024-1405",
@@ -1867,7 +1913,9 @@
     "answerVisual": "g7_ch03_q24_source_answer.png",
     "answerVisualCaption": null,
     "sourcePolicy": "verbatim_original_pdf",
-    "sourceAnswerTextExtracted": "24 - شکل3 ،  زیرا  در حالت گاز ( بخار )  ،  بر اثر گرما جنبش مولکول های آب زیاد تر شده و در\n. نتیجه فاصله مولکول های آب  زیاد تر می شود"
+    "sourceAnswerTextExtracted": "24 - شکل3 ،  زیرا  در حالت گاز ( بخار )  ،  بر اثر گرما جنبش مولکول های آب زیاد تر شده و در\n. نتیجه فاصله مولکول های آب  زیاد تر می شود",
+    "visualCaption": null,
+    "promptVisual": null
   },
   {
     "id": "g7-ch03-mcq-001-1405",
@@ -1920,7 +1968,9 @@
     "answerVisual": "g7_ch03_mcq01_source_answer.png",
     "answerVisualCaption": null,
     "sourcePolicy": "verbatim_original_pdf",
-    "sourceAnswerTextExtracted": ":  سؤاالت چها ر گزینه ای1 – ب2 – د3 - ج4 – د5 – د6 - الف7 - ب"
+    "sourceAnswerTextExtracted": ":  سؤاالت چها ر گزینه ای1 – ب2 – د3 - ج4 – د5 – د6 - الف7 - ب",
+    "visualCaption": null,
+    "promptVisual": null
   },
   {
     "id": "g7-ch03-mcq-002-1405",
@@ -1973,7 +2023,9 @@
     "answerVisual": "g7_ch03_mcq02_source_answer.png",
     "answerVisualCaption": null,
     "sourcePolicy": "verbatim_original_pdf",
-    "sourceAnswerTextExtracted": ":  سؤاالت چها ر گزینه ای1 – ب2 – د3 - ج4 – د5 – د6 - الف7 - ب"
+    "sourceAnswerTextExtracted": ":  سؤاالت چها ر گزینه ای1 – ب2 – د3 - ج4 – د5 – د6 - الف7 - ب",
+    "visualCaption": null,
+    "promptVisual": null
   },
   {
     "id": "g7-ch03-mcq-003-1405",
@@ -2026,7 +2078,9 @@
     "answerVisual": "g7_ch03_mcq03_source_answer.png",
     "answerVisualCaption": null,
     "sourcePolicy": "verbatim_original_pdf",
-    "sourceAnswerTextExtracted": ":  سؤاالت چها ر گزینه ای1 – ب2 – د3 - ج4 – د5 – د6 - الف7 - ب"
+    "sourceAnswerTextExtracted": ":  سؤاالت چها ر گزینه ای1 – ب2 – د3 - ج4 – د5 – د6 - الف7 - ب",
+    "visualCaption": null,
+    "promptVisual": null
   },
   {
     "id": "g7-ch03-mcq-004-1405",
@@ -2079,7 +2133,9 @@
     "answerVisual": "g7_ch03_mcq04_source_answer.png",
     "answerVisualCaption": null,
     "sourcePolicy": "verbatim_original_pdf",
-    "sourceAnswerTextExtracted": ":  سؤاالت چها ر گزینه ای1 – ب2 – د3 - ج4 – د5 – د6 - الف7 - ب"
+    "sourceAnswerTextExtracted": ":  سؤاالت چها ر گزینه ای1 – ب2 – د3 - ج4 – د5 – د6 - الف7 - ب",
+    "visualCaption": null,
+    "promptVisual": null
   },
   {
     "id": "g7-ch03-mcq-005-1405",
@@ -2132,7 +2188,9 @@
     "answerVisual": "g7_ch03_mcq05_source_answer.png",
     "answerVisualCaption": null,
     "sourcePolicy": "verbatim_original_pdf",
-    "sourceAnswerTextExtracted": ":  سؤاالت چها ر گزینه ای1 – ب2 – د3 - ج4 – د5 – د6 - الف7 - ب"
+    "sourceAnswerTextExtracted": ":  سؤاالت چها ر گزینه ای1 – ب2 – د3 - ج4 – د5 – د6 - الف7 - ب",
+    "visualCaption": null,
+    "promptVisual": "g7_ch03_mcq05_source_prompt.png"
   },
   {
     "id": "g7-ch03-mcq-006-1405",
@@ -2185,7 +2243,9 @@
     "answerVisual": "g7_ch03_mcq06_source_answer.png",
     "answerVisualCaption": null,
     "sourcePolicy": "verbatim_original_pdf",
-    "sourceAnswerTextExtracted": ":  سؤاالت چها ر گزینه ای1 – ب2 – د3 - ج4 – د5 – د6 - الف7 - ب"
+    "sourceAnswerTextExtracted": ":  سؤاالت چها ر گزینه ای1 – ب2 – د3 - ج4 – د5 – د6 - الف7 - ب",
+    "visualCaption": null,
+    "promptVisual": null
   },
   {
     "id": "g7-ch03-mcq-007-1405",
@@ -2238,6 +2298,8 @@
     "answerVisual": "g7_ch03_mcq07_source_answer.png",
     "answerVisualCaption": null,
     "sourcePolicy": "verbatim_original_pdf",
-    "sourceAnswerTextExtracted": ":  سؤاالت چها ر گزینه ای1 – ب2 – د3 - ج4 – د5 – د6 - الف7 - ب"
+    "sourceAnswerTextExtracted": ":  سؤاالت چها ر گزینه ای1 – ب2 – د3 - ج4 – د5 – د6 - الف7 - ب",
+    "visualCaption": null,
+    "promptVisual": null
   }
 ]

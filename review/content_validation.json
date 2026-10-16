@@ -1,26 +1,37 @@
 {
   "status": "PASS",
-  "questions": 28,
-  "steps": 41,
-  "images": 18,
-  "questionImages": 11,
-  "answerImages": 7,
-  "reviewedHintPairs": 41,
-  "interactionKinds": {
-    "match": 15,
-    "multi": 6,
-    "single": 19,
-    "order": 1
-  },
+  "questions": 59,
+  "steps": 76,
   "chapterCounts": [
     8,
-    20
+    20,
+    31
   ],
+  "sourceQuestionCrops": 59,
+  "isolatedSourceAnswers": 59,
+  "inlineQuestions": [
+    "g7_ch01_q01",
+    "g7_ch01_q05",
+    "g7_ch02_q01",
+    "g7_ch03_q01",
+    "g7_ch03_q08",
+    "g7_ch03_q10",
+    "g7_ch03_q17"
+  ],
+  "images": 145,
+  "reviewedHintPairs": 76,
+  "interactionKinds": {
+    "match": 25,
+    "multi": 12,
+    "single": 34,
+    "order": 3,
+    "classify": 2
+  },
   "notes": [
-    "All original source prompts retained",
-    "Both hints individually reviewed for all 41 steps",
-    "Source question 9 figure corrected by the supplied image",
-    "Image numbers in questions 12, 14 and 15 aligned with interactions",
-    "Native attempt-policy tests are reported separately"
+    "Original PDF crops are authoritative",
+    "No editorial answer cards or explanations displayed",
+    "MCQ crops contain only the current question key",
+    "Formula and adjacent-answer crop boundaries checked",
+    "Native UI and attempt tests are reported separately"
   ]
 }

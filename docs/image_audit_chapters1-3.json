@@ -1,0 +1,1314 @@
+{
+  "scope": "chapters1-3",
+  "sourcePolicy": "verbatim",
+  "requests": [
+    {
+      "ids": [
+        "g7_ch03_q12"
+      ],
+      "status": "لازم؛ فایل تازه نرسیده",
+      "reason": "مدل ذره‌ای سه ماده در تصویر کتاب کم‌وضوح است. فایل متناظر در بستهٔ ارسالی نیست.",
+      "prompt": "با استفاده از تصویر سؤال اصلی به عنوان مرجع، فقط سه مدل ذره‌ای را با همان ترتیب و ساختار بازطراحی کن: سمت راست هفت مولکول دواتمی هم‌نوع، وسط آرایش فشرده و منظم اتم‌های هم‌نوع فلز، سمت چپ چهار مولکول آب مطابق مرجع. تعداد، رنگ و اتصال ذره‌ها را حفظ کن. پس‌زمینه سفید، خطوط واضح و خروجی حداقل ۱۶۰۰ پیکسل عرض. هیچ نام ماده، شماره، پاسخ یا نوشتهٔ جدیدی اضافه نکن. زیر هر شکل فقط خط جای خالی مطابق مرجع بماند."
+    },
+    {
+      "ids": [
+        "g7_ch03_q15"
+      ],
+      "status": "لازم؛ نسخهٔ بدون زیرنویس اضافه",
+      "reason": "فایل ارسالی موجود است اما عبارت «مدل ایزوتوپی: اکسیژن ۱۶ و کربن ۱۲» در کتاب نیست. نسخهٔ فعلی برای حفظ عین سؤال وارد نمایش دانش‌آموز نشده است.",
+      "prompt": "همان نمودار کربن دی اکسیدِ تصویر اصلی کتاب را تمیز و خوانا بازطراحی کن. ترتیب از راست به چپ: ماده و کپسول، مولکول کربن دی اکسید، تعداد دو نوع اتم با دو خانهٔ خالی، شاخهٔ هر اتم اکسیژن و هر اتم کربن، و سه خانهٔ خالی الکترون و پروتون و نوترون برای هر شاخه. تمام نوشته‌های مرجع عیناً بمانند و هر هشت خانه خالی بماند. هیچ عددِ پاسخ، شمارهٔ تازه، زیرنویس ایزوتوپی، توضیح یا جملهٔ افزوده ننویس. خروجی PNG با پس‌زمینهٔ سفید و عرض حداقل ۲۰۰۰ پیکسل."
+    },
+    {
+      "ids": [
+        "g7_ch03_q16",
+        "g7_ch03_mcq05"
+      ],
+      "status": "اختیاری؛ ارتقای کیفیت فایل موجود",
+      "reason": "فایل مشترک با نام چهارگزینه‌ای ۵ موجود و برای هر دو سؤال استفاده شده است. نوشته‌های کوچک مدل‌ها هنوز کیفیت چاپی ندارند؛ نسخهٔ واضح‌تر مفید است.",
+      "prompt": "سه مدل اتمیِ مرجع کتاب را با همان اندازه‌های نسبی و همان ترتیب بازطراحی کن. از راست: هسته با (7p, 8n) و برچسب 7e؛ وسط (14p, 14n) و 14e؛ چپ (22p, 26n) و 22e. شکل‌ها، محل پیکان‌ها و همهٔ برچسب‌ها دقیقاً مطابق مرجع باشند. اعداد و حروف را به صورت تایپ واضح وارد کن، هیچ لایهٔ الکترونی، ذرهٔ اضافی، جواب، عنوان یا توضیح جدید اضافه نکن. خروجی PNG با عرض حداقل ۱۸۰۰ پیکسل. پیش از تحویل همهٔ اعداد با مرجع تطبیق داده شوند."
+    },
+    {
+      "ids": [
+        "g7_ch03_q17"
+      ],
+      "status": "اختیاری؛ ارتقای کیفیت فایل موجود",
+      "reason": "فایل ارسالی موجود است و استفاده شده، اما لبهٔ شکل و نوشتهٔ «هسته اتم» همچنان کم‌وضوح‌اند.",
+      "prompt": "فقط شکل ساختار اتمِ مرجع را واضح بازطراحی کن: همان بیضی نارنجی، دایرهٔ آبی کوچک در همان محل، پیکان سیاه به سمت راست و عین عبارت «هسته اتم». نسبت ابعاد و محل برچسب حفظ شود. هیچ ذره، مدار، نام، شماره یا نوشتهٔ دیگری اضافه نشود. پس‌زمینه سفید، خطوط واضح و خروجی PNG حداقل ۱۰۰۰ در ۷۰۰ پیکسل."
+    },
+    {
+      "ids": [
+        "g7_ch03_q22"
+      ],
+      "status": "پیشنهادی؛ تصویر تازه نرسیده",
+      "reason": "تصویر کتاب برای نمایش اولیه موجود است؛ تصویر واضح‌ترِ دو آزمایش، تشخیص بادکنک بادشده و افتاده را آسان‌تر می‌کند.",
+      "prompt": "دو آزمایش شکل کتاب را دقیقاً با همان ترتیب بازطراحی کن: در سمت چپ ظرف «آب داغ» با بطری و بادکنک بادشده، در سمت راست ظرف «مخلوط آب و یخ» با بطری و بادکنک افتاده. عین دو برچسب کتاب حفظ شود. ارتفاع آب، وضعیت بطری‌ها و حالت بادکنک‌ها مطابق مرجع بماند. هیچ دماسنج، عدد دما، پیکان توضیحی یا پاسخ جدیدی اضافه نکن. زمینه سفید و خروجی حداقل ۱۶۰۰ پیکسل عرض."
+    },
+    {
+      "ids": [
+        "g7_ch03_q24"
+      ],
+      "status": "پیشنهادی؛ تصویر تازه نرسیده",
+      "reason": "تصویر اصلی سه حالت آب موجود است؛ نسخهٔ خواناتر برای دیدن فاصله و آرایش مولکول‌ها پیشنهاد می‌شود.",
+      "prompt": "سه دایرهٔ مدل مولکول‌های آب را دقیقاً مطابق تصویر کتاب بازطراحی کن: چپ حالت جامد با آرایش فشرده و منظم، وسط مایع با مولکول‌های نزدیک و نامنظم، راست گاز با فاصله‌های زیاد. هر واحد، همان مدل مولکول آبِ مرجع با اتم‌ها و اتصال‌های یکسان باشد. ترتیب، تعداد ذره‌ها، حدود ظرف‌ها و رنگ‌ها را از مرجع حفظ کن. هیچ نام حالت، شماره، پیکان، توضیح یا پاسخ روی تصویر ننویس. خروجی PNG خوانا و حداقل ۱۸۰۰ پیکسل عرض."
+    }
+  ],
+  "answerImageList": [
+    {
+      "id": "g7_ch01_q01",
+      "questionAsset": "g7_ch01_q01_source_question.png",
+      "questionSha256": "75d2f78f0597419569ad58a42c7145e0b83fb583cee28a4a8807300d4660f9e1",
+      "answerAsset": "g7_ch01_q01_source_answer.png",
+      "answerSha256": "b2382055ad2ae7d2faf859a5c38c8bacd3937a22be9dbfa1f2230bf822075858",
+      "questionSourceSegments": [
+        {
+          "page": 2,
+          "bbox": [
+            27,
+            76.51,
+            570,
+            211.87
+          ]
+        }
+      ],
+      "answerSourceSegments": [
+        {
+          "page": 1,
+          "bbox": [
+            23.0,
+            86.64,
+            590.0,
+            113.84
+          ]
+        }
+      ],
+      "answerImageRecommended": true,
+      "formattingRisks": [
+        "عدد، مقدار یا محاسبه",
+        "حروف لاتین یا نماد"
+      ],
+      "sharedAnswerStrip": false,
+      "promptAsset": null,
+      "promptSha256": null,
+      "promptTextPreserved": true,
+      "promptTextSha256": null
+    },
+    {
+      "id": "g7_ch01_q02",
+      "questionAsset": "g7_ch01_q02_source_question.png",
+      "questionSha256": "fa141722e6d770296c2a734fadadb18341e2dbcd54cc3c3e269a19bda99b0ccc",
+      "answerAsset": "g7_ch01_q02_source_answer.png",
+      "answerSha256": "09c883674abcad342bec46a317cf743dd7d8d471dd6ef163443cf34620d578a1",
+      "questionSourceSegments": [
+        {
+          "page": 2,
+          "bbox": [
+            27,
+            213.87,
+            570,
+            320.04
+          ]
+        }
+      ],
+      "answerSourceSegments": [
+        {
+          "page": 1,
+          "bbox": [
+            23.0,
+            114.84,
+            590.0,
+            144.55
+          ]
+        }
+      ],
+      "answerImageRecommended": true,
+      "formattingRisks": [
+        "عدد، مقدار یا محاسبه"
+      ],
+      "sharedAnswerStrip": false,
+      "promptAsset": null,
+      "promptSha256": null,
+      "promptTextPreserved": true,
+      "promptTextSha256": null
+    },
+    {
+      "id": "g7_ch01_q05",
+      "questionAsset": "g7_ch01_q05_source_question.png",
+      "questionSha256": "c51293b21d15b0be8794bdb698563e993e97b4b9d3b61c5627693141c0508f5a",
+      "answerAsset": "g7_ch01_q05_source_answer.png",
+      "answerSha256": "74551fc101b41b8641269f5b42586bd36ee4cbf3631c1ea0bbb1c27ea26ef388",
+      "questionSourceSegments": [
+        {
+          "page": 2,
+          "bbox": [
+            27,
+            590.64,
+            570,
+            646.59
+          ]
+        }
+      ],
+      "answerSourceSegments": [
+        {
+          "page": 1,
+          "bbox": [
+            23.0,
+            199.32,
+            590.0,
+            229.03
+          ]
+        }
+      ],
+      "answerImageRecommended": true,
+      "formattingRisks": [
+        "عدد، مقدار یا محاسبه",
+        "تطبیق شکل، نمودار، جدول یا توالی"
+      ],
+      "sharedAnswerStrip": false,
+      "promptAsset": null,
+      "promptSha256": null,
+      "promptTextPreserved": true,
+      "promptTextSha256": null
+    },
+    {
+      "id": "g7_ch02_q01",
+      "questionAsset": "g7_ch02_q01_source_question.png",
+      "questionSha256": "6e3ef865989cfd353df24da251575b6330c9c082ebff93aa5429ea75b606fbf1",
+      "answerAsset": "g7_ch02_q01_source_answer.png",
+      "answerSha256": "d92b945a4a276ef2a4eae30d3e569e70fbb9a4e976f43eb4d71086b79024a554",
+      "questionSourceSegments": [
+        {
+          "page": 3,
+          "bbox": [
+            27,
+            73.57,
+            570,
+            315.58
+          ]
+        }
+      ],
+      "answerSourceSegments": [
+        {
+          "page": 1,
+          "bbox": [
+            23.0,
+            67.66,
+            590.0,
+            122.96
+          ]
+        }
+      ],
+      "answerImageRecommended": true,
+      "formattingRisks": [
+        "عدد، مقدار یا محاسبه",
+        "حروف لاتین یا نماد"
+      ],
+      "sharedAnswerStrip": false,
+      "promptAsset": null,
+      "promptSha256": null,
+      "promptTextPreserved": true,
+      "promptTextSha256": null
+    },
+    {
+      "id": "g7_ch02_q02",
+      "questionAsset": "g7_ch02_q02_source_question.png",
+      "questionSha256": "9c1cb20a7f078875f780a18f5ed9ec31170abc8ee238971db41a82ea2949e2e3",
+      "answerAsset": "g7_ch02_q02_source_answer.png",
+      "answerSha256": "d4a8de5c4f5f1f58a426c5276bbfbe08ca3fbf67db016cf65d6a58debe37becb",
+      "questionSourceSegments": [
+        {
+          "page": 3,
+          "bbox": [
+            27,
+            317.58,
+            570,
+            668.71
+          ]
+        }
+      ],
+      "answerSourceSegments": [
+        {
+          "page": 1,
+          "bbox": [
+            23.0,
+            123.96,
+            590.0,
+            322.78
+          ]
+        }
+      ],
+      "answerImageRecommended": true,
+      "formattingRisks": [
+        "عدد، مقدار یا محاسبه",
+        "تطبیق شکل، نمودار، جدول یا توالی"
+      ],
+      "sharedAnswerStrip": false,
+      "promptAsset": "g7_ch02_q02_source_prompt.png",
+      "promptSha256": "9c1cb20a7f078875f780a18f5ed9ec31170abc8ee238971db41a82ea2949e2e3",
+      "promptTextPreserved": true,
+      "promptTextSha256": "66546f963ede187fd332f59fe9590f38278ed5ea3d73979c32651368a4355a5d"
+    },
+    {
+      "id": "g7_ch02_q04",
+      "questionAsset": "g7_ch02_q04_source_question.png",
+      "questionSha256": "52b31005c81df653a28aa41346fc256a7b75cf4fe6f527ed3e24c8bcb51fbf95",
+      "answerAsset": "g7_ch02_q04_source_answer.png",
+      "answerSha256": "f10da90a3108fd9fe267e40e660b8c0d1751dfd5af1a27f6aa176a5bd0a3ef60",
+      "questionSourceSegments": [
+        {
+          "page": 4,
+          "bbox": [
+            27,
+            39.78,
+            570,
+            133.9
+          ]
+        }
+      ],
+      "answerSourceSegments": [
+        {
+          "page": 1,
+          "bbox": [
+            23.0,
+            462.05,
+            590.0,
+            491.76
+          ]
+        }
+      ],
+      "answerImageRecommended": true,
+      "formattingRisks": [
+        "عدد، مقدار یا محاسبه"
+      ],
+      "sharedAnswerStrip": false,
+      "promptAsset": null,
+      "promptSha256": null,
+      "promptTextPreserved": true,
+      "promptTextSha256": null
+    },
+    {
+      "id": "g7_ch02_q06",
+      "questionAsset": "g7_ch02_q06_source_question.png",
+      "questionSha256": "5263f56b0d0119649b87256f62a34c30ad26d120e109014231fbb9aa1cdafb51",
+      "answerAsset": "g7_ch02_q06_source_answer.png",
+      "answerSha256": "e5444ef4e43675e3b639360f3e626c14456a051dd3dac2068a7bf9531d4ce8e1",
+      "questionSourceSegments": [
+        {
+          "page": 4,
+          "bbox": [
+            27,
+            177.03,
+            570,
+            348.34
+          ]
+        }
+      ],
+      "answerSourceSegments": [
+        {
+          "page": 1,
+          "bbox": [
+            23.0,
+            518.33,
+            590.0,
+            604.32
+          ]
+        }
+      ],
+      "answerImageRecommended": true,
+      "formattingRisks": [
+        "عدد، مقدار یا محاسبه"
+      ],
+      "sharedAnswerStrip": false,
+      "promptAsset": null,
+      "promptSha256": null,
+      "promptTextPreserved": true,
+      "promptTextSha256": null
+    },
+    {
+      "id": "g7_ch02_q07",
+      "questionAsset": "g7_ch02_q07_source_question.png",
+      "questionSha256": "c6635d682d84955f5966a7a0dd1c44b8117721113594fa2a478952b7657c4bd9",
+      "answerAsset": "g7_ch02_q07_source_answer.png",
+      "answerSha256": "c1a1f84bae3f6e4804b6a10f9bf28a54e52f9b24b7f67f16b21a50183a526c30",
+      "questionSourceSegments": [
+        {
+          "page": 4,
+          "bbox": [
+            27,
+            350.34,
+            570,
+            467.4
+          ]
+        }
+      ],
+      "answerSourceSegments": [
+        {
+          "page": 1,
+          "bbox": [
+            23.0,
+            605.89,
+            590.0,
+            659
+          ]
+        }
+      ],
+      "answerImageRecommended": true,
+      "formattingRisks": [
+        "تطبیق شکل، نمودار، جدول یا توالی"
+      ],
+      "sharedAnswerStrip": false,
+      "promptAsset": "g7_ch02_q07_source_prompt.png",
+      "promptSha256": "98f77be6b50c12332a59375dd955aa7f06f5aa462a30390d0b94a1b21b36a4df",
+      "promptTextPreserved": true,
+      "promptTextSha256": "22478640a59e80182b5f0ff707e31b32e8bed9d8d63ecd7bc8a2b99869c3a752"
+    },
+    {
+      "id": "g7_ch02_q08",
+      "questionAsset": "g7_ch02_q08_source_question.png",
+      "questionSha256": "1ea49da2aa080c8d70fc98147174da61478bb9e37a2997ad1e070d3a7cd752db",
+      "answerAsset": "g7_ch02_q08_source_answer.png",
+      "answerSha256": "e32a4b6f5e99b440d02de660a52a7014f9753fb1d357db1be2a2cb3ecc931d5c",
+      "questionSourceSegments": [
+        {
+          "page": 4,
+          "bbox": [
+            27,
+            469.4,
+            570,
+            555.41
+          ]
+        }
+      ],
+      "answerSourceSegments": [
+        {
+          "page": 1,
+          "bbox": [
+            23.0,
+            662.18,
+            590.0,
+            706.87
+          ]
+        }
+      ],
+      "answerImageRecommended": true,
+      "formattingRisks": [
+        "عدد، مقدار یا محاسبه"
+      ],
+      "sharedAnswerStrip": false,
+      "promptAsset": null,
+      "promptSha256": null,
+      "promptTextPreserved": true,
+      "promptTextSha256": null
+    },
+    {
+      "id": "g7_ch02_q09",
+      "questionAsset": "g7_ch02_q09_source_question.png",
+      "questionSha256": "e041da3f1c40b598c4021d29ed72e33408a267bf08f20738baf1d21210c2ffec",
+      "answerAsset": "g7_ch02_q09_source_answer.png",
+      "answerSha256": "a484352e768684f60e83f4b7eee32f176f3430985de54eeedf82b267330a5edd",
+      "questionSourceSegments": [
+        {
+          "page": 4,
+          "bbox": [
+            27,
+            557.41,
+            570,
+            790
+          ]
+        },
+        {
+          "page": 5,
+          "bbox": [
+            27,
+            28,
+            570,
+            34.97
+          ]
+        }
+      ],
+      "answerSourceSegments": [
+        {
+          "page": 1,
+          "bbox": [
+            0,
+            717,
+            595,
+            807
+          ]
+        }
+      ],
+      "answerImageRecommended": true,
+      "formattingRisks": [
+        "عدد، مقدار یا محاسبه",
+        "تطبیق شکل، نمودار، جدول یا توالی"
+      ],
+      "sharedAnswerStrip": false,
+      "promptAsset": "g7_ch02_q09_source_prompt.png",
+      "promptSha256": "2af746b6c9fcf9c771473275bff10a073e07090924584ab985cb4bc18572cad2",
+      "promptTextPreserved": true,
+      "promptTextSha256": "6efcdb2fd7e2ebc07858013ab10a10edbf66faf3f405ecdd2bdd1b1fe5254324"
+    },
+    {
+      "id": "g7_ch02_q10",
+      "questionAsset": "g7_ch02_q10_source_question.png",
+      "questionSha256": "e63f95dd0d119dd93a5d711d289359b377d1af83753103a59ecf954c8dc84998",
+      "answerAsset": "g7_ch02_q10_source_answer.png",
+      "answerSha256": "6c697fdd0e9c7ea3100c035dbc32f1d4ebf8882eb2c43101274463aa3f19c811",
+      "questionSourceSegments": [
+        {
+          "page": 5,
+          "bbox": [
+            27,
+            36.97,
+            570,
+            184.15
+          ]
+        }
+      ],
+      "answerSourceSegments": [
+        {
+          "page": 2,
+          "bbox": [
+            23.0,
+            57.04,
+            590.0,
+            151
+          ]
+        }
+      ],
+      "answerImageRecommended": true,
+      "formattingRisks": [
+        "عدد، مقدار یا محاسبه",
+        "تطبیق شکل، نمودار، جدول یا توالی"
+      ],
+      "sharedAnswerStrip": false,
+      "promptAsset": null,
+      "promptSha256": null,
+      "promptTextPreserved": true,
+      "promptTextSha256": null
+    },
+    {
+      "id": "g7_ch02_q11",
+      "questionAsset": "g7_ch02_q11_source_question.png",
+      "questionSha256": "c9558200582002e33714de0e4951302d3795cf67c1fd920f5d10daa845f51dbb",
+      "answerAsset": "g7_ch02_q11_source_answer.png",
+      "answerSha256": "e0e3662dfe079ceb5459b54a09a4bb2ddc22e47bfc05fdbf40c1f94487eb8c6c",
+      "questionSourceSegments": [
+        {
+          "page": 5,
+          "bbox": [
+            27,
+            186.15,
+            570,
+            369.03
+          ]
+        }
+      ],
+      "answerSourceSegments": [
+        {
+          "page": 2,
+          "bbox": [
+            23.0,
+            159.44,
+            590.0,
+            239.96
+          ]
+        }
+      ],
+      "answerImageRecommended": true,
+      "formattingRisks": [
+        "عدد، مقدار یا محاسبه",
+        "حروف لاتین یا نماد",
+        "تطبیق شکل، نمودار، جدول یا توالی"
+      ],
+      "sharedAnswerStrip": false,
+      "promptAsset": "g7_ch02_q11_source_prompt.png",
+      "promptSha256": "c9558200582002e33714de0e4951302d3795cf67c1fd920f5d10daa845f51dbb",
+      "promptTextPreserved": true,
+      "promptTextSha256": "966dba7faf14c022a34f1976f5bb116e97c0eccae3624b472efd56b4b3213cb8"
+    },
+    {
+      "id": "g7_ch02_q12",
+      "questionAsset": "g7_ch02_q12_source_question.png",
+      "questionSha256": "b2e38c529ba1866c73fb5dd960a0d3083246fc88e4d3456f793b921769522155",
+      "answerAsset": "g7_ch02_q12_source_answer.png",
+      "answerSha256": "ca78e474281183620761f9455176220e26bc8b881faad57925c5175f3c31ba03",
+      "questionSourceSegments": [
+        {
+          "page": 5,
+          "bbox": [
+            27,
+            371.03,
+            570,
+            601.2
+          ]
+        }
+      ],
+      "answerSourceSegments": [
+        {
+          "page": 2,
+          "bbox": [
+            23.0,
+            240.96,
+            590.0,
+            324.47
+          ]
+        }
+      ],
+      "answerImageRecommended": true,
+      "formattingRisks": [
+        "عدد، مقدار یا محاسبه"
+      ],
+      "sharedAnswerStrip": false,
+      "promptAsset": "g7_ch02_q12_source_prompt.png",
+      "promptSha256": "9d6c501743e53ebdf531aab6789a87e3b671c436be0dd5474e8ebfd73fffe435",
+      "promptTextPreserved": true,
+      "promptTextSha256": "99d2d8cfa1be9081547d17562be45cff9d9bc604b13ed2dbdae4141aadf9df52"
+    },
+    {
+      "id": "g7_ch02_q14",
+      "questionAsset": "g7_ch02_q14_source_question.png",
+      "questionSha256": "aa592c7d3a58ca784e0a9fb0bf4526cf1479086c8e4d019a4eb240fe332e5ef9",
+      "answerAsset": "g7_ch02_q14_source_answer.png",
+      "answerSha256": "2301c2853d88890e67fc28e665ba0b45581ca19277455d84ab07f30e1098a361",
+      "questionSourceSegments": [
+        {
+          "page": 5,
+          "bbox": [
+            27,
+            661.79,
+            570,
+            790
+          ]
+        },
+        {
+          "page": 6,
+          "bbox": [
+            27,
+            28,
+            570,
+            37.25
+          ]
+        }
+      ],
+      "answerSourceSegments": [
+        {
+          "page": 2,
+          "bbox": [
+            23.0,
+            356.63,
+            590.0,
+            411.46
+          ]
+        }
+      ],
+      "answerImageRecommended": true,
+      "formattingRisks": [
+        "عدد، مقدار یا محاسبه",
+        "تطبیق شکل، نمودار، جدول یا توالی"
+      ],
+      "sharedAnswerStrip": false,
+      "promptAsset": "g7_ch02_q14_source_prompt.png",
+      "promptSha256": "23af4324b6b4fbf316b0fade1b34ab7d95af442dcce6266f779f01d5e22c1e8c",
+      "promptTextPreserved": true,
+      "promptTextSha256": "4a0a63b08142b9c87bd1d4fae4a3a1fbdcb76e34eb07064a258351a4a8a00290"
+    },
+    {
+      "id": "g7_ch02_q15",
+      "questionAsset": "g7_ch02_q15_source_question.png",
+      "questionSha256": "b221afb3a2270a9c7f44c528c8f732d8199aeca59bead23e2c84d046672e070c",
+      "answerAsset": "g7_ch02_q15_source_answer.png",
+      "answerSha256": "f2476efbcf1faf3e5b67386431e527d06f892ebd677e3bd096fdd062d9aa0252",
+      "questionSourceSegments": [
+        {
+          "page": 6,
+          "bbox": [
+            27,
+            39.25,
+            570,
+            279.34
+          ]
+        }
+      ],
+      "answerSourceSegments": [
+        {
+          "page": 2,
+          "bbox": [
+            23.0,
+            413.03,
+            590.0,
+            493.45
+          ]
+        }
+      ],
+      "answerImageRecommended": true,
+      "formattingRisks": [
+        "عدد، مقدار یا محاسبه",
+        "تطبیق شکل، نمودار، جدول یا توالی"
+      ],
+      "sharedAnswerStrip": false,
+      "promptAsset": "g7_ch02_q15_source_prompt.png",
+      "promptSha256": "c6fb47fbd1229dad0cde86f403a3e6b81c9e6910f223ccb3c1722af78c9a4539",
+      "promptTextPreserved": true,
+      "promptTextSha256": "2ec7cb5206f62039133043b9698b8a2e917308088eff3375a0642cf54be1f4ea"
+    },
+    {
+      "id": "g7_ch02_mcq02",
+      "questionAsset": "g7_ch02_mcq02_source_question.png",
+      "questionSha256": "9e865e888babab9f78be450f17a1043884c3103be1e6122a68a44a0a87baa884",
+      "answerAsset": "g7_ch02_mcq02_source_answer.png",
+      "answerSha256": "fb6fd23bc386d377bc2a10ffea1ebeec9aa26eb431ccf0733b6737dcef99e79f",
+      "questionSourceSegments": [
+        {
+          "page": 6,
+          "bbox": [
+            27,
+            368.22,
+            570,
+            427.18
+          ]
+        }
+      ],
+      "answerSourceSegments": [
+        {
+          "page": 2,
+          "bbox": [
+            279,
+            494.45,
+            315,
+            524.16
+          ]
+        }
+      ],
+      "answerImageRecommended": true,
+      "formattingRisks": [
+        "عدد، مقدار یا محاسبه"
+      ],
+      "sharedAnswerStrip": false,
+      "promptAsset": null,
+      "promptSha256": null,
+      "promptTextPreserved": true,
+      "promptTextSha256": null
+    },
+    {
+      "id": "g7_ch02_mcq03",
+      "questionAsset": "g7_ch02_mcq03_source_question.png",
+      "questionSha256": "5c2985592fb24a3bc593367dab536822c4f42a66129109f4edd71ae45f31a329",
+      "answerAsset": "g7_ch02_mcq03_source_answer.png",
+      "answerSha256": "f4ced5ce7afc3627073e5fc9aaf548f72ede91cca9e9025ede047418ed7751d8",
+      "questionSourceSegments": [
+        {
+          "page": 6,
+          "bbox": [
+            27,
+            429.18,
+            570,
+            544.68
+          ]
+        }
+      ],
+      "answerSourceSegments": [
+        {
+          "page": 2,
+          "bbox": [
+            208,
+            494.45,
+            260,
+            524.16
+          ]
+        }
+      ],
+      "answerImageRecommended": true,
+      "formattingRisks": [
+        "عدد، مقدار یا محاسبه"
+      ],
+      "sharedAnswerStrip": false,
+      "promptAsset": "g7_ch02_mcq03_source_prompt.png",
+      "promptSha256": "5140262405a86222b16efe1400594a658f47bd51bf9701e3039e0a6c51989298",
+      "promptTextPreserved": true,
+      "promptTextSha256": "b9a8327255cc4e6cb676526c7d011445afe4ea9d3fe42c4c7f8a0470efffed58"
+    },
+    {
+      "id": "g7_ch02_mcq04",
+      "questionAsset": "g7_ch02_mcq04_source_question.png",
+      "questionSha256": "ff03f2e925d022c5c0088c180bec1bcb3021c2ef2e5b072939d89431aa59c64c",
+      "answerAsset": "g7_ch02_mcq04_source_answer.png",
+      "answerSha256": "2224d285264efccc43b80f329e924bce62ff5654610fb06cf705416ab0620698",
+      "questionSourceSegments": [
+        {
+          "page": 6,
+          "bbox": [
+            27,
+            546.68,
+            570,
+            662.07
+          ]
+        }
+      ],
+      "answerSourceSegments": [
+        {
+          "page": 2,
+          "bbox": [
+            157,
+            494.45,
+            195,
+            524.16
+          ]
+        }
+      ],
+      "answerImageRecommended": true,
+      "formattingRisks": [
+        "عدد، مقدار یا محاسبه"
+      ],
+      "sharedAnswerStrip": false,
+      "promptAsset": "g7_ch02_mcq04_source_prompt.png",
+      "promptSha256": "9f1b32eedff4400748ec31c283dbe9616c66f97169f0b2273f3d75182b5a112e",
+      "promptTextPreserved": true,
+      "promptTextSha256": "491bb229c5db536ce782f61b217a799467931d4501486ae6b5b926ac880c40aa"
+    },
+    {
+      "id": "g7_ch02_mcq05",
+      "questionAsset": "g7_ch02_mcq05_source_question.png",
+      "questionSha256": "9051cad802644bfb3ddac72e0647e387f4366dd8c6ebe61414874fd45de76bff",
+      "answerAsset": "g7_ch02_mcq05_source_answer.png",
+      "answerSha256": "bcc17e95d06128fbb163fdb28a368cc89af3a86874e308c866157b6fa8c53758",
+      "questionSourceSegments": [
+        {
+          "page": 6,
+          "bbox": [
+            27,
+            664.07,
+            570,
+            787
+          ]
+        }
+      ],
+      "answerSourceSegments": [
+        {
+          "page": 2,
+          "bbox": [
+            96,
+            494.45,
+            139,
+            524.16
+          ]
+        }
+      ],
+      "answerImageRecommended": true,
+      "formattingRisks": [
+        "عدد، مقدار یا محاسبه"
+      ],
+      "sharedAnswerStrip": false,
+      "promptAsset": "g7_ch02_mcq05_source_prompt.png",
+      "promptSha256": "771486959cbc237677baef8bfebc63c109085223e03a64d53911fe06583f13eb",
+      "promptTextPreserved": true,
+      "promptTextSha256": "ffa6c9a0aa3a0a630446ce682cd1c753b847f9d4aea48f70964c1af39f213a90"
+    },
+    {
+      "id": "g7_ch03_q01",
+      "questionAsset": "g7_ch03_q01_source_question.png",
+      "questionSha256": "ef3ff54f476ce546ab0faa1205996ad95e500d51b34af8dfef08090397ac8c7f",
+      "answerAsset": "g7_ch03_q01_source_answer.png",
+      "answerSha256": "4361fef118da0070104d087564c1dc152045eed75b7f9644173cd37e172d9b9e",
+      "questionSourceSegments": [
+        {
+          "page": 7,
+          "bbox": [
+            27,
+            76.51,
+            570,
+            295.47
+          ]
+        }
+      ],
+      "answerSourceSegments": [
+        {
+          "page": 1,
+          "bbox": [
+            23.0,
+            67.66,
+            590.0,
+            125.47
+          ]
+        }
+      ],
+      "answerImageRecommended": true,
+      "formattingRisks": [
+        "حروف لاتین یا نماد"
+      ],
+      "sharedAnswerStrip": false,
+      "promptAsset": null,
+      "promptSha256": null,
+      "promptTextPreserved": true,
+      "promptTextSha256": null
+    },
+    {
+      "id": "g7_ch03_q08",
+      "questionAsset": "g7_ch03_q08_source_question.png",
+      "questionSha256": "c9f29c345c8a90d25ac7176eeb22f3100bdb0e4d4e0d30b90f4abdc0c598eacb",
+      "answerAsset": "g7_ch03_q08_source_answer.png",
+      "answerSha256": "0e9fb03f01dcd497128818882f91873a0e0f196508204a5627c3cb251860e126",
+      "questionSourceSegments": [
+        {
+          "page": 8,
+          "bbox": [
+            27,
+            37.95,
+            570,
+            154.75
+          ]
+        }
+      ],
+      "answerSourceSegments": [
+        {
+          "page": 1,
+          "bbox": [
+            23.0,
+            462.05,
+            590.0,
+            492.21
+          ]
+        }
+      ],
+      "answerImageRecommended": true,
+      "formattingRisks": [
+        "حروف لاتین یا نماد"
+      ],
+      "sharedAnswerStrip": false,
+      "promptAsset": null,
+      "promptSha256": null,
+      "promptTextPreserved": true,
+      "promptTextSha256": null
+    },
+    {
+      "id": "g7_ch03_q09",
+      "questionAsset": "g7_ch03_q09_source_question.png",
+      "questionSha256": "991124f887e4f0364f3000f02baf130b7e335b7e22d19193ed1103dbd24e32fa",
+      "answerAsset": "g7_ch03_q09_source_answer.png",
+      "answerSha256": "3442b08931843312de37c6610e61585da2ba2dd0fd9c8d15a02d88986c970b25",
+      "questionSourceSegments": [
+        {
+          "page": 8,
+          "bbox": [
+            27,
+            156.75,
+            570,
+            298.42
+          ]
+        }
+      ],
+      "answerSourceSegments": [
+        {
+          "page": 1,
+          "bbox": [
+            23.0,
+            493.21,
+            590.0,
+            545.53
+          ]
+        }
+      ],
+      "answerImageRecommended": true,
+      "formattingRisks": [
+        "تطبیق شکل، نمودار، جدول یا توالی"
+      ],
+      "sharedAnswerStrip": false,
+      "promptAsset": null,
+      "promptSha256": null,
+      "promptTextPreserved": true,
+      "promptTextSha256": null
+    },
+    {
+      "id": "g7_ch03_q11",
+      "questionAsset": "g7_ch03_q11_source_question.png",
+      "questionSha256": "ee83ccc59836f3efd0a42ba7d4cb7067076f054f6354e6bbdd19756d96704491",
+      "answerAsset": "g7_ch03_q11_source_answer.png",
+      "answerSha256": "de6abdd544883cc2052f99446e59571a11a372b665f08b89e4b70f3ee15eb3fc",
+      "questionSourceSegments": [
+        {
+          "page": 8,
+          "bbox": [
+            27,
+            405.18,
+            570,
+            550.59
+          ]
+        }
+      ],
+      "answerSourceSegments": [
+        {
+          "page": 1,
+          "bbox": [
+            23.0,
+            574.61,
+            590.0,
+            630.01
+          ]
+        }
+      ],
+      "answerImageRecommended": true,
+      "formattingRisks": [
+        "تطبیق شکل، نمودار، جدول یا توالی"
+      ],
+      "sharedAnswerStrip": false,
+      "promptAsset": null,
+      "promptSha256": null,
+      "promptTextPreserved": true,
+      "promptTextSha256": null
+    },
+    {
+      "id": "g7_ch03_q12",
+      "questionAsset": "g7_ch03_q12_source_question.png",
+      "questionSha256": "0bf8ca57829d9ca26bd8028a2d5df190f3adb8eb7f163e0d10151de2105c76b5",
+      "answerAsset": "g7_ch03_q12_source_answer.png",
+      "answerSha256": "607ce9d928dc2d0d0877c1b1f9b661eb3b6f9492e5174e93d15dffb09fe2e4cc",
+      "questionSourceSegments": [
+        {
+          "page": 8,
+          "bbox": [
+            27,
+            552.59,
+            570,
+            714.15
+          ]
+        }
+      ],
+      "answerSourceSegments": [
+        {
+          "page": 1,
+          "bbox": [
+            23.0,
+            631.01,
+            590.0,
+            660.72
+          ]
+        }
+      ],
+      "answerImageRecommended": true,
+      "formattingRisks": [
+        "تطبیق شکل، نمودار، جدول یا توالی"
+      ],
+      "sharedAnswerStrip": false,
+      "promptAsset": null,
+      "promptSha256": null,
+      "promptTextPreserved": true,
+      "promptTextSha256": null
+    },
+    {
+      "id": "g7_ch03_q15",
+      "questionAsset": "g7_ch03_q15_source_question.png",
+      "questionSha256": "5ca09bd00967ddf655d612cd36ff4e07148465eb5320f9dab3ce2878c1a1957f",
+      "answerAsset": "g7_ch03_q15_source_answer.png",
+      "answerSha256": "09aad4ca16db5c7a36ab7a1d8e40caa9519d47273c12fd11cd113d11f2189958",
+      "questionSourceSegments": [
+        {
+          "page": 9,
+          "bbox": [
+            27,
+            130.47,
+            570,
+            361.18
+          ]
+        }
+      ],
+      "answerSourceSegments": [
+        {
+          "page": 2,
+          "bbox": [
+            23.0,
+            43.14,
+            590.0,
+            98.44
+          ]
+        }
+      ],
+      "answerImageRecommended": true,
+      "formattingRisks": [
+        "عدد، مقدار یا محاسبه",
+        "حروف لاتین یا نماد",
+        "تطبیق شکل، نمودار، جدول یا توالی"
+      ],
+      "sharedAnswerStrip": false,
+      "promptAsset": null,
+      "promptSha256": null,
+      "promptTextPreserved": true,
+      "promptTextSha256": null
+    },
+    {
+      "id": "g7_ch03_q17",
+      "questionAsset": "g7_ch03_q17_source_question.png",
+      "questionSha256": "ce58da67b083e28aa4ccdc26a4eb16833b0da11171477ffa3f4b98ad24c97e69",
+      "answerAsset": "g7_ch03_q17_source_answer.png",
+      "answerSha256": "d512a14ade3632d729f1163a5be64ce5283633859a08433f654d2ca6007f3224",
+      "questionSourceSegments": [
+        {
+          "page": 9,
+          "bbox": [
+            27,
+            492.85,
+            570,
+            631.74
+          ]
+        }
+      ],
+      "answerSourceSegments": [
+        {
+          "page": 2,
+          "bbox": [
+            23.0,
+            180.84,
+            590.0,
+            265
+          ]
+        }
+      ],
+      "answerImageRecommended": true,
+      "formattingRisks": [
+        "تطبیق شکل، نمودار، جدول یا توالی"
+      ],
+      "sharedAnswerStrip": false,
+      "promptAsset": "g7_ch03_q17_source_prompt.png",
+      "promptSha256": "9889e406967127011a5321d4660baaf74b4ad6e8d7e61e2277a5dfa630ea717b",
+      "promptTextPreserved": true,
+      "promptTextSha256": "4d1d25c387e89cec743253b1ae5a684db41e5d6ad9bd74a7e6f26c53260c5c87"
+    },
+    {
+      "id": "g7_ch03_q18",
+      "questionAsset": "g7_ch03_q18_source_question.png",
+      "questionSha256": "30a3bef68d4d4a4848baa64c48dd6ae1b43635700b94d9ff1b7eb9df8c15b21c",
+      "answerAsset": "g7_ch03_q18_source_answer.png",
+      "answerSha256": "d26c2a726742b5be3663eba923a84c0b510231398a9f595c7d8ba8b865d9a18e",
+      "questionSourceSegments": [
+        {
+          "page": 9,
+          "bbox": [
+            27,
+            633.74,
+            570,
+            790
+          ]
+        },
+        {
+          "page": 10,
+          "bbox": [
+            27,
+            28,
+            570,
+            37.25
+          ]
+        }
+      ],
+      "answerSourceSegments": [
+        {
+          "page": 2,
+          "bbox": [
+            23.0,
+            265,
+            590.0,
+            379.66
+          ]
+        }
+      ],
+      "answerImageRecommended": true,
+      "formattingRisks": [
+        "تطبیق شکل، نمودار، جدول یا توالی"
+      ],
+      "sharedAnswerStrip": false,
+      "promptAsset": null,
+      "promptSha256": null,
+      "promptTextPreserved": true,
+      "promptTextSha256": null
+    },
+    {
+      "id": "g7_ch03_q21",
+      "questionAsset": "g7_ch03_q21_source_question.png",
+      "questionSha256": "eddb628f06c616d7531bf51d4c1ad52f45acc0fe70b346234923078298909230",
+      "answerAsset": "g7_ch03_q21_source_answer.png",
+      "answerSha256": "49dcea947710fa9ec11898bfc50f6401e1e9e27abe45bff0a61170bbea98e01e",
+      "questionSourceSegments": [
+        {
+          "page": 10,
+          "bbox": [
+            27,
+            337.26,
+            570,
+            542.52
+          ]
+        }
+      ],
+      "answerSourceSegments": [
+        {
+          "page": 2,
+          "bbox": [
+            23.0,
+            547.01,
+            590.0,
+            576.72
+          ]
+        }
+      ],
+      "answerImageRecommended": true,
+      "formattingRisks": [
+        "تطبیق شکل، نمودار، جدول یا توالی"
+      ],
+      "sharedAnswerStrip": false,
+      "promptAsset": null,
+      "promptSha256": null,
+      "promptTextPreserved": true,
+      "promptTextSha256": null
+    },
+    {
+      "id": "g7_ch03_q22",
+      "questionAsset": "g7_ch03_q22_source_question.png",
+      "questionSha256": "434e6979698000f7f42d5b3fedc18983bc8e77be58bc0d5b9ce741b784fef43b",
+      "answerAsset": "g7_ch03_q22_source_answer.png",
+      "answerSha256": "69472a1d56a228ce5aa2ad36c0dcc142178096ca46db5173f8a4686b438100a7",
+      "questionSourceSegments": [
+        {
+          "page": 10,
+          "bbox": [
+            27,
+            544.52,
+            570,
+            694.11
+          ]
+        }
+      ],
+      "answerSourceSegments": [
+        {
+          "page": 2,
+          "bbox": [
+            23.0,
+            578.29,
+            590.0,
+            633.12
+          ]
+        }
+      ],
+      "answerImageRecommended": true,
+      "formattingRisks": [
+        "تطبیق شکل، نمودار، جدول یا توالی"
+      ],
+      "sharedAnswerStrip": false,
+      "promptAsset": null,
+      "promptSha256": null,
+      "promptTextPreserved": true,
+      "promptTextSha256": null
+    },
+    {
+      "id": "g7_ch03_q24",
+      "questionAsset": "g7_ch03_q24_source_question.png",
+      "questionSha256": "45669cce3320b282eb4707cd9d73acb6bbc1bdfcf7b86460defe68660896d022",
+      "answerAsset": "g7_ch03_q24_source_answer.png",
+      "answerSha256": "72b26355eade3794c37830792636bf76762b6c72e1111dd49f5ea05cf7d79547",
+      "questionSourceSegments": [
+        {
+          "page": 11,
+          "bbox": [
+            27,
+            37.12,
+            570,
+            140.83
+          ]
+        }
+      ],
+      "answerSourceSegments": [
+        {
+          "page": 2,
+          "bbox": [
+            23.0,
+            662.8,
+            590.0,
+            715.12
+          ]
+        }
+      ],
+      "answerImageRecommended": true,
+      "formattingRisks": [
+        "عدد، مقدار یا محاسبه",
+        "تطبیق شکل، نمودار، جدول یا توالی"
+      ],
+      "sharedAnswerStrip": false,
+      "promptAsset": null,
+      "promptSha256": null,
+      "promptTextPreserved": true,
+      "promptTextSha256": null
+    },
+    {
+      "id": "g7_ch03_mcq02",
+      "questionAsset": "g7_ch03_mcq02_source_question.png",
+      "questionSha256": "d85f1a7b38bab85e3e8793ce6733360e56cacc16b1dabebb738c759b360b0483",
+      "answerAsset": "g7_ch03_mcq02_source_answer.png",
+      "answerSha256": "168ec00fbb3b773ddc414b55467b4f1790b80b9ad652a2ca00188612681fb1fb",
+      "questionSourceSegments": [
+        {
+          "page": 11,
+          "bbox": [
+            27,
+            235.59,
+            570,
+            294.7
+          ]
+        }
+      ],
+      "answerSourceSegments": [
+        {
+          "page": 2,
+          "bbox": [
+            340,
+            716.12,
+            376,
+            745.83
+          ]
+        }
+      ],
+      "answerImageRecommended": true,
+      "formattingRisks": [
+        "عدد، مقدار یا محاسبه"
+      ],
+      "sharedAnswerStrip": false,
+      "promptAsset": null,
+      "promptSha256": null,
+      "promptTextPreserved": true,
+      "promptTextSha256": null
+    },
+    {
+      "id": "g7_ch03_mcq06",
+      "questionAsset": "g7_ch03_mcq06_source_question.png",
+      "questionSha256": "785aa43a6596deb145c92d695755b178e60b6c716112a91473b2e5216f3f6dbb",
+      "answerAsset": "g7_ch03_mcq06_source_answer.png",
+      "answerSha256": "e01d22d06c858b3131a40ced90b3c84475b3e2927ff8efa5fb59f6f0fdc83f3e",
+      "questionSourceSegments": [
+        {
+          "page": 11,
+          "bbox": [
+            27,
+            630.83,
+            570,
+            689.91
+          ]
+        }
+      ],
+      "answerSourceSegments": [
+        {
+          "page": 2,
+          "bbox": [
+            108,
+            716.12,
+            160,
+            745.83
+          ]
+        }
+      ],
+      "answerImageRecommended": true,
+      "formattingRisks": [
+        "عدد، مقدار یا محاسبه"
+      ],
+      "sharedAnswerStrip": false,
+      "promptAsset": null,
+      "promptSha256": null,
+      "promptTextPreserved": true,
+      "promptTextSha256": null
+    }
+  ],
+  "answerImagesPrepared": true
+}

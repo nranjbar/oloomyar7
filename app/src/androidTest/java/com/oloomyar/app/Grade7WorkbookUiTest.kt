@@ -20,6 +20,8 @@ import com.oloomyar.app.ui.workbookBidi
 import com.oloomyar.app.ui.theme.OloomYarTheme
 import org.junit.Assert.*
 import org.junit.Before
+import org.junit.After
+import org.junit.rules.TestName
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -27,6 +29,8 @@ import org.junit.runner.RunWith
 @RunWith(AndroidJUnit4::class)
 class Grade7WorkbookUiTest {
     @get:Rule val compose=createComposeRule()
+    @get:Rule val testName=TestName()
+    @After fun captureFinalUi() { capture("after-${testName.methodName}") }
     private val context get()=InstrumentationRegistry.getInstrumentation().targetContext
     private val allQuestions get()=Grade7Chapter1Repository(context).questions+Grade7Chapter2Repository(context).questions+Grade7Chapter3Repository(context).questions
     private fun fa(v:Int)=v.toString().map { if(it in '0'..'9') "۰۱۲۳۴۵۶۷۸۹"[it-'0'] else it }.joinToString("")
@@ -153,7 +157,7 @@ class Grade7WorkbookUiTest {
     }
     @Test fun allFiftyNineOriginalQuestionsAndIsolatedAnswersDecodeAndAllControlsHaveAValidAnswer() {
         val qs=allQuestions;assertEquals(59,qs.size);assertEquals(76,qs.sumOf { it.steps.size })
-        qs.flatMap { listOfNotNull(it.sourceQuestionVisual,it.answerVisual,it.visual)+it.visuals.map { v->v.asset } }.toSet().forEach { name->
+        qs.flatMap { listOfNotNull(it.sourceQuestionVisual,it.answerVisual,it.visual,it.promptVisual)+it.visuals.map { v->v.asset } }.toSet().forEach { name->
             val bmp=context.assets.open("images/$name").use { BitmapFactory.decodeStream(it) };assertNotNull(name,bmp);bmp!!.recycle()
         }
         qs.forEach { q->
@@ -177,6 +181,20 @@ class Grade7WorkbookUiTest {
         assertEquals(state,QuestionDraftCodec.decode(QuestionDraftCodec.encode(state)))
         val shown=state.reveal();assertEquals(shown,QuestionDraftCodec.decode(QuestionDraftCodec.encode(shown)))
         assertFalse(QuestionDraftCodec.decode("""{"questionPracticeVersion":3,"revealed":true}""").revealed)
+    }
+    @Test fun examResultDoesNotProvideAReferenceAnswerShortcut() {
+        val q=Grade7Chapter2Repository(context).questions.first { it.sourceNumber==8 && it.section=="تمرین‌های اصلی" }
+        open(q)
+        compose.onNodeWithContentDescription("برگشت").performClick()
+        compose.onNode(hasScrollAction()).performScrollToNode(hasText("آزمون همین بخش"))
+        compose.onNodeWithText("آزمون همین بخش").performClick()
+        choose(q.steps.single().options.first { !it.correct }.text)
+        compose.onNodeWithText("ثبت پاسخ این سؤال").performClick()
+        compose.onNodeWithText("نتیجهٔ آزمون").assertExists()
+        compose.onNodeWithText("پاسخ کتاب‌کار").assertDoesNotExist()
+        compose.onNode(hasScrollAction()).performScrollToNode(hasText("تمرین سؤال ۸ با راهنما"))
+        compose.onNodeWithText("تمرین سؤال ۸ با راهنما").performClick()
+        compose.onNodeWithTag("reveal-answer").assertIsNotEnabled()
     }
     @Test fun sourceFigureCanBeEnlargedWithoutShowingAnyAnswer() {
         val q=Grade7Chapter2Repository(context).questions.first { it.sourceNumber==11 && it.section=="تمرین‌های اصلی" };open(q)

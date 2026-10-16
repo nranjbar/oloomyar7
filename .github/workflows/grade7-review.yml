@@ -29,6 +29,8 @@ jobs:
           chmod +x gradlew
       - name: Validate all Grade 7 questions and source images
         run: python3 scripts/validate_grade7.py
+      - name: Install emulator image with the selected Android command line tools
+        run: '"$ANDROID_SDK_ROOT/cmdline-tools/16111833/bin/sdkmanager" "emulator" "system-images;android-35;google_apis;x86_64"'
       - name: Assemble Grade 7 review app
         run: ./gradlew --no-daemon :app:testDebugUnitTest :app:assembleDebug :app:assembleDebugAndroidTest --stacktrace
       - name: Upload installable Grade 7 APK
@@ -47,13 +49,11 @@ jobs:
         uses: reactivecircus/android-emulator-runner@v2
         with:
           api-level: 35
+          target: google_apis
           arch: x86_64
           profile: pixel_2
           disable-animations: true
-          script: |
-            adb shell settings put global hide_error_dialogs 1
-            ./gradlew --no-daemon :app:connectedDebugAndroidTest -Pandroid.testInstrumentationRunnerArguments.class=com.oloomyar.app.Grade7WorkbookUiTest --stacktrace
-            adb pull /sdcard/Download/grade7-screenshots app/build/grade7-screenshots
+          script: bash scripts/run_ui_review.sh
       - name: Upload Grade 7 test reports and real screenshots
         if: always()
         uses: actions/upload-artifact@v4

@@ -1,86 +1,356 @@
 [
   {
-    "file": "g7_ch01_q05_answer.png",
-    "chapter": 1,
-    "sourceNumber": 5,
-    "sourcePage": 2,
-    "width": 2163,
-    "height": 727,
-    "sha256": "36ca15cc4638f64471f667bd5fd8ad3d5251ec14b9bce682189bb48f5e90c828",
-    "source": "Grade7_Images_New.zip",
-    "caption": "",
-    "displayRule": "after every part is correct or legitimately revealed"
+    "id": "g7_ch01_q01",
+    "asset": "../app/src/main/assets/images/g7_ch01_q01_source_answer.png",
+    "status": "original_source_ready",
+    "newImageNeeded": false
   },
   {
-    "file": "g7_ch02_q02_answer.png",
-    "chapter": 2,
-    "sourceNumber": 2,
-    "sourcePage": 3,
-    "width": 1672,
-    "height": 941,
-    "sha256": "c33e6f6246fc7c932522d169276e6901be85a5a1d8a65d67b9a7d8ea65e9415b",
-    "source": "Grade7_Images_New.zip",
-    "caption": "",
-    "displayRule": "after every part is correct or legitimately revealed"
+    "id": "g7_ch01_q02",
+    "asset": "../app/src/main/assets/images/g7_ch01_q02_source_answer.png",
+    "status": "original_source_ready",
+    "newImageNeeded": false
   },
   {
-    "file": "g7_ch02_q07_answer.png",
-    "chapter": 2,
-    "sourceNumber": 7,
-    "sourcePage": 4,
-    "width": 1536,
-    "height": 1024,
-    "sha256": "eba2a97d0b3dcb190547464ef7c6502907f16f4c522096438e9ac8e71fe25e76",
-    "source": "Grade7_Images_New.zip",
-    "caption": "یک نمونه عددی برای توضیح روش آزمایش؛ مقدارهای این تصویر مثال‌اند، نه داده‌های الزامی سؤال طراحی آزمایش.",
-    "displayRule": "after every part is correct or legitimately revealed"
+    "id": "g7_ch01_q03",
+    "asset": "../app/src/main/assets/images/g7_ch01_q03_source_answer.png",
+    "status": "original_source_ready",
+    "newImageNeeded": false
   },
   {
-    "file": "g7_ch02_q09_answer.png",
-    "chapter": 2,
-    "sourceNumber": 9,
-    "sourcePage": 4,
-    "width": 1672,
-    "height": 941,
-    "sha256": "b820872e12afa37de02bfddab0769f0d4191fa28d5a640e36f8ee337cc556267",
-    "source": "Grade7_Images_New.zip",
-    "caption": "",
-    "displayRule": "after every part is correct or legitimately revealed"
+    "id": "g7_ch01_q04",
+    "asset": "../app/src/main/assets/images/g7_ch01_q04_source_answer.png",
+    "status": "original_source_ready",
+    "newImageNeeded": false
   },
   {
-    "file": "g7_ch02_q10_answer.png",
-    "chapter": 2,
-    "sourceNumber": 10,
-    "sourcePage": 5,
-    "width": 1448,
-    "height": 1086,
-    "sha256": "ef303ca88e672c9f2274ab07871ba3b949f719c8f3cfdf3048b8979da3c64848",
-    "source": "Grade7_Images_New.zip",
-    "caption": "",
-    "displayRule": "after every part is correct or legitimately revealed"
+    "id": "g7_ch01_q05",
+    "asset": "../app/src/main/assets/images/g7_ch01_q05_source_answer.png",
+    "status": "original_source_ready",
+    "newImageNeeded": false
   },
   {
-    "file": "g7_ch02_q11_answer.png",
-    "chapter": 2,
-    "sourceNumber": 11,
-    "sourcePage": 5,
-    "width": 1448,
-    "height": 1086,
-    "sha256": "1f4ad5b897ccfc98646a720841cfd93a302034981b1ff40712ab24e96835c895",
-    "source": "Grade7_Images_New.zip",
-    "caption": "",
-    "displayRule": "after every part is correct or legitimately revealed"
+    "id": "g7_ch01_q06",
+    "asset": "../app/src/main/assets/images/g7_ch01_q06_source_answer.png",
+    "status": "original_source_ready",
+    "newImageNeeded": false
   },
   {
-    "file": "g7_ch02_q14_answer.png",
-    "chapter": 2,
-    "sourceNumber": 14,
-    "sourcePage": 5,
-    "width": 1672,
-    "height": 941,
-    "sha256": "6c08fbaa43ad7ef69de494b2ce02be489dbd450560ab5079664d1cf231458a16",
-    "source": "Grade7_Images_New.zip",
-    "caption": "عددهای اعشاری این تصویر، روش گرد کردن را توضیح می‌دهند؛ گزارش خواسته‌شده سؤال در حد سانتی‌متر کامل است.",
-    "displayRule": "after every part is correct or legitimately revealed"
+    "id": "g7_ch01_q07",
+    "asset": "../app/src/main/assets/images/g7_ch01_q07_source_answer.png",
+    "status": "original_source_ready",
+    "newImageNeeded": false
+  },
+  {
+    "id": "g7_ch01_q08",
+    "asset": "../app/src/main/assets/images/g7_ch01_q08_source_answer.png",
+    "status": "original_source_ready",
+    "newImageNeeded": false
+  },
+  {
+    "id": "g7_ch02_q01",
+    "asset": "../app/src/main/assets/images/g7_ch02_q01_source_answer.png",
+    "status": "original_source_ready",
+    "newImageNeeded": false
+  },
+  {
+    "id": "g7_ch02_q02",
+    "asset": "../app/src/main/assets/images/g7_ch02_q02_source_answer.png",
+    "status": "original_source_ready",
+    "newImageNeeded": false
+  },
+  {
+    "id": "g7_ch02_q03",
+    "asset": "../app/src/main/assets/images/g7_ch02_q03_source_answer.png",
+    "status": "original_source_ready",
+    "newImageNeeded": false
+  },
+  {
+    "id": "g7_ch02_q04",
+    "asset": "../app/src/main/assets/images/g7_ch02_q04_source_answer.png",
+    "status": "original_source_ready",
+    "newImageNeeded": false
+  },
+  {
+    "id": "g7_ch02_q05",
+    "asset": "../app/src/main/assets/images/g7_ch02_q05_source_answer.png",
+    "status": "original_source_ready",
+    "newImageNeeded": false
+  },
+  {
+    "id": "g7_ch02_q06",
+    "asset": "../app/src/main/assets/images/g7_ch02_q06_source_answer.png",
+    "status": "original_source_ready",
+    "newImageNeeded": false
+  },
+  {
+    "id": "g7_ch02_q07",
+    "asset": "../app/src/main/assets/images/g7_ch02_q07_source_answer.png",
+    "status": "original_source_ready",
+    "newImageNeeded": false
+  },
+  {
+    "id": "g7_ch02_q08",
+    "asset": "../app/src/main/assets/images/g7_ch02_q08_source_answer.png",
+    "status": "original_source_ready",
+    "newImageNeeded": false
+  },
+  {
+    "id": "g7_ch02_q09",
+    "asset": "../app/src/main/assets/images/g7_ch02_q09_source_answer.png",
+    "status": "original_source_ready",
+    "newImageNeeded": false
+  },
+  {
+    "id": "g7_ch02_q10",
+    "asset": "../app/src/main/assets/images/g7_ch02_q10_source_answer.png",
+    "status": "original_source_ready",
+    "newImageNeeded": false
+  },
+  {
+    "id": "g7_ch02_q11",
+    "asset": "../app/src/main/assets/images/g7_ch02_q11_source_answer.png",
+    "status": "original_source_ready",
+    "newImageNeeded": false
+  },
+  {
+    "id": "g7_ch02_q12",
+    "asset": "../app/src/main/assets/images/g7_ch02_q12_source_answer.png",
+    "status": "original_source_ready",
+    "newImageNeeded": false
+  },
+  {
+    "id": "g7_ch02_q13",
+    "asset": "../app/src/main/assets/images/g7_ch02_q13_source_answer.png",
+    "status": "original_source_ready",
+    "newImageNeeded": false
+  },
+  {
+    "id": "g7_ch02_q14",
+    "asset": "../app/src/main/assets/images/g7_ch02_q14_source_answer.png",
+    "status": "original_source_ready",
+    "newImageNeeded": false
+  },
+  {
+    "id": "g7_ch02_q15",
+    "asset": "../app/src/main/assets/images/g7_ch02_q15_source_answer.png",
+    "status": "original_source_ready",
+    "newImageNeeded": false
+  },
+  {
+    "id": "g7_ch02_mcq01",
+    "asset": "../app/src/main/assets/images/g7_ch02_mcq01_source_answer.png",
+    "status": "original_source_ready",
+    "newImageNeeded": false
+  },
+  {
+    "id": "g7_ch02_mcq02",
+    "asset": "../app/src/main/assets/images/g7_ch02_mcq02_source_answer.png",
+    "status": "original_source_ready",
+    "newImageNeeded": false
+  },
+  {
+    "id": "g7_ch02_mcq03",
+    "asset": "../app/src/main/assets/images/g7_ch02_mcq03_source_answer.png",
+    "status": "original_source_ready",
+    "newImageNeeded": false
+  },
+  {
+    "id": "g7_ch02_mcq04",
+    "asset": "../app/src/main/assets/images/g7_ch02_mcq04_source_answer.png",
+    "status": "original_source_ready",
+    "newImageNeeded": false
+  },
+  {
+    "id": "g7_ch02_mcq05",
+    "asset": "../app/src/main/assets/images/g7_ch02_mcq05_source_answer.png",
+    "status": "original_source_ready",
+    "newImageNeeded": false
+  },
+  {
+    "id": "g7_ch03_q01",
+    "asset": "../app/src/main/assets/images/g7_ch03_q01_source_answer.png",
+    "status": "original_source_ready",
+    "newImageNeeded": false
+  },
+  {
+    "id": "g7_ch03_q02",
+    "asset": "../app/src/main/assets/images/g7_ch03_q02_source_answer.png",
+    "status": "original_source_ready",
+    "newImageNeeded": false
+  },
+  {
+    "id": "g7_ch03_q03",
+    "asset": "../app/src/main/assets/images/g7_ch03_q03_source_answer.png",
+    "status": "original_source_ready",
+    "newImageNeeded": false
+  },
+  {
+    "id": "g7_ch03_q04",
+    "asset": "../app/src/main/assets/images/g7_ch03_q04_source_answer.png",
+    "status": "original_source_ready",
+    "newImageNeeded": false
+  },
+  {
+    "id": "g7_ch03_q05",
+    "asset": "../app/src/main/assets/images/g7_ch03_q05_source_answer.png",
+    "status": "original_source_ready",
+    "newImageNeeded": false
+  },
+  {
+    "id": "g7_ch03_q06",
+    "asset": "../app/src/main/assets/images/g7_ch03_q06_source_answer.png",
+    "status": "original_source_ready",
+    "newImageNeeded": false
+  },
+  {
+    "id": "g7_ch03_q07",
+    "asset": "../app/src/main/assets/images/g7_ch03_q07_source_answer.png",
+    "status": "original_source_ready",
+    "newImageNeeded": false
+  },
+  {
+    "id": "g7_ch03_q08",
+    "asset": "../app/src/main/assets/images/g7_ch03_q08_source_answer.png",
+    "status": "original_source_ready",
+    "newImageNeeded": false
+  },
+  {
+    "id": "g7_ch03_q09",
+    "asset": "../app/src/main/assets/images/g7_ch03_q09_source_answer.png",
+    "status": "original_source_ready",
+    "newImageNeeded": false
+  },
+  {
+    "id": "g7_ch03_q10",
+    "asset": "../app/src/main/assets/images/g7_ch03_q10_source_answer.png",
+    "status": "original_source_ready",
+    "newImageNeeded": false
+  },
+  {
+    "id": "g7_ch03_q11",
+    "asset": "../app/src/main/assets/images/g7_ch03_q11_source_answer.png",
+    "status": "original_source_ready",
+    "newImageNeeded": false
+  },
+  {
+    "id": "g7_ch03_q12",
+    "asset": "../app/src/main/assets/images/g7_ch03_q12_source_answer.png",
+    "status": "original_source_ready",
+    "newImageNeeded": false
+  },
+  {
+    "id": "g7_ch03_q13",
+    "asset": "../app/src/main/assets/images/g7_ch03_q13_source_answer.png",
+    "status": "original_source_ready",
+    "newImageNeeded": false
+  },
+  {
+    "id": "g7_ch03_q14",
+    "asset": "../app/src/main/assets/images/g7_ch03_q14_source_answer.png",
+    "status": "original_source_ready",
+    "newImageNeeded": false
+  },
+  {
+    "id": "g7_ch03_q15",
+    "asset": "../app/src/main/assets/images/g7_ch03_q15_source_answer.png",
+    "status": "original_source_ready",
+    "newImageNeeded": false
+  },
+  {
+    "id": "g7_ch03_q16",
+    "asset": "../app/src/main/assets/images/g7_ch03_q16_source_answer.png",
+    "status": "original_source_ready",
+    "newImageNeeded": false
+  },
+  {
+    "id": "g7_ch03_q17",
+    "asset": "../app/src/main/assets/images/g7_ch03_q17_source_answer.png",
+    "status": "original_source_ready",
+    "newImageNeeded": false
+  },
+  {
+    "id": "g7_ch03_q18",
+    "asset": "../app/src/main/assets/images/g7_ch03_q18_source_answer.png",
+    "status": "original_source_ready",
+    "newImageNeeded": false
+  },
+  {
+    "id": "g7_ch03_q19",
+    "asset": "../app/src/main/assets/images/g7_ch03_q19_source_answer.png",
+    "status": "original_source_ready",
+    "newImageNeeded": false
+  },
+  {
+    "id": "g7_ch03_q20",
+    "asset": "../app/src/main/assets/images/g7_ch03_q20_source_answer.png",
+    "status": "original_source_ready",
+    "newImageNeeded": false
+  },
+  {
+    "id": "g7_ch03_q21",
+    "asset": "../app/src/main/assets/images/g7_ch03_q21_source_answer.png",
+    "status": "original_source_ready",
+    "newImageNeeded": false
+  },
+  {
+    "id": "g7_ch03_q22",
+    "asset": "../app/src/main/assets/images/g7_ch03_q22_source_answer.png",
+    "status": "original_source_ready",
+    "newImageNeeded": false
+  },
+  {
+    "id": "g7_ch03_q23",
+    "asset": "../app/src/main/assets/images/g7_ch03_q23_source_answer.png",
+    "status": "original_source_ready",
+    "newImageNeeded": false
+  },
+  {
+    "id": "g7_ch03_q24",
+    "asset": "../app/src/main/assets/images/g7_ch03_q24_source_answer.png",
+    "status": "original_source_ready",
+    "newImageNeeded": false
+  },
+  {
+    "id": "g7_ch03_mcq01",
+    "asset": "../app/src/main/assets/images/g7_ch03_mcq01_source_answer.png",
+    "status": "original_source_ready",
+    "newImageNeeded": false
+  },
+  {
+    "id": "g7_ch03_mcq02",
+    "asset": "../app/src/main/assets/images/g7_ch03_mcq02_source_answer.png",
+    "status": "original_source_ready",
+    "newImageNeeded": false
+  },
+  {
+    "id": "g7_ch03_mcq03",
+    "asset": "../app/src/main/assets/images/g7_ch03_mcq03_source_answer.png",
+    "status": "original_source_ready",
+    "newImageNeeded": false
+  },
+  {
+    "id": "g7_ch03_mcq04",
+    "asset": "../app/src/main/assets/images/g7_ch03_mcq04_source_answer.png",
+    "status": "original_source_ready",
+    "newImageNeeded": false
+  },
+  {
+    "id": "g7_ch03_mcq05",
+    "asset": "../app/src/main/assets/images/g7_ch03_mcq05_source_answer.png",
+    "status": "original_source_ready",
+    "newImageNeeded": false
+  },
+  {
+    "id": "g7_ch03_mcq06",
+    "asset": "../app/src/main/assets/images/g7_ch03_mcq06_source_answer.png",
+    "status": "original_source_ready",
+    "newImageNeeded": false
+  },
+  {
+    "id": "g7_ch03_mcq07",
+    "asset": "../app/src/main/assets/images/g7_ch03_mcq07_source_answer.png",
+    "status": "original_source_ready",
+    "newImageNeeded": false
   }
 ]

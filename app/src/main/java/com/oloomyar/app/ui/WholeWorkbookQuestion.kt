@@ -86,8 +86,13 @@ internal fun WholeWorkbookQuestion(
                         }
                     }
                     if (inlineStep == null || showOriginal) {
-                        question.sourceQuestionVisual?.let { WorkbookImage(it, "صورت سؤال ${workbookFa(question.sourceNumber)} از کتاب") }
+                        (if (showOriginal) question.sourceQuestionVisual else question.promptVisual ?: question.sourceQuestionVisual)?.let { WorkbookImage(it, "صورت سؤال ${workbookFa(question.sourceNumber)} از کتاب") }
                             ?: WorkbookText(question.bookPrompt.orEmpty())
+                    }
+                    if (inlineStep == null && question.promptVisual != null) {
+                        TextButton(onClick = { showOriginal = !showOriginal }) {
+                            Text(if (showOriginal) "بستن تصویر کتاب" else "مشاهدهٔ تصویر خود کتاب")
+                        }
                     }
                 }
             }
@@ -141,7 +146,9 @@ internal fun WholeWorkbookQuestion(
                 if (!exam && state.revealed && state.canReveal()) {
                     WorkbookPanel(accent = Green) {
                         Text("پاسخ کتاب‌کار", color = Green, style = MaterialTheme.typography.titleLarge)
-                        question.answerVisual?.let { WorkbookImage(it, "تصویر پاسخ سؤال ${workbookFa(question.sourceNumber)}") }
+                        Box(if (question.section == "چهارگزینه‌ای") Modifier.width(180.dp) else Modifier.fillMaxWidth()) {
+                            question.answerVisual?.let { WorkbookImage(it, "تصویر پاسخ سؤال ${workbookFa(question.sourceNumber)}") }
+                        }
                     }
                 }
             }

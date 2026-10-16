@@ -24,10 +24,13 @@ for chapter,qs in enumerate(collections,1):
         for field,key in [('sourceQuestionVisual','question'),('answerVisual','answer')]:
             name=q[field];assert name==r[key+'Asset']
             assert hashlib.sha256((ASSETS/'images'/name).read_bytes()).hexdigest()==r[key+'Sha256']
+        if q.get('promptVisual'):
+            assert r['promptTextPreserved']
+            assert hashlib.sha256((ASSETS/'images'/q['promptVisual']).read_bytes()).hexdigest()==r['promptSha256']
         if q['section']=='چهارگزینه‌ای':
             assert not r['sharedAnswerStrip']
             assert r['answerSourceSegments'][0]['bbox'][2]-r['answerSourceSegments'][0]['bbox'][0]<60
-        images.update(x for x in [q.get('visual'),q.get('answerVisual'),q.get('sourceQuestionVisual')]+[v['asset'] for v in q.get('visuals',[])] if x)
+        images.update(x for x in [q.get('visual'),q.get('answerVisual'),q.get('sourceQuestionVisual'),q.get('promptVisual')]+[v['asset'] for v in q.get('visuals',[])] if x)
         for s in q['steps']:
             assert s['id'] not in steps;steps.add(s['id'])
             assert all(s.get(k,'').strip() for k in ['prompt','answer','hint1','hint2'])

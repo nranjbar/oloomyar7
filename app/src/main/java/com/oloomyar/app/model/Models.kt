@@ -58,7 +58,9 @@ data class ChapterQuestion(
     val legacyProgress: List<LegacyProgress> = emptyList(),
     val answerVisualCaption: String? = null,
     /** Unedited workbook crop, authoritative when PDF text extraction reorders Persian. */
-    val sourceQuestionVisual: String? = null
+    val sourceQuestionVisual: String? = null,
+    /** Original PDF text layer with the old raster figure omitted when a replacement is supplied. */
+    val promptVisual: String? = null
 )
 
 data class QuestionVisual(val asset: String, val caption: String? = null)

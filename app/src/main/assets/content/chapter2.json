@@ -77,7 +77,9 @@
     "sourceQuestionVisual": "g7_ch02_q01_source_question.png",
     "answerVisualCaption": null,
     "sourcePolicy": "verbatim_original_pdf",
-    "sourceAnswerTextExtracted": "1 - : به ترتیب a - جرم b – طول c – لیتر d - ظرف  های مدرج\ne اندازه گیری f – زمان g –\n- ثانیه"
+    "sourceAnswerTextExtracted": "1 - : به ترتیب a - جرم b – طول c – لیتر d - ظرف  های مدرج\ne اندازه گیری f – زمان g –\n- ثانیه",
+    "visualCaption": null,
+    "promptVisual": null
   },
   {
     "id": "g7-ch02-main-002-1405",
@@ -236,12 +238,13 @@
     ],
     "visual": "g7_ch02_q02.png",
     "answerVisual": "g7_ch02_q02_source_answer.png",
-    "visualCaption": "جدول اصلی کتاب؛ چهار ردیف و چهار ستون، بدون پاسخ",
+    "visualCaption": null,
     "canonicalId": "g7_ch02_q02",
     "sourceQuestionVisual": "g7_ch02_q02_source_question.png",
     "answerVisualCaption": null,
     "sourcePolicy": "verbatim_original_pdf",
-    "sourceAnswerTextExtracted": "2 - ردیف اول :  [جرم :    مقدار ماده تشکیل دهنده جسم- کیلو گرم و گرم– ، ]  ترازو\nردیف دوم :  [  وزن :  نیروی  گرانشی  (جاذبه ای ) است که از طرف زمین بر جسم وارد می شود و\n. جسم را به طرف زمین می کشد - نیوتون- ،  ]   نیروسنج\nردیف سوم :  [ حجم                                                                    ] . :  مقدار فضایی که یک ماده اشغال می کند\nردیف چهارم :    [ چگالی- گرم                                         ] بر سانتی متر مکعب  ،  کیلو گرم بر متر مکعب"
+    "sourceAnswerTextExtracted": "2 - ردیف اول :  [جرم :    مقدار ماده تشکیل دهنده جسم- کیلو گرم و گرم– ، ]  ترازو\nردیف دوم :  [  وزن :  نیروی  گرانشی  (جاذبه ای ) است که از طرف زمین بر جسم وارد می شود و\n. جسم را به طرف زمین می کشد - نیوتون- ،  ]   نیروسنج\nردیف سوم :  [ حجم                                                                    ] . :  مقدار فضایی که یک ماده اشغال می کند\nردیف چهارم :    [ چگالی- گرم                                         ] بر سانتی متر مکعب  ،  کیلو گرم بر متر مکعب",
+    "promptVisual": "g7_ch02_q02_source_prompt.png"
   },
   {
     "id": "g7-ch02-main-003-1405",
@@ -292,7 +295,9 @@
     "sourceQuestionVisual": "g7_ch02_q03_source_question.png",
     "answerVisualCaption": null,
     "sourcePolicy": "verbatim_original_pdf",
-    "sourceAnswerTextExtracted": "3 - اگر جرم یک جسم کم باشد ، مانند   جرم  سی دی و یک موز و یک مداد  ،  از یکای گرم  استفاده\nمی کنیم ، ولی اگر جرم یک جسم زیادتر باشد  مانند جرم   لب تاب و گوسفند ،  از یکای کیلوگرم\nاستفاده می کنیم تا درک و فهم آن   . آسان باشد"
+    "sourceAnswerTextExtracted": "3 - اگر جرم یک جسم کم باشد ، مانند   جرم  سی دی و یک موز و یک مداد  ،  از یکای گرم  استفاده\nمی کنیم ، ولی اگر جرم یک جسم زیادتر باشد  مانند جرم   لب تاب و گوسفند ،  از یکای کیلوگرم\nاستفاده می کنیم تا درک و فهم آن   . آسان باشد",
+    "visualCaption": null,
+    "promptVisual": null
   },
   {
     "id": "g7-ch02-main-004-1405",
@@ -351,7 +356,9 @@
     "sourceQuestionVisual": "g7_ch02_q04_source_question.png",
     "answerVisualCaption": null,
     "sourcePolicy": "verbatim_original_pdf",
-    "sourceAnswerTextExtracted": "4 – الف– 60 نیوتون       ب- 2 نیوتون        ج- 6 نیوتون       د- 3000 نیوتون"
+    "sourceAnswerTextExtracted": "4 – الف– 60 نیوتون       ب- 2 نیوتون        ج- 6 نیوتون       د- 3000 نیوتون",
+    "visualCaption": null,
+    "promptVisual": null
   },
   {
     "id": "g7-ch02-main-005-1405",
@@ -411,7 +418,9 @@
     "sourceQuestionVisual": "g7_ch02_q05_source_question.png",
     "answerVisualCaption": null,
     "sourcePolicy": "verbatim_original_pdf",
-    "sourceAnswerTextExtracted": "5 - میلی متر ، سانت                                                                                                        ی متر ، متر ، کیلومتر"
+    "sourceAnswerTextExtracted": "5 - میلی متر ، سانت                                                                                                        ی متر ، متر ، کیلومتر",
+    "visualCaption": null,
+    "promptVisual": null
   },
   {
     "id": "g7-ch02-main-006-1405",
@@ -496,7 +505,9 @@
     "sourceQuestionVisual": "g7_ch02_q06_source_question.png",
     "answerVisualCaption": null,
     "sourcePolicy": "verbatim_original_pdf",
-    "sourceAnswerTextExtracted": "6 - الف– میلی متر ب- کیلومتر             ج- سانتی متر            د- متر\nزیرا طول هرکدام در هر اندازه و مرتبه ای قرار دار د باید با همان یکای طول مربوط به خود ، بیان\n. شود تا درک و فهم آن آسان باشد"
+    "sourceAnswerTextExtracted": "6 - الف– میلی متر ب- کیلومتر             ج- سانتی متر            د- متر\nزیرا طول هرکدام در هر اندازه و مرتبه ای قرار دار د باید با همان یکای طول مربوط به خود ، بیان\n. شود تا درک و فهم آن آسان باشد",
+    "visualCaption": null,
+    "promptVisual": null
   },
   {
     "id": "g7-ch02-main-007-1405",
@@ -539,12 +550,13 @@
     ],
     "visual": "g7_ch02_q07.png",
     "answerVisual": "g7_ch02_q07_source_answer.png",
-    "visualCaption": "چپ: پیش از قرار دادن سنگ؛ راست: پس از آن. عددها نمونه‌اند؛ این سؤال فقط طراحی و ترتیب مراحل آزمایش را می‌خواهد.",
+    "visualCaption": null,
     "answerVisualCaption": null,
     "canonicalId": "g7_ch02_q07",
     "sourceQuestionVisual": "g7_ch02_q07_source_question.png",
     "sourcePolicy": "verbatim_original_pdf",
-    "sourceAnswerTextExtracted": "7 - ، در یک استوانه مدرج مقدار معینی آب می ریزیم  و سپس سنگ کوچک را در آب می اندازیم\n. هرچه قدر آب باال آمد ، حجم سنگ کوچک است\n12 جرم"
+    "sourceAnswerTextExtracted": "7 - ، در یک استوانه مدرج مقدار معینی آب می ریزیم  و سپس سنگ کوچک را در آب می اندازیم\n. هرچه قدر آب باال آمد ، حجم سنگ کوچک است\n12 جرم",
+    "promptVisual": "g7_ch02_q07_source_prompt.png"
   },
   {
     "id": "g7-ch02-main-008-1405",
@@ -595,7 +607,9 @@
     "sourceQuestionVisual": "g7_ch02_q08_source_question.png",
     "answerVisualCaption": null,
     "sourcePolicy": "verbatim_original_pdf",
-    "sourceAnswerTextExtracted": "–\n8 گرم بر سانتی متر مکعب 8 = 1/5 حجم= = چگالی"
+    "sourceAnswerTextExtracted": "–\n8 گرم بر سانتی متر مکعب 8 = 1/5 حجم= = چگالی",
+    "visualCaption": null,
+    "promptVisual": null
   },
   {
     "id": "g7-ch02-main-009-1405",
@@ -669,7 +683,7 @@
     ],
     "visual": "g7_ch02_q09.png",
     "answerVisual": "g7_ch02_q09_source_answer.png",
-    "visualCaption": "جرم سنگ ۳۶ گرم؛ استوانه چپ پیش از افزودن سنگ و استوانه راست پس از آن است. واحد درجه‌های استوانه میلی‌لیتر است و هر میلی‌لیتر برابر یک سانتی‌متر مکعب است.",
+    "visualCaption": null,
     "editorialNotes": [
       "تصویر اصلاح‌شده ارسالی با داده‌های متن هماهنگ است: ۳۶ گرم، ۶۰ و ۷۲ سانتی‌متر مکعب."
     ],
@@ -677,7 +691,8 @@
     "sourceQuestionVisual": "g7_ch02_q09_source_question.png",
     "answerVisualCaption": null,
     "sourcePolicy": "verbatim_original_pdf",
-    "sourceAnswerTextExtracted": "9 – الف- سانتی متر مکعب12 = 60 – 72\n36 جرم\nب- گرم بر سانتی متر مکعب 12 = 3 حجم= = چگالی\n160 جرم"
+    "sourceAnswerTextExtracted": "9 – الف- سانتی متر مکعب12 = 60 – 72\n36 جرم\nب- گرم بر سانتی متر مکعب 12 = 3 حجم= = چگالی\n160 جرم",
+    "promptVisual": "g7_ch02_q09_source_prompt.png"
   },
   {
     "id": "g7-ch02-main-010-1405",
@@ -755,7 +770,9 @@
     "sourceQuestionVisual": "g7_ch02_q10_source_question.png",
     "answerVisualCaption": null,
     "sourcePolicy": "verbatim_original_pdf",
-    "sourceAnswerTextExtracted": "10 - الف– گرم بر سانتی متر مکعب 400 = 0/4 = چگالی\nحجم=\nب- خیر  ،  زیرا چگالی آن از آب کم تر است . ( چگالی آب یک گرم بر سانتی متر ) مکعب است\n– چگالیA"
+    "sourceAnswerTextExtracted": "10 - الف– گرم بر سانتی متر مکعب 400 = 0/4 = چگالی\nحجم=\nب- خیر  ،  زیرا چگالی آن از آب کم تر است . ( چگالی آب یک گرم بر سانتی متر ) مکعب است\n– چگالیA",
+    "visualCaption": null,
+    "promptVisual": null
   },
   {
     "id": "g7-ch02-main-011-1405",
@@ -804,12 +821,13 @@
     ],
     "visual": "g7_ch02_q11.png",
     "answerVisual": "g7_ch02_q11_source_answer.png",
-    "visualCaption": "حرف‌های A و B و C و خط سطح آب از شکل اصلی حفظ شده‌اند.",
+    "visualCaption": null,
     "canonicalId": "g7_ch02_q11",
     "sourceQuestionVisual": "g7_ch02_q11_source_question.png",
     "answerVisualCaption": null,
     "sourcePolicy": "verbatim_original_pdf",
-    "sourceAnswerTextExtracted": "11 کمتر از آب است\n- چگالیB برابر  آب ) است .( چون در آب غوطه ور است\n- چگالیC . بیش تر از آب است"
+    "sourceAnswerTextExtracted": "11 کمتر از آب است\n- چگالیB برابر  آب ) است .( چون در آب غوطه ور است\n- چگالیC . بیش تر از آب است",
+    "promptVisual": "g7_ch02_q11_source_prompt.png"
   },
   {
     "id": "g7-ch02-main-012-1405",
@@ -914,12 +932,13 @@
     ],
     "visual": "g7_ch02_q12.png",
     "answerVisual": "g7_ch02_q12_source_answer.png",
-    "visualCaption": "نام وسیله‌های شماره ۱ و ۲ را مطابق شماره‌های زیر شکل انتخاب کن.",
+    "visualCaption": null,
     "canonicalId": "g7_ch02_q12",
     "sourceQuestionVisual": "g7_ch02_q12_source_question.png",
     "answerVisualCaption": null,
     "sourcePolicy": "verbatim_original_pdf",
-    "sourceAnswerTextExtracted": "12 - الف– ) زمان سنج ( کرنومتر- ساعت\nب- به ترتیب :   ساعت- ) زمان سنج ( کرنومتر\nج- دقیقه ،  ساعت ،  شبانه روز  ،  سال"
+    "sourceAnswerTextExtracted": "12 - الف– ) زمان سنج ( کرنومتر- ساعت\nب- به ترتیب :   ساعت- ) زمان سنج ( کرنومتر\nج- دقیقه ،  ساعت ،  شبانه روز  ،  سال",
+    "promptVisual": "g7_ch02_q12_source_prompt.png"
   },
   {
     "id": "g7-ch02-main-013-1405",
@@ -971,7 +990,9 @@
     "sourceQuestionVisual": "g7_ch02_q13_source_question.png",
     "answerVisualCaption": null,
     "sourcePolicy": "verbatim_original_pdf",
-    "sourceAnswerTextExtracted": "13 - 1 - دقت شخص2 - دقت وسیله اندازه گیری"
+    "sourceAnswerTextExtracted": "13 - 1 - دقت شخص2 - دقت وسیله اندازه گیری",
+    "visualCaption": null,
+    "promptVisual": null
   },
   {
     "id": "g7-ch02-main-014-1405",
@@ -1044,12 +1065,13 @@
     ],
     "visual": "g7_ch02_q14.png",
     "answerVisual": "g7_ch02_q14_source_answer.png",
-    "visualCaption": "هر دو خط‌کش، صفر خط‌کش، نوک مدادها و شماره شکل‌های ۱ و ۲ حفظ شده‌اند.",
+    "visualCaption": null,
     "answerVisualCaption": null,
     "canonicalId": "g7_ch02_q14",
     "sourceQuestionVisual": "g7_ch02_q14_source_question.png",
     "sourcePolicy": "verbatim_original_pdf",
-    "sourceAnswerTextExtracted": "14 - در شکل1 ، طول16 سانتی متر زیرا نوک مداد  به عدد16 . نزدیکتر است\nدر شکل2 ،   طول12 سانتی متر زیرا نوک مداد به12 . نزدیکتر است"
+    "sourceAnswerTextExtracted": "14 - در شکل1 ، طول16 سانتی متر زیرا نوک مداد  به عدد16 . نزدیکتر است\nدر شکل2 ،   طول12 سانتی متر زیرا نوک مداد به12 . نزدیکتر است",
+    "promptVisual": "g7_ch02_q14_source_prompt.png"
   },
   {
     "id": "g7-ch02-main-015-1405",
@@ -1129,12 +1151,13 @@
     ],
     "visual": "g7_ch02_q15.png",
     "answerVisual": "g7_ch02_q15_source_answer.png",
-    "visualCaption": "۱: ابزار سمت چپ؛ ۲: ابزار وسط؛ ۳: گروه سه ابزار سمت راست. پاسخ‌ها را به ترتیب همین شماره‌ها انتخاب کن.",
+    "visualCaption": null,
     "canonicalId": "g7_ch02_q15",
     "sourceQuestionVisual": "g7_ch02_q15_source_question.png",
     "answerVisualCaption": null,
     "sourcePolicy": "verbatim_original_pdf",
-    "sourceAnswerTextExtracted": "15 - به ترتیب :    نیروسنج ، اندازه گیری  نیروها مانند  وزن\n- استوانه مدرج ، اندازه گیری حجم مایع\n- ترازو  ، اندازه گیری جرم"
+    "sourceAnswerTextExtracted": "15 - به ترتیب :    نیروسنج ، اندازه گیری  نیروها مانند  وزن\n- استوانه مدرج ، اندازه گیری حجم مایع\n- ترازو  ، اندازه گیری جرم",
+    "promptVisual": "g7_ch02_q15_source_prompt.png"
   },
   {
     "id": "g7-ch02-mcq-001-1405",
@@ -1185,7 +1208,9 @@
     "sourceQuestionVisual": "g7_ch02_mcq01_source_question.png",
     "answerVisualCaption": null,
     "sourcePolicy": "verbatim_original_pdf",
-    "sourceAnswerTextExtracted": ": به ترتیب :     سؤالت چهار گزینه ای1 – ج2 – ج3 – الف4 – د5 - ب"
+    "sourceAnswerTextExtracted": ": به ترتیب :     سؤالت چهار گزینه ای1 – ج2 – ج3 – الف4 – د5 - ب",
+    "visualCaption": null,
+    "promptVisual": null
   },
   {
     "id": "g7-ch02-mcq-002-1405",
@@ -1236,7 +1261,9 @@
     "sourceQuestionVisual": "g7_ch02_mcq02_source_question.png",
     "answerVisualCaption": null,
     "sourcePolicy": "verbatim_original_pdf",
-    "sourceAnswerTextExtracted": ": به ترتیب :     سؤالت چهار گزینه ای1 – ج2 – ج3 – الف4 – د5 - ب"
+    "sourceAnswerTextExtracted": ": به ترتیب :     سؤالت چهار گزینه ای1 – ج2 – ج3 – الف4 – د5 - ب",
+    "visualCaption": null,
+    "promptVisual": null
   },
   {
     "id": "g7-ch02-mcq-003-1405",
@@ -1283,12 +1310,13 @@
     ],
     "visual": "g7_ch02_mcq03.png",
     "answerVisual": "g7_ch02_mcq03_source_answer.png",
-    "visualCaption": "جسم ۱۰۰ گرمی و نیروسنج از شکل اصلی",
+    "visualCaption": null,
     "canonicalId": "g7_ch02_mcq03",
     "sourceQuestionVisual": "g7_ch02_mcq03_source_question.png",
     "answerVisualCaption": null,
     "sourcePolicy": "verbatim_original_pdf",
-    "sourceAnswerTextExtracted": ": به ترتیب :     سؤالت چهار گزینه ای1 – ج2 – ج3 – الف4 – د5 - ب"
+    "sourceAnswerTextExtracted": ": به ترتیب :     سؤالت چهار گزینه ای1 – ج2 – ج3 – الف4 – د5 - ب",
+    "promptVisual": "g7_ch02_mcq03_source_prompt.png"
   },
   {
     "id": "g7-ch02-mcq-004-1405",
@@ -1335,12 +1363,13 @@
     ],
     "visual": "g7_ch02_mcq04.png",
     "answerVisual": "g7_ch02_mcq04_source_answer.png",
-    "visualCaption": "ظرف با سه ضلع ۱۰ سانتی‌متری",
+    "visualCaption": null,
     "canonicalId": "g7_ch02_mcq04",
     "sourceQuestionVisual": "g7_ch02_mcq04_source_question.png",
     "answerVisualCaption": null,
     "sourcePolicy": "verbatim_original_pdf",
-    "sourceAnswerTextExtracted": ": به ترتیب :     سؤالت چهار گزینه ای1 – ج2 – ج3 – الف4 – د5 - ب"
+    "sourceAnswerTextExtracted": ": به ترتیب :     سؤالت چهار گزینه ای1 – ج2 – ج3 – الف4 – د5 - ب",
+    "promptVisual": "g7_ch02_mcq04_source_prompt.png"
   },
   {
     "id": "g7-ch02-mcq-005-1405",
@@ -1387,11 +1416,12 @@
     ],
     "visual": "g7_ch02_mcq05.png",
     "answerVisual": "g7_ch02_mcq05_source_answer.png",
-    "visualCaption": "ترازوی دیجیتالی؛ علامت / در عددهای کتاب به صورت ممیز اعشاری نمایش داده شده است.",
+    "visualCaption": null,
     "canonicalId": "g7_ch02_mcq05",
     "sourceQuestionVisual": "g7_ch02_mcq05_source_question.png",
     "answerVisualCaption": null,
     "sourcePolicy": "verbatim_original_pdf",
-    "sourceAnswerTextExtracted": ": به ترتیب :     سؤالت چهار گزینه ای1 – ج2 – ج3 – الف4 – د5 - ب"
+    "sourceAnswerTextExtracted": ": به ترتیب :     سؤالت چهار گزینه ای1 – ج2 – ج3 – الف4 – د5 - ب",
+    "promptVisual": "g7_ch02_mcq05_source_prompt.png"
   }
 ]

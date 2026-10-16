@@ -126,6 +126,19 @@ def main():
         if c==3 and n in (16,17) and not ismcq:q['visual']='g7_ch03_mcq05_question.png' if n==16 else 'g7_ch03_q17_question.png'
         if c==3 and ismcq and n==5:q['visual']='g7_ch03_mcq05_question.png'
         if c==3 and not ismcq and n==15:q['visual']=None
+        q['visualCaption']=None
+        q['promptVisual']=None
+        prompt_text_hash=None
+        if q.get('visual'):
+            prompt_doc=fitz.open(stream=(PINNED/'کتاب کار علوم هفتم 1405.pdf').read_bytes(),filetype='pdf')
+            for page_number in sorted(set(seg['page'] for seg in r['segments'])):
+                page=prompt_doc[page_number-1]
+                original_text=page.get_text()
+                for xref in set(item[0] for item in page.get_images(full=True)):page.delete_image(xref)
+                assert page.get_text()==original_text, canonical
+            prompt_text_hash=hashlib.sha256(''.join(prompt_doc[seg['page']-1].get_text(clip=fitz.Rect(seg['bbox'])) for seg in r['segments']).encode()).hexdigest()
+            q['promptVisual']=f'{canonical}_source_prompt.png'
+            crops(prompt_doc,r['segments'],ASSETS/'images'/q['promptVisual'])
         for i,s in enumerate(q['steps'],1):
             s['id']=f'{q["id"]}-s{i:02}'
             s['answer']=r['answer_source']['text']
@@ -158,7 +171,7 @@ def main():
             if 'واژه «یکا»' in s['prompt']:raise AssertionError('editorial correction leaked')
         manifest.append(dict(id=canonical,questionAsset=q['sourceQuestionVisual'],questionSha256=sha(ASSETS/'images'/q['sourceQuestionVisual']),
             answerAsset=q['answerVisual'],answerSha256=sha(ASSETS/'images'/q['answerVisual']),questionSourceSegments=r['segments'],answerSourceSegments=segs,
-            answerImageRecommended=r.get('answer_image_recommended',False),formattingRisks=r.get('formatting_risks',[]),sharedAnswerStrip=False))
+            answerImageRecommended=r.get('answer_image_recommended',False),formattingRisks=r.get('formatting_risks',[]),sharedAnswerStrip=False,promptAsset=q['promptVisual'],promptSha256=sha(ASSETS/'images'/q['promptVisual']) if q['promptVisual'] else None,promptTextPreserved=True,promptTextSha256=prompt_text_hash))
         collections[c].append(q)
     for c,qs in collections.items():dump(ASSETS/f'content/chapter{c}.json',qs)
     dump(ROOT/'docs/source_fidelity_manifest.json',dict(policy='Author instruction: original questions and answers unchanged; original PDF crops only for reference answers.',
