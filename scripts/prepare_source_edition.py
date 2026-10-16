@@ -105,6 +105,8 @@ def main():
             q=dict(id=f'g7-ch03-{ "mcq" if ismcq else "main"}-{n:03}-1405',number=len(collections[c])+1,sourceNumber=n,
                 section='چهارگزینه‌ای' if ismcq else 'تمرین‌های اصلی',title='چهارگزینه‌ای' if ismcq else titles[n],concept='اتم‌ها، الفبای مواد',difficulty=2,
                 steps=mcq3[n] if ismcq else ch3[n],visual=None,visuals=[],legacyProgress=[])
+        neutral_titles={(1,1):'جای خالی',(1,4):'روش علمی',(2,12):'اندازه‌گیری زمان',(3,20):'تراکم‌پذیری مواد'}
+        if not ismcq and (c,n) in neutral_titles:q['title']=neutral_titles[c,n]
         q.update(grade=7,relatedChapter=c,sourceEdition='1405',sourcePage=r['page'],source=f'کتاب کار علوم هفتم ۱۴۰۵ • صفحهٔ {r["page"]}',
             bookPrompt=r['search_text'],canonicalId=canonical,sourceQuestionVisual=f'{canonical}_source_question.png',
             answerVisual=f'{canonical}_source_answer.png',answerVisualCaption=None,sourcePolicy='verbatim_original_pdf',sourceAnswerTextExtracted=r['answer_source']['text'])

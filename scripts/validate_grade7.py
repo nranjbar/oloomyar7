@@ -63,6 +63,16 @@ for name in images:
         if kind==b'IEND':ended=True;break
         pos+=n+12
     assert ended;zlib.decompress(b''.join(compressed))
+# Navigation titles must not print the completed source word-bank key.
+for qs in collections:
+    for q in qs:
+        for step in q['steps']:
+            if step.get('clozeTemplate'):
+                key=set(p['right'] for p in step['pairs'])
+                assert not all(word in q['title'] for word in key)
+assert collections[0][3]['title']=='روش علمی'
+assert collections[1][11]['title']=='اندازه‌گیری زمان'
+assert 'هوا' not in collections[2][19]['title']
 assert len(inline)==7
 assert [p['right'] for p in collections[2][0]['steps'][0]['pairs']]==['اتم','عنصر','اتم','فلز','ترکیب','جامد','مایع','گاز']
 assert 'با یکای {{1}}' in collections[1][0]['steps'][0]['clozeTemplate']
