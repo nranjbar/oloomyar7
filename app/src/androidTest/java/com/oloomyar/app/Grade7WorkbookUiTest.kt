@@ -18,6 +18,7 @@ import com.oloomyar.app.model.*
 import com.oloomyar.app.ui.AuditedWorkbookApp
 import com.oloomyar.app.ui.workbookBidi
 import com.oloomyar.app.ui.cropWorkbookAnswer
+import com.oloomyar.app.ui.SourceBitmap
 import com.oloomyar.app.ui.theme.OloomYarTheme
 import org.junit.Assert.*
 import org.junit.Before
@@ -33,7 +34,7 @@ class Grade7WorkbookUiTest {
     @get:Rule val testName=TestName()
     @After fun captureFinalUi() { capture("after-${testName.methodName}") }
     private val context get()=InstrumentationRegistry.getInstrumentation().targetContext
-    private val allQuestions get()=Grade7Chapter1Repository(context).questions+Grade7Chapter2Repository(context).questions+Grade7Chapter3Repository(context).questions
+    private val allQuestions get()=Grade7Catalog(context).chapters.flatMap { it.questions }
     private fun fa(v:Int)=v.toString().map { if(it in '0'..'9') "۰۱۲۳۴۵۶۷۸۹"[it-'0'] else it }.joinToString("")
 
     @Before fun reset() {
@@ -103,11 +104,11 @@ class Grade7WorkbookUiTest {
         compose.onNodeWithContentDescription("تصویر پاسخ سؤال ۱").performScrollTo().assertIsDisplayed()
         compose.onNodeWithText("پاسخ کتاب‌کار").assertExists();capture("grade7-04-original-answer")
     }
-    @Test fun correctSubmissionWaitsForExplicitNextAndDoesNotRevealTheKey() {
+    @Test fun correctSubmissionUnlocksCanonicalAnswerAndWaitsForExplicitNext() {
         val q=Grade7Chapter1Repository(context).questions.first();val s=q.steps.single();open(q)
         listOf("دانش","آزمایش","فناوری").forEachIndexed { i,v->selectBlank(s,i,v) };check()
         compose.onNodeWithText("سؤال بعدی").assertIsDisplayed()
-        compose.onNodeWithTag("reveal-answer").assertIsNotEnabled()
+        compose.onNodeWithTag("reveal-answer").assertIsEnabled()
         compose.onNodeWithText("پاسخ کتاب‌کار").assertDoesNotExist()
         compose.onNodeWithText("تمرین کامل شد").assertDoesNotExist()
         compose.onNodeWithText("سؤال بعدی").performClick()
@@ -160,10 +161,17 @@ class Grade7WorkbookUiTest {
         val draft=QuestionDraftCodec.decode(progress.draft(q.id));assertEquals(listOf("1"),draft.values(q.steps.single()))
         assertFalse(draft.canReveal());assertFalse(draft.revealed)
     }
-    @Test fun allFiftyNineOriginalQuestionsAndIsolatedAnswersDecodeAndAllControlsHaveAValidAnswer() {
-        val qs=allQuestions;assertEquals(59,qs.size);assertEquals(76,qs.sumOf { it.steps.size })
+    @Test fun all317OriginalQuestionsAndIsolatedAnswersRenderAndAllControlsHaveAValidAnswer() {
+        val qs=allQuestions;assertEquals(317,qs.size);assertEquals(334,qs.sumOf { it.steps.size })
         qs.flatMap { listOfNotNull(it.sourceQuestionVisual,it.answerVisual,it.visual,it.promptVisual)+it.visuals.map { v->v.asset } }.toSet().forEach { name->
-            val bmp=context.assets.open("images/$name").use { BitmapFactory.decodeStream(it) };assertNotNull(name,bmp);bmp!!.recycle()
+            val bmp=SourceBitmap.load(context,name);assertNotNull(name,bmp)
+            assertTrue(name,bmp!!.width>0 && bmp.height>0)
+            var hasInk=false
+            for(y in 0 until bmp.height step 3) {
+                for(x in 0 until bmp.width step 3) if((bmp.getPixel(x,y) and 0x00ffffff) < 0x00eeeeee) {hasInk=true;break}
+                if(hasInk) break
+            }
+            assertTrue("Empty source region: $name",hasInk)
         }
         qs.forEach { q->
             var state=QuestionPractice()
@@ -196,10 +204,12 @@ class Grade7WorkbookUiTest {
             }
         }
         for (id in listOf("g7_ch02_q08","g7_ch02_q09","g7_ch02_q10","g7_ch03_q17")) {
-            val original=context.assets.open("images/${id}_source_answer.png").use { BitmapFactory.decodeStream(it) }!!
+            val q=allQuestions.first { it.answerVisual!!.contains(if(id.startsWith("g7_ch02")) "answers02.pdf" else "answers03.pdf") &&
+                it.sourceNumber==id.substringAfterLast('q').toInt() && it.section=="تمرین‌های اصلی" }
+            val original=SourceBitmap.load(context,q.answerVisual!!)!!
             val cropped=cropWorkbookAnswer(original)
             assertEquals(id,ink(original),ink(cropped));assertTrue(cropped.width<=original.width)
-            if(cropped!==original)cropped.recycle();original.recycle()
+            if(cropped!==original)cropped.recycle()
         }
     }
     @Test fun examResultDoesNotProvideAReferenceAnswerShortcut() {

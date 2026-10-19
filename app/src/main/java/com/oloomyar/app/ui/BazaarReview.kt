@@ -19,8 +19,9 @@ internal fun launchBazaarReview(launch: (Intent) -> Unit): BazaarDestination {
     return when { attempt(app) -> BazaarDestination.APP; attempt(web) -> BazaarDestination.WEB; else -> BazaarDestination.UNAVAILABLE }
 }
 
-internal fun openBazaarReview(context: Context) {
+internal fun openBazaarReview(context: Context): Boolean {
     val result = launchBazaarReview { context.startActivity(it) }
     if (result == BazaarDestination.UNAVAILABLE) Toast.makeText(context,
         "بازار یا مرورگر در دسترس نیست. پس از نصب بازار و انتشار علوم‌یار هفتم می‌توانی نظر بدهی.", Toast.LENGTH_LONG).show()
+    return result != BazaarDestination.UNAVAILABLE
 }

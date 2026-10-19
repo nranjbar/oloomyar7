@@ -15,7 +15,7 @@ class LearningPreferences(context: Context) {
     fun lastLocation(): PracticeLocation? {
         val chapter = preferences.getInt("last_chapter", 0)
         val id = preferences.getString("last_question", null) ?: return null
-        return PracticeLocation(chapter, id).takeIf { chapter in 1..3 }
+        return PracticeLocation(chapter, id).takeIf { chapter in 1..15 }
     }
     fun remember(location: PracticeLocation) {
         preferences.edit().putInt("last_chapter", location.chapter).putString("last_question", location.questionId).apply()

@@ -5,7 +5,7 @@ import com.oloomyar.app.model.*
 import org.json.JSONArray
 import org.json.JSONObject
 
-abstract class AssetQuestionRepository(
+open class AssetQuestionRepository(
     private val context: Context,
     private val assetFile: String,
     private val collectionLabel: String,
@@ -63,6 +63,7 @@ abstract class AssetQuestionRepository(
                         promptVisual = optionalText(q, "promptVisual"),
                         readablePrompt = optionalText(q, "readablePrompt"),
                         originalFigureVisual = optionalText(q, "originalFigureVisual"),
+                        sourceReviewNote = optionalText(q, "sourceReviewNote"),
                         bookPrompt = optionalText(q, "bookPrompt") ?: q.getString("source"),
                         sourceNumber = q.optInt("sourceNumber", q.getInt("number")),
                         sourcePage = q.optInt("sourcePage"),
@@ -125,9 +126,10 @@ abstract class AssetQuestionRepository(
             }
 
             (listOfNotNull(q.visual, q.answerVisual, q.sourceQuestionVisual, q.promptVisual, q.originalFigureVisual) + q.visuals.map { it.asset }).forEach { asset ->
-                val folder = if (asset.lowercase().endsWith(".svg")) "svg" else "images"
-                require(runCatching { context.assets.open("$folder/$asset").close() }.isSuccess) {
-                    "Missing $collectionLabel asset: $folder/$asset"
+                val pdf = PdfSource.parse(asset)
+                val path = pdf?.let { "source/${it.file}" } ?: "${if (asset.lowercase().endsWith(".svg")) "svg" else "images"}/$asset"
+                require(runCatching { context.assets.open(path).close() }.isSuccess) {
+                    "Missing $collectionLabel asset: $path"
                 }
             }
         }

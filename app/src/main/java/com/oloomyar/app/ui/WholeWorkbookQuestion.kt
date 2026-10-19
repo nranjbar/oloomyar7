@@ -36,6 +36,8 @@ internal fun WholeWorkbookQuestion(
     sessionToken: Int,
     position: String,
     modifier: Modifier,
+    onPrevious: (() -> Unit)? = null,
+    onNext: (() -> Unit)? = null,
     onFinish: (Int, Boolean) -> Unit
 ) {
     var json by rememberSaveable(question.id, sessionToken) {
@@ -47,6 +49,7 @@ internal fun WholeWorkbookQuestion(
     val list = rememberLazyListState(initialScroll.optInt("scrollIndex"), initialScroll.optInt("scrollOffset"))
     val coroutine = rememberCoroutineScope()
     var showOriginal by rememberSaveable { mutableStateOf(false) }
+    var pendingReferenceScroll by remember { mutableStateOf(false) }
     var bookmarked by remember(question.id) { mutableStateOf(progress.bookmarked(question.id)) }
     val settings = LocalDisplaySettings.current
     val jump: (Int) -> Unit = { index -> coroutine.launch { if (settings.reduceMotion) list.scrollToItem(index) else list.animateScrollToItem(index) } }
@@ -78,7 +81,7 @@ internal fun WholeWorkbookQuestion(
     LaunchedEffect(question.id) {
         if (!exam) {
             update(state)
-            if (question.relatedChapter in 1..3) LearningPreferences(context).remember(PracticeLocation(question.relatedChapter, question.id))
+            if (question.relatedChapter in 1..15) LearningPreferences(context).remember(PracticeLocation(question.relatedChapter, question.id))
         }
     }
     LaunchedEffect(question.id, exam) {
@@ -106,6 +109,11 @@ internal fun WholeWorkbookQuestion(
                     }
                     Text("سؤال ${workbookFa(question.sourceNumber)} • ${question.title}", style = MaterialTheme.typography.titleLarge)
                     Text(question.source, color = Muted, style = MaterialTheme.typography.bodySmall)
+                    if (!exam && (onPrevious != null || onNext != null)) Row(horizontalArrangement = Arrangement.spacedBy(10.dp)) {
+                        TextButton(onClick = { onPrevious?.invoke() }, enabled = onPrevious != null, modifier = Modifier.testTag("previous-question")) { Text("سؤال قبلی") }
+                        TextButton(onClick = { onNext?.invoke() }, enabled = onNext != null, modifier = Modifier.testTag("next-question")) { Text("سؤال بعدی") }
+                    }
+                    question.sourceReviewNote?.let { Text(it, color = Orange, style = MaterialTheme.typography.bodySmall) }
                     if (finished) TextButton(onClick = { update(QuestionPractice()) }, modifier = Modifier.testTag("restart-practice")) { Text("تمرین دوباره") }
                     if (inlineStep == null) TextButton(onClick = { jump(3) }) {
                         Text("رفتن به پاسخ تعاملی")
@@ -172,7 +180,9 @@ internal fun WholeWorkbookQuestion(
                         }
                     }
                     Surface(color = if (allCorrect) GreenSoft else SelectionSoft, shape = RoundedCornerShape(16.dp)) {
-                        Text(if (allCorrect) "پاسخ درست است" else "${workbookFa(correctParts)} پاسخ درست؛ پاسخ‌های نادرست را اصلاح کن و دوباره بررسی کن.",
+                        Text(if (allCorrect) { if (question.sourceReviewNote != null) "پاسخ با کلید چاپی مطابقت دارد" else "پاسخ درست است" }
+                            else if (question.sourceReviewNote != null) "انتخاب با کلید چاپی مطابقت ندارد؛ یادداشت بررسی مؤلف را بخوان."
+                            else "${workbookFa(correctParts)} پاسخ درست؛ پاسخ‌های نادرست را اصلاح کن و دوباره بررسی کن.",
                             Modifier.fillMaxWidth().padding(14.dp).semantics { liveRegion = LiveRegionMode.Polite },
                             color = if (allCorrect) Green else SelectionInk)
                     }
@@ -183,9 +193,13 @@ internal fun WholeWorkbookQuestion(
                 if (!exam && state.revealed && state.canReveal(question)) {
                     WorkbookPanel(accent = Green) {
                         Text("پاسخ کتاب‌کار", color = Green, style = MaterialTheme.typography.titleLarge)
-                        Box(if (question.section == "چهارگزینه‌ای") Modifier.width(180.dp) else Modifier.fillMaxWidth()) {
-                            question.answerVisual?.let { WorkbookImage(it, "تصویر پاسخ سؤال ${workbookFa(question.sourceNumber)}", trimAnswerWhitespace = true) }
-                        }
+                        question.answerVisual?.let { WorkbookImage(it, "تصویر پاسخ سؤال ${workbookFa(question.sourceNumber)}", trimAnswerWhitespace = true,
+                            onImageReady = {
+                                if (pendingReferenceScroll) {
+                                    pendingReferenceScroll = false
+                                    jump(question.steps.size + 4)
+                                }
+                            }) }
                     }
                 }
             }
@@ -203,13 +217,12 @@ internal fun WholeWorkbookQuestion(
                         TextButton(enabled = state.canReveal(question) && !state.revealed, modifier = Modifier.weight(1f).testTag("reveal-answer"), onClick = {
                             val latest = QuestionDraftCodec.decode(json)
                             if (latest.canReveal(question)) {
+                                pendingReferenceScroll = true
                                 update(latest.reveal(question)); progress.recordReveal(question.id)
                                 // Only an explicit request to view the key moves the viewport.
                                 // Selection and checking keep the current sentence in place.
-                                coroutine.launch {
-                                    withFrameNanos { }
-                                    if (settings.reduceMotion) list.scrollToItem(question.steps.size + 4) else list.animateScrollToItem(question.steps.size + 4)
-                                }
+                                // Compose the target first; final alignment waits for actual PDF/image layout.
+                                coroutine.launch { withFrameNanos { }; list.scrollToItem(question.steps.size + 4) }
                             }
                         }) {
                             Icon(if (state.canReveal(question)) Icons.Default.Visibility else Icons.Default.Lock, null, Modifier.size(16.dp))
@@ -218,7 +231,7 @@ internal fun WholeWorkbookQuestion(
                     }
                     Text(when {
                         state.revealed -> "پاسخ کتاب نمایش داده شده؛ برای ادامه دکمهٔ پایین را بزن."
-                        allCorrect -> "همهٔ پاسخ‌ها درست‌اند؛ هر وقت آماده‌ای ادامه بده."
+                        allCorrect -> "همهٔ پاسخ‌ها درست‌اند؛ می‌توانی پاسخ اصلی کتاب را ببینی یا ادامه بدهی."
                         !state.complete(question) -> "همهٔ قسمت‌ها را کامل کن؛ انتخاب‌ها پیش از بررسی زرد هستند."
                         !state.canCheck(question) -> "این پاسخ قبلاً بررسی شده؛ یکی از موارد اشتباه را تغییر بده."
                         state.canReveal(question) -> "دوباره تلاش کن یا «دیدن پاسخ» را بزن."

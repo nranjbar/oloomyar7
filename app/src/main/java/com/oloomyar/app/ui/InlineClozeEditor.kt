@@ -69,13 +69,16 @@ internal fun InlineFillBlanksQuestion(
                         ResponseMark.SELECTED -> "انتخاب شده: $value"
                         else -> "بی‌پاسخ"
                     }
-                }.clickable(enabled = !locked(index), role = Role.Button) { active = index },
+                }.clickable(enabled = !locked(index), role = Role.Button) {
+                    if (value.isNotBlank()) onChange(List(rows.size) { if (it == index) "" else values.getOrElse(it) { "" } })
+                    active = index
+                },
             color = fill, contentColor = ink,
             border = BorderStroke(if (state == ResponseMark.EMPTY) 1.dp else 2.dp, ink.copy(alpha = .65f)),
             shape = RoundedCornerShape(12.dp)
         ) {
             Row(Modifier.padding(horizontal = 8.dp), verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.Center) {
-                Text(value.ifBlank { "انتخاب ${workbookFa(index + 1)}" }, style = MaterialTheme.typography.bodyMedium, fontWeight = FontWeight.Bold, maxLines = if (step.clozeTemplate == null) Int.MAX_VALUE else 2)
+                Text(value.ifBlank { "انتخاب ${workbookFa(index + 1)}" }, modifier = Modifier.weight(1f, fill = false), style = MaterialTheme.typography.bodyMedium, fontWeight = FontWeight.Bold)
                 Spacer(Modifier.width(3.dp))
                 Icon(when(state) {
                     ResponseMark.CORRECT -> Icons.Default.Check
@@ -91,18 +94,23 @@ internal fun InlineFillBlanksQuestion(
         val document = remember(step.id, template) { ClozeDocument.parse(template, step.id) }
         val measurer = rememberTextMeasurer()
         val density = LocalDensity.current
-        val style = MaterialTheme.typography.bodyLarge.copy(textDirection = TextDirection.Rtl, lineHeight = 58.sp)
+        val style = MaterialTheme.typography.bodyLarge.copy(textDirection = TextDirection.Rtl)
+        Text("برای انتخاب یا تغییر پاسخ، روی همان جای خالی بزن. لمس دوباره فقط انتخاب همان خانه را پاک می‌کند.",
+            style = MaterialTheme.typography.bodySmall, color = Muted, modifier = Modifier.padding(bottom = 10.dp))
         BoxWithConstraints(Modifier.fillMaxWidth()) {
-            val maxBlankWidth = with(density) { (maxWidth - 8.dp).toSp() }.value.coerceAtMost(260f).sp
+            val maximum = with(density) { (maxWidth - 12.dp).roundToPx() }.coerceAtLeast(1)
             val placeholders = rows.indices.associate { index ->
                 val value = values.getOrElse(index) { "" }.ifBlank { "انتخاب ${workbookFa(index + 1)}" }
-                val measured = measurer.measure(value, style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.Bold))
-                val width = (with(density) { measured.size.width.toSp() }.value + 46f).coerceIn(72f.coerceAtMost(maxBlankWidth.value), maxBlankWidth.value).sp
-                "blank$index" to InlineTextContent(Placeholder(width, 48.sp, PlaceholderVerticalAlign.Center)) { blank(index) }
+                val measured = measurer.measure(value, style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.Bold),
+                    constraints = Constraints(maxWidth = (maximum - with(density) { 44.dp.roundToPx() }).coerceAtLeast(1)))
+                val width = (measured.size.width + with(density) { 44.dp.roundToPx() })
+                    .coerceIn(with(density) { 48.dp.roundToPx() }.coerceAtMost(maximum), maximum)
+                val height = maxOf(measured.size.height + with(density) { 12.dp.roundToPx() }, with(density) { 48.dp.roundToPx() })
+                "blank$index" to InlineTextContent(Placeholder(with(density) { width.toSp() }, with(density) { height.toSp() }, PlaceholderVerticalAlign.Center)) { blank(index) }
             }
             val content = buildAnnotatedString {
                 document.tokens.forEach { token -> when (token) {
-                    is ClozeToken.Text -> append(token.value)
+                    is ClozeToken.Text -> append(workbookBidi(token.value))
                     is ClozeToken.Blank -> appendInlineContent("blank${token.index}", "................")
                 }
                 }
@@ -121,8 +129,9 @@ internal fun InlineFillBlanksQuestion(
             }
         }
     }
-    if (active in rows.indices && !locked(active)) {
-        WordBankBottomSheet(step, active, values, seed, onSelect = { replace(active, it) }, onDismiss = { active = -1 })
+    val activeRow = active
+    if (activeRow in rows.indices && !locked(activeRow)) {
+        WordBankBottomSheet(step, activeRow, values, seed, onSelect = { replace(activeRow, it) }, onDismiss = { active = -1 })
     }
 }
 

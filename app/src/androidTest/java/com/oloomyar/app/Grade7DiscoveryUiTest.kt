@@ -83,7 +83,7 @@ class Grade7DiscoveryUiTest {
     }
     @Test fun freshHomeStartsTheActualFirstQuestionAndCanBookmarkIt() {
         ActivityScenario.launch(MainActivity::class.java).use {
-            compose.onNodeWithTag("home-progress").assertTextEquals("۰ از ۵۹")
+            compose.onNodeWithTag("home-progress").assertTextEquals("۰ از ۳۱۷")
             compose.onNodeWithTag("home-start").assertHasClickAction();capture("discovery-01-home-360-default")
             compose.onNodeWithTag("home-start").performClick()
             compose.onNodeWithTag("bookmark-question").assertIsDisplayed().performClick()
@@ -130,7 +130,7 @@ class Grade7DiscoveryUiTest {
         chapter.progress.recordCheck(third,repaired,repaired.submit(third))
         val summary = Grade7Catalog(context).summary();assertEquals(3,summary.completed);assertEquals(1,summary.independent);assertEquals(1,summary.guided);assertEquals(1,summary.answerViewed);assertEquals(5,summary.attempts)
         ActivityScenario.launch(MainActivity::class.java).use {
-            compose.onNodeWithTag("nav-progress").performClick();compose.onNodeWithTag("completed-count").assertTextEquals("۳ از ۵۹ سؤال کامل شده")
+            compose.onNodeWithTag("nav-progress").performClick();compose.onNodeWithTag("completed-count").assertTextEquals("۳ از ۳۱۷ سؤال کامل شده")
             capture("discovery-04-real-progress")
             hubText("مرور اشتباهات");compose.onNodeWithTag("review-${second.id}").assertExists()
         }
@@ -192,7 +192,7 @@ class Grade7DiscoveryUiTest {
     }
     @Test fun replacementFiguresAreOfflineAvailableAndAnswerRemainsLocked() {
         val q = Grade7Chapter3Repository(context).questions.first { it.sourceNumber == 12 && it.section == "تمرین‌های اصلی" }
-        assertEquals(listOf("g7_ch03_q12_c_question.png","g7_ch03_q12_b_question.png","g7_ch03_q12_a_question.png"),q.visuals.map { it.asset })
+        assertEquals(listOf("g7_ch03_q12_c_question.webp","g7_ch03_q12_b_question.webp","g7_ch03_q12_a_question.webp"),q.visuals.map { it.asset })
         val intent = Intent(context,Grade7Chapter3Activity::class.java).putExtra("question_id",q.id)
         ActivityScenario.launch<Grade7Chapter3Activity>(intent).use {
             compose.onNodeWithTag("question-body").performScrollToIndex(2)

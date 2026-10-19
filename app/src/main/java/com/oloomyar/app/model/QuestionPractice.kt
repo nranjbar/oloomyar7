@@ -32,10 +32,11 @@ data class QuestionPractice(
             .distinct().size.coerceIn(0, 2)
     }
     fun canReveal(question: ChapterQuestion? = null) =
-        PracticeAttempts.canReveal(incorrectSubmissions.distinct().size, shownHints) &&
+        (question != null && correct(question)) ||
+        (PracticeAttempts.canReveal(incorrectSubmissions.distinct().size, shownHints) &&
             (question == null || question.steps.all { step ->
                 checked[step.id]?.let { WorkbookAnswers.isCorrect(step, it) } == true || hintLevel(question, step) >= 2
-            })
+            }))
 
     fun mark(step: LearningStep, row: Int): ResponseMark {
         val current = values(step)

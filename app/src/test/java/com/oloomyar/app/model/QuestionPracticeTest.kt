@@ -30,11 +30,19 @@ class QuestionPracticeTest {
         val old=twice.change(single,listOf("1"))
         assertFalse(old.canCheck(q));assertEquals(2,old.submit(q).incorrectSubmissions.size)
     }
-    @Test fun aCorrectAnswerAloneNeverRevealsTheOriginalKey() {
+    @Test fun correctAnswerUnlocksTheSameCanonicalKeyButStillNeedsExplicitReveal() {
         val q=question(blank,single)
         val done=QuestionPractice().change(blank,listOf("A","B")).change(single,listOf("0")).submit(q)
         assertTrue(done.correct(q));assertFalse(done.canReveal());assertFalse(done.reveal().revealed)
+        assertTrue(done.canReveal(q));assertFalse(done.revealed);assertTrue(done.reveal(q).revealed)
         assertFalse(done.canCheck(q));assertEquals(done,done.change(single,listOf("1")))
+    }
+    @Test fun clearingAnUnlockedBlankNeverCountsAnAttemptOrChangesAnotherBlank() {
+        val q=question(blank)
+        val state=QuestionPractice(shuffleSeed=93).change(blank,listOf("C","D"))
+        val cleared=state.change(blank,listOf("","D"))
+        assertEquals(listOf("","D"),cleared.values(blank));assertTrue(cleared.incorrectSubmissions.isEmpty())
+        assertEquals(0,cleared.shownHints);assertEquals(93,cleared.shuffleSeed);assertFalse(cleared.canCheck(q))
     }
     @Test fun bothHintsAndAnExplicitRequestAreRequired() {
         val q=question(single)

@@ -11,8 +11,8 @@ android {
         applicationId = "com.oloomyar.app.grade7"
         minSdk = 23
         targetSdk = 37
-        versionCode = 5
-        versionName = "0.4.0-grade7-discovery"
+        versionCode = 6
+        versionName = "0.5.0-grade7-1405"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         buildConfigField("int", "WORKBOOK_GRADE", "7")
     }
@@ -31,6 +31,17 @@ android {
     buildFeatures {
         compose = true
         buildConfig = true
+    }
+
+    // Originals remain in source control for provenance; only referenced lossless
+    // WebPs and one copy of each PDF are packaged. Never ship duplicate PNG crops.
+    androidResources { ignoreAssetsPattern = "*.png:*.tmp:.*:!CVS:!thumbs.db:!picasa.ini:!*~" }
+    buildTypes {
+        getByName("release") {
+            isMinifyEnabled = true
+            isShrinkResources = true
+            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+        }
     }
 
     compileOptions {

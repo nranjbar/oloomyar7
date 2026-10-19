@@ -1,6 +1,11 @@
 package com.oloomyar.app.ui
 
+import android.content.Intent
+import android.widget.Toast
 import androidx.activity.compose.BackHandler
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.LifecycleEventObserver
+import androidx.lifecycle.compose.LocalLifecycleOwner
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -14,6 +19,7 @@ import androidx.compose.material.icons.filled.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.saveable.rememberSaveableStateHolder
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
@@ -40,10 +46,29 @@ internal fun Grade7DiscoveryApp(catalog: Grade7Catalog, resumeRevision: Int, onO
     var page by rememberSaveable { mutableStateOf("") }
     var reviewFilter by rememberSaveable { mutableStateOf("mistakes") }
     var localRevision by remember { mutableIntStateOf(0) }
+    val tabStates = rememberSaveableStateHolder()
     val context = LocalContext.current
     val preferences = remember { LearningPreferences(context) }
     val summary = remember(resumeRevision, localRevision) { catalog.summary() }
     val last = remember(resumeRevision, localRevision) { catalog.validLocation(preferences.lastLocation()) }
+    var reviewPending by rememberSaveable { mutableStateOf(false) }
+    var reviewLeftApp by rememberSaveable { mutableStateOf(false) }
+    val lifecycle = LocalLifecycleOwner.current
+    DisposableEffect(lifecycle) {
+        val observer = LifecycleEventObserver { _, event ->
+            if (event == Lifecycle.Event.ON_PAUSE && reviewPending) reviewLeftApp = true
+            if (event == Lifecycle.Event.ON_RESUME && reviewPending && reviewLeftApp) {
+                reviewPending = false; reviewLeftApp = false
+                Toast.makeText(context, "از وقتی که برای ثبت نظر و امتیاز گذاشتی سپاسگزاریم.", Toast.LENGTH_LONG).show()
+            }
+        }
+        lifecycle.lifecycle.addObserver(observer)
+        onDispose { lifecycle.lifecycle.removeObserver(observer) }
+    }
+    val launchReview: () -> Unit = {
+        reviewPending = true; reviewLeftApp = false
+        if (!openBazaarReview(context)) reviewPending = false
+    }
     val review: (String) -> Unit = { reviewFilter = it; page = "review"; tab = "progress" }
     val title = when (page) {
         "review" -> "مرور و نشان‌گذاری"
@@ -85,7 +110,7 @@ internal fun Grade7DiscoveryApp(catalog: Grade7Catalog, resumeRevision: Int, onO
             }
         }) { padding ->
             Box(Modifier.fillMaxSize().padding(padding), contentAlignment = Alignment.TopCenter) {
-                key(tab, page) {
+                tabStates.SaveableStateProvider("$tab:$page") {
                     LazyColumn(Modifier.fillMaxHeight().widthIn(max = 760.dp).fillMaxWidth().testTag("hub-list"),
                         state = rememberLazyListState(), contentPadding = PaddingValues(16.dp), verticalArrangement = Arrangement.spacedBy(14.dp)) {
                         when (page) {
@@ -109,17 +134,25 @@ internal fun Grade7DiscoveryApp(catalog: Grade7Catalog, resumeRevision: Int, onO
                                             Icons.Default.History, Purple, PurpleSoft, Modifier.testTag("continue-last")) { onOpen(chapter.id, q.id, null, true) }
                                     }
                                     item { MiniProgress(summary) }
-                                    item { OloomSectionHeader("مسیرهای کشف", "سه فصل موجودِ کتاب کار ۱۴۰۵", Blue) }
+                                    item { OloomSectionHeader("مسیرهای کشف", "۱۵ فصل کتاب کار ۱۴۰۵", Blue) }
                                     items(catalog.chapters, key = { it.id }) { chapter -> DiscoveryChapterCard(chapter) { onOpen(chapter.id, null, null, false) } }
                                     item { ReviewShortcuts(summary, review) }
-                                    item { BazaarCard() }
+                                    item { BazaarCard(launchReview) }
+                                    item { ActionTile("معرفی علوم‌یار به دوستان", "اشتراک‌گذاری پیوند برنامهٔ هفتم", Icons.Default.Share, Purple, PurpleSoft, Modifier.testTag("share-app")) {
+                                        val intent = Intent(Intent.ACTION_SEND).apply {
+                                            type = "text/plain"
+                                            putExtra(Intent.EXTRA_TEXT, "علوم‌یار هفتم؛ تمرین کتاب کار علوم ۱۴۰۵\nhttps://cafebazaar.ir/app/${BuildConfig.APPLICATION_ID}")
+                                        }
+                                        runCatching { context.startActivity(Intent.createChooser(intent, "معرفی علوم‌یار")) }
+                                            .onFailure { Toast.makeText(context, "برنامه‌ای برای اشتراک‌گذاری در دسترس نیست.", Toast.LENGTH_LONG).show() }
+                                    } }
                                 }
                                 "chapters" -> {
                                     item { OloomSectionHeader("یک فصل، یک کشف تازه", "تمرین‌های اصلی و چهارگزینه‌ای، هرکدام در بخش خودشان.", Blue) }
                                     items(catalog.chapters, key = { it.id }) { chapter ->
                                         DiscoveryChapterCard(chapter, showSections = true, onSection = { onOpen(chapter.id, null, it, false) }) { onOpen(chapter.id, null, null, false) }
                                     }
-                                    item { Text("در این نسخه، فصل‌های ۱ تا ۳ در دسترس‌اند.", color = Muted, style = MaterialTheme.typography.bodySmall) }
+                                    item { Text("هر ۱۵ فصل کتاب‌کار ۱۴۰۵ در دسترس است.", color = Muted, style = MaterialTheme.typography.bodySmall) }
                                 }
                                 "progress" -> {
                                     item { ProgressPanel(summary) }
@@ -140,7 +173,15 @@ internal fun Grade7DiscoveryApp(catalog: Grade7Catalog, resumeRevision: Int, onO
                                     item { ActionTile("راهنمای استفاده", "انتخاب، بررسی و یادگیری مرحله‌ای", Icons.Default.Explore, RoyalBlue, BlueSoft) { page = "guide" } }
                                     item { ActionTile("تنظیمات", "اندازهٔ متن و کاهش حرکت", Icons.Default.Tune, Purple, PurpleSoft) { page = "settings" } }
                                     item { ActionTile("حریم خصوصی", "ذخیرهٔ محلی و کارکرد آفلاین", Icons.Default.PrivacyTip, Blue, BlueSoft) { page = "privacy" } }
-                                    item { BazaarCard() }
+                                    item { BazaarCard(launchReview) }
+                                    item { ActionTile("معرفی علوم‌یار به دوستان", "اشتراک‌گذاری پیوند برنامهٔ هفتم", Icons.Default.Share, Purple, PurpleSoft, Modifier.testTag("share-app")) {
+                                        val intent = Intent(Intent.ACTION_SEND).apply {
+                                            type = "text/plain"
+                                            putExtra(Intent.EXTRA_TEXT, "علوم‌یار هفتم؛ تمرین کتاب کار علوم ۱۴۰۵\nhttps://cafebazaar.ir/app/${BuildConfig.APPLICATION_ID}")
+                                        }
+                                        runCatching { context.startActivity(Intent.createChooser(intent, "معرفی علوم‌یار")) }
+                                            .onFailure { Toast.makeText(context, "برنامه‌ای برای اشتراک‌گذاری در دسترس نیست.", Toast.LENGTH_LONG).show() }
+                                    } }
                                     item { Text("علوم‌یار هفتم • نسخهٔ ${BuildConfig.VERSION_NAME}", color = Muted, style = MaterialTheme.typography.bodySmall, textAlign = TextAlign.Center, modifier = Modifier.fillMaxWidth()) }
                                 }
                             }
@@ -153,7 +194,7 @@ internal fun Grade7DiscoveryApp(catalog: Grade7Catalog, resumeRevision: Int, onO
     }
 }
 
-private fun chapterColor(id: Int) = when (id) { 2 -> RoyalBlue; 3 -> Purple; else -> Blue }
+private fun chapterColor(id: Int) = when (id % 4) { 2 -> RoyalBlue; 3 -> Purple; 0 -> Green; else -> Blue }
 
 @Composable
 private fun DiscoveryWelcome(returning: Boolean, onStart: () -> Unit) {
@@ -291,7 +332,7 @@ private fun LazyListScope.reviewItems(catalog: Grade7Catalog, filter: String, se
 }
 
 @Composable
-private fun BazaarCard() {
+private fun BazaarCard(onReview: () -> Unit) {
     val context = LocalContext.current
     OloomCard(color = Color(0xFFFFF8E6)) {
         Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(9.dp)) {
@@ -299,7 +340,7 @@ private fun BazaarCard() {
             Text("تجربه‌ات از علوم‌یار", style = MaterialTheme.typography.titleMedium)
         }
         Text("ثبت نظر پس از انتشار علوم‌یار هفتم در بازار امکان‌پذیر است.", color = Muted, style = MaterialTheme.typography.bodySmall)
-        OutlinedButton(onClick = { openBazaarReview(context) }, modifier = Modifier.fillMaxWidth().heightIn(min = 48.dp).testTag("bazaar-review")) { Text("ثبت نظر و امتیاز در بازار") }
+        OutlinedButton(onClick = onReview, modifier = Modifier.fillMaxWidth().heightIn(min = 48.dp).testTag("bazaar-review")) { Text("ثبت نظر و امتیاز در بازار") }
     }
 }
 
@@ -343,7 +384,7 @@ private fun AboutPanel() {
         Text("منبع محتوا", color = Blue, style = MaterialTheme.typography.titleMedium)
         Text("کتاب کار علوم تجربی پایهٔ هفتم، چاپ ۱۴۰۵، تألیف علی رنجبر، همراه با پاسخنامهٔ همان کتاب.")
         Text("حقوق محتوای کتاب متعلق به مؤلف و صاحبان حق نشر است. صورت سؤال و پاسخ مرجع از خود کتاب و پاسخنامه نمایش داده می‌شود.", color = Muted)
-        Text("نسخهٔ آزمایشی فصل‌های ۱ تا ۳ • ${BuildConfig.VERSION_NAME}", color = Muted, style = MaterialTheme.typography.bodySmall)
+        Text("۱۵ فصل کتاب‌کار ۱۴۰۵ • ${BuildConfig.VERSION_NAME}", color = Muted, style = MaterialTheme.typography.bodySmall)
     }
 }
 
@@ -355,7 +396,7 @@ private fun GuidePanel() {
             "۲. پاسخ‌ها را انتخاب کن" to "روی جای خالی بزن. انتخابت در همان جمله زرد می‌شود و صفحه جابه‌جا نمی‌شود.",
             "۳. همهٔ قسمت‌ها را بررسی کن" to "پس از تکمیل سؤال، «بررسی پاسخ» را بزن. درست‌ها سبز و ثابت می‌شوند؛ اشتباه‌ها قرمز و قابل اصلاح‌اند.",
             "۴. از راهنما استفاده کن" to "اولین پاسخ کامل نادرست، راهنمای اول و دومین پاسخ کامل نادرستِ متفاوت، راهنمای دوم را باز می‌کند. ارسال همان پاسخ دوباره، تلاش تازه نیست.",
-            "۵. دیدن پاسخ با تصمیم تو" to "قفل قسمت‌ها مستقل است. پس از دو تلاش متفاوت و راهنماها، پاسخ کتاب فقط با لمس «دیدن پاسخ» نشان داده می‌شود.",
+            "۵. دیدن پاسخ با تصمیم تو" to "پس از حل درست یا دو تلاش متفاوت و راهنماها، همان پاسخ اصلی کتاب با لمس «دیدن پاسخ» باز می‌شود. قفل قسمت‌های نادرست مستقل است.",
             "۶. تمرینت را ادامه بده" to "برای ادامه خودت «سؤال بعدی» را بزن. انتخاب‌ها و محل مطالعه ذخیره می‌شود. سؤال‌های مهم را با نشان بالای صفحه نگه دار."
         ).forEach { (title, body) ->
             Text(title, style = MaterialTheme.typography.titleMedium, color = RoyalBlue)

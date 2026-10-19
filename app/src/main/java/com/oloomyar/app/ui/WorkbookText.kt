@@ -13,7 +13,12 @@ import com.oloomyar.app.ui.theme.Ink
 internal fun workbookBidi(text: String): String {
     val science = Regex("[A-Za-z0-9۰-۹٠-٩₀-₉⁰-⁹Δπ][A-Za-z0-9۰-۹٠-٩₀-₉⁰-⁹¹²³ₐ-ₜΔπ̄⁺⁻+−×÷=./٫٬()|–: ]*")
     return text.split('\n').joinToString("\n") { line ->
-        if (line.contains('→') && !line.contains('←')) {
+        if (Regex("[<>≤≥]").containsMatchIn(line) && Regex("[آ-ی]").containsMatchIn(line)) {
+            // Keep comparison signs and the order of Persian material names explicit.
+            "\u2066" + line.split(Regex("(?=[<>≤≥])|(?<=[<>≤≥])")).joinToString("") { token ->
+                if (Regex("[آ-ی]").containsMatchIn(token)) "\u2067$token\u2069" else token
+            } + "\u2069"
+        } else if (line.contains('→') && !line.contains('←')) {
             // Keep the reaction direction while each Persian substance name remains RTL.
             "\u2066" + line.split(Regex("(?=[+→])|(?<=[+→])")).joinToString("") { token ->
                 if (Regex("[آ-ی]").containsMatchIn(token)) "\u2067$token\u2069" else token

@@ -50,7 +50,7 @@ pid_after=subprocess.run(['adb','shell','pidof',APP],capture_output=True,text=Tr
 run('adb','shell','am','start','-W','-n',f'{APP}/com.oloomyar.app.MainActivity')
 pid_restored=run('adb','shell','pidof',APP).strip();assert pid_restored and pid_restored != pid_before
 test('restoreCheckpointAfterRealProcessTermination')
-report=dict(status='PASS',oldVersion='0.3.0',newVersion='0.4.0',installReplacement=True,oldCompletionPreserved=True,
+report=dict(status='PASS',oldVersion='0.3.0',newVersion='0.5.0',installReplacement=True,oldCompletionPreserved=True,
     draftSelectionsHintsAndSeedPreserved=True,viewportPreserved=True,answerStayedLocked=True,bookmarksAndDisplaySettingsPreserved=True,
     pidBefore=pid_before,pidAfterStop=pid_after,pidRestored=pid_restored,tests=3)
 (OUT/'result.json').write_text(json.dumps(report,indent=2)+'\n')

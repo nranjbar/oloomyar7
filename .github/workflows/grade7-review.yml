@@ -10,7 +10,7 @@ on:
 jobs:
   grade7:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
         with:
@@ -29,12 +29,16 @@ jobs:
           sdkmanager "platforms;android-37" "build-tools;36.0.0"
           echo "sdk.dir=$ANDROID_SDK_ROOT" > local.properties
           chmod +x gradlew
+      - name: Install source audit tools
+        run: python3 -m pip install PyMuPDF==1.26.6 Pillow==11.3.0
       - name: Validate all Grade 7 questions and source images
         run: python3 scripts/validate_grade7.py
       - name: Install emulator image with the selected Android command line tools
         run: '"$ANDROID_SDK_ROOT/cmdline-tools/16111833/bin/sdkmanager" "emulator" "system-images;android-35;google_apis;x86_64"'
       - name: Assemble Grade 7 review app
         run: ./gradlew --no-daemon :app:testDebugUnitTest :app:assembleDebug :app:assembleDebugAndroidTest :app:bundleRelease --stacktrace
+      - name: Verify packaged source size and absence of duplicate PNGs
+        run: python3 scripts/check_apk_package.py
       - name: Build the previous signed review for real update verification
         run: |
           GRADE7_BASELINE_PROJECT="$RUNNER_TEMP/grade7-upgrade-baseline"
@@ -47,14 +51,14 @@ jobs:
       - name: Upload installable Grade 7 APK
         uses: actions/upload-artifact@v4
         with:
-          name: OloomYar7-Chapters1-3-APK
+          name: OloomYar7-1405-All15-APK
           path: app/build/outputs/apk/debug/app-debug.apk
           if-no-files-found: error
           retention-days: 14
       - name: Upload unsigned release bundle for production signing
         uses: actions/upload-artifact@v4
         with:
-          name: OloomYar7-0.4-Unsigned-AAB
+          name: OloomYar7-0.5-Unsigned-AAB
           path: app/build/outputs/bundle/release/app-release.aab
           if-no-files-found: error
       - name: Enable KVM
@@ -83,3 +87,16 @@ jobs:
             app/build/grade7-screenshots/
             app/build/persistence-verification/
             qa/grade7_content_validation.json
+            qa/android_package_size.json
+  cleanup-merged-grade7-branches:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main' && github.repository == 'nranjbar/oloomyar7'
+    needs: grade7
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Remove only branch tips already contained in verified main
+        run: python3 scripts/cleanup_merged_grade7_branches.py

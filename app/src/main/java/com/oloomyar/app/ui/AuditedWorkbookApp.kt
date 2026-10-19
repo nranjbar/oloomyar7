@@ -78,7 +78,8 @@ fun AuditedWorkbookApp(
             if (requested != null) {
                 part = requested.section
                 val sectionQuestions = questions.filter { it.section == requested.section }
-                start(if (continueSequence) sectionQuestions.dropWhile { it.id != requested.id } else listOf(requested), false)
+                start(sectionQuestions, false)
+                questionIndex = sectionQuestions.indexOfFirst { it.id == requested.id }.coerceAtLeast(0)
             } else if (initialSection in parts) {
                 part = initialSection!!; screen = "part"
             }
@@ -186,7 +187,7 @@ fun AuditedWorkbookApp(
                         OloomProgressBar(if (partQuestions.isEmpty()) 0f else done.toFloat() / partQuestions.size, Purple)
                         val pending = partQuestions.indexOfFirst { !progress.done(it.id) && progress.draft(it.id) != null }.takeIf { it >= 0 }
                             ?: partQuestions.indexOfFirst { !progress.done(it.id) }.coerceAtLeast(0)
-                        Button(onClick = { start(partQuestions.drop(pending), false) }, modifier = Modifier.fillMaxWidth().heightIn(min = 52.dp), shape = RoundedCornerShape(16.dp)) {
+                        Button(onClick = { start(partQuestions, false); questionIndex = pending }, modifier = Modifier.fillMaxWidth().heightIn(min = 52.dp), shape = RoundedCornerShape(16.dp)) {
                             Icon(Icons.Default.PlayArrow, null)
                             Spacer(Modifier.width(7.dp))
                             Text(if (partQuestions.any { progress.done(it.id) || progress.draft(it.id) != null }) "ادامهٔ تمرین" else "شروع تمرین")
@@ -212,7 +213,7 @@ fun AuditedWorkbookApp(
                     val done = progress.done(question.id)
                     val statusColor = when { mistake -> Orange; done -> Green; draft -> Purple; else -> Blue }
                     val statusSoft = when { mistake -> OrangeSoft; done -> GreenSoft; draft -> PurpleSoft; else -> BlueSoft }
-                    OloomCard(accent = statusColor, onClick = { start(listOf(question), false) }) {
+                    OloomCard(accent = statusColor, onClick = { start(partQuestions, false); questionIndex = partQuestions.indexOf(question) }) {
                         Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
                             Surface(color = statusSoft, shape = RoundedCornerShape(16.dp)) {
                                 Box(Modifier.size(46.dp), contentAlignment = Alignment.Center) {
@@ -245,7 +246,9 @@ fun AuditedWorkbookApp(
                     WholeWorkbookQuestion(
                         question, progress, conceptual, exam, sessionToken,
                         "سؤال ${workbookFa(questionIndex + 1)} از ${workbookFa(sessionIds.size)}",
-                        Modifier.padding(padding)
+                        Modifier.padding(padding),
+                        onPrevious = if (!exam && questionIndex > 0) ({ questionIndex-- }) else null,
+                        onNext = if (!exam && questionIndex < sessionIds.lastIndex) ({ questionIndex++ }) else null
                     ) { correct, perfect ->
                         score += correct; completed++
                         // WholeWorkbookQuestion records real checks/reveals immediately.

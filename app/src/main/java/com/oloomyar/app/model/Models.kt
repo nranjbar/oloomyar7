@@ -63,7 +63,9 @@ data class ChapterQuestion(
     val promptVisual: String? = null,
     /** Manually checked reading transcription; scientific layouts remain in their source figure. */
     val readablePrompt: String? = null,
-    val originalFigureVisual: String? = null
+    val originalFigureVisual: String? = null,
+    /** Editorial review note, separate from the immutable workbook question/key. */
+    val sourceReviewNote: String? = null
 )
 
 data class QuestionVisual(val asset: String, val caption: String? = null)

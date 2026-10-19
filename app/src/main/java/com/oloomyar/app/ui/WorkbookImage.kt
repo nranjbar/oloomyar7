@@ -3,6 +3,15 @@ package com.oloomyar.app.ui
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.horizontalScroll
+import androidx.compose.foundation.verticalScroll
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.gestures.scrollBy
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Add
+import androidx.compose.material.icons.filled.Remove
+import androidx.compose.ui.platform.testTag
+import kotlinx.coroutines.launch
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.gestures.rememberTransformableState
@@ -29,43 +38,39 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
 @Composable
-internal fun WorkbookImage(asset: String, description: String, caption: String? = null, trimAnswerWhitespace: Boolean = false, compact: Boolean = false) {
+internal fun WorkbookImage(asset: String, description: String, caption: String? = null, trimAnswerWhitespace: Boolean = false, compact: Boolean = false, onImageReady: (() -> Unit)? = null, maxImageHeight: androidx.compose.ui.unit.Dp? = null) {
     val context = LocalContext.current
     val loaded by produceState<Pair<Bitmap?, Boolean>>(null to false, asset, trimAnswerWhitespace) {
         value = withContext(Dispatchers.IO) {
-            val bitmap = runCatching {
-                val bounds = BitmapFactory.Options().apply { inJustDecodeBounds = true }
-                context.assets.open("images/$asset").use { BitmapFactory.decodeStream(it, null, bounds) }
-                val options = BitmapFactory.Options().apply {
-                    inSampleSize = 1
-                    while (maxOf(bounds.outWidth, bounds.outHeight) / inSampleSize > 2200) inSampleSize *= 2
-                }
-                context.assets.open("images/$asset").use { BitmapFactory.decodeStream(it, null, options) }
-            }.getOrNull()
-            val display = if (bitmap != null && trimAnswerWhitespace) cropWorkbookAnswer(bitmap) else bitmap
-            display to true
+            SourceBitmap.load(context, asset, trimAnswerWhitespace) to true
         }
     }
     var enlarged by remember { mutableStateOf(false) }
     val bitmap = loaded.first
+    val readyCallback by rememberUpdatedState(onImageReady)
+    LaunchedEffect(asset, bitmap) {
+        if(bitmap!=null && readyCallback!=null) {
+            // The decoded image changes this lazy item's measured height.
+            // Notify its owner after layout, without moving source figures.
+            withFrameNanos { }; withFrameNanos { }
+            readyCallback?.invoke()
+        }
+    }
     Column(Modifier.fillMaxWidth(), verticalArrangement = Arrangement.spacedBy(8.dp)) {
         if (bitmap != null) {
-            Surface(
-                color = Color.White,
-                shape = RoundedCornerShape(22.dp),
-                border = androidx.compose.foundation.BorderStroke(1.dp, Border),
-                shadowElevation = 2.dp
-            ) {
-                Image(
-                    bitmap.asImageBitmap(), description,
-                    Modifier.fillMaxWidth().aspectRatio(bitmap.width.toFloat() / bitmap.height)
-                        .background(Color.White).padding(7.dp)
-                        .clickable(role = Role.Button, onClickLabel = "بزرگ‌نمایی تصویر") { enlarged = true },
-                    contentScale = ContentScale.Fit
-                )
+            if(maxImageHeight==null) {
+                // Keep the established layout tree for every existing route.
+                // Only chapter-one MCQ thumbnails opt into constrained sizing.
+                WorkbookBitmapFigure(bitmap,description,Modifier.testTag("workbook-image-fit-$asset"),onEnlarge={enlarged=true})
+            } else BoxWithConstraints(Modifier.fillMaxWidth(),contentAlignment=Alignment.Center) {
+                val ratio=bitmap.width.toFloat()/bitmap.height
+                val displayWidth=minOf(maxWidth,(maxImageHeight-14.dp).coerceAtLeast(1.dp)*ratio+14.dp)
+                WorkbookBitmapFigure(bitmap,description,Modifier.width(displayWidth),onEnlarge={enlarged=true})
             }
-            TextButton(onClick = { enlarged = true }, modifier = Modifier.align(Alignment.End)) {
-                Text(if (compact) "بزرگ‌نمایی" else "بزرگ‌نمایی تصویر", style = MaterialTheme.typography.labelMedium)
+            OutlinedButton(onClick = { enlarged = true }, modifier = Modifier.fillMaxWidth().heightIn(min=48.dp)
+                .testTag("workbook-image-enlarge-$asset")) {
+                Icon(Icons.Default.Add,null,Modifier.size(20.dp));Spacer(Modifier.width(8.dp))
+                Text(if(trimAnswerWhitespace) "مشاهدهٔ کامل و بزرگ‌نمایی پاسخ" else "بزرگ‌نمایی تصویر")
             }
         } else if (!loaded.second) {
             LinearProgressIndicator(Modifier.fillMaxWidth())
@@ -75,38 +80,55 @@ internal fun WorkbookImage(asset: String, description: String, caption: String? 
         caption?.let { WorkbookText(it, color = Muted) }
     }
     if (enlarged && bitmap != null) {
-        var scale by remember { mutableFloatStateOf(1f) }
-        var pan by remember { mutableStateOf(Offset.Zero) }
+        // Start with the whole width visible, including very wide source crops.
+        // Zoom is explicit; no answer edge is hidden on opening the viewer.
+        var scale by remember(asset) { mutableFloatStateOf(1f) }
+        val vertical=rememberScrollState();val horizontal=rememberScrollState();val scope=rememberCoroutineScope()
         Dialog(onDismissRequest = { enlarged = false }, properties = DialogProperties(usePlatformDefaultWidth = false)) {
-            Surface(Modifier.fillMaxSize(), color = Color.White) {
+            Surface(Modifier.fillMaxSize().testTag("workbook-image-viewer"), color = Color.White) {
                 Column(Modifier.fillMaxSize().safeDrawingPadding()) {
                     Row(Modifier.fillMaxWidth().padding(8.dp), verticalAlignment = Alignment.CenterVertically) {
                         TextButton(onClick = { enlarged = false }) { Text("بستن") }
-                        Text(description, Modifier.weight(1f), style = MaterialTheme.typography.titleMedium)
+                        Text(description, Modifier.weight(1f), style = MaterialTheme.typography.bodyMedium)
                     }
                     BoxWithConstraints(Modifier.weight(1f).fillMaxWidth().clipToBounds()) {
-                        val width = constraints.maxWidth.toFloat()
-                        val height = constraints.maxHeight.toFloat()
-                        val transform = rememberTransformableState { zoom, offset, _ ->
-                            scale = (scale * zoom).coerceIn(1f, 5f)
-                            val limitX = width * (scale - 1f) / 2f
-                            val limitY = height * (scale - 1f) / 2f
-                            pan = Offset((pan.x + offset.x).coerceIn(-limitX, limitX), (pan.y + offset.y).coerceIn(-limitY, limitY))
+                        val width=maxWidth
+                        val transform=rememberTransformableState {zoom,offset,_->
+                            scale=(scale*zoom).coerceIn(1f,5f)
+                            scope.launch {horizontal.scrollBy(-offset.x);vertical.scrollBy(-offset.y)}
                         }
-                        Image(bitmap.asImageBitmap(), description,
-                            Modifier.fillMaxSize().transformable(transform).graphicsLayer {
-                                scaleX = scale; scaleY = scale; translationX = pan.x; translationY = pan.y
-                            }, contentScale = ContentScale.Fit)
+                        Box(Modifier.fillMaxSize().verticalScroll(vertical).horizontalScroll(horizontal).transformable(transform)) {
+                            Image(bitmap.asImageBitmap(),description,Modifier.width(width*scale).aspectRatio(bitmap.width.toFloat()/bitmap.height)
+                                .testTag("workbook-viewer-bitmap"),contentScale=ContentScale.Fit)
+                        }
                     }
-                    Row(Modifier.fillMaxWidth().padding(12.dp), horizontalArrangement = Arrangement.SpaceEvenly) {
-                        OutlinedButton(onClick = { scale = (scale - .5f).coerceAtLeast(1f); pan = Offset.Zero }, enabled = scale > 1f) { Text("کوچک‌تر") }
-                        TextButton(onClick = { scale = 1f; pan = Offset.Zero }) { Text("اندازهٔ اصلی") }
-                        OutlinedButton(onClick = { scale = (scale + .5f).coerceAtMost(5f) }, enabled = scale < 5f) { Text("بزرگ‌تر") }
+                    Row(Modifier.fillMaxWidth().padding(horizontal=12.dp,vertical=8.dp),verticalAlignment=Alignment.CenterVertically) {
+                        IconButton(onClick={scale=(scale-.5f).coerceAtLeast(1f)},enabled=scale>1f,modifier=Modifier.size(48.dp)) {Icon(Icons.Default.Remove,"کوچک‌تر")}
+                        TextButton(onClick={scale=1f;scope.launch {horizontal.scrollTo(0);vertical.scrollTo(0)}},modifier=Modifier.weight(1f).heightIn(min=48.dp)) {Text("نمایش کامل")}
+                        IconButton(onClick={scale=(scale+.5f).coerceAtMost(5f)},enabled=scale<5f,modifier=Modifier.size(48.dp)) {Icon(Icons.Default.Add,"بزرگ‌تر")}
                     }
-                    Text("با دو انگشت بزرگ کنید و تصویر را جابه‌جا کنید.", Modifier.padding(16.dp), color = Muted)
+                    Text("با + یا دو انگشت، پاسخ را بزرگ کن. در حالت بزرگ‌نمایی، تصویر را برای خواندن همهٔ قسمت‌ها بکش.",Modifier.padding(horizontal=16.dp,vertical=8.dp),style=MaterialTheme.typography.bodySmall,color=Muted)
                 }
             }
         }
     }
 }
 
+/** No extra layout wrapper is introduced when a route uses the default image size. */
+@Composable
+private fun WorkbookBitmapFigure(bitmap:Bitmap,description:String,modifier:Modifier=Modifier,onEnlarge:()->Unit) {
+    Surface(
+        modifier=modifier,
+        color=Color.White,
+        shape=RoundedCornerShape(22.dp),
+        border=androidx.compose.foundation.BorderStroke(1.dp,Border),
+        shadowElevation=2.dp
+    ) {
+        val ratio=bitmap.width.toFloat()/bitmap.height
+        val imageModifier=Modifier.fillMaxWidth().padding(7.dp).aspectRatio(ratio)
+        Image(bitmap.asImageBitmap(),description,
+            imageModifier.background(Color.White)
+                .clickable(role=Role.Button,onClickLabel="بزرگ‌نمایی تصویر",onClick=onEnlarge),
+            contentScale=ContentScale.Fit)
+    }
+}

@@ -1,0 +1,24 @@
+"""Inspect actual outputs, not an estimate, before shipping an Android build."""
+import hashlib,json,zipfile
+from pathlib import Path
+ROOT=Path(__file__).resolve().parents[1]
+outputs=[]
+for kind,relative in [('debug','app/build/outputs/apk/debug/app-debug.apk'),('releaseBundle','app/build/outputs/bundle/release/app-release.aab')]:
+    path=ROOT/relative;assert path.exists(),path
+    with zipfile.ZipFile(path) as archive:
+        names=archive.namelist();prefix='assets/'if kind=='debug'else'base/assets/'
+        assets=[n for n in names if n.startswith(prefix)]
+        assert sum(n.endswith('/source/workbook.pdf')for n in assets)==1
+        assert sum('/source/answers'in n and n.endswith('.pdf')for n in assets)==15
+        assert sum('/content/chapter'in n and n.endswith('.json')for n in assets)==15
+        assert not any(n.endswith('.png')for n in assets),'Duplicate raster originals were packaged'
+        assert all(prefix+f'images/chapter_{c:02}.webp'in names for c in range(1,16))
+        qs=[q for c in range(1,16)for q in json.loads(archive.read(prefix+f'content/chapter{c}.json'))]
+        assert len(qs)==317
+        assert all(q['answerVisual'].startswith('pdf:answers')for q in qs)
+        assert path.stat().st_size<47_596_130,'All fifteen chapters must stay below the previous three-chapter review APK size'
+        outputs.append(dict(kind=kind,path=relative,bytes=path.stat().st_size,sha256=hashlib.sha256(path.read_bytes()).hexdigest(),
+            assetEntries=len(assets),compressedAssetBytes=sum(archive.getinfo(n).compress_size for n in assets),
+            previousThreeChapterApkBytes=47_596_130))
+out=ROOT/'qa/android_package_size.json';out.write_text(json.dumps(dict(status='PASS',outputs=outputs),indent=2)+'\n')
+print(out.read_text())

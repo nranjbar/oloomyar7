@@ -24,10 +24,11 @@ class MainActivity : ComponentActivity() {
                         1 -> Grade7Chapter1Activity::class.java
                         2 -> Grade7Chapter2Activity::class.java
                         3 -> Grade7Chapter3Activity::class.java
-                        else -> null
+                        else -> Grade7WorkbookActivity::class.java
                     }
                     target?.let {
                         startActivity(Intent(this@MainActivity, it)
+                            .putExtra("chapter", chapter)
                             .putExtra("question_id", questionId).putExtra("section", section).putExtra("continue_sequence", sequence))
                     }
                 }

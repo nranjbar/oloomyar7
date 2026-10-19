@@ -69,12 +69,12 @@
       }
     ],
     "visual": null,
-    "answerVisual": "g7_ch02_q01_source_answer.png",
+    "answerVisual": "pdf:answers02.pdf#1,23.0,67.66,590.0,122.96",
     "editorialNotes": [
       "در بخش b، منظور نام کمیتِ فاصله و مسافت است؛ تفاوت کمیت و یکا در توضیح پاسخ روشن شده است."
     ],
     "canonicalId": "g7_ch02_q01",
-    "sourceQuestionVisual": "g7_ch02_q01_source_question.png",
+    "sourceQuestionVisual": "pdf:workbook.pdf#3,27,73.57,570,315.58",
     "answerVisualCaption": null,
     "sourcePolicy": "verbatim_original_pdf",
     "sourceAnswerTextExtracted": "1 - : به ترتیب a - جرم b – طول c – لیتر d - ظرف  های مدرج\ne اندازه گیری f – زمان g –\n- ثانیه",
@@ -238,15 +238,15 @@
         "allowTokenReuse": false
       }
     ],
-    "visual": "g7_ch02_q02.png",
-    "answerVisual": "g7_ch02_q02_source_answer.png",
+    "visual": "g7_ch02_q02.webp",
+    "answerVisual": "pdf:answers02.pdf#1,23.0,123.96,590.0,322.78",
     "visualCaption": null,
     "canonicalId": "g7_ch02_q02",
-    "sourceQuestionVisual": "g7_ch02_q02_source_question.png",
+    "sourceQuestionVisual": "pdf:workbook.pdf#3,27,317.58,570,668.71",
     "answerVisualCaption": null,
     "sourcePolicy": "verbatim_original_pdf",
     "sourceAnswerTextExtracted": "2 - ردیف اول :  [جرم :    مقدار ماده تشکیل دهنده جسم- کیلو گرم و گرم– ، ]  ترازو\nردیف دوم :  [  وزن :  نیروی  گرانشی  (جاذبه ای ) است که از طرف زمین بر جسم وارد می شود و\n. جسم را به طرف زمین می کشد - نیوتون- ،  ]   نیروسنج\nردیف سوم :  [ حجم                                                                    ] . :  مقدار فضایی که یک ماده اشغال می کند\nردیف چهارم :    [ چگالی- گرم                                         ] بر سانتی متر مکعب  ،  کیلو گرم بر متر مکعب",
-    "promptVisual": "g7_ch02_q02_source_prompt.png",
+    "promptVisual": null,
     "readablePrompt": "۲- جدول زیر را تکمیل کنید :",
     "originalFigureVisual": null
   },
@@ -294,9 +294,9 @@
       }
     ],
     "visual": null,
-    "answerVisual": "g7_ch02_q03_source_answer.png",
+    "answerVisual": "pdf:answers02.pdf#1,23.0,338.39,590.0,449.5",
     "canonicalId": "g7_ch02_q03",
-    "sourceQuestionVisual": "g7_ch02_q03_source_question.png",
+    "sourceQuestionVisual": "pdf:workbook.pdf#3,27,670.71,570,790;4,27,28,570,37.78",
     "answerVisualCaption": null,
     "sourcePolicy": "verbatim_original_pdf",
     "sourceAnswerTextExtracted": "3 - اگر جرم یک جسم کم باشد ، مانند   جرم  سی دی و یک موز و یک مداد  ،  از یکای گرم  استفاده\nمی کنیم ، ولی اگر جرم یک جسم زیادتر باشد  مانند جرم   لب تاب و گوسفند ،  از یکای کیلوگرم\nاستفاده می کنیم تا درک و فهم آن   . آسان باشد",
@@ -357,9 +357,9 @@
       }
     ],
     "visual": null,
-    "answerVisual": "g7_ch02_q04_source_answer.png",
+    "answerVisual": "pdf:answers02.pdf#1,23.0,462.05,590.0,491.76",
     "canonicalId": "g7_ch02_q04",
-    "sourceQuestionVisual": "g7_ch02_q04_source_question.png",
+    "sourceQuestionVisual": "pdf:workbook.pdf#4,27,39.78,570,133.9",
     "answerVisualCaption": null,
     "sourcePolicy": "verbatim_original_pdf",
     "sourceAnswerTextExtracted": "4 – الف– 60 نیوتون       ب- 2 نیوتون        ج- 6 نیوتون       د- 3000 نیوتون",
@@ -421,9 +421,9 @@
       }
     ],
     "visual": null,
-    "answerVisual": "g7_ch02_q05_source_answer.png",
+    "answerVisual": "pdf:answers02.pdf#1,23.0,493.21,590.0,517.33",
     "canonicalId": "g7_ch02_q05",
-    "sourceQuestionVisual": "g7_ch02_q05_source_question.png",
+    "sourceQuestionVisual": "pdf:workbook.pdf#4,27,135.9,570,175.03",
     "answerVisualCaption": null,
     "sourcePolicy": "verbatim_original_pdf",
     "sourceAnswerTextExtracted": "5 - میلی متر ، سانت                                                                                                        ی متر ، متر ، کیلومتر",
@@ -510,9 +510,9 @@
       }
     ],
     "visual": null,
-    "answerVisual": "g7_ch02_q06_source_answer.png",
+    "answerVisual": "pdf:answers02.pdf#1,23.0,518.33,590.0,604.32",
     "canonicalId": "g7_ch02_q06",
-    "sourceQuestionVisual": "g7_ch02_q06_source_question.png",
+    "sourceQuestionVisual": "pdf:workbook.pdf#4,27,177.03,570,348.34",
     "answerVisualCaption": null,
     "sourcePolicy": "verbatim_original_pdf",
     "sourceAnswerTextExtracted": "6 - الف– میلی متر ب- کیلومتر             ج- سانتی متر            د- متر\nزیرا طول هرکدام در هر اندازه و مرتبه ای قرار دار د باید با همان یکای طول مربوط به خود ، بیان\n. شود تا درک و فهم آن آسان باشد",
@@ -560,15 +560,15 @@
         "id": "g7-ch02-main-007-1405-s01"
       }
     ],
-    "visual": "g7_ch02_q07.png",
-    "answerVisual": "g7_ch02_q07_source_answer.png",
+    "visual": "g7_ch02_q07.webp",
+    "answerVisual": "pdf:answers02.pdf#1,23.0,605.89,590.0,659",
     "visualCaption": null,
     "answerVisualCaption": null,
     "canonicalId": "g7_ch02_q07",
-    "sourceQuestionVisual": "g7_ch02_q07_source_question.png",
+    "sourceQuestionVisual": "pdf:workbook.pdf#4,27,350.34,570,467.4",
     "sourcePolicy": "verbatim_original_pdf",
     "sourceAnswerTextExtracted": "7 - ، در یک استوانه مدرج مقدار معینی آب می ریزیم  و سپس سنگ کوچک را در آب می اندازیم\n. هرچه قدر آب باال آمد ، حجم سنگ کوچک است\n12 جرم",
-    "promptVisual": "g7_ch02_q07_source_prompt.png",
+    "promptVisual": null,
     "readablePrompt": "۷- به وسیله یک استوانه مدرج و آب ، آزمایشی طرح کنید که با انجام آن بتوانید حجم یک سنگ کوچک را اندازه بگیرید .",
     "originalFigureVisual": null
   },
@@ -616,9 +616,9 @@
       }
     ],
     "visual": null,
-    "answerVisual": "g7_ch02_q08_source_answer.png",
+    "answerVisual": "pdf:answers02.pdf#1,23.0,662.18,590.0,706.87",
     "canonicalId": "g7_ch02_q08",
-    "sourceQuestionVisual": "g7_ch02_q08_source_question.png",
+    "sourceQuestionVisual": "pdf:workbook.pdf#4,27,469.4,570,555.41",
     "answerVisualCaption": null,
     "sourcePolicy": "verbatim_original_pdf",
     "sourceAnswerTextExtracted": "–\n8 گرم بر سانتی متر مکعب 8 = 1/5 حجم= = چگالی",
@@ -697,18 +697,18 @@
         "id": "g7-ch02-main-009-1405-s02"
       }
     ],
-    "visual": "g7_ch02_q09.png",
-    "answerVisual": "g7_ch02_q09_source_answer.png",
+    "visual": "g7_ch02_q09.webp",
+    "answerVisual": "pdf:answers02.pdf#1,0,717,595,807",
     "visualCaption": null,
     "editorialNotes": [
       "تصویر اصلاح‌شده ارسالی با داده‌های متن هماهنگ است: ۳۶ گرم، ۶۰ و ۷۲ سانتی‌متر مکعب."
     ],
     "canonicalId": "g7_ch02_q09",
-    "sourceQuestionVisual": "g7_ch02_q09_source_question.png",
+    "sourceQuestionVisual": "pdf:workbook.pdf#4,27,557.41,570,790;5,27,28,570,34.97",
     "answerVisualCaption": null,
     "sourcePolicy": "verbatim_original_pdf",
     "sourceAnswerTextExtracted": "9 – الف- سانتی متر مکعب12 = 60 – 72\n36 جرم\nب- گرم بر سانتی متر مکعب 12 = 3 حجم= = چگالی\n160 جرم",
-    "promptVisual": "g7_ch02_q09_source_prompt.png",
+    "promptVisual": null,
     "readablePrompt": "۹- نیما جرم یک سنگ کوچک را با ترازو ۳۶ گرم اندازه گرفت . سپس آن را داخل یک استوانه مدرج که ۶۰ سانتی متر مکعب آب داشت ، انداخت . سطح آب روی ۷۲ سانتی متر مکعب قرار گرفت .\nالف- حجم سنگ چند سانتی متر مکعب است ؟\nب- چگالی سنگ را حساب کنید .",
     "originalFigureVisual": null
   },
@@ -783,9 +783,9 @@
       }
     ],
     "visual": null,
-    "answerVisual": "g7_ch02_q10_source_answer.png",
+    "answerVisual": "pdf:answers02.pdf#2,23.0,57.04,590.0,151",
     "canonicalId": "g7_ch02_q10",
-    "sourceQuestionVisual": "g7_ch02_q10_source_question.png",
+    "sourceQuestionVisual": "pdf:workbook.pdf#5,27,36.97,570,184.15",
     "answerVisualCaption": null,
     "sourcePolicy": "verbatim_original_pdf",
     "sourceAnswerTextExtracted": "10 - الف– گرم بر سانتی متر مکعب 400 = 0/4 = چگالی\nحجم=\nب- خیر  ،  زیرا چگالی آن از آب کم تر است . ( چگالی آب یک گرم بر سانتی متر ) مکعب است\n– چگالیA",
@@ -839,15 +839,15 @@
         "allowTokenReuse": false
       }
     ],
-    "visual": "g7_ch02_q11.png",
-    "answerVisual": "g7_ch02_q11_source_answer.png",
+    "visual": "g7_ch02_q11.webp",
+    "answerVisual": "pdf:answers02.pdf#2,23.0,159.44,590.0,239.96",
     "visualCaption": null,
     "canonicalId": "g7_ch02_q11",
-    "sourceQuestionVisual": "g7_ch02_q11_source_question.png",
+    "sourceQuestionVisual": "pdf:workbook.pdf#5,27,186.15,570,369.03",
     "answerVisualCaption": null,
     "sourcePolicy": "verbatim_original_pdf",
     "sourceAnswerTextExtracted": "11 کمتر از آب است\n- چگالیB برابر  آب ) است .( چون در آب غوطه ور است\n- چگالیC . بیش تر از آب است",
-    "promptVisual": "g7_ch02_q11_source_prompt.png",
+    "promptVisual": null,
     "readablePrompt": "۱۱- سه گلوله A ,B ,C را در آب انداخته ایم . وضعیت قرار گرفتن آن ها در آب ، در شکل مشخص است ؛\nبرای مقایسه چگالی این سه گلوله نسبت به آب ، در جاهای خالی از کلمات ( بیشتر از– کمنر از- برابر ) استفاده کنید .\n- چگالی گلوله A ........................................ آب است .\n- چگالی گلوله B ........................................ آب است .\n- چگالی گلوله C ........................................ آب است .",
     "originalFigureVisual": null
   },
@@ -952,15 +952,15 @@
         "id": "g7-ch02-main-012-1405-s03"
       }
     ],
-    "visual": "g7_ch02_q12.png",
-    "answerVisual": "g7_ch02_q12_source_answer.png",
+    "visual": "g7_ch02_q12.webp",
+    "answerVisual": "pdf:answers02.pdf#2,23.0,240.96,590.0,324.47",
     "visualCaption": null,
     "canonicalId": "g7_ch02_q12",
-    "sourceQuestionVisual": "g7_ch02_q12_source_question.png",
+    "sourceQuestionVisual": "pdf:workbook.pdf#5,27,371.03,570,601.2",
     "answerVisualCaption": null,
     "sourcePolicy": "verbatim_original_pdf",
     "sourceAnswerTextExtracted": "12 - الف– ) زمان سنج ( کرنومتر- ساعت\nب- به ترتیب :   ساعت- ) زمان سنج ( کرنومتر\nج- دقیقه ،  ساعت ،  شبانه روز  ،  سال",
-    "promptVisual": "g7_ch02_q12_source_prompt.png",
+    "promptVisual": null,
     "readablePrompt": "۱۲- در مورد زمان به سؤالات زیر پاسخ دهید .\nالف– برای اندازه گیری زمان از چه وسیله هایی استفاده می شود ؟ ( نام هر کدام را زیرشان بنویسید )\n........................................     ........................................\nب- برای پاسخ دادن به سؤال « چه وقت » معمولا از ........................................ استفاده می کنیم .\nولی برای پاسخ دادن به سؤال « چه مدت » از ........................................ استفاده می شود .\nج- یکا های اندازه گیری زمان که در زندگی روز مره از آنها استفاده می کنیم را نام ببرید .",
     "originalFigureVisual": null
   },
@@ -1009,9 +1009,9 @@
       }
     ],
     "visual": null,
-    "answerVisual": "g7_ch02_q13_source_answer.png",
+    "answerVisual": "pdf:answers02.pdf#2,23.0,325.47,590.0,355.18",
     "canonicalId": "g7_ch02_q13",
-    "sourceQuestionVisual": "g7_ch02_q13_source_question.png",
+    "sourceQuestionVisual": "pdf:workbook.pdf#5,27,603.2,570,659.79",
     "answerVisualCaption": null,
     "sourcePolicy": "verbatim_original_pdf",
     "sourceAnswerTextExtracted": "13 - 1 - دقت شخص2 - دقت وسیله اندازه گیری",
@@ -1089,15 +1089,15 @@
         "id": "g7-ch02-main-014-1405-s02"
       }
     ],
-    "visual": "g7_ch02_q14.png",
-    "answerVisual": "g7_ch02_q14_source_answer.png",
+    "visual": "g7_ch02_q14.webp",
+    "answerVisual": "pdf:answers02.pdf#2,23.0,356.63,590.0,411.46",
     "visualCaption": null,
     "answerVisualCaption": null,
     "canonicalId": "g7_ch02_q14",
-    "sourceQuestionVisual": "g7_ch02_q14_source_question.png",
+    "sourceQuestionVisual": "pdf:workbook.pdf#5,27,661.79,570,790;6,27,28,570,37.25",
     "sourcePolicy": "verbatim_original_pdf",
     "sourceAnswerTextExtracted": "14 - در شکل1 ، طول16 سانتی متر زیرا نوک مداد  به عدد16 . نزدیکتر است\nدر شکل2 ،   طول12 سانتی متر زیرا نوک مداد به12 . نزدیکتر است",
-    "promptVisual": "g7_ch02_q14_source_prompt.png",
+    "promptVisual": null,
     "readablePrompt": "۱۴- با توجه به این که دقت اندازه گیری خط کش ۱ سانتی متر است ، در شکل های زیر طول مداد چند سانتی متر گزارش می شود ؟ چرا ؟",
     "originalFigureVisual": null
   },
@@ -1177,15 +1177,15 @@
         "allowTokenReuse": false
       }
     ],
-    "visual": "g7_ch02_q15.png",
-    "answerVisual": "g7_ch02_q15_source_answer.png",
+    "visual": "g7_ch02_q15.webp",
+    "answerVisual": "pdf:answers02.pdf#2,23.0,413.03,590.0,493.45",
     "visualCaption": null,
     "canonicalId": "g7_ch02_q15",
-    "sourceQuestionVisual": "g7_ch02_q15_source_question.png",
+    "sourceQuestionVisual": "pdf:workbook.pdf#6,27,39.25,570,279.34",
     "answerVisualCaption": null,
     "sourcePolicy": "verbatim_original_pdf",
     "sourceAnswerTextExtracted": "15 - به ترتیب :    نیروسنج ، اندازه گیری  نیروها مانند  وزن\n- استوانه مدرج ، اندازه گیری حجم مایع\n- ترازو  ، اندازه گیری جرم",
-    "promptVisual": "g7_ch02_q15_source_prompt.png",
+    "promptVisual": null,
     "readablePrompt": "۱۵- هر کدام از وسایل زیر چه نام دارد و چه چیزی را اندازه می گیرد ؟",
     "originalFigureVisual": null
   },
@@ -1233,9 +1233,9 @@
       }
     ],
     "visual": null,
-    "answerVisual": "g7_ch02_mcq01_source_answer.png",
+    "answerVisual": "pdf:answers02.pdf#2,334,494.45,367,524.16",
     "canonicalId": "g7_ch02_mcq01",
-    "sourceQuestionVisual": "g7_ch02_mcq01_source_question.png",
+    "sourceQuestionVisual": "pdf:workbook.pdf#6,27,311.34,570,366.22",
     "answerVisualCaption": null,
     "sourcePolicy": "verbatim_original_pdf",
     "sourceAnswerTextExtracted": ": به ترتیب :     سؤالت چهار گزینه ای1 – ج2 – ج3 – الف4 – د5 - ب",
@@ -1288,9 +1288,9 @@
       }
     ],
     "visual": null,
-    "answerVisual": "g7_ch02_mcq02_source_answer.png",
+    "answerVisual": "pdf:answers02.pdf#2,279,494.45,315,524.16",
     "canonicalId": "g7_ch02_mcq02",
-    "sourceQuestionVisual": "g7_ch02_mcq02_source_question.png",
+    "sourceQuestionVisual": "pdf:workbook.pdf#6,27,368.22,570,427.18",
     "answerVisualCaption": null,
     "sourcePolicy": "verbatim_original_pdf",
     "sourceAnswerTextExtracted": ": به ترتیب :     سؤالت چهار گزینه ای1 – ج2 – ج3 – الف4 – د5 - ب",
@@ -1342,15 +1342,15 @@
         "id": "g7-ch02-mcq-003-1405-s01"
       }
     ],
-    "visual": "g7_ch02_mcq03.png",
-    "answerVisual": "g7_ch02_mcq03_source_answer.png",
+    "visual": "g7_ch02_mcq03.webp",
+    "answerVisual": "pdf:answers02.pdf#2,208,494.45,260,524.16",
     "visualCaption": null,
     "canonicalId": "g7_ch02_mcq03",
-    "sourceQuestionVisual": "g7_ch02_mcq03_source_question.png",
+    "sourceQuestionVisual": "pdf:workbook.pdf#6,27,429.18,570,544.68",
     "answerVisualCaption": null,
     "sourcePolicy": "verbatim_original_pdf",
     "sourceAnswerTextExtracted": ": به ترتیب :     سؤالت چهار گزینه ای1 – ج2 – ج3 – الف4 – د5 - ب",
-    "promptVisual": "g7_ch02_mcq03_source_prompt.png",
+    "promptVisual": null,
     "readablePrompt": "۳- یک جسم ۱۰۰ گرمی را به یک نیروسنج ( شکل مقابل ) آویزان کرده ایم . نیروسنج وزن آن را چند نیوتون نشان می دهد ؟\nالف- ۱     ب- ۱۰     ج- ۱۰۰     د- ۱۰۰۰",
     "originalFigureVisual": null
   },
@@ -1397,15 +1397,15 @@
         "id": "g7-ch02-mcq-004-1405-s01"
       }
     ],
-    "visual": "g7_ch02_mcq04.png",
-    "answerVisual": "g7_ch02_mcq04_source_answer.png",
+    "visual": "g7_ch02_mcq04.webp",
+    "answerVisual": "pdf:answers02.pdf#2,157,494.45,195,524.16",
     "visualCaption": null,
     "canonicalId": "g7_ch02_mcq04",
-    "sourceQuestionVisual": "g7_ch02_mcq04_source_question.png",
+    "sourceQuestionVisual": "pdf:workbook.pdf#6,27,546.68,570,662.07",
     "answerVisualCaption": null,
     "sourcePolicy": "verbatim_original_pdf",
     "sourceAnswerTextExtracted": ": به ترتیب :     سؤالت چهار گزینه ای1 – ج2 – ج3 – الف4 – د5 - ب",
-    "promptVisual": "g7_ch02_mcq04_source_prompt.png",
+    "promptVisual": null,
     "readablePrompt": "۴- در یک ظرف یک لیتری ، چند سانتی متر مکعب آب قرار می گیرد تا کاملاً پر شود ؟\nالف– ۱۰۰۰۰     ب- ۱۰۰     ج- ۱۰     د- ۱۰۰۰",
     "originalFigureVisual": null
   },
@@ -1452,15 +1452,15 @@
         "id": "g7-ch02-mcq-005-1405-s01"
       }
     ],
-    "visual": "g7_ch02_mcq05.png",
-    "answerVisual": "g7_ch02_mcq05_source_answer.png",
+    "visual": "g7_ch02_mcq05.webp",
+    "answerVisual": "pdf:answers02.pdf#2,96,494.45,139,524.16",
     "visualCaption": null,
     "canonicalId": "g7_ch02_mcq05",
-    "sourceQuestionVisual": "g7_ch02_mcq05_source_question.png",
+    "sourceQuestionVisual": "pdf:workbook.pdf#6,27,664.07,570,787",
     "answerVisualCaption": null,
     "sourcePolicy": "verbatim_original_pdf",
     "sourceAnswerTextExtracted": ": به ترتیب :     سؤالت چهار گزینه ای1 – ج2 – ج3 – الف4 – د5 - ب",
-    "promptVisual": "g7_ch02_mcq05_source_prompt.png",
+    "promptVisual": null,
     "readablePrompt": "۵- دقت اندازه گیری یک ترازوی دیجیتالی ( شکل مقابل ) ۰/۱ گرم است .\nکدام یک از موارد زیر نمی تواند اندازه گیری این ترازو باشد ؟\nالف- ۴ کیلوگرم     ب- ۲/۳۶ گرم     ج- ۲۲۵/۸ گرم     د- ۵/۵ کیلوگرم",
     "originalFigureVisual": null
   }

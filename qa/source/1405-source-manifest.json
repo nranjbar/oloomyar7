@@ -1,0 +1,103 @@
+{
+  "edition": 1405,
+  "grade": 7,
+  "referenceGrade9Commit": "1117ed101b66a4b70554e47b51887aaafe768203",
+  "files": [
+    {
+      "asset": "source/workbook.pdf",
+      "sha256": "c67f3709bc3134ae50566722257b38f38726d64f4620d7800da71ec8c8800321",
+      "bytes": 3764566,
+      "pages": 63
+    },
+    {
+      "asset": "source/answers01.pdf",
+      "sha256": "9c6403d440c60ac6b89386fc503b1716831c3a7af8cbda100c3b7f68fe40ecf9",
+      "bytes": 129487,
+      "pages": 1
+    },
+    {
+      "asset": "source/answers02.pdf",
+      "sha256": "52b68157353b7d7c2cfd465d1f2b787d38b84149e5234a34c96913b567b564b6",
+      "bytes": 167270,
+      "pages": 2
+    },
+    {
+      "asset": "source/answers03.pdf",
+      "sha256": "a3ca9d3ad5bfdae1e1d63047c2de80d882e3558d9ee72c9e0ebaa6fb4ca1fb54",
+      "bytes": 138284,
+      "pages": 2
+    },
+    {
+      "asset": "source/answers04.pdf",
+      "sha256": "3c8f66fd8e6ce3dfbf1cf0d2b18b00c6d2dfc091259cb971f2da012a06e97b15",
+      "bytes": 132096,
+      "pages": 2
+    },
+    {
+      "asset": "source/answers05.pdf",
+      "sha256": "1b020abeadd90e2bb6c5bf43b90605d2bba4c40794048f453350f8b298a09de9",
+      "bytes": 139324,
+      "pages": 2
+    },
+    {
+      "asset": "source/answers06.pdf",
+      "sha256": "a25e236c6e17cdad2e3c0109b266f26e680e810cc1c45a34cedf4f16524fc530",
+      "bytes": 139458,
+      "pages": 3
+    },
+    {
+      "asset": "source/answers07.pdf",
+      "sha256": "ac94dafe9425d83c98d32e2b0841a2e9548d94fcbbf08c912dd544d10f672c73",
+      "bytes": 150654,
+      "pages": 3
+    },
+    {
+      "asset": "source/answers08.pdf",
+      "sha256": "8c80499a32074b8c1e9a93fbc928c7efaf31ddd998aab67686bf1e090b047ad0",
+      "bytes": 135004,
+      "pages": 2
+    },
+    {
+      "asset": "source/answers09.pdf",
+      "sha256": "173ff6a4b9a88ed10f5d606113cd48b910a432e442ba97611546d7ee2593e03f",
+      "bytes": 124566,
+      "pages": 2
+    },
+    {
+      "asset": "source/answers10.pdf",
+      "sha256": "8f0bf0d7106a7e6c606338659ba7adaee8452816982015ae3a43dcdce5695bd1",
+      "bytes": 187530,
+      "pages": 4
+    },
+    {
+      "asset": "source/answers11.pdf",
+      "sha256": "b2f03cc6a72cc41d746a622a5720eeec03be9e0a148531aa7c6578ec71cfad63",
+      "bytes": 129043,
+      "pages": 2
+    },
+    {
+      "asset": "source/answers12.pdf",
+      "sha256": "d27c1b964193a99910730b4ef01b13bbbd35bd202dbd017fecc82cd4581a9a2a",
+      "bytes": 131779,
+      "pages": 2
+    },
+    {
+      "asset": "source/answers13.pdf",
+      "sha256": "31dd05d9de5d149e67be3d0c099c46adda3e495377c431b8a60307e644a9407a",
+      "bytes": 123216,
+      "pages": 2
+    },
+    {
+      "asset": "source/answers14.pdf",
+      "sha256": "5b4eeed57fab036baf14431dc8308a5341c8bf063e56030b105323d3da7279fb",
+      "bytes": 127663,
+      "pages": 2
+    },
+    {
+      "asset": "source/answers15.pdf",
+      "sha256": "3e2caaf67ecd37c32fba7ff2606aca26ca008d6e1053ff8c72f942410ada117c",
+      "bytes": 144615,
+      "pages": 1
+    }
+  ]
+}

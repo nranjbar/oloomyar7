@@ -1,16 +1,27 @@
 {
   "status": "PASS",
-  "questions": 59,
-  "steps": 76,
+  "edition": 1405,
+  "chapters": 15,
+  "questions": 317,
+  "learningGroups": 334,
+  "hintPairs": 334,
   "chapterCounts": [
     8,
     20,
-    31
+    31,
+    23,
+    22,
+    21,
+    34,
+    26,
+    18,
+    29,
+    13,
+    20,
+    17,
+    15,
+    20
   ],
-  "readableSourcePrompts": 59,
-  "sourceCharacterInventoriesPreserved": 59,
-  "sourceQuestionCrops": 59,
-  "isolatedSourceAnswers": 59,
   "inlineQuestions": [
     "g7_ch01_q01",
     "g7_ch01_q05",
@@ -18,22 +29,161 @@
     "g7_ch03_q01",
     "g7_ch03_q08",
     "g7_ch03_q10",
-    "g7_ch03_q17"
+    "g7_ch03_q17",
+    "g7_ch04_q01",
+    "g7_ch05_q01",
+    "g7_ch06_q01",
+    "g7_ch07_q01",
+    "g7_ch07_q08",
+    "g7_ch08_q01",
+    "g7_ch09_q01",
+    "g7_ch10_q01",
+    "g7_ch10_q04",
+    "g7_ch10_q16",
+    "g7_ch11_q01",
+    "g7_ch11_q09",
+    "g7_ch12_q01",
+    "g7_ch12_q11",
+    "g7_ch12_q12",
+    "g7_ch12_q20",
+    "g7_ch13_q01",
+    "g7_ch14_q01",
+    "g7_ch14_q03",
+    "g7_ch14_q06",
+    "g7_ch15_q01",
+    "g7_ch15_q08"
   ],
-  "images": 157,
-  "reviewedHintPairs": 76,
+  "nativeExtraTranscriptChecks": [
+    {
+      "id": "g7_ch04_q01",
+      "letterInventoryPreserved": true,
+      "textLayerBoundaryArtifact": false
+    },
+    {
+      "id": "g7_ch05_q01",
+      "letterInventoryPreserved": true,
+      "textLayerBoundaryArtifact": false
+    },
+    {
+      "id": "g7_ch06_q01",
+      "letterInventoryPreserved": true,
+      "textLayerBoundaryArtifact": false
+    },
+    {
+      "id": "g7_ch07_q01",
+      "letterInventoryPreserved": true,
+      "textLayerBoundaryArtifact": false
+    },
+    {
+      "id": "g7_ch07_q08",
+      "letterInventoryPreserved": true,
+      "textLayerBoundaryArtifact": false
+    },
+    {
+      "id": "g7_ch08_q01",
+      "letterInventoryPreserved": true,
+      "textLayerBoundaryArtifact": false
+    },
+    {
+      "id": "g7_ch09_q01",
+      "letterInventoryPreserved": true,
+      "textLayerBoundaryArtifact": false
+    },
+    {
+      "id": "g7_ch10_q01",
+      "letterInventoryPreserved": true,
+      "textLayerBoundaryArtifact": false
+    },
+    {
+      "id": "g7_ch10_q04",
+      "letterInventoryPreserved": true,
+      "textLayerBoundaryArtifact": false
+    },
+    {
+      "id": "g7_ch10_q16",
+      "letterInventoryPreserved": true,
+      "textLayerBoundaryArtifact": false
+    },
+    {
+      "id": "g7_ch11_q01",
+      "letterInventoryPreserved": true,
+      "textLayerBoundaryArtifact": false
+    },
+    {
+      "id": "g7_ch11_q09",
+      "letterInventoryPreserved": true,
+      "textLayerBoundaryArtifact": false
+    },
+    {
+      "id": "g7_ch12_q01",
+      "letterInventoryPreserved": true,
+      "textLayerBoundaryArtifact": false
+    },
+    {
+      "id": "g7_ch12_q11",
+      "letterInventoryPreserved": true,
+      "textLayerBoundaryArtifact": false
+    },
+    {
+      "id": "g7_ch12_q12",
+      "letterInventoryPreserved": true,
+      "textLayerBoundaryArtifact": false
+    },
+    {
+      "id": "g7_ch12_q20",
+      "letterInventoryPreserved": true,
+      "textLayerBoundaryArtifact": false
+    },
+    {
+      "id": "g7_ch13_q01",
+      "letterInventoryPreserved": false,
+      "textLayerBoundaryArtifact": true
+    },
+    {
+      "id": "g7_ch14_q01",
+      "letterInventoryPreserved": false,
+      "textLayerBoundaryArtifact": true
+    },
+    {
+      "id": "g7_ch14_q03",
+      "letterInventoryPreserved": true,
+      "textLayerBoundaryArtifact": false
+    },
+    {
+      "id": "g7_ch14_q06",
+      "letterInventoryPreserved": true,
+      "textLayerBoundaryArtifact": false
+    },
+    {
+      "id": "g7_ch15_q01",
+      "letterInventoryPreserved": true,
+      "textLayerBoundaryArtifact": false
+    },
+    {
+      "id": "g7_ch15_q08",
+      "letterInventoryPreserved": true,
+      "textLayerBoundaryArtifact": false
+    }
+  ],
+  "immutableSourcePdfs": 16,
+  "sourceQuestionRegions": 317,
+  "isolatedSourceAnswers": 317,
+  "scientificWebpAssets": 23,
   "interactionKinds": {
-    "match": 25,
-    "multi": 12,
-    "single": 34,
-    "order": 3,
+    "match": 194,
+    "multi": 40,
+    "single": 79,
+    "order": 19,
     "classify": 2
   },
+  "packagedAssetBytes": 14679038,
+  "contentRequiringAuthorConfirmation": [
+    "g7_ch13_mcq03"
+  ],
   "notes": [
-    "Original PDF crops are authoritative",
-    "No editorial answer cards or explanations displayed",
-    "MCQ crops contain only the current question key",
-    "Formula and adjacent-answer crop boundaries checked",
-    "Native UI and attempt tests are reported separately"
+    "Original question and answer PDFs are immutable and SHA-256 verified",
+    "Native transcription preserves source letters; two PDF boundary extraction artifacts are visually documented",
+    "Source MCQ key 13/3 is preserved, flagged, and not silently corrected",
+    "Android build, native UI, bitmap rendering and install replacement are separate checks"
   ]
 }
