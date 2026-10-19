@@ -13,6 +13,8 @@ for kind,relative in [('debug','app/build/outputs/apk/debug/app-debug.apk'),('re
         assert sum('/content/chapter'in n and n.endswith('.json')for n in assets)==15
         assert not any(n.endswith('.png')for n in assets),'Duplicate raster originals were packaged'
         assert all(prefix+f'images/chapter_{c:02}.webp'in names for c in range(1,16))
+        splash=prefix+'ui_art/launch_grade7.webp'
+        assert splash in names and archive.getinfo(splash).file_size<180_000
         qs=[q for c in range(1,16)for q in json.loads(archive.read(prefix+f'content/chapter{c}.json'))]
         assert len(qs)==317
         assert all(q['answerVisual'].startswith('pdf:answers')for q in qs)

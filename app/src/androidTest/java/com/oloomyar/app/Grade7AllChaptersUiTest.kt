@@ -38,6 +38,31 @@ class Grade7AllChaptersUiTest {
     }
     private fun clear(c:Int) { context.getSharedPreferences("workbook_1405_grade7_chapter$c",Context.MODE_PRIVATE).edit().clear().commit() }
 
+    @Test fun suppliedLaunchArtworkNeedsNoButtonAndAutomaticallyOpensHome() {
+        compose.mainClock.autoAdvance=false
+        try {
+            ActivityScenario.launch(MainActivity::class.java).use { activity ->
+                compose.waitUntil(10000) {
+                    compose.mainClock.advanceTimeByFrame()
+                    compose.onAllNodesWithTag("launch-artwork").fetchSemanticsNodes().isNotEmpty()
+                }
+                compose.onNodeWithTag("launch-artwork").assertIsDisplayed().assertHasNoClickAction()
+                compose.onNodeWithText("شروع").assertDoesNotExist()
+                compose.onNodeWithTag("hub-list").assertDoesNotExist()
+                compose.mainClock.advanceTimeBy(1000)
+                compose.onNodeWithTag("launch-artwork").assertIsDisplayed()
+                capture("grade7-launch-supplied-art-no-start")
+                compose.mainClock.advanceTimeBy(2100)
+                compose.awaitGrade7Home()
+                compose.onNodeWithTag("launch-splash").assertDoesNotExist()
+                compose.mainClock.autoAdvance=true
+                activity.recreate()
+                compose.awaitGrade7Home()
+                compose.onNodeWithTag("launch-splash").assertDoesNotExist()
+            }
+        } finally { compose.mainClock.autoAdvance=true }
+    }
+
     @Test fun restoringAFloatingFigureDoesNotEraseTheQuestionTextOrClipTheFigure() {
         val q=Grade7Catalog(context).chapters.first { it.id==5 }.questions.first { it.sourceNumber==8 }
         assertTrue(q.sourceQuestionVisual!!.contains("|+"))
@@ -57,6 +82,7 @@ class Grade7AllChaptersUiTest {
     @Test fun lastChapterOpensWithItsSuppliedCoverAndOriginalQuestion() {
         clear(15)
         ActivityScenario.launch(MainActivity::class.java).use {
+            compose.awaitGrade7Home()
             compose.onNodeWithTag("nav-chapters").performClick()
             compose.onNodeWithTag("hub-list").performScrollToNode(hasTestTag("chapter-15"))
             compose.onNodeWithContentDescription("جلد فصل 15").assertExists()
@@ -122,6 +148,7 @@ class Grade7AllChaptersUiTest {
     }
     @Test fun reviewAndShareExistOnlyInMoreAndAllFifteenChaptersAreCounted() {
         ActivityScenario.launch(MainActivity::class.java).use {
+            compose.awaitGrade7Home()
             assertEquals(317,Grade7Catalog(context).chapters.sumOf { it.questions.size })
             compose.onNodeWithTag("share-app").assertDoesNotExist()
             compose.onNodeWithTag("bazaar-review").assertDoesNotExist()

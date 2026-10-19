@@ -79,7 +79,7 @@ private val AppShapes = Shapes(
 )
 
 @Composable
-fun OloomYarTheme(content: @Composable () -> Unit) {
+fun OloomYarTheme(launchSplash: Boolean = false, content: @Composable () -> Unit) {
     val context = LocalContext.current
     val store = remember(context) { LearningPreferences(context) }
     var settings by remember(store) { mutableStateOf(store.display()) }
@@ -96,7 +96,7 @@ fun OloomYarTheme(content: @Composable () -> Unit) {
             colorScheme = Scheme,
             typography = AppTypography,
             shapes = AppShapes,
-            content = content
+            content = { if (launchSplash) com.oloomyar.app.ui.Grade7LaunchSplash(content) else content() }
         )
     }
 }

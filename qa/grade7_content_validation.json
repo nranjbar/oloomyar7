@@ -176,12 +176,12 @@
     "order": 19,
     "classify": 2
   },
-  "packagedAssetBytes": 14692344,
+  "packagedAssetBytes": 14817884,
   "contentRequiringAuthorConfirmation": [
     "g7_ch13_mcq03"
   ],
   "wholeFloatingFiguresRestored": 46,
-  "neighbouringFigureFragmentsExcluded": 44,
+  "neighbouringFigureFragmentsExcluded": 43,
   "notes": [
     "Original question and answer PDFs are immutable and SHA-256 verified",
     "Native transcription preserves source letters; two PDF boundary extraction artifacts are visually documented",

@@ -74,6 +74,7 @@ class Grade7PersistenceUiTest {
         assertEquals(DisplaySettings(1.25f,true),LearningPreferences(context).display())
         assertTrue(JSONObject(checkNotNull(store.draft(q.id))).getInt("scrollIndex") >= 3)
         ActivityScenario.launch(MainActivity::class.java).use {
+            compose.awaitGrade7Home()
             compose.onNodeWithTag("home-start").performClick()
             compose.onNodeWithTag("reveal-answer").assertIsNotEnabled()
             compose.onNodeWithContentDescription("تصویر پاسخ سؤال ۸").assertDoesNotExist()

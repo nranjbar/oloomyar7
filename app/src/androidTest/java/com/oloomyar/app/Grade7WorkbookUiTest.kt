@@ -74,6 +74,7 @@ class Grade7WorkbookUiTest {
     }
     @Test fun realHomeOpensTheThreeImplementedChapters() {
         ActivityScenario.launch(MainActivity::class.java).use {
+            compose.awaitGrade7Home()
             compose.onNodeWithText("علوم‌یار هفتم").assertIsDisplayed();capture("grade7-01-home")
             compose.onNode(hasScrollAction()).performScrollToNode(hasText("اتم‌ها، الفبای مواد"))
             compose.onNodeWithText("اتم‌ها، الفبای مواد").performClick()

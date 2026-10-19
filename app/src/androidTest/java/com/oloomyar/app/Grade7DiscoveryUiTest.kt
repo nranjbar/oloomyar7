@@ -83,6 +83,7 @@ class Grade7DiscoveryUiTest {
     }
     @Test fun freshHomeStartsTheActualFirstQuestionAndCanBookmarkIt() {
         ActivityScenario.launch(MainActivity::class.java).use {
+            compose.awaitGrade7Home()
             compose.onNodeWithTag("home-progress").assertTextEquals("۰ از ۳۱۷")
             compose.onNodeWithTag("home-start").assertHasClickAction();capture("discovery-01-home-360-default")
             compose.onNodeWithTag("home-start").performClick()
@@ -100,6 +101,7 @@ class Grade7DiscoveryUiTest {
         val progress = WorkbookProgress(context,"grade7_chapter2",listOf(q));progress.saveDraft(q.id,QuestionDraftCodec.encode(state))
         LearningPreferences(context).remember(PracticeLocation(2,q.id))
         ActivityScenario.launch(MainActivity::class.java).use {
+            compose.awaitGrade7Home()
             compose.onNodeWithTag("home-start").performClick()
             compose.onNodeWithTag("reveal-answer").assertIsNotEnabled()
             assertEquals(state,QuestionDraftCodec.decode(progress.draft(q.id)))
@@ -110,6 +112,7 @@ class Grade7DiscoveryUiTest {
         val q = Grade7Chapter3Repository(context).questions.first { it.sourceNumber == 15 && it.section == "تمرین‌های اصلی" }
         WorkbookProgress(context,"grade7_chapter3",listOf(q)).bookmark(q.id,true)
         ActivityScenario.launch(MainActivity::class.java).use {
+            compose.awaitGrade7Home()
             compose.onNodeWithTag("nav-progress").performClick(); hubText("نشان‌گذاری‌ها")
             compose.onNodeWithTag("review-${q.id}").performScrollTo().performClick()
             compose.onNodeWithContentDescription("حذف نشان سؤال").assertExists()
@@ -130,6 +133,7 @@ class Grade7DiscoveryUiTest {
         chapter.progress.recordCheck(third,repaired,repaired.submit(third))
         val summary = Grade7Catalog(context).summary();assertEquals(3,summary.completed);assertEquals(1,summary.independent);assertEquals(1,summary.guided);assertEquals(1,summary.answerViewed);assertEquals(5,summary.attempts)
         ActivityScenario.launch(MainActivity::class.java).use {
+            compose.awaitGrade7Home()
             compose.onNodeWithTag("nav-progress").performClick();compose.onNodeWithTag("completed-count").assertTextEquals("۳ از ۳۱۷ سؤال کامل شده")
             capture("discovery-04-real-progress")
             hubText("مرور اشتباهات");compose.onNodeWithTag("review-${second.id}").assertExists()
@@ -138,6 +142,7 @@ class Grade7DiscoveryUiTest {
     @Test fun largeFontReduceMotionAndFourTabsSurviveRecreationAt360dp() {
         shell("wm size 1080x2160");shell("wm density 480")
         ActivityScenario.launch(MainActivity::class.java).use { scenario ->
+            compose.awaitGrade7Home()
             compose.onNodeWithTag("nav-more").performClick();hubText("تنظیمات")
             compose.onNodeWithTag("font-1.5").performClick();compose.onNodeWithTag("reduce-motion").performScrollTo().performClick()
             assertEquals(DisplaySettings(1.5f,true),LearningPreferences(context).display());scenario.recreate()
@@ -150,11 +155,13 @@ class Grade7DiscoveryUiTest {
     @Test fun homeAndSettingsRemainUsableOn393dpAndTablet() {
         shell("wm size 1080x2160");shell("wm density 440")
         ActivityScenario.launch(MainActivity::class.java).use {
+            compose.awaitGrade7Home()
             compose.onNodeWithTag("home-start").assertIsDisplayed();capture("discovery-07-home-393")
         }
         shell("wm size 1200x1920");shell("wm density 240")
         LearningPreferences(context).reduceMotion(true)
         ActivityScenario.launch(MainActivity::class.java).use {
+            compose.awaitGrade7Home()
             compose.onNodeWithTag("home-start").assertIsDisplayed();capture("discovery-08-tablet-800dp")
             compose.onNodeWithTag("nav-more").performClick();hubText("دربارهٔ علوم‌یار")
             compose.onNodeWithText("کتاب کار علوم تجربی پایهٔ هفتم، چاپ ۱۴۰۵، تألیف علی رنجبر، همراه با پاسخنامهٔ همان کتاب.").assertExists()
@@ -170,6 +177,7 @@ class Grade7DiscoveryUiTest {
         assertEquals(BazaarDestination.UNAVAILABLE,launchBazaarReview { throw ActivityNotFoundException() })
         assertEquals(BazaarDestination.UNAVAILABLE,launchBazaarReview { throw SecurityException() })
         ActivityScenario.launch(MainActivity::class.java).use {
+            compose.awaitGrade7Home()
             compose.onNodeWithTag("nav-more").performClick();compose.onNodeWithTag("hub-list").performScrollToNode(hasTestTag("bazaar-review"))
             compose.onNodeWithTag("bazaar-review").performClick()
         }

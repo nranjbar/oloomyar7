@@ -1680,7 +1680,7 @@
       "chapter": 3,
       "sourceNumber": 16,
       "section": "main",
-      "questionAsset": "pdf:workbook.pdf#9,27,363.18,570,490.85|-9,7.0,473.18,115.05,625.48",
+      "questionAsset": "pdf:workbook.pdf#9,27,363.18,570,490.85",
       "answerAsset": "pdf:answers03.pdf#2,23.0,99.44,590.0,179.84",
       "questionSourceSegments": [
         {
@@ -1707,17 +1707,7 @@
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
       "paperAdditions": [],
-      "paperExclusions": [
-        {
-          "page": 9,
-          "bbox": [
-            7.0,
-            473.18,
-            115.05,
-            625.48
-          ]
-        }
-      ],
+      "paperExclusions": [],
       "readingTranscript": "۱۶- ویژگی های کلی اتم ها را بنویسید .",
       "inline": false
     },
@@ -1726,7 +1716,7 @@
       "chapter": 3,
       "sourceNumber": 17,
       "section": "main",
-      "questionAsset": "pdf:workbook.pdf#9,27,492.85,570,631.74|+9,7.0,473.18,115.05,625.48",
+      "questionAsset": "pdf:workbook.pdf#9,27,492.85,570,631.74|+9,7.0,492.85,115.05,625.48",
       "answerAsset": "pdf:answers03.pdf#2,23.0,180.84,590.0,265",
       "questionSourceSegments": [
         {
@@ -1757,7 +1747,7 @@
           "page": 9,
           "bbox": [
             7.0,
-            473.18,
+            492.85,
             115.05,
             625.48
           ]

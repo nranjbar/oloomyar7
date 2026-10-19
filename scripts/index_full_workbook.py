@@ -73,6 +73,12 @@ def complete_paper_figures(book,records):
         page_records=[r for r in records if any(s['page']==pn for s in r['segments'])]
         for image in book[pn-1].get_image_info(xrefs=True):
             bb=fitz.Rect(image['bbox'])
+            # The atom bitmap has blank top padding which overlaps the preceding
+            # atomic-model picture. Rendering its full PDF bounding box would
+            # copy that neighbour, and masking it would cut the model's bottom.
+            # All ink belonging to question 17 starts below this empty padding.
+            if pn==9 and abs(bb.x0-7)<.1 and abs(bb.y0-473.18)<.1:
+                bb.y0=492.85
             if bb.is_empty or bb.get_area()<20:continue
             overlaps=[]
             for r in page_records:

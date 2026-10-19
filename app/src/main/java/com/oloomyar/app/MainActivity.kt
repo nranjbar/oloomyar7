@@ -18,7 +18,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         val catalog = Grade7Catalog(applicationContext)
         setContent {
-            OloomYarTheme {
+            OloomYarTheme(launchSplash = true) {
                 Grade7DiscoveryApp(catalog, resumeRevision) { chapter, questionId, section, sequence ->
                     val target = when (chapter) {
                         1 -> Grade7Chapter1Activity::class.java
