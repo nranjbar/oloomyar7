@@ -4,13 +4,21 @@ package com.oloomyar.app.ui
 
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.drawBehind
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.Layout
+import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.semantics.*
@@ -34,7 +42,7 @@ internal fun NativeWorkbookContent(
         blocks.forEach { block ->
             if (block.type in setOf("cloze", "reaction", "input", "barChart")) add(block.step)
             block.rows.flatten().forEach { cell ->
-                Regex("""\{\{(\d+)(?::\d+)?}}""").findAll(cell).forEach { add(it.groupValues[1].toInt()) }
+                Regex("""\{\{(\d+)(?::\d+)?\}\}""").findAll(cell).forEach { add(it.groupValues[1].toInt()) }
             }
         }
     } }
@@ -42,7 +50,7 @@ internal fun NativeWorkbookContent(
     val edit: @Composable (Int, String?) -> Unit = { index, template ->
         val step = question.steps[index]
         if (practice == null) {
-            if (template != null) WorkbookText(Regex("""\{\{\d+}}""").replace(template, "................"))
+            if (template != null) WorkbookText(Regex("""\{\{\d+\}\}""").replace(template, "................"))
             else if (step.kind in setOf(StepKind.SINGLE, StepKind.MULTI)) step.options.forEach { WorkbookText(it.text) }
         } else if (template != null && step.kind == StepKind.MATCH) {
             InlineFillBlanksQuestion(step.copy(clozeTemplate = template), display?.values(step).orEmpty(), display?.shuffleSeed ?: 0,
@@ -71,7 +79,7 @@ internal fun NativeWorkbookContent(
                 "table" -> SourceTable(block, question, display, exam, onChange)
                 "math" -> SourceEquation(block.parts)
                 "reaction" -> {
-                    if (practice == null) WorkbookText(Regex("""\{\{\d+}}""").replace(block.text, "................"))
+                    if (practice == null) WorkbookText(Regex("""\{\{\d+\}\}""").replace(block.text, "................"))
                     else {
                     Text("معادله را از چپ به راست کامل کن.", color = Muted, style = MaterialTheme.typography.bodySmall)
                     CompositionLocalProvider(LocalLayoutDirection provides LayoutDirection.Ltr) {
@@ -136,29 +144,52 @@ private fun SourceTable(block: SourceBlock, question: ChapterQuestion, state: Qu
     BoxWithConstraints(Modifier.fillMaxWidth()) {
         val weights = if (block.widths.size == cols) block.widths else List(cols) { 1f }
         val unit = maxOf(136.dp, maxWidth / weights.sum())
-        Column(Modifier.horizontalScroll(rememberScrollState()).testTag("native-source-table").border(1.dp, Border, RoundedCornerShape(12.dp))) {
+        Column(Modifier.horizontalScroll(rememberScrollState()).testTag("native-source-table").clip(RoundedCornerShape(12.dp)).border(1.dp, Border, RoundedCornerShape(12.dp))) {
             (listOf(block.headers) + block.rows).forEachIndexed { row, cells ->
-                Row {
-                    cells.forEachIndexed { col, cell ->
-                        Surface(color = if (row == 0) BlueSoft else if (col == 0) SurfaceMuted else Color.White,
-                            border = BorderStroke(.5.dp, Border)) {
-                            Box(Modifier.width(unit * weights[col]).heightIn(min = 70.dp).padding(12.dp)) {
-                                val token = Regex("""\{\{(\d+)(?::(\d+))?}}""").find(cell)
-                                if (token == null || state == null) WorkbookText(Regex("""\{\{\d+(?::\d+)?}}""").replace(cell, "................"), bold = row == 0)
+                SourceTableRow(cells, weights.map { unit * it }, row == 0) { _, cell ->
+                                val token = Regex("""\{\{(\d+)(?::(\d+))?\}\}""").find(cell)
+                                if (token == null || state == null) WorkbookText(Regex("""\{\{\d+(?::\d+)?\}\}""").replace(cell, "................"), bold = row == 0)
                                 else {
                                     val step = question.steps[token.groupValues[1].toInt()]
                                     if (step.kind == StepKind.MATCH) {
-                                        val template = Regex("""\{\{\d+:(\d+)}}""").replace(cell) { "{{${it.groupValues[1]}}}" }
+                                        val template = Regex("""\{\{\d+:(\d+)\}\}""").replace(cell) { "{{${it.groupValues[1]}}}" }
                                         InlineFillBlanksQuestion(step.copy(clozeTemplate = template), state.values(step), state.shuffleSeed,
                                             mark = { state.mark(step, it) }, locked = { !exam && (state.revealed || state.locked(step, it)) },
                                             showInstructions = false) { onChange(step, it) }
                                     } else NativeOptionCell(step, state, exam) { onChange(step, it) }
                                 }
-                            }
-                        }
-                    }
                 }
             }
+        }
+    }
+}
+
+/** Measure each cell once. Draw the grid at the tallest cell's height so long
+ * Persian labels keep every row aligned without intrinsic measurement of blanks.
+ */
+@Composable
+private fun SourceTableRow(cells: List<String>, widths: List<Dp>, header: Boolean, content: @Composable (Int,String) -> Unit) {
+    val density=LocalDensity.current
+    val pixels=widths.map { with(density) { it.roundToPx() } }
+    Layout(content = {
+        cells.forEachIndexed { index,text -> Box(Modifier.padding(12.dp)) { content(index,text) } }
+    }, modifier = Modifier.drawBehind {
+        var offset=0f
+        pixels.forEachIndexed { index,width ->
+            val x=if(layoutDirection==LayoutDirection.Rtl)size.width-offset-width else offset
+            drawRect(if(header)BlueSoft else if(index==0)SurfaceMuted else Color.White,Offset(x,0f),Size(width.toFloat(),size.height))
+            drawLine(Border,Offset(x,0f),Offset(x,size.height),1.dp.toPx())
+            offset+=width
+        }
+        drawLine(Border,Offset(0f,size.height),Offset(size.width,size.height),1.dp.toPx())
+    }) { measurables,constraints ->
+        val placeables=measurables.mapIndexed { index,m ->
+            m.measure(Constraints(minWidth=pixels[index],maxWidth=pixels[index],maxHeight=constraints.maxHeight))
+        }
+        val height=maxOf(70.dp.roundToPx(),placeables.maxOf { it.height })
+        layout(pixels.sum(),height) {
+            var x=0
+            placeables.forEachIndexed { index,p -> p.placeRelative(x,0);x+=pixels[index] }
         }
     }
 }
@@ -173,14 +204,14 @@ private fun NativeOptionCell(step: LearningStep, state: QuestionPractice, exam: 
         colors = ButtonDefaults.outlinedButtonColors(containerColor = if (selected == null) BlueSoft else fill),
         modifier = Modifier.heightIn(min = 48.dp)) { WorkbookText(selected?.let { step.options[it].text } ?: "انتخاب") }
     if (open) ModalBottomSheet(onDismissRequest = { open = false }) {
-        Column(Modifier.fillMaxWidth().padding(20.dp).navigationBarsPadding(), verticalArrangement = Arrangement.spacedBy(10.dp)) {
-            Text("انتخاب پاسخ", style = MaterialTheme.typography.titleLarge)
-            step.options.indices.shuffled(Random(state.shuffleSeed xor step.id.hashCode())).forEach { i ->
+        LazyColumn(Modifier.fillMaxWidth().heightIn(max = 520.dp).padding(20.dp).navigationBarsPadding(), verticalArrangement = Arrangement.spacedBy(10.dp)) {
+            item { Text("انتخاب پاسخ", style = MaterialTheme.typography.titleLarge) }
+            items(step.options.indices.shuffled(Random(state.shuffleSeed xor step.id.hashCode())), key = { it }) { i ->
                 OutlinedButton(onClick = { if (open) { open = false; onChange(listOf(i.toString())) } }, modifier = Modifier.fillMaxWidth().heightIn(min = 56.dp)) {
                     WorkbookText(step.options[i].text)
                 }
             }
-            TextButton(onClick = { open = false }) { Text("بستن") }
+            item { TextButton(onClick = { open = false }) { Text("بستن") } }
         }
     }
 }

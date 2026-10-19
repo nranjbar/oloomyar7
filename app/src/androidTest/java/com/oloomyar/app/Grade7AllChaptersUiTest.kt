@@ -139,10 +139,10 @@ class Grade7AllChaptersUiTest {
             compose.onNodeWithText("نمایش کامل").assertIsDisplayed()
             compose.onNodeWithText("بستن").performClick()
             compose.onNodeWithTag("question-body").performScrollToIndex(0)
-            compose.onNodeWithTag("previous-question").performScrollTo().assertIsEnabled().performClick()
+            compose.onNodeWithTag("previous-question").assertIsDisplayed().assertIsEnabled().performClick()
             compose.waitUntil(10000) { LearningPreferences(context).lastLocation()?.questionId==chapter.questions.first { it.sourceNumber==7 }.id }
             assertEquals(chapter.questions.first { it.sourceNumber==7 }.id,LearningPreferences(context).lastLocation()!!.questionId)
-            compose.onNodeWithTag("next-question").performScrollTo().performClick()
+            compose.onNodeWithTag("next-question").assertIsDisplayed().performClick()
             compose.waitUntil(10000) { LearningPreferences(context).lastLocation()?.questionId==q.id }
             assertEquals(q.id,LearningPreferences(context).lastLocation()!!.questionId)
             compose.onNodeWithTag("reveal-answer").assertIsNotEnabled() // already explicitly displayed, not reset

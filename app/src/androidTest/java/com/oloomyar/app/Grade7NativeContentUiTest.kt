@@ -6,6 +6,12 @@ import android.content.Intent
 import android.graphics.Bitmap
 import android.provider.MediaStore
 import androidx.compose.runtime.CompositionLocalProvider
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.key
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.test.*
 import androidx.compose.ui.test.junit4.createComposeRule
@@ -68,6 +74,24 @@ class Grade7NativeContentUiTest {
         }
         assertTrue(catalog.chapters.drop(5).flatMap { it.questions }.all { it.nativeQuestion.isEmpty() })
     }
+    @Test fun everyFirstFiveQuestionRendersOnAndroidIncludingAllTableAndReactionSchemas() {
+        val questions=catalog.chapters.take(5).flatMap { it.questions }
+        val current=mutableStateOf(questions.first())
+        compose.setContent {
+            OloomYarTheme {
+                key(current.value.id) {
+                    Column(Modifier.verticalScroll(rememberScrollState())) {
+                        NativeWorkbookContent(current.value,current.value.nativeQuestion,QuestionPractice(shuffleSeed=1405))
+                    }
+                }
+            }
+        }
+        questions.forEach { q ->
+            compose.runOnIdle { current.value=q }
+            compose.onNodeWithTag("native-source-question").assertExists()
+            compose.onNodeWithTag("native-reference-answer").assertDoesNotExist()
+        }
+    }
     @Test fun tenTableCellsCanBeEditedInPlaceAtLargeFontWithoutUnlockingAnIncompleteAnswer() {
         val q=question(5,2); val s=q.steps.single();open(q,1.5f)
         select(s,0,s.pairs[0].right);select(s,1,"کمتر")
@@ -108,6 +132,17 @@ class Grade7NativeContentUiTest {
         compose.onNodeWithContentDescription("تصویر پاسخ سؤال ۹").assertDoesNotExist()
         capture("native-03-density-real-fractions")
     }
+    @Test fun quantityDefinitionIsSelectedInsideItsTableCellAtLargeFont() {
+        val q=question(2,2); val step=q.steps[2];open(q,1.7f)
+        compose.onNodeWithText("انتخاب").performScrollTo().performClick()
+        val correct=step.options.first { it.correct }.text
+        compose.onNodeWithText(workbookBidi(correct)).performScrollTo().performClick()
+        val state=QuestionDraftCodec.decode(WorkbookProgress(context,"native_ui",listOf(q)).draft(q.id),q)
+        assertEquals(listOf(step.options.indexOfFirst { it.correct }.toString()),state.values(step))
+        compose.onNodeWithText("بررسی پاسخ").assertIsNotEnabled()
+        compose.onNodeWithTag("reveal-answer").assertIsNotEnabled()
+        capture("native-06-quantity-table-font170")
+    }
     @Test fun scientificRasterRegionsPreserveEverySourcePixelWithoutAnotherPackagedImage() {
         val q=question(3,15)
         val crops=q.nativeQuestion.mapNotNull { it.asset }.mapNotNull { a -> RasterSource.parse(a)?.let { a to it } }
@@ -129,6 +164,12 @@ class Grade7NativeContentUiTest {
         val migrated=QuestionDraftCodec.decode(QuestionDraftCodec.encode(state),q)
         assertEquals(s.pairs.map { it.right },migrated.values(s));assertTrue(migrated.correct(q));assertEquals(142,migrated.shuffleSeed)
         assertFalse(migrated.revealed)
+        val equipment=question(2,15);val names=equipment.steps.first()
+        val oldNames=listOf("ترازو","استوانه مدرج","انواع نیروسنج")
+        val oldEquipment=QuestionPractice(answers=equipment.steps.associate { it.id to if(it.id==names.id)oldNames else it.pairs.map { p->p.right } },
+            checked=equipment.steps.associate { it.id to if(it.id==names.id)oldNames else it.pairs.map { p->p.right } },shuffleSeed=142)
+        val restored=QuestionDraftCodec.decode(QuestionDraftCodec.encode(oldEquipment),equipment)
+        assertEquals("نیروسنج",restored.values(names)[2]);assertTrue(restored.correct(equipment));assertFalse(restored.revealed)
     }
     @Test fun questionSearchOpensTheSourceIdRatherThanTheFilteredIndex() {
         val chapter=catalog.chapters[3];val q=chapter.questions.first { it.sourceNumber==15 }

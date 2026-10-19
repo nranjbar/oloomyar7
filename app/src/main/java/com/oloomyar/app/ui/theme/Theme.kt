@@ -100,7 +100,11 @@ fun OloomYarTheme(launchSplash: Boolean = false, content: @Composable () -> Unit
             colorScheme = Scheme,
             typography = AppTypography,
             shapes = AppShapes,
-            content = { if (launchSplash) com.oloomyar.app.ui.Grade7LaunchSplash(content) else content() }
+            content = {
+                CompositionLocalProvider(androidx.compose.material3.LocalContentColor provides Ink) {
+                    if (launchSplash) com.oloomyar.app.ui.Grade7LaunchSplash(content) else content()
+                }
+            }
         )
     }
 }

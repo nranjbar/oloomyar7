@@ -24,9 +24,21 @@ object QuestionDraftCodec {
             shownHints = if (current) o.optInt("shownHints") else 0,
             revealed = current && o.optBoolean("revealed"),
             shuffleSeed = if (o.has("shuffleSeed")) o.getInt("shuffleSeed") else kotlin.random.Random.nextInt()
-        ).let { migrateAlloyCells(it, question) }
+        ).let { migrateInstrumentLabel(it, question) }
+            .let { migrateAlloyCells(it, question) }
             .let { if (it.revealed && !it.canReveal(question)) it.copy(revealed = false) else it }
     }.getOrElse { QuestionPractice() }
+
+    private fun migrateInstrumentLabel(state: QuestionPractice, question: ChapterQuestion?): QuestionPractice {
+        if (question?.relatedChapter != 2 || question.sourceNumber != 15 || question.section != "تمرین‌های اصلی") return state
+        val step=question.steps.first()
+        fun normalize(values: List<String>)=values.mapIndexed { row,value -> if(row==2 && value=="انواع نیروسنج") "نیروسنج" else value }
+        return state.copy(
+            answers=state.answers[step.id]?.let { state.answers+(step.id to normalize(it)) } ?: state.answers,
+            checked=state.checked[step.id]?.let { state.checked+(step.id to normalize(it)) } ?: state.checked,
+            incorrectSubmissions=state.incorrectSubmissions.map { attempt -> attempt.mapIndexed { index,values -> if(index==0)normalize(values)else values } }
+        )
+    }
 
     /** The same printed table now has separate metal cells instead of a whole
      * compound answer. Preserve old choices/checks rather than assigning new ones.

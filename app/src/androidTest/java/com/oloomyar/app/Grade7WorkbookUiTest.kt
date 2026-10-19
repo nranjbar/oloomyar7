@@ -48,7 +48,7 @@ class Grade7WorkbookUiTest {
                 OloomYarTheme { AuditedWorkbookApp("فصل ${q.relatedChapter}",listOf(q),progress,onExit={}) }
             }
         }
-        compose.onNodeWithText("ورود به این بخش").performClick()
+        compose.onNodeWithText("ورود به این بخش").performScrollTo().performClick()
         compose.onNode(hasScrollAction()).performScrollToNode(hasText("سؤال ${fa(q.sourceNumber)} •",substring=true))
         compose.onNodeWithText("سؤال ${fa(q.sourceNumber)} •",substring=true).performClick()
         compose.onNodeWithTag("reveal-answer").assertIsDisplayed().assertIsNotEnabled()

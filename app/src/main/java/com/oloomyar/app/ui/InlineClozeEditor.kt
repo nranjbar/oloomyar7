@@ -40,7 +40,7 @@ internal fun InlineFillBlanksQuestion(
     val rows = if (step.kind == StepKind.MATCH) step.pairs.map { it.left } else step.classifyItems.map { it.text }
     var active by rememberSaveable(step.id) { mutableIntStateOf(-1) }
     val replace: (Int, String) -> Unit = { index, value ->
-        if (!locked(index)) {
+        if (active == index && !locked(index)) {
             onChange(List(rows.size) { if (it == index) value else values.getOrElse(it) { "" } })
         }
         active = -1

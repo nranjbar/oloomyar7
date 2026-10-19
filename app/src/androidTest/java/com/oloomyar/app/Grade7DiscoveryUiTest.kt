@@ -221,6 +221,7 @@ class Grade7DiscoveryUiTest {
         val q = Grade7Chapter2Repository(context).questions.first { it.sourceNumber == 8 && it.section == "تمرین‌های اصلی" }
         val intent = Intent(context,Grade7Chapter2Activity::class.java).putExtra("question_id",q.id)
         ActivityScenario.launch<Grade7Chapter2Activity>(intent).use {
+            compose.onNodeWithTag("question-body").performScrollToNode(hasTestTag("native-source-question"))
             val prompt = compose.onNodeWithText(workbookBidi(q.nativeQuestion.first().text)).performScrollTo().assertIsDisplayed()
             prompt.assertTextEquals(workbookBidi(q.nativeQuestion.first().text))
             val layouts = mutableListOf<TextLayoutResult>()

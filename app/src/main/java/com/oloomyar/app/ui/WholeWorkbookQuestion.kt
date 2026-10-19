@@ -102,15 +102,21 @@ internal fun WholeWorkbookQuestion(
             item(key = "heading") {
                 WorkbookPanel(accent = Blue, color = BlueSoft) {
                     Row(Modifier.fillMaxWidth(), verticalAlignment = androidx.compose.ui.Alignment.CenterVertically) {
-                        OloomPill(position, Blue, MaterialTheme.colorScheme.surface)
-                        Spacer(Modifier.weight(1f))
+                        if (native) Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(3.dp)) {
+                            Text(position, color = Blue, style = MaterialTheme.typography.bodySmall)
+                            Text("سؤال ${workbookFa(question.sourceNumber)} • ${question.title}", style = MaterialTheme.typography.titleMedium)
+                            Text("فصل ${workbookFa(question.relatedChapter)} • صفحهٔ ${workbookFa(question.sourcePage)}", color = Muted, style = MaterialTheme.typography.bodySmall)
+                        } else OloomPill(position, Blue, MaterialTheme.colorScheme.surface)
+                        if (!native) Spacer(Modifier.weight(1f))
                         IconToggleButton(checked = bookmarked, onCheckedChange = { bookmarked = it; progress.bookmark(question.id, it) }, modifier = Modifier.testTag("bookmark-question")) {
                             Icon(if (bookmarked) Icons.Default.Bookmark else Icons.Default.BookmarkBorder,
                                 if (bookmarked) "حذف نشان سؤال" else "نشان‌گذاری سؤال", tint = if (bookmarked) Purple else Muted)
                         }
                     }
-                    Text("سؤال ${workbookFa(question.sourceNumber)} • ${question.title}", style = MaterialTheme.typography.titleLarge)
-                    Text(question.source, color = Muted, style = MaterialTheme.typography.bodySmall)
+                    if (!native) {
+                        Text("سؤال ${workbookFa(question.sourceNumber)} • ${question.title}", style = MaterialTheme.typography.titleLarge)
+                        Text(question.source, color = Muted, style = MaterialTheme.typography.bodySmall)
+                    }
                     question.sourceReviewNote?.let { Text(it, color = Orange, style = MaterialTheme.typography.bodySmall) }
                     if (finished) TextButton(onClick = { update(QuestionPractice()) }, modifier = Modifier.testTag("restart-practice")) { Text("تمرین دوباره") }
                     if (inlineStep == null && !native) TextButton(onClick = { jump(3) }) {
@@ -120,7 +126,7 @@ internal fun WholeWorkbookQuestion(
             }
             item(key = "source") {
                 WorkbookPanel(accent = Purple) {
-                    Text("صورت اصلی سؤال کتاب", color = Purple, style = MaterialTheme.typography.titleMedium)
+                    Text(if (native) "صورت سؤال" else "صورت اصلی سؤال کتاب", color = Purple, style = MaterialTheme.typography.titleMedium)
                     if (native) {
                         NativeWorkbookContent(question, question.nativeQuestion, state, exam) { step, values ->
                             update(state.change(step, values))
@@ -190,6 +196,19 @@ internal fun WholeWorkbookQuestion(
                     }
                 }
             }
+            item(key = "practice-status") {
+                if (!exam) {
+                    Text(when {
+                        state.revealed -> "پاسخ کتاب نمایش داده شده؛ برای ادامه دکمهٔ پایین را بزن."
+                        allCorrect -> "همهٔ پاسخ‌ها درست‌اند؛ می‌توانی پاسخ اصلی کتاب را ببینی یا ادامه بدهی."
+                        !state.complete(question) -> "همهٔ قسمت‌ها را کامل کن؛ انتخاب‌ها پیش از بررسی زرد هستند."
+                        !state.canCheck(question) -> "این پاسخ قبلاً بررسی شده؛ یکی از موارد اشتباه را تغییر بده."
+                        state.canReveal(question) -> "دوباره تلاش کن یا «دیدن پاسخ» را بزن."
+                        state.shownHints >= 2 -> "برای دیدن پاسخ، هر قسمت نادرست را دوبار با انتخاب‌های متفاوت امتحان کن."
+                        else -> "انتخاب‌ها کامل است؛ پاسخ را بررسی کن."
+                    }, color = Muted, style = MaterialTheme.typography.bodySmall)
+                }
+            }
             item(key = "reference") {
                 // Original answer only: no generated answer card, rewritten explanation, or shared key strip.
                 if (!exam && state.revealed && state.canReveal(question)) {
@@ -200,7 +219,7 @@ internal fun WholeWorkbookQuestion(
                             onImageReady = {
                                 if (pendingReferenceScroll) {
                                     pendingReferenceScroll = false
-                                    jump(question.steps.size + 4)
+                                    jump(question.steps.size + 5)
                                 }
                             }) }
                     }
@@ -230,22 +249,13 @@ internal fun WholeWorkbookQuestion(
                                 // Only an explicit request to view the key moves the viewport.
                                 // Selection and checking keep the current sentence in place.
                                 // Compose the target first; final alignment waits for actual PDF/image layout.
-                                coroutine.launch { withFrameNanos { }; list.scrollToItem(question.steps.size + 4) }
+                                coroutine.launch { withFrameNanos { }; list.scrollToItem(question.steps.size + 5) }
                             }
                         }) {
                             Icon(if (state.canReveal(question)) Icons.Default.Visibility else Icons.Default.Lock, null, Modifier.size(16.dp))
                             Spacer(Modifier.width(4.dp)); Text("دیدن پاسخ")
                         }
                     }
-                    Text(when {
-                        state.revealed -> "پاسخ کتاب نمایش داده شده؛ برای ادامه دکمهٔ پایین را بزن."
-                        allCorrect -> "همهٔ پاسخ‌ها درست‌اند؛ می‌توانی پاسخ اصلی کتاب را ببینی یا ادامه بدهی."
-                        !state.complete(question) -> "همهٔ قسمت‌ها را کامل کن؛ انتخاب‌ها پیش از بررسی زرد هستند."
-                        !state.canCheck(question) -> "این پاسخ قبلاً بررسی شده؛ یکی از موارد اشتباه را تغییر بده."
-                        state.canReveal(question) -> "دوباره تلاش کن یا «دیدن پاسخ» را بزن."
-                        state.shownHints >= 2 -> "برای دیدن پاسخ، هر قسمت نادرست را دوبار با انتخاب‌های متفاوت امتحان کن."
-                        else -> "انتخاب‌ها کامل است؛ پاسخ را بررسی کن."
-                    }, color = Muted, style = MaterialTheme.typography.bodySmall)
                 }
                 Button(modifier = Modifier.fillMaxWidth().heightIn(min = 54.dp),
                     shape = RoundedCornerShape(30.dp),
