@@ -63,7 +63,7 @@ class Grade7WorkbookUiTest {
     private fun choose(value:String) {
         val match=hasText(workbookBidi(value))
         compose.onNodeWithTag("question-body").performScrollToNode(match)
-        compose.onNode(match).performClick()
+        compose.onNode(match).performClick();compose.onNode(match).assertIsSelected()
     }
     private fun check() { compose.onNodeWithText("بررسی پاسخ").assertIsEnabled().performClick();compose.waitForIdle() }
     private fun capture(name:String) {
@@ -195,6 +195,14 @@ class Grade7WorkbookUiTest {
         val shown=state.reveal();assertEquals(shown,QuestionDraftCodec.decode(QuestionDraftCodec.encode(shown)))
         assertFalse(QuestionDraftCodec.decode("""{"questionPracticeVersion":3,"revealed":true}""").revealed)
     }
+    @Test fun aSolvedReferenceRevealSurvivesCodecRoundTripOnlyWithValidatedQuestionContext() {
+        val q=Grade7Chapter1Repository(context).questions.first();val s=q.steps.single()
+        val solved=QuestionPractice().change(s,s.pairs.map { it.right }).submit(q).reveal(q)
+        val raw=QuestionDraftCodec.encode(solved)
+        assertTrue(QuestionDraftCodec.decode(raw,q).revealed)
+        assertFalse(QuestionDraftCodec.decode(raw).revealed)
+        assertFalse(QuestionDraftCodec.decode(QuestionDraftCodec.encode(solved.copy(checked=emptyMap())),q).revealed)
+    }
     @Test fun tightAnswerDisplayPreservesEveryDarkPixelOfTheOriginalFormulaAndKey() {
         fun ink(bitmap:Bitmap):Int {
             val p=IntArray(bitmap.width*bitmap.height);bitmap.getPixels(p,0,bitmap.width,0,0,bitmap.width,bitmap.height)
@@ -229,8 +237,9 @@ class Grade7WorkbookUiTest {
     @Test fun sourceFigureCanBeEnlargedWithoutShowingAnyAnswer() {
         val q=Grade7Chapter2Repository(context).questions.first { it.sourceNumber==11 && it.section=="تمرین‌های اصلی" };open(q)
         compose.onNodeWithTag("question-body").performScrollToNode(hasText("بزرگ‌نمایی تصویر"))
+        compose.waitUntil(10000) { compose.onAllNodes(hasText("بزرگ‌نمایی تصویر") and isEnabled()).fetchSemanticsNodes().isNotEmpty() }
         compose.onAllNodesWithText("بزرگ‌نمایی تصویر")[0].performScrollTo().performClick()
-        compose.onNodeWithText("بزرگ‌تر").assertIsDisplayed();capture("grade7-08-source-zoom")
+        compose.onNodeWithContentDescription("بزرگ‌تر").assertIsDisplayed();capture("grade7-08-source-zoom")
         compose.onNodeWithText("بستن").performClick();compose.onNodeWithTag("reveal-answer").assertIsNotEnabled()
     }
 }

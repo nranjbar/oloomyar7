@@ -33,6 +33,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": "۱- از بین کلمات داخل پرانتز ، کلمه مناسب برای هر جمله را انتخاب کنید . ( آزمایش – کنجکاوی – فناوری – دانش – فرضیه سازی )\na – شما می توانید با یادگیری انواع ................ و پرورش مهارت های خود ، به حل مسائلی بپردازید که در زندگی با آن ها روبرو می شوید .\nb – با طراحی و انجام ................ و بررسی نتایج آن ، درستی یا نادرستی پیش بینی خود را می توان بررسی کرد .\nc – تبدیل علم به عمل ، ................ نام دارد .",
       "inline": true
     },
@@ -67,6 +69,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": "۲- جملات صحیح را با ( ص ) و جملات غلط را با ( غ ) مشخص نمایید .\nالف– سؤال کردن و تلاش برای یافتن پاسخ ، از مراحل مهم در یادگیری علوم تجربی است . (                 )\nب- موفقیت و پیشرفت سریع علم و فناوری ، نتیجه فعالیت مشترک دانشمندان و متخصصان با یکدیگر است . (                 )\nج- فناوری ها فقط مفیدند و هیچ ضرری ندارند . (                 )",
       "inline": false
     },
@@ -101,6 +105,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": "۳- متخصصان علوم تجربی با بهره گیری از چه چیز هایی ، برای مسائل مختلف زندگی ، پاسخ مناسبی پیدا می کنند ؟ ( سه مورد )",
       "inline": false
     },
@@ -135,6 +141,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": "۴- متن زیر را به دقت بخوانید و به سؤالات مطرح شده پاسخ دهید .\nمعلم دانش آموزان را به آزمایشگاه برد . آن ها بر روی میز تعدادی ماده را مشاهده کردند ( نمک– براده آهن– جوهر نمک– اتانول– گوگرد– نشاسته- روغن مایع ) . معلم گفت می خواهیم ببینیم کدام در آب حل می شود و کدام حل نمی شود ، ولی در ابتدا هر گروه با مشورت یکدیگر جواب سؤال را بر روی کاغذ بنویسد .\n۱- این مرحله چه نام دارد ؟\nالف- نتیجه گیری □     ب- مشاهده □     ج- پیش بینی □\nسپس دانش آموزان با انجام آزمایش ، فهمیدند که نمک ، اتانول و جوهر نمک در آب حل می شوند ولی گوگرد ، براده آهن روغن مایع و نشاسته در آب حل نمی شوند .\n۲- این مرحله آخر چه نام دارد ؟\nالف- طرح پرسش □     ب- نتیجه گیری □     ج- پیش بینی □",
       "inline": false
     },
@@ -169,6 +177,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": "۵- با استفاده از کلمات داخل پرانتز ، مراحل حل یک مسئله به روش علمی را به ترتیب کامل کنید . ( فرضیه سازی – نتیجه گیری – آزمایش )\n۱- مشاهده     ۲- طرح پرسش     ۳- ................     ۴- ................     ۵- ................",
       "inline": true
     },
@@ -177,7 +187,7 @@
       "chapter": 1,
       "sourceNumber": 6,
       "section": "main",
-      "questionAsset": "pdf:workbook.pdf#2,27,648.59,570,698.55",
+      "questionAsset": "pdf:workbook.pdf#2,27,648.59,570,698.55|-2,38.25,690.733,144.75,761.983",
       "answerAsset": "pdf:answers01.pdf#1,23.0,230.48,590.0,257.11",
       "questionSourceSegments": [
         {
@@ -203,6 +213,18 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [
+        {
+          "page": 2,
+          "bbox": [
+            38.25,
+            690.733,
+            144.75,
+            761.983
+          ]
+        }
+      ],
       "readingTranscript": "۶- فناوری را تعریف کنید و سه مثال بزنید .",
       "inline": false
     },
@@ -211,7 +233,7 @@
       "chapter": 1,
       "sourceNumber": 7,
       "section": "main",
-      "questionAsset": "pdf:workbook.pdf#2,27,700.55,570,755.43",
+      "questionAsset": "pdf:workbook.pdf#2,27,700.55,570,755.43|+2,38.25,690.733,144.75,761.983",
       "answerAsset": "pdf:answers01.pdf#1,23.0,258.68,590.0,313.54",
       "questionSourceSegments": [
         {
@@ -237,6 +259,18 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [
+        {
+          "page": 2,
+          "bbox": [
+            38.25,
+            690.733,
+            144.75,
+            761.983
+          ]
+        }
+      ],
+      "paperExclusions": [],
       "readingTranscript": "۷- اختراع رایانه ( کامپیوتر ) یک فناوری محسوب می شود . یک فایده و یک ضرر این فناوری را بنویسید .\nفایده : .................................................................\nضرر : .................................................................",
       "inline": false
     },
@@ -245,7 +279,7 @@
       "chapter": 1,
       "sourceNumber": 8,
       "section": "main",
-      "questionAsset": "pdf:workbook.pdf#2,27,757.43,570,787",
+      "questionAsset": "pdf:workbook.pdf#2,27,757.43,570,787|-2,38.25,690.733,144.75,761.983",
       "answerAsset": "pdf:answers01.pdf#1,23.0,314.99,590.0,341.62",
       "questionSourceSegments": [
         {
@@ -271,6 +305,18 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [
+        {
+          "page": 2,
+          "bbox": [
+            38.25,
+            690.733,
+            144.75,
+            761.983
+          ]
+        }
+      ],
       "readingTranscript": "۸- چهار شاخه علوم تجربی را نام ببرید . ......................................................................................................",
       "inline": false
     },
@@ -305,6 +351,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": "۱- از بین کلمات داخل کادر ، کلمه مناسب برای هر جمله را انتخاب کنید .\n(( طول – ظرف های مدرج – جرم – ثانیه – فرضیه سازی – زمان – لیتر – اندازه گیری – حجم – کیلو گرم ))\na – مقدار ماده تشکیل دهنده جسم ، ................ نام دارد .\nb – فاصله بین دو نقطه و مسافتی را که یک جسم طی می کند ، با یکای ................ اندازه می گیریم .\nc – یک ................ برابر حجم ظرف مکعبی شکل به طول ، عرض و ارتفاع ۱۰ سانتی متر است . یعنی معادل ۱۰۰۰ سانتی متر مکعب است .\nd – از ................ برای اندازه گیری حجم مقدارهای کم مایع استفاده می کنیم .\ne – یک مرحله مهم برای جمع آوری اطلاعات ، ................ است که دقت آن به دقت شخص و دقت وسیله بستگی دارد .\nf – برای اینکه بتوانیم به سؤال « چه وقت » و « چه مدت » پاسخ دهیم ، ................ را اندازه می گیریم .\ng – یکای اندازه گیری زمان ، ................ است .",
       "inline": true
     },
@@ -339,6 +387,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": "۲- جدول زیر را تکمیل کنید :",
       "inline": false
     },
@@ -382,6 +432,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": "۳- چرا جرم بعضی چیز ها ( مانند سی دی ، یک موز ، یک مداد ) را با گرم و جرم بعضی چیز های دیگر ( مانند گوسفند و لپ تاپ ) را با کیلو گرم بیان می کنیم ؟",
       "inline": false
     },
@@ -416,6 +468,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": "۴- هر کدام از اجسام زیر ، تقریباً معادل چند نیوتون وزن دارند ؟\nالف– یک صندلی ۶ کیلو گرمی ( ........................................ )\nب- یک تلفن همراه ۲۰۰ گرمی ( ........................................ )\nج- یک کتاب ۶۰۰ گرمی ( ........................................ )\nد- یک موتور سیکلت ۳۰۰ کیلو گرمی ( ........................................ )",
       "inline": false
     },
@@ -450,6 +504,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": "۵– یکا های متداول طول را نام ببرید . ......................................................................................................",
       "inline": false
     },
@@ -484,6 +540,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": "۶- طول هرکدام از موارد زیر را با چه یکایی اندازه می گیریم ؟ چرا ؟\nالف- قطر نوک مداد ( ........................................ )\nب- مسافت اصفهان تا تهران ( ........................................ )\nج- طول خود کار ( ........................................ )\nد- طول حیاط مدرسه ( ........................................ )\nزیرا : ......................................................................................................\n......................................................................................................",
       "inline": false
     },
@@ -518,6 +576,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": "۷- به وسیله یک استوانه مدرج و آب ، آزمایشی طرح کنید که با انجام آن بتوانید حجم یک سنگ کوچک را اندازه بگیرید .",
       "inline": false
     },
@@ -552,6 +612,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": "۸- جرم یک پاک کن ۱۲ گرم و حجم آن ۸ سانتی متر مکعب است . چگالی آن چقدر است ؟",
       "inline": false
     },
@@ -595,6 +657,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": "۹- نیما جرم یک سنگ کوچک را با ترازو ۳۶ گرم اندازه گرفت . سپس آن را داخل یک استوانه مدرج که ۶۰ سانتی متر مکعب آب داشت ، انداخت . سطح آب روی ۷۲ سانتی متر مکعب قرار گرفت .\nالف- حجم سنگ چند سانتی متر مکعب است ؟\nب- چگالی سنگ را حساب کنید .",
       "inline": false
     },
@@ -629,6 +693,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": "۱۰- جرم یک جسم ۱۶۰ گرم و حجم آن ۴۰۰ سانتی متر مکعب است .\nالف– چگالی آن را حساب کنید .\nب- آیا این جسم در آب فرو می رود ؟ چرا ؟",
       "inline": false
     },
@@ -663,6 +729,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": "۱۱- سه گلوله A ,B ,C را در آب انداخته ایم . وضعیت قرار گرفتن آن ها در آب ، در شکل مشخص است ؛\nبرای مقایسه چگالی این سه گلوله نسبت به آب ، در جاهای خالی از کلمات ( بیشتر از– کمنر از- برابر ) استفاده کنید .\n- چگالی گلوله A ........................................ آب است .\n- چگالی گلوله B ........................................ آب است .\n- چگالی گلوله C ........................................ آب است .",
       "inline": false
     },
@@ -697,6 +765,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": "۱۲- در مورد زمان به سؤالات زیر پاسخ دهید .\nالف– برای اندازه گیری زمان از چه وسیله هایی استفاده می شود ؟ ( نام هر کدام را زیرشان بنویسید )\n........................................     ........................................\nب- برای پاسخ دادن به سؤال « چه وقت » معمولا از ........................................ استفاده می کنیم .\nولی برای پاسخ دادن به سؤال « چه مدت » از ........................................ استفاده می شود .\nج- یکا های اندازه گیری زمان که در زندگی روز مره از آنها استفاده می کنیم را نام ببرید .",
       "inline": false
     },
@@ -731,6 +801,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": "۱۳- دقت اندازه گیری به چه عواملی بستگی دارد ؟\n۱- ........................................\n۲- ........................................",
       "inline": false
     },
@@ -774,6 +846,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": "۱۴- با توجه به این که دقت اندازه گیری خط کش ۱ سانتی متر است ، در شکل های زیر طول مداد چند سانتی متر گزارش می شود ؟ چرا ؟",
       "inline": false
     },
@@ -808,6 +882,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": "۱۵- هر کدام از وسایل زیر چه نام دارد و چه چیزی را اندازه می گیرد ؟",
       "inline": false
     },
@@ -842,6 +918,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": "۱- جرم یک عدد پرتقال را بهتر است با چه واحدی ( یکا ) بیان کنیم ؟\nالف- نیوتون     ب- کیلو گرم     ج- گرم     د- سانتی متر مکعب",
       "inline": false
     },
@@ -876,6 +954,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": "۲- جرم مهران ۴۸ کیلو گرم است . وزن او تقریباً چند نیوتون است ؟\nالف– ۴۸     ب- ۴/۸     ج- ۴۸۰     د- ۴۸۰۰",
       "inline": false
     },
@@ -884,7 +964,7 @@
       "chapter": 2,
       "sourceNumber": 3,
       "section": "mcq",
-      "questionAsset": "pdf:workbook.pdf#6,27,429.18,570,544.68",
+      "questionAsset": "pdf:workbook.pdf#6,27,429.18,570,544.68|+6,56.6,446.474,91.55,546.42|-6,111.1,542.38,219.45,631.18",
       "answerAsset": "pdf:answers02.pdf#2,208,494.45,260,524.16",
       "questionSourceSegments": [
         {
@@ -910,6 +990,28 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [
+        {
+          "page": 6,
+          "bbox": [
+            56.6,
+            446.474,
+            91.55,
+            546.42
+          ]
+        }
+      ],
+      "paperExclusions": [
+        {
+          "page": 6,
+          "bbox": [
+            111.1,
+            542.38,
+            219.45,
+            631.18
+          ]
+        }
+      ],
       "readingTranscript": "۳- یک جسم ۱۰۰ گرمی را به یک نیروسنج ( شکل مقابل ) آویزان کرده ایم . نیروسنج وزن آن را چند نیوتون نشان می دهد ؟\nالف- ۱     ب- ۱۰     ج- ۱۰۰     د- ۱۰۰۰",
       "inline": false
     },
@@ -918,7 +1020,7 @@
       "chapter": 2,
       "sourceNumber": 4,
       "section": "mcq",
-      "questionAsset": "pdf:workbook.pdf#6,27,546.68,570,662.07",
+      "questionAsset": "pdf:workbook.pdf#6,27,546.68,570,662.07|+6,111.1,542.38,219.45,631.18",
       "answerAsset": "pdf:answers02.pdf#2,157,494.45,195,524.16",
       "questionSourceSegments": [
         {
@@ -944,6 +1046,18 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [
+        {
+          "page": 6,
+          "bbox": [
+            111.1,
+            542.38,
+            219.45,
+            631.18
+          ]
+        }
+      ],
+      "paperExclusions": [],
       "readingTranscript": "۴- در یک ظرف یک لیتری ، چند سانتی متر مکعب آب قرار می گیرد تا کاملاً پر شود ؟\nالف– ۱۰۰۰۰     ب- ۱۰۰     ج- ۱۰     د- ۱۰۰۰",
       "inline": false
     },
@@ -978,6 +1092,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": "۵- دقت اندازه گیری یک ترازوی دیجیتالی ( شکل مقابل ) ۰/۱ گرم است .\nکدام یک از موارد زیر نمی تواند اندازه گیری این ترازو باشد ؟\nالف- ۴ کیلوگرم     ب- ۲/۳۶ گرم     ج- ۲۲۵/۸ گرم     د- ۵/۵ کیلوگرم",
       "inline": false
     },
@@ -1012,6 +1128,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": "۱- جملات زیر را با استفاده از کلمات داده شده کامل کنید ( فلز – ترکیب – مایع – اتم – گاز – مولکول – جامد – عنصر – نافلز )\na – به ذره های ریز سازنده مواد ، ................ می گویند .\nb – شکل خالصی از ماده که از یک نوع اتم ساخته شده است ، ................ نام دارد .\nc – مولکول ها از پیوند دو یا چند ................ به وجود می آیند .\nd – ذره های سازنده عنصر های ................ فقط اتم است .\ne – ماده ای که از دو یا چند نوع اتم متفاوت تشکیل شده است ، ................ نام دارد .\nf – ................ شکل مشخص و حجم معینی دارد ولی ................ به شکل ظرف در می آید و حجم معینی دارد\nدر حالی که ................ به شکل ظرف در می آید و حجم معینی ندارد .",
       "inline": true
     },
@@ -1046,6 +1164,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": "۲- دو کاربرد سنگ مرمر را بنویسید .\n۱- ........................................     ۲- ........................................",
       "inline": false
     },
@@ -1080,6 +1200,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": "۳- کشور ما جزء کشور های دارای منابع نفت وگاز فراوان است .\n۶ مورد از کاربرد های نفت خام را بنویسید .",
       "inline": false
     },
@@ -1114,6 +1236,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": "۴- چهار مورد از کاربرد های نمک خوراکی را بنویسید .",
       "inline": false
     },
@@ -1148,6 +1272,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": "۵- آزمایشی طرح کنید، که نشان دهد در هوای اتاق بخار آب وجود دارد .",
       "inline": false
     },
@@ -1182,6 +1308,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": "۶- ویژگی های فلز ها را بنویسید . ( ۴ مورد )",
       "inline": false
     },
@@ -1225,6 +1353,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": "۷- ویژگی های نافلز ها را بنویسید . ( ۴ مورد )",
       "inline": false
     },
@@ -1259,6 +1389,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": "۸- کدام یک از ویژگی های زیر مربوط به فلز ها و کدام مربوط به نا فلز ها است ؟\na – رسانای الکتریکی هستند ( ................ )\nb – سطح براق ندارند ( ................ )\nc – اغلب آن ها شکننده اند ( ................ )\nd – چکش خوارند یعنی با ضربه به شکل های گوناگون در می آیند . ( ................ )\ne – اغلب در آب فرو می روند ( ................ )\nf – نارسانا ( عایق ) هستند ( ................ )\ng – سطح براق دارند ( ................ )\nh – اغلب روی آب شناور می مانند. ( ................ )",
       "inline": true
     },
@@ -1293,6 +1425,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -1327,6 +1461,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": "۱۰- نام اتم های سازنده مولکول های زیر را بنویسید .\nالف- متان ( ................ و ................ )\nب- کربن دی اکسید ( ................ و ................ )\nج- آب ( ................ و ................ )",
       "inline": true
     },
@@ -1335,7 +1471,7 @@
       "chapter": 3,
       "sourceNumber": 11,
       "section": "main",
-      "questionAsset": "pdf:workbook.pdf#8,27,405.18,570,550.59",
+      "questionAsset": "pdf:workbook.pdf#8,27,405.18,570,550.59|-8,66.4,550.08,175.3,674.43",
       "answerAsset": "pdf:answers03.pdf#1,23.0,574.61,590.0,630.01",
       "questionSourceSegments": [
         {
@@ -1361,6 +1497,18 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [
+        {
+          "page": 8,
+          "bbox": [
+            66.4,
+            550.08,
+            175.3,
+            674.43
+          ]
+        }
+      ],
       "readingTranscript": null,
       "inline": false
     },
@@ -1369,7 +1517,7 @@
       "chapter": 3,
       "sourceNumber": 12,
       "section": "main",
-      "questionAsset": "pdf:workbook.pdf#8,27,552.59,570,714.15",
+      "questionAsset": "pdf:workbook.pdf#8,27,552.59,570,714.15|+8,66.4,550.08,175.3,674.43",
       "answerAsset": "pdf:answers03.pdf#1,23.0,631.01,590.0,660.72",
       "questionSourceSegments": [
         {
@@ -1395,6 +1543,18 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [
+        {
+          "page": 8,
+          "bbox": [
+            66.4,
+            550.08,
+            175.3,
+            674.43
+          ]
+        }
+      ],
+      "paperExclusions": [],
       "readingTranscript": "۱۲- هریک از شکل ها نشان دهنده ساختار اتمی کدام یک از مواد داخل پرانتز است ؟ ( عنصر فلز- عنصر نافلز– ترکیب )",
       "inline": false
     },
@@ -1438,6 +1598,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": "۱۳- به نظر شما موادی که مصرف می کنیم یا با آن ها سر و کار داریم ، عنصرند یا ترکیب ؟ دلیل خود را بنویسید .",
       "inline": false
     },
@@ -1472,6 +1634,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": "۱۴- تعریف کنید ؛\nالف– عنصر : .................................................................\nب- ترکیب : .................................................................",
       "inline": false
     },
@@ -1506,6 +1670,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": "۱۵- ذره های سازنده کربن دی اکسید در زیر نمایش داده شده است . شما جاهای خالی را تکمیل کنید .",
       "inline": false
     },
@@ -1514,7 +1680,7 @@
       "chapter": 3,
       "sourceNumber": 16,
       "section": "main",
-      "questionAsset": "pdf:workbook.pdf#9,27,363.18,570,490.85",
+      "questionAsset": "pdf:workbook.pdf#9,27,363.18,570,490.85|-9,7.0,473.18,115.05,625.48",
       "answerAsset": "pdf:answers03.pdf#2,23.0,99.44,590.0,179.84",
       "questionSourceSegments": [
         {
@@ -1540,6 +1706,18 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [
+        {
+          "page": 9,
+          "bbox": [
+            7.0,
+            473.18,
+            115.05,
+            625.48
+          ]
+        }
+      ],
       "readingTranscript": "۱۶- ویژگی های کلی اتم ها را بنویسید .",
       "inline": false
     },
@@ -1548,7 +1726,7 @@
       "chapter": 3,
       "sourceNumber": 17,
       "section": "main",
-      "questionAsset": "pdf:workbook.pdf#9,27,492.85,570,631.74",
+      "questionAsset": "pdf:workbook.pdf#9,27,492.85,570,631.74|+9,7.0,473.18,115.05,625.48",
       "answerAsset": "pdf:answers03.pdf#2,23.0,180.84,590.0,265",
       "questionSourceSegments": [
         {
@@ -1574,6 +1752,18 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [
+        {
+          "page": 9,
+          "bbox": [
+            7.0,
+            473.18,
+            115.05,
+            625.48
+          ]
+        }
+      ],
+      "paperExclusions": [],
       "readingTranscript": "۱۷- در مورد ساختار اتم به سؤالات زیر پاسخ دهید :\nالف – سه ذره سازنده اتم را نام ببرید . ۱- ................ ۲- ................ ۳- ................\nب – هسته اتم از کدام ذرات تشکیل شده است ؟ ................ و ................\nج – در یک اتم در حالت عادی ( خنثی ) ، تعداد ................ با تعداد ................ با هم برابر است .",
       "inline": true
     },
@@ -1617,6 +1807,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": "۱۸– الف- آزمایشی طرح کنید که با انجام آن بتوانید حجم ۵ گرم شکر ،آب و هوا را با هم مقایسه کنید .\nب- آیا از این آزمایش می توان نتیجه گرفت که حجم ۵ گرم از این سه ماده به ترتیب زیر است ؟",
       "inline": false
     },
@@ -1651,6 +1843,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": "۱۹- آزمایشی طراحی کنید که نشان دهد می توان یک گاز را به راحتی متراکم ( فشرده ) کرد ولی جامد و مایع را نمی توان به آسانی و به مقدار زیاد متراکم کرد .",
       "inline": false
     },
@@ -1685,6 +1879,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": "۲۰- کدام یک از این مواد را به آسانی می توان متراکم ( فشرده ) کرد ؟ دلیل انتخاب خود را بنویسید .\nالف– سنگ     ب- هوا     ج- آب\nدلیل : ......................................................................................................",
       "inline": false
     },
@@ -1693,7 +1889,7 @@
       "chapter": 3,
       "sourceNumber": 21,
       "section": "main",
-      "questionAsset": "pdf:workbook.pdf#10,27,337.26,570,542.52",
+      "questionAsset": "pdf:workbook.pdf#10,27,337.26,570,542.52|-10,18.9,528.15,262.81,667.2",
       "answerAsset": "pdf:answers03.pdf#2,23.0,547.01,590.0,576.72",
       "questionSourceSegments": [
         {
@@ -1719,6 +1915,18 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [
+        {
+          "page": 10,
+          "bbox": [
+            18.9,
+            528.15,
+            262.81,
+            667.2
+          ]
+        }
+      ],
       "readingTranscript": "۲۱- نمودار زیر ، میزان افزایش حجم مقدار یکسانی از مواد زیر را در اثر گرمای یکسان ، نشان می دهد .\nالف- هر کدام از آن ها در زیر ستون مربوطه بنویسید . ( اکسیژن– شیشه– مس– آب )\nب- آیا از این نمودار می توان نتیجه گرفت که اگر مقدار یکسانی از مواد را گرمای یکسان بدهیم ، میزان افزایش حجم آن ها به ترتیب زیر است : .................................................................",
       "inline": false
     },
@@ -1727,7 +1935,7 @@
       "chapter": 3,
       "sourceNumber": 22,
       "section": "main",
-      "questionAsset": "pdf:workbook.pdf#10,27,544.52,570,694.11",
+      "questionAsset": "pdf:workbook.pdf#10,27,544.52,570,694.11|+10,18.9,528.15,262.81,667.2",
       "answerAsset": "pdf:answers03.pdf#2,23.0,578.29,590.0,633.12",
       "questionSourceSegments": [
         {
@@ -1753,6 +1961,18 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [
+        {
+          "page": 10,
+          "bbox": [
+            18.9,
+            528.15,
+            262.81,
+            667.2
+          ]
+        }
+      ],
+      "paperExclusions": [],
       "readingTranscript": "۲۲- شکل مقابل را تفسیر کنید :",
       "inline": false
     },
@@ -1796,6 +2016,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": "۲۳- در متن زیر دو غلط علمی وجود دارد . زیر آن ها خط کشیده و صحیح هر کدام را بالای آن بنویسید .\n« وقتی یخ گرم می شود ، انرژی مولکول های یخ کاهش می یابد و جنبش آن ها کمتر می شود . اگر این عمل را ادامه دهیم ، یخ به آهستگی ذوب و به مایع تبدیل می شود . »",
       "inline": false
     },
@@ -1830,6 +2052,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": "۲۴– کدام شکل وضعیت مولکول های آب را در حالت گاز ( بخار ) نشان می دهد ؟ دلیل انتخاب خود را بنویسید .\nشکل : ........................................\nدلیل : ......................................................................................................",
       "inline": false
     },
@@ -1864,6 +2088,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": "۱- کدام ماده در طبیعت به هر سه حالت جامد و مایع و گاز وجود دارد ؟\nالف- هوا     ب- آب     ج- سنگ     د- چوب",
       "inline": false
     },
@@ -1898,6 +2124,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": "۲- همه مواد موجود در عالم هستی تقریباً از چند نوع اتم ( عنصر ) ساخته شده اند ؟\nالف- میلیارد ها     ب- ۱۰۰۰     ج- ۸۰     د- ۹۰",
       "inline": false
     },
@@ -1932,6 +2160,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": "۳- از آزمایش مربوط به گلوله های خمیری که درون آن ها مواد مختلف قرار دادید و با انجام آزمایش های گوناگون به نوع مواد موجود در آن ها پی بردید ( بدون اینکه درون آن ها را ببینید ) می توان نتیجه گرفت که :\nالف- اتم ها کنار هم قرار می گیرند و مواد را می سازند . □\nب- هرماده از دو یا چند نوع اتم تشکیل شده است . □\nج- دانشمندان با مشاهده غیر مستقیم ، اتم ها را بررسی و خواص آن ها را کشف کرده اند . □\nد- همه موارد □",
       "inline": false
     },
@@ -1966,6 +2196,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -1974,7 +2206,7 @@
       "chapter": 3,
       "sourceNumber": 5,
       "section": "mcq",
-      "questionAsset": "pdf:workbook.pdf#11,27,496.88,570,628.83",
+      "questionAsset": "pdf:workbook.pdf#11,27,496.88,570,628.83|+11,32.15,513.65,280.21,631.7",
       "answerAsset": "pdf:answers03.pdf#2,182,716.12,219,745.83",
       "questionSourceSegments": [
         {
@@ -2000,6 +2232,18 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [
+        {
+          "page": 11,
+          "bbox": [
+            32.15,
+            513.65,
+            280.21,
+            631.7
+          ]
+        }
+      ],
+      "paperExclusions": [],
       "readingTranscript": "۵- کدام یک از موارد زیر ، از ویژگی های کلی اتم ها می باشد ؟\nالف– اتم ها کروی شکل اند ، هسته دارند و حجم متفاوتی دارند .\nب- هسته اتم از پروتون و نوترون تشکیل شده است .\nج- در حالت عادی ، تعداد الکترون ها و پروتون ها با هم برابرند .\nد- همه موارد صحیح است .",
       "inline": false
     },
@@ -2008,7 +2252,7 @@
       "chapter": 3,
       "sourceNumber": 6,
       "section": "mcq",
-      "questionAsset": "pdf:workbook.pdf#11,27,630.83,570,689.91",
+      "questionAsset": "pdf:workbook.pdf#11,27,630.83,570,689.91|-11,32.15,513.65,280.21,631.7|-11,44.0,681.46,130.65,779.926",
       "answerAsset": "pdf:answers03.pdf#2,108,716.12,160,745.83",
       "questionSourceSegments": [
         {
@@ -2034,6 +2278,27 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [
+        {
+          "page": 11,
+          "bbox": [
+            32.15,
+            513.65,
+            280.21,
+            631.7
+          ]
+        },
+        {
+          "page": 11,
+          "bbox": [
+            44.0,
+            681.46,
+            130.65,
+            779.926
+          ]
+        }
+      ],
       "readingTranscript": "۶- هر اتم نیتروژن ۷ پروتون ( p ) دارد . تعداد الکترون های ( e ) آن چه تعداد است ؟\nالف- ۷     ب- ۲۱     ج- ۲۸     د- ۱۴",
       "inline": false
     },
@@ -2042,7 +2307,7 @@
       "chapter": 3,
       "sourceNumber": 7,
       "section": "mcq",
-      "questionAsset": "pdf:workbook.pdf#11,27,691.91,570,787",
+      "questionAsset": "pdf:workbook.pdf#11,27,691.91,570,787|+11,44.0,681.46,130.65,779.926",
       "answerAsset": "pdf:answers03.pdf#2,44,716.12,86,745.83",
       "questionSourceSegments": [
         {
@@ -2068,6 +2333,18 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [
+        {
+          "page": 11,
+          "bbox": [
+            44.0,
+            681.46,
+            130.65,
+            779.926
+          ]
+        }
+      ],
+      "paperExclusions": [],
       "readingTranscript": "۷- در کپسول های گاز پیک نیک مقدر زیادی گاز را در یک حجم کمی قرار می دهند .\nعلت اینکه می توان گاز ها را زیاد متراکم ( فشرده ) کرد ، چیست ؟\nالف- گاز ها حجم معینی دارند .\nب- فاصله بین ذره های گاز زیاد است .\nج- فاصله بین ذره های گاز کم است .\nد- ربایش بین ذره های گاز زیاد است .",
       "inline": false
     },
@@ -2102,6 +2379,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": true
     },
@@ -2136,6 +2415,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -2170,6 +2451,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -2204,6 +2487,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -2238,7 +2523,9 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
-      "readingTranscript": null,
+      "paperAdditions": [],
+      "paperExclusions": [],
+      "readingTranscript": "۵- برای بیان ویژگی های مواد از کدام عبارت ها و واژه ها استفاده می شود ؟",
       "inline": false
     },
     {
@@ -2272,7 +2559,9 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
-      "readingTranscript": null,
+      "paperAdditions": [],
+      "paperExclusions": [],
+      "readingTranscript": "۶- وقتی می گویند یک ماده از ماده دیگر سخت تر است ، منظور چیست ؟ دو مثال بزنید .",
       "inline": false
     },
     {
@@ -2280,7 +2569,7 @@
       "chapter": 4,
       "sourceNumber": 7,
       "section": "main",
-      "questionAsset": "pdf:workbook.pdf#12,20,732.51,583.3200073242188,800;13,20,36,583.3200073242188,38.25",
+      "questionAsset": "pdf:workbook.pdf#12,20,732.51,583.3200073242188,806;13,20,36,583.3200073242188,38.25",
       "answerAsset": "pdf:answers04.pdf#1,20,416.15,583.3200073242188,512.25",
       "questionSourceSegments": [
         {
@@ -2289,7 +2578,7 @@
             20,
             732.51,
             583.3200073242188,
-            800
+            806
           ]
         },
         {
@@ -2315,7 +2604,9 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
-      "readingTranscript": null,
+      "paperAdditions": [],
+      "paperExclusions": [],
+      "readingTranscript": "۷- منظور از انعطاف پذیری یک ماده چیست ؟ یک مثال بزنید .",
       "inline": false
     },
     {
@@ -2323,7 +2614,7 @@
       "chapter": 4,
       "sourceNumber": 8,
       "section": "main",
-      "questionAsset": "pdf:workbook.pdf#13,20,39.25,583.3200073242188,168.15",
+      "questionAsset": "pdf:workbook.pdf#13,20,39.25,583.3200073242188,168.15|+13,45.0,38.25,300.0,141.0",
       "answerAsset": "pdf:answers04.pdf#1,20,513.25,583.3200073242188,577.05",
       "questionSourceSegments": [
         {
@@ -2349,6 +2640,18 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [
+        {
+          "page": 13,
+          "bbox": [
+            45.0,
+            38.25,
+            300.0,
+            141.0
+          ]
+        }
+      ],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -2383,6 +2686,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -2426,6 +2731,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -2434,7 +2741,7 @@
       "chapter": 4,
       "sourceNumber": 11,
       "section": "main",
-      "questionAsset": "pdf:workbook.pdf#13,20,618.71,583.3200073242188,800;14,20,36,583.3200073242188,38.25",
+      "questionAsset": "pdf:workbook.pdf#13,20,618.71,583.3200073242188,806;14,20,36,583.3200073242188,38.25|+13,68.88,670.799,158.338,815.099",
       "answerAsset": "pdf:answers04.pdf#2,20,47.34,583.3200073242188,111.16",
       "questionSourceSegments": [
         {
@@ -2443,7 +2750,7 @@
             20,
             618.71,
             583.3200073242188,
-            800
+            806
           ]
         },
         {
@@ -2469,6 +2776,18 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [
+        {
+          "page": 13,
+          "bbox": [
+            68.88,
+            670.799,
+            158.338,
+            815.099
+          ]
+        }
+      ],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -2477,7 +2796,7 @@
       "chapter": 4,
       "sourceNumber": 12,
       "section": "main",
-      "questionAsset": "pdf:workbook.pdf#14,20,39.25,583.3200073242188,102.83",
+      "questionAsset": "pdf:workbook.pdf#14,20,39.25,583.3200073242188,102.83|-14,41.2,92.97,166.1,166.32",
       "answerAsset": "pdf:answers04.pdf#2,20,112.16,583.3200073242188,153.52",
       "questionSourceSegments": [
         {
@@ -2503,7 +2822,19 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
-      "readingTranscript": null,
+      "paperAdditions": [],
+      "paperExclusions": [
+        {
+          "page": 14,
+          "bbox": [
+            41.2,
+            92.97,
+            166.1,
+            166.32
+          ]
+        }
+      ],
+      "readingTranscript": "۱۲- در ساختن یک وسیله ، چه چیز هایی اهمیت دارد ؟ ( سه مورد بنویسید )",
       "inline": false
     },
     {
@@ -2511,7 +2842,7 @@
       "chapter": 4,
       "sourceNumber": 13,
       "section": "main",
-      "questionAsset": "pdf:workbook.pdf#14,20,103.83,583.3200073242188,439.5",
+      "questionAsset": "pdf:workbook.pdf#14,20,103.83,583.3200073242188,439.5|+14,41.2,92.97,166.1,166.32",
       "answerAsset": "pdf:answers04.pdf#2,20,154.52,583.3200073242188,347.95",
       "questionSourceSegments": [
         {
@@ -2537,6 +2868,18 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [
+        {
+          "page": 14,
+          "bbox": [
+            41.2,
+            92.97,
+            166.1,
+            166.32
+          ]
+        }
+      ],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -2571,7 +2914,9 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
-      "readingTranscript": null,
+      "paperAdditions": [],
+      "paperExclusions": [],
+      "readingTranscript": "۱۴- الف- چرا فلز آهن کاربرد بسیار گسترده ای در صنایع مختلف دارد ؟\nب- چرا استحکام سازه های فولادی ( ماننذ اغلب پل ها و اسکله های فلزی) با گذشت زمان کاهش می یابد ؟",
       "inline": false
     },
     {
@@ -2579,7 +2924,7 @@
       "chapter": 4,
       "sourceNumber": 15,
       "section": "main",
-      "questionAsset": "pdf:workbook.pdf#14,20,566.6,583.3200073242188,628.1",
+      "questionAsset": "pdf:workbook.pdf#14,20,566.6,583.3200073242188,628.1|-14,26.6,627.7,290.79,698.3",
       "answerAsset": "pdf:answers04.pdf#2,20,413.75,583.3200073242188,445.15",
       "questionSourceSegments": [
         {
@@ -2605,6 +2950,18 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [
+        {
+          "page": 14,
+          "bbox": [
+            26.6,
+            627.7,
+            290.79,
+            698.3
+          ]
+        }
+      ],
       "readingTranscript": null,
       "inline": false
     },
@@ -2613,7 +2970,7 @@
       "chapter": 4,
       "sourceNumber": 16,
       "section": "main",
-      "questionAsset": "pdf:workbook.pdf#14,20,629.1,583.3200073242188,800;15,20,36,583.3200073242188,38.25",
+      "questionAsset": "pdf:workbook.pdf#14,20,629.1,583.3200073242188,806;15,20,36,583.3200073242188,38.25|+14,26.6,627.7,290.79,698.3",
       "answerAsset": "pdf:answers04.pdf#2,20,446.15,583.3200073242188,607.05",
       "questionSourceSegments": [
         {
@@ -2622,7 +2979,7 @@
             20,
             629.1,
             583.3200073242188,
-            800
+            806
           ]
         },
         {
@@ -2648,6 +3005,18 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [
+        {
+          "page": 14,
+          "bbox": [
+            26.6,
+            627.7,
+            290.79,
+            698.3
+          ]
+        }
+      ],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -2682,6 +3051,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -2716,6 +3087,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -2750,6 +3123,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -2784,6 +3159,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -2818,6 +3195,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -2852,6 +3231,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -2860,7 +3241,7 @@
       "chapter": 4,
       "sourceNumber": 4,
       "section": "mcq",
-      "questionAsset": "pdf:workbook.pdf#15,20,663.52,583.3200073242188,797",
+      "questionAsset": "pdf:workbook.pdf#15,20,663.52,583.3200073242188,803",
       "answerAsset": "pdf:answers04.pdf#2,226.41,770.08,251.7,793.71",
       "questionSourceSegments": [
         {
@@ -2869,7 +3250,7 @@
             20,
             663.52,
             583.3200073242188,
-            797
+            803
           ]
         }
       ],
@@ -2886,6 +3267,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -2920,6 +3303,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": true
     },
@@ -2954,6 +3339,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -2988,7 +3375,9 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
-      "readingTranscript": null,
+      "paperAdditions": [],
+      "paperExclusions": [],
+      "readingTranscript": "۳- با استفاده از مواد و وسایل زیر ، آزمایشی طرح کنید که با انجام آن بتوان وجود آهن را در یک ترکیب شناسایی کرد .\n(( چند لوله آزمایش – قاشقک – قطره چکان – سدیم هیدروکسید – آهن (III) کلرید – آب مقطر ))",
       "inline": false
     },
     {
@@ -3022,6 +3411,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -3030,7 +3421,7 @@
       "chapter": 5,
       "sourceNumber": 5,
       "section": "main",
-      "questionAsset": "pdf:workbook.pdf#16,20,740.51,583.3200073242188,800;17,20,36,583.3200073242188,38.25",
+      "questionAsset": "pdf:workbook.pdf#16,20,740.51,583.3200073242188,806;17,20,36,583.3200073242188,38.25",
       "answerAsset": "pdf:answers05.pdf#1,20,670.72,583.3200073242188,697.92",
       "questionSourceSegments": [
         {
@@ -3039,7 +3430,7 @@
             20,
             740.51,
             583.3200073242188,
-            800
+            806
           ]
         },
         {
@@ -3065,6 +3456,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -3108,7 +3501,9 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
-      "readingTranscript": null,
+      "paperAdditions": [],
+      "paperExclusions": [],
+      "readingTranscript": "۶- آزمایشی طرح کنید که با انجام آن بتوانید آهن را از آهن اکسید جدا کنید .",
       "inline": false
     },
     {
@@ -3116,7 +3511,7 @@
       "chapter": 5,
       "sourceNumber": 7,
       "section": "main",
-      "questionAsset": "pdf:workbook.pdf#17,20,148.47,583.3200073242188,225.59",
+      "questionAsset": "pdf:workbook.pdf#17,20,148.47,583.3200073242188,225.59|-17,30.05,209.91,208.3,384.66",
       "answerAsset": "pdf:answers05.pdf#2,20,43.14,583.3200073242188,70.34",
       "questionSourceSegments": [
         {
@@ -3142,7 +3537,19 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
-      "readingTranscript": null,
+      "paperAdditions": [],
+      "paperExclusions": [
+        {
+          "page": 17,
+          "bbox": [
+            30.05,
+            209.91,
+            208.3,
+            384.66
+          ]
+        }
+      ],
+      "readingTranscript": "۷- آیا از فلز آهن خالص می توان در ساخت تیر آهن ، بدنه خودرو ها و لوازم آشپزخانه استفاده کرد ؟ چرا ؟",
       "inline": false
     },
     {
@@ -3150,7 +3557,7 @@
       "chapter": 5,
       "sourceNumber": 8,
       "section": "main",
-      "questionAsset": "pdf:workbook.pdf#17,20,226.59,583.3200073242188,361.82",
+      "questionAsset": "pdf:workbook.pdf#17,20,226.59,583.3200073242188,361.82|+17,30.05,209.91,208.3,384.66",
       "answerAsset": "pdf:answers05.pdf#2,20,71.34,583.3200073242188,182.92",
       "questionSourceSegments": [
         {
@@ -3176,6 +3583,18 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [
+        {
+          "page": 17,
+          "bbox": [
+            30.05,
+            209.91,
+            208.3,
+            384.66
+          ]
+        }
+      ],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -3184,7 +3603,7 @@
       "chapter": 5,
       "sourceNumber": 9,
       "section": "main",
-      "questionAsset": "pdf:workbook.pdf#17,20,362.82,583.3200073242188,450.88",
+      "questionAsset": "pdf:workbook.pdf#17,20,362.82,583.3200073242188,450.88|-17,30.05,209.91,208.3,384.66",
       "answerAsset": "pdf:answers05.pdf#2,20,183.92,583.3200073242188,239.32",
       "questionSourceSegments": [
         {
@@ -3210,7 +3629,19 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
-      "readingTranscript": null,
+      "paperAdditions": [],
+      "paperExclusions": [
+        {
+          "page": 17,
+          "bbox": [
+            30.05,
+            209.91,
+            208.3,
+            384.66
+          ]
+        }
+      ],
+      "readingTranscript": "۹- بتن را چگونه تهیه می کنند ؟ و سه کاربرد آن را بنویسید .",
       "inline": false
     },
     {
@@ -3244,7 +3675,9 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
-      "readingTranscript": null,
+      "paperAdditions": [],
+      "paperExclusions": [],
+      "readingTranscript": "۱۰- آزمایشی طرح کنید که نشان دهد آهک خاصیت اسیدی ندارد بلکه خاصیت بازی دارد .",
       "inline": false
     },
     {
@@ -3252,7 +3685,7 @@
       "chapter": 5,
       "sourceNumber": 11,
       "section": "main",
-      "questionAsset": "pdf:workbook.pdf#17,20,516.44,583.3200073242188,800;18,20,36,583.3200073242188,38.25",
+      "questionAsset": "pdf:workbook.pdf#17,20,516.44,583.3200073242188,806;18,20,36,583.3200073242188,38.25",
       "answerAsset": "pdf:answers05.pdf#2,20,296.63,583.3200073242188,380.11",
       "questionSourceSegments": [
         {
@@ -3261,7 +3694,7 @@
             20,
             516.44,
             583.3200073242188,
-            800
+            806
           ]
         },
         {
@@ -3287,6 +3720,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -3321,6 +3756,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -3329,7 +3766,7 @@
       "chapter": 5,
       "sourceNumber": 13,
       "section": "main",
-      "questionAsset": "pdf:workbook.pdf#18,20,221.55,583.3200073242188,405.14",
+      "questionAsset": "pdf:workbook.pdf#18,20,221.55,583.3200073242188,405.14|-18,38.4,392.85,214.5,531.9",
       "answerAsset": "pdf:answers05.pdf#2,20,465.61,583.3200073242188,492.81",
       "questionSourceSegments": [
         {
@@ -3355,6 +3792,18 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [
+        {
+          "page": 18,
+          "bbox": [
+            38.4,
+            392.85,
+            214.5,
+            531.9
+          ]
+        }
+      ],
       "readingTranscript": null,
       "inline": false
     },
@@ -3363,7 +3812,7 @@
       "chapter": 5,
       "sourceNumber": 14,
       "section": "main",
-      "questionAsset": "pdf:workbook.pdf#18,20,406.14,583.3200073242188,558.76",
+      "questionAsset": "pdf:workbook.pdf#18,20,406.14,583.3200073242188,558.76|+18,38.4,392.85,214.5,531.9",
       "answerAsset": "pdf:answers05.pdf#2,20,493.81,583.3200073242188,549.09",
       "questionSourceSegments": [
         {
@@ -3389,6 +3838,18 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [
+        {
+          "page": 18,
+          "bbox": [
+            38.4,
+            392.85,
+            214.5,
+            531.9
+          ]
+        }
+      ],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -3397,7 +3858,7 @@
       "chapter": 5,
       "sourceNumber": 15,
       "section": "main",
-      "questionAsset": "pdf:workbook.pdf#18,20,559.76,583.3200073242188,800;19,20,36,583.3200073242188,38.25",
+      "questionAsset": "pdf:workbook.pdf#18,20,559.76,583.3200073242188,806;19,20,36,583.3200073242188,38.25",
       "answerAsset": "pdf:answers05.pdf#2,20,550.09,583.3200073242188,633.69",
       "questionSourceSegments": [
         {
@@ -3406,7 +3867,7 @@
             20,
             559.76,
             583.3200073242188,
-            800
+            806
           ]
         },
         {
@@ -3432,6 +3893,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -3440,7 +3903,7 @@
       "chapter": 5,
       "sourceNumber": 16,
       "section": "main",
-      "questionAsset": "pdf:workbook.pdf#19,20,39.25,583.3200073242188,102.83",
+      "questionAsset": "pdf:workbook.pdf#19,20,39.25,583.3200073242188,102.83|-19,65.7,96.37,205.5,312.37",
       "answerAsset": "pdf:answers05.pdf#2,20,634.69,583.3200073242188,661.8",
       "questionSourceSegments": [
         {
@@ -3466,7 +3929,19 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
-      "readingTranscript": null,
+      "paperAdditions": [],
+      "paperExclusions": [
+        {
+          "page": 19,
+          "bbox": [
+            65.7,
+            96.37,
+            205.5,
+            312.37
+          ]
+        }
+      ],
+      "readingTranscript": "۱۶- برای محافظت از منابع طبیعی سه راه پیشنهاد کنید .",
       "inline": false
     },
     {
@@ -3474,7 +3949,7 @@
       "chapter": 5,
       "sourceNumber": 17,
       "section": "main",
-      "questionAsset": "pdf:workbook.pdf#19,20,103.83,583.3200073242188,299.22",
+      "questionAsset": "pdf:workbook.pdf#19,20,103.83,583.3200073242188,299.22|+19,65.7,96.37,205.5,312.37",
       "answerAsset": "pdf:answers05.pdf#2,20,662.8,583.3200073242188,718.2",
       "questionSourceSegments": [
         {
@@ -3500,6 +3975,18 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [
+        {
+          "page": 19,
+          "bbox": [
+            65.7,
+            96.37,
+            205.5,
+            312.37
+          ]
+        }
+      ],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -3534,6 +4021,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -3568,6 +4057,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -3602,6 +4093,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -3610,7 +4103,7 @@
       "chapter": 5,
       "sourceNumber": 4,
       "section": "mcq",
-      "questionAsset": "pdf:workbook.pdf#19,20,579.92,583.3200073242188,640.51",
+      "questionAsset": "pdf:workbook.pdf#19,20,579.92,583.3200073242188,640.51|-19,74.05,637.909,175.85,790.929",
       "answerAsset": "pdf:answers05.pdf#2,193.98,719.2,219.25,742.83",
       "questionSourceSegments": [
         {
@@ -3636,6 +4129,18 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [
+        {
+          "page": 19,
+          "bbox": [
+            74.05,
+            637.909,
+            175.85,
+            790.929
+          ]
+        }
+      ],
       "readingTranscript": null,
       "inline": false
     },
@@ -3644,7 +4149,7 @@
       "chapter": 5,
       "sourceNumber": 5,
       "section": "mcq",
-      "questionAsset": "pdf:workbook.pdf#19,20,641.51,583.3200073242188,797",
+      "questionAsset": "pdf:workbook.pdf#19,20,641.51,583.3200073242188,803|+19,74.05,637.909,175.85,790.929",
       "answerAsset": "pdf:answers05.pdf#2,134.78,719.2,148.8,742.83",
       "questionSourceSegments": [
         {
@@ -3653,7 +4158,7 @@
             20,
             641.51,
             583.3200073242188,
-            797
+            803
           ]
         }
       ],
@@ -3670,6 +4175,18 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [
+        {
+          "page": 19,
+          "bbox": [
+            74.05,
+            637.909,
+            175.85,
+            790.929
+          ]
+        }
+      ],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -3704,6 +4221,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": true
     },
@@ -3738,6 +4257,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -3772,6 +4293,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -3806,7 +4329,9 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
-      "readingTranscript": null,
+      "paperAdditions": [],
+      "paperExclusions": [],
+      "readingTranscript": "۴- تفسیر کنید :\n« آب ، فراوان اما کمیاب »",
       "inline": false
     },
     {
@@ -3814,7 +4339,7 @@
       "chapter": 6,
       "sourceNumber": 5,
       "section": "main",
-      "questionAsset": "pdf:workbook.pdf#20,20,655.31,583.3200073242188,800;21,20,36,583.3200073242188,38.25",
+      "questionAsset": "pdf:workbook.pdf#20,20,655.31,583.3200073242188,806;21,20,36,583.3200073242188,38.25",
       "answerAsset": "pdf:answers06.pdf#1,20,458.17,583.3200073242188,710.76",
       "questionSourceSegments": [
         {
@@ -3823,7 +4348,7 @@
             20,
             655.31,
             583.3200073242188,
-            800
+            806
           ]
         },
         {
@@ -3849,7 +4374,9 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
-      "readingTranscript": null,
+      "paperAdditions": [],
+      "paperExclusions": [],
+      "readingTranscript": "۵- با استفاده از مواد و وسایل زیر ، آزمایشی طرح کنید که تشکیل ابر و باران را نشان دهد .\n(( بشر یا لیوان 2 عدد – نایلون – کش – یخ ))",
       "inline": false
     },
     {
@@ -3892,6 +4419,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -3926,6 +4455,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -3960,6 +4491,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -3968,7 +4501,7 @@
       "chapter": 6,
       "sourceNumber": 9,
       "section": "main",
-      "questionAsset": "pdf:workbook.pdf#21,20,562.4,583.3200073242188,705.67",
+      "questionAsset": "pdf:workbook.pdf#21,20,562.4,583.3200073242188,705.67|-21,38.2,699.896,282.45,811.646",
       "answerAsset": "pdf:answers06.pdf#2,20,479.77,583.3200073242188,563.25",
       "questionSourceSegments": [
         {
@@ -3994,7 +4527,19 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
-      "readingTranscript": null,
+      "paperAdditions": [],
+      "paperExclusions": [
+        {
+          "page": 21,
+          "bbox": [
+            38.2,
+            699.896,
+            282.45,
+            811.646
+          ]
+        }
+      ],
+      "readingTranscript": "۹- با استفاده از یک ظرف شیشه ای ، یک لیوان آب و مقداری ماسه و رس ، آزمایشی طرح کنید که نشان دهد باران هنگام بارش به کجا می رود .",
       "inline": false
     },
     {
@@ -4002,7 +4547,7 @@
       "chapter": 6,
       "sourceNumber": 10,
       "section": "main",
-      "questionAsset": "pdf:workbook.pdf#21,20,706.67,583.3200073242188,800;22,20,36,583.3200073242188,38.25",
+      "questionAsset": "pdf:workbook.pdf#21,20,706.67,583.3200073242188,806;22,20,36,583.3200073242188,38.25|+21,38.2,699.896,282.45,811.646",
       "answerAsset": "pdf:answers06.pdf#2,20,564.25,583.3200073242188,619.53",
       "questionSourceSegments": [
         {
@@ -4011,7 +4556,7 @@
             20,
             706.67,
             583.3200073242188,
-            800
+            806
           ]
         },
         {
@@ -4037,6 +4582,18 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [
+        {
+          "page": 21,
+          "bbox": [
+            38.2,
+            699.896,
+            282.45,
+            811.646
+          ]
+        }
+      ],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -4080,6 +4637,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -4114,6 +4673,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -4148,6 +4709,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -4156,7 +4719,7 @@
       "chapter": 6,
       "sourceNumber": 14,
       "section": "main",
-      "questionAsset": "pdf:workbook.pdf#22,20,642.35,583.3200073242188,800;23,20,36,583.3200073242188,38.3",
+      "questionAsset": "pdf:workbook.pdf#22,20,642.35,583.3200073242188,806;23,20,36,583.3200073242188,38.3",
       "answerAsset": "pdf:answers06.pdf#3,20,268.43,583.3200073242188,295.63",
       "questionSourceSegments": [
         {
@@ -4165,7 +4728,7 @@
             20,
             642.35,
             583.3200073242188,
-            800
+            806
           ]
         },
         {
@@ -4191,6 +4754,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -4225,6 +4790,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -4259,6 +4826,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -4293,7 +4862,9 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
-      "readingTranscript": null,
+      "paperAdditions": [],
+      "paperExclusions": [],
+      "readingTranscript": "۱۷- دو مورد از عوامل آلوده کننده دریا ها و دریاچه ها را بنویسید .",
       "inline": false
     },
     {
@@ -4327,7 +4898,9 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
-      "readingTranscript": null,
+      "paperAdditions": [],
+      "paperExclusions": [],
+      "readingTranscript": "۱۸- سه نوع حرکت آب دریا ها را بنویسید .\n...........................................   .......................................   .......................................",
       "inline": false
     },
     {
@@ -4361,7 +4934,9 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
-      "readingTranscript": null,
+      "paperAdditions": [],
+      "paperExclusions": [],
+      "readingTranscript": "۱۹- آبتاز ( سونامی ) چیست ؟",
       "inline": false
     },
     {
@@ -4395,6 +4970,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -4403,7 +4980,7 @@
       "chapter": 6,
       "sourceNumber": 21,
       "section": "main",
-      "questionAsset": "pdf:workbook.pdf#23,20,629.63,583.3200073242188,797",
+      "questionAsset": "pdf:workbook.pdf#23,20,629.63,583.3200073242188,803",
       "answerAsset": "pdf:answers06.pdf#3,20,606.49,583.3200073242188,803",
       "questionSourceSegments": [
         {
@@ -4412,7 +4989,7 @@
             20,
             629.63,
             583.3200073242188,
-            797
+            803
           ]
         }
       ],
@@ -4429,7 +5006,9 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
-      "readingTranscript": null,
+      "paperAdditions": [],
+      "paperExclusions": [],
+      "readingTranscript": "۲۱- الف- یخچال طبیعی چگونه تشکیل می شود ؟\nب- دو نوع یخچال طبیعی را نام ببرید و هر کدام در کجا تشکیل می شوند ؟",
       "inline": false
     },
     {
@@ -4463,6 +5042,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": true
     },
@@ -4497,6 +5078,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -4531,6 +5114,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -4539,7 +5124,7 @@
       "chapter": 7,
       "sourceNumber": 4,
       "section": "main",
-      "questionAsset": "pdf:workbook.pdf#24,20,617.63,583.3200073242188,800;25,20,36,583.3200073242188,38.25",
+      "questionAsset": "pdf:workbook.pdf#24,20,617.63,583.3200073242188,806;25,20,36,583.3200073242188,38.25",
       "answerAsset": "pdf:answers07.pdf#1,20,235.88,583.3200073242188,347.59",
       "questionSourceSegments": [
         {
@@ -4548,7 +5133,7 @@
             20,
             617.63,
             583.3200073242188,
-            800
+            806
           ]
         },
         {
@@ -4574,6 +5159,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -4608,6 +5195,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -4642,6 +5231,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -4676,6 +5267,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -4684,7 +5277,7 @@
       "chapter": 7,
       "sourceNumber": 8,
       "section": "main",
-      "questionAsset": "pdf:workbook.pdf#25,20,713.56,583.3200073242188,800;26,20,36,583.3200073242188,38.25",
+      "questionAsset": "pdf:workbook.pdf#25,20,713.56,583.3200073242188,806;26,20,36,583.3200073242188,38.25",
       "answerAsset": "pdf:answers07.pdf#1,20,688.0,583.3200073242188,715.08",
       "questionSourceSegments": [
         {
@@ -4693,7 +5286,7 @@
             20,
             713.56,
             583.3200073242188,
-            800
+            806
           ]
         },
         {
@@ -4719,6 +5312,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": true
     },
@@ -4762,7 +5357,9 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
-      "readingTranscript": null,
+      "paperAdditions": [],
+      "paperExclusions": [],
+      "readingTranscript": "۹- ذخایر آب های زیر زمینی چگونه به وجود می آیند ؟",
       "inline": false
     },
     {
@@ -4796,7 +5393,9 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
-      "readingTranscript": null,
+      "paperAdditions": [],
+      "paperExclusions": [],
+      "readingTranscript": "۱۰- غار های آهکی چگونه تشکیل می شوند ؟",
       "inline": false
     },
     {
@@ -4830,7 +5429,9 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
-      "readingTranscript": null,
+      "paperAdditions": [],
+      "paperExclusions": [],
+      "readingTranscript": "۱۱- آزمایشی طراحی کنید که با انجام آن بتوانید میزان فضاهای خالی بین ذرات ماسه را اندازه بگیرید .",
       "inline": false
     },
     {
@@ -4864,6 +5465,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -4898,6 +5501,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -4906,7 +5511,7 @@
       "chapter": 7,
       "sourceNumber": 14,
       "section": "main",
-      "questionAsset": "pdf:workbook.pdf#26,20,614.27,583.3200073242188,800;27,20,36,583.3200073242188,38.25",
+      "questionAsset": "pdf:workbook.pdf#26,20,614.27,583.3200073242188,806;27,20,36,583.3200073242188,38.25",
       "answerAsset": "pdf:answers07.pdf#2,20,334.79,583.3200073242188,418.27",
       "questionSourceSegments": [
         {
@@ -4915,7 +5520,7 @@
             20,
             614.27,
             583.3200073242188,
-            800
+            806
           ]
         },
         {
@@ -4941,6 +5546,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -4975,6 +5582,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -5009,6 +5618,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -5043,7 +5654,9 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
-      "readingTranscript": null,
+      "paperAdditions": [],
+      "paperExclusions": [],
+      "readingTranscript": "۱۷- عمق سطح ایستابی به چه عواملی بستگی دارد ؟",
       "inline": false
     },
     {
@@ -5077,6 +5690,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -5085,7 +5700,7 @@
       "chapter": 7,
       "sourceNumber": 19,
       "section": "main",
-      "questionAsset": "pdf:workbook.pdf#27,20,360.3,583.3200073242188,599.56",
+      "questionAsset": "pdf:workbook.pdf#27,20,360.3,583.3200073242188,599.56|-27,30.05,585.41,331.29,725.91",
       "answerAsset": "pdf:answers07.pdf#2,20,672.88,583.3200073242188,806;3,20,38,583.3200073242188,52.1",
       "questionSourceSegments": [
         {
@@ -5120,6 +5735,18 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [
+        {
+          "page": 27,
+          "bbox": [
+            30.05,
+            585.41,
+            331.29,
+            725.91
+          ]
+        }
+      ],
       "readingTranscript": null,
       "inline": false
     },
@@ -5128,7 +5755,7 @@
       "chapter": 7,
       "sourceNumber": 20,
       "section": "main",
-      "questionAsset": "pdf:workbook.pdf#27,20,600.56,583.3200073242188,800;28,20,36,583.3200073242188,38.25",
+      "questionAsset": "pdf:workbook.pdf#27,20,600.56,583.3200073242188,806;28,20,36,583.3200073242188,38.25|+27,30.05,585.41,331.29,725.91",
       "answerAsset": "pdf:answers07.pdf#3,20,53.1,583.3200073242188,136.6",
       "questionSourceSegments": [
         {
@@ -5137,7 +5764,7 @@
             20,
             600.56,
             583.3200073242188,
-            800
+            806
           ]
         },
         {
@@ -5163,6 +5790,18 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [
+        {
+          "page": 27,
+          "bbox": [
+            30.05,
+            585.41,
+            331.29,
+            725.91
+          ]
+        }
+      ],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -5197,7 +5836,9 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
-      "readingTranscript": null,
+      "paperAdditions": [],
+      "paperExclusions": [],
+      "readingTranscript": "۲۱- میلاد به همراه خانواده اش برای تفریح به کنار یک چشمه رفته بود و چگونگی تشکیل چشمه را برای خانواده اش توضیح داد . شما هم بنویسید که چشمه چگونه تشکیل می شود ؟",
       "inline": false
     },
     {
@@ -5231,6 +5872,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -5265,6 +5908,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -5299,7 +5944,9 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
-      "readingTranscript": null,
+      "paperAdditions": [],
+      "paperExclusions": [],
+      "readingTranscript": "۲۴- ویژگی های آب های زیر زمینی را بنویسید .",
       "inline": false
     },
     {
@@ -5333,6 +5980,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -5341,7 +5990,7 @@
       "chapter": 7,
       "sourceNumber": 26,
       "section": "main",
-      "questionAsset": "pdf:workbook.pdf#28,20,564.44,583.3200073242188,660.31",
+      "questionAsset": "pdf:workbook.pdf#28,20,564.44,583.3200073242188,660.31|+28,61.5,588.365,129.15,679.88",
       "answerAsset": "pdf:answers07.pdf#3,20,447.47,583.3200073242188,502.77",
       "questionSourceSegments": [
         {
@@ -5367,6 +6016,18 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [
+        {
+          "page": 28,
+          "bbox": [
+            61.5,
+            588.365,
+            129.15,
+            679.88
+          ]
+        }
+      ],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -5375,7 +6036,7 @@
       "chapter": 7,
       "sourceNumber": 27,
       "section": "main",
-      "questionAsset": "pdf:workbook.pdf#28,20,661.31,583.3200073242188,800;29,20,36,583.3200073242188,38.25",
+      "questionAsset": "pdf:workbook.pdf#28,20,661.31,583.3200073242188,806;29,20,36,583.3200073242188,38.25|-28,61.5,588.365,129.15,679.88",
       "answerAsset": "pdf:answers07.pdf#3,20,503.77,583.3200073242188,587.25",
       "questionSourceSegments": [
         {
@@ -5384,7 +6045,7 @@
             20,
             661.31,
             583.3200073242188,
-            800
+            806
           ]
         },
         {
@@ -5410,6 +6071,18 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [
+        {
+          "page": 28,
+          "bbox": [
+            61.5,
+            588.365,
+            129.15,
+            679.88
+          ]
+        }
+      ],
       "readingTranscript": null,
       "inline": false
     },
@@ -5444,6 +6117,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -5478,6 +6153,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -5512,6 +6189,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -5546,6 +6225,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -5580,6 +6261,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -5614,6 +6297,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -5622,7 +6307,7 @@
       "chapter": 7,
       "sourceNumber": 6,
       "section": "mcq",
-      "questionAsset": "pdf:workbook.pdf#29,20,646.79,583.3200073242188,797",
+      "questionAsset": "pdf:workbook.pdf#29,20,646.79,583.3200073242188,803",
       "answerAsset": "pdf:answers07.pdf#3,107.58,672.88,123.41,696.51",
       "questionSourceSegments": [
         {
@@ -5631,7 +6316,7 @@
             20,
             646.79,
             583.3200073242188,
-            797
+            803
           ]
         }
       ],
@@ -5648,6 +6333,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -5682,6 +6369,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": true
     },
@@ -5716,6 +6405,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -5724,7 +6415,7 @@
       "chapter": 8,
       "sourceNumber": 3,
       "section": "main",
-      "questionAsset": "pdf:workbook.pdf#30,20,608.87,583.3200073242188,800;31,20,36,583.3200073242188,38.25",
+      "questionAsset": "pdf:workbook.pdf#30,20,608.87,583.3200073242188,806;31,20,36,583.3200073242188,38.25",
       "answerAsset": "pdf:answers08.pdf#1,20,296.63,583.3200073242188,352.03",
       "questionSourceSegments": [
         {
@@ -5733,7 +6424,7 @@
             20,
             608.87,
             583.3200073242188,
-            800
+            806
           ]
         },
         {
@@ -5759,6 +6450,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -5793,6 +6486,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -5827,7 +6522,9 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
-      "readingTranscript": null,
+      "paperAdditions": [],
+      "paperExclusions": [],
+      "readingTranscript": "۵- امید با نیروی افقی 420 نیوتونی جعبه ای را به اندازه 4 متر در امتداد نیروی وارد شده به آن ، جا به جا می کند . کاری که امید روی جعبه انجام می دهد ، چقدر است ؟",
       "inline": false
     },
     {
@@ -5861,6 +6558,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -5895,6 +6594,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -5903,7 +6604,7 @@
       "chapter": 8,
       "sourceNumber": 8,
       "section": "main",
-      "questionAsset": "pdf:workbook.pdf#31,20,696.71,583.3200073242188,800;32,20,36,583.3200073242188,38.25",
+      "questionAsset": "pdf:workbook.pdf#31,20,696.71,583.3200073242188,806;32,20,36,583.3200073242188,38.25",
       "answerAsset": "pdf:answers08.pdf#1,20,606.49,583.3200073242188,633.69",
       "questionSourceSegments": [
         {
@@ -5912,7 +6613,7 @@
             20,
             696.71,
             583.3200073242188,
-            800
+            806
           ]
         },
         {
@@ -5938,6 +6639,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -5972,7 +6675,9 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
-      "readingTranscript": null,
+      "paperAdditions": [],
+      "paperExclusions": [],
+      "readingTranscript": "۹- انرژی جنبشی به چه عواملی بستگی دارد ؟\n.................................................................   ............................................",
       "inline": false
     },
     {
@@ -6006,6 +6711,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -6049,7 +6756,9 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
-      "readingTranscript": null,
+      "paperAdditions": [],
+      "paperExclusions": [],
+      "readingTranscript": "۱۱- انرژی پتانسیل گرانشی به چه عواملی بستگی دارد ؟\n......................................................................   ...............................................",
       "inline": false
     },
     {
@@ -6083,6 +6792,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -6117,6 +6828,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -6125,7 +6838,7 @@
       "chapter": 8,
       "sourceNumber": 14,
       "section": "main",
-      "questionAsset": "pdf:workbook.pdf#32,20,679.07,583.3200073242188,800;33,20,36,583.3200073242188,38.25",
+      "questionAsset": "pdf:workbook.pdf#32,20,679.07,583.3200073242188,806;33,20,36,583.3200073242188,38.25|+32,34.95,678.644,263.5,782.084",
       "answerAsset": "pdf:answers08.pdf#2,20,296.63,583.3200073242188,323.83",
       "questionSourceSegments": [
         {
@@ -6134,7 +6847,7 @@
             20,
             679.07,
             583.3200073242188,
-            800
+            806
           ]
         },
         {
@@ -6160,6 +6873,18 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [
+        {
+          "page": 32,
+          "bbox": [
+            34.95,
+            678.644,
+            263.5,
+            782.084
+          ]
+        }
+      ],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -6168,7 +6893,7 @@
       "chapter": 8,
       "sourceNumber": 15,
       "section": "main",
-      "questionAsset": "pdf:workbook.pdf#33,20,39.25,583.3200073242188,184.19",
+      "questionAsset": "pdf:workbook.pdf#33,20,39.25,583.3200073242188,184.19|+33,34.95,62.2,257.17,192.2",
       "answerAsset": "pdf:answers08.pdf#2,20,324.83,583.3200073242188,352.03",
       "questionSourceSegments": [
         {
@@ -6194,6 +6919,18 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [
+        {
+          "page": 33,
+          "bbox": [
+            34.95,
+            62.2,
+            257.17,
+            192.2
+          ]
+        }
+      ],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -6202,7 +6939,7 @@
       "chapter": 8,
       "sourceNumber": 16,
       "section": "main",
-      "questionAsset": "pdf:workbook.pdf#33,20,185.19,583.3200073242188,246.71",
+      "questionAsset": "pdf:workbook.pdf#33,20,185.19,583.3200073242188,246.71|-33,34.95,62.2,257.17,192.2",
       "answerAsset": "pdf:answers08.pdf#2,20,353.03,583.3200073242188,436.51",
       "questionSourceSegments": [
         {
@@ -6228,7 +6965,19 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
-      "readingTranscript": null,
+      "paperAdditions": [],
+      "paperExclusions": [
+        {
+          "page": 33,
+          "bbox": [
+            34.95,
+            62.2,
+            257.17,
+            192.2
+          ]
+        }
+      ],
+      "readingTranscript": "۱۶- قانون پایستگی انرژی را بنویسید .",
       "inline": false
     },
     {
@@ -6262,6 +7011,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -6296,6 +7047,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -6304,7 +7057,7 @@
       "chapter": 8,
       "sourceNumber": 19,
       "section": "main",
-      "questionAsset": "pdf:workbook.pdf#33,20,670.55,583.3200073242188,800;34,20,36,583.3200073242188,38.25",
+      "questionAsset": "pdf:workbook.pdf#33,20,670.55,583.3200073242188,806;34,20,36,583.3200073242188,38.25",
       "answerAsset": "pdf:answers08.pdf#2,20,648.76,583.3200073242188,732.24",
       "questionSourceSegments": [
         {
@@ -6313,7 +7066,7 @@
             20,
             670.55,
             583.3200073242188,
-            800
+            806
           ]
         },
         {
@@ -6339,6 +7092,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -6373,6 +7128,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -6407,6 +7164,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -6441,6 +7200,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -6475,6 +7236,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -6509,6 +7272,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -6543,6 +7308,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -6551,7 +7318,7 @@
       "chapter": 8,
       "sourceNumber": 7,
       "section": "mcq",
-      "questionAsset": "pdf:workbook.pdf#34,20,623.03,583.3200073242188,797",
+      "questionAsset": "pdf:workbook.pdf#34,20,623.03,583.3200073242188,803",
       "answerAsset": "pdf:answers08.pdf#2,14.93,733.24,40.22,756.87",
       "questionSourceSegments": [
         {
@@ -6560,7 +7327,7 @@
             20,
             623.03,
             583.3200073242188,
-            797
+            803
           ]
         }
       ],
@@ -6577,6 +7344,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -6611,6 +7380,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": true
     },
@@ -6645,7 +7416,9 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
-      "readingTranscript": null,
+      "paperAdditions": [],
+      "paperExclusions": [],
+      "readingTranscript": "۲- تفاوت منابع انرژی تجدید پذیر با منابع انرژی تجدید نا پذیر از نظر پایداری چیست ؟",
       "inline": false
     },
     {
@@ -6679,6 +7452,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -6687,7 +7462,7 @@
       "chapter": 9,
       "sourceNumber": 4,
       "section": "main",
-      "questionAsset": "pdf:workbook.pdf#35,20,575.96,583.3200073242188,800;36,20,36,583.3200073242188,38.25",
+      "questionAsset": "pdf:workbook.pdf#35,20,575.96,583.3200073242188,806;36,20,36,583.3200073242188,38.25",
       "answerAsset": "pdf:answers09.pdf#1,20,281.99,583.3200073242188,393.67",
       "questionSourceSegments": [
         {
@@ -6696,7 +7471,7 @@
             20,
             575.96,
             583.3200073242188,
-            800
+            806
           ]
         },
         {
@@ -6722,6 +7497,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -6756,6 +7533,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -6790,7 +7569,9 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
-      "readingTranscript": null,
+      "paperAdditions": [],
+      "paperExclusions": [],
+      "readingTranscript": "۶- برای صرفه جویی در مصرف انرژی الکتریکی در خانه تان ، دو راه پیشنهاد کنید .",
       "inline": false
     },
     {
@@ -6824,7 +7605,9 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
-      "readingTranscript": null,
+      "paperAdditions": [],
+      "paperExclusions": [],
+      "readingTranscript": "۷- چرا در کل جهان ، سرمایه گذاری و پژوهش در باره انرژی های تجدید پذیر ( خورشید ، باد و .. ) و استفاده از آن ها به سرعت در حال افزایش است ؟ ( سه دلیل بیاورید )",
       "inline": false
     },
     {
@@ -6858,6 +7641,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -6866,7 +7651,7 @@
       "chapter": 9,
       "sourceNumber": 9,
       "section": "main",
-      "questionAsset": "pdf:workbook.pdf#36,20,476.12,583.3200073242188,628.87",
+      "questionAsset": "pdf:workbook.pdf#36,20,476.12,583.3200073242188,628.87|-36,90.15,626.571,131.7,752.951|-36,139.1,626.57,175.3,729.22",
       "answerAsset": "pdf:answers09.pdf#1,20,648.16,583.3200073242188,806;2,20,38,583.3200073242188,42.14",
       "questionSourceSegments": [
         {
@@ -6901,6 +7686,27 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [
+        {
+          "page": 36,
+          "bbox": [
+            90.15,
+            626.571,
+            131.7,
+            752.951
+          ]
+        },
+        {
+          "page": 36,
+          "bbox": [
+            139.1,
+            626.57,
+            175.3,
+            729.22
+          ]
+        }
+      ],
       "readingTranscript": null,
       "inline": false
     },
@@ -6909,7 +7715,7 @@
       "chapter": 9,
       "sourceNumber": 10,
       "section": "main",
-      "questionAsset": "pdf:workbook.pdf#36,20,629.87,583.3200073242188,800;37,20,36,583.3200073242188,38.25",
+      "questionAsset": "pdf:workbook.pdf#36,20,629.87,583.3200073242188,806;37,20,36,583.3200073242188,38.25|+36,90.15,626.571,131.7,752.951|+36,139.1,626.57,175.3,729.22|-37,37.0,35.65,381.52,127.9",
       "answerAsset": "pdf:answers09.pdf#2,20,43.14,583.3200073242188,154.84",
       "questionSourceSegments": [
         {
@@ -6918,7 +7724,7 @@
             20,
             629.87,
             583.3200073242188,
-            800
+            806
           ]
         },
         {
@@ -6944,6 +7750,37 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [
+        {
+          "page": 36,
+          "bbox": [
+            90.15,
+            626.571,
+            131.7,
+            752.951
+          ]
+        },
+        {
+          "page": 36,
+          "bbox": [
+            139.1,
+            626.57,
+            175.3,
+            729.22
+          ]
+        }
+      ],
+      "paperExclusions": [
+        {
+          "page": 37,
+          "bbox": [
+            37.0,
+            35.65,
+            381.52,
+            127.9
+          ]
+        }
+      ],
       "readingTranscript": null,
       "inline": false
     },
@@ -6952,7 +7789,7 @@
       "chapter": 9,
       "sourceNumber": 11,
       "section": "main",
-      "questionAsset": "pdf:workbook.pdf#37,20,39.25,583.3200073242188,281.06",
+      "questionAsset": "pdf:workbook.pdf#37,20,39.25,583.3200073242188,281.06|+37,37.0,35.65,381.52,127.9",
       "answerAsset": "pdf:answers09.pdf#2,20,155.84,583.3200073242188,239.32",
       "questionSourceSegments": [
         {
@@ -6978,6 +7815,18 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [
+        {
+          "page": 37,
+          "bbox": [
+            37.0,
+            35.65,
+            381.52,
+            127.9
+          ]
+        }
+      ],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -7012,6 +7861,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -7020,7 +7871,7 @@
       "chapter": 9,
       "sourceNumber": 13,
       "section": "main",
-      "questionAsset": "pdf:workbook.pdf#37,20,494.36,583.3200073242188,800;38,20,36,583.3200073242188,38.25",
+      "questionAsset": "pdf:workbook.pdf#37,20,494.36,583.3200073242188,806;38,20,36,583.3200073242188,38.25",
       "answerAsset": "pdf:answers09.pdf#2,20,268.43,583.3200073242188,436.51",
       "questionSourceSegments": [
         {
@@ -7029,7 +7880,7 @@
             20,
             494.36,
             583.3200073242188,
-            800
+            806
           ]
         },
         {
@@ -7055,6 +7906,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -7089,6 +7942,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -7123,6 +7978,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -7157,6 +8014,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -7165,7 +8024,7 @@
       "chapter": 9,
       "sourceNumber": 2,
       "section": "mcq",
-      "questionAsset": "pdf:workbook.pdf#38,20,618.95,583.3200073242188,674.71",
+      "questionAsset": "pdf:workbook.pdf#38,20,618.95,583.3200073242188,674.71|-38,30.75,668.968,317.18,794.068",
       "answerAsset": "pdf:answers09.pdf#2,293.49,775.48,305.02,799.11",
       "questionSourceSegments": [
         {
@@ -7191,6 +8050,18 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [
+        {
+          "page": 38,
+          "bbox": [
+            30.75,
+            668.968,
+            317.18,
+            794.068
+          ]
+        }
+      ],
       "readingTranscript": null,
       "inline": false
     },
@@ -7199,7 +8070,7 @@
       "chapter": 9,
       "sourceNumber": 3,
       "section": "mcq",
-      "questionAsset": "pdf:workbook.pdf#38,20,675.71,583.3200073242188,797",
+      "questionAsset": "pdf:workbook.pdf#38,20,675.71,583.3200073242188,803|+38,30.75,668.968,317.18,794.068",
       "answerAsset": "pdf:answers09.pdf#2,239.47,775.48,253.5,799.11",
       "questionSourceSegments": [
         {
@@ -7208,7 +8079,7 @@
             20,
             675.71,
             583.3200073242188,
-            797
+            803
           ]
         }
       ],
@@ -7225,6 +8096,18 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [
+        {
+          "page": 38,
+          "bbox": [
+            30.75,
+            668.968,
+            317.18,
+            794.068
+          ]
+        }
+      ],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -7259,6 +8142,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": true
     },
@@ -7293,6 +8178,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -7327,7 +8214,9 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
-      "readingTranscript": null,
+      "paperAdditions": [],
+      "paperExclusions": [],
+      "readingTranscript": "۳- الف- چگونه با دماسنج های جیوه ای یا الکلی ، دمای یک جسم را اندازه می گیرید ؟\nب- دماسنج پزشکی چه کاربردی دارد ؟",
       "inline": false
     },
     {
@@ -7335,7 +8224,7 @@
       "chapter": 10,
       "sourceNumber": 4,
       "section": "main",
-      "questionAsset": "pdf:workbook.pdf#39,20,622.67,583.3200073242188,800;40,20,36,583.3200073242188,39.01",
+      "questionAsset": "pdf:workbook.pdf#39,20,622.67,583.3200073242188,806;40,20,36,583.3200073242188,39.01",
       "answerAsset": "pdf:answers10.pdf#1,20,324.23,583.3200073242188,351.43",
       "questionSourceSegments": [
         {
@@ -7344,7 +8233,7 @@
             20,
             622.67,
             583.3200073242188,
-            800
+            806
           ]
         },
         {
@@ -7370,6 +8259,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": true
     },
@@ -7404,6 +8295,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -7438,6 +8331,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -7472,7 +8367,9 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
-      "readingTranscript": null,
+      "paperAdditions": [],
+      "paperExclusions": [],
+      "readingTranscript": "۷- سه راه انتقال گرما را نام ببرید .\n...................................................   ............................................   ........................",
       "inline": false
     },
     {
@@ -7515,7 +8412,9 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
-      "readingTranscript": null,
+      "paperAdditions": [],
+      "paperExclusions": [],
+      "readingTranscript": "۸- گرما چگونه از طریق رسانش ( رسانایی ) منتقل می گردد ؟",
       "inline": false
     },
     {
@@ -7549,6 +8448,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -7557,7 +8458,7 @@
       "chapter": 10,
       "sourceNumber": 10,
       "section": "main",
-      "questionAsset": "pdf:workbook.pdf#40,20,710.75,583.3200073242188,800;41,20,36,583.3200073242188,38.25",
+      "questionAsset": "pdf:workbook.pdf#40,20,710.75,583.3200073242188,806;41,20,36,583.3200073242188,38.25",
       "answerAsset": "pdf:answers10.pdf#2,20,183.92,583.3200073242188,239.32",
       "questionSourceSegments": [
         {
@@ -7566,7 +8467,7 @@
             20,
             710.75,
             583.3200073242188,
-            800
+            806
           ]
         },
         {
@@ -7592,7 +8493,9 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
-      "readingTranscript": null,
+      "paperAdditions": [],
+      "paperExclusions": [],
+      "readingTranscript": "۱۰- الف- چرا وقتی با سیخ فلزی کباب درست می کنیم ، احتمال سوختن دستمان وجود دارد ؟\nب- در چه صورت دستمان نمی سوزد ؟",
       "inline": false
     },
     {
@@ -7626,6 +8529,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -7660,7 +8565,9 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
-      "readingTranscript": null,
+      "paperAdditions": [],
+      "paperExclusions": [],
+      "readingTranscript": "۱۲- الف- چرا پشم شیشه و فایبر گلاس ، نارسانای خوب محسوب می شوند ؟\nب- چه ویژگی در پنبه ، پشم و پر باعث شده که از آن ها در صنایع متفاوت از جمله صنایع نساجی ( تولید پارچه و پوشاک ) استفاده کنند ؟",
       "inline": false
     },
     {
@@ -7668,7 +8575,7 @@
       "chapter": 10,
       "sourceNumber": 13,
       "section": "main",
-      "questionAsset": "pdf:workbook.pdf#41,20,285.66,583.3200073242188,449.68",
+      "questionAsset": "pdf:workbook.pdf#41,20,285.66,583.3200073242188,449.68|+41,37.0,290.76,162.1,459.77",
       "answerAsset": "pdf:answers10.pdf#2,20,409.31,583.3200073242188,633.69",
       "questionSourceSegments": [
         {
@@ -7694,6 +8601,18 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [
+        {
+          "page": 41,
+          "bbox": [
+            37.0,
+            290.76,
+            162.1,
+            459.77
+          ]
+        }
+      ],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -7702,7 +8621,7 @@
       "chapter": 10,
       "sourceNumber": 14,
       "section": "main",
-      "questionAsset": "pdf:workbook.pdf#41,20,450.68,583.3200073242188,622.99",
+      "questionAsset": "pdf:workbook.pdf#41,20,450.68,583.3200073242188,622.99|+41,44.25,480.02,152.25,630.77|-41,37.0,290.76,162.1,459.77",
       "answerAsset": "pdf:answers10.pdf#2,20,634.69,583.3200073242188,806;3,20,38,583.3200073242188,70.34",
       "questionSourceSegments": [
         {
@@ -7737,6 +8656,28 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [
+        {
+          "page": 41,
+          "bbox": [
+            44.25,
+            480.02,
+            152.25,
+            630.77
+          ]
+        }
+      ],
+      "paperExclusions": [
+        {
+          "page": 41,
+          "bbox": [
+            37.0,
+            290.76,
+            162.1,
+            459.77
+          ]
+        }
+      ],
       "readingTranscript": null,
       "inline": false
     },
@@ -7745,7 +8686,7 @@
       "chapter": 10,
       "sourceNumber": 15,
       "section": "main",
-      "questionAsset": "pdf:workbook.pdf#41,20,623.99,583.3200073242188,800;42,20,36,583.3200073242188,38.25",
+      "questionAsset": "pdf:workbook.pdf#41,20,623.99,583.3200073242188,806;42,20,36,583.3200073242188,38.25|-41,44.25,480.02,152.25,630.77",
       "answerAsset": "pdf:answers10.pdf#3,20,71.34,583.3200073242188,182.92",
       "questionSourceSegments": [
         {
@@ -7754,7 +8695,7 @@
             20,
             623.99,
             583.3200073242188,
-            800
+            806
           ]
         },
         {
@@ -7780,6 +8721,18 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [
+        {
+          "page": 41,
+          "bbox": [
+            44.25,
+            480.02,
+            152.25,
+            630.77
+          ]
+        }
+      ],
       "readingTranscript": null,
       "inline": false
     },
@@ -7814,6 +8767,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": true
     },
@@ -7822,7 +8777,7 @@
       "chapter": 10,
       "sourceNumber": 17,
       "section": "main",
-      "questionAsset": "pdf:workbook.pdf#42,20,341.6,583.3200073242188,424.22",
+      "questionAsset": "pdf:workbook.pdf#42,20,341.6,583.3200073242188,424.22|-42,30.0,421.8,202.5,558.3",
       "answerAsset": "pdf:answers10.pdf#3,20,240.32,583.3200073242188,295.63",
       "questionSourceSegments": [
         {
@@ -7848,6 +8803,18 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [
+        {
+          "page": 42,
+          "bbox": [
+            30.0,
+            421.8,
+            202.5,
+            558.3
+          ]
+        }
+      ],
       "readingTranscript": null,
       "inline": false
     },
@@ -7856,7 +8823,7 @@
       "chapter": 10,
       "sourceNumber": 18,
       "section": "main",
-      "questionAsset": "pdf:workbook.pdf#42,20,425.22,583.3200073242188,585.16",
+      "questionAsset": "pdf:workbook.pdf#42,20,425.22,583.3200073242188,585.16|+42,30.0,421.8,202.5,558.3",
       "answerAsset": "pdf:answers10.pdf#3,20,296.63,583.3200073242188,464.61",
       "questionSourceSegments": [
         {
@@ -7882,6 +8849,18 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [
+        {
+          "page": 42,
+          "bbox": [
+            30.0,
+            421.8,
+            202.5,
+            558.3
+          ]
+        }
+      ],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -7890,7 +8869,7 @@
       "chapter": 10,
       "sourceNumber": 19,
       "section": "main",
-      "questionAsset": "pdf:workbook.pdf#42,20,586.16,583.3200073242188,800;43,20,36,583.3200073242188,38.25",
+      "questionAsset": "pdf:workbook.pdf#42,20,586.16,583.3200073242188,806;43,20,36,583.3200073242188,38.25",
       "answerAsset": "pdf:answers10.pdf#3,20,465.61,583.3200073242188,633.69",
       "questionSourceSegments": [
         {
@@ -7899,7 +8878,7 @@
             20,
             586.16,
             583.3200073242188,
-            800
+            806
           ]
         },
         {
@@ -7925,6 +8904,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -7968,6 +8949,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -8002,6 +8985,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -8010,7 +8995,7 @@
       "chapter": 10,
       "sourceNumber": 22,
       "section": "main",
-      "questionAsset": "pdf:workbook.pdf#43,20,618.23,583.3200073242188,729.07",
+      "questionAsset": "pdf:workbook.pdf#43,20,618.23,583.3200073242188,729.07|+43,36.75,620.27,159.7,729.52",
       "answerAsset": "pdf:answers10.pdf#4,20,268.43,583.3200073242188,352.03",
       "questionSourceSegments": [
         {
@@ -8036,6 +9021,18 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [
+        {
+          "page": 43,
+          "bbox": [
+            36.75,
+            620.27,
+            159.7,
+            729.52
+          ]
+        }
+      ],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -8044,7 +9041,7 @@
       "chapter": 10,
       "sourceNumber": 23,
       "section": "main",
-      "questionAsset": "pdf:workbook.pdf#43,20,730.07,583.3200073242188,800;44,20,36,583.3200073242188,38.25",
+      "questionAsset": "pdf:workbook.pdf#43,20,730.07,583.3200073242188,806;44,20,36,583.3200073242188,38.25",
       "answerAsset": "pdf:answers10.pdf#4,20,353.03,583.3200073242188,436.51",
       "questionSourceSegments": [
         {
@@ -8053,7 +9050,7 @@
             20,
             730.07,
             583.3200073242188,
-            800
+            806
           ]
         },
         {
@@ -8079,7 +9076,9 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
-      "readingTranscript": null,
+      "paperAdditions": [],
+      "paperExclusions": [],
+      "readingTranscript": "۲۳- راه های جلوگیری از اتلاف گرما در خانه را در فصل زمستان بنویسید .",
       "inline": false
     },
     {
@@ -8087,7 +9086,7 @@
       "chapter": 10,
       "sourceNumber": 24,
       "section": "main",
-      "questionAsset": "pdf:workbook.pdf#44,20,39.25,583.3200073242188,176.51",
+      "questionAsset": "pdf:workbook.pdf#44,20,39.25,583.3200073242188,176.51|+44,47.5,58.7,117.375,185.8",
       "answerAsset": "pdf:answers10.pdf#4,20,437.51,583.3200073242188,577.29",
       "questionSourceSegments": [
         {
@@ -8113,6 +9112,18 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [
+        {
+          "page": 44,
+          "bbox": [
+            47.5,
+            58.7,
+            117.375,
+            185.8
+          ]
+        }
+      ],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -8121,7 +9132,7 @@
       "chapter": 10,
       "sourceNumber": 25,
       "section": "main",
-      "questionAsset": "pdf:workbook.pdf#44,20,177.51,583.3200073242188,262.38",
+      "questionAsset": "pdf:workbook.pdf#44,20,177.51,583.3200073242188,262.38|-44,47.5,58.7,117.375,185.8",
       "answerAsset": "pdf:answers10.pdf#4,20,578.29,583.3200073242188,661.8",
       "questionSourceSegments": [
         {
@@ -8147,6 +9158,18 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [
+        {
+          "page": 44,
+          "bbox": [
+            47.5,
+            58.7,
+            117.375,
+            185.8
+          ]
+        }
+      ],
       "readingTranscript": null,
       "inline": false
     },
@@ -8181,6 +9204,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -8189,7 +9214,7 @@
       "chapter": 10,
       "sourceNumber": 2,
       "section": "mcq",
-      "questionAsset": "pdf:workbook.pdf#44,20,348.42,583.3200073242188,589.04",
+      "questionAsset": "pdf:workbook.pdf#44,20,348.42,583.3200073242188,589.04|+44,47.5,414.39,317.9,593.92",
       "answerAsset": "pdf:answers10.pdf#4,332.22,662.8,357.67,686.43",
       "questionSourceSegments": [
         {
@@ -8215,6 +9240,18 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [
+        {
+          "page": 44,
+          "bbox": [
+            47.5,
+            414.39,
+            317.9,
+            593.92
+          ]
+        }
+      ],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -8223,7 +9260,7 @@
       "chapter": 10,
       "sourceNumber": 3,
       "section": "mcq",
-      "questionAsset": "pdf:workbook.pdf#44,20,590.04,583.3200073242188,700.39",
+      "questionAsset": "pdf:workbook.pdf#44,20,590.04,583.3200073242188,700.39|+44,47.5,611.543,200.55,705.82|-44,47.5,414.39,317.9,593.92",
       "answerAsset": "pdf:answers10.pdf#4,278.73,662.8,292.75,686.43",
       "questionSourceSegments": [
         {
@@ -8249,6 +9286,28 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [
+        {
+          "page": 44,
+          "bbox": [
+            47.5,
+            611.543,
+            200.55,
+            705.82
+          ]
+        }
+      ],
+      "paperExclusions": [
+        {
+          "page": 44,
+          "bbox": [
+            47.5,
+            414.39,
+            317.9,
+            593.92
+          ]
+        }
+      ],
       "readingTranscript": null,
       "inline": false
     },
@@ -8257,7 +9316,7 @@
       "chapter": 10,
       "sourceNumber": 4,
       "section": "mcq",
-      "questionAsset": "pdf:workbook.pdf#44,20,701.39,583.3200073242188,797",
+      "questionAsset": "pdf:workbook.pdf#44,20,701.39,583.3200073242188,803|-44,47.5,611.543,200.55,705.82",
       "answerAsset": "pdf:answers10.pdf#4,217.04,662.8,242.46,686.43",
       "questionSourceSegments": [
         {
@@ -8266,7 +9325,7 @@
             20,
             701.39,
             583.3200073242188,
-            797
+            803
           ]
         }
       ],
@@ -8283,6 +9342,18 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [
+        {
+          "page": 44,
+          "bbox": [
+            47.5,
+            611.543,
+            200.55,
+            705.82
+          ]
+        }
+      ],
       "readingTranscript": null,
       "inline": false
     },
@@ -8317,6 +9388,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": true
     },
@@ -8351,7 +9424,9 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
-      "readingTranscript": null,
+      "paperAdditions": [],
+      "paperExclusions": [],
+      "readingTranscript": "۲- چرا یاخته ( سلول ) را واحد ساختار و عمل در موجودات زنده می نامند ؟",
       "inline": false
     },
     {
@@ -8385,6 +9460,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -8393,7 +9470,7 @@
       "chapter": 11,
       "sourceNumber": 4,
       "section": "main",
-      "questionAsset": "pdf:workbook.pdf#45,20,524.48,583.3200073242188,800;46,20,36,583.3200073242188,38.25",
+      "questionAsset": "pdf:workbook.pdf#45,20,524.48,583.3200073242188,806;46,20,36,583.3200073242188,38.25|-46,49.6,35.0,174.65,138.43|-46,190.8,35.0,243.078,138.3",
       "answerAsset": "pdf:answers11.pdf#1,20,352.43,583.3200073242188,464.13",
       "questionSourceSegments": [
         {
@@ -8402,7 +9479,7 @@
             20,
             524.48,
             583.3200073242188,
-            800
+            806
           ]
         },
         {
@@ -8428,6 +9505,27 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [
+        {
+          "page": 46,
+          "bbox": [
+            49.6,
+            35.0,
+            174.65,
+            138.43
+          ]
+        },
+        {
+          "page": 46,
+          "bbox": [
+            190.8,
+            35.0,
+            243.078,
+            138.3
+          ]
+        }
+      ],
       "readingTranscript": null,
       "inline": false
     },
@@ -8436,7 +9534,7 @@
       "chapter": 11,
       "sourceNumber": 5,
       "section": "main",
-      "questionAsset": "pdf:workbook.pdf#46,20,39.25,583.3200073242188,164.39",
+      "questionAsset": "pdf:workbook.pdf#46,20,39.25,583.3200073242188,164.39|+46,49.6,35.0,174.65,138.43|+46,190.8,35.0,243.078,138.3",
       "answerAsset": "pdf:answers11.pdf#1,20,465.13,583.3200073242188,566.97",
       "questionSourceSegments": [
         {
@@ -8462,6 +9560,27 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [
+        {
+          "page": 46,
+          "bbox": [
+            49.6,
+            35.0,
+            174.65,
+            138.43
+          ]
+        },
+        {
+          "page": 46,
+          "bbox": [
+            190.8,
+            35.0,
+            243.078,
+            138.3
+          ]
+        }
+      ],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -8505,6 +9624,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -8513,7 +9634,7 @@
       "chapter": 11,
       "sourceNumber": 7,
       "section": "main",
-      "questionAsset": "pdf:workbook.pdf#46,20,576.6,583.3200073242188,800;47,20,36,583.3200073242188,38.25",
+      "questionAsset": "pdf:workbook.pdf#46,20,576.6,583.3200073242188,806;47,20,36,583.3200073242188,38.25",
       "answerAsset": "pdf:answers11.pdf#2,20,57.18,583.3200073242188,295.63",
       "questionSourceSegments": [
         {
@@ -8522,7 +9643,7 @@
             20,
             576.6,
             583.3200073242188,
-            800
+            806
           ]
         },
         {
@@ -8548,6 +9669,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -8582,7 +9705,9 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
-      "readingTranscript": null,
+      "paperAdditions": [],
+      "paperExclusions": [],
+      "readingTranscript": "۸- برای اینکه یاخته ها را در زیر میکروسکپ بهتر مشاهده کنیم ، باید چکار کنیم ؟ یک مثال بزنید .",
       "inline": false
     },
     {
@@ -8616,6 +9741,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": true
     },
@@ -8650,6 +9777,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -8684,6 +9813,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -8718,6 +9849,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -8726,7 +9859,7 @@
       "chapter": 11,
       "sourceNumber": 13,
       "section": "main",
-      "questionAsset": "pdf:workbook.pdf#47,20,724.19,583.3200073242188,797",
+      "questionAsset": "pdf:workbook.pdf#47,20,724.19,583.3200073242188,803",
       "answerAsset": "pdf:answers11.pdf#2,20,676.96,583.3200073242188,803",
       "questionSourceSegments": [
         {
@@ -8735,7 +9868,7 @@
             20,
             724.19,
             583.3200073242188,
-            797
+            803
           ]
         }
       ],
@@ -8752,6 +9885,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -8786,6 +9921,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": true
     },
@@ -8820,7 +9957,9 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
-      "readingTranscript": null,
+      "paperAdditions": [],
+      "paperExclusions": [],
+      "readingTranscript": "۲- شش گروه مواد مغذی که در خوراکی ها وجود دارند را نام ببرید .",
       "inline": false
     },
     {
@@ -8854,7 +9993,9 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
-      "readingTranscript": null,
+      "paperAdditions": [],
+      "paperExclusions": [],
+      "readingTranscript": "۳- نقش کربوهیدرات ها ( قند ها ) در بدنمان چیست ؟\n.......................................   .............................................................",
       "inline": false
     },
     {
@@ -8888,7 +10029,9 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
-      "readingTranscript": null,
+      "paperAdditions": [],
+      "paperExclusions": [],
+      "readingTranscript": "۴- آزمایشی طرح کنید که نشان دهد سیب زمینی و نان نشاسته دارد ولی خیار ، نشاسته ندارد .",
       "inline": false
     },
     {
@@ -8922,7 +10065,9 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
-      "readingTranscript": null,
+      "paperAdditions": [],
+      "paperExclusions": [],
+      "readingTranscript": "۵- دو نوع کربوهیدرات مرکب گیاهی را نام ببرید .\n....................................... و .......................................",
       "inline": false
     },
     {
@@ -8956,7 +10101,9 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
-      "readingTranscript": null,
+      "paperAdditions": [],
+      "paperExclusions": [],
+      "readingTranscript": "۶- آزمایشی طرح کنید که نشان دهد مغز گردو چربی دارد ولی آب سبزی ، چربی ندارد .",
       "inline": false
     },
     {
@@ -8964,7 +10111,7 @@
       "chapter": 12,
       "sourceNumber": 7,
       "section": "main",
-      "questionAsset": "pdf:workbook.pdf#48,20,745.82,583.3200073242188,800;49,20,36,583.3200073242188,38.25",
+      "questionAsset": "pdf:workbook.pdf#48,20,745.82,583.3200073242188,806;49,20,36,583.3200073242188,38.25",
       "answerAsset": "pdf:answers12.pdf#1,20,408.71,583.3200073242188,464.13",
       "questionSourceSegments": [
         {
@@ -8973,7 +10120,7 @@
             20,
             745.82,
             583.3200073242188,
-            800
+            806
           ]
         },
         {
@@ -8999,7 +10146,9 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
-      "readingTranscript": null,
+      "paperAdditions": [],
+      "paperExclusions": [],
+      "readingTranscript": "۷- سه نقش چربی ها ( لیپید ها ) را در بدنمان بنویسید .",
       "inline": false
     },
     {
@@ -9033,6 +10182,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -9067,6 +10218,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -9101,7 +10254,9 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
-      "readingTranscript": null,
+      "paperAdditions": [],
+      "paperExclusions": [],
+      "readingTranscript": "۱۰- پدر احمد ، فقط گیاهخواری می کند . به نظر شما چه مشکلی ممکن است برایش ایجاد شود ؟",
       "inline": false
     },
     {
@@ -9144,6 +10299,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": true
     },
@@ -9178,6 +10335,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": true
     },
@@ -9186,7 +10345,7 @@
       "chapter": 12,
       "sourceNumber": 13,
       "section": "main",
-      "questionAsset": "pdf:workbook.pdf#49,20,742.91,583.3200073242188,800;50,20,36,583.3200073242188,38.25",
+      "questionAsset": "pdf:workbook.pdf#49,20,742.91,583.3200073242188,806;50,20,36,583.3200073242188,38.25",
       "answerAsset": "pdf:answers12.pdf#2,20,99.44,583.3200073242188,211.12",
       "questionSourceSegments": [
         {
@@ -9195,7 +10354,7 @@
             20,
             742.91,
             583.3200073242188,
-            800
+            806
           ]
         },
         {
@@ -9221,7 +10380,9 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
-      "readingTranscript": null,
+      "paperAdditions": [],
+      "paperExclusions": [],
+      "readingTranscript": "۱۳- سه نقش مهم آب در بدنمان را بنویسید .",
       "inline": false
     },
     {
@@ -9255,7 +10416,9 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
-      "readingTranscript": null,
+      "paperAdditions": [],
+      "paperExclusions": [],
+      "readingTranscript": "۱۴- چرا باید بدنمان به اندازه کافی در مقابل آفتاب قرار بگیرد ؟",
       "inline": false
     },
     {
@@ -9289,6 +10452,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -9323,6 +10488,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -9357,6 +10524,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -9391,6 +10560,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -9425,6 +10596,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -9433,7 +10606,7 @@
       "chapter": 12,
       "sourceNumber": 20,
       "section": "main",
-      "questionAsset": "pdf:workbook.pdf#50,20,701.27,583.3200073242188,797",
+      "questionAsset": "pdf:workbook.pdf#50,20,701.27,583.3200073242188,803",
       "answerAsset": "pdf:answers12.pdf#2,20,662.92,583.3200073242188,803",
       "questionSourceSegments": [
         {
@@ -9442,7 +10615,7 @@
             20,
             701.27,
             583.3200073242188,
-            797
+            803
           ]
         }
       ],
@@ -9459,6 +10632,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": true
     },
@@ -9467,7 +10642,7 @@
       "chapter": 13,
       "sourceNumber": 1,
       "section": "main",
-      "questionAsset": "pdf:workbook.pdf#51,20,73.95,583.3200073242188,295.82",
+      "questionAsset": "pdf:workbook.pdf#51,20,73.95,583.3200073242188,295.82|-51,41.65,294.16,179.7,527.15",
       "answerAsset": "pdf:answers13.pdf#1,20,70.74,583.3200073242188,112.0",
       "questionSourceSegments": [
         {
@@ -9493,6 +10668,18 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [
+        {
+          "page": 51,
+          "bbox": [
+            41.65,
+            294.16,
+            179.7,
+            527.15
+          ]
+        }
+      ],
       "readingTranscript": null,
       "inline": true
     },
@@ -9501,7 +10688,7 @@
       "chapter": 13,
       "sourceNumber": 2,
       "section": "main",
-      "questionAsset": "pdf:workbook.pdf#51,20,296.82,583.3200073242188,707.47",
+      "questionAsset": "pdf:workbook.pdf#51,20,296.82,583.3200073242188,707.47|+51,41.65,294.16,179.7,527.15|-51,35.65,693.405,265.6,800.995",
       "answerAsset": "pdf:answers13.pdf#1,20,113.0,583.3200073242188,407.83",
       "questionSourceSegments": [
         {
@@ -9527,6 +10714,28 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [
+        {
+          "page": 51,
+          "bbox": [
+            41.65,
+            294.16,
+            179.7,
+            527.15
+          ]
+        }
+      ],
+      "paperExclusions": [
+        {
+          "page": 51,
+          "bbox": [
+            35.65,
+            693.405,
+            265.6,
+            800.995
+          ]
+        }
+      ],
       "readingTranscript": null,
       "inline": false
     },
@@ -9535,7 +10744,7 @@
       "chapter": 13,
       "sourceNumber": 3,
       "section": "main",
-      "questionAsset": "pdf:workbook.pdf#51,20,708.47,583.3200073242188,800;52,20,36,583.3200073242188,38.25",
+      "questionAsset": "pdf:workbook.pdf#51,20,708.47,583.3200073242188,806;52,20,36,583.3200073242188,38.25|+51,35.65,693.405,265.6,800.995",
       "answerAsset": "pdf:answers13.pdf#1,20,408.83,583.3200073242188,492.33",
       "questionSourceSegments": [
         {
@@ -9544,7 +10753,7 @@
             20,
             708.47,
             583.3200073242188,
-            800
+            806
           ]
         },
         {
@@ -9570,6 +10779,18 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [
+        {
+          "page": 51,
+          "bbox": [
+            35.65,
+            693.405,
+            265.6,
+            800.995
+          ]
+        }
+      ],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -9578,7 +10799,7 @@
       "chapter": 13,
       "sourceNumber": 4,
       "section": "main",
-      "questionAsset": "pdf:workbook.pdf#52,20,39.25,583.3200073242188,175.19",
+      "questionAsset": "pdf:workbook.pdf#52,20,39.25,583.3200073242188,175.19|-52,37.7,174.76,165.55,327.44",
       "answerAsset": "pdf:answers13.pdf#1,20,493.33,583.3200073242188,619.05",
       "questionSourceSegments": [
         {
@@ -9604,6 +10825,18 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [
+        {
+          "page": 52,
+          "bbox": [
+            37.7,
+            174.76,
+            165.55,
+            327.44
+          ]
+        }
+      ],
       "readingTranscript": null,
       "inline": false
     },
@@ -9612,7 +10845,7 @@
       "chapter": 13,
       "sourceNumber": 5,
       "section": "main",
-      "questionAsset": "pdf:workbook.pdf#52,20,176.19,583.3200073242188,332.42",
+      "questionAsset": "pdf:workbook.pdf#52,20,176.19,583.3200073242188,332.42|+52,37.7,174.76,165.55,327.44",
       "answerAsset": "pdf:answers13.pdf#1,20,620.05,583.3200073242188,745.8",
       "questionSourceSegments": [
         {
@@ -9638,6 +10871,18 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [
+        {
+          "page": 52,
+          "bbox": [
+            37.7,
+            174.76,
+            165.55,
+            327.44
+          ]
+        }
+      ],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -9646,7 +10891,7 @@
       "chapter": 13,
       "sourceNumber": 6,
       "section": "main",
-      "questionAsset": "pdf:workbook.pdf#52,20,333.42,583.3200073242188,449.8",
+      "questionAsset": "pdf:workbook.pdf#52,20,333.42,583.3200073242188,449.8|-52,31.5,441.77,125.75,527.92",
       "answerAsset": "pdf:answers13.pdf#1,20,746.8,583.3200073242188,806;2,20,38,583.3200073242188,56.18",
       "questionSourceSegments": [
         {
@@ -9681,6 +10926,18 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [
+        {
+          "page": 52,
+          "bbox": [
+            31.5,
+            441.77,
+            125.75,
+            527.92
+          ]
+        }
+      ],
       "readingTranscript": null,
       "inline": false
     },
@@ -9689,7 +10946,7 @@
       "chapter": 13,
       "sourceNumber": 7,
       "section": "main",
-      "questionAsset": "pdf:workbook.pdf#52,20,450.8,583.3200073242188,534.4",
+      "questionAsset": "pdf:workbook.pdf#52,20,450.8,583.3200073242188,534.4|+52,31.5,441.77,125.75,527.92|-52,48.0,531.9,204.3,652.15",
       "answerAsset": "pdf:answers13.pdf#2,20,57.18,583.3200073242188,140.8",
       "questionSourceSegments": [
         {
@@ -9715,6 +10972,28 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [
+        {
+          "page": 52,
+          "bbox": [
+            31.5,
+            441.77,
+            125.75,
+            527.92
+          ]
+        }
+      ],
+      "paperExclusions": [
+        {
+          "page": 52,
+          "bbox": [
+            48.0,
+            531.9,
+            204.3,
+            652.15
+          ]
+        }
+      ],
       "readingTranscript": null,
       "inline": false
     },
@@ -9723,7 +11002,7 @@
       "chapter": 13,
       "sourceNumber": 8,
       "section": "main",
-      "questionAsset": "pdf:workbook.pdf#52,20,535.4,583.3200073242188,657.19",
+      "questionAsset": "pdf:workbook.pdf#52,20,535.4,583.3200073242188,657.19|+52,48.0,531.9,204.3,652.15",
       "answerAsset": "pdf:answers13.pdf#2,20,141.8,583.3200073242188,183.04",
       "questionSourceSegments": [
         {
@@ -9749,6 +11028,18 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [
+        {
+          "page": 52,
+          "bbox": [
+            48.0,
+            531.9,
+            204.3,
+            652.15
+          ]
+        }
+      ],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -9783,7 +11074,9 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
-      "readingTranscript": null,
+      "paperAdditions": [],
+      "paperExclusions": [],
+      "readingTranscript": "۹- سه کار کبد ( جگر ) را بنویسید .",
       "inline": false
     },
     {
@@ -9791,7 +11084,7 @@
       "chapter": 13,
       "sourceNumber": 10,
       "section": "main",
-      "questionAsset": "pdf:workbook.pdf#52,20,770.39,583.3200073242188,800;53,20,36,583.3200073242188,38.25",
+      "questionAsset": "pdf:workbook.pdf#52,20,770.39,583.3200073242188,806;53,20,36,583.3200073242188,38.25",
       "answerAsset": "pdf:answers13.pdf#2,20,353.03,583.3200073242188,436.51",
       "questionSourceSegments": [
         {
@@ -9800,7 +11093,7 @@
             20,
             770.39,
             583.3200073242188,
-            800
+            806
           ]
         },
         {
@@ -9826,7 +11119,9 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
-      "readingTranscript": null,
+      "paperAdditions": [],
+      "paperExclusions": [],
+      "readingTranscript": "۱۰- چرا اضافه وزن و کمبود وزن ، هر دو بسیار مهم هستند ؟",
       "inline": false
     },
     {
@@ -9860,6 +11155,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -9894,6 +11191,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -9928,6 +11227,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -9936,7 +11237,7 @@
       "chapter": 13,
       "sourceNumber": 2,
       "section": "mcq",
-      "questionAsset": "pdf:workbook.pdf#53,20,469.76,583.3200073242188,554.2",
+      "questionAsset": "pdf:workbook.pdf#53,20,469.76,583.3200073242188,554.2|-53,38.0,551.04,219.81,642.04",
       "answerAsset": "pdf:answers13.pdf#2,338.99,564.25,364.39,587.88",
       "questionSourceSegments": [
         {
@@ -9962,6 +11263,18 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [
+        {
+          "page": 53,
+          "bbox": [
+            38.0,
+            551.04,
+            219.81,
+            642.04
+          ]
+        }
+      ],
       "readingTranscript": null,
       "inline": false
     },
@@ -9970,7 +11283,7 @@
       "chapter": 13,
       "sourceNumber": 3,
       "section": "mcq",
-      "questionAsset": "pdf:workbook.pdf#53,20,555.2,583.3200073242188,683.11",
+      "questionAsset": "pdf:workbook.pdf#53,20,555.2,583.3200073242188,683.11|+53,38.0,551.04,219.81,642.04",
       "answerAsset": "pdf:answers13.pdf#2,278.8,564.25,292.83,587.88",
       "questionSourceSegments": [
         {
@@ -9996,6 +11309,18 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [
+        {
+          "page": 53,
+          "bbox": [
+            38.0,
+            551.04,
+            219.81,
+            642.04
+          ]
+        }
+      ],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -10030,6 +11355,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -10038,7 +11365,7 @@
       "chapter": 13,
       "sourceNumber": 5,
       "section": "mcq",
-      "questionAsset": "pdf:workbook.pdf#53,20,740.87,583.3200073242188,797",
+      "questionAsset": "pdf:workbook.pdf#53,20,740.87,583.3200073242188,803",
       "answerAsset": "pdf:answers13.pdf#2,132.28,564.25,143.82,587.88",
       "questionSourceSegments": [
         {
@@ -10047,7 +11374,7 @@
             20,
             740.87,
             583.3200073242188,
-            797
+            803
           ]
         }
       ],
@@ -10064,6 +11391,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -10072,7 +11401,7 @@
       "chapter": 14,
       "sourceNumber": 1,
       "section": "main",
-      "questionAsset": "pdf:workbook.pdf#54,20,73.95,583.3200073242188,349.46",
+      "questionAsset": "pdf:workbook.pdf#54,20,73.95,583.3200073242188,349.46|-54,41.4,346.88,239.1,539.06",
       "answerAsset": "pdf:answers14.pdf#1,20,70.74,583.3200073242188,154.24",
       "questionSourceSegments": [
         {
@@ -10098,6 +11427,18 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [
+        {
+          "page": 54,
+          "bbox": [
+            41.4,
+            346.88,
+            239.1,
+            539.06
+          ]
+        }
+      ],
       "readingTranscript": null,
       "inline": true
     },
@@ -10106,7 +11447,7 @@
       "chapter": 14,
       "sourceNumber": 2,
       "section": "main",
-      "questionAsset": "pdf:workbook.pdf#54,20,350.46,583.3200073242188,686.71",
+      "questionAsset": "pdf:workbook.pdf#54,20,350.46,583.3200073242188,686.71|+54,41.4,346.88,239.1,539.06",
       "answerAsset": "pdf:answers14.pdf#1,20,155.24,583.3200073242188,450.07",
       "questionSourceSegments": [
         {
@@ -10132,6 +11473,18 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [
+        {
+          "page": 54,
+          "bbox": [
+            41.4,
+            346.88,
+            239.1,
+            539.06
+          ]
+        }
+      ],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -10140,7 +11493,7 @@
       "chapter": 14,
       "sourceNumber": 3,
       "section": "main",
-      "questionAsset": "pdf:workbook.pdf#54,20,687.71,583.3200073242188,800;55,20,36,583.3200073242188,38.25",
+      "questionAsset": "pdf:workbook.pdf#54,20,687.71,583.3200073242188,806;55,20,36,583.3200073242188,38.25",
       "answerAsset": "pdf:answers14.pdf#1,20,451.07,583.3200073242188,576.81",
       "questionSourceSegments": [
         {
@@ -10149,7 +11502,7 @@
             20,
             687.71,
             583.3200073242188,
-            800
+            806
           ]
         },
         {
@@ -10175,6 +11528,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": true
     },
@@ -10183,7 +11538,7 @@
       "chapter": 14,
       "sourceNumber": 4,
       "section": "main",
-      "questionAsset": "pdf:workbook.pdf#55,20,39.25,583.3200073242188,250.19",
+      "questionAsset": "pdf:workbook.pdf#55,20,39.25,583.3200073242188,250.19|+55,23.1,64.3,132.75,256.45",
       "answerAsset": "pdf:answers14.pdf#1,20,577.81,583.3200073242188,806;2,20,38,583.3200073242188,56.18",
       "questionSourceSegments": [
         {
@@ -10218,6 +11573,18 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [
+        {
+          "page": 55,
+          "bbox": [
+            23.1,
+            64.3,
+            132.75,
+            256.45
+          ]
+        }
+      ],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -10226,7 +11593,7 @@
       "chapter": 14,
       "sourceNumber": 5,
       "section": "main",
-      "questionAsset": "pdf:workbook.pdf#55,20,251.19,583.3200073242188,409.82",
+      "questionAsset": "pdf:workbook.pdf#55,20,251.19,583.3200073242188,409.82|-55,23.1,64.3,132.75,256.45",
       "answerAsset": "pdf:answers14.pdf#2,20,57.18,583.3200073242188,168.88",
       "questionSourceSegments": [
         {
@@ -10252,6 +11619,18 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [
+        {
+          "page": 55,
+          "bbox": [
+            23.1,
+            64.3,
+            132.75,
+            256.45
+          ]
+        }
+      ],
       "readingTranscript": null,
       "inline": false
     },
@@ -10286,6 +11665,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": true
     },
@@ -10294,7 +11675,7 @@
       "chapter": 14,
       "sourceNumber": 7,
       "section": "main",
-      "questionAsset": "pdf:workbook.pdf#55,20,522.92,583.3200073242188,648.19",
+      "questionAsset": "pdf:workbook.pdf#55,20,522.92,583.3200073242188,648.19|+55,35.65,538.29,142.55,659.83",
       "answerAsset": "pdf:answers14.pdf#2,20,198.08,583.3200073242188,323.83",
       "questionSourceSegments": [
         {
@@ -10320,6 +11701,18 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [
+        {
+          "page": 55,
+          "bbox": [
+            35.65,
+            538.29,
+            142.55,
+            659.83
+          ]
+        }
+      ],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -10328,7 +11721,7 @@
       "chapter": 14,
       "sourceNumber": 8,
       "section": "main",
-      "questionAsset": "pdf:workbook.pdf#55,20,649.19,583.3200073242188,800;56,20,36,583.3200073242188,39.45",
+      "questionAsset": "pdf:workbook.pdf#55,20,649.19,583.3200073242188,806;56,20,36,583.3200073242188,39.45|-55,35.65,538.29,142.55,659.83",
       "answerAsset": "pdf:answers14.pdf#2,20,324.83,583.3200073242188,436.51",
       "questionSourceSegments": [
         {
@@ -10337,7 +11730,7 @@
             20,
             649.19,
             583.3200073242188,
-            800
+            806
           ]
         },
         {
@@ -10363,6 +11756,18 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [
+        {
+          "page": 55,
+          "bbox": [
+            35.65,
+            538.29,
+            142.55,
+            659.83
+          ]
+        }
+      ],
       "readingTranscript": null,
       "inline": false
     },
@@ -10397,6 +11802,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -10431,6 +11838,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -10465,6 +11874,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -10499,6 +11910,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -10533,6 +11946,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -10567,6 +11982,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -10575,7 +11992,7 @@
       "chapter": 14,
       "sourceNumber": 5,
       "section": "mcq",
-      "questionAsset": "pdf:workbook.pdf#56,20,743.87,583.3200073242188,797",
+      "questionAsset": "pdf:workbook.pdf#56,20,743.87,583.3200073242188,803",
       "answerAsset": "pdf:answers14.pdf#2,148.5,733.24,162.52,756.87",
       "questionSourceSegments": [
         {
@@ -10584,7 +12001,7 @@
             20,
             743.87,
             583.3200073242188,
-            797
+            803
           ]
         }
       ],
@@ -10601,6 +12018,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -10635,6 +12054,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": true
     },
@@ -10669,6 +12090,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -10703,7 +12126,9 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
-      "readingTranscript": null,
+      "paperAdditions": [],
+      "paperExclusions": [],
+      "readingTranscript": "۳- چرا تنفس از راه بینی بهتر از دهان است ؟",
       "inline": false
     },
     {
@@ -10711,7 +12136,7 @@
       "chapter": 15,
       "sourceNumber": 4,
       "section": "main",
-      "questionAsset": "pdf:workbook.pdf#57,20,750.59,583.3200073242188,800;58,20,36,583.3200073242188,38.25",
+      "questionAsset": "pdf:workbook.pdf#57,20,750.59,583.3200073242188,806;58,20,36,583.3200073242188,38.25",
       "answerAsset": "pdf:answers15.pdf#1,20,226.16,583.3200073242188,253.36",
       "questionSourceSegments": [
         {
@@ -10720,7 +12145,7 @@
             20,
             750.59,
             583.3200073242188,
-            800
+            806
           ]
         },
         {
@@ -10746,7 +12171,9 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
-      "readingTranscript": null,
+      "paperAdditions": [],
+      "paperExclusions": [],
+      "readingTranscript": "۴- پرده دیافراگم در کجا قرار دارد و چه نقشی در تنفس دارد ؟",
       "inline": false
     },
     {
@@ -10754,7 +12181,7 @@
       "chapter": 15,
       "sourceNumber": 5,
       "section": "main",
-      "questionAsset": "pdf:workbook.pdf#58,20,39.25,583.3200073242188,121.07",
+      "questionAsset": "pdf:workbook.pdf#58,20,39.25,583.3200073242188,121.07|-58,42.0,108.02,103.5,226.52",
       "answerAsset": "pdf:answers15.pdf#1,20,254.36,583.3200073242188,309.67",
       "questionSourceSegments": [
         {
@@ -10780,7 +12207,19 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
-      "readingTranscript": null,
+      "paperAdditions": [],
+      "paperExclusions": [
+        {
+          "page": 58,
+          "bbox": [
+            42.0,
+            108.02,
+            103.5,
+            226.52
+          ]
+        }
+      ],
+      "readingTranscript": "۵- امروزه در شهرهای بزرگ یا صنعتی به دلیل آلودگی های مختلف ، درصد اکسیژن هوا کاهش یافته است . شما دو راه برای کاهش آلودگی هوا پیشنهاد کنید .",
       "inline": false
     },
     {
@@ -10788,7 +12227,7 @@
       "chapter": 15,
       "sourceNumber": 6,
       "section": "main",
-      "questionAsset": "pdf:workbook.pdf#58,20,122.07,583.3200073242188,215.39",
+      "questionAsset": "pdf:workbook.pdf#58,20,122.07,583.3200073242188,215.39|+58,42.0,108.02,103.5,226.52",
       "answerAsset": "pdf:answers15.pdf#1,20,310.67,583.3200073242188,366.07",
       "questionSourceSegments": [
         {
@@ -10814,6 +12253,18 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [
+        {
+          "page": 58,
+          "bbox": [
+            42.0,
+            108.02,
+            103.5,
+            226.52
+          ]
+        }
+      ],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -10822,7 +12273,7 @@
       "chapter": 15,
       "sourceNumber": 7,
       "section": "main",
-      "questionAsset": "pdf:workbook.pdf#58,20,216.39,583.3200073242188,274.1",
+      "questionAsset": "pdf:workbook.pdf#58,20,216.39,583.3200073242188,274.1|-58,42.0,108.02,103.5,226.52",
       "answerAsset": "pdf:answers15.pdf#1,20,367.07,583.3200073242188,394.27",
       "questionSourceSegments": [
         {
@@ -10848,7 +12299,19 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
-      "readingTranscript": null,
+      "paperAdditions": [],
+      "paperExclusions": [
+        {
+          "page": 58,
+          "bbox": [
+            42.0,
+            108.02,
+            103.5,
+            226.52
+          ]
+        }
+      ],
+      "readingTranscript": "۷- وقتی نفس می کشید اکسیژن می گیرید و کربن دی اکسید دفع می کنید . اکسیژن چه نقشی در یاخته های بدنتان دارد ؟",
       "inline": false
     },
     {
@@ -10882,6 +12345,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": true
     },
@@ -10916,7 +12381,9 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
-      "readingTranscript": null,
+      "paperAdditions": [],
+      "paperExclusions": [],
+      "readingTranscript": "۹- آزمایشی طرح کنید که نشان دهد در هوای بازدم شما ، گاز کربن دی اکسید وجود دارد .",
       "inline": false
     },
     {
@@ -10924,7 +12391,7 @@
       "chapter": 15,
       "sourceNumber": 10,
       "section": "main",
-      "questionAsset": "pdf:workbook.pdf#58,20,570.92,583.3200073242188,750.67",
+      "questionAsset": "pdf:workbook.pdf#58,20,570.92,583.3200073242188,750.67|+58,54.0,585.801,179.04,762.901|+58,73.78,753.42,142.3,767.68",
       "answerAsset": "pdf:answers15.pdf#1,20,479.77,583.3200073242188,563.25",
       "questionSourceSegments": [
         {
@@ -10950,6 +12417,27 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [
+        {
+          "page": 58,
+          "bbox": [
+            54.0,
+            585.801,
+            179.04,
+            762.901
+          ]
+        },
+        {
+          "page": 58,
+          "bbox": [
+            73.78,
+            753.42,
+            142.3,
+            767.68
+          ]
+        }
+      ],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -10958,7 +12446,7 @@
       "chapter": 15,
       "sourceNumber": 11,
       "section": "main",
-      "questionAsset": "pdf:workbook.pdf#58,20,751.67,583.3200073242188,800;59,20,36,583.3200073242188,38.25",
+      "questionAsset": "pdf:workbook.pdf#58,20,751.67,583.3200073242188,806;59,20,36,583.3200073242188,38.25|-58,54.0,585.801,179.04,762.901|-58,73.78,753.42,142.3,767.68",
       "answerAsset": "pdf:answers15.pdf#1,20,564.25,583.3200073242188,591.33",
       "questionSourceSegments": [
         {
@@ -10967,7 +12455,7 @@
             20,
             751.67,
             583.3200073242188,
-            800
+            806
           ]
         },
         {
@@ -10993,6 +12481,27 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [
+        {
+          "page": 58,
+          "bbox": [
+            54.0,
+            585.801,
+            179.04,
+            762.901
+          ]
+        },
+        {
+          "page": 58,
+          "bbox": [
+            73.78,
+            753.42,
+            142.3,
+            767.68
+          ]
+        }
+      ],
       "readingTranscript": null,
       "inline": false
     },
@@ -11027,6 +12536,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -11061,6 +12572,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -11095,6 +12608,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -11129,6 +12644,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -11163,6 +12680,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -11197,6 +12716,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -11231,6 +12752,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -11265,6 +12788,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     },
@@ -11273,7 +12798,7 @@
       "chapter": 15,
       "sourceNumber": 6,
       "section": "mcq",
-      "questionAsset": "pdf:workbook.pdf#59,20,743.63,583.3200073242188,797",
+      "questionAsset": "pdf:workbook.pdf#59,20,743.63,583.3200073242188,803",
       "answerAsset": "pdf:answers15.pdf#1,53.8,761.44,69.63,785.07",
       "questionSourceSegments": [
         {
@@ -11282,7 +12807,7 @@
             20,
             743.63,
             583.3200073242188,
-            797
+            803
           ]
         }
       ],
@@ -11299,6 +12824,8 @@
       ],
       "sharedAnswerStrip": false,
       "sourcePolicy": "immutable_pdf_regions",
+      "paperAdditions": [],
+      "paperExclusions": [],
       "readingTranscript": null,
       "inline": false
     }

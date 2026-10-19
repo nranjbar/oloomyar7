@@ -44,7 +44,7 @@ internal fun WholeWorkbookQuestion(
         mutableStateOf(if (exam) QuestionDraftCodec.encode(QuestionPractice()) else
             progress.draft(question.id) ?: QuestionDraftCodec.encode(QuestionPractice()))
     }
-    val state = remember(json) { QuestionDraftCodec.decode(json).let { if (it.revealed && !it.canReveal(question)) it.copy(revealed = false) else it } }
+    val state = remember(json) { QuestionDraftCodec.decode(json, question) }
     val initialScroll = remember { runCatching { JSONObject(json) }.getOrElse { JSONObject() } }
     val list = rememberLazyListState(initialScroll.optInt("scrollIndex"), initialScroll.optInt("scrollOffset"))
     val coroutine = rememberCoroutineScope()
@@ -215,7 +215,7 @@ internal fun WholeWorkbookQuestion(
                             jump(first + 3)
                         }, modifier = Modifier.weight(1f)) { Text("راهنما") }
                         TextButton(enabled = state.canReveal(question) && !state.revealed, modifier = Modifier.weight(1f).testTag("reveal-answer"), onClick = {
-                            val latest = QuestionDraftCodec.decode(json)
+                            val latest = QuestionDraftCodec.decode(json, question)
                             if (latest.canReveal(question)) {
                                 pendingReferenceScroll = true
                                 update(latest.reveal(question)); progress.recordReveal(question.id)
@@ -242,7 +242,7 @@ internal fun WholeWorkbookQuestion(
                 Button(modifier = Modifier.fillMaxWidth().heightIn(min = 54.dp),
                     shape = RoundedCornerShape(17.dp),
                     enabled = if (exam) state.complete(question) else finished || state.canCheck(question), onClick = {
-                        val latest = QuestionDraftCodec.decode(json)
+                        val latest = QuestionDraftCodec.decode(json, question)
                         if (exam || finished) {
                             val correct = question.steps.count { WorkbookAnswers.isCorrect(it, latest.values(it)) }
                             if (exam) progress.recordExam(question, latest)

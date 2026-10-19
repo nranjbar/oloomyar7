@@ -10,6 +10,7 @@ from full_chapter_cloze import CLOZE
 from full_chapter_practice import P,M
 from full_chapter_mcq_hints import H
 from full_extra_cloze import EXTRA,BANKS
+from full_readable_prompts import READABLE
 from index_full_workbook import ROOT,ASSETS,dump,region
 
 def main():
@@ -81,8 +82,11 @@ def main():
                     concept=catalog[c-1]['title'],difficulty=2,steps=[step],grade=7,relatedChapter=c,
                     sourceEdition='1405',sourcePage=r['sourcePage'],source=f'کتاب کار علوم هفتم ۱۴۰۵ • صفحهٔ {r["sourcePage"]}',
                     bookPrompt=r['questionText'],sourceQuestionVisual=r['questionAsset'],answerVisual=r['answerAsset'],
-                    sourceAnswerTextExtracted=answer,sourcePolicy='verbatim_original_pdf',readablePrompt=None,
+                    sourceAnswerTextExtracted=answer,sourcePolicy='verbatim_original_pdf',readablePrompt=READABLE.get(r['id']),
                     visual=None,visuals=[],originalFigureVisual=None,promptVisual=None,legacyProgress=[])
+                if (c,n)==(10,16) and not ismcq:
+                    q['visuals']=[dict(asset=region('workbook.pdf',[dict(page=42,bbox=bb)])) for bb in
+                        [[235.5,112.48,399.75,203.98],[37.5,95.23,211.55,199.48]]]
                 if c==13 and ismcq and n==3:
                     q['sourceReviewNote']='کلید چاپی این پرسش با گزینه‌های چاپی نیازمند تأیید مؤلف است. ارزیابی فعلی فقط مطابقت با کلید چاپی را می‌سنجد؛ متن سؤال و پاسخنامه تغییر نکرده است.'
                 questions.append(q)
@@ -93,6 +97,7 @@ def main():
             fidelity.append(dict(id=q['canonicalId'],chapter=c,sourceNumber=q['sourceNumber'],section=r['kind'],
                 questionAsset=q['sourceQuestionVisual'],answerAsset=q['answerVisual'],questionSourceSegments=r['segments'],
                 answerSourceSegments=r['answerSegments'],sharedAnswerStrip=False,sourcePolicy='immutable_pdf_regions',
+                paperAdditions=r.get('paperAdditions',[]),paperExclusions=r.get('paperExclusions',[]),
                 readingTranscript=q.get('readablePrompt'),inline=any(s.get('clozeTemplate') for s in q['steps'])))
     dump(ASSETS/'content/catalog.json',catalog)
     old_manifest=ROOT/'docs/source_fidelity_manifest.json'
@@ -130,6 +135,7 @@ def main():
     keep.update(f'mascot_{pose}_480w.webp' for pose in ['master','welcome','thinking','encourage','success','guidance'])
     for p in (ASSETS/'images').iterdir():
         if p.is_file() and p.name not in keep:p.unlink()
+    dump(ASSETS/'content/image-dimensions.json',{p.name:list(Image.open(p).size)for p in (ASSETS/'images').glob('*.webp')if p.name in keep})
     print('Prepared',len(content),'questions;',sum(x['steps'] for x in catalog),'learning groups;',sum(x.stat().st_size for x in ASSETS.rglob('*') if x.is_file()),'asset bytes')
 
 if __name__=='__main__':main()

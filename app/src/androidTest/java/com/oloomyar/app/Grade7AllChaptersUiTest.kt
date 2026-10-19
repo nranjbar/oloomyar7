@@ -9,6 +9,7 @@ import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
 import com.oloomyar.app.data.*
 import com.oloomyar.app.model.*
+import com.oloomyar.app.ui.SourceBitmap
 import org.junit.Assert.*
 import org.junit.Rule
 import org.junit.Test
@@ -25,6 +26,22 @@ class Grade7AllChaptersUiTest {
     }
     private fun clear(c:Int) { context.getSharedPreferences("workbook_1405_grade7_chapter$c",Context.MODE_PRIVATE).edit().clear().commit() }
 
+    @Test fun restoringAFloatingFigureDoesNotEraseTheQuestionTextOrClipTheFigure() {
+        val q=Grade7Catalog(context).chapters.first { it.id==5 }.questions.first { it.sourceNumber==8 }
+        assertTrue(q.sourceQuestionVisual!!.contains("|+"))
+        val bmp=checkNotNull(SourceBitmap.load(context,q.sourceQuestionVisual!!))
+        var textInk=0;var figureInk=0
+        for(y in 0 until bmp.height step 2) for(x in 0 until bmp.width step 2) {
+            val color=bmp.getPixel(x,y)
+            if((color and 0x00ffffff)<0x00888888) {
+                if(x>bmp.width*0.65f)textInk++
+                if(x<bmp.width*0.4f && y>bmp.height*0.8f)figureInk++
+            }
+        }
+        assertTrue("Source text erased by figure rendering",textInk>30)
+        assertTrue("Lower floating figure was clipped",figureInk>10)
+    }
+
     @Test fun lastChapterOpensWithItsSuppliedCoverAndOriginalQuestion() {
         clear(15)
         ActivityScenario.launch(MainActivity::class.java).use {
@@ -32,7 +49,7 @@ class Grade7AllChaptersUiTest {
             compose.onNodeWithTag("hub-list").performScrollToNode(hasTestTag("chapter-15"))
             compose.onNodeWithContentDescription("جلد فصل 15").assertExists()
             compose.onNodeWithTag("chapter-15").performClick()
-            compose.onNodeWithText("ورود به این بخش").performClick()
+            compose.onAllNodesWithText("ورود به این بخش").onFirst().performClick()
             compose.onNode(hasScrollAction()).performScrollToNode(hasText("سؤال ۱ •",substring=true))
             compose.onNodeWithText("سؤال ۱ •",substring=true).performClick()
             val q=Grade7Catalog(context).chapters.last().questions.first()

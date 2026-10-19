@@ -14,6 +14,12 @@ class PdfSourceTest {
         val value=PdfSource.parse("pdf:answers08.pdf#2,8.6,733,38.2,757")!!
         assertEquals(1,value.regions.size);assertEquals(29.6f,value.regions[0].width,.01f)
     }
+    @Test fun floatingFigureRestorationAndNeighbourExclusionAreSeparateFromSourceText() {
+        val source=PdfSource.parse("pdf:workbook.pdf#17,20,226,583,362|+17,30,209,208,385|-17,40,355,90,390")!!
+        assertEquals(1,source.regions.size);assertEquals(1,source.additions.size);assertEquals(1,source.exclusions.size)
+        assertEquals(209f,source.additions.single().top,0f)
+        assertTrue(runCatching { PdfSource.parse("pdf:workbook.pdf#17,20,226,583,362|+18,30,209,208,385") }.isFailure)
+    }
     @Test fun unsafePathsAndInvalidOrUnboundedRegionsAreRejected() {
         listOf("pdf:../workbook.pdf#1,0,0,50,50","pdf:workbook.pdf#0,0,0,50,50",
             "pdf:workbook.pdf#1.5,0,0,50,50","pdf:workbook.pdf#1,0,0,0,50",

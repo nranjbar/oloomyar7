@@ -29,7 +29,7 @@ records=load(ROOT/'qa/source/all-chapters-index.json');source={r['id']:r for r i
 assert len(source)==317
 def check_pdf(asset,segments,file):
     assert asset.startswith('pdf:'+file+'#'),asset
-    raw=asset.split('#')[1].split(';');assert len(raw)==len(segments)
+    raw=asset.split('#')[1].split('|')[0].split(';');assert len(raw)==len(segments)
     for encoded,seg in zip(raw,segments):
         values=[float(v) for v in encoded.split(',')]
         assert values==[seg['page'],*seg['bbox']]
@@ -52,6 +52,7 @@ for c,expected in enumerate(EXPECTED,1):
         assert q['relatedChapter']==c and q['grade']==7 and q['sourceEdition']=='1405'
         assert q['sourcePolicy']=='verbatim_original_pdf'
         check_pdf(q['sourceQuestionVisual'],r['segments'],'workbook.pdf')
+        assert q['sourceQuestionVisual']==r['questionAsset']
         check_pdf(q['answerVisual'],r['answerSegments'],f'answers{c:02}.pdf')
         assert (q['section']=='چهارگزینه‌ای')==(r['kind']=='mcq')
         if c>=4 and r['kind']=='mcq':
@@ -61,8 +62,15 @@ for c,expected in enumerate(EXPECTED,1):
         if c<=3:
             assert inventory(native[cid]['text']+native[cid].get('sourceFigureText',''))==inventory(old_records[cid]['source_text_extracted'])
             if q.get('readablePrompt') is not None:assert q['readablePrompt']==native[cid]['text']
+        elif q.get('readablePrompt'):
+            assert inventory(q['readablePrompt'])==inventory(r['questionText']),(cid,'reading words changed')
         for asset in [q.get('visual'),q.get('originalFigureVisual'),q.get('promptVisual')]+[v['asset']for v in q.get('visuals',[])]:
-            if asset:assert not asset.startswith('pdf:');images.add(asset)
+            if asset:
+                if asset.startswith('pdf:'):
+                    entries=asset.split('#')[1].split('|')[0].split(';')
+                    segs=[dict(page=int(v[0]),bbox=[float(n)for n in v[1:]])for v in(entry.split(',')for entry in entries)]
+                    check_pdf(asset,segs,asset[4:].split('#')[0])
+                else:images.add(asset)
         for s in q['steps']:
             assert s['id']not in step_ids;step_ids.add(s['id'])
             assert all(s.get(k,'').strip()for k in ['prompt','answer','hint1','hint2']),cid
@@ -122,6 +130,8 @@ report=dict(status='PASS',edition=1405,chapters=15,questions=317,learningGroups=
     immutableSourcePdfs=16,sourceQuestionRegions=317,isolatedSourceAnswers=317,scientificWebpAssets=len(images),
     interactionKinds=dict(kinds),packagedAssetBytes=sum(p.stat().st_size for p in packaged),
     contentRequiringAuthorConfirmation=['g7_ch13_mcq03'],
+    wholeFloatingFiguresRestored=sum(len(r.get('paperAdditions',[]))for r in records),
+    neighbouringFigureFragmentsExcluded=sum(len(r.get('paperExclusions',[]))for r in records),
     notes=['Original question and answer PDFs are immutable and SHA-256 verified',
         'Native transcription preserves source letters; two PDF boundary extraction artifacts are visually documented',
         'Source MCQ key 13/3 is preserved, flagged, and not silently corrected',

@@ -313,10 +313,12 @@ internal fun WorkbookQuestionVisuals(question: ChapterQuestion, description: Str
         addAll(question.visuals)
         if (isEmpty()) question.originalFigureVisual?.let { add(QuestionVisual(it)) }
     }
-    if (question.relatedChapter == 3 && question.section == "تمرین‌های اصلی" && question.sourceNumber == 12 && visuals.size == 3) {
+    if (question.section == "تمرین‌های اصلی" && ((question.relatedChapter == 3 && question.sourceNumber == 12 && visuals.size == 3) ||
+            (question.relatedChapter == 10 && question.sourceNumber == 16 && visuals.size == 2))) {
         Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(6.dp)) {
             visuals.forEachIndexed { index, visual ->
-                Box(Modifier.weight(1f)) { WorkbookImage(visual.asset, "$description، ${listOf("شکل سمت راست", "شکل وسط", "شکل سمت چپ")[index]}", compact = true) }
+                val label=if(visuals.size==3) listOf("شکل سمت راست", "شکل وسط", "شکل سمت چپ")[index] else "شکل ${workbookFa(index+1)}"
+                Box(Modifier.weight(1f)) { WorkbookImage(visual.asset, "$description، $label", compact = true) }
             }
         }
         return

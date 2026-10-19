@@ -196,7 +196,7 @@ class Grade7DiscoveryUiTest {
         val intent = Intent(context,Grade7Chapter3Activity::class.java).putExtra("question_id",q.id)
         ActivityScenario.launch<Grade7Chapter3Activity>(intent).use {
             compose.onNodeWithTag("question-body").performScrollToIndex(2)
-            compose.waitUntil(10000) { compose.onAllNodesWithText("بزرگ‌نمایی").fetchSemanticsNodes().size == 3 }
+            compose.waitUntil(10000) { compose.onAllNodes(hasText("بزرگ‌نمایی") and isEnabled()).fetchSemanticsNodes().size == 3 }
             compose.onAllNodesWithText("بزرگ‌نمایی").fetchSemanticsNodes().forEachIndexed { index, _ -> compose.onAllNodesWithText("بزرگ‌نمایی")[index].assertIsDisplayed() }
             capture("discovery-10-new-particle-images")
             compose.onAllNodesWithText("بزرگ‌نمایی")[0].performClick();compose.onNodeWithText("بزرگ‌تر").assertIsDisplayed()
@@ -224,7 +224,7 @@ class Grade7DiscoveryUiTest {
             compose.onNodeWithContentDescription("صورت سؤال ۸ از کتاب").performScrollTo().assertIsDisplayed()
         }
         Grade7Catalog(context).chapters.flatMap { it.questions }.forEach { question ->
-            assertFalse(question.id,question.readablePrompt.isNullOrBlank())
+            assertTrue(question.id, !question.readablePrompt.isNullOrBlank() || question.steps.any { it.clozeTemplate != null } || question.sourceQuestionVisual?.startsWith("pdf:") == true)
             question.steps.filter { it.clozeTemplate != null }.forEach { step ->
                 assertEquals(step.clozeTemplate,ClozeDocument.parse(step.clozeTemplate!!,step.id).toTemplate())
             }

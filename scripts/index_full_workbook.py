@@ -47,16 +47,50 @@ def select(candidates,count,chapter=0,after=(0,0)):
     return found
 
 def segments(start,end,last_page,doc,answer=False):
-    p0,y0=start[:2];p1,y1=end[:2] if end else (last_page,800 if not answer else 806)
+    p0,y0=start[:2];p1,y1=end[:2] if end else (last_page,806)
     out=[]
     for pn in range(p0,p1+1):
         lo=y0-2 if pn==p0 else (36 if not answer else 38)
-        hi=y1-3 if pn==p1 else (800 if not answer else 806)
+        hi=y1-3 if pn==p1 else 806
         if hi>lo+2:out.append(dict(page=pn,bbox=[20,round(lo,2),min(590,doc[pn-1].rect.width-12),round(hi,2)]))
     return out
 
-def region(asset,segs):
-    return 'pdf:'+asset+'#'+';'.join(','.join(str(v) for v in [s['page'],*s['bbox']]) for s in segs)
+def region(asset,segs,additions=None,exclusions=None):
+    encode=lambda s:','.join(str(v) for v in [s['page'],*s['bbox']])
+    return 'pdf:'+asset+'#'+';'.join(encode(s) for s in segs)+''.join(
+        '|'+marker+encode(s) for marker,items in [('+',additions or []),('-',exclusions or [])] for s in items)
+
+def complete_paper_figures(book,records):
+    """Select printed question ink; preserve whole floating figures without neighbours.
+
+    A figure may extend above its question number or below the next question's
+    first line. Assign it to the question containing most of it, then retain its
+    full rectangle at the original position. Exclude fragments owned by another
+    question. Original PDF bytes and question words are never altered.
+    """
+    for r in records:r['paperAdditions']=[];r['paperExclusions']=[]
+    for pn in range(2,60):
+        page_records=[r for r in records if any(s['page']==pn for s in r['segments'])]
+        for image in book[pn-1].get_image_info(xrefs=True):
+            bb=fitz.Rect(image['bbox'])
+            if bb.is_empty or bb.get_area()<20:continue
+            overlaps=[]
+            for r in page_records:
+                ratio=max(((fitz.Rect(s['bbox'])&bb).get_area()/bb.get_area() for s in r['segments'] if s['page']==pn),default=0)
+                if ratio>0:overlaps.append((ratio,r))
+            if not overlaps:continue
+            overlap,owner=max(overlaps,key=lambda entry:entry[0])
+            assert overlap>.5,(pn,image['xref'],'ambiguous source image ownership')
+            spec=dict(page=pn,bbox=[round(v,3) for v in bb])
+            if overlap<.9999:owner['paperAdditions'].append(spec)
+            for _,other in overlaps:
+                if other is not owner:other['paperExclusions'].append(spec)
+    for r in records:
+        # The printed urethra label extends just outside the urinary-system
+        # picture, into the following question's vertical text band.
+        if r['id']=='g7_ch15_q10':r['paperAdditions'].append(dict(page=58,bbox=[73.78,753.42,142.3,767.68]))
+        if r['id']=='g7_ch15_q11':r['paperExclusions'].append(dict(page=58,bbox=[73.78,753.42,142.3,767.68]))
+        r['questionAsset']=region('workbook.pdf',r['segments'],r['paperAdditions'],r['paperExclusions'])
 
 def text(doc,segs):
     return '\n'.join(doc[s['page']-1].get_text(clip=fitz.Rect(s['bbox'])).strip() for s in segs)
@@ -145,6 +179,7 @@ def main():
                 questionText=text(book,ss),answerText=text(answer,aa) if aa else '',sourcePage=a[0],
                 **({'keyLetter':key_letters[n-1]} if kind=='mcq' else {})))
         print(f'Chapter {c}: {nmain} + {nmcq} questions, key heading {key_start}')
+    complete_paper_figures(book,records)
     dump(ROOT/'qa/source/all-chapters-index.json',records)
     dump(ROOT/'qa/source/1405-source-manifest.json',dict(edition=1405,grade=7,referenceGrade9Commit='1117ed101b66a4b70554e47b51887aaafe768203',
         files=[dict(asset='source/'+name,sha256=hashlib.sha256(path.read_bytes()).hexdigest(),bytes=path.stat().st_size,pages=len(fitz.open(path))) for name,path in files.items()]))

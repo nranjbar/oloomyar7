@@ -78,7 +78,7 @@ internal fun InlineFillBlanksQuestion(
             shape = RoundedCornerShape(12.dp)
         ) {
             Row(Modifier.padding(horizontal = 8.dp), verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.Center) {
-                Text(value.ifBlank { "انتخاب ${workbookFa(index + 1)}" }, modifier = Modifier.weight(1f, fill = false), style = MaterialTheme.typography.bodyMedium, fontWeight = FontWeight.Bold)
+                Text(workbookBidi(value.ifBlank { "انتخاب ${workbookFa(index + 1)}" }), modifier = Modifier.weight(1f, fill = false), style = MaterialTheme.typography.bodyMedium, fontWeight = FontWeight.Bold)
                 Spacer(Modifier.width(3.dp))
                 Icon(when(state) {
                     ResponseMark.CORRECT -> Icons.Default.Check
@@ -101,7 +101,7 @@ internal fun InlineFillBlanksQuestion(
             val maximum = with(density) { (maxWidth - 12.dp).roundToPx() }.coerceAtLeast(1)
             val placeholders = rows.indices.associate { index ->
                 val value = values.getOrElse(index) { "" }.ifBlank { "انتخاب ${workbookFa(index + 1)}" }
-                val measured = measurer.measure(value, style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.Bold),
+                val measured = measurer.measure(workbookBidi(value), style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.Bold),
                     constraints = Constraints(maxWidth = (maximum - with(density) { 44.dp.roundToPx() }).coerceAtLeast(1)))
                 val width = (measured.size.width + with(density) { 44.dp.roundToPx() })
                     .coerceIn(with(density) { 48.dp.roundToPx() }.coerceAtMost(maximum), maximum)
@@ -160,7 +160,7 @@ internal fun WordBankBottomSheet(
                         modifier = Modifier.fillMaxWidth().heightIn(min = 54.dp).testTag("cloze-choice-$choice"),
                         shape = RoundedCornerShape(14.dp),
                         colors = ButtonDefaults.outlinedButtonColors(containerColor = if (values.getOrNull(row) == choice) SelectionSoft else MaterialTheme.colorScheme.surface)) {
-                        Text(choice, Modifier.weight(1f), style = MaterialTheme.typography.bodyLarge)
+                        WorkbookText(choice, Modifier.weight(1f))
                         if (!available) Text("استفاده شده", style = MaterialTheme.typography.labelSmall)
                     }
                 }

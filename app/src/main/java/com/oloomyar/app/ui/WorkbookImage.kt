@@ -56,26 +56,36 @@ internal fun WorkbookImage(asset: String, description: String, caption: String? 
             readyCallback?.invoke()
         }
     }
+    val expectedRatio = remember(asset) { SourceBitmap.aspectRatio(context, asset) }
     Column(Modifier.fillMaxWidth(), verticalArrangement = Arrangement.spacedBy(8.dp)) {
         if (bitmap != null) {
             if(maxImageHeight==null) {
-                // Keep the established layout tree for every existing route.
-                // Only chapter-one MCQ thumbnails opt into constrained sizing.
                 WorkbookBitmapFigure(bitmap,description,Modifier.testTag("workbook-image-fit-$asset"),onEnlarge={enlarged=true})
             } else BoxWithConstraints(Modifier.fillMaxWidth(),contentAlignment=Alignment.Center) {
                 val ratio=bitmap.width.toFloat()/bitmap.height
                 val displayWidth=minOf(maxWidth,(maxImageHeight-14.dp).coerceAtLeast(1.dp)*ratio+14.dp)
                 WorkbookBitmapFigure(bitmap,description,Modifier.width(displayWidth),onEnlarge={enlarged=true})
             }
-            OutlinedButton(onClick = { enlarged = true }, modifier = Modifier.fillMaxWidth().heightIn(min=48.dp)
-                .testTag("workbook-image-enlarge-$asset")) {
-                Icon(Icons.Default.Add,null,Modifier.size(20.dp));Spacer(Modifier.width(8.dp))
-                Text(if(trimAnswerWhitespace) "مشاهدهٔ کامل و بزرگ‌نمایی پاسخ" else "بزرگ‌نمایی تصویر")
-            }
         } else if (!loaded.second) {
-            LinearProgressIndicator(Modifier.fillMaxWidth())
+            // Reserve the final source figure's geometry before decoding. Choices below
+            // it must not jump while a student taps or an accessibility action runs.
+            Surface(color=Color.White,shape=RoundedCornerShape(22.dp),border=androidx.compose.foundation.BorderStroke(1.dp,Border)) {
+                Box(Modifier.fillMaxWidth().padding(7.dp).aspectRatio(expectedRatio),contentAlignment=Alignment.Center) {
+                    CircularProgressIndicator(Modifier.size(24.dp))
+                }
+            }
         } else {
             Text("تصویر بارگیری نشد؛ دوباره وارد سؤال شوید.", color = MaterialTheme.colorScheme.error)
+        }
+        if (compact) {
+            TextButton(onClick={enlarged=true},enabled=bitmap!=null,contentPadding=PaddingValues(horizontal=2.dp),
+                modifier=Modifier.fillMaxWidth().heightIn(min=48.dp).testTag("workbook-image-enlarge-$asset")) {
+                Text("بزرگ‌نمایی",style=MaterialTheme.typography.labelMedium)
+            }
+        } else OutlinedButton(onClick = { enlarged = true }, enabled=bitmap!=null,
+            modifier = Modifier.fillMaxWidth().heightIn(min=48.dp).testTag("workbook-image-enlarge-$asset")) {
+            Icon(Icons.Default.Add,null,Modifier.size(20.dp));Spacer(Modifier.width(8.dp))
+            Text(if(trimAnswerWhitespace) "مشاهدهٔ کامل و بزرگ‌نمایی پاسخ" else "بزرگ‌نمایی تصویر")
         }
         caption?.let { WorkbookText(it, color = Muted) }
     }

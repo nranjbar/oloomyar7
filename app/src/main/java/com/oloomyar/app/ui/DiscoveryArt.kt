@@ -2,6 +2,11 @@ package com.oloomyar.app.ui
 
 import androidx.compose.animation.core.*
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.Surface
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.unit.dp
 import androidx.compose.foundation.layout.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
@@ -31,7 +36,10 @@ internal fun DiscoveryRobot(modifier: Modifier = Modifier, pose: String = "welco
         val transition = rememberInfiniteTransition(label = "supplied-robot")
         transition.animateFloat(-2f, 2f, infiniteRepeatable(tween(2400, easing = FastOutSlowInEasing), RepeatMode.Reverse), label = "gentle-float").value
     }
-    SuppliedArtwork("mascot_${pose}_480w.webp", "ربات کاوشگر علوم‌یار", modifier.graphicsLayer { translationY = bob })
+    Surface(modifier.graphicsLayer { translationY = bob },shape=RoundedCornerShape(20.dp),color=Color.White,
+        border=BorderStroke(1.dp,Color(0xFFE0EDF0))) {
+        SuppliedArtwork("mascot_${pose}_480w.webp", "ربات کاوشگر علوم‌یار", Modifier.fillMaxSize().padding(4.dp))
+    }
 }
 
 @Composable

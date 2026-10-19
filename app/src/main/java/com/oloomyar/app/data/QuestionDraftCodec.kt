@@ -1,6 +1,7 @@
 package com.oloomyar.app.data
 
 import com.oloomyar.app.model.QuestionPractice
+import com.oloomyar.app.model.ChapterQuestion
 import org.json.JSONArray
 import org.json.JSONObject
 
@@ -9,7 +10,7 @@ object QuestionDraftCodec {
     private fun list(a: JSONArray?) = if (a == null) emptyList() else List(a.length()) { a.getString(it) }
     private fun map(o: JSONObject?) = o?.keys()?.asSequence()?.associateWith { list(o.optJSONArray(it)) }.orEmpty()
 
-    fun decode(raw: String?): QuestionPractice = runCatching {
+    fun decode(raw: String?, question: ChapterQuestion? = null): QuestionPractice = runCatching {
         val o = JSONObject(raw ?: "{}")
         val current = o.optInt("questionPracticeVersion") == QuestionPractice.VERSION
         val failures = if (current) o.optJSONArray("incorrectSubmissions") else null
@@ -23,7 +24,7 @@ object QuestionDraftCodec {
             shownHints = if (current) o.optInt("shownHints") else 0,
             revealed = current && o.optBoolean("revealed"),
             shuffleSeed = if (o.has("shuffleSeed")) o.getInt("shuffleSeed") else kotlin.random.Random.nextInt()
-        ).let { if (it.revealed && !it.canReveal()) it.copy(revealed = false) else it }
+        ).let { if (it.revealed && !it.canReveal(question)) it.copy(revealed = false) else it }
     }.getOrElse { QuestionPractice() }
 
     fun encode(state: QuestionPractice) = JSONObject().apply {
