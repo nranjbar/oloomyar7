@@ -199,7 +199,7 @@ class Grade7DiscoveryUiTest {
             compose.waitUntil(10000) { compose.onAllNodes(hasText("بزرگ‌نمایی") and isEnabled()).fetchSemanticsNodes().size == 3 }
             compose.onAllNodesWithText("بزرگ‌نمایی").fetchSemanticsNodes().forEachIndexed { index, _ -> compose.onAllNodesWithText("بزرگ‌نمایی")[index].assertIsDisplayed() }
             capture("discovery-10-new-particle-images")
-            compose.onAllNodesWithText("بزرگ‌نمایی")[0].performClick();compose.onNodeWithText("بزرگ‌تر").assertIsDisplayed()
+            compose.onAllNodesWithText("بزرگ‌نمایی")[0].performClick();compose.onNodeWithContentDescription("بزرگ‌تر").assertIsDisplayed()
             compose.onNodeWithText("بستن").performClick();compose.onNodeWithTag("reveal-answer").assertIsNotEnabled()
         }
         val info = context.packageManager.getPackageInfo(BuildConfig.APPLICATION_ID,android.content.pm.PackageManager.GET_PERMISSIONS)

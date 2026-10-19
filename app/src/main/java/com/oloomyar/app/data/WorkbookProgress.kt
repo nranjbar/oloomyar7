@@ -46,9 +46,11 @@ class WorkbookProgress(context: Context, scope: String, private val questions: L
         if (after.correct(question)) finishPractice(question.id, if (after.shownHints == 0) CompletionKind.INDEPENDENT else CompletionKind.GUIDED)
         else markMistake(question.id)
     }
-    fun recordReveal(id: String) {
-        prefs.edit().putBoolean("viewed_$id", true).putBoolean("mistake_$id", true).apply()
-        finishPractice(id, CompletionKind.REFERENCE)
+    fun recordReveal(id: String, solvedBeforeReveal: Boolean = false) {
+        prefs.edit().putBoolean("viewed_$id", true).apply()
+        // Looking at the key after a valid solve must not turn an independent
+        // success into a mistake. Reference use before solving remains assisted.
+        if (!solvedBeforeReveal) finishPractice(id, CompletionKind.REFERENCE)
     }
     private fun finishPractice(id: String, kind: CompletionKind) {
         prefs.edit().putBoolean("done_$id", true).putString("completion_$id", kind.name)

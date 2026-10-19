@@ -111,11 +111,12 @@ for asset in images:
 for entry in load(ROOT/'qa/source/lossless-scientific-assets.json'):
     out=ASSETS/'images'/entry['asset'];assert sha(out)==entry['webpSha256']
     raw=Image.open(out).convert('RGBA').tobytes();assert hashlib.sha256(raw).hexdigest()==entry['decodedRgbaSha256']
-    original=ASSETS/'images'/entry['source']
+    original=ROOT/entry['originalRepositoryPath'] if entry.get('originalRepositoryPath') else ASSETS/'images'/entry['source']
     if original.exists():assert sha(original)==entry['originalSha256']
     else:
         data=subprocess.check_output(['git','show','2787d494bce98497049e83431daa9b1f1b51a11b:app/src/main/assets/images/'+entry['source']],cwd=ROOT)
         assert hashlib.sha256(data).hexdigest()==entry['originalSha256']
+    if original.exists():assert Image.open(original).convert('RGBA').tobytes()==raw
     # The manifest compares pixels, not just file sizes or suffixes.
 for entry in load(ROOT/'qa/source/design-assets-1405.json'):
     assert (ASSETS/'images'/entry['asset']).stat().st_size==entry['bytes']

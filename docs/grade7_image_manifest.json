@@ -1,191 +1,186 @@
 [
   {
-    "id": "g7_ch01_q07",
-    "file": "g7_ch01_q07.png",
-    "asset": "../app/src/main/assets/images/g7_ch01_q07.png",
-    "status": "supplied_in_use",
-    "sha256": "c5a982797f6bdf69cec08fff50d82cb0038354d48c1524c466180d846101278f"
+    "file": "g7_ch01_q07.webp",
+    "asset": "../app/src/main/assets/images/g7_ch01_q07.webp",
+    "original": "qa/source/original-scientific-images/g7_ch01_q07.png",
+    "status": "pixel_identical_lossless_webp",
+    "sha256": "d6ef96e41da3cf43763d3d8dde16920cdf329e0d8bef44c95c0b0a06fbb9e847",
+    "originalSha256": "c5a982797f6bdf69cec08fff50d82cb0038354d48c1524c466180d846101278f"
   },
   {
-    "id": "g7_ch02_q02",
-    "file": "g7_ch02_q02.png",
-    "asset": "../app/src/main/assets/images/g7_ch02_q02.png",
-    "status": "supplied_in_use",
-    "sha256": "bb2f417aacec20c5d53a57a21b3803124cafe800f548937645bfc089ef10656b"
+    "file": "g7_ch02_mcq03.webp",
+    "asset": "../app/src/main/assets/images/g7_ch02_mcq03.webp",
+    "original": "qa/source/original-scientific-images/g7_ch02_mcq03.png",
+    "status": "pixel_identical_lossless_webp",
+    "sha256": "8ae267545ec6dd192d5ca19237b5e21031706ca35e7bff2093fd66457b7e3679",
+    "originalSha256": "4c68e0d8a2f76592dbf6b1e7518bb5d71576e1dae5ba5a72d38752ebb78922d5"
   },
   {
-    "id": "g7_ch02_q07",
-    "file": "g7_ch02_q07.png",
-    "asset": "../app/src/main/assets/images/g7_ch02_q07.png",
-    "status": "supplied_in_use",
-    "sha256": "2f0823554f6b5362f44d59f99d83bfc27c275406f4dbb647331863047da06b65"
+    "file": "g7_ch02_mcq04.webp",
+    "asset": "../app/src/main/assets/images/g7_ch02_mcq04.webp",
+    "original": "qa/source/original-scientific-images/g7_ch02_mcq04.png",
+    "status": "pixel_identical_lossless_webp",
+    "sha256": "827c95ce732b1cc307a1f8c73a0b919ccb674577cc19efef491322c00e6e7aac",
+    "originalSha256": "4d525ec0114a77ddde2e8cf2c5f0180088e9ebb0a597a1ae703816a35659657c"
   },
   {
-    "id": "g7_ch02_q09",
-    "file": "g7_ch02_q09.png",
-    "asset": "../app/src/main/assets/images/g7_ch02_q09.png",
-    "status": "supplied_in_use",
-    "sha256": "1edad61993cb32716569e63730d17d7e0f2dd9e6bdd2a2cecb937fa848b2d6c6"
+    "file": "g7_ch02_mcq05.webp",
+    "asset": "../app/src/main/assets/images/g7_ch02_mcq05.webp",
+    "original": "qa/source/original-scientific-images/g7_ch02_mcq05.png",
+    "status": "pixel_identical_lossless_webp",
+    "sha256": "1f13f691419cfd06540b51749be078e7250601635fd6d15fe4c494142e1f06c8",
+    "originalSha256": "939b2ac7ac563113be5372ef2638a7d8a43e83504bd7422230e7a3980ad5d623"
   },
   {
-    "id": "g7_ch02_q11",
-    "file": "g7_ch02_q11.png",
-    "asset": "../app/src/main/assets/images/g7_ch02_q11.png",
-    "status": "supplied_in_use",
-    "sha256": "0e1486991149937df7f7f5abe99519feab4ebfd83ac8480d157bf6984cccccaf"
+    "file": "g7_ch02_q02.webp",
+    "asset": "../app/src/main/assets/images/g7_ch02_q02.webp",
+    "original": "qa/source/original-scientific-images/g7_ch02_q02.png",
+    "status": "pixel_identical_lossless_webp",
+    "sha256": "0c364e65e1478abdbc8e9ef49252c17cbdb14c0ea1e3561a5a61ca3f675124c5",
+    "originalSha256": "bb2f417aacec20c5d53a57a21b3803124cafe800f548937645bfc089ef10656b"
   },
   {
-    "id": "g7_ch02_q12",
-    "file": "g7_ch02_q12.png",
-    "asset": "../app/src/main/assets/images/g7_ch02_q12.png",
-    "status": "supplied_in_use",
-    "sha256": "f779b18ab53609a97908bde24e65dcb1880ae15142d7419b11a0414cdb76588e"
+    "file": "g7_ch02_q07.webp",
+    "asset": "../app/src/main/assets/images/g7_ch02_q07.webp",
+    "original": "qa/source/original-scientific-images/g7_ch02_q07.png",
+    "status": "pixel_identical_lossless_webp",
+    "sha256": "fd40c2f5465d3583c46270ddf8f0820137fb558d490aca1b9a6ccbff5d61fb0f",
+    "originalSha256": "2f0823554f6b5362f44d59f99d83bfc27c275406f4dbb647331863047da06b65"
   },
   {
-    "id": "g7_ch02_q14",
-    "file": "g7_ch02_q14.png",
-    "asset": "../app/src/main/assets/images/g7_ch02_q14.png",
-    "status": "supplied_in_use",
-    "sha256": "b16c2c18b1495de353c5c2e7e952daf202984bc8103b273715fcd7ef78f55239"
+    "file": "g7_ch02_q09.webp",
+    "asset": "../app/src/main/assets/images/g7_ch02_q09.webp",
+    "original": "qa/source/original-scientific-images/g7_ch02_q09.png",
+    "status": "pixel_identical_lossless_webp",
+    "sha256": "0c491511f0ac869c2b8521c8a8c53b1be72a533fd5abcbe5c81fce8e261d4b59",
+    "originalSha256": "1edad61993cb32716569e63730d17d7e0f2dd9e6bdd2a2cecb937fa848b2d6c6"
   },
   {
-    "id": "g7_ch02_q15",
-    "file": "g7_ch02_q15.png",
-    "asset": "../app/src/main/assets/images/g7_ch02_q15.png",
-    "status": "supplied_in_use",
-    "sha256": "33c650a14626693dc5ac335e7cfc0ef489a20d60a68ce4a9a80adb5448636491"
+    "file": "g7_ch02_q11.webp",
+    "asset": "../app/src/main/assets/images/g7_ch02_q11.webp",
+    "original": "qa/source/original-scientific-images/g7_ch02_q11.png",
+    "status": "pixel_identical_lossless_webp",
+    "sha256": "c1cd5e1fdd6a55b227c8882b29112de596a9bd80cf0ec92b182c81355f8161a5",
+    "originalSha256": "0e1486991149937df7f7f5abe99519feab4ebfd83ac8480d157bf6984cccccaf"
   },
   {
-    "id": "g7_ch02_mcq03",
-    "file": "g7_ch02_mcq03.png",
-    "asset": "../app/src/main/assets/images/g7_ch02_mcq03.png",
-    "status": "supplied_in_use",
-    "sha256": "4c68e0d8a2f76592dbf6b1e7518bb5d71576e1dae5ba5a72d38752ebb78922d5"
+    "file": "g7_ch02_q12.webp",
+    "asset": "../app/src/main/assets/images/g7_ch02_q12.webp",
+    "original": "qa/source/original-scientific-images/g7_ch02_q12.png",
+    "status": "pixel_identical_lossless_webp",
+    "sha256": "4e8253cb92ab47edf89a31e53c0174121d3fab3f2a1bfc609349790f5da8d211",
+    "originalSha256": "f779b18ab53609a97908bde24e65dcb1880ae15142d7419b11a0414cdb76588e"
   },
   {
-    "id": "g7_ch02_mcq04",
-    "file": "g7_ch02_mcq04.png",
-    "asset": "../app/src/main/assets/images/g7_ch02_mcq04.png",
-    "status": "supplied_in_use",
-    "sha256": "4d525ec0114a77ddde2e8cf2c5f0180088e9ebb0a597a1ae703816a35659657c"
+    "file": "g7_ch02_q14.webp",
+    "asset": "../app/src/main/assets/images/g7_ch02_q14.webp",
+    "original": "qa/source/original-scientific-images/g7_ch02_q14.png",
+    "status": "pixel_identical_lossless_webp",
+    "sha256": "41eee815570de78d51bc8ef10d8e63e611414ddd50af2dbee91d8dad89be316c",
+    "originalSha256": "b16c2c18b1495de353c5c2e7e952daf202984bc8103b273715fcd7ef78f55239"
   },
   {
-    "id": "g7_ch02_mcq05",
-    "file": "g7_ch02_mcq05.png",
-    "asset": "../app/src/main/assets/images/g7_ch02_mcq05.png",
-    "status": "supplied_in_use",
-    "sha256": "939b2ac7ac563113be5372ef2638a7d8a43e83504bd7422230e7a3980ad5d623"
+    "file": "g7_ch02_q15.webp",
+    "asset": "../app/src/main/assets/images/g7_ch02_q15.webp",
+    "original": "qa/source/original-scientific-images/g7_ch02_q15.png",
+    "status": "pixel_identical_lossless_webp",
+    "sha256": "cba3eedc7f3a72d3fb89991f9e9541221700e0962dffcdfee93802d78462c362",
+    "originalSha256": "33c650a14626693dc5ac335e7cfc0ef489a20d60a68ce4a9a80adb5448636491"
   },
   {
-    "id": "g7_ch03_q03",
-    "file": "g7_ch03_q03_source_figure.png",
-    "asset": "../app/src/main/assets/images/g7_ch03_q03_source_figure.png",
-    "status": "original_source_in_use",
-    "sha256": "1dda4f4809f43f9341605c58c8dc883136dadab53037fc36b286c0e97bb8e5a5"
+    "file": "g7_ch03_mcq05_question.webp",
+    "asset": "../app/src/main/assets/images/g7_ch03_mcq05_question.webp",
+    "original": "qa/source/original-scientific-images/g7_ch03_mcq05_question.png",
+    "status": "pixel_identical_lossless_webp",
+    "sha256": "0501fb656b8dc5ff9a1c518129ac21d2e39a58cfbb340c98b7e70d9a26c69f59",
+    "originalSha256": "8d83812b4a1d15936a3edf991aa2494a42c52f4e99602c5e296fbce3081439e2"
   },
   {
-    "id": "g7_ch03_q09",
-    "file": "g7_ch03_q09_source_question.png",
-    "asset": "../app/src/main/assets/images/g7_ch03_q09_source_question.png",
-    "status": "original_source_in_use",
-    "sha256": "991124f887e4f0364f3000f02baf130b7e335b7e22d19193ed1103dbd24e32fa"
+    "file": "g7_ch03_mcq07_source_figure.webp",
+    "asset": "../app/src/main/assets/images/g7_ch03_mcq07_source_figure.webp",
+    "original": "qa/source/original-scientific-images/g7_ch03_mcq07_source_figure.png",
+    "status": "pixel_identical_lossless_webp",
+    "sha256": "8fbb3743685cee85606b37c96c3152f26eaecaa0f7785557606847d70cb95efd",
+    "originalSha256": "6a4ba9f725100e202f706f11344fd8767ff14d5ea459f97416b870013053972e"
   },
   {
-    "id": "g7_ch03_q11",
-    "file": "g7_ch03_q11_source_question.png",
-    "asset": "../app/src/main/assets/images/g7_ch03_q11_source_question.png",
-    "status": "original_source_in_use",
-    "sha256": "ee83ccc59836f3efd0a42ba7d4cb7067076f054f6354e6bbdd19756d96704491"
+    "file": "g7_ch03_q03_source_figure.webp",
+    "asset": "../app/src/main/assets/images/g7_ch03_q03_source_figure.webp",
+    "original": "qa/source/original-scientific-images/g7_ch03_q03_source_figure.png",
+    "status": "pixel_identical_lossless_webp",
+    "sha256": "03fcc8ed111b9caa46e57685c79690977e5e98b8438b569b68c493fdaad056bf",
+    "originalSha256": "1dda4f4809f43f9341605c58c8dc883136dadab53037fc36b286c0e97bb8e5a5"
   },
   {
-    "id": "g7_ch03_q12",
-    "file": "g7_ch03_q12_c_question.png",
-    "asset": "../app/src/main/assets/images/g7_ch03_q12_c_question.png",
-    "status": "supplied_in_use",
-    "sha256": "b5c6515d126bccbf9d0ad56fb303a611d771a5edf7f6496cbe0f3267f009981d"
+    "file": "g7_ch03_q12_a_question.webp",
+    "asset": "../app/src/main/assets/images/g7_ch03_q12_a_question.webp",
+    "original": "qa/source/original-scientific-images/g7_ch03_q12_a_question.png",
+    "status": "pixel_identical_lossless_webp",
+    "sha256": "9ccc59262315e5791de6ced158abef90f10ec35426fc1bb7218e78d5f1e96a2b",
+    "originalSha256": "ac86084260ab0a611990531ec34fdbec1c2ffa947149e89536fcb626c69fa643"
   },
   {
-    "id": "g7_ch03_q12",
-    "file": "g7_ch03_q12_b_question.png",
-    "asset": "../app/src/main/assets/images/g7_ch03_q12_b_question.png",
-    "status": "supplied_in_use",
-    "sha256": "2723a69143ecca7cb222ddc3f5df6e8989151fa8e69de30e37a8465a40ca9877"
+    "file": "g7_ch03_q12_b_question.webp",
+    "asset": "../app/src/main/assets/images/g7_ch03_q12_b_question.webp",
+    "original": "qa/source/original-scientific-images/g7_ch03_q12_b_question.png",
+    "status": "pixel_identical_lossless_webp",
+    "sha256": "3e5bec5b774ed2793f249815dbe1484553b444f9f84edd2217d2a697b0caa9ca",
+    "originalSha256": "2723a69143ecca7cb222ddc3f5df6e8989151fa8e69de30e37a8465a40ca9877"
   },
   {
-    "id": "g7_ch03_q12",
-    "file": "g7_ch03_q12_a_question.png",
-    "asset": "../app/src/main/assets/images/g7_ch03_q12_a_question.png",
-    "status": "supplied_in_use",
-    "sha256": "ac86084260ab0a611990531ec34fdbec1c2ffa947149e89536fcb626c69fa643"
+    "file": "g7_ch03_q12_c_question.webp",
+    "asset": "../app/src/main/assets/images/g7_ch03_q12_c_question.webp",
+    "original": "qa/source/original-scientific-images/g7_ch03_q12_c_question.png",
+    "status": "pixel_identical_lossless_webp",
+    "sha256": "3a1d1a6324fc0bd0000ee2b85bd573650b5e0301b5076ee6b9a588bd9aa4afb8",
+    "originalSha256": "b5c6515d126bccbf9d0ad56fb303a611d771a5edf7f6496cbe0f3267f009981d"
   },
   {
-    "id": "g7_ch03_q15",
-    "file": "g7_ch03_q15_question.png",
-    "asset": "../app/src/main/assets/images/g7_ch03_q15_question.png",
-    "status": "supplied_in_use",
-    "sha256": "bf2f28f6f9ccbd9bd3753d95a3f88920171c501da00154bb1fce2d0ca2431d88"
+    "file": "g7_ch03_q15_question.webp",
+    "asset": "../app/src/main/assets/images/g7_ch03_q15_question.webp",
+    "original": "qa/source/original-scientific-images/g7_ch03_q15_question.png",
+    "status": "pixel_identical_lossless_webp",
+    "sha256": "ba96b3405af3481d2012ab3599e175218000014de3ba6620749d83bca67bc373",
+    "originalSha256": "bf2f28f6f9ccbd9bd3753d95a3f88920171c501da00154bb1fce2d0ca2431d88"
   },
   {
-    "id": "g7_ch03_q16",
-    "file": "g7_ch03_mcq05_question.png",
-    "asset": "../app/src/main/assets/images/g7_ch03_mcq05_question.png",
-    "status": "supplied_in_use",
-    "sha256": "8d83812b4a1d15936a3edf991aa2494a42c52f4e99602c5e296fbce3081439e2"
+    "file": "g7_ch03_q17_question.webp",
+    "asset": "../app/src/main/assets/images/g7_ch03_q17_question.webp",
+    "original": "qa/source/original-scientific-images/g7_ch03_q17_question.png",
+    "status": "pixel_identical_lossless_webp",
+    "sha256": "709eac7ed176f2cd09ae0bc8a6cf48ab77503b8e5007e68aef340b0029471ba8",
+    "originalSha256": "282f10fb9a656e6c3742c37ae8105dc68ee38f6deecc3685579c12f93a2fff02"
   },
   {
-    "id": "g7_ch03_q17",
-    "file": "g7_ch03_q17_question.png",
-    "asset": "../app/src/main/assets/images/g7_ch03_q17_question.png",
-    "status": "supplied_in_use",
-    "sha256": "282f10fb9a656e6c3742c37ae8105dc68ee38f6deecc3685579c12f93a2fff02"
+    "file": "g7_ch03_q18_source_figure.webp",
+    "asset": "../app/src/main/assets/images/g7_ch03_q18_source_figure.webp",
+    "original": "qa/source/original-scientific-images/g7_ch03_q18_source_figure.png",
+    "status": "pixel_identical_lossless_webp",
+    "sha256": "09426d2c71e2b815202498fd5218a057f0bcec9904b1f22b365da0e08607fafc",
+    "originalSha256": "71ceffb30cf1860427a4c584e6342506eb8a976dd91167cb477dc413d2ab8aec"
   },
   {
-    "id": "g7_ch03_q18",
-    "file": "g7_ch03_q18_source_figure.png",
-    "asset": "../app/src/main/assets/images/g7_ch03_q18_source_figure.png",
-    "status": "original_source_in_use",
-    "sha256": "71ceffb30cf1860427a4c584e6342506eb8a976dd91167cb477dc413d2ab8aec"
+    "file": "g7_ch03_q21_source_figure.webp",
+    "asset": "../app/src/main/assets/images/g7_ch03_q21_source_figure.webp",
+    "original": "qa/source/original-scientific-images/g7_ch03_q21_source_figure.png",
+    "status": "pixel_identical_lossless_webp",
+    "sha256": "d778176e92ffa14eced155460c780dff92480c72dbba608536ac272da406ad8d",
+    "originalSha256": "ef6cf34bbcaf0e1825863a94c8b345d0fbc33b7c96033e5396c752fc7e1a41b7"
   },
   {
-    "id": "g7_ch03_q21",
-    "file": "g7_ch03_q21_source_figure.png",
-    "asset": "../app/src/main/assets/images/g7_ch03_q21_source_figure.png",
-    "status": "original_source_in_use",
-    "sha256": "ef6cf34bbcaf0e1825863a94c8b345d0fbc33b7c96033e5396c752fc7e1a41b7"
+    "file": "g7_ch03_q22_source_figure.webp",
+    "asset": "../app/src/main/assets/images/g7_ch03_q22_source_figure.webp",
+    "original": "qa/source/original-scientific-images/g7_ch03_q22_source_figure.png",
+    "status": "pixel_identical_lossless_webp",
+    "sha256": "28436a14ccc8f5147a10e7426d027fb0ff05ecb58656087790c53970743fde5c",
+    "originalSha256": "fd08f618745af86c9769989eda1b7da398ef5bb3b4bef83a92cc58c4776a61a2"
   },
   {
-    "id": "g7_ch03_q22",
-    "file": "g7_ch03_q22_source_figure.png",
-    "asset": "../app/src/main/assets/images/g7_ch03_q22_source_figure.png",
-    "status": "original_source_in_use",
-    "sha256": "fd08f618745af86c9769989eda1b7da398ef5bb3b4bef83a92cc58c4776a61a2"
-  },
-  {
-    "id": "g7_ch03_q24",
-    "file": "g7_ch03_q24_source_figure.png",
-    "asset": "../app/src/main/assets/images/g7_ch03_q24_source_figure.png",
-    "status": "original_source_in_use",
-    "sha256": "6c0c1f296e5be68b0721bcb6df006fd1b16dc17b4488d0d055a2bd0004f87d88"
-  },
-  {
-    "id": "g7_ch03_mcq04",
-    "file": "g7_ch03_mcq04_source_question.png",
-    "asset": "../app/src/main/assets/images/g7_ch03_mcq04_source_question.png",
-    "status": "original_source_in_use",
-    "sha256": "55dab1e907c97dab315c99afc04c33018fb250638a4120d076897a827d74929b"
-  },
-  {
-    "id": "g7_ch03_mcq05",
-    "file": "g7_ch03_mcq05_question.png",
-    "asset": "../app/src/main/assets/images/g7_ch03_mcq05_question.png",
-    "status": "supplied_in_use",
-    "sha256": "8d83812b4a1d15936a3edf991aa2494a42c52f4e99602c5e296fbce3081439e2"
-  },
-  {
-    "id": "g7_ch03_mcq07",
-    "file": "g7_ch03_mcq07_source_figure.png",
-    "asset": "../app/src/main/assets/images/g7_ch03_mcq07_source_figure.png",
-    "status": "original_source_in_use",
-    "sha256": "6a4ba9f725100e202f706f11344fd8767ff14d5ea459f97416b870013053972e"
+    "file": "g7_ch03_q24_source_figure.webp",
+    "asset": "../app/src/main/assets/images/g7_ch03_q24_source_figure.webp",
+    "original": "qa/source/original-scientific-images/g7_ch03_q24_source_figure.png",
+    "status": "pixel_identical_lossless_webp",
+    "sha256": "b36b9da56f4e4789a788c8faa2e9dcdf773381427688a65685ffb2f8bdf851ff",
+    "originalSha256": "6c0c1f296e5be68b0721bcb6df006fd1b16dc17b4488d0d055a2bd0004f87d88"
   }
 ]

@@ -218,7 +218,7 @@ internal fun WholeWorkbookQuestion(
                             val latest = QuestionDraftCodec.decode(json, question)
                             if (latest.canReveal(question)) {
                                 pendingReferenceScroll = true
-                                update(latest.reveal(question)); progress.recordReveal(question.id)
+                                update(latest.reveal(question)); progress.recordReveal(question.id, latest.correct(question))
                                 // Only an explicit request to view the key moves the viewport.
                                 // Selection and checking keep the current sentence in place.
                                 // Compose the target first; final alignment waits for actual PDF/image layout.

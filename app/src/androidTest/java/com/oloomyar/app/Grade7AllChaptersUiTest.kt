@@ -2,6 +2,9 @@ package com.oloomyar.app
 
 import android.content.Context
 import android.content.Intent
+import android.content.ContentValues
+import android.graphics.Bitmap
+import android.provider.MediaStore
 import androidx.compose.ui.test.*
 import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.test.core.app.ActivityScenario
@@ -19,6 +22,15 @@ import org.junit.runner.RunWith
 class Grade7AllChaptersUiTest {
     @get:Rule val compose=createComposeRule()
     private val context get()=InstrumentationRegistry.getInstrumentation().targetContext
+    private fun capture(name:String) {
+        val values=ContentValues().apply {
+            put(MediaStore.Images.Media.DISPLAY_NAME,"$name.png");put(MediaStore.Images.Media.MIME_TYPE,"image/png")
+            put(MediaStore.Images.Media.RELATIVE_PATH,"Download/grade7-screenshots")
+        }
+        val uri=context.contentResolver.insert(MediaStore.Downloads.EXTERNAL_CONTENT_URI,values)!!
+        val bitmap=checkNotNull(InstrumentationRegistry.getInstrumentation().uiAutomation.takeScreenshot())
+        context.contentResolver.openOutputStream(uri)!!.use { bitmap.compress(Bitmap.CompressFormat.PNG,100,it) };bitmap.recycle()
+    }
     private fun select(s:LearningStep,row:Int,value:String) {
         compose.onNodeWithTag("blank-${s.id}-$row").performScrollTo().performClick()
         compose.onNodeWithTag("choice-sheet").performScrollToNode(hasTestTag("cloze-choice-$value"))
@@ -48,6 +60,7 @@ class Grade7AllChaptersUiTest {
             compose.onNodeWithTag("nav-chapters").performClick()
             compose.onNodeWithTag("hub-list").performScrollToNode(hasTestTag("chapter-15"))
             compose.onNodeWithContentDescription("جلد فصل 15").assertExists()
+            capture("grade7-15-supplied-cover")
             compose.onNodeWithTag("chapter-15").performClick()
             compose.onAllNodesWithText("ورود به این بخش").onFirst().performClick()
             compose.onNode(hasScrollAction()).performScrollToNode(hasText("سؤال ۱ •",substring=true))
@@ -68,6 +81,7 @@ class Grade7AllChaptersUiTest {
             assertEquals(listOf("","بزرگ تر",""),state.values(s));assertTrue(state.incorrectSubmissions.isEmpty())
             assertEquals(0,state.shownHints)
             compose.onNodeWithTag("choice-sheet").assertIsDisplayed()
+            capture("grade7-7-clear-one-blank")
             compose.onNodeWithTag("cloze-choice-کمتر").performClick()
             activity.recreate()
             val restored=QuestionDraftCodec.decode(chapter.progress.draft(q.id))
@@ -89,14 +103,19 @@ class Grade7AllChaptersUiTest {
             val description="تصویر پاسخ سؤال ۸"
             compose.waitUntil(20000) { compose.onAllNodesWithContentDescription(description).fetchSemanticsNodes().isNotEmpty() }
             compose.onNodeWithContentDescription(description).assertIsDisplayed()
+            val result=chapter.progress.snapshot().first { it.id==q.id }
+            assertEquals(CompletionKind.INDEPENDENT,result.kind);assertFalse(result.mistake);assertTrue(result.viewedAnswer)
+            capture("grade7-15-solved-original-answer")
             compose.onNodeWithText("مشاهدهٔ کامل و بزرگ‌نمایی پاسخ").performScrollTo().performClick()
             compose.onNodeWithTag("workbook-image-viewer").assertIsDisplayed()
             compose.onNodeWithText("نمایش کامل").assertIsDisplayed()
             compose.onNodeWithText("بستن").performClick()
             compose.onNodeWithTag("question-body").performScrollToIndex(0)
-            compose.onNodeWithTag("previous-question").assertIsEnabled().performClick()
+            compose.onNodeWithTag("previous-question").performScrollTo().assertIsEnabled().performClick()
+            compose.waitUntil(10000) { LearningPreferences(context).lastLocation()?.questionId==chapter.questions.first { it.sourceNumber==7 }.id }
             assertEquals(chapter.questions.first { it.sourceNumber==7 }.id,LearningPreferences(context).lastLocation()!!.questionId)
-            compose.onNodeWithTag("next-question").performClick()
+            compose.onNodeWithTag("next-question").performScrollTo().performClick()
+            compose.waitUntil(10000) { LearningPreferences(context).lastLocation()?.questionId==q.id }
             assertEquals(q.id,LearningPreferences(context).lastLocation()!!.questionId)
             compose.onNodeWithTag("reveal-answer").assertIsNotEnabled() // already explicitly displayed, not reset
         }

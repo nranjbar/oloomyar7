@@ -42,12 +42,12 @@ jobs:
       - name: Build the previous signed review for real update verification
         run: |
           GRADE7_BASELINE_PROJECT="$RUNNER_TEMP/grade7-upgrade-baseline"
-          git worktree add --detach "$GRADE7_BASELINE_PROJECT" 4459fa6ece44275ac65330ab6f579f3238f42da5
+          git worktree add --detach "$GRADE7_BASELINE_PROJECT" 37baf9b7f3af6588c1ded865c309105ee0d0ab57
           cp local.properties "$GRADE7_BASELINE_PROJECT/local.properties"
           chmod +x "$GRADE7_BASELINE_PROJECT/gradlew"
           "$GRADE7_BASELINE_PROJECT/gradlew" -p "$GRADE7_BASELINE_PROJECT" --no-daemon :app:assembleDebug
           mkdir -p app/build/upgrade
-          cp "$GRADE7_BASELINE_PROJECT/app/build/outputs/apk/debug/app-debug.apk" app/build/upgrade/grade7_0.3.0.apk
+          cp "$GRADE7_BASELINE_PROJECT/app/build/outputs/apk/debug/app-debug.apk" app/build/upgrade/grade7_0.4.0.apk
       - name: Upload installable Grade 7 APK
         uses: actions/upload-artifact@v4
         with:
