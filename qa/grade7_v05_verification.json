@@ -1,0 +1,253 @@
+{
+  "status": "PASS",
+  "version": "0.5.0-grade7-1405",
+  "sourceCommit": "ae20a2cb23fa237cac93783245b6ee6b404d0a4d",
+  "runUrl": "https://github.com/nranjbar/oloomyar7/actions/runs/39244839513",
+  "unit": {
+    "tests": 40,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "androidApi35": {
+    "tests": 31,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "installAndProcessRestore": {
+    "status": "PASS",
+    "oldVersion": "0.4.0",
+    "newVersion": "0.5.0",
+    "installReplacement": true,
+    "oldCompletionPreserved": true,
+    "draftSelectionsHintsAndSeedPreserved": true,
+    "viewportPreserved": true,
+    "answerStayedLocked": true,
+    "bookmarksAndDisplaySettingsPreserved": true,
+    "pidBefore": "5949",
+    "pidAfterStop": "",
+    "pidRestored": "6001",
+    "tests": 3
+  },
+  "packages": [
+    {
+      "kind": "debug",
+      "path": "app/build/outputs/apk/debug/app-debug.apk",
+      "bytes": 31905274,
+      "sha256": "649dfd66178db0e8c5864121dffcb4cbd6163dba1211e3a7f76a8a6d208cfffa",
+      "assetEntries": 78,
+      "compressedAssetBytes": 13015747,
+      "previousThreeChapterApkBytes": 47596130
+    },
+    {
+      "kind": "releaseBundle",
+      "path": "app/build/outputs/bundle/release/app-release.aab",
+      "bytes": 16133937,
+      "sha256": "5547f76d3bfc0932c26d3598d7ba93665e1fa4034da62b791e29592365ec6a67",
+      "assetEntries": 78,
+      "compressedAssetBytes": 12895386,
+      "previousThreeChapterApkBytes": 47596130
+    }
+  ],
+  "content": {
+    "status": "PASS",
+    "edition": 1405,
+    "chapters": 15,
+    "questions": 317,
+    "learningGroups": 334,
+    "hintPairs": 334,
+    "chapterCounts": [
+      8,
+      20,
+      31,
+      23,
+      22,
+      21,
+      34,
+      26,
+      18,
+      29,
+      13,
+      20,
+      17,
+      15,
+      20
+    ],
+    "inlineQuestions": [
+      "g7_ch01_q01",
+      "g7_ch01_q05",
+      "g7_ch02_q01",
+      "g7_ch03_q01",
+      "g7_ch03_q08",
+      "g7_ch03_q10",
+      "g7_ch03_q17",
+      "g7_ch04_q01",
+      "g7_ch05_q01",
+      "g7_ch06_q01",
+      "g7_ch07_q01",
+      "g7_ch07_q08",
+      "g7_ch08_q01",
+      "g7_ch09_q01",
+      "g7_ch10_q01",
+      "g7_ch10_q04",
+      "g7_ch10_q16",
+      "g7_ch11_q01",
+      "g7_ch11_q09",
+      "g7_ch12_q01",
+      "g7_ch12_q11",
+      "g7_ch12_q12",
+      "g7_ch12_q20",
+      "g7_ch13_q01",
+      "g7_ch14_q01",
+      "g7_ch14_q03",
+      "g7_ch14_q06",
+      "g7_ch15_q01",
+      "g7_ch15_q08"
+    ],
+    "nativeExtraTranscriptChecks": [
+      {
+        "id": "g7_ch04_q01",
+        "letterInventoryPreserved": true,
+        "textLayerBoundaryArtifact": false
+      },
+      {
+        "id": "g7_ch05_q01",
+        "letterInventoryPreserved": true,
+        "textLayerBoundaryArtifact": false
+      },
+      {
+        "id": "g7_ch06_q01",
+        "letterInventoryPreserved": true,
+        "textLayerBoundaryArtifact": false
+      },
+      {
+        "id": "g7_ch07_q01",
+        "letterInventoryPreserved": true,
+        "textLayerBoundaryArtifact": false
+      },
+      {
+        "id": "g7_ch07_q08",
+        "letterInventoryPreserved": true,
+        "textLayerBoundaryArtifact": false
+      },
+      {
+        "id": "g7_ch08_q01",
+        "letterInventoryPreserved": true,
+        "textLayerBoundaryArtifact": false
+      },
+      {
+        "id": "g7_ch09_q01",
+        "letterInventoryPreserved": true,
+        "textLayerBoundaryArtifact": false
+      },
+      {
+        "id": "g7_ch10_q01",
+        "letterInventoryPreserved": true,
+        "textLayerBoundaryArtifact": false
+      },
+      {
+        "id": "g7_ch10_q04",
+        "letterInventoryPreserved": true,
+        "textLayerBoundaryArtifact": false
+      },
+      {
+        "id": "g7_ch10_q16",
+        "letterInventoryPreserved": true,
+        "textLayerBoundaryArtifact": false
+      },
+      {
+        "id": "g7_ch11_q01",
+        "letterInventoryPreserved": true,
+        "textLayerBoundaryArtifact": false
+      },
+      {
+        "id": "g7_ch11_q09",
+        "letterInventoryPreserved": true,
+        "textLayerBoundaryArtifact": false
+      },
+      {
+        "id": "g7_ch12_q01",
+        "letterInventoryPreserved": true,
+        "textLayerBoundaryArtifact": false
+      },
+      {
+        "id": "g7_ch12_q11",
+        "letterInventoryPreserved": true,
+        "textLayerBoundaryArtifact": false
+      },
+      {
+        "id": "g7_ch12_q12",
+        "letterInventoryPreserved": true,
+        "textLayerBoundaryArtifact": false
+      },
+      {
+        "id": "g7_ch12_q20",
+        "letterInventoryPreserved": true,
+        "textLayerBoundaryArtifact": false
+      },
+      {
+        "id": "g7_ch13_q01",
+        "letterInventoryPreserved": false,
+        "textLayerBoundaryArtifact": true
+      },
+      {
+        "id": "g7_ch14_q01",
+        "letterInventoryPreserved": false,
+        "textLayerBoundaryArtifact": true
+      },
+      {
+        "id": "g7_ch14_q03",
+        "letterInventoryPreserved": true,
+        "textLayerBoundaryArtifact": false
+      },
+      {
+        "id": "g7_ch14_q06",
+        "letterInventoryPreserved": true,
+        "textLayerBoundaryArtifact": false
+      },
+      {
+        "id": "g7_ch15_q01",
+        "letterInventoryPreserved": true,
+        "textLayerBoundaryArtifact": false
+      },
+      {
+        "id": "g7_ch15_q08",
+        "letterInventoryPreserved": true,
+        "textLayerBoundaryArtifact": false
+      }
+    ],
+    "immutableSourcePdfs": 16,
+    "sourceQuestionRegions": 317,
+    "isolatedSourceAnswers": 317,
+    "scientificWebpAssets": 23,
+    "interactionKinds": {
+      "match": 194,
+      "multi": 40,
+      "single": 79,
+      "order": 19,
+      "classify": 2
+    },
+    "packagedAssetBytes": 14817884,
+    "contentRequiringAuthorConfirmation": [
+      "g7_ch13_mcq03"
+    ],
+    "wholeFloatingFiguresRestored": 46,
+    "neighbouringFigureFragmentsExcluded": 43,
+    "notes": [
+      "Original question and answer PDFs are immutable and SHA-256 verified",
+      "Native transcription preserves source letters; two PDF boundary extraction artifacts are visually documented",
+      "Source MCQ key 13/3 is preserved, flagged, and not silently corrected",
+      "Android build, native UI, bitmap rendering and install replacement are separate checks"
+    ]
+  },
+  "signingCertificateSha256": "aee8bc4482b0cc935148a5f0aabaf105d5e7c42f31efaf080473a04d33335ab4",
+  "splash": {
+    "milliseconds": 3000,
+    "assetBytes": 125568,
+    "buttonRemoved": true,
+    "automaticEntry": true,
+    "recreationDoesNotReplay": true
+  },
+  "summaryFa": "۴۰ آزمون واحد، ۳۱ آزمون رابط اندروید و ۳ آزمون نصب و بازیابی موفق شدند. به‌روزرسانی واقعی از ۰٫۴ به ۰٫۵، حفظ انتخاب، راهنما، نشان و محل مطالعه، نمایش سه‌ثانیه‌ای تصویر آغاز و ورود خودکار بررسی شدند. APK آزمایشی حدود ۳۲ و باندل انتشار حدود ۱۶ مگابایت است."
+}

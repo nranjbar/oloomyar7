@@ -95,7 +95,7 @@ class Report:
         self.doc.save(path,garbage=4,deflate=True)
         print(json.dumps(dict(output=str(path.resolve()),pages=len(self.doc),bytes=path.stat().st_size),ensure_ascii=False))
 
-def build(output):
+def build(output,verification=None):
     r=Report();p=r.page('گزارش علوم‌یار هفتم','۱۵ فصل • مرجع ۱۴۰۵ • انتقال اصلاحات نهایی علوم نهم')
     r.box(p,fitz.Rect(LEFT,123,RIGHT,230),'''<h2>اصل کتاب تغییر نکرده است</h2><p>این گزارش، نیاز واقعی به تصویر و اصلاح روش نمایش و تمرین را از تغییر محتوای مؤلف جدا می‌کند. صورت سؤال و پاسخ‌های نمونهٔ این فایل از خود PDF کتاب و پاسخنامه بریده شده‌اند؛ واژه‌های مؤلف بازنویسی نشده‌اند.</p>''')
     rows=[('پوشش','۳۱۷ سؤال در ۱۵ فصل؛ ۳۳۴ بخش تمرینی و ۶۶۸ راهنما'),('جای خالی','متن کامل، انتخاب در همان خانه، زرد پیش از بررسی، سبز درست و قرمز قابل اصلاح'),('لمس دوباره','فقط همان انتخاب پاک می‌شود؛ تلاش تازه و جابه‌جایی خودکار ثبت نمی‌شود'),('پاسخ مرجع','همان پاسخ پس از حل درست یا دو تلاش کاملِ نادرستِ متفاوت و هر دو راهنما، با درخواست دانش‌آموز'),('قالب علمی','کسر، فرمول، جدول، نمودار و حروف ترکیبی از هندسهٔ اصلی PDF حفظ می‌شوند'),('پیشرفت','انتخاب، راهنما، نشان، محل مطالعه و حل مستقل هنگام مرور پاسخ حفظ می‌شوند'),('حجم','یک نسخه از منابع و WebP بدون تغییر پیکسل؛ PNG تکراری وارد بسته نمی‌شود'),('ظاهر','جلدهای ارسالی ۱۵ فصل، ربات ارسالی، کنترل‌های خوانا و صفحهٔ بیشتر'),('مرجع مقایسه','آخرین کد نهم با شناسهٔ 1117ed101؛ مخزن نهم تغییر نکرده است')]
@@ -138,7 +138,7 @@ def build(output):
                 'این پرسش همان مدل‌های اتمی سؤال ۱۶ را دارد. یک نسخهٔ واضحِ مشترک کافی است؛ متن گزینه‌ها و حرف پاسخ چاپی در این صفحه کامل آمده‌اند. دستور بازسازی شکل همان صفحهٔ پیش است؛ تصویر تازهٔ جدا برای پاسخ لازم نیست.')
     p=r.page('کنترل نهایی و سابقهٔ قابل پیگیری')
     validation=json.loads((ROOT/'qa/grade7_content_validation.json').read_text())
-    proof_file=ROOT/'qa/grade7_v05_verification.json';proof=json.loads(proof_file.read_text())if proof_file.exists()else {}
+    proof_file=verification or ROOT/'qa/grade7_v05_verification.json';proof=json.loads(proof_file.read_text())if proof_file.exists()else {}
     status='آزمون نهایی اندروید در حال تکمیل است؛ این پیش‌نویس برای کنترل صفحه‌آرایی است.' if not proof else proof.get('summaryFa','نتیجهٔ آزمون در گزارش گیت ثبت شده است.')
     text=f'''<h2>کنترل منبع</h2><p>فایل کتاب ۶۳ صفحه‌ای و ۱۵ پاسخنامهٔ فصل با اثرانگشت دیجیتال ثابت کنترل می‌شوند. برای هر یک از ۳۱۷ سؤال، ناحیهٔ سؤال و ناحیهٔ پاسخ جدا مشخص است. کلید چهارگزینه‌ای از ستون همان سؤال می‌آید، نه نوار مشترک جواب‌ها.</p>
 <p>۲۹ پرسش جای خالی با متن تعاملی و ۵۵ متن خوانای افزوده، از نظر حروف و عددها با منبع مقابله شده‌اند. {fa(validation.get('wholeFloatingFiguresRestored',0))} ناحیهٔ شناورِ شکل یا برچسب کامل شده و {fa(validation.get('neighbouringFigureFragmentsExcluded',0))} قطعهٔ شکل سؤال کناری از نمایش همان سؤال کنار گذاشته شده است. فایل اصلی PDF تغییر نکرده است.</p>
@@ -151,4 +151,6 @@ def build(output):
     r.finish(output)
 
 if __name__=='__main__':
-    p=argparse.ArgumentParser();p.add_argument('--output',type=Path,default=ROOT/'dist/OloomYar7_1405_Audit.pdf');args=p.parse_args();build(args.output)
+    p=argparse.ArgumentParser();p.add_argument('--output',type=Path,default=ROOT/'dist/OloomYar7_1405_Audit.pdf')
+    p.add_argument('--verification',type=Path,help='Optional verified CI receipt, for example from the final main build')
+    args=p.parse_args();build(args.output,args.verification)

@@ -23,6 +23,8 @@ class Grade7AllChaptersUiTest {
     @get:Rule val compose=createComposeRule()
     private val context get()=InstrumentationRegistry.getInstrumentation().targetContext
     private fun capture(name:String) {
+        compose.waitForIdle()
+        InstrumentationRegistry.getInstrumentation().uiAutomation.waitForIdle(100,5000)
         val values=ContentValues().apply {
             put(MediaStore.Images.Media.DISPLAY_NAME,"$name.png");put(MediaStore.Images.Media.MIME_TYPE,"image/png")
             put(MediaStore.Images.Media.RELATIVE_PATH,"Download/grade7-screenshots")
