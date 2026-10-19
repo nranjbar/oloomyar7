@@ -36,7 +36,7 @@ internal fun OloomScreen(
         modifier
             .background(
                 Brush.verticalGradient(
-                    listOf(Color(0xFFF0F3FF), Background, Color(0xFFF8FBFF))
+                    listOf(Color(0xFFEFFAFD), Background, Color(0xFFF6FBFD))
                 )
             )
             .drawBehind {
@@ -187,7 +187,7 @@ internal fun OloomTopBar(title: String, onBack: () -> Unit, modifier: Modifier =
                 Spacer(Modifier.width(4.dp))
                 Text("برگشت", color = Blue, fontWeight = FontWeight.Bold)
             }
-            Text(title, Modifier.weight(1f), textAlign = TextAlign.Center, style = MaterialTheme.typography.titleMedium, maxLines = 1)
+            Text(title, Modifier.weight(1f), textAlign = TextAlign.Center, style = MaterialTheme.typography.titleMedium)
             Surface(color = BlueSoft, shape = RoundedCornerShape(12.dp), modifier = Modifier.padding(horizontal = 13.dp)) {
                 Icon(Icons.Default.Science, null, tint = Blue, modifier = Modifier.padding(7.dp).size(18.dp))
             }

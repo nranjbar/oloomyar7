@@ -20,7 +20,7 @@ import kotlinx.coroutines.withContext
 
 /** Only the supplied final art; scientific content always comes from the workbook. */
 @Composable
-private fun SuppliedArtwork(asset: String, description: String, modifier: Modifier) {
+internal fun SuppliedArtwork(asset: String, description: String, modifier: Modifier) {
     val context = LocalContext.current
     val bitmap by produceState<android.graphics.Bitmap?>(null, asset) {
         value = withContext(Dispatchers.IO) { SourceBitmap.load(context, asset) }

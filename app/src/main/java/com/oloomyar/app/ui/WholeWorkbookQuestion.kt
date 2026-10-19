@@ -38,6 +38,7 @@ internal fun WholeWorkbookQuestion(
     modifier: Modifier,
     onPrevious: (() -> Unit)? = null,
     onNext: (() -> Unit)? = null,
+    onQuestionList: (() -> Unit)? = null,
     onFinish: (Int, Boolean) -> Unit
 ) {
     var json by rememberSaveable(question.id, sessionToken) {
@@ -92,6 +93,7 @@ internal fun WholeWorkbookQuestion(
         }
     }
     val inlineStep = question.steps.singleOrNull()?.takeIf { it.clozeTemplate != null }
+    val native = question.nativeQuestion.isNotEmpty()
     val allCorrect = state.correct(question)
     val finished = !exam && (allCorrect || state.revealed)
     Column(modifier.fillMaxSize()) {
@@ -109,13 +111,9 @@ internal fun WholeWorkbookQuestion(
                     }
                     Text("سؤال ${workbookFa(question.sourceNumber)} • ${question.title}", style = MaterialTheme.typography.titleLarge)
                     Text(question.source, color = Muted, style = MaterialTheme.typography.bodySmall)
-                    if (!exam && (onPrevious != null || onNext != null)) Row(horizontalArrangement = Arrangement.spacedBy(10.dp)) {
-                        TextButton(onClick = { onPrevious?.invoke() }, enabled = onPrevious != null, modifier = Modifier.testTag("previous-question")) { Text("سؤال قبلی") }
-                        TextButton(onClick = { onNext?.invoke() }, enabled = onNext != null, modifier = Modifier.testTag("next-question")) { Text("سؤال بعدی") }
-                    }
                     question.sourceReviewNote?.let { Text(it, color = Orange, style = MaterialTheme.typography.bodySmall) }
                     if (finished) TextButton(onClick = { update(QuestionPractice()) }, modifier = Modifier.testTag("restart-practice")) { Text("تمرین دوباره") }
-                    if (inlineStep == null) TextButton(onClick = { jump(3) }) {
+                    if (inlineStep == null && !native) TextButton(onClick = { jump(3) }) {
                         Text("رفتن به پاسخ تعاملی")
                     }
                 }
@@ -123,7 +121,11 @@ internal fun WholeWorkbookQuestion(
             item(key = "source") {
                 WorkbookPanel(accent = Purple) {
                     Text("صورت اصلی سؤال کتاب", color = Purple, style = MaterialTheme.typography.titleMedium)
-                    if (inlineStep != null) {
+                    if (native) {
+                        NativeWorkbookContent(question, question.nativeQuestion, state, exam) { step, values ->
+                            update(state.change(step, values))
+                        }
+                    } else if (inlineStep != null) {
                         WorkbookInput(inlineStep, state.values(inlineStep), state.revealed && !exam,
                             practice = if (exam) state.copy(checked = emptyMap(), revealed = false) else state) {
                             update(state.change(inlineStep, it))
@@ -131,21 +133,21 @@ internal fun WholeWorkbookQuestion(
                     } else if (question.readablePrompt != null) {
                         WorkbookText(question.readablePrompt, Modifier.fillMaxWidth().testTag("readable-book-prompt"))
                     }
-                    if (showOriginal || (inlineStep == null && question.readablePrompt == null)) {
+                    if (!native && (showOriginal || (inlineStep == null && question.readablePrompt == null))) {
                         (if (showOriginal) question.sourceQuestionVisual else question.promptVisual ?: question.sourceQuestionVisual)?.let { WorkbookImage(it, "صورت سؤال ${workbookFa(question.sourceNumber)} از کتاب") }
                             ?: WorkbookText(question.bookPrompt.orEmpty())
                     }
-                    TextButton(onClick = { showOriginal = !showOriginal }) {
+                    if (!native) TextButton(onClick = { showOriginal = !showOriginal }) {
                         Text(if (showOriginal) "بستن تصویر کتاب" else "مشاهدهٔ تصویر خود کتاب")
                     }
                 }
             }
             item(key = "figures") {
-                WorkbookQuestionVisuals(question, "تصویر سؤال ${workbookFa(question.sourceNumber)}: ${question.title}")
+                if (!native) WorkbookQuestionVisuals(question, "تصویر سؤال ${workbookFa(question.sourceNumber)}: ${question.title}")
             }
             itemsIndexed(question.steps, key = { _, step -> step.id }) { index, step ->
                 WorkbookPanel(accent = Blue) {
-                    if (inlineStep == null) {
+                    if (inlineStep == null && !native) {
                         Text(if (question.steps.size == 1) "انتخاب پاسخ" else "قسمت ${workbookFa(index + 1)}", color = Blue, style = MaterialTheme.typography.titleMedium)
                         WorkbookText(step.prompt, bold = true)
                         val locked = !exam && (state.revealed || (step.kind != StepKind.MATCH && step.kind != StepKind.CLASSIFY && state.locked(step)))
@@ -193,7 +195,8 @@ internal fun WholeWorkbookQuestion(
                 if (!exam && state.revealed && state.canReveal(question)) {
                     WorkbookPanel(accent = Green) {
                         Text("پاسخ کتاب‌کار", color = Green, style = MaterialTheme.typography.titleLarge)
-                        question.answerVisual?.let { WorkbookImage(it, "تصویر پاسخ سؤال ${workbookFa(question.sourceNumber)}", trimAnswerWhitespace = true,
+                        if (question.nativeAnswer.isNotEmpty()) NativeWorkbookContent(question, question.nativeAnswer)
+                        else question.answerVisual?.let { WorkbookImage(it, "تصویر پاسخ سؤال ${workbookFa(question.sourceNumber)}", trimAnswerWhitespace = true,
                             onImageReady = {
                                 if (pendingReferenceScroll) {
                                     pendingReferenceScroll = false
@@ -207,9 +210,14 @@ internal fun WholeWorkbookQuestion(
         }
         Surface(color = MaterialTheme.colorScheme.surface, shadowElevation = 6.dp) {
             Column(Modifier.fillMaxWidth().navigationBarsPadding().padding(horizontal = 16.dp, vertical = 10.dp), verticalArrangement = Arrangement.spacedBy(6.dp)) {
+                if (!exam && onQuestionList != null) Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(6.dp)) {
+                    TextButton(onClick = { onPrevious?.invoke() }, enabled = onPrevious != null, modifier = Modifier.weight(1f).heightIn(min = 48.dp).testTag("previous-question")) { Text("قبلی") }
+                    TextButton(onClick = onQuestionList, modifier = Modifier.weight(1f).heightIn(min = 48.dp).testTag("question-navigator")) { Text("فهرست") }
+                    TextButton(onClick = { onNext?.invoke() }, enabled = onNext != null, modifier = Modifier.weight(1f).heightIn(min = 48.dp).testTag("next-question")) { Text("بعدی") }
+                }
                 if (!exam) {
                     Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                        TextButton(onClick = { jump(if (inlineStep != null) 1 else 3) }, modifier = Modifier.weight(1f)) { Text("انتخاب‌ها") }
+                        TextButton(onClick = { jump(if (native || inlineStep != null) 1 else 3) }, modifier = Modifier.weight(1f)) { Text("انتخاب‌ها") }
                         TextButton(enabled = state.shownHints > 0, onClick = {
                             val first = question.steps.indexOfFirst { s -> state.checked[s.id]?.let { !WorkbookAnswers.isCorrect(s, it) } == true }.coerceAtLeast(0)
                             jump(first + 3)
@@ -240,7 +248,8 @@ internal fun WholeWorkbookQuestion(
                     }, color = Muted, style = MaterialTheme.typography.bodySmall)
                 }
                 Button(modifier = Modifier.fillMaxWidth().heightIn(min = 54.dp),
-                    shape = RoundedCornerShape(17.dp),
+                    shape = RoundedCornerShape(30.dp),
+                    colors = ButtonDefaults.buttonColors(containerColor = Yellow, contentColor = Navy),
                     enabled = if (exam) state.complete(question) else finished || state.canCheck(question), onClick = {
                         val latest = QuestionDraftCodec.decode(json, question)
                         if (exam || finished) {

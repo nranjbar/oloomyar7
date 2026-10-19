@@ -17,49 +17,53 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.text.TextStyle
+import com.oloomyar.app.R
+import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
-val Blue = Color(0xFF087C89)
+val Blue = Color(0xFF087A76)
 val RoyalBlue = Color(0xFF315DC7)
-val BlueDark = Color(0xFF0D4D59)
-val BlueSoft = Color(0xFFE6F5F5)
-val Green = Color(0xFF157347)
-val GreenSoft = Color(0xFFE5F6EB)
-val Orange = Color(0xFFA64D13)
+val BlueDark = Color(0xFF087A76)
+val BlueSoft = Color(0xFFDDF6F3)
+val Green = Color(0xFF12643C)
+val GreenSoft = Color(0xFFE8F8EE)
+val Orange = Color(0xFF8A5108)
 val OrangeSoft = Color(0xFFFFF0DF)
-val Purple = Color(0xFF7961C8)
-val PurpleSoft = Color(0xFFF1EDFC)
+val Purple = Color(0xFF7451A5)
+val PurpleSoft = Color(0xFFF3EDFB)
 val Aqua = Color(0xFF137E8A)
 val AquaSoft = Color(0xFFE5F5F2)
-val Yellow = Color(0xFFFFDA76)
-val Navy = Color(0xFF113C4A)
-val Ink = Color(0xFF19334C)
-val Muted = Color(0xFF526773)
-val Background = Color(0xFFF2F8FC)
-val SurfaceMuted = Color(0xFFF8FAF8)
-val Border = Color(0xFFD9E6E1)
-val Danger = Color(0xFFB52E4C)
+val Yellow = Color(0xFFF6C343)
+val Navy = Color(0xFF11215E)
+val Ink = Color(0xFF11215E)
+val Muted = Color(0xFF52617A)
+val Background = Color(0xFFF6FBFD)
+val SurfaceMuted = Color(0xFFF7FAFC)
+val Border = Color(0xFFDDE7EF)
+val Danger = Color(0xFFA92436)
 
-val SelectionSoft = Color(0xFFFFF2BE)
+val SelectionSoft = Color(0xFFFFF3C9)
 val SelectionInk = Color(0xFF765000)
-val DangerSoft = Color(0xFFFDE8EC)
+val DangerSoft = Color(0xFFFDECEF)
+
+private val ArabicFont = FontFamily(Font(R.font.noto_arabic_regular), Font(R.font.noto_arabic_bold, FontWeight.Bold))
 
 private val AppTypography = Typography(
-    displaySmall = TextStyle(fontFamily=FontFamily.SansSerif,fontWeight=FontWeight.Black,fontSize=32.sp,lineHeight=44.sp),
-    headlineLarge = TextStyle(fontFamily=FontFamily.SansSerif,fontWeight=FontWeight.Black,fontSize=29.sp,lineHeight=42.sp),
-    headlineMedium = TextStyle(fontFamily=FontFamily.SansSerif,fontWeight=FontWeight.Black,fontSize=23.sp,lineHeight=35.sp),
-    headlineSmall = TextStyle(fontFamily=FontFamily.SansSerif,fontWeight=FontWeight.ExtraBold,fontSize=21.sp,lineHeight=32.sp),
-    titleLarge = TextStyle(fontFamily=FontFamily.SansSerif,fontWeight=FontWeight.ExtraBold,fontSize=20.sp,lineHeight=31.sp),
-    titleMedium = TextStyle(fontFamily=FontFamily.SansSerif,fontWeight=FontWeight.Bold,fontSize=17.sp,lineHeight=27.sp),
-    titleSmall = TextStyle(fontFamily=FontFamily.SansSerif,fontWeight=FontWeight.Bold,fontSize=15.sp,lineHeight=24.sp),
-    bodyLarge = TextStyle(fontFamily=FontFamily.SansSerif,fontWeight=FontWeight.Normal,fontSize=16.sp,lineHeight=28.sp),
-    bodyMedium = TextStyle(fontFamily=FontFamily.SansSerif,fontWeight=FontWeight.Normal,fontSize=14.sp,lineHeight=24.sp),
-    bodySmall = TextStyle(fontFamily=FontFamily.SansSerif,fontWeight=FontWeight.Normal,fontSize=12.sp,lineHeight=20.sp),
-    labelLarge = TextStyle(fontFamily=FontFamily.SansSerif,fontWeight=FontWeight.Bold,fontSize=15.sp,lineHeight=24.sp),
-    labelMedium = TextStyle(fontFamily=FontFamily.SansSerif,fontWeight=FontWeight.Bold,fontSize=12.sp,lineHeight=19.sp)
+    displaySmall = TextStyle(fontFamily=ArabicFont,fontWeight=FontWeight.Black,fontSize=32.sp,lineHeight=44.sp),
+    headlineLarge = TextStyle(fontFamily=ArabicFont,fontWeight=FontWeight.Black,fontSize=29.sp,lineHeight=42.sp),
+    headlineMedium = TextStyle(fontFamily=ArabicFont,fontWeight=FontWeight.Black,fontSize=23.sp,lineHeight=35.sp),
+    headlineSmall = TextStyle(fontFamily=ArabicFont,fontWeight=FontWeight.ExtraBold,fontSize=21.sp,lineHeight=32.sp),
+    titleLarge = TextStyle(fontFamily=ArabicFont,fontWeight=FontWeight.ExtraBold,fontSize=20.sp,lineHeight=31.sp),
+    titleMedium = TextStyle(fontFamily=ArabicFont,fontWeight=FontWeight.Bold,fontSize=17.sp,lineHeight=27.sp),
+    titleSmall = TextStyle(fontFamily=ArabicFont,fontWeight=FontWeight.Bold,fontSize=15.sp,lineHeight=24.sp),
+    bodyLarge = TextStyle(fontFamily=ArabicFont,fontWeight=FontWeight.Normal,fontSize=17.sp,lineHeight=30.sp),
+    bodyMedium = TextStyle(fontFamily=ArabicFont,fontWeight=FontWeight.Normal,fontSize=16.sp,lineHeight=28.sp),
+    bodySmall = TextStyle(fontFamily=ArabicFont,fontWeight=FontWeight.Normal,fontSize=14.sp,lineHeight=24.sp),
+    labelLarge = TextStyle(fontFamily=ArabicFont,fontWeight=FontWeight.Bold,fontSize=15.sp,lineHeight=24.sp),
+    labelMedium = TextStyle(fontFamily=ArabicFont,fontWeight=FontWeight.Bold,fontSize=12.sp,lineHeight=19.sp)
 )
 
 private val Scheme = lightColorScheme(

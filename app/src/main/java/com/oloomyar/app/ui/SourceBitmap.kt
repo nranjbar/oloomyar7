@@ -13,6 +13,7 @@ import android.os.ParcelFileDescriptor
 import android.util.LruCache
 import com.oloomyar.app.BuildConfig
 import com.oloomyar.app.model.PdfSource
+import com.oloomyar.app.model.RasterSource
 import java.io.File
 import org.json.JSONObject
 import kotlin.math.ceil
@@ -29,6 +30,7 @@ internal object SourceBitmap {
     private var imageDimensions: JSONObject? = null
 
     fun aspectRatio(context: Context, asset: String): Float {
+        RasterSource.parse(asset)?.let { return it.aspectRatio }
         PdfSource.parse(asset)?.let { return it.aspectRatio }
         val dimensions=synchronized(copyLock) {
             imageDimensions ?: context.assets.open("content/image-dimensions.json").bufferedReader().use {
@@ -43,8 +45,13 @@ internal object SourceBitmap {
         val key = "$asset|$trim"
         cache.get(key)?.let { return it }
         val bitmap = runCatching {
+            val crop = RasterSource.parse(asset)
             val pdf = PdfSource.parse(asset)
-            val original = if (pdf == null) {
+            val original = if (crop != null) {
+                val source = requireNotNull(load(context, crop.file))
+                require(crop.right<=source.width && crop.bottom<=source.height)
+                Bitmap.createBitmap(source,crop.left,crop.top,crop.width,crop.height)
+            } else if (pdf == null) {
                 val bounds = BitmapFactory.Options().apply { inJustDecodeBounds = true }
                 context.assets.open("images/$asset").use { BitmapFactory.decodeStream(it, null, bounds) }
                 val options = BitmapFactory.Options().apply {

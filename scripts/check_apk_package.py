@@ -18,6 +18,10 @@ for kind,relative in [('debug','app/build/outputs/apk/debug/app-debug.apk'),('re
         qs=[q for c in range(1,16)for q in json.loads(archive.read(prefix+f'content/chapter{c}.json'))]
         assert len(qs)==317
         assert all(q['answerVisual'].startswith('pdf:answers')for q in qs)
+        native=[q for q in qs if q['relatedChapter']<=5]
+        assert len(native)==104 and all(q['nativeQuestion'] and q['nativeAnswer']for q in native)
+        assert not any(b.get('asset')==q['sourceQuestionVisual']for q in native for b in q['nativeQuestion'])
+        assert not any(b['type']in['input','cloze','barChart','reaction','figure']for q in native for b in q['nativeAnswer'])
         assert path.stat().st_size<47_596_130,'All fifteen chapters must stay below the previous three-chapter review APK size'
         outputs.append(dict(kind=kind,path=relative,bytes=path.stat().st_size,sha256=hashlib.sha256(path.read_bytes()).hexdigest(),
             assetEntries=len(assets),compressedAssetBytes=sum(archive.getinfo(n).compress_size for n in assets),

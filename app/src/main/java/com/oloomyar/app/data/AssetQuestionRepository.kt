@@ -64,6 +64,8 @@ open class AssetQuestionRepository(
                         readablePrompt = optionalText(q, "readablePrompt"),
                         originalFigureVisual = optionalText(q, "originalFigureVisual"),
                         sourceReviewNote = optionalText(q, "sourceReviewNote"),
+                        nativeQuestion = parseBlocks(q.optJSONArray("nativeQuestion")),
+                        nativeAnswer = parseBlocks(q.optJSONArray("nativeAnswer")),
                         bookPrompt = optionalText(q, "bookPrompt") ?: q.getString("source"),
                         sourceNumber = q.optInt("sourceNumber", q.getInt("number")),
                         sourcePage = q.optInt("sourcePage"),
@@ -92,6 +94,22 @@ open class AssetQuestionRepository(
         validateCollection(loaded)
         return loaded
     }
+
+    private fun parseBlocks(array: JSONArray?): List<SourceBlock> = if (array == null) emptyList() else
+        List(array.length()) { index ->
+            val block = array.getJSONObject(index)
+            SourceBlock(
+                type = block.getString("type"), text = block.optString("text", ""),
+                step = block.optInt("step", 0), asset = optionalText(block, "asset"),
+                headers = strings(block.optJSONArray("headers")),
+                rows = block.optJSONArray("rows")?.let { rows -> List(rows.length()) { strings(rows.getJSONArray(it)) } } ?: emptyList(),
+                widths = block.optJSONArray("widths")?.let { widths -> List(widths.length()) { widths.getDouble(it).toFloat() } } ?: emptyList(),
+                parts = block.optJSONArray("parts")?.let { parts -> List(parts.length()) {
+                    val part = parts.getJSONObject(it)
+                    MathPart(part.optString("text", ""), optionalText(part, "numerator"), optionalText(part, "denominator"))
+                } } ?: emptyList()
+            )
+        }
 
     private fun validateCollection(questions: List<ChapterQuestion>) {
         require(questions.size == expectedQuestionCount) {
@@ -125,9 +143,10 @@ open class AssetQuestionRepository(
                 if (step.kind == StepKind.MATCH) requireValidMatchChoices(step)
             }
 
-            (listOfNotNull(q.visual, q.answerVisual, q.sourceQuestionVisual, q.promptVisual, q.originalFigureVisual) + q.visuals.map { it.asset }).forEach { asset ->
+            (listOfNotNull(q.visual, q.answerVisual, q.sourceQuestionVisual, q.promptVisual, q.originalFigureVisual) + q.visuals.map { it.asset } + q.nativeQuestion.mapNotNull { it.asset }).forEach { asset ->
                 val pdf = PdfSource.parse(asset)
-                val path = pdf?.let { "source/${it.file}" } ?: "${if (asset.lowercase().endsWith(".svg")) "svg" else "images"}/$asset"
+                val raster=RasterSource.parse(asset)
+                val path = pdf?.let { "source/${it.file}" } ?: "${if (asset.lowercase().endsWith(".svg")) "svg" else "images"}/${raster?.file ?: asset}"
                 require(runCatching { context.assets.open(path).close() }.isSuccess) {
                     "Missing $collectionLabel asset: $path"
                 }

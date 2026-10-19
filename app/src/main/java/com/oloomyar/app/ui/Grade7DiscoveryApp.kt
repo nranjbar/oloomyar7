@@ -76,7 +76,7 @@ internal fun Grade7DiscoveryApp(catalog: Grade7Catalog, resumeRevision: Int, onO
         "about" -> "دربارهٔ علوم‌یار"
         "guide" -> "راهنمای استفاده"
         "privacy" -> "حریم خصوصی"
-        else -> when (tab) { "chapters" -> "فصل‌های کتاب‌کار"; "progress" -> "پیشرفت من"; "more" -> "بیشتر"; else -> "علوم‌یار هفتم" }
+        else -> when (tab) { "chapters" -> "فصل‌های کتاب‌کار"; "progress" -> "پیشرفت من"; "more" -> "بیشتر"; else -> "سلام دانش‌آموز عزیز" }
     }
     BackHandler(enabled = page.isNotBlank() || tab != "home") { if (page.isNotBlank()) page = "" else tab = "home" }
     OloomScreen(Modifier.fillMaxSize()) {
@@ -86,20 +86,20 @@ internal fun Grade7DiscoveryApp(catalog: Grade7Catalog, resumeRevision: Int, onO
                     if (page.isNotBlank()) IconButton(onClick = { page = "" }) {
                         Icon(Icons.AutoMirrored.Filled.ArrowBack, "برگشت")
                     } else Surface(color = BlueSoft, shape = RoundedCornerShape(16.dp)) {
-                        Icon(Icons.Default.Science, null, Modifier.padding(11.dp).size(25.dp), tint = Blue)
+                        Icon(Icons.Default.Eco, null, Modifier.padding(11.dp).size(25.dp), tint = Blue)
                     }
                     Spacer(Modifier.width(10.dp))
                     Column(Modifier.weight(1f)) {
                         Text(title, style = MaterialTheme.typography.titleLarge)
-                        if (page.isBlank() && tab == "home") Text("دنیای کشف و آزمایش", color = Muted, style = MaterialTheme.typography.bodySmall)
+                        if (page.isBlank() && tab == "home") Text("امروز یک قدم دیگر به دنیای علم نزدیک‌تر شو!", color = Muted, style = MaterialTheme.typography.bodySmall)
                     }
                     if (page.isBlank() && tab == "home") Surface(shape = CircleShape, color = Color.White) {
-                        Text("هفتم", Modifier.padding(horizontal = 12.dp, vertical = 7.dp), color = Blue, style = MaterialTheme.typography.labelMedium)
+                        IconButton(onClick = { page = "settings" }) { Icon(Icons.Default.Settings, "تنظیمات", tint = Navy) }
                     }
                 }
             }
         }, bottomBar = {
-            NavigationBar(containerColor = Color.White, tonalElevation = 0.dp) {
+            NavigationBar(containerColor = BlueSoft, tonalElevation = 0.dp) {
                 hubTabs.forEach { item ->
                     NavigationBarItem(selected = tab == item.id, onClick = { tab = item.id; page = "" },
                         icon = { Icon(item.icon, null) }, label = { Text(item.label, style = MaterialTheme.typography.labelMedium) },
@@ -123,29 +123,37 @@ internal fun Grade7DiscoveryApp(catalog: Grade7Catalog, resumeRevision: Int, onO
                             "privacy" -> item { PrivacyPanel() }
                             else -> when (tab) {
                                 "home" -> {
-                                    item { DiscoveryWelcome(last != null) {
-                                        if (last == null) onOpen(1, catalog.chapters.first().questions.first().id, null, true)
-                                        else onOpen(last.chapter, last.questionId, null, true)
-                                    } }
+                                    item {
+                                        val chapter = catalog.chapters.first { it.id == (last?.chapter ?: 1) }
+                                        HomeContinueHero(chapter, last != null) {
+                                            onOpen(chapter.id, last?.questionId ?: chapter.questions.first().id, null, true)
+                                        }
+                                    }
+                                    item { HomeRoutes(onChapters = { tab = "chapters" }, onReview = { review("mistakes") }) }
+                                    item { MiniProgress(summary) }
+                                    item {
+                                        Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
+                                            Text("فصل‌های علوم هفتم", Modifier.weight(1f), style = MaterialTheme.typography.titleLarge)
+                                            TextButton(onClick = { tab = "chapters" }) { Text("مشاهدهٔ همه") }
+                                        }
+                                    }
+                                    item {
+                                        LazyRow(horizontalArrangement = Arrangement.spacedBy(12.dp)) {
+                                            items(catalog.chapters, key = { it.id }) { chapter ->
+                                                OloomCard(Modifier.width(156.dp).testTag("chapter-${chapter.id}"), onClick = { onOpen(chapter.id, null, null, false) }) {
+                                                    ChapterArtwork(chapter.id, Modifier.fillMaxWidth().aspectRatio(1f))
+                                                    Text("فصل ${workbookFa(chapter.id)}", style = MaterialTheme.typography.titleMedium)
+                                                    Text(chapter.title, style = MaterialTheme.typography.bodySmall, color = Muted)
+                                                }
+                                            }
+                                        }
+                                    }
                                     if (last != null) item {
                                         val chapter = catalog.chapters.first { it.id == last.chapter }
                                         val q = chapter.questions.first { it.id == last.questionId }
                                         ActionTile("آخرین تمرین", "فصل ${workbookFa(chapter.id)} • ${q.section} • سؤال ${workbookFa(q.sourceNumber)}",
                                             Icons.Default.History, Purple, PurpleSoft, Modifier.testTag("continue-last")) { onOpen(chapter.id, q.id, null, true) }
                                     }
-                                    item { MiniProgress(summary) }
-                                    item { OloomSectionHeader("مسیرهای کشف", "۱۵ فصل کتاب کار ۱۴۰۵", Blue) }
-                                    items(catalog.chapters, key = { it.id }) { chapter -> DiscoveryChapterCard(chapter) { onOpen(chapter.id, null, null, false) } }
-                                    item { ReviewShortcuts(summary, review) }
-                                    item { BazaarCard(launchReview) }
-                                    item { ActionTile("معرفی علوم‌یار به دوستان", "اشتراک‌گذاری پیوند برنامهٔ هفتم", Icons.Default.Share, Purple, PurpleSoft, Modifier.testTag("share-app")) {
-                                        val intent = Intent(Intent.ACTION_SEND).apply {
-                                            type = "text/plain"
-                                            putExtra(Intent.EXTRA_TEXT, "علوم‌یار هفتم؛ تمرین کتاب کار علوم ۱۴۰۵\nhttps://cafebazaar.ir/app/${BuildConfig.APPLICATION_ID}")
-                                        }
-                                        runCatching { context.startActivity(Intent.createChooser(intent, "معرفی علوم‌یار")) }
-                                            .onFailure { Toast.makeText(context, "برنامه‌ای برای اشتراک‌گذاری در دسترس نیست.", Toast.LENGTH_LONG).show() }
-                                    } }
                                 }
                                 "chapters" -> {
                                     item { OloomSectionHeader("یک فصل، یک کشف تازه", "تمرین‌های اصلی و چهارگزینه‌ای، هرکدام در بخش خودشان.", Blue) }
@@ -197,25 +205,43 @@ internal fun Grade7DiscoveryApp(catalog: Grade7Catalog, resumeRevision: Int, onO
 private fun chapterColor(id: Int) = when (id % 4) { 2 -> RoyalBlue; 3 -> Purple; 0 -> Green; else -> Blue }
 
 @Composable
-private fun DiscoveryWelcome(returning: Boolean, onStart: () -> Unit) {
-    Surface(shape = RoundedCornerShape(30.dp), border = BorderStroke(1.dp, Blue.copy(alpha = .12f)), color = Color.White) {
-        Column(Modifier.background(Brush.linearGradient(listOf(Color(0xFFE2F4F5), Color(0xFFF4F0FC)))).padding(20.dp), verticalArrangement = Arrangement.spacedBy(12.dp)) {
-            Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
-                Column(Modifier.weight(1f)) {
-                    Text("سلام، کاوشگر!", color = Blue, style = MaterialTheme.typography.labelLarge)
-                    Text("هر سؤال،\nیک کشف تازه", style = MaterialTheme.typography.headlineMedium, modifier = Modifier.padding(top = 4.dp))
-                    Text("با آرامش فکر کن، امتحان کن و یاد بگیر.", color = Muted, style = MaterialTheme.typography.bodyMedium, modifier = Modifier.padding(top = 7.dp))
+private fun HomeContinueHero(chapter: ChapterCollection, returning: Boolean, onStart: () -> Unit) {
+    val summary = chapter.summary()
+    Surface(shape = RoundedCornerShape(28.dp), shadowElevation = 4.dp, color = BlueSoft) {
+        Column(Modifier.background(Brush.linearGradient(listOf(BlueSoft, Color(0xFFE7F2FC)))).padding(18.dp), verticalArrangement = Arrangement.spacedBy(14.dp)) {
+            Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(14.dp)) {
+                Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(6.dp)) {
+                    Text("علوم‌یار هفتم", color = Blue, style = MaterialTheme.typography.bodySmall)
+                    Text("فصل ${workbookFa(chapter.id)}", style = MaterialTheme.typography.titleMedium)
+                    Text(chapter.title, style = MaterialTheme.typography.headlineSmall)
                 }
-                DiscoveryRobot(Modifier.size(112.dp))
+                ChapterArtwork(chapter.id, Modifier.size(112.dp))
             }
-            Button(onClick = onStart, modifier = Modifier.fillMaxWidth().heightIn(min = 54.dp).testTag("home-start"), shape = RoundedCornerShape(17.dp)) {
-                Icon(Icons.Default.PlayArrow, null); Spacer(Modifier.width(7.dp)); Text(if (returning) "ادامهٔ تمرین" else "شروع یادگیری")
-            }
-            Row(verticalAlignment = Alignment.CenterVertically) {
-                Icon(Icons.Default.OfflineBolt, null, Modifier.size(17.dp), tint = Blue)
-                Spacer(Modifier.width(5.dp)); Text("بدون اینترنت و بدون ثبت‌نام", color = BlueDark, style = MaterialTheme.typography.bodySmall)
+            OloomProgressBar(summary.fraction, Yellow)
+            Button(onClick = onStart, modifier = Modifier.fillMaxWidth().heightIn(min = 60.dp).testTag("home-start"),
+                shape = RoundedCornerShape(30.dp), colors = ButtonDefaults.buttonColors(containerColor = Yellow, contentColor = Navy)) {
+                Text(if (returning) "ادامهٔ تمرین" else "شروع از فصل ۱", style = MaterialTheme.typography.titleMedium)
+                Spacer(Modifier.width(10.dp)); Icon(Icons.AutoMirrored.Filled.ArrowBack, null)
             }
         }
+    }
+}
+
+@Composable
+private fun HomeRoutes(onChapters: () -> Unit, onReview: () -> Unit) {
+    BoxWithConstraints(Modifier.fillMaxWidth()) {
+        val compact = maxWidth < 340.dp || androidx.compose.ui.platform.LocalDensity.current.fontScale >= 1.5f
+        val cards: @Composable (Modifier, Boolean) -> Unit = { modifier, chapters ->
+            OloomCard(modifier, color = if (chapters) BlueSoft else PurpleSoft, onClick = if (chapters) onChapters else onReview) {
+                SuppliedArtwork(if (chapters) "ui_icon_science_book_320.webp" else "ui_icon_hint_lightbulb_320.webp",
+                    "", Modifier.size(62.dp).align(Alignment.End))
+                Text(if (chapters) "فصل‌های کتاب" else "مرور و یادگیری", style = MaterialTheme.typography.titleLarge)
+                Text(if (chapters) "درس‌ها، تمرین‌ها و مرور فصل‌ها" else "اشتباه‌ها و نشان‌کرده‌های خودت را مرور کن", color = Muted, style = MaterialTheme.typography.bodySmall)
+                Text(if (chapters) "مشاهدهٔ فصل‌ها ←" else "مرور سؤال‌ها ←", color = if (chapters) Blue else Purple, style = MaterialTheme.typography.titleMedium)
+            }
+        }
+        if (compact) Column(verticalArrangement = Arrangement.spacedBy(12.dp)) { cards(Modifier, true); cards(Modifier, false) }
+        else Row(horizontalArrangement = Arrangement.spacedBy(12.dp)) { cards(Modifier.weight(1f), true); cards(Modifier.weight(1f), false) }
     }
 }
 

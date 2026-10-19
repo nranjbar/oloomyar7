@@ -76,7 +76,8 @@ class Grade7WorkbookUiTest {
         ActivityScenario.launch(MainActivity::class.java).use {
             compose.awaitGrade7Home()
             compose.onNodeWithText("علوم‌یار هفتم").assertIsDisplayed();capture("grade7-01-home")
-            compose.onNode(hasScrollAction()).performScrollToNode(hasText("اتم‌ها، الفبای مواد"))
+            compose.onNodeWithTag("nav-chapters").performClick()
+            compose.onNodeWithTag("hub-list").performScrollToNode(hasText("اتم‌ها، الفبای مواد"))
             compose.onNodeWithText("اتم‌ها، الفبای مواد").performClick()
             compose.onNode(hasScrollAction()).performScrollToNode(hasText("چهارگزینه‌ای"))
             compose.onNodeWithText("چهارگزینه‌ای").assertExists()
@@ -99,10 +100,10 @@ class Grade7WorkbookUiTest {
         compose.onNodeWithText("بررسی پاسخ").assertIsNotEnabled();capture("grade7-03-per-blank-feedback")
         selectBlank(s,1,"فرضیه سازی");check()
         compose.onNodeWithTag("reveal-answer").assertIsEnabled()
-        compose.onNodeWithContentDescription("تصویر پاسخ سؤال ۱").assertDoesNotExist()
+        compose.onNodeWithTag("native-reference-answer").assertDoesNotExist()
         compose.onNodeWithTag("reveal-answer").performClick()
-        compose.waitUntil(10000) { compose.onAllNodesWithContentDescription("تصویر پاسخ سؤال ۱").fetchSemanticsNodes().isNotEmpty() }
-        compose.onNodeWithContentDescription("تصویر پاسخ سؤال ۱").performScrollTo().assertIsDisplayed()
+        compose.waitUntil(10000) { compose.onAllNodesWithTag("native-reference-answer").fetchSemanticsNodes().isNotEmpty() }
+        compose.onNodeWithText(workbookBidi(q.nativeAnswer.single().text)).performScrollTo().assertIsDisplayed()
         compose.onNodeWithText("پاسخ کتاب‌کار").assertExists();capture("grade7-04-original-answer")
     }
     @Test fun correctSubmissionUnlocksCanonicalAnswerAndWaitsForExplicitNext() {
@@ -142,10 +143,12 @@ class Grade7WorkbookUiTest {
         choose(wrong1[0].text);check();compose.onNodeWithTag("reveal-answer").assertIsNotEnabled()
         choose(wrong0[1].text);check();compose.onNodeWithTag("reveal-answer").assertIsNotEnabled()
         choose(wrong1[1].text);check();compose.onNodeWithTag("reveal-answer").assertIsEnabled()
-        compose.onNodeWithContentDescription("تصویر پاسخ سؤال ۹").assertDoesNotExist()
+        compose.onNodeWithTag("native-reference-answer").assertDoesNotExist()
         compose.onNodeWithTag("reveal-answer").performClick()
-        compose.waitUntil(10000) { compose.onAllNodesWithContentDescription("تصویر پاسخ سؤال ۹").fetchSemanticsNodes().isNotEmpty() }
-        compose.onNodeWithContentDescription("تصویر پاسخ سؤال ۹").performScrollTo().assertIsDisplayed()
+        compose.waitUntil(10000) { compose.onAllNodesWithTag("native-reference-answer").fetchSemanticsNodes().isNotEmpty() }
+        compose.onAllNodesWithTag("native-equation").assertCountEquals(2)
+        compose.onAllNodesWithTag("native-equation")[1].performScrollTo().assertIsDisplayed()
+        compose.onNodeWithText(workbookBidi("36")).assertIsDisplayed()
         capture("grade7-06-original-formula")
     }
     @Test fun enlargedPersianFontKeepsTheBlankAndActionControlsUsable() {
@@ -164,7 +167,7 @@ class Grade7WorkbookUiTest {
     }
     @Test fun all317OriginalQuestionsAndIsolatedAnswersRenderAndAllControlsHaveAValidAnswer() {
         val qs=allQuestions;assertEquals(317,qs.size);assertEquals(334,qs.sumOf { it.steps.size })
-        qs.flatMap { listOfNotNull(it.sourceQuestionVisual,it.answerVisual,it.visual,it.promptVisual)+it.visuals.map { v->v.asset } }.toSet().forEach { name->
+        qs.flatMap { listOfNotNull(it.sourceQuestionVisual,it.answerVisual,it.visual,it.promptVisual)+it.visuals.map { v->v.asset } + it.nativeQuestion.mapNotNull { b->b.asset } }.toSet().forEach { name->
             val bmp=SourceBitmap.load(context,name);assertNotNull(name,bmp)
             assertTrue(name,bmp!!.width>0 && bmp.height>0)
             var hasInk=false

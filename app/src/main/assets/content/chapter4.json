@@ -72,7 +72,21 @@
     "visuals": [],
     "originalFigureVisual": null,
     "promptVisual": null,
-    "legacyProgress": []
+    "legacyProgress": [],
+    "nativeQuestion": [
+      {
+        "type": "cloze",
+        "text": "از بین کلمات داخل پرانتز ، کلمه مناسب برای هر جمله را انتخاب کنید .\na- سیمان را از خاک رس و سنگ {{0}} می سازند . ( نمک – آهک )\nb- اگر یک کش لاستیکی را بکشیم و رها می کنیم ، به حالت اول بر می گردد . زیرا کش {{1}} است . ( انعطاف پذیر – سخت )\nc- معمولاً استحکام {{2}} بیشتر از سایر مواد است . ( فلز ها – نا فلز ها )\nd- مواد جدیدی که اغلب از مخلوط کردن دو یا چند فلز به دست می آیند ، {{3}} نام دارند . ( ترکیب – آلیاژ )",
+        "step": 0
+      }
+    ],
+    "nativeAnswer": [
+      {
+        "type": "text",
+        "text": "به ترتیب : a- آهک  b- انعطاف پذیر  c- فلزها  d- آلیاژ"
+      }
+    ],
+    "nativeEdition": "1405-visual-transcription-v1"
   },
   {
     "id": "g7-ch04-main-002-1405",
@@ -131,7 +145,21 @@
     "visuals": [],
     "originalFigureVisual": null,
     "promptVisual": null,
-    "legacyProgress": []
+    "legacyProgress": [],
+    "nativeQuestion": [
+      {
+        "type": "cloze",
+        "text": "بعضی مواد به طور مستقیم و بعضی غیر مستقیم از طبیعت به دست می آیند . مواد زیر را به این دو گروه طبقه بندی کنید :\n(( الماس – نمک خوراکی – فلزهای آهن ، آلومینیم و مس – گوگرد – پلاستیک – شیشه – طلا – سیمان ))\nمواد\n۱- مستقیم از طبیعت به دست می آیند ، مانند : {{0}}\n۲- غیر مستقیم از طبیعت به دست می آیند ، مانند : {{1}}",
+        "step": 0
+      }
+    ],
+    "nativeAnswer": [
+      {
+        "type": "text",
+        "text": "۱- الماس – نمک خوراکی – گوگرد – طلا\n۲- فلز های آهن ، آلومینیم ، مس – پلاستیک – شیشه – سیمان"
+      }
+    ],
+    "nativeEdition": "1405-visual-transcription-v1"
   },
   {
     "id": "g7-ch04-main-003-1405",
@@ -203,7 +231,20 @@
     "visuals": [],
     "originalFigureVisual": null,
     "promptVisual": null,
-    "legacyProgress": []
+    "legacyProgress": [],
+    "nativeQuestion": [
+      {
+        "type": "text",
+        "text": "چهار مورد از ویژگی های فلز مس را بنویسید ."
+      }
+    ],
+    "nativeAnswer": [
+      {
+        "type": "text",
+        "text": "مس فلزی جامد است ، سطح براق دارد و رسانای جریان برق و رسانای گرما ، چکش خوار و سخت است ."
+      }
+    ],
+    "nativeEdition": "1405-visual-transcription-v1"
   },
   {
     "id": "g7-ch04-main-004-1405",
@@ -262,7 +303,25 @@
     "visuals": [],
     "originalFigureVisual": null,
     "promptVisual": null,
-    "legacyProgress": []
+    "legacyProgress": [],
+    "nativeQuestion": [
+      {
+        "type": "text",
+        "text": "سیم های برق از مس و روکش پلاستیک ساخته شده اند . علت استفاده از مس و پلاستیک را بنویسید ."
+      },
+      {
+        "type": "figure",
+        "asset": "pdf:workbook.pdf#12,50,442,151,470",
+        "text": ""
+      }
+    ],
+    "nativeAnswer": [
+      {
+        "type": "text",
+        "text": "مس رسانای خوبی است و نسبتاً ارزان بوده و به راحتی زنگ نمی زند\n- پلاستیک نارسانا بوده و مانع اتصالی و برق گرفتگی می شود ."
+      }
+    ],
+    "nativeEdition": "1405-visual-transcription-v1"
   },
   {
     "id": "g7-ch04-main-005-1405",
@@ -334,7 +393,20 @@
     "visuals": [],
     "originalFigureVisual": null,
     "promptVisual": null,
-    "legacyProgress": []
+    "legacyProgress": [],
+    "nativeQuestion": [
+      {
+        "type": "text",
+        "text": "برای بیان ویژگی های مواد از کدام عبارت ها و واژه ها استفاده می شود ؟"
+      }
+    ],
+    "nativeAnswer": [
+      {
+        "type": "text",
+        "text": "سخت یا نرم – چکش خوار یا شکننده – انعطاف پذیر یا انعطاف نا پذیر – آب دوست یا آب گریز – شفاف یا کدر – دارای خاصیت آهن ربایی یا بدون خاصیت آهن ربایی"
+      }
+    ],
+    "nativeEdition": "1405-visual-transcription-v1"
   },
   {
     "id": "g7-ch04-main-006-1405",
@@ -402,7 +474,20 @@
     "visuals": [],
     "originalFigureVisual": null,
     "promptVisual": null,
-    "legacyProgress": []
+    "legacyProgress": [],
+    "nativeQuestion": [
+      {
+        "type": "text",
+        "text": "وقتی می گویند یک ماده از ماده دیگر سخت تر است ، منظور چیست ؟ دو مثال بزنید ."
+      }
+    ],
+    "nativeAnswer": [
+      {
+        "type": "text",
+        "text": "منظور این است که می توان به کمک ماده سخت روی ماده دیگر خراش ایجاد کرد یا آن را برید . مثلا با الماس می توان شیشه را برید پس الماس سخت تر از شیشه است ویا با ناخن می توان روی صابون خراش ایجاد کرد پس ناخن سخت تر از صابون است ."
+      }
+    ],
+    "nativeEdition": "1405-visual-transcription-v1"
   },
   {
     "id": "g7-ch04-main-007-1405",
@@ -461,7 +546,20 @@
     "visuals": [],
     "originalFigureVisual": null,
     "promptVisual": null,
-    "legacyProgress": []
+    "legacyProgress": [],
+    "nativeQuestion": [
+      {
+        "type": "text",
+        "text": "منظور از انعطاف پذیری یک ماده چیست ؟ یک مثال بزنید ."
+      }
+    ],
+    "nativeAnswer": [
+      {
+        "type": "text",
+        "text": "انعطاف پذیری یک ماده نشان می دهد که آن ماده چقدر می تواند در اثر وارد کردن نیرو ، خم یا کشیده شود و پس از حذف نیرو ، دویاره به حالت اول برگردد . مثلا یک کش را بکشیم و رها کنیم دوباره به حالت اول بر می گردد ."
+      }
+    ],
+    "nativeEdition": "1405-visual-transcription-v1"
   },
   {
     "id": "g7-ch04-main-008-1405",
@@ -520,7 +618,25 @@
     "visuals": [],
     "originalFigureVisual": null,
     "promptVisual": null,
-    "legacyProgress": []
+    "legacyProgress": [],
+    "nativeQuestion": [
+      {
+        "type": "text",
+        "text": "الف- فایده چکش خوار بودن فلز ها چیست ؟\nب- علت چکش خوار بودن فلز ها چیست ؟ ( با توجه به شکل )"
+      },
+      {
+        "type": "figure",
+        "asset": "pdf:workbook.pdf#13,45,35,303,143",
+        "text": ""
+      }
+    ],
+    "nativeAnswer": [
+      {
+        "type": "text",
+        "text": "الف- باعث می شود که بتوانیم فلز ها را به شکل های دلخواه در آوریم .\nب- زیرا بر اثر ضربه ، لایه های اتم های فلز روی هم سر می خورند و جابه جا می شوند ."
+      }
+    ],
+    "nativeEdition": "1405-visual-transcription-v1"
   },
   {
     "id": "g7-ch04-main-009-1405",
@@ -615,7 +731,25 @@
     "visuals": [],
     "originalFigureVisual": null,
     "promptVisual": null,
-    "legacyProgress": []
+    "legacyProgress": [],
+    "nativeQuestion": [
+      {
+        "type": "text",
+        "text": "در متن های زیر ۶ غلط علمی وجود دارد . آن ها را پیدا کرده و زیر آن ها خط بکشید و صحیح هر کدام را بالای آن بنویسید .\nالف- لیوان شیشه ای ؛ شکننده ، رسانا ، انعطاف پذیر و شفاف است .\nب- قوطی آلومینیمی ؛ چکش خوار ، رسانا ، انعطاف پذیر و شفاف است و چون سبک است و زنگ نمی زند برای نگه داری آبمیوه و نوشیدنی استفاده می شود .\nج- تایر اتومبیل ؛ نارسانا ، انعطاف پذیر و شفاف است .\nد- مداد چوبی ؛ چکش خوار ، نارسانا ، انعطاف ناپذیر و کدر است ."
+      },
+      {
+        "type": "cloze",
+        "text": "لیوان شیشه ای ، رسانا : {{0}}\nلیوان شیشه ای ، انعطاف پذیر : {{1}}\nقوطی آلومینیمی ، انعطاف پذیر : {{2}}\nقوطی آلومینیمی ، شفاف : {{3}}\nتایر اتومبیل ، شفاف : {{4}}\nمداد چوبی ، چکش خوار : {{5}}",
+        "step": 0
+      }
+    ],
+    "nativeAnswer": [
+      {
+        "type": "text",
+        "text": "لیوان شیشه ای : نارسانا – انعطاف ناپذیر ،\nقوطی آلومینیمی : انعطاف ناپذیر – کدر\nتایر اتومبیل : کدر\nمداد چوبی : شکننده"
+      }
+    ],
+    "nativeEdition": "1405-visual-transcription-v1"
   },
   {
     "id": "g7-ch04-main-010-1405",
@@ -683,7 +817,30 @@
     "visuals": [],
     "originalFigureVisual": null,
     "promptVisual": null,
-    "legacyProgress": []
+    "legacyProgress": [],
+    "nativeQuestion": [
+      {
+        "type": "text",
+        "text": "نمودار ستونی زیر ، میزان چگالی چند ماده را نشان می دهد :"
+      },
+      {
+        "type": "figure",
+        "asset": "pdf:workbook.pdf#13,44,391,339,608",
+        "text": ""
+      },
+      {
+        "type": "cloze",
+        "text": "الف- چگالی کدام گروه از مواد ( فلز ها یا نا فلز ها ) نسبت به بقیه بیش تر است ؟ {{0}}\nب- آیا چگالی فلز ها با هم برابر است ؟ {{1}}\nج- چرا چوب در آب فرو نمی رود ولی شیشه فرو می رود ؟ {{2}}",
+        "step": 0
+      }
+    ],
+    "nativeAnswer": [
+      {
+        "type": "text",
+        "text": "الف- فلز ها\nب- خیر\nج- زیرا چگالی چوب از آب کمتر است ولی چگالی شیشه از آب بیش تر است ."
+      }
+    ],
+    "nativeEdition": "1405-visual-transcription-v1"
   },
   {
     "id": "g7-ch04-main-011-1405",
@@ -769,7 +926,38 @@
     "visuals": [],
     "originalFigureVisual": null,
     "promptVisual": null,
-    "legacyProgress": []
+    "legacyProgress": [],
+    "nativeQuestion": [
+      {
+        "type": "text",
+        "text": "در یک لیوان ؛ آب ، مقداری جیوه ، یک چوب پنبه و یک آلیاژ برنج ریخته ایم . ( شکل زیر )"
+      },
+      {
+        "type": "figure",
+        "asset": "pdf:workbook.pdf#13,65,670,218,817",
+        "text": ""
+      },
+      {
+        "type": "cloze",
+        "text": "الف- نام مواد خواسته شده را بنویسید :\nA ( {{0}} )\nB ( {{1}} )\nC ( {{2}} )\nD ( {{3}} )\nب- چرا به این ترتیب قرارگرفته اند ؟ {{4}}",
+        "step": 0
+      }
+    ],
+    "nativeAnswer": [
+      {
+        "type": "text",
+        "text": "الف- A ( چوب پنبه )  B ( آب )  C ( آلیاژ برنج )  D ( جیوه )\nب- زیرا چگالی آن ها به این ترتیب است :"
+      },
+      {
+        "type": "math",
+        "parts": [
+          {
+            "text": "چوب پنبه < آب < آلیاژبرنج < جیوه"
+          }
+        ]
+      }
+    ],
+    "nativeEdition": "1405-visual-transcription-v1"
   },
   {
     "id": "g7-ch04-main-012-1405",
@@ -829,7 +1017,20 @@
     "visuals": [],
     "originalFigureVisual": null,
     "promptVisual": null,
-    "legacyProgress": []
+    "legacyProgress": [],
+    "nativeQuestion": [
+      {
+        "type": "text",
+        "text": "در ساختن یک وسیله ، چه چیز هایی اهمیت دارد ؟ ( سه مورد بنویسید )"
+      }
+    ],
+    "nativeAnswer": [
+      {
+        "type": "text",
+        "text": "ویژگی های فیزیکی مواد – قیمت – فراوانی"
+      }
+    ],
+    "nativeEdition": "1405-visual-transcription-v1"
   },
   {
     "id": "g7-ch04-main-013-1405",
@@ -933,7 +1134,45 @@
     "visuals": [],
     "originalFigureVisual": null,
     "promptVisual": null,
-    "legacyProgress": []
+    "legacyProgress": [],
+    "nativeQuestion": [
+      {
+        "type": "text",
+        "text": "علت استفاده از هر کدام از مواد زیر را بنویسید ."
+      },
+      {
+        "type": "figure",
+        "asset": "pdf:workbook.pdf#14,40,92,167,168",
+        "text": ""
+      },
+      {
+        "type": "figure",
+        "asset": "pdf:workbook.pdf#14,33,222,128,276",
+        "text": ""
+      },
+      {
+        "type": "figure",
+        "asset": "pdf:workbook.pdf#14,44,311,128,363",
+        "text": ""
+      },
+      {
+        "type": "figure",
+        "asset": "pdf:workbook.pdf#14,59,371,127,439",
+        "text": ""
+      },
+      {
+        "type": "cloze",
+        "text": "a- فلز آلومینیم در هواپیما : {{0}}\nb- فولاد در پل ها و اسکله های فلزی : {{1}}\nc- طلا در جواهر سازی و زیور آلات : {{2}}\nd- فلز در ظروف آشپزخانه : {{3}}\ne- شیشه برای پنجره : {{4}}\nf- شیشه برای ساخت عدسی : {{5}}\ng- پلاستیک در کلید و پریز : {{6}}",
+        "step": 0
+      }
+    ],
+    "nativeAnswer": [
+      {
+        "type": "text",
+        "text": "به ترتیب : آلومینیم سبک و محکم است – فولاد استحکام زیادی دارد – طلا زنگ نمی زند و درخشان و زیباست – فلزات رسانای گرما و محکم اند\n- شیشه شفاف است و نور را عبور می دهد\n- با تغییر شکل شیشه ، اجسام از پشت آن کوچکتر یا بزرگتر دیده می شود . همچنین شفاف است و نور را عبور می دهد\n- پلاستیک نارسانا است بنابراین از اتصالی کردن سیم ها و برق گرفتگی جلوگیری می کند ."
+      }
+    ],
+    "nativeEdition": "1405-visual-transcription-v1"
   },
   {
     "id": "g7-ch04-main-014-1405",
@@ -992,7 +1231,20 @@
     "visuals": [],
     "originalFigureVisual": null,
     "promptVisual": null,
-    "legacyProgress": []
+    "legacyProgress": [],
+    "nativeQuestion": [
+      {
+        "type": "text",
+        "text": "الف- چرا فلز آهن کاربرد بسیار گسترده ای در صنایع مختلف دارد ؟\nب- چرا استحکام سازه های فولادی ( ماننذ اغلب پل ها و اسکله های فلزی ) با گذشت زمان کاهش می یابد ؟"
+      }
+    ],
+    "nativeAnswer": [
+      {
+        "type": "text",
+        "text": "الف- آهن ارزان تر و فراوان تر و محکم است .\nب- زیرا به مرور زمان با اکسیژن هوا ترکیب شده و زنگ می زنند ."
+      }
+    ],
+    "nativeEdition": "1405-visual-transcription-v1"
   },
   {
     "id": "g7-ch04-main-015-1405",
@@ -1042,7 +1294,20 @@
     "visuals": [],
     "originalFigureVisual": null,
     "promptVisual": null,
-    "legacyProgress": []
+    "legacyProgress": [],
+    "nativeQuestion": [
+      {
+        "type": "text",
+        "text": "سختی مغز مداد را چگونه کنترل می کنند ؟"
+      }
+    ],
+    "nativeAnswer": [
+      {
+        "type": "text",
+        "text": "با افزودن خاک رس ؛ هرچه خاک رس بیشتری به آن بیفزایند ، سخت تر می شود ."
+      }
+    ],
+    "nativeEdition": "1405-visual-transcription-v1"
   },
   {
     "id": "g7-ch04-main-016-1405",
@@ -1119,7 +1384,30 @@
     "visuals": [],
     "originalFigureVisual": null,
     "promptVisual": null,
-    "legacyProgress": []
+    "legacyProgress": [],
+    "nativeQuestion": [
+      {
+        "type": "text",
+        "text": "در مورد آلیاژ به سؤالات زیر پاسخ دهید :"
+      },
+      {
+        "type": "figure",
+        "asset": "pdf:workbook.pdf#14,28,628,293,698",
+        "text": ""
+      },
+      {
+        "type": "cloze",
+        "text": "الف- آلیاژ چیست ؟ {{0}}\nب- چگونه آن را می سازند ؟ {{1}}\nج- آلیاژ چه فایده ای دارد ؟ {{2}}\nد- یک مثال بزنید . {{3}}",
+        "step": 0
+      }
+    ],
+    "nativeAnswer": [
+      {
+        "type": "text",
+        "text": "الف- مواد جدیدی که اغلب از مخلوط کردن دو یا چند فلز به دست می آیند .\nب- فلز ها را ذوب و با هم مخلوط می کنند .\nج- خواص فلز ها بهبود پیدا می کند و آلیاژها ، ویژگی های جدیدی دارند .\nد- مانند فولاد زنگ نزن که از آهن و کروم و نیکل ساخته شده است و بسیار مقاوم و سخت تر از آهن است ."
+      }
+    ],
+    "nativeEdition": "1405-visual-transcription-v1"
   },
   {
     "id": "g7-ch04-main-017-1405",
@@ -1136,12 +1424,23 @@
         "prompt": "پاسخ هر قسمت را انتخاب کن.",
         "pairs": [
           {
-            "left": "فولاد زنگ نزن، اجزا",
-            "right": "آهن و نیکل و کروم",
+            "left": "فولاد زنگ نزن، جزء دوم",
+            "right": "نیکل",
             "choices": [
-              "آهن و نیکل و کروم",
-              "آهن و کربن",
-              "مس و روی"
+              "نیکل",
+              "کروم",
+              "کربن",
+              "مس"
+            ]
+          },
+          {
+            "left": "فولاد زنگ نزن، جزء سوم",
+            "right": "کروم",
+            "choices": [
+              "نیکل",
+              "کروم",
+              "کربن",
+              "مس"
             ]
           },
           {
@@ -1154,12 +1453,23 @@
             ]
           },
           {
-            "left": "چدن، اجزا",
-            "right": "کربن و آهن",
+            "left": "چدن، جزء اول",
+            "right": "کربن",
             "choices": [
-              "کربن و آهن",
-              "آهن و نیکل و کروم",
-              "آلومینیم و مس"
+              "کربن",
+              "آهن",
+              "نیکل",
+              "مس"
+            ]
+          },
+          {
+            "left": "چدن، جزء دوم",
+            "right": "آهن",
+            "choices": [
+              "کربن",
+              "آهن",
+              "نیکل",
+              "مس"
             ]
           },
           {
@@ -1178,7 +1488,33 @@
         "hint2": "برای ابزار ضربه‌ای، جنس مناسب ابزار را از جنس مقاوم در برابر زنگ در قاشق و چنگال تفکیک کن.",
         "id": "g7-ch04-main-017-1405-s01",
         "answer": "17\n-\n \n    \n   فوالد زنگ نزن :    آهن و نیکل و کروم-\n  \n                                            ،      ساخت قاشق و چنگال\n       چدن :  کربن و آهن-\n \n                                                                                        ساخت کلنگ و تیشه و تبر",
-        "explanation": ""
+        "explanation": "",
+        "acceptedPairOrders": [
+          [
+            "نیکل",
+            "کروم",
+            "ساخت قاشق و چنگال",
+            "آهن",
+            "کربن",
+            "ساخت کلنگ و تیشه و تبر"
+          ],
+          [
+            "کروم",
+            "نیکل",
+            "ساخت قاشق و چنگال",
+            "کربن",
+            "آهن",
+            "ساخت کلنگ و تیشه و تبر"
+          ],
+          [
+            "کروم",
+            "نیکل",
+            "ساخت قاشق و چنگال",
+            "آهن",
+            "کربن",
+            "ساخت کلنگ و تیشه و تبر"
+          ]
+        ]
       }
     ],
     "grade": 7,
@@ -1196,7 +1532,41 @@
     "visuals": [],
     "originalFigureVisual": null,
     "promptVisual": null,
-    "legacyProgress": []
+    "legacyProgress": [],
+    "nativeQuestion": [
+      {
+        "type": "text",
+        "text": "جدول زیر را تکمیل کنید :"
+      },
+      {
+        "type": "table",
+        "headers": [
+          "نام آلیاژ",
+          "اجزای سازنده",
+          "کاربرد"
+        ],
+        "rows": [
+          [
+            "فولاد زنگ نزن",
+            "آهن و {{0:0}} و {{0:1}}",
+            "{{0:2}}"
+          ],
+          [
+            "چدن",
+            "{{0:3}} و {{0:4}}",
+            "{{0:5}}"
+          ]
+        ],
+        "widths": []
+      }
+    ],
+    "nativeAnswer": [
+      {
+        "type": "text",
+        "text": "فولاد زنگ نزن : آهن و نیکل و کروم – ساخت قاشق و چنگال ،\nچدن : کربن و آهن – ساخت کلنگ و تیشه و تبر"
+      }
+    ],
+    "nativeEdition": "1405-visual-transcription-v1"
   },
   {
     "id": "g7-ch04-main-018-1405",
@@ -1252,7 +1622,20 @@
     "visuals": [],
     "originalFigureVisual": null,
     "promptVisual": null,
-    "legacyProgress": []
+    "legacyProgress": [],
+    "nativeQuestion": [
+      {
+        "type": "text",
+        "text": "دو نمونه از کاربرد های مواد هوشمند را بنویسید ."
+      }
+    ],
+    "nativeAnswer": [
+      {
+        "type": "text",
+        "text": "۱- قاب عینک که پس از تغییر شکل دوباره به حالت اول بر می گردد .\n۲- لوازم دندان پزشکی"
+      }
+    ],
+    "nativeEdition": "1405-visual-transcription-v1"
   },
   {
     "id": "g7-ch04-main-019-1405",
@@ -1333,7 +1716,21 @@
     "visuals": [],
     "originalFigureVisual": null,
     "promptVisual": null,
-    "legacyProgress": []
+    "legacyProgress": [],
+    "nativeQuestion": [
+      {
+        "type": "cloze",
+        "text": "جملات صحیح را با ( ص ) و جملات غلط را با ( غ ) مشخص کنید .\nالف- افزودن مقداری آهک به گِل ، سبب افزایش استحکام آن می شود . ( {{0}} )\nب- چدن آلیاژی است که از نیکل و آهن ساخته شده است . ( {{1}} )\nج- بشقاب سرامیکی ؛ نارسانا ، انعطاف ناپذیر و کدر است . ( {{2}} )\nد- شیشه را از ماسه و پلاستیک را از نفت خام می سازند . ( {{3}} )\nه- الماس را می توان به صورت بلور های زیبا و درخشان در سنگ های آتشفشانی جستجو کرد . ( {{4}} )",
+        "step": 0
+      }
+    ],
+    "nativeAnswer": [
+      {
+        "type": "text",
+        "text": "الف- صحیح  ب- غلط  ج- صحیح  د- صحیح  ه- صحیح"
+      }
+    ],
+    "nativeEdition": "1405-visual-transcription-v1"
   },
   {
     "id": "g7-ch04-mcq-001-1405",
@@ -1350,19 +1747,19 @@
         "prompt": "گزینهٔ چاپی کتاب را انتخاب کن.",
         "options": [
           {
-            "text": "گزینهٔ الف",
+            "text": "الف- نشاسته",
             "correct": false
           },
           {
-            "text": "گزینهٔ ب",
+            "text": "ب- ماسه",
             "correct": true
           },
           {
-            "text": "گزینهٔ ج",
+            "text": "ج- چوب",
             "correct": false
           },
           {
-            "text": "گزینهٔ د",
+            "text": "د- گچ",
             "correct": false
           }
         ],
@@ -1388,7 +1785,24 @@
     "visuals": [],
     "originalFigureVisual": null,
     "promptVisual": null,
-    "legacyProgress": []
+    "legacyProgress": [],
+    "nativeQuestion": [
+      {
+        "type": "text",
+        "text": "در ساختن کاغذ ، کدام یک از مواد زیر به کار نرفته است ؟"
+      },
+      {
+        "type": "input",
+        "step": 0
+      }
+    ],
+    "nativeAnswer": [
+      {
+        "type": "text",
+        "text": "ب"
+      }
+    ],
+    "nativeEdition": "1405-visual-transcription-v1"
   },
   {
     "id": "g7-ch04-mcq-002-1405",
@@ -1405,19 +1819,19 @@
         "prompt": "گزینهٔ چاپی کتاب را انتخاب کن.",
         "options": [
           {
-            "text": "گزینهٔ الف",
+            "text": "الف- کربن",
             "correct": false
           },
           {
-            "text": "گزینهٔ ب",
+            "text": "ب- آهن",
             "correct": false
           },
           {
-            "text": "گزینهٔ ج",
+            "text": "ج- گوگرد",
             "correct": true
           },
           {
-            "text": "گزینهٔ د",
+            "text": "د- مس",
             "correct": false
           }
         ],
@@ -1443,7 +1857,24 @@
     "visuals": [],
     "originalFigureVisual": null,
     "promptVisual": null,
-    "legacyProgress": []
+    "legacyProgress": [],
+    "nativeQuestion": [
+      {
+        "type": "text",
+        "text": "کدام عنصر ، به صورت بلور های زرد و کدر در دهانه آتشفشان های خاموش و نیمه فعال وجود دارد ؟"
+      },
+      {
+        "type": "input",
+        "step": 0
+      }
+    ],
+    "nativeAnswer": [
+      {
+        "type": "text",
+        "text": "ج"
+      }
+    ],
+    "nativeEdition": "1405-visual-transcription-v1"
   },
   {
     "id": "g7-ch04-mcq-003-1405",
@@ -1460,19 +1891,19 @@
         "prompt": "گزینهٔ چاپی کتاب را انتخاب کن.",
         "options": [
           {
-            "text": "گزینهٔ الف",
+            "text": "الف- چوب",
             "correct": false
           },
           {
-            "text": "گزینهٔ ب",
+            "text": "ب- طلا",
             "correct": true
           },
           {
-            "text": "گزینهٔ ج",
+            "text": "ج- پلاستیک",
             "correct": false
           },
           {
-            "text": "گزینهٔ د",
+            "text": "د- شیشه",
             "correct": false
           }
         ],
@@ -1498,7 +1929,29 @@
     "visuals": [],
     "originalFigureVisual": null,
     "promptVisual": null,
-    "legacyProgress": []
+    "legacyProgress": [],
+    "nativeQuestion": [
+      {
+        "type": "text",
+        "text": "شکل زیر ، ساختار اتمی کدام یک از مواد زیر را در هنگام ضربه زدن به آن نشان می دهد ؟"
+      },
+      {
+        "type": "figure",
+        "asset": "pdf:workbook.pdf#15,63.75,561.01,284.25,650.26",
+        "text": ""
+      },
+      {
+        "type": "input",
+        "step": 0
+      }
+    ],
+    "nativeAnswer": [
+      {
+        "type": "text",
+        "text": "ب"
+      }
+    ],
+    "nativeEdition": "1405-visual-transcription-v1"
   },
   {
     "id": "g7-ch04-mcq-004-1405",
@@ -1515,19 +1968,19 @@
         "prompt": "گزینهٔ چاپی کتاب را انتخاب کن.",
         "options": [
           {
-            "text": "گزینهٔ الف",
+            "text": "الف- A و B",
             "correct": true
           },
           {
-            "text": "گزینهٔ ب",
+            "text": "ب- A و D",
             "correct": false
           },
           {
-            "text": "گزینهٔ ج",
+            "text": "ج- E و D",
             "correct": false
           },
           {
-            "text": "گزینهٔ د",
+            "text": "د- C و B",
             "correct": false
           }
         ],
@@ -1553,6 +2006,28 @@
     "visuals": [],
     "originalFigureVisual": null,
     "promptVisual": null,
-    "legacyProgress": []
+    "legacyProgress": [],
+    "nativeQuestion": [
+      {
+        "type": "text",
+        "text": "نمودار مقابل ، میزان استحکام پنج رشته نازک (( مسی – پلاستیکی – ابریشمی – فولادی – نخی )) را نشان می دهد .\nکدام ستون مربوط به سیم فولادی و مسی است ؟"
+      },
+      {
+        "type": "figure",
+        "asset": "pdf:workbook.pdf#15,33,686,282,796",
+        "text": ""
+      },
+      {
+        "type": "input",
+        "step": 0
+      }
+    ],
+    "nativeAnswer": [
+      {
+        "type": "text",
+        "text": "الف"
+      }
+    ],
+    "nativeEdition": "1405-visual-transcription-v1"
   }
 ]

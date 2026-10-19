@@ -31,7 +31,8 @@ internal fun WorkbookInput(step: LearningStep, answers: List<String>, locked: Bo
             step.options.indices.shuffled(kotlin.random.Random((practice?.shuffleSeed ?: 0) xor step.id.hashCode())).forEach { index ->
                 val option = step.options[index]
                 val selected = index.toString() in answers
-                ChoiceSurface(option.text, selected, !locked, multi = step.kind == StepKind.MULTI) {
+                ChoiceSurface(option.text, selected, !locked, multi = step.kind == StepKind.MULTI,
+                    mark = if (selected) practice?.mark(step, 0) ?: ResponseMark.SELECTED else ResponseMark.EMPTY) {
                     if (step.kind == StepKind.SINGLE) onChange(listOf(index.toString()))
                     else if (selected) onChange(answers - index.toString())
                     else if (answers.size < step.pick) onChange(answers + index.toString())
@@ -75,14 +76,14 @@ internal fun WorkbookInput(step: LearningStep, answers: List<String>, locked: Bo
 }
 
 @Composable
-private fun ChoiceSurface(text: String, selected: Boolean, enabled: Boolean, multi: Boolean, onClick: () -> Unit) {
+private fun ChoiceSurface(text: String, selected: Boolean, enabled: Boolean, multi: Boolean, mark: ResponseMark, onClick: () -> Unit) {
     Surface(
         modifier = Modifier.fillMaxWidth().heightIn(min = 56.dp).selectable(
             selected = selected, enabled = enabled,
             role = if (multi) Role.Checkbox else Role.RadioButton, onClick = onClick
         ),
-        color = if (selected) BlueSoft else SurfaceMuted,
-        border = BorderStroke(if (selected) 2.dp else 1.dp, if (selected) Blue else Border),
+        color = if (selected) when (mark) { ResponseMark.CORRECT -> GreenSoft; ResponseMark.INCORRECT -> DangerSoft; else -> SelectionSoft } else SurfaceMuted,
+        border = BorderStroke(if (selected) 2.dp else 1.dp, if (selected) when (mark) { ResponseMark.CORRECT -> Green; ResponseMark.INCORRECT -> Danger; else -> SelectionInk } else Border),
         shape = RoundedCornerShape(18.dp),
         shadowElevation = if (selected) 2.dp else 0.dp
     ) {

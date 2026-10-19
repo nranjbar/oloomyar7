@@ -65,8 +65,23 @@ data class ChapterQuestion(
     val readablePrompt: String? = null,
     val originalFigureVisual: String? = null,
     /** Editorial review note, separate from the immutable workbook question/key. */
-    val sourceReviewNote: String? = null
+    val sourceReviewNote: String? = null,
+    /** Visually checked print text and standalone figures. No page-image fallback. */
+    val nativeQuestion: List<SourceBlock> = emptyList(),
+    val nativeAnswer: List<SourceBlock> = emptyList()
 )
+
+data class SourceBlock(
+    val type: String,
+    val text: String = "",
+    val step: Int = 0,
+    val asset: String? = null,
+    val headers: List<String> = emptyList(),
+    val rows: List<List<String>> = emptyList(),
+    val widths: List<Float> = emptyList(),
+    val parts: List<MathPart> = emptyList()
+)
+data class MathPart(val text: String = "", val numerator: String? = null, val denominator: String? = null)
 
 data class QuestionVisual(val asset: String, val caption: String? = null)
 data class LegacyProgress(val store: String, val id: String)

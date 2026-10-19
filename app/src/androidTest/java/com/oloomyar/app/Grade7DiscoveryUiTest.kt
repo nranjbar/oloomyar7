@@ -84,7 +84,9 @@ class Grade7DiscoveryUiTest {
     @Test fun freshHomeStartsTheActualFirstQuestionAndCanBookmarkIt() {
         ActivityScenario.launch(MainActivity::class.java).use {
             compose.awaitGrade7Home()
+            compose.onNodeWithTag("hub-list").performScrollToNode(hasTestTag("home-progress"))
             compose.onNodeWithTag("home-progress").assertTextEquals("۰ از ۳۱۷")
+            compose.onNodeWithTag("hub-list").performScrollToIndex(0)
             compose.onNodeWithTag("home-start").assertHasClickAction();capture("discovery-01-home-360-default")
             compose.onNodeWithTag("home-start").performClick()
             compose.onNodeWithTag("bookmark-question").assertIsDisplayed().performClick()
@@ -203,33 +205,33 @@ class Grade7DiscoveryUiTest {
         assertEquals(listOf("g7_ch03_q12_c_question.webp","g7_ch03_q12_b_question.webp","g7_ch03_q12_a_question.webp"),q.visuals.map { it.asset })
         val intent = Intent(context,Grade7Chapter3Activity::class.java).putExtra("question_id",q.id)
         ActivityScenario.launch<Grade7Chapter3Activity>(intent).use {
-            compose.onNodeWithTag("question-body").performScrollToIndex(2)
-            compose.waitUntil(10000) { compose.onAllNodes(hasText("بزرگ‌نمایی") and isEnabled()).fetchSemanticsNodes().size == 3 }
-            compose.onAllNodesWithText("بزرگ‌نمایی").fetchSemanticsNodes().forEachIndexed { index, _ -> compose.onAllNodesWithText("بزرگ‌نمایی")[index].assertIsDisplayed() }
+            compose.waitUntil(10000) { compose.onAllNodes(hasText("بزرگ‌نمایی تصویر") and isEnabled()).fetchSemanticsNodes().size == 3 }
+            repeat(3) { index -> compose.onAllNodesWithText("بزرگ‌نمایی تصویر")[index].performScrollTo().assertIsDisplayed() }
+            compose.onAllNodesWithText("بزرگ‌نمایی تصویر")[0].performScrollTo()
             capture("discovery-10-new-particle-images")
-            compose.onAllNodesWithText("بزرگ‌نمایی")[0].performClick();compose.onNodeWithContentDescription("بزرگ‌تر").assertIsDisplayed()
+            compose.onAllNodesWithText("بزرگ‌نمایی تصویر")[0].performClick();compose.onNodeWithContentDescription("بزرگ‌تر").assertIsDisplayed()
             compose.onNodeWithText("بستن").performClick();compose.onNodeWithTag("reveal-answer").assertIsNotEnabled()
         }
         val info = context.packageManager.getPackageInfo(BuildConfig.APPLICATION_ID,android.content.pm.PackageManager.GET_PERMISSIONS)
         assertTrue(info.requestedPermissions.orEmpty().none { it == "android.permission.INTERNET" || it == "com.google.android.gms.permission.AD_ID" })
     }
-    @Test fun readingTextUsesSixteenSpAndScalesWithoutChangingTheBookWording() {
+    @Test fun readingTextUsesSeventeenSpAndScalesWithoutChangingTheBookWording() {
         shell("wm size 1080x2160");shell("wm density 480")
         LearningPreferences(context).textScale(1.5f)
         val q = Grade7Chapter2Repository(context).questions.first { it.sourceNumber == 8 && it.section == "تمرین‌های اصلی" }
         val intent = Intent(context,Grade7Chapter2Activity::class.java).putExtra("question_id",q.id)
         ActivityScenario.launch<Grade7Chapter2Activity>(intent).use {
-            val prompt = compose.onNodeWithTag("readable-book-prompt").performScrollTo().assertIsDisplayed()
-            prompt.assertTextEquals(workbookBidi(checkNotNull(q.readablePrompt)))
+            val prompt = compose.onNodeWithText(workbookBidi(q.nativeQuestion.first().text)).performScrollTo().assertIsDisplayed()
+            prompt.assertTextEquals(workbookBidi(q.nativeQuestion.first().text))
             val layouts = mutableListOf<TextLayoutResult>()
             prompt.performSemanticsAction(SemanticsActions.GetTextLayoutResult) { it(layouts) }
-            assertEquals(16.sp,layouts.single().layoutInput.style.fontSize)
+            assertEquals(17.sp,layouts.single().layoutInput.style.fontSize)
             assertEquals(1.5f,layouts.single().layoutInput.density.fontScale,.01f)
             compose.onNodeWithTag("reveal-answer").assertIsDisplayed().assertIsNotEnabled()
             capture("discovery-14-readable-question-360-font150")
-            compose.onNodeWithText("مشاهدهٔ تصویر خود کتاب").performScrollTo().performClick()
-            compose.waitUntil(10000) { compose.onAllNodesWithContentDescription("صورت سؤال ۸ از کتاب").fetchSemanticsNodes().isNotEmpty() }
-            compose.onNodeWithContentDescription("صورت سؤال ۸ از کتاب").performScrollTo().assertIsDisplayed()
+            compose.onNodeWithText("مشاهدهٔ تصویر خود کتاب").assertDoesNotExist()
+            compose.onNodeWithContentDescription("صورت سؤال ۸ از کتاب").assertDoesNotExist()
+
         }
         Grade7Catalog(context).chapters.flatMap { it.questions }.forEach { question ->
             assertTrue(question.id, !question.readablePrompt.isNullOrBlank() || question.steps.any { it.clozeTemplate != null } || question.sourceQuestionVisual?.startsWith("pdf:") == true)

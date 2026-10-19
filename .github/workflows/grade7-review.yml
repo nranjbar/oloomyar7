@@ -42,12 +42,12 @@ jobs:
       - name: Build the previous signed review for real update verification
         run: |
           GRADE7_BASELINE_PROJECT="$RUNNER_TEMP/grade7-upgrade-baseline"
-          git worktree add --detach "$GRADE7_BASELINE_PROJECT" 37baf9b7f3af6588c1ded865c309105ee0d0ab57
+          git worktree add --detach "$GRADE7_BASELINE_PROJECT" 7fc2ab9b6fa9a5ecb61a63a6950cf270df45d982
           cp local.properties "$GRADE7_BASELINE_PROJECT/local.properties"
           chmod +x "$GRADE7_BASELINE_PROJECT/gradlew"
           "$GRADE7_BASELINE_PROJECT/gradlew" -p "$GRADE7_BASELINE_PROJECT" --no-daemon :app:assembleDebug
           mkdir -p app/build/upgrade
-          cp "$GRADE7_BASELINE_PROJECT/app/build/outputs/apk/debug/app-debug.apk" app/build/upgrade/grade7_0.4.0.apk
+          cp "$GRADE7_BASELINE_PROJECT/app/build/outputs/apk/debug/app-debug.apk" app/build/upgrade/grade7_0.5.0.apk
       - name: Upload installable Grade 7 APK
         uses: actions/upload-artifact@v4
         with:
@@ -58,7 +58,7 @@ jobs:
       - name: Upload unsigned release bundle for production signing
         uses: actions/upload-artifact@v4
         with:
-          name: OloomYar7-0.5-Unsigned-AAB
+          name: OloomYar7-0.6-Unsigned-AAB
           path: app/build/outputs/bundle/release/app-release.aab
           if-no-files-found: error
       - name: Enable KVM
@@ -87,6 +87,7 @@ jobs:
             app/build/grade7-screenshots/
             app/build/persistence-verification/
             qa/grade7_content_validation.json
+            qa/grade7_native_content_validation.json
             qa/android_package_size.json
   cleanup-merged-grade7-branches:
     if: github.event_name == 'push' && github.ref == 'refs/heads/main' && github.repository == 'nranjbar/oloomyar7'

@@ -23,7 +23,7 @@ internal fun workbookBidi(text: String): String {
             "\u2066" + line.split(Regex("(?=[+→])|(?<=[+→])")).joinToString("") { token ->
                 if (Regex("[آ-ی]").containsMatchIn(token)) "\u2067$token\u2069" else token
             } + "\u2069"
-        } else science.replace(line) { match ->
+        } else science.replace(Regex("[A-Z](?:\\s*(?:,|،|و)\\s*[A-Z])+").replace(line) { "\u2066${it.value}\u2069" }) { match ->
             val token = match.value.trimEnd()
             "\u2066$token\u2069" + match.value.drop(token.length)
         }

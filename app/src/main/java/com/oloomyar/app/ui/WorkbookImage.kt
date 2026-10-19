@@ -69,9 +69,12 @@ internal fun WorkbookImage(asset: String, description: String, caption: String? 
         } else if (!loaded.second) {
             // Reserve the final source figure's geometry before decoding. Choices below
             // it must not jump while a student taps or an accessibility action runs.
-            Surface(color=Color.White,shape=RoundedCornerShape(22.dp),border=androidx.compose.foundation.BorderStroke(1.dp,Border)) {
+            BoxWithConstraints(Modifier.fillMaxWidth(),contentAlignment=Alignment.Center) {
+                val displayWidth=if(maxImageHeight==null)maxWidth else minOf(maxWidth,(maxImageHeight-14.dp).coerceAtLeast(1.dp)*expectedRatio+14.dp)
+                Surface(Modifier.width(displayWidth),color=Color.White,shape=RoundedCornerShape(22.dp),border=androidx.compose.foundation.BorderStroke(1.dp,Border)) {
                 Box(Modifier.fillMaxWidth().padding(7.dp).aspectRatio(expectedRatio),contentAlignment=Alignment.Center) {
                     CircularProgressIndicator(Modifier.size(24.dp))
+                }
                 }
             }
         } else {

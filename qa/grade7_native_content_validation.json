@@ -1,0 +1,193 @@
+{
+  "status": "PASS",
+  "edition": 1405,
+  "nativeQuestions": 104,
+  "nativeAnswers": 104,
+  "chapterCounts": [
+    8,
+    20,
+    31,
+    23,
+    22
+  ],
+  "nativeTables": 6,
+  "nativeMathBlocks": 8,
+  "inlinePrintedBlanks": 139,
+  "standaloneScientificFigures": [
+    {
+      "question": "g7_ch01_q07",
+      "asset": "g7_ch01_q07.webp"
+    },
+    {
+      "question": "g7_ch02_q07",
+      "asset": "g7_ch02_q07.webp"
+    },
+    {
+      "question": "g7_ch02_q09",
+      "asset": "g7_ch02_q09.webp"
+    },
+    {
+      "question": "g7_ch02_q11",
+      "asset": "g7_ch02_q11.webp"
+    },
+    {
+      "question": "g7_ch02_q12",
+      "asset": "g7_ch02_q12.webp"
+    },
+    {
+      "question": "g7_ch02_q14",
+      "asset": "g7_ch02_q14.webp"
+    },
+    {
+      "question": "g7_ch02_q15",
+      "asset": "g7_ch02_q15.webp"
+    },
+    {
+      "question": "g7_ch02_mcq03",
+      "asset": "g7_ch02_mcq03.webp"
+    },
+    {
+      "question": "g7_ch02_mcq04",
+      "asset": "g7_ch02_mcq04.webp"
+    },
+    {
+      "question": "g7_ch02_mcq05",
+      "asset": "g7_ch02_mcq05.webp"
+    },
+    {
+      "question": "g7_ch03_q03",
+      "asset": "g7_ch03_q03_source_figure.webp"
+    },
+    {
+      "question": "g7_ch03_q12",
+      "asset": "g7_ch03_q12_c_question.webp"
+    },
+    {
+      "question": "g7_ch03_q12",
+      "asset": "g7_ch03_q12_b_question.webp"
+    },
+    {
+      "question": "g7_ch03_q12",
+      "asset": "g7_ch03_q12_a_question.webp"
+    },
+    {
+      "question": "g7_ch03_q15",
+      "asset": "crop:g7_ch03_q15_question.webp#1850,105,2140,605"
+    },
+    {
+      "question": "g7_ch03_q15",
+      "asset": "crop:g7_ch03_q15_question.webp#1490,315,1830,450"
+    },
+    {
+      "question": "g7_ch03_q16",
+      "asset": "g7_ch03_mcq05_question.webp"
+    },
+    {
+      "question": "g7_ch03_q17",
+      "asset": "g7_ch03_q17_question.webp"
+    },
+    {
+      "question": "g7_ch03_q21",
+      "asset": "g7_ch03_q21_source_figure.webp"
+    },
+    {
+      "question": "g7_ch03_q22",
+      "asset": "g7_ch03_q22_source_figure.webp"
+    },
+    {
+      "question": "g7_ch03_q24",
+      "asset": "g7_ch03_q24_source_figure.webp"
+    },
+    {
+      "question": "g7_ch03_mcq04",
+      "asset": "pdf:workbook.pdf#11,88.75,417.80795,120.9,463.9"
+    },
+    {
+      "question": "g7_ch03_mcq04",
+      "asset": "pdf:workbook.pdf#11,374.65,424.804,408.2,459.75"
+    },
+    {
+      "question": "g7_ch03_mcq05",
+      "asset": "g7_ch03_mcq05_question.webp"
+    },
+    {
+      "question": "g7_ch03_mcq07",
+      "asset": "g7_ch03_mcq07_source_figure.webp"
+    },
+    {
+      "question": "g7_ch04_q04",
+      "asset": "pdf:workbook.pdf#12,50,442,151,470"
+    },
+    {
+      "question": "g7_ch04_q08",
+      "asset": "pdf:workbook.pdf#13,45,35,303,143"
+    },
+    {
+      "question": "g7_ch04_q10",
+      "asset": "pdf:workbook.pdf#13,44,391,339,608"
+    },
+    {
+      "question": "g7_ch04_q11",
+      "asset": "pdf:workbook.pdf#13,65,670,218,817"
+    },
+    {
+      "question": "g7_ch04_q13",
+      "asset": "pdf:workbook.pdf#14,40,92,167,168"
+    },
+    {
+      "question": "g7_ch04_q13",
+      "asset": "pdf:workbook.pdf#14,33,222,128,276"
+    },
+    {
+      "question": "g7_ch04_q13",
+      "asset": "pdf:workbook.pdf#14,44,311,128,363"
+    },
+    {
+      "question": "g7_ch04_q13",
+      "asset": "pdf:workbook.pdf#14,59,371,127,439"
+    },
+    {
+      "question": "g7_ch04_q16",
+      "asset": "pdf:workbook.pdf#14,28,628,293,698"
+    },
+    {
+      "question": "g7_ch04_mcq03",
+      "asset": "pdf:workbook.pdf#15,63.75,561.01,284.25,650.26"
+    },
+    {
+      "question": "g7_ch04_mcq04",
+      "asset": "pdf:workbook.pdf#15,33,686,282,796"
+    },
+    {
+      "question": "g7_ch05_q08",
+      "asset": "pdf:workbook.pdf#17,52,211,190,373"
+    },
+    {
+      "question": "g7_ch05_q12",
+      "asset": "pdf:workbook.pdf#18,36,39,205,200"
+    },
+    {
+      "question": "g7_ch05_q13",
+      "asset": "pdf:workbook.pdf#18,65,247,143,333"
+    },
+    {
+      "question": "g7_ch05_q14",
+      "asset": "pdf:workbook.pdf#18,38.4,392.85,214.5,531.9"
+    },
+    {
+      "question": "g7_ch05_q15",
+      "asset": "pdf:workbook.pdf#18,58,576,350,777"
+    },
+    {
+      "question": "g7_ch05_q17",
+      "asset": "pdf:workbook.pdf#19,65,96,207,311"
+    },
+    {
+      "question": "g7_ch05_mcq05",
+      "asset": "pdf:workbook.pdf#19,79,644,175,792"
+    }
+  ],
+  "fullQuestionOrKeyScreenshots": 0,
+  "chaptersSixToFifteenDataUnchanged": true,
+  "sourceReview": "All workbook pages 2–19 and chapter answer PDFs 01–05 visually reviewed; PDF text-layer inventories are secondary checks, not OCR certification."
+}

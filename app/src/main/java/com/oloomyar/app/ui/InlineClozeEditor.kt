@@ -34,6 +34,7 @@ internal fun InlineFillBlanksQuestion(
     seed: Int,
     mark: (Int) -> ResponseMark,
     locked: (Int) -> Boolean,
+    showInstructions: Boolean = true,
     onChange: (List<String>) -> Unit
 ) {
     val rows = if (step.kind == StepKind.MATCH) step.pairs.map { it.left } else step.classifyItems.map { it.text }
@@ -95,7 +96,7 @@ internal fun InlineFillBlanksQuestion(
         val measurer = rememberTextMeasurer()
         val density = LocalDensity.current
         val style = MaterialTheme.typography.bodyLarge.copy(textDirection = TextDirection.Rtl)
-        Text("برای انتخاب یا تغییر پاسخ، روی همان جای خالی بزن. لمس دوباره فقط انتخاب همان خانه را پاک می‌کند.",
+        if (showInstructions) Text("برای انتخاب یا تغییر پاسخ، روی همان جای خالی بزن. لمس دوباره فقط انتخاب همان خانه را پاک می‌کند.",
             style = MaterialTheme.typography.bodySmall, color = Muted, modifier = Modifier.padding(bottom = 10.dp))
         BoxWithConstraints(Modifier.fillMaxWidth()) {
             val maximum = with(density) { (maxWidth - 12.dp).roundToPx() }.coerceAtLeast(1)
@@ -149,6 +150,8 @@ internal fun WordBankBottomSheet(
     ModalBottomSheet(onDismissRequest = onDismiss, sheetState = rememberModalBottomSheetState(skipPartiallyExpanded = true)) {
         Column(Modifier.fillMaxWidth().padding(horizontal = 20.dp).navigationBarsPadding()) {
             Text("جای خالی ${workbookFa(row + 1)}", style = MaterialTheme.typography.titleLarge)
+            WorkbookText(if (step.kind == StepKind.MATCH) step.pairs[row].left else step.classifyItems[row].text,
+                Modifier.padding(top = 8.dp))
             Text("یک گزینه را انتخاب کن", color = Muted, modifier = Modifier.padding(vertical = 8.dp))
             LazyColumn(Modifier.fillMaxWidth().heightIn(max = 440.dp).testTag("choice-sheet"), verticalArrangement = Arrangement.spacedBy(8.dp)) {
                 items(order, key = { it }) { choice ->
@@ -165,6 +168,7 @@ internal fun WordBankBottomSheet(
                     }
                 }
                 item {
+                    TextButton(onClick = onDismiss, modifier = Modifier.fillMaxWidth().heightIn(min = 48.dp)) { Text("بستن") }
                     TextButton(onClick = { onSelect("") }, enabled = values.getOrNull(row)?.isNotBlank() == true, modifier = Modifier.fillMaxWidth()) {
                         Text("پاک‌کردن این انتخاب")
                     }

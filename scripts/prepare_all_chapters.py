@@ -129,13 +129,21 @@ def main():
             for field in ['visual','originalFigureVisual','promptVisual']:q[field]=replacements.get(q.get(field),q.get(field))
             for visual in q.get('visuals',[]):visual['asset']=replacements.get(visual['asset'],visual['asset'])
         dump(path,qs)
-    if lossless:dump(ROOT/'qa/source/lossless-scientific-assets.json',lossless)
+    if lossless:
+        old_path=ROOT/'qa/source/lossless-scientific-assets.json'
+        old=json.loads(old_path.read_text())if old_path.exists()else[]
+        merged={entry['asset']:entry for entry in old}
+        merged.update({entry['asset']:entry for entry in lossless})
+        dump(old_path,list(merged.values()))
     keep={replacements.get(name,name) for name in references}
+    keep.update(p.name for p in (ASSETS/'images').glob('ui_icon_*.webp'))
     keep.update(f'chapter_{c:02}.webp' for c in range(1,16))
     keep.update(f'mascot_{pose}_480w.webp' for pose in ['master','welcome','thinking','encourage','success','guidance'])
     for p in (ASSETS/'images').iterdir():
         if p.is_file() and p.name not in keep:p.unlink()
     dump(ASSETS/'content/image-dimensions.json',{p.name:list(Image.open(p).size)for p in (ASSETS/'images').glob('*.webp')if p.name in keep})
+    from native_first_five import write as write_native
+    write_native()
     print('Prepared',len(content),'questions;',sum(x['steps'] for x in catalog),'learning groups;',sum(x.stat().st_size for x in ASSETS.rglob('*') if x.is_file()),'asset bytes')
 
 if __name__=='__main__':main()

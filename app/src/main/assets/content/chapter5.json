@@ -92,7 +92,21 @@
     "visuals": [],
     "originalFigureVisual": null,
     "promptVisual": null,
-    "legacyProgress": []
+    "legacyProgress": [],
+    "nativeQuestion": [
+      {
+        "type": "cloze",
+        "text": "با استفاده از کلمات داده شده ، جملات زیر را تکمیل کنید .\n(( کربن – بتن – معادن – آهن – ماسه – سفالی رنگی – سنگ آهک – خاک رس ))\na- مواد اولیه لازم برای تولید انواع فرآورده های صنعتی ، ساختمانی ، دارویی و غیره را از {{0}} تأمین می کنند .\nb- برای جدا کردن اتم های اکسیژن از آهن ، سنگ معدن را به همراه {{1}} و {{2}} در کوره های مخصوص حرارت می دهند .\nc- امروزه برای ساختن خانه های مسکونی و برج ها ، تونل سازی و سد سازی از {{3}} استفاده می شود که مخلوطی از سیمان ، ماسه و آب است و استحکام زیادی دارد .\nd- ماده اولیه تولید کارد و چنگال ، سنگ معدن {{4}} است ، ولی بشقاب چینی و ظروف سفالی از {{5}} و شیشه از {{6}} ساخته می شود .\ne- در تولید ظروف {{7}} از اکسید فلز های مختلفی مانند آهن ، کروم ، مس و ... استفاده می شود .",
+        "step": 0
+      }
+    ],
+    "nativeAnswer": [
+      {
+        "type": "text",
+        "text": "به ترتیب : a- معادن  b- سنگ آهک و کربن  c- بتن\nd- به ترتیب : آهن ، خاک رس ، ماسه  e- سفالی رنگی"
+      }
+    ],
+    "nativeEdition": "1405-visual-transcription-v1"
   },
   {
     "id": "g7-ch05-main-002-1405",
@@ -223,7 +237,76 @@
     "visuals": [],
     "originalFigureVisual": null,
     "promptVisual": null,
-    "legacyProgress": []
+    "legacyProgress": [],
+    "nativeQuestion": [
+      {
+        "type": "text",
+        "text": "در چدول زیر فلز آهن با سنگ معدن آهن مقایسه شده است . آن را کامل کنید ."
+      },
+      {
+        "type": "table",
+        "headers": [
+          "ویژگی\nنام ماده",
+          "شکنندگی براثر ضربه",
+          "خراش بر اثر ساییدن",
+          "یافت شدن در طبیعت",
+          "رسانایی الکتریکی",
+          "واکنش با اکسیژن هوا"
+        ],
+        "rows": [
+          [
+            "فلز آهن",
+            "{{0:0}}",
+            "{{0:1}}",
+            "{{0:2}}",
+            "{{0:3}}",
+            "{{0:4}}"
+          ],
+          [
+            "سنگ معدن آهن",
+            "{{0:5}}",
+            "{{0:6}}",
+            "{{0:7}}",
+            "{{0:8}}",
+            "{{0:9}}"
+          ]
+        ],
+        "widths": []
+      }
+    ],
+    "nativeAnswer": [
+      {
+        "type": "table",
+        "headers": [
+          "ویژگی\nنام ماده",
+          "شکنندگی براثر ضربه",
+          "خراش بر اثر ساییدن",
+          "یافت شدن در طبیعت",
+          "رسانایی الکتریکی",
+          "واکنش یا اکسیژن هوا"
+        ],
+        "rows": [
+          [
+            "فلز آهن",
+            "چکش خوار",
+            "بیشتر",
+            "نایاب",
+            "رسانای الکتریکی",
+            "بیشتر"
+          ],
+          [
+            "سنگ معدن آهن",
+            "شکننده",
+            "کمتر",
+            "فراوان",
+            "نارسانای الکتریکی",
+            "کمتر"
+          ]
+        ],
+        "widths": []
+      }
+    ],
+    "nativeEdition": "1405-visual-transcription-v1"
   },
   {
     "id": "g7-ch05-main-003-1405",
@@ -272,7 +355,20 @@
     "visuals": [],
     "originalFigureVisual": null,
     "promptVisual": null,
-    "legacyProgress": []
+    "legacyProgress": [],
+    "nativeQuestion": [
+      {
+        "type": "text",
+        "text": "با استفاده از مواد و وسایل زیر ، آزمایشی طرح کنید که با انجام آن بتوان وجود آهن را در یک ترکیب شناسایی کرد .\n(( چند لوله آزمایش – قاشقک – قطره چکان – سدیم هیدروکسید – آهن ( III ) کلرید – آب مقطر ))"
+      }
+    ],
+    "nativeAnswer": [
+      {
+        "type": "text",
+        "text": "در یک لوله آزمایش با قاشقک ، کمی آهن ( III ) کلرید ریخته و روی آن آب مقطر می ریزیم و هم می زنیم . سپس در یک لوله آزمایش دیگر ، با قاشفک ، کمی سدیم هیدروکسید ریخته و روی آن آب مقطر می ریزیم و هم می زنیم . سپس با قطره چکان چند قطره از محلول سدیم هیدروکسید را به لوله آزمایش اولی می افزاییم . رسوب قرمز آجری رنگی تشکیل می شود که نشانه وجود آهن در محلول اولی است ."
+      }
+    ],
+    "nativeEdition": "1405-visual-transcription-v1"
   },
   {
     "id": "g7-ch05-main-004-1405",
@@ -321,7 +417,20 @@
     "visuals": [],
     "originalFigureVisual": null,
     "promptVisual": null,
-    "legacyProgress": []
+    "legacyProgress": [],
+    "nativeQuestion": [
+      {
+        "type": "text",
+        "text": "مراحل استخراج فلز آهن را به ترتیب بنویسید . ( چهار مرحله )"
+      }
+    ],
+    "nativeAnswer": [
+      {
+        "type": "text",
+        "text": "الف- شناسایی معدن و بیرون آوردن سنگ معدن از دل زمین\nب- خالص سازی سنگ معدن\nج- گرما دادن مخلوط سنگ آهن ، کربن و سنگ آهک در کوره  د- تولید ورقه های فلز آهن"
+      }
+    ],
+    "nativeEdition": "1405-visual-transcription-v1"
   },
   {
     "id": "g7-ch05-main-005-1405",
@@ -380,7 +489,25 @@
     "visuals": [],
     "originalFigureVisual": null,
     "promptVisual": null,
-    "legacyProgress": []
+    "legacyProgress": [],
+    "nativeQuestion": [
+      {
+        "type": "text",
+        "text": "در معادله شیمیایی زیر ، خلاصه تهیه آهن آورده شده است . جاهای خالی را تکمیل کنید ."
+      },
+      {
+        "type": "reaction",
+        "text": "اکسید های آهن + {{0}} → کربن دی اکسید + {{1}}",
+        "step": 0
+      }
+    ],
+    "nativeAnswer": [
+      {
+        "type": "text",
+        "text": "به ترتیب : از چپ به راست : کربن – فلز آهن"
+      }
+    ],
+    "nativeEdition": "1405-visual-transcription-v1"
   },
   {
     "id": "g7-ch05-main-006-1405",
@@ -429,7 +556,20 @@
     "visuals": [],
     "originalFigureVisual": null,
     "promptVisual": null,
-    "legacyProgress": []
+    "legacyProgress": [],
+    "nativeQuestion": [
+      {
+        "type": "text",
+        "text": "آزمایشی طرح کنید که با انجام آن بتوانید آهن را از آهن اکسید جدا کنید ."
+      }
+    ],
+    "nativeAnswer": [
+      {
+        "type": "text",
+        "text": "سر پنج تا چوب کبریت را با آب مرطوب کرده و آن ها را با سدیم کربنات و سپس پودر آهن ( III ) اکسید آغشته می کنیم . سپس چوب کبریت ها را روی شعله تا نیمه می سوزانیم و پس از ۳۰ ثانیه قسمت های سوخته را پودر کرده و روی شیشه ساعتی می ریزیم و یک آهن ربا را زیر آن می کشیم ، حرکت ذرات آهن مشاهده می شود ."
+      }
+    ],
+    "nativeEdition": "1405-visual-transcription-v1"
   },
   {
     "id": "g7-ch05-main-007-1405",
@@ -479,7 +619,20 @@
     "visuals": [],
     "originalFigureVisual": null,
     "promptVisual": null,
-    "legacyProgress": []
+    "legacyProgress": [],
+    "nativeQuestion": [
+      {
+        "type": "text",
+        "text": "آیا از فلز آهن خالص می توان در ساخت تیر آهن ، بدنه خودرو ها و لوازم آشپزخانه استفاده کرد ؟ چرا ؟"
+      }
+    ],
+    "nativeAnswer": [
+      {
+        "type": "text",
+        "text": "خیر ، زیرا آهن خالص نسبتاً نرم است و سریع زنگ می زند"
+      }
+    ],
+    "nativeEdition": "1405-visual-transcription-v1"
   },
   {
     "id": "g7-ch05-main-008-1405",
@@ -556,7 +709,30 @@
     "visuals": [],
     "originalFigureVisual": null,
     "promptVisual": null,
-    "legacyProgress": []
+    "legacyProgress": [],
+    "nativeQuestion": [
+      {
+        "type": "text",
+        "text": "علت استفاده از مواد زیر را ، برای تهیه آلیاژ کارد و چنگال استیل ، بنویسید ."
+      },
+      {
+        "type": "figure",
+        "asset": "pdf:workbook.pdf#17,52,211,190,373",
+        "text": ""
+      },
+      {
+        "type": "cloze",
+        "text": "الف- کروم و نیکل : {{0}}\nب- نقره : {{1}}\nج- آهن : {{2}}\nد- چوب یا پلاستیک : {{3}}",
+        "step": 0
+      }
+    ],
+    "nativeAnswer": [
+      {
+        "type": "text",
+        "text": "الف- زنگ نزدن و افزایش استحکام\nب- زیبایی و درخشندگی و راحت تمیز شدن و ضد زنگ و ضد میکروب\nج- استحکام زیاد\nد- چون نارسانای گرما هستند برای دسته آن ها استفاده می کنند ."
+      }
+    ],
+    "nativeEdition": "1405-visual-transcription-v1"
   },
   {
     "id": "g7-ch05-main-009-1405",
@@ -615,7 +791,20 @@
     "visuals": [],
     "originalFigureVisual": null,
     "promptVisual": null,
-    "legacyProgress": []
+    "legacyProgress": [],
+    "nativeQuestion": [
+      {
+        "type": "text",
+        "text": "بتن را چگونه تهیه می کنند ؟ و سه کاربرد آن را بنویسید ."
+      }
+    ],
+    "nativeAnswer": [
+      {
+        "type": "text",
+        "text": "بتن مخلوطی از سیمان و ماسه و آب است .\n- خانه های مسکونی – برج ها – تونل سازی – سد سازی"
+      }
+    ],
+    "nativeEdition": "1405-visual-transcription-v1"
   },
   {
     "id": "g7-ch05-main-010-1405",
@@ -674,7 +863,20 @@
     "visuals": [],
     "originalFigureVisual": null,
     "promptVisual": null,
-    "legacyProgress": []
+    "legacyProgress": [],
+    "nativeQuestion": [
+      {
+        "type": "text",
+        "text": "آزمایشی طرح کنید که نشان دهد آهک خاصیت اسیدی ندارد بلکه خاصیت بازی دارد ."
+      }
+    ],
+    "nativeAnswer": [
+      {
+        "type": "text",
+        "text": "مقداری آهک را در آب حل می کنیم و کاغذ PH را وارد آن می کنیم . می بینم که آبی می شود . پس آب آهک خاصیت بازی دارد نه اسیدی ( اگر قرمز می شد اسید بود )"
+      }
+    ],
+    "nativeEdition": "1405-visual-transcription-v1"
   },
   {
     "id": "g7-ch05-main-011-1405",
@@ -707,6 +909,76 @@
               "۱۳۹۰",
               "۱۳۹۲"
             ]
+          },
+          {
+            "left": "ستون سال ۱۳۸۳",
+            "right": "۳۳۰۰۰",
+            "choices": [
+              "۳۳۰۰۰",
+              "۶۱۰۰۰",
+              "۶۸۰۰۰",
+              "۵۸۰۰۰",
+              "۷۰۰۰۰",
+              "۲۰۰۰۰",
+              "۴۰۰۰۰",
+              "۸۰۰۰۰"
+            ]
+          },
+          {
+            "left": "ستون سال ۱۳۸۹",
+            "right": "۶۱۰۰۰",
+            "choices": [
+              "۳۳۰۰۰",
+              "۶۱۰۰۰",
+              "۶۸۰۰۰",
+              "۵۸۰۰۰",
+              "۷۰۰۰۰",
+              "۲۰۰۰۰",
+              "۴۰۰۰۰",
+              "۸۰۰۰۰"
+            ]
+          },
+          {
+            "left": "ستون سال ۱۳۹۲",
+            "right": "۶۸۰۰۰",
+            "choices": [
+              "۳۳۰۰۰",
+              "۶۱۰۰۰",
+              "۶۸۰۰۰",
+              "۵۸۰۰۰",
+              "۷۰۰۰۰",
+              "۲۰۰۰۰",
+              "۴۰۰۰۰",
+              "۸۰۰۰۰"
+            ]
+          },
+          {
+            "left": "ستون سال ۱۳۹۴",
+            "right": "۵۸۰۰۰",
+            "choices": [
+              "۳۳۰۰۰",
+              "۶۱۰۰۰",
+              "۶۸۰۰۰",
+              "۵۸۰۰۰",
+              "۷۰۰۰۰",
+              "۲۰۰۰۰",
+              "۴۰۰۰۰",
+              "۸۰۰۰۰"
+            ]
+          },
+          {
+            "left": "ستون سال ۱۳۹۶",
+            "right": "۷۰۰۰۰",
+            "choices": [
+              "۳۳۰۰۰",
+              "۶۱۰۰۰",
+              "۶۸۰۰۰",
+              "۵۸۰۰۰",
+              "۷۰۰۰۰",
+              "۲۰۰۰۰",
+              "۴۰۰۰۰",
+              "۸۰۰۰۰"
+            ]
           }
         ],
         "choices": [],
@@ -733,7 +1005,63 @@
     "visuals": [],
     "originalFigureVisual": null,
     "promptVisual": null,
-    "legacyProgress": []
+    "legacyProgress": [],
+    "nativeQuestion": [
+      {
+        "type": "text",
+        "text": "جدول زیر مقدار تولید سیمان در سال های مختلف را در کشورمان نشان می دهد :"
+      },
+      {
+        "type": "table",
+        "headers": [
+          "سال",
+          "تولید سیمان ( تن )"
+        ],
+        "rows": [
+          [
+            "۱۳۸۳",
+            "۳۳۰۰۰"
+          ],
+          [
+            "۱۳۸۹",
+            "۶۱۰۰۰"
+          ],
+          [
+            "۱۳۹۲",
+            "۶۸۰۰۰"
+          ],
+          [
+            "۱۳۹۴",
+            "۵۸۰۰۰"
+          ],
+          [
+            "۱۳۹۶",
+            "۷۰۰۰۰"
+          ]
+        ],
+        "widths": []
+      },
+      {
+        "type": "text",
+        "text": "الف- نمودار ستونی آن را رسم کنید ."
+      },
+      {
+        "type": "barChart",
+        "step": 0
+      },
+      {
+        "type": "cloze",
+        "text": "ب- در چه سالی تولید سیمان نسبت به سال قبلش کاهش یافته است ؟ {{1}}",
+        "step": 0
+      }
+    ],
+    "nativeAnswer": [
+      {
+        "type": "text",
+        "text": "در رسم نمودار ، ابتدا نوشتن واحد های مساوی در سمت چپ ستون عمودی ( در این جا ۲۰۰۰۰ – ۴۰۰۰۰ – ۶۰۰۰۰ – ۸۰۰۰۰ ) باید انجام شود .\nب- ۱۳۹۴"
+      }
+    ],
+    "nativeEdition": "1405-visual-transcription-v1"
   },
   {
     "id": "g7-ch05-main-012-1405",
@@ -792,7 +1120,30 @@
     "visuals": [],
     "originalFigureVisual": null,
     "promptVisual": null,
-    "legacyProgress": []
+    "legacyProgress": [],
+    "nativeQuestion": [
+      {
+        "type": "text",
+        "text": "در کنار روستای حسن آباد ، یک معدن سرب پیدا و بهره برداری از آن شروع شده است .\nدو مزیت و دو عیب این معدن را برای مردم روستا بنویسید ."
+      },
+      {
+        "type": "figure",
+        "asset": "pdf:workbook.pdf#18,36,39,205,200",
+        "text": ""
+      },
+      {
+        "type": "cloze",
+        "text": "مزیت : {{0}}\nعیب : {{1}}",
+        "step": 0
+      }
+    ],
+    "nativeAnswer": [
+      {
+        "type": "text",
+        "text": "مزیت : اشتغال جوانان روستا ، رونق کسب و کار\n- عیب : آلودگی هوا ، آلودگی صوتی ( ایجاد سر و صدا ) ، نگرانی والدین برای امنیت و سلامتی بچه ها ، آسیب به محیط زیست"
+      }
+    ],
+    "nativeEdition": "1405-visual-transcription-v1"
   },
   {
     "id": "g7-ch05-main-013-1405",
@@ -839,7 +1190,45 @@
     "visuals": [],
     "originalFigureVisual": null,
     "promptVisual": null,
-    "legacyProgress": []
+    "legacyProgress": [],
+    "nativeQuestion": [
+      {
+        "type": "text",
+        "text": "« سحر کلاس هفتم است . مادرش چند گلدان سفالی خریده بود تا در آن ها گل بکارد . وقتی ستاره چشمش به گلدان ها افتاد ، روش ساخت گلدان سفالی را برای خانواده اش توضیح داد . »\nشما هم روش ساخت ظروف سفالی را به طور خلاصه در نمودار زیر بنویسید :"
+      },
+      {
+        "type": "figure",
+        "asset": "pdf:workbook.pdf#18,65,247,143,333",
+        "text": ""
+      }
+    ],
+    "nativeAnswer": [
+      {
+        "type": "text",
+        "text": "به ترتیب :"
+      },
+      {
+        "type": "math",
+        "parts": [
+          {
+            "text": "تهیه گل کوزه گری"
+          },
+          {
+            "text": "→"
+          },
+          {
+            "text": "شکل دادن به خمیر"
+          },
+          {
+            "text": "→"
+          },
+          {
+            "text": "پختن و لعاب دادن"
+          }
+        ]
+      }
+    ],
+    "nativeEdition": "1405-visual-transcription-v1"
   },
   {
     "id": "g7-ch05-main-014-1405",
@@ -898,7 +1287,25 @@
     "visuals": [],
     "originalFigureVisual": null,
     "promptVisual": null,
-    "legacyProgress": []
+    "legacyProgress": [],
+    "nativeQuestion": [
+      {
+        "type": "text",
+        "text": "الف- روش تهیه شیشه را بنویسید .\nب- شیشه را چگونه به شکل های مختلف در می آورند ؟"
+      },
+      {
+        "type": "figure",
+        "asset": "pdf:workbook.pdf#18,38.4,392.85,214.5,531.9",
+        "text": ""
+      }
+    ],
+    "nativeAnswer": [
+      {
+        "type": "text",
+        "text": "الف- ماسه را با افزودن مواد شیمیایی مختلف گرما می دهند تا به خمیر شیشه تبدیل شود –\nب- قالب گیری – دمیدن هوا در خمیر شیشه"
+      }
+    ],
+    "nativeEdition": "1405-visual-transcription-v1"
   },
   {
     "id": "g7-ch05-main-015-1405",
@@ -966,7 +1373,30 @@
     "visuals": [],
     "originalFigureVisual": null,
     "promptVisual": null,
-    "legacyProgress": []
+    "legacyProgress": [],
+    "nativeQuestion": [
+      {
+        "type": "text",
+        "text": "نمودار زیر زمان تقریبی پیش بینی شده ( برحسب سال ) برای پایان یافتن برخی اندوخته های شناخته شده را نشان می دهد .\nبا توحه به نمودار به سؤالات زیر پاسخ دهید ."
+      },
+      {
+        "type": "figure",
+        "asset": "pdf:workbook.pdf#18,58,576,350,777",
+        "text": ""
+      },
+      {
+        "type": "cloze",
+        "text": "الف- کدام ماده زود تر به پایان می رسد ؟ {{0}}\nب- کدام ماده دیرتر به پایان می رسد ؟ {{1}}\nج- برای اینکه منابع دیرتر به پایان برسند دو راه پیشنهاد کنید . {{2}}",
+        "step": 0
+      }
+    ],
+    "nativeAnswer": [
+      {
+        "type": "text",
+        "text": "الف- طلا\nب- کروم\nج- بازیافت – کاهش مصرف"
+      }
+    ],
+    "nativeEdition": "1405-visual-transcription-v1"
   },
   {
     "id": "g7-ch05-main-016-1405",
@@ -1026,7 +1456,20 @@
     "visuals": [],
     "originalFigureVisual": null,
     "promptVisual": null,
-    "legacyProgress": []
+    "legacyProgress": [],
+    "nativeQuestion": [
+      {
+        "type": "text",
+        "text": "برای محافظت از منابع طبیعی سه راه پیشنهاد کنید ."
+      }
+    ],
+    "nativeAnswer": [
+      {
+        "type": "text",
+        "text": "کاهش مصرف – بازیافت – مصرف دوباره"
+      }
+    ],
+    "nativeEdition": "1405-visual-transcription-v1"
   },
   {
     "id": "g7-ch05-main-017-1405",
@@ -1085,7 +1528,26 @@
     "visuals": [],
     "originalFigureVisual": null,
     "promptVisual": null,
-    "legacyProgress": []
+    "legacyProgress": [],
+    "nativeQuestion": [
+      {
+        "type": "cloze",
+        "text": "شکل زیر کدام راه محافظت از منابع طبیعی را نشان می دهد ؟ {{0}}\nآن را توضیح دهید . {{1}}",
+        "step": 0
+      },
+      {
+        "type": "figure",
+        "asset": "pdf:workbook.pdf#19,65,96,207,311",
+        "text": ""
+      }
+    ],
+    "nativeAnswer": [
+      {
+        "type": "text",
+        "text": "بازیافت – قوطی ها و ظرف های فلزی خراب را در کارخانه پس از ذوب کردن به حالت شمش در می آورند و دوباره از شمش ها ظروف جدید می سازند ."
+      }
+    ],
+    "nativeEdition": "1405-visual-transcription-v1"
   },
   {
     "id": "g7-ch05-mcq-001-1405",
@@ -1102,19 +1564,19 @@
         "prompt": "گزینهٔ چاپی کتاب را انتخاب کن.",
         "options": [
           {
-            "text": "گزینهٔ الف",
+            "text": "الف- افزایش مصرف",
             "correct": false
           },
           {
-            "text": "گزینهٔ ب",
+            "text": "ب- کاهش مصرف",
             "correct": true
           },
           {
-            "text": "گزینهٔ ج",
+            "text": "ج- باز یافت",
             "correct": false
           },
           {
-            "text": "گزینهٔ د",
+            "text": "د- مصرف دوباره",
             "correct": false
           }
         ],
@@ -1140,7 +1602,24 @@
     "visuals": [],
     "originalFigureVisual": null,
     "promptVisual": null,
-    "legacyProgress": []
+    "legacyProgress": [],
+    "nativeQuestion": [
+      {
+        "type": "text",
+        "text": "حسین برای خرید میوه با خود زنبیل یا کیسه پارچه ای می برد . این کار او کدام راه محافظت از منابع طبیعی می باشد ؟"
+      },
+      {
+        "type": "input",
+        "step": 0
+      }
+    ],
+    "nativeAnswer": [
+      {
+        "type": "text",
+        "text": "ب"
+      }
+    ],
+    "nativeEdition": "1405-visual-transcription-v1"
   },
   {
     "id": "g7-ch05-mcq-002-1405",
@@ -1157,19 +1636,19 @@
         "prompt": "گزینهٔ چاپی کتاب را انتخاب کن.",
         "options": [
           {
-            "text": "گزینهٔ الف",
+            "text": "الف- افزایش مصرف",
             "correct": false
           },
           {
-            "text": "گزینهٔ ب",
+            "text": "ب- کاهش مصرف",
             "correct": false
           },
           {
-            "text": "گزینهٔ ج",
+            "text": "ج- باز یافت",
             "correct": true
           },
           {
-            "text": "گزینهٔ د",
+            "text": "د- مصرف دوباره",
             "correct": false
           }
         ],
@@ -1195,7 +1674,24 @@
     "visuals": [],
     "originalFigureVisual": null,
     "promptVisual": null,
-    "legacyProgress": []
+    "legacyProgress": [],
+    "nativeQuestion": [
+      {
+        "type": "text",
+        "text": "« قوطی ها و ظرف های فلزی خراب را در کارخانه پس از ذوب کردن به حالت شمش در می آورند و با آن قوطی و ظروف جدید می سازند »\nاین کار کدام راه محافظت از منابع طبیعی می باشد ؟"
+      },
+      {
+        "type": "input",
+        "step": 0
+      }
+    ],
+    "nativeAnswer": [
+      {
+        "type": "text",
+        "text": "ج"
+      }
+    ],
+    "nativeEdition": "1405-visual-transcription-v1"
   },
   {
     "id": "g7-ch05-mcq-003-1405",
@@ -1212,19 +1708,19 @@
         "prompt": "گزینهٔ چاپی کتاب را انتخاب کن.",
         "options": [
           {
-            "text": "گزینهٔ الف",
+            "text": "الف- افزایش مصرف",
             "correct": false
           },
           {
-            "text": "گزینهٔ ب",
+            "text": "ب- کاهش مصرف",
             "correct": false
           },
           {
-            "text": "گزینهٔ ج",
+            "text": "ج- باز یافت",
             "correct": false
           },
           {
-            "text": "گزینهٔ د",
+            "text": "د- مصرف دوباره",
             "correct": true
           }
         ],
@@ -1250,7 +1746,24 @@
     "visuals": [],
     "originalFigureVisual": null,
     "promptVisual": null,
-    "legacyProgress": []
+    "legacyProgress": [],
+    "nativeQuestion": [
+      {
+        "type": "text",
+        "text": "مادر شایان تعدادی از شیشه های سس و ترشی و مربا را که مواد آن ها تمام شده بود را شست و از آن ها برای نگه داری سبزیجات خشک شده استفاده کرد . این کار او کدام روش محافظت از منابع طبیعی و محیط زیست است ؟"
+      },
+      {
+        "type": "input",
+        "step": 0
+      }
+    ],
+    "nativeAnswer": [
+      {
+        "type": "text",
+        "text": "د"
+      }
+    ],
+    "nativeEdition": "1405-visual-transcription-v1"
   },
   {
     "id": "g7-ch05-mcq-004-1405",
@@ -1267,19 +1780,19 @@
         "prompt": "گزینهٔ چاپی کتاب را انتخاب کن.",
         "options": [
           {
-            "text": "گزینهٔ الف",
+            "text": "الف- بتن و فولاد",
             "correct": true
           },
           {
-            "text": "گزینهٔ ب",
+            "text": "ب- آجر و سیمان",
             "correct": false
           },
           {
-            "text": "گزینهٔ ج",
+            "text": "ج- خشت و گل",
             "correct": false
           },
           {
-            "text": "گزینهٔ د",
+            "text": "د- سنگ و گل",
             "correct": false
           }
         ],
@@ -1305,7 +1818,24 @@
     "visuals": [],
     "originalFigureVisual": null,
     "promptVisual": null,
-    "legacyProgress": []
+    "legacyProgress": [],
+    "nativeQuestion": [
+      {
+        "type": "text",
+        "text": "استفاده از کدام مواد ، استحکام خانه ها را در برابر حوادث طبیعی مانند زمین لرزه و سیل بیش تر می کند ؟"
+      },
+      {
+        "type": "input",
+        "step": 0
+      }
+    ],
+    "nativeAnswer": [
+      {
+        "type": "text",
+        "text": "الف"
+      }
+    ],
+    "nativeEdition": "1405-visual-transcription-v1"
   },
   {
     "id": "g7-ch05-mcq-005-1405",
@@ -1322,19 +1852,19 @@
         "prompt": "گزینهٔ چاپی کتاب را انتخاب کن.",
         "options": [
           {
-            "text": "گزینهٔ الف",
+            "text": "الف- شناسایی معدن و بیرون آوردن سنگ معدن از دل زمین",
             "correct": false
           },
           {
-            "text": "گزینهٔ ب",
+            "text": "ب- خالص سازی سنگ معدن",
             "correct": false
           },
           {
-            "text": "گزینهٔ ج",
+            "text": "ج- گرما دادن مخلوط سنگ آهن ، کربن و سنگ آهک در کوره",
             "correct": true
           },
           {
-            "text": "گزینهٔ د",
+            "text": "د- تولید ورقه های فلز آهن",
             "correct": false
           }
         ],
@@ -1360,6 +1890,28 @@
     "visuals": [],
     "originalFigureVisual": null,
     "promptVisual": null,
-    "legacyProgress": []
+    "legacyProgress": [],
+    "nativeQuestion": [
+      {
+        "type": "text",
+        "text": "شکل مقابل ، کدام مرحله از مراحل استخراج فلز آهن را نشان می دهد ؟"
+      },
+      {
+        "type": "figure",
+        "asset": "pdf:workbook.pdf#19,79,644,175,792",
+        "text": ""
+      },
+      {
+        "type": "input",
+        "step": 0
+      }
+    ],
+    "nativeAnswer": [
+      {
+        "type": "text",
+        "text": "ج"
+      }
+    ],
+    "nativeEdition": "1405-visual-transcription-v1"
   }
 ]
