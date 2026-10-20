@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "outputs": [
+    {
+      "kind": "debug",
+      "path": "app/build/outputs/apk/debug/app-debug.apk",
+      "bytes": 33334544,
+      "sha256": "404c1277030186f20ff10ba458dd96b9e371f180d492a64ed8fcaef69ba2ab17",
+      "assetEntries": 85,
+      "compressedAssetBytes": 14140181,
+      "previousThreeChapterApkBytes": 47596130
+    },
+    {
+      "kind": "releaseBundle",
+      "path": "app/build/outputs/bundle/release/app-release.aab",
+      "bytes": 18170898,
+      "sha256": "aadb120bf98ce7f57ab59f5b584653e05bc20e1a4f382042ee77f13b6db60502",
+      "assetEntries": 85,
+      "compressedAssetBytes": 14015214,
+      "previousThreeChapterApkBytes": 47596130
+    }
+  ]
+}

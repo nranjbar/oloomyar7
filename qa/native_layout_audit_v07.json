@@ -1,0 +1,5622 @@
+{
+  "status": "PASS",
+  "cases": [
+    {
+      "question": "g7-ch01-main-001-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 3,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch01-main-001-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch01-main-002-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 3,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch01-main-002-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch01-main-003-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch01-main-003-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch01-main-004-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch01-main-004-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch01-main-005-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 3,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch01-main-005-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch01-main-006-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch01-main-006-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch01-main-007-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch01-main-007-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch01-main-008-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch01-main-008-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-main-001-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 7,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-main-001-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-main-002-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 9,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-main-002-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-main-003-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-main-003-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-main-004-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 4,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-main-004-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-main-005-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-main-005-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-main-006-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 4,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-main-006-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-main-007-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-main-007-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-main-008-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-main-008-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-main-009-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-main-009-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-main-010-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-main-010-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-main-011-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 3,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-main-011-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-main-012-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 4,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-main-012-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-main-013-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-main-013-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-main-014-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 2,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-main-014-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-main-015-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 6,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-main-015-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-mcq-001-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-mcq-001-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-mcq-002-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-mcq-002-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-mcq-003-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-mcq-003-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-mcq-004-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-mcq-004-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-mcq-005-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-mcq-005-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-001-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 8,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-001-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-002-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-002-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-003-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-003-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-004-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-004-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-005-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-005-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-006-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-006-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-007-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-007-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-008-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 8,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-008-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-009-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 9,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-009-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-010-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 6,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-010-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-011-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 13,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-011-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-012-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 3,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-012-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-013-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-013-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-014-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 2,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-014-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-015-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 8,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-015-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-016-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-016-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-017-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 7,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-017-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-018-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-018-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-019-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-019-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-020-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-020-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-021-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 4,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-021-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-022-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 2,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-022-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-023-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 2,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-023-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-024-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-024-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-mcq-001-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-mcq-001-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-mcq-002-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-mcq-002-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-mcq-003-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-mcq-003-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-mcq-004-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-mcq-004-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-mcq-005-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-mcq-005-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-mcq-006-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-mcq-006-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-mcq-007-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-mcq-007-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-main-001-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 4,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-main-001-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-main-002-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 2,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-main-002-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-main-003-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-main-003-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-main-004-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 2,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-main-004-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-main-005-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-main-005-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-main-006-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 3,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-main-006-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-main-007-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 2,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-main-007-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-main-008-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 2,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-main-008-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-main-009-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 6,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-main-009-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-main-010-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 3,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-main-010-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-main-011-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 5,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-main-011-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-main-012-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-main-012-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-main-013-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 7,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-main-013-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-main-014-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 2,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-main-014-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-main-015-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 1,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-main-015-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-main-016-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 4,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-main-016-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-main-017-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 6,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-main-017-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-main-018-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-main-018-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-main-019-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 5,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-main-019-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-mcq-001-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-mcq-001-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-mcq-002-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-mcq-002-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-mcq-003-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-mcq-003-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-mcq-004-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-mcq-004-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-main-001-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 8,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-main-001-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-main-002-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 10,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-main-002-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-main-003-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-main-003-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-main-004-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-main-004-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-main-005-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 2,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-main-005-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-main-006-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-main-006-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-main-007-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 1,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-main-007-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-main-008-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 4,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-main-008-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-main-009-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 2,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-main-009-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-main-010-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 2,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-main-010-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-main-011-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 7,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-main-011-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-main-012-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 2,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-main-012-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-main-013-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-main-013-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-main-014-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 2,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-main-014-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-main-015-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 3,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-main-015-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-main-016-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-main-016-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-main-017-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 2,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-main-017-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-mcq-001-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-mcq-001-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-mcq-002-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-mcq-002-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-mcq-003-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-mcq-003-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-mcq-004-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-mcq-004-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-mcq-005-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-mcq-005-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 1,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch01-main-001-1405",
+      "answer": false,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 3,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch01-main-001-1405",
+      "answer": true,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch01-main-002-1405",
+      "answer": false,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 3,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch01-main-002-1405",
+      "answer": true,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch01-main-003-1405",
+      "answer": false,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch01-main-003-1405",
+      "answer": true,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch01-main-004-1405",
+      "answer": false,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch01-main-004-1405",
+      "answer": true,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch01-main-005-1405",
+      "answer": false,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 3,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch01-main-005-1405",
+      "answer": true,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch01-main-006-1405",
+      "answer": false,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch01-main-006-1405",
+      "answer": true,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch01-main-007-1405",
+      "answer": false,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch01-main-007-1405",
+      "answer": true,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch01-main-008-1405",
+      "answer": false,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch01-main-008-1405",
+      "answer": true,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-main-001-1405",
+      "answer": false,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 7,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-main-001-1405",
+      "answer": true,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-main-002-1405",
+      "answer": false,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 9,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-main-002-1405",
+      "answer": true,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-main-003-1405",
+      "answer": false,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-main-003-1405",
+      "answer": true,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-main-004-1405",
+      "answer": false,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 4,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-main-004-1405",
+      "answer": true,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-main-005-1405",
+      "answer": false,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-main-005-1405",
+      "answer": true,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-main-006-1405",
+      "answer": false,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 4,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-main-006-1405",
+      "answer": true,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-main-007-1405",
+      "answer": false,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-main-007-1405",
+      "answer": true,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-main-008-1405",
+      "answer": false,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-main-008-1405",
+      "answer": true,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-main-009-1405",
+      "answer": false,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-main-009-1405",
+      "answer": true,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-main-010-1405",
+      "answer": false,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-main-010-1405",
+      "answer": true,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-main-011-1405",
+      "answer": false,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 3,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-main-011-1405",
+      "answer": true,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-main-012-1405",
+      "answer": false,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 4,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-main-012-1405",
+      "answer": true,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-main-013-1405",
+      "answer": false,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-main-013-1405",
+      "answer": true,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-main-014-1405",
+      "answer": false,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 2,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-main-014-1405",
+      "answer": true,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-main-015-1405",
+      "answer": false,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 6,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-main-015-1405",
+      "answer": true,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-mcq-001-1405",
+      "answer": false,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-mcq-001-1405",
+      "answer": true,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-mcq-002-1405",
+      "answer": false,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-mcq-002-1405",
+      "answer": true,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-mcq-003-1405",
+      "answer": false,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-mcq-003-1405",
+      "answer": true,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-mcq-004-1405",
+      "answer": false,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-mcq-004-1405",
+      "answer": true,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-mcq-005-1405",
+      "answer": false,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-mcq-005-1405",
+      "answer": true,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-001-1405",
+      "answer": false,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 8,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-001-1405",
+      "answer": true,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-002-1405",
+      "answer": false,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-002-1405",
+      "answer": true,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-003-1405",
+      "answer": false,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-003-1405",
+      "answer": true,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-004-1405",
+      "answer": false,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-004-1405",
+      "answer": true,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-005-1405",
+      "answer": false,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-005-1405",
+      "answer": true,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-006-1405",
+      "answer": false,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-006-1405",
+      "answer": true,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-007-1405",
+      "answer": false,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-007-1405",
+      "answer": true,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-008-1405",
+      "answer": false,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 8,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-008-1405",
+      "answer": true,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-009-1405",
+      "answer": false,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 9,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-009-1405",
+      "answer": true,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-010-1405",
+      "answer": false,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 6,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-010-1405",
+      "answer": true,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-011-1405",
+      "answer": false,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 13,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-011-1405",
+      "answer": true,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-012-1405",
+      "answer": false,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 3,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-012-1405",
+      "answer": true,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-013-1405",
+      "answer": false,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-013-1405",
+      "answer": true,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-014-1405",
+      "answer": false,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 2,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-014-1405",
+      "answer": true,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-015-1405",
+      "answer": false,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 8,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-015-1405",
+      "answer": true,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-016-1405",
+      "answer": false,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-016-1405",
+      "answer": true,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-017-1405",
+      "answer": false,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 7,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-017-1405",
+      "answer": true,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-018-1405",
+      "answer": false,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-018-1405",
+      "answer": true,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-019-1405",
+      "answer": false,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-019-1405",
+      "answer": true,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-020-1405",
+      "answer": false,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-020-1405",
+      "answer": true,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-021-1405",
+      "answer": false,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 4,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-021-1405",
+      "answer": true,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-022-1405",
+      "answer": false,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 2,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-022-1405",
+      "answer": true,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-023-1405",
+      "answer": false,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 2,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-023-1405",
+      "answer": true,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-024-1405",
+      "answer": false,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-024-1405",
+      "answer": true,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-mcq-001-1405",
+      "answer": false,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-mcq-001-1405",
+      "answer": true,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-mcq-002-1405",
+      "answer": false,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-mcq-002-1405",
+      "answer": true,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-mcq-003-1405",
+      "answer": false,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-mcq-003-1405",
+      "answer": true,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-mcq-004-1405",
+      "answer": false,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-mcq-004-1405",
+      "answer": true,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-mcq-005-1405",
+      "answer": false,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-mcq-005-1405",
+      "answer": true,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-mcq-006-1405",
+      "answer": false,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-mcq-006-1405",
+      "answer": true,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-mcq-007-1405",
+      "answer": false,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-mcq-007-1405",
+      "answer": true,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-main-001-1405",
+      "answer": false,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 4,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-main-001-1405",
+      "answer": true,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-main-002-1405",
+      "answer": false,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 2,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-main-002-1405",
+      "answer": true,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-main-003-1405",
+      "answer": false,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-main-003-1405",
+      "answer": true,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-main-004-1405",
+      "answer": false,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 2,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-main-004-1405",
+      "answer": true,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-main-005-1405",
+      "answer": false,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-main-005-1405",
+      "answer": true,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-main-006-1405",
+      "answer": false,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 3,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-main-006-1405",
+      "answer": true,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-main-007-1405",
+      "answer": false,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 2,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-main-007-1405",
+      "answer": true,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-main-008-1405",
+      "answer": false,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 2,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-main-008-1405",
+      "answer": true,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-main-009-1405",
+      "answer": false,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 6,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-main-009-1405",
+      "answer": true,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-main-010-1405",
+      "answer": false,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 3,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-main-010-1405",
+      "answer": true,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-main-011-1405",
+      "answer": false,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 5,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-main-011-1405",
+      "answer": true,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-main-012-1405",
+      "answer": false,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-main-012-1405",
+      "answer": true,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-main-013-1405",
+      "answer": false,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 7,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-main-013-1405",
+      "answer": true,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-main-014-1405",
+      "answer": false,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 2,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-main-014-1405",
+      "answer": true,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-main-015-1405",
+      "answer": false,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 1,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-main-015-1405",
+      "answer": true,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-main-016-1405",
+      "answer": false,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 4,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-main-016-1405",
+      "answer": true,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-main-017-1405",
+      "answer": false,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 6,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-main-017-1405",
+      "answer": true,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-main-018-1405",
+      "answer": false,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-main-018-1405",
+      "answer": true,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-main-019-1405",
+      "answer": false,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 5,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-main-019-1405",
+      "answer": true,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-mcq-001-1405",
+      "answer": false,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-mcq-001-1405",
+      "answer": true,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-mcq-002-1405",
+      "answer": false,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-mcq-002-1405",
+      "answer": true,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-mcq-003-1405",
+      "answer": false,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-mcq-003-1405",
+      "answer": true,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-mcq-004-1405",
+      "answer": false,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-mcq-004-1405",
+      "answer": true,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-main-001-1405",
+      "answer": false,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 8,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-main-001-1405",
+      "answer": true,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-main-002-1405",
+      "answer": false,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 10,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-main-002-1405",
+      "answer": true,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-main-003-1405",
+      "answer": false,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-main-003-1405",
+      "answer": true,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-main-004-1405",
+      "answer": false,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-main-004-1405",
+      "answer": true,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-main-005-1405",
+      "answer": false,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 2,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-main-005-1405",
+      "answer": true,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-main-006-1405",
+      "answer": false,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-main-006-1405",
+      "answer": true,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-main-007-1405",
+      "answer": false,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 1,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-main-007-1405",
+      "answer": true,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-main-008-1405",
+      "answer": false,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 4,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-main-008-1405",
+      "answer": true,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-main-009-1405",
+      "answer": false,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 2,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-main-009-1405",
+      "answer": true,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-main-010-1405",
+      "answer": false,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 2,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-main-010-1405",
+      "answer": true,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-main-011-1405",
+      "answer": false,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 7,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-main-011-1405",
+      "answer": true,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-main-012-1405",
+      "answer": false,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 2,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-main-012-1405",
+      "answer": true,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-main-013-1405",
+      "answer": false,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-main-013-1405",
+      "answer": true,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-main-014-1405",
+      "answer": false,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 2,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-main-014-1405",
+      "answer": true,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-main-015-1405",
+      "answer": false,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 3,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-main-015-1405",
+      "answer": true,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-main-016-1405",
+      "answer": false,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-main-016-1405",
+      "answer": true,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-main-017-1405",
+      "answer": false,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 2,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-main-017-1405",
+      "answer": true,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-mcq-001-1405",
+      "answer": false,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-mcq-001-1405",
+      "answer": true,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-mcq-002-1405",
+      "answer": false,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-mcq-002-1405",
+      "answer": true,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-mcq-003-1405",
+      "answer": false,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-mcq-003-1405",
+      "answer": true,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-mcq-004-1405",
+      "answer": false,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-mcq-004-1405",
+      "answer": true,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-mcq-005-1405",
+      "answer": false,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-mcq-005-1405",
+      "answer": true,
+      "screenWidthDp": 360,
+      "fontScale": 1.5,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch01-main-001-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 3,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch01-main-001-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch01-main-002-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 3,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch01-main-002-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch01-main-003-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch01-main-003-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch01-main-004-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch01-main-004-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch01-main-005-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 3,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch01-main-005-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch01-main-006-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch01-main-006-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch01-main-007-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch01-main-007-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch01-main-008-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch01-main-008-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-main-001-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 7,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-main-001-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-main-002-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 9,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-main-002-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-main-003-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-main-003-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-main-004-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 4,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-main-004-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-main-005-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-main-005-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-main-006-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 4,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-main-006-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-main-007-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-main-007-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-main-008-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-main-008-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-main-009-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-main-009-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-main-010-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-main-010-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-main-011-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 3,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-main-011-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-main-012-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 4,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-main-012-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-main-013-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-main-013-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-main-014-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 2,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-main-014-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-main-015-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 6,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-main-015-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-mcq-001-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-mcq-001-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-mcq-002-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-mcq-002-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-mcq-003-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-mcq-003-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-mcq-004-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-mcq-004-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-mcq-005-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch02-mcq-005-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-001-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 8,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-001-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-002-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-002-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-003-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-003-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-004-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-004-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-005-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-005-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-006-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-006-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-007-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-007-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-008-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 8,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-008-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-009-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 9,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-009-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-010-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 6,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-010-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-011-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 13,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-011-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-012-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 3,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-012-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-013-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-013-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-014-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 2,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-014-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-015-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 8,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-015-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-016-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-016-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-017-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 7,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-017-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-018-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-018-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-019-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-019-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-020-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-020-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-021-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 4,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-021-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-022-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 2,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-022-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-023-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 2,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-023-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-024-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-main-024-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-mcq-001-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-mcq-001-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-mcq-002-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-mcq-002-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-mcq-003-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-mcq-003-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-mcq-004-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-mcq-004-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-mcq-005-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-mcq-005-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-mcq-006-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-mcq-006-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-mcq-007-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch03-mcq-007-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-main-001-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 4,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-main-001-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-main-002-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 2,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-main-002-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-main-003-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-main-003-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-main-004-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 2,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-main-004-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-main-005-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-main-005-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-main-006-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 3,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-main-006-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-main-007-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 2,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-main-007-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-main-008-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 2,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-main-008-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-main-009-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 6,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-main-009-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-main-010-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 3,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-main-010-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-main-011-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 5,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-main-011-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-main-012-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-main-012-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-main-013-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 7,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-main-013-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-main-014-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 2,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-main-014-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-main-015-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 1,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-main-015-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-main-016-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 4,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-main-016-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-main-017-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 6,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-main-017-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-main-018-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-main-018-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-main-019-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 5,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-main-019-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-mcq-001-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-mcq-001-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-mcq-002-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-mcq-002-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-mcq-003-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-mcq-003-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-mcq-004-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch04-mcq-004-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-main-001-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 8,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-main-001-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-main-002-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 10,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-main-002-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-main-003-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-main-003-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-main-004-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-main-004-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-main-005-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 2,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-main-005-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-main-006-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-main-006-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-main-007-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 1,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-main-007-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-main-008-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 4,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-main-008-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-main-009-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 2,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-main-009-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-main-010-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 2,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-main-010-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-main-011-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 7,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-main-011-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-main-012-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 2,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-main-012-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-main-013-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-main-013-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-main-014-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 2,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-main-014-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-main-015-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 3,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-main-015-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-main-016-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-main-016-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-main-017-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 2,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-main-017-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-mcq-001-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-mcq-001-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-mcq-002-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-mcq-002-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-mcq-003-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-mcq-003-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-mcq-004-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-mcq-004-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-mcq-005-1405",
+      "answer": false,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "question": "g7-ch05-mcq-005-1405",
+      "answer": true,
+      "screenWidthDp": 320,
+      "fontScale": 2,
+      "controls": 0,
+      "status": "PASS",
+      "error": null
+    }
+  ],
+  "failures": []
+}

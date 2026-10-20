@@ -1,0 +1,167 @@
+{
+  "status": "PASS",
+  "version": "0.7.0-grade7-1405",
+  "versionCode": 8,
+  "verifiedAtUtc": "2026-10-20T18:58:25.386Z",
+  "sourceCommit": "9bf62ff782da876ad1c33c038210de8cb63c560d",
+  "runUrl": "https://github.com/nranjbar/oloomyar7/actions/runs/39477236681",
+  "workflowConclusion": "success",
+  "artifacts": [
+    {
+      "id": 12291391674,
+      "name": "OloomYar7-UI-Reports",
+      "archiveBytes": 33376879,
+      "digest": "sha256:30288b2dae8189eaca0fc33970f410f849a7bc3386ae540c0d4ff0eea663acfb",
+      "expiresAt": "2027-01-18T18:43:27Z"
+    },
+    {
+      "id": 12290705052,
+      "name": "OloomYar7-0.7-Unsigned-AAB",
+      "archiveBytes": 18036996,
+      "digest": "sha256:cf6b75148df48684ef33215c9ec4261b7b4cd23253467d68d04a52dcfff59d27",
+      "expiresAt": "2027-01-18T18:43:27Z"
+    },
+    {
+      "id": 12288574971,
+      "name": "OloomYar7-1405-All15-APK",
+      "archiveBytes": 32733313,
+      "digest": "sha256:a8710c993e8de173619481fcc6203d2f9504deab2e55d8049b1f465fa62591c5",
+      "expiresAt": "2026-11-03T18:48:04Z"
+    }
+  ],
+  "unit": {
+    "status": "PASS",
+    "task": ":app:testDebugUnitTest",
+    "tests": 41,
+    "failures": 0,
+    "skipped": 0,
+    "xmlFiles": 9,
+    "countEvidence": "Executed JUnit XML, not source inventory."
+  },
+  "androidApi35": {
+    "status": "PASS",
+    "tests": 43,
+    "failures": 0,
+    "skipped": 0,
+    "xmlFiles": 1
+  },
+  "installAndProcessRestore": {
+    "status": "PASS",
+    "oldVersion": "0.6.0",
+    "newVersion": "0.7.0",
+    "installReplacement": true,
+    "oldCompletionPreserved": true,
+    "draftSelectionsHintsAndSeedPreserved": true,
+    "viewportPreserved": true,
+    "answerStayedLocked": true,
+    "bookmarksAndDisplaySettingsPreserved": true,
+    "pidBefore": "5967",
+    "pidAfterStop": "",
+    "pidRestored": "6020",
+    "tests": 3
+  },
+  "packages": [
+    {
+      "kind": "debug",
+      "path": "app/build/outputs/apk/debug/app-debug.apk",
+      "bytes": 33334544,
+      "sha256": "404c1277030186f20ff10ba458dd96b9e371f180d492a64ed8fcaef69ba2ab17",
+      "assetEntries": 85,
+      "compressedAssetBytes": 14140181,
+      "previousThreeChapterApkBytes": 47596130
+    },
+    {
+      "kind": "releaseBundle",
+      "path": "app/build/outputs/bundle/release/app-release.aab",
+      "bytes": 18170898,
+      "sha256": "aadb120bf98ce7f57ab59f5b584653e05bc20e1a4f382042ee77f13b6db60502",
+      "assetEntries": 85,
+      "compressedAssetBytes": 14015214,
+      "previousThreeChapterApkBytes": 47596130
+    }
+  ],
+  "content": {
+    "status": "PASS",
+    "chapters": 15,
+    "questions": 317,
+    "learningGroups": 334,
+    "hints": 668,
+    "nativeQuestions": 104,
+    "nativeAnswers": 104,
+    "firstFiveChapterCounts": [
+      8,
+      20,
+      31,
+      23,
+      22
+    ],
+    "chaptersSixToFifteenQuestions": 213,
+    "chaptersSixToFifteenDataUnchanged": true,
+    "fullQuestionOrAnswerScreenshotsInNativeBlocks": 0,
+    "nativeTables": 6,
+    "nativeMathBlocks": 8,
+    "manualPdfReauditThisTurn": true,
+    "sourceWorkbookPages": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19
+    ],
+    "sourceAnswerPages": 9,
+    "sourceReviewReceipt": "qa/first_five_source_recheck_2026_10_20.json",
+    "sourceWordingNotesPreservedByAuthorDecision": true,
+    "finalQuestionsIncluded": false
+  },
+  "nativeGeometry": {
+    "status": "PASS",
+    "frames": 624,
+    "questions": 104,
+    "referenceAnswers": 104,
+    "configurations": [
+      {
+        "screenWidthDp": 320,
+        "fontScale": 1,
+        "frames": 208
+      },
+      {
+        "screenWidthDp": 360,
+        "fontScale": 1.5,
+        "frames": 208
+      },
+      {
+        "screenWidthDp": 320,
+        "fontScale": 2,
+        "frames": 208
+      }
+    ],
+    "overlappingControls": 0,
+    "controlsOutsideQuestionWidth": 0,
+    "tablesOutsidePortraitWidth": 0,
+    "clippedTextLayouts": 0,
+    "realWidthAndHeightClippingNegativeControls": "PASS",
+    "report": "qa/native_layout_audit_v07.json"
+  },
+  "screenshots": [
+    "qa/screenshots/v07/chapter-3.png",
+    "qa/screenshots/v07/one-hint-heading.png",
+    "qa/screenshots/v07/quantity-table.png",
+    "qa/screenshots/v07/equipment-table.png",
+    "qa/screenshots/v07/chapter-3-q21-blanks.png",
+    "qa/screenshots/v07/iron-table.png"
+  ],
+  "summaryFa": "رفع ایرادهای فصل‌های ۱ تا ۵، مقابلهٔ دوبارهٔ ۱۰۴ سؤال و پاسخ با منبع ۱۴۰۵، موفقیت ۶۲۴ حالت نمایش، ۴۱ آزمون واحد، ۴۳ آزمون رابط و ۳ آزمون ارتقا و بازیابی پیشرفت."
+}
