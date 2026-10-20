@@ -202,12 +202,15 @@ private fun NativeOptionCell(step: LearningStep, state: QuestionPractice, exam: 
     val fill = when (mark) { ResponseMark.CORRECT -> GreenSoft; ResponseMark.INCORRECT -> DangerSoft; else -> SelectionSoft }
     OutlinedButton(enabled = exam || (!state.revealed && !state.locked(step)), onClick = { onChange(emptyList()); open = true },
         colors = ButtonDefaults.outlinedButtonColors(containerColor = if (selected == null) BlueSoft else fill),
-        modifier = Modifier.heightIn(min = 48.dp)) { WorkbookText(selected?.let { step.options[it].text } ?: "انتخاب") }
-    if (open) ModalBottomSheet(onDismissRequest = { open = false }) {
-        LazyColumn(Modifier.fillMaxWidth().heightIn(max = 520.dp).padding(20.dp).navigationBarsPadding(), verticalArrangement = Arrangement.spacedBy(10.dp)) {
+        modifier = Modifier.heightIn(min = 48.dp).testTag("table-choice-${step.id}")) { WorkbookText(selected?.let { step.options[it].text } ?: "انتخاب") }
+    if (open) ModalBottomSheet(onDismissRequest = { open = false },
+        sheetState = rememberModalBottomSheetState(skipPartiallyExpanded = true)) {
+        LazyColumn(Modifier.fillMaxWidth().heightIn(max = 520.dp).padding(20.dp).navigationBarsPadding()
+            .testTag("table-choice-sheet-${step.id}"), verticalArrangement = Arrangement.spacedBy(10.dp)) {
             item { Text("انتخاب پاسخ", style = MaterialTheme.typography.titleLarge) }
             items(step.options.indices.shuffled(Random(state.shuffleSeed xor step.id.hashCode())), key = { it }) { i ->
-                OutlinedButton(onClick = { if (open) { open = false; onChange(listOf(i.toString())) } }, modifier = Modifier.fillMaxWidth().heightIn(min = 56.dp)) {
+                OutlinedButton(onClick = { if (open) { open = false; onChange(listOf(i.toString())) } },
+                    modifier = Modifier.fillMaxWidth().heightIn(min = 56.dp).testTag("table-option-${step.id}-$i")) {
                     WorkbookText(step.options[i].text)
                 }
             }

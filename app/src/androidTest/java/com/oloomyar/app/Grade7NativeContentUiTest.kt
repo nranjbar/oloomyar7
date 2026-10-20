@@ -12,6 +12,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.semantics.SemanticsActions
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.test.*
 import androidx.compose.ui.test.junit4.createComposeRule
@@ -47,10 +48,24 @@ class Grade7NativeContentUiTest {
         }
         compose.waitUntil(10000) { compose.onAllNodesWithTag("native-source-question").fetchSemanticsNodes().isNotEmpty() }
     }
+    /** A table scrolls horizontally inside the vertically scrolling question.
+     * performScrollTo only moves the nearest scroll parent, so also position
+     * the control in the question viewport before sending a real touch.
+     */
+    private fun controlInQuestion(tag:String):SemanticsNodeInteraction {
+        val control=compose.onNodeWithTag(tag)
+        control.performScrollTo()
+        val bounds=control.getUnclippedBoundsInRoot()
+        val body=compose.onNodeWithTag("question-body")
+        val viewport=body.getUnclippedBoundsInRoot()
+        val delta=with(compose.density) { ((bounds.top+bounds.bottom-viewport.top-viewport.bottom)/2).toPx() }
+        body.performSemanticsAction(SemanticsActions.ScrollBy) { it(0f,delta) }
+        return control.assertIsDisplayed()
+    }
     private fun select(s:LearningStep,row:Int,text:String) {
-        compose.onNodeWithTag("blank-${s.id}-$row").performScrollTo().performClick()
+        controlInQuestion("blank-${s.id}-$row").performClick()
         compose.onNodeWithTag("choice-sheet").performScrollToNode(hasTestTag("cloze-choice-$text"))
-        compose.onNodeWithTag("cloze-choice-$text").performClick()
+        compose.onNodeWithTag("cloze-choice-$text").assertIsDisplayed().performClick()
     }
     private fun choose(text:String) {
         compose.onNodeWithTag("question-body").performScrollToNode(hasText(workbookBidi(text)))
@@ -96,12 +111,16 @@ class Grade7NativeContentUiTest {
         val q=question(5,2); val s=q.steps.single();open(q,1.5f)
         select(s,0,s.pairs[0].right);select(s,1,"کمتر")
         compose.onNodeWithText("بررسی پاسخ").assertIsNotEnabled()
-        compose.onNodeWithTag("blank-${s.id}-0").performScrollTo().performClick()
-        compose.onNodeWithText("بستن").performClick()
+        controlInQuestion("blank-${s.id}-0").performClick()
+        compose.onNodeWithTag("choice-sheet").performScrollToNode(hasText("بستن"))
+        compose.onNodeWithText("بستن").assertIsDisplayed().performClick()
         val store=WorkbookProgress(context,"native_ui",listOf(q))
         val cleared=QuestionDraftCodec.decode(store.draft(q.id),q)
         assertEquals("",cleared.values(s)[0]);assertEquals("کمتر",cleared.values(s)[1]);assertEquals(0,cleared.shownHints)
         s.pairs.forEachIndexed { row,pair -> select(s,row,pair.right) }
+        val completed=QuestionDraftCodec.decode(store.draft(q.id),q)
+        assertEquals(s.pairs.map { it.right },completed.values(s))
+        assertEquals(0,completed.shownHints)
         compose.onNodeWithText("بررسی پاسخ").assertIsEnabled().performClick()
         compose.onNodeWithTag("reveal-answer").assertIsEnabled()
         compose.onNodeWithTag("native-reference-answer").assertDoesNotExist()
@@ -134,9 +153,11 @@ class Grade7NativeContentUiTest {
     }
     @Test fun quantityDefinitionIsSelectedInsideItsTableCellAtLargeFont() {
         val q=question(2,2); val step=q.steps[2];open(q,1.7f)
-        compose.onNodeWithText("انتخاب").performScrollTo().performClick()
-        val correct=step.options.first { it.correct }.text
-        compose.onNodeWithText(workbookBidi(correct)).performScrollTo().performClick()
+        controlInQuestion("table-choice-${step.id}").performClick()
+        val correctIndex=step.options.indexOfFirst { it.correct }
+        val choiceTag="table-option-${step.id}-$correctIndex"
+        compose.onNodeWithTag("table-choice-sheet-${step.id}").performScrollToNode(hasTestTag(choiceTag))
+        compose.onNodeWithTag(choiceTag).assertIsDisplayed().assertTextEquals(workbookBidi(step.options[correctIndex].text)).performClick()
         val state=QuestionDraftCodec.decode(WorkbookProgress(context,"native_ui",listOf(q)).draft(q.id),q)
         assertEquals(listOf(step.options.indexOfFirst { it.correct }.toString()),state.values(step))
         compose.onNodeWithText("بررسی پاسخ").assertIsNotEnabled()
