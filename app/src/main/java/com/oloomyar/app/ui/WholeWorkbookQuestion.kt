@@ -94,6 +94,11 @@ internal fun WholeWorkbookQuestion(
     }
     val inlineStep = question.steps.singleOrNull()?.takeIf { it.clozeTemplate != null }
     val native = question.nativeQuestion.isNotEmpty()
+    val hintedSteps = question.steps.filter { step ->
+        !exam && state.hintLevel(question, step) > 0 &&
+            state.checked[step.id]?.let { !WorkbookAnswers.isCorrect(step, it) } == true
+    }
+    val referenceIndex = if (native) 3 + (if (hintedSteps.isNotEmpty()) 1 else 0) else question.steps.size + 5
     val allCorrect = state.correct(question)
     val finished = !exam && (allCorrect || state.revealed)
     Column(modifier.fillMaxSize()) {
@@ -148,10 +153,32 @@ internal fun WholeWorkbookQuestion(
                     }
                 }
             }
-            item(key = "figures") {
+            if (!native) item(key = "figures") {
                 if (!native) WorkbookQuestionVisuals(question, "تصویر سؤال ${workbookFa(question.sourceNumber)}: ${question.title}")
             }
-            itemsIndexed(question.steps, key = { _, step -> step.id }) { index, step ->
+            if (native && hintedSteps.isNotEmpty()) item(key = "native-hints") {
+                WorkbookPanel(accent = Orange, modifier = Modifier.testTag("native-hints")) {
+                    for (level in 1..2) {
+                        val steps = hintedSteps.filter { state.hintLevel(question, it) >= level }
+                        if (steps.isNotEmpty()) {
+                            Surface(color = OrangeSoft, shape = RoundedCornerShape(16.dp)) {
+                                Column(Modifier.fillMaxWidth().padding(14.dp), verticalArrangement = Arrangement.spacedBy(10.dp)) {
+                                    Text("راهنمایی ${workbookFa(level)}", color = Orange,
+                                        style = MaterialTheme.typography.titleMedium,
+                                        modifier = Modifier.testTag("native-hint-$level"))
+                                    steps.forEachIndexed { index, step ->
+                                        if (index > 0) HorizontalDivider(color = Orange.copy(alpha = .15f))
+                                        if (question.steps.size > 1) WorkbookText(step.prompt,
+                                            bold = true, style = MaterialTheme.typography.bodySmall)
+                                        WorkbookText(if (level == 1) step.hint1 else step.hint2)
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            if (!native) itemsIndexed(question.steps, key = { _, step -> step.id }) { index, step ->
                 WorkbookPanel(accent = Blue) {
                     if (inlineStep == null && !native) {
                         Text(if (question.steps.size == 1) "انتخاب پاسخ" else "قسمت ${workbookFa(index + 1)}", color = Blue, style = MaterialTheme.typography.titleMedium)
@@ -178,7 +205,7 @@ internal fun WholeWorkbookQuestion(
                     }
                 }
             }
-            item(key = "feedback") {
+            if (!native || (!exam && state.checked.isNotEmpty() && !state.revealed)) item(key = "feedback") {
                 if (!exam && state.checked.isNotEmpty() && !state.revealed) {
                     val correctParts = question.steps.sumOf { step ->
                         when (step.kind) {
@@ -219,7 +246,7 @@ internal fun WholeWorkbookQuestion(
                             onImageReady = {
                                 if (pendingReferenceScroll) {
                                     pendingReferenceScroll = false
-                                    jump(question.steps.size + 5)
+                                jump(referenceIndex)
                                 }
                             }) }
                     }
@@ -237,9 +264,9 @@ internal fun WholeWorkbookQuestion(
                 if (!exam) {
                     Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                         TextButton(onClick = { jump(if (native || inlineStep != null) 1 else 3) }, modifier = Modifier.weight(1f)) { Text("انتخاب‌ها") }
-                        TextButton(enabled = state.shownHints > 0, onClick = {
+                        TextButton(enabled = if (native) hintedSteps.isNotEmpty() else state.shownHints > 0, onClick = {
                             val first = question.steps.indexOfFirst { s -> state.checked[s.id]?.let { !WorkbookAnswers.isCorrect(s, it) } == true }.coerceAtLeast(0)
-                            jump(first + 3)
+                            jump(if (native) 2 else first + 3)
                         }, modifier = Modifier.weight(1f)) { Text("راهنما") }
                         TextButton(enabled = state.canReveal(question) && !state.revealed, modifier = Modifier.weight(1f).testTag("reveal-answer"), onClick = {
                             val latest = QuestionDraftCodec.decode(json, question)
@@ -249,7 +276,7 @@ internal fun WholeWorkbookQuestion(
                                 // Only an explicit request to view the key moves the viewport.
                                 // Selection and checking keep the current sentence in place.
                                 // Compose the target first; final alignment waits for actual PDF/image layout.
-                                coroutine.launch { withFrameNanos { }; list.scrollToItem(question.steps.size + 5) }
+                                coroutine.launch { withFrameNanos { }; list.scrollToItem(referenceIndex) }
                             }
                         }) {
                             Icon(if (state.canReveal(question)) Icons.Default.Visibility else Icons.Default.Lock, null, Modifier.size(16.dp))

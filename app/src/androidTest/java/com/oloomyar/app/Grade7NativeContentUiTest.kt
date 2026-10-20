@@ -4,6 +4,16 @@ import android.content.ContentValues
 import android.content.Context
 import android.content.Intent
 import android.graphics.Bitmap
+import androidx.compose.foundation.layout.*
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.geometry.Rect
+import androidx.compose.ui.semantics.SemanticsProperties
+import androidx.compose.ui.semantics.getOrElse
+import androidx.compose.ui.text.TextLayoutResult
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.toSize
+import org.json.JSONObject
+import org.json.JSONArray
 import android.provider.MediaStore
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.mutableStateOf
@@ -48,10 +58,7 @@ class Grade7NativeContentUiTest {
         }
         compose.waitUntil(10000) { compose.onAllNodesWithTag("native-source-question").fetchSemanticsNodes().isNotEmpty() }
     }
-    /** A table scrolls horizontally inside the vertically scrolling question.
-     * performScrollTo only moves the nearest scroll parent, so also position
-     * the control in the question viewport before sending a real touch.
-     */
+    /** Send a real touch only after the control is inside the question viewport. */
     private fun controlInQuestion(tag:String):SemanticsNodeInteraction {
         val control=compose.onNodeWithTag(tag)
         control.performScrollTo()
@@ -204,4 +211,127 @@ class Grade7NativeContentUiTest {
             capture("native-05-filtered-question")
         }
     }
+    private fun filled(q:ChapterQuestion):QuestionPractice {
+        var state=QuestionPractice(shuffleSeed=1405)
+        q.steps.forEach { step ->
+            val value=when(step.kind) {
+                StepKind.MATCH -> step.pairs.map { it.right }
+                StepKind.SINGLE -> listOf(step.options.indexOfFirst { it.correct }.toString())
+                StepKind.MULTI -> step.options.indices.filter { step.options[it].correct }.take(step.pick).map { it.toString() }
+                StepKind.ORDER -> step.correctOrder.map { it.toString() }
+                StepKind.CLASSIFY -> step.classifyItems.map { it.category }
+            }
+            state=state.change(step,value)
+        }
+        return state
+    }
+    private data class AuditFrame(val q:ChapterQuestion,val answer:Boolean=false,val width:Int=320,val font:Float=1f)
+    @Test fun all104FilledQuestionsAndAnswersHaveNoOverlappingBlanksOrClippedTablesAtPhoneWidths() {
+        val questions=catalog.chapters.take(5).flatMap { it.questions }
+        val current=mutableStateOf(AuditFrame(questions.first()))
+        compose.setContent {
+            val frame=current.value
+            val density=LocalDensity.current
+            CompositionLocalProvider(LocalDensity provides Density(density.density,frame.font)) {
+                OloomYarTheme {
+                    Box(Modifier.fillMaxSize(),contentAlignment=Alignment.TopStart) {
+                        key(frame) {
+                            Column(Modifier.width(frame.width.dp).verticalScroll(rememberScrollState()).padding(horizontal=34.dp).testTag("layout-audit-viewport")) {
+                                NativeWorkbookContent(frame.q,if(frame.answer)frame.q.nativeAnswer else frame.q.nativeQuestion,
+                                    if(frame.answer)null else filled(frame.q))
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        val report=JSONArray()
+        val controls=SemanticsMatcher("editable source control") {
+            val tag=it.config.getOrElse(SemanticsProperties.TestTag) { "" }
+            tag.startsWith("blank-") || tag.startsWith("table-choice-")
+        }
+        val textNodes=SemanticsMatcher.keyIsDefined(SemanticsActions.GetTextLayoutResult)
+        for((width,font) in listOf(320 to 1f,360 to 1.5f,320 to 2f)) {
+            questions.forEach { q ->
+                for(answer in listOf(false,true)) {
+                    compose.runOnIdle { current.value=AuditFrame(q,answer,width,font) }
+                    compose.waitForIdle()
+                    val rootTag=if(answer)"native-reference-answer" else "native-source-question"
+                    val root=compose.onNodeWithTag(rootTag).fetchSemanticsNode()
+                    val bounds=Rect(root.positionInRoot,root.size.toSize())
+                    val nodes=compose.onAllNodes(controls).fetchSemanticsNodes()
+                    val rectangles=nodes.map { it.config[SemanticsProperties.TestTag] to Rect(it.positionInRoot,it.size.toSize()) }
+                    rectangles.forEach { (tag,rect) ->
+                        assertTrue("${q.id} $width/$font $tag extends past the question: $rect / $bounds",rect.left>=bounds.left-1f && rect.right<=bounds.right+1f)
+                    }
+                    rectangles.forEachIndexed { i,(left,a) ->
+                        rectangles.drop(i+1).forEach { (right,b) ->
+                            val overlapX=minOf(a.right,b.right)-maxOf(a.left,b.left)
+                            val overlapY=minOf(a.bottom,b.bottom)-maxOf(a.top,b.top)
+                            assertFalse("${q.id} $width/$font overlaps $left and $right: $a / $b",overlapX>1f && overlapY>1f)
+                        }
+                    }
+                    compose.onAllNodesWithTag("native-source-table").fetchSemanticsNodes().forEach { table ->
+                        assertTrue("${q.id} table exceeds portrait width",table.positionInRoot.x>=bounds.left-1f && table.positionInRoot.x+table.size.width<=bounds.right+1f)
+                    }
+                    val count=compose.onAllNodes(textNodes,useUnmergedTree=true).fetchSemanticsNodes().size
+                    repeat(count) { index ->
+                        val layouts=mutableListOf<TextLayoutResult>()
+                        compose.onAllNodes(textNodes,useUnmergedTree=true)[index].performSemanticsAction(SemanticsActions.GetTextLayoutResult) { it(layouts) }
+                        layouts.forEach { layout -> assertFalse("${q.id} $width/$font clips text ${layout.layoutInput.text}",layout.hasVisualOverflow) }
+                    }
+                    report.put(JSONObject().put("question",q.id).put("answer",answer).put("screenWidthDp",width).put("fontScale",font).put("controls",rectangles.size).put("status","PASS"))
+                    if(width==320 && font==1f && !answer && q.canonicalForAudit() in setOf("g7_ch02_q02","g7_ch02_q15","g7_ch03_q17","g7_ch05_q02")) capture("layout-${q.canonicalForAudit()}")
+                }
+            }
+        }
+        assertEquals(624,report.length())
+        val values=ContentValues().apply {
+            put(MediaStore.Downloads.DISPLAY_NAME,"native-layout-audit.json")
+            put(MediaStore.Downloads.MIME_TYPE,"application/json")
+            put(MediaStore.Downloads.RELATIVE_PATH,"Download/grade7-screenshots")
+        }
+        val uri=context.contentResolver.insert(MediaStore.Downloads.EXTERNAL_CONTENT_URI,values)!!
+        context.contentResolver.openOutputStream(uri)!!.use { it.write(JSONObject().put("status","PASS").put("cases",report).toString(2).toByteArray()) }
+    }
+    private fun ChapterQuestion.canonicalForAudit()="g7_ch${relatedChapter.toString().padStart(2,'0')}_${if(section=="چهارگزینه‌ای")"mcq" else "q"}${sourceNumber.toString().padStart(2,'0')}"
+
+    @Test fun hintsForMultiplePartsHaveOneHeadingPerLevelAndStayPartSpecific() {
+        val q=question(2,2)
+        val store=WorkbookProgress(context,"native_ui",listOf(q))
+        var state=filled(q)
+        val first=q.steps[0];val second=q.steps[1]
+        state=state.change(first,state.values(first).toMutableList().apply { this[0]=first.pairs[0].choices.first { it!=first.pairs[0].right } })
+        state=state.change(second,state.values(second).toMutableList().apply { this[0]=second.pairs[0].choices.first { it!=second.pairs[0].right } }).submit(q)
+        store.saveDraft(q.id,QuestionDraftCodec.encode(state))
+        open(q)
+        compose.onNodeWithTag("native-hints").performScrollTo()
+        compose.onAllNodesWithText("راهنمایی ۱").assertCountEquals(1)
+        compose.onNodeWithTag("native-hint-2").assertDoesNotExist()
+        compose.onNodeWithText(workbookBidi(first.prompt)).assertExists()
+        compose.onNodeWithText(workbookBidi(second.prompt)).assertExists()
+        capture("layout-hints-two-parts-first-level")
+        select(first,0,first.pairs[0].choices.first { it!=first.pairs[0].right && it!=state.values(first)[0] })
+        select(second,0,second.pairs[0].choices.first { it!=second.pairs[0].right && it!=state.values(second)[0] })
+        compose.onNodeWithText("بررسی پاسخ").performClick()
+        compose.onNodeWithTag("native-hints").performScrollTo()
+        compose.onAllNodesWithText("راهنمایی ۱").assertCountEquals(1)
+        compose.onAllNodesWithText("راهنمایی ۲").assertCountEquals(1)
+        compose.onNodeWithTag("reveal-answer").assertIsEnabled()
+        capture("layout-hints-two-parts-second-level")
+    }
+    @Test fun firstFiveChapterPagesShowTheSuppliedCoverAndActualProgress() {
+        val chapter=catalog.chapters[2]
+        val intent=Intent(context,Grade7WorkbookActivity::class.java).putExtra("chapter",3)
+        ActivityScenario.launch<Grade7WorkbookActivity>(intent).use {
+            compose.waitUntil(10000) { compose.onAllNodesWithContentDescription("جلد فصل 3").fetchSemanticsNodes().isNotEmpty() }
+            compose.onNodeWithTag("chapter-study-cover").assertExists()
+            compose.onNodeWithTag("chapter-study-progress").performScrollTo().assertTextEquals("${workbookFa(chapter.questions.count { chapter.progress.done(it.id) })} از ۳۱ سؤال")
+            capture("layout-chapter-3-cover-progress")
+            compose.onNodeWithTag("chapter-study-continue").performScrollTo().assertIsEnabled().performClick()
+            compose.onNodeWithTag("native-source-question").assertExists()
+            compose.onNodeWithTag("reveal-answer").assertIsNotEnabled()
+        }
+    }
+
 }

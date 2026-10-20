@@ -56,7 +56,7 @@ internal fun NativeWorkbookContent(
             InlineFillBlanksQuestion(step.copy(clozeTemplate = template), display?.values(step).orEmpty(), display?.shuffleSeed ?: 0,
                 mark = { display?.mark(step, it) ?: ResponseMark.EMPTY },
                 locked = { !exam && (display?.revealed == true || display?.locked(step, it) == true) },
-                showInstructions = false) { onChange(step, it) }
+                showInstructions = false, nativeLayout = true) { onChange(step, it) }
         } else {
             WorkbookInput(step, display?.values(step).orEmpty(),
                 !exam && (display?.revealed == true || (step.kind !in setOf(StepKind.MATCH, StepKind.CLASSIFY) && display?.locked(step) == true)),
@@ -83,8 +83,8 @@ internal fun NativeWorkbookContent(
                     else {
                     Text("معادله را از چپ به راست کامل کن.", color = Muted, style = MaterialTheme.typography.bodySmall)
                     CompositionLocalProvider(LocalLayoutDirection provides LayoutDirection.Ltr) {
-                        Column(Modifier.horizontalScroll(rememberScrollState())) {
-                            Row(Modifier.widthIn(min = 460.dp), verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(12.dp)) {
+                        Column {
+                            FlowRow(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(12.dp), verticalArrangement = Arrangement.spacedBy(12.dp)) {
                                 block.text.split(Regex("(?=[+→])|(?<=[+→])")).forEach { fragment ->
                                     Box(Modifier.widthIn(min = 24.dp, max = 180.dp)) { editReactionFragment(fragment, block.step, question, display, exam, onChange) }
                                 }
@@ -115,7 +115,7 @@ private fun editReactionFragment(text: String, index: Int, question: ChapterQues
     val step = question.steps[index]
     if (text.contains("{{")) InlineFillBlanksQuestion(step.copy(clozeTemplate = text.trim()), state?.values(step).orEmpty(), state?.shuffleSeed ?: 0,
         mark = { state?.mark(step, it) ?: ResponseMark.EMPTY }, locked = { !exam && (state?.revealed == true || state?.locked(step, it) == true) },
-        showInstructions = false) { onChange(step, it) }
+        showInstructions = false, nativeLayout = true) { onChange(step, it) }
     else WorkbookText(text.trim())
 }
 
@@ -123,14 +123,14 @@ private fun editReactionFragment(text: String, index: Int, question: ChapterQues
 @Composable
 private fun SourceEquation(parts: List<MathPart>) {
     CompositionLocalProvider(LocalLayoutDirection provides LayoutDirection.Ltr) {
-        Row(Modifier.fillMaxWidth().horizontalScroll(rememberScrollState()).testTag("native-equation").padding(vertical = 8.dp),
-            verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(10.dp)) {
+        FlowRow(Modifier.fillMaxWidth().testTag("native-equation").padding(vertical = 8.dp),
+            horizontalArrangement = Arrangement.spacedBy(10.dp), verticalArrangement = Arrangement.spacedBy(12.dp)) {
             parts.forEach { part ->
-                if (part.numerator != null && part.denominator != null) Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                if (part.numerator != null && part.denominator != null) Column(Modifier.align(Alignment.CenterVertically), horizontalAlignment = Alignment.CenterHorizontally) {
                     WorkbookText(part.numerator)
                     HorizontalDivider(Modifier.widthIn(min = 38.dp).width(56.dp), color = Ink)
                     WorkbookText(part.denominator)
-                } else WorkbookText(part.text)
+                } else WorkbookText(part.text, Modifier.align(Alignment.CenterVertically))
             }
         }
     }
@@ -139,41 +139,57 @@ private fun SourceEquation(parts: List<MathPart>) {
 @Composable
 private fun SourceTable(block: SourceBlock, question: ChapterQuestion, state: QuestionPractice?, exam: Boolean,
                         onChange: (LearningStep, List<String>) -> Unit) {
-    val cols = block.headers.size
-    Text("برای دیدن تمام ستون‌های جدول، آن را به چپ و راست بکش.", style = MaterialTheme.typography.bodySmall, color = Muted)
-    BoxWithConstraints(Modifier.fillMaxWidth()) {
-        val weights = if (block.widths.size == cols) block.widths else List(cols) { 1f }
-        val unit = maxOf(136.dp, maxWidth / weights.sum())
-        Column(Modifier.horizontalScroll(rememberScrollState()).testTag("native-source-table").clip(RoundedCornerShape(12.dp)).border(1.dp, Border, RoundedCornerShape(12.dp))) {
-            (listOf(block.headers) + block.rows).forEachIndexed { row, cells ->
-                SourceTableRow(cells, weights.map { unit * it }, row == 0) { _, cell ->
+    // A short, wide comparison is transposed without changing a cell or its
+    // answer index. Every column then remains visible on a portrait phone.
+    val table = remember(block) {
+        if (block.headers.size > 4 && block.rows.size <= 3) block.copy(
+            headers = listOf(block.headers.first()) + block.rows.map { it.first() },
+            rows = block.headers.indices.drop(1).map { column -> listOf(block.headers[column]) + block.rows.map { it[column] } },
+            widths = emptyList()
+        ) else block
+    }
+    val cols = table.headers.size
+    val weights = if (table.widths.size == cols) table.widths else List(cols) { 1f }
+    if (state != null && table.rows.flatten().any { it.contains("{{") }) {
+        Text("برای تکمیل جدول، خانه‌های شماره‌دار را لمس کن.", color = Muted, style = MaterialTheme.typography.bodySmall)
+    }
+    Column(Modifier.fillMaxWidth().testTag("native-source-table").clip(RoundedCornerShape(12.dp)).border(1.dp, Border, RoundedCornerShape(12.dp))) {
+            (listOf(table.headers) + table.rows).forEachIndexed { row, cells ->
+                SourceTableRow(cells, weights, row) { _, cell ->
                                 val token = Regex("""\{\{(\d+)(?::(\d+))?\}\}""").find(cell)
-                                if (token == null || state == null) WorkbookText(Regex("""\{\{\d+(?::\d+)?\}\}""").replace(cell, "................"), bold = row == 0)
+                                if (token == null || state == null) WorkbookText(Regex("""\{\{\d+(?::\d+)?\}\}""").replace(cell, "................"), bold = row == 0, style = MaterialTheme.typography.bodySmall)
                                 else {
                                     val step = question.steps[token.groupValues[1].toInt()]
                                     if (step.kind == StepKind.MATCH) {
                                         val template = Regex("""\{\{\d+:(\d+)\}\}""").replace(cell) { "{{${it.groupValues[1]}}}" }
                                         InlineFillBlanksQuestion(step.copy(clozeTemplate = template), state.values(step), state.shuffleSeed,
                                             mark = { state.mark(step, it) }, locked = { !exam && (state.revealed || state.locked(step, it)) },
-                                            showInstructions = false) { onChange(step, it) }
+                                            showInstructions = false, nativeLayout = true, compact = true) { onChange(step, it) }
                                     } else NativeOptionCell(step, state, exam) { onChange(step, it) }
                                 }
                 }
             }
         }
-    }
 }
 
 /** Measure each cell once. Draw the grid at the tallest cell's height so long
  * Persian labels keep every row aligned without intrinsic measurement of blanks.
  */
 @Composable
-private fun SourceTableRow(cells: List<String>, widths: List<Dp>, header: Boolean, content: @Composable (Int,String) -> Unit) {
+private fun SourceTableRow(cells: List<String>, weights: List<Float>, row: Int, content: @Composable (Int,String) -> Unit) {
     val density=LocalDensity.current
-    val pixels=widths.map { with(density) { it.roundToPx() } }
+    val header=row==0
+    fun widths(total:Int):List<Int> {
+        val minimum=minOf(with(density) { 56.dp.roundToPx() }, total/weights.size)
+        val remaining=(total-minimum*weights.size).coerceAtLeast(0)
+        val columns=weights.map { minimum+(remaining*it/weights.sum()).toInt() }.toMutableList()
+        columns[columns.lastIndex]+=total-columns.sum()
+        return columns
+    }
     Layout(content = {
-        cells.forEachIndexed { index,text -> Box(Modifier.padding(12.dp)) { content(index,text) } }
-    }, modifier = Modifier.drawBehind {
+        cells.forEachIndexed { index,text -> Box(Modifier.testTag("native-table-cell-$row-$index").padding(horizontal=4.dp,vertical=8.dp)) { content(index,text) } }
+    }, modifier = Modifier.fillMaxWidth().drawBehind {
+        val pixels=widths(size.width.toInt())
         var offset=0f
         pixels.forEachIndexed { index,width ->
             val x=if(layoutDirection==LayoutDirection.Rtl)size.width-offset-width else offset
@@ -183,6 +199,7 @@ private fun SourceTableRow(cells: List<String>, widths: List<Dp>, header: Boolea
         }
         drawLine(Border,Offset(0f,size.height),Offset(size.width,size.height),1.dp.toPx())
     }) { measurables,constraints ->
+        val pixels=widths(constraints.maxWidth)
         val placeables=measurables.mapIndexed { index,m ->
             m.measure(Constraints(minWidth=pixels[index],maxWidth=pixels[index],maxHeight=constraints.maxHeight))
         }
@@ -202,7 +219,8 @@ private fun NativeOptionCell(step: LearningStep, state: QuestionPractice, exam: 
     val fill = when (mark) { ResponseMark.CORRECT -> GreenSoft; ResponseMark.INCORRECT -> DangerSoft; else -> SelectionSoft }
     OutlinedButton(enabled = exam || (!state.revealed && !state.locked(step)), onClick = { onChange(emptyList()); open = true },
         colors = ButtonDefaults.outlinedButtonColors(containerColor = if (selected == null) BlueSoft else fill),
-        modifier = Modifier.heightIn(min = 48.dp).testTag("table-choice-${step.id}")) { WorkbookText(selected?.let { step.options[it].text } ?: "انتخاب") }
+        contentPadding = PaddingValues(horizontal=4.dp,vertical=6.dp),
+        modifier = Modifier.fillMaxWidth().heightIn(min = 48.dp).testTag("table-choice-${step.id}")) { WorkbookText(selected?.let { step.options[it].text } ?: "انتخاب", style = MaterialTheme.typography.bodySmall) }
     if (open) ModalBottomSheet(onDismissRequest = { open = false },
         sheetState = rememberModalBottomSheetState(skipPartiallyExpanded = true)) {
         LazyColumn(Modifier.fillMaxWidth().heightIn(max = 520.dp).padding(20.dp).navigationBarsPadding()
@@ -229,7 +247,7 @@ private fun NativeBarChart(step: LearningStep, state: QuestionPractice?, exam: B
     Text("رسم تعاملی نمودار • ابتدا فاصلهٔ درجه‌های محور را انتخاب کن و سپس ارتفاع هر ستون را تنظیم کن.", color = Blue, style = MaterialTheme.typography.bodySmall)
     InlineFillBlanksQuestion(step.copy(clozeTemplate = "فاصلهٔ درجه‌های محور عمودی : {{0}}"), values, state?.shuffleSeed ?: 0,
         mark = { state?.mark(step, it) ?: ResponseMark.EMPTY }, locked = { !exam && (state?.revealed == true || state?.locked(step, it) == true) },
-        showInstructions = false) { onChange(step, it) }
+        showInstructions = false, nativeLayout = true) { onChange(step, it) }
     CompositionLocalProvider(LocalLayoutDirection provides LayoutDirection.Ltr) {
         Row(Modifier.fillMaxWidth().height(210.dp).testTag("student-bar-chart"), verticalAlignment = Alignment.Bottom) {
             Column(Modifier.width(66.dp).fillMaxHeight(), verticalArrangement = Arrangement.SpaceBetween, horizontalAlignment = Alignment.End) {
@@ -251,5 +269,5 @@ private fun NativeBarChart(step: LearningStep, state: QuestionPractice?, exam: B
     Text("تولید سیمان ( تن )", color = Muted, style = MaterialTheme.typography.bodySmall)
     for (i in 0..4) InlineFillBlanksQuestion(step.copy(clozeTemplate = "${listOf("۱۳۸۳","۱۳۸۹","۱۳۹۲","۱۳۹۴","۱۳۹۶")[i]} : {{${i+2}}}"), values, state?.shuffleSeed ?: 0,
         mark = { state?.mark(step, it) ?: ResponseMark.EMPTY }, locked = { !exam && (state?.revealed == true || state?.locked(step, it) == true) },
-        showInstructions = false) { onChange(step, it) }
+        showInstructions = false, nativeLayout = true) { onChange(step, it) }
 }

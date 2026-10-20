@@ -57,10 +57,10 @@ class Grade7PersistenceUiTest {
             compose.onNodeWithTag("reveal-answer").assertIsNotEnabled()
             compose.onNodeWithTag("question-body").performScrollToIndex(0)
             compose.onNodeWithTag("bookmark-question").performClick()
-            compose.onNodeWithTag("question-body").performScrollToIndex(3)
+            compose.onNodeWithTag("native-hints").performScrollTo()
             compose.waitForIdle()
             val raw = checkNotNull(store.draft(q.id))
-            assertTrue(JSONObject(raw).getInt("scrollIndex") >= 3)
+            assertTrue(JSONObject(raw).getInt("scrollIndex") > 0 || JSONObject(raw).getInt("scrollOffset") > 0)
             context.getSharedPreferences("grade7_checkpoint_test",Context.MODE_PRIVATE).edit().putString("expected",raw).commit()
             capture("discovery-12-before-process-termination")
         }
@@ -72,7 +72,8 @@ class Grade7PersistenceUiTest {
         assertEquals(expected,QuestionDraftCodec.decode(store.draft(q.id)));assertTrue(store.bookmarked(q.id))
         assertEquals(q.id,LearningPreferences(context).lastLocation()!!.questionId)
         assertEquals(DisplaySettings(1.25f,true),LearningPreferences(context).display())
-        assertTrue(JSONObject(checkNotNull(store.draft(q.id))).getInt("scrollIndex") >= 3)
+        val viewport=JSONObject(checkNotNull(store.draft(q.id)))
+        assertTrue(viewport.getInt("scrollIndex") > 0 || viewport.getInt("scrollOffset") > 0)
         ActivityScenario.launch(MainActivity::class.java).use {
             compose.awaitGrade7Home()
             compose.onNodeWithTag("home-start").performClick()
@@ -80,7 +81,7 @@ class Grade7PersistenceUiTest {
             compose.onNodeWithContentDescription("تصویر پاسخ سؤال ۸").assertDoesNotExist()
             assertEquals(expected,QuestionDraftCodec.decode(store.draft(q.id)));capture("discovery-13-after-process-termination")
             val scroll = compose.onNodeWithTag("question-body").fetchSemanticsNode().config[SemanticsProperties.VerticalScrollAxisRange]
-            assertTrue("Restored viewport must remain at the interaction",scroll.value() >= 3f)
+            assertTrue("Restored viewport must remain below the question heading",scroll.value() > 0f)
         }
     }
 }

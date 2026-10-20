@@ -57,6 +57,7 @@ fun AuditedWorkbookApp(
     var confirmExit by remember { mutableStateOf(false) }
     var handledInitial by rememberSaveable { mutableStateOf(false) }
     var questionSearch by rememberSaveable(part) { mutableStateOf("") }
+    val refreshedChapter = !conceptual && (questions.firstOrNull()?.relatedChapter ?: 0) in 1..5
     val parts = if (conceptual) {
         listOf("مفهومی")
     } else {
@@ -101,8 +102,9 @@ fun AuditedWorkbookApp(
             containerColor = Color.Transparent,
             topBar = {
                 OloomTopBar(
-                    if (screen == "home") title else if (screen == "part") "فهرست سؤال‌ها" else if (exam && screen == "question") "آزمون • $part" else part,
-                    goBack
+                    if (screen == "home" && refreshedChapter) "فصل ${workbookFa(questions.first().relatedChapter)}" else if (screen == "home") title else if (screen == "part") "فهرست سؤال‌ها" else if (exam && screen == "question") "آزمون • $part" else part,
+                    goBack,
+                    modifier = if (refreshedChapter) Modifier.statusBarsPadding() else Modifier
                 )
             }
         ) { padding ->
@@ -116,7 +118,16 @@ fun AuditedWorkbookApp(
                     } else {
                         "صورت کامل سؤال کتاب را بخوان و پاسخ را با راهنمای مرحله‌ای کامل کن."
                     }
-                    OloomHeroCard(
+                    if (refreshedChapter) {
+                        val pending = questions.firstOrNull { !progress.done(it.id) && progress.draft(it.id) != null }
+                            ?: questions.firstOrNull { !progress.done(it.id) } ?: questions.first()
+                        ChapterStudyCover(questions.first().relatedChapter,questions.size,questions.count { progress.done(it.id) },
+                            questions.any { progress.done(it.id) || progress.draft(it.id) != null }) {
+                            part = pending.section
+                            val chosen=questions.filter { it.section==part }
+                            start(chosen,false);questionIndex=chosen.indexOfFirst { it.id==pending.id }.coerceAtLeast(0)
+                        }
+                    } else OloomHeroCard(
                         eyebrow = if (conceptual) "چالش مفهومی مستقل" else "مسیر تمرین فصل",
                         title = title,
                         description = description,
@@ -142,7 +153,8 @@ fun AuditedWorkbookApp(
                 items(parts) { section ->
                     val selected = questions.filter { conceptual || it.section == section }
                     val done = selected.count { progress.done(it.id) }
-                    WorkbookPanel(accent = if (conceptual) Purple else Blue) {
+                    if (refreshedChapter) ChapterStudySection(section,selected.size,done) { part=section;screen="part" }
+                    else WorkbookPanel(accent = if (conceptual) Purple else Blue) {
                         Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
                             Surface(color = if (conceptual) PurpleSoft else BlueSoft, shape = RoundedCornerShape(17.dp)) {
                                 Icon(
@@ -345,9 +357,10 @@ internal fun WorkbookQuestionVisuals(question: ChapterQuestion, description: Str
 internal fun WorkbookPanel(
     accent: Color? = null,
     color: Color = MaterialTheme.colorScheme.surface,
+    modifier: Modifier = Modifier,
     content: @Composable ColumnScope.() -> Unit
 ) {
-    OloomCard(accent = accent, color = color, content = content)
+    OloomCard(modifier = modifier, accent = accent, color = color, content = content)
 }
 
 @Composable

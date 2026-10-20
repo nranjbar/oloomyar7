@@ -6,6 +6,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.style.TextDirection
 import com.oloomyar.app.ui.theme.Ink
 
@@ -35,13 +36,14 @@ internal fun WorkbookText(
     text: String,
     modifier: Modifier = Modifier,
     color: Color = Ink,
-    bold: Boolean = false
+    bold: Boolean = false,
+    style: TextStyle = MaterialTheme.typography.bodyLarge
 ) {
     Text(
         text = workbookBidi(text),
         modifier = modifier,
         color = color,
-        style = MaterialTheme.typography.bodyLarge.copy(textDirection = TextDirection.ContentOrRtl),
+        style = style.copy(textDirection = TextDirection.ContentOrRtl),
         fontWeight = if (bold) FontWeight.Bold else FontWeight.Normal
     )
 }

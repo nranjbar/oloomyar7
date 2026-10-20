@@ -35,6 +35,8 @@ internal fun InlineFillBlanksQuestion(
     mark: (Int) -> ResponseMark,
     locked: (Int) -> Boolean,
     showInstructions: Boolean = true,
+    nativeLayout: Boolean = false,
+    compact: Boolean = false,
     onChange: (List<String>) -> Unit
 ) {
     val rows = if (step.kind == StepKind.MATCH) step.pairs.map { it.left } else step.classifyItems.map { it.text }
@@ -45,7 +47,8 @@ internal fun InlineFillBlanksQuestion(
         }
         active = -1
     }
-    val blank: @Composable (Int) -> Unit = { index ->
+    val chipStyle = if (compact) MaterialTheme.typography.bodySmall else MaterialTheme.typography.bodyMedium
+    val blank: @Composable (Int, Modifier) -> Unit = { index, sizing ->
         val value = values.getOrElse(index) { "" }
         val state = mark(index)
         val ink = when (state) {
@@ -61,7 +64,7 @@ internal fun InlineFillBlanksQuestion(
             else -> BlueSoft
         }
         Surface(
-            modifier = Modifier.fillMaxSize().testTag("blank-${step.id}-$index")
+            modifier = sizing.testTag("blank-${step.id}-$index")
                 .semantics {
                     contentDescription = "جای خالی ${workbookFa(index + 1)}"
                     stateDescription = when (state) {
@@ -78,28 +81,31 @@ internal fun InlineFillBlanksQuestion(
             border = BorderStroke(if (state == ResponseMark.EMPTY) 1.dp else 2.dp, ink.copy(alpha = .65f)),
             shape = RoundedCornerShape(12.dp)
         ) {
-            Row(Modifier.padding(horizontal = 8.dp), verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.Center) {
-                Text(workbookBidi(value.ifBlank { "انتخاب ${workbookFa(index + 1)}" }), modifier = Modifier.weight(1f, fill = false), style = MaterialTheme.typography.bodyMedium, fontWeight = FontWeight.Bold)
+            Row(Modifier.padding(horizontal = if (compact) 4.dp else 8.dp, vertical = 6.dp), verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.Center) {
+                Text(workbookBidi(value.ifBlank { if (compact) workbookFa(index + 1) else "انتخاب ${workbookFa(index + 1)}" }), modifier = Modifier.weight(1f, fill = false), style = chipStyle, fontWeight = FontWeight.Bold)
                 Spacer(Modifier.width(3.dp))
                 Icon(when(state) {
                     ResponseMark.CORRECT -> Icons.Default.Check
                     ResponseMark.INCORRECT -> Icons.Default.Close
                     else -> Icons.Default.ExpandMore
-                }, null, Modifier.size(16.dp))
+                }, null, Modifier.size(if (compact) 13.dp else 16.dp))
             }
         }
     }
 
     val template = step.clozeTemplate
     if (template != null) {
-        val document = remember(step.id, template) { ClozeDocument.parse(template, step.id) }
         val measurer = rememberTextMeasurer()
         val density = LocalDensity.current
         val style = MaterialTheme.typography.bodyLarge.copy(textDirection = TextDirection.Rtl)
         if (showInstructions) Text("برای انتخاب یا تغییر پاسخ، روی همان جای خالی بزن. لمس دوباره فقط انتخاب همان خانه را پاک می‌کند.",
             style = MaterialTheme.typography.bodySmall, color = Muted, modifier = Modifier.padding(bottom = 10.dp))
-        BoxWithConstraints(Modifier.fillMaxWidth()) {
+        val singleSlot = if (nativeLayout) Regex("""^\s*\{\{(\d+)\}\}\s*$""").matchEntire(template)?.groupValues?.get(1)?.toInt() else null
+        if (singleSlot != null) {
+            blank(singleSlot, Modifier.fillMaxWidth().heightIn(min = 48.dp))
+        } else BoxWithConstraints(Modifier.fillMaxWidth()) {
             val maximum = with(density) { (maxWidth - 12.dp).roundToPx() }.coerceAtLeast(1)
+            val heights = mutableMapOf<Int, Int>()
             val placeholders = rows.indices.associate { index ->
                 val value = values.getOrElse(index) { "" }.ifBlank { "انتخاب ${workbookFa(index + 1)}" }
                 val measured = measurer.measure(workbookBidi(value), style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.Bold),
@@ -107,16 +113,31 @@ internal fun InlineFillBlanksQuestion(
                 val width = (measured.size.width + with(density) { 44.dp.roundToPx() })
                     .coerceIn(with(density) { 48.dp.roundToPx() }.coerceAtMost(maximum), maximum)
                 val height = maxOf(measured.size.height + with(density) { 12.dp.roundToPx() }, with(density) { 48.dp.roundToPx() })
-                "blank$index" to InlineTextContent(Placeholder(with(density) { width.toSp() }, with(density) { height.toSp() }, PlaceholderVerticalAlign.Center)) { blank(index) }
+                heights[index] = height
+                "blank$index" to InlineTextContent(Placeholder(with(density) { width.toSp() }, with(density) { height.toSp() }, PlaceholderVerticalAlign.Center)) { blank(index, Modifier.fillMaxSize()) }
             }
-            val content = buildAnnotatedString {
-                document.tokens.forEach { token -> when (token) {
-                    is ClozeToken.Text -> append(workbookBidi(token.value))
-                    is ClozeToken.Blank -> appendInlineContent("blank${token.index}", "................")
-                }
+            // A placeholder is taller than the prose line. Give every printed
+            // paragraph its own line height, including wrapped lines and long
+            // selected answers, instead of painting chips across adjacent lines.
+            Column(verticalArrangement = Arrangement.spacedBy(if (nativeLayout) 8.dp else 0.dp)) {
+                (if (nativeLayout) template.split('\n') else listOf(template)).forEach { paragraph ->
+                    val document = remember(step.id, paragraph) { ClozeDocument.parse(paragraph, step.id) }
+                    val content = buildAnnotatedString {
+                        document.tokens.forEach { token -> when (token) {
+                            is ClozeToken.Text -> append(workbookBidi(token.value))
+                            is ClozeToken.Blank -> appendInlineContent("blank${token.index}", "................")
+                        } }
+                    }
+                    val tallest = document.tokens.filterIsInstance<ClozeToken.Blank>().maxOfOrNull { heights[it.index] ?: 0 } ?: 0
+                    val paragraphStyle = if (nativeLayout && tallest > 0) style.copy(
+                        lineHeight = maxOf(style.lineHeight.value, with(density) { (tallest + 8.dp.roundToPx()).toSp().value }).sp,
+                        lineHeightStyle = androidx.compose.ui.text.style.LineHeightStyle(
+                            androidx.compose.ui.text.style.LineHeightStyle.Alignment.Center,
+                            androidx.compose.ui.text.style.LineHeightStyle.Trim.None)
+                    ) else style
+                    Text(content, Modifier.fillMaxWidth(), style = paragraphStyle, inlineContent = placeholders)
                 }
             }
-            Text(content, Modifier.fillMaxWidth(), style = style, inlineContent = placeholders)
         }
     } else {
         Column(Modifier.fillMaxWidth(), verticalArrangement = Arrangement.spacedBy(12.dp)) {
@@ -124,7 +145,7 @@ internal fun InlineFillBlanksQuestion(
                 Surface(color = SurfaceMuted, shape = RoundedCornerShape(16.dp), border = BorderStroke(1.dp, Border)) {
                     Column(Modifier.fillMaxWidth().padding(12.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
                         WorkbookText(label)
-                        Box(Modifier.widthIn(min = 130.dp, max = 280.dp).heightIn(min = 52.dp)) { blank(index) }
+                        Box(Modifier.widthIn(min = 130.dp, max = 280.dp).heightIn(min = 52.dp)) { blank(index, Modifier.fillMaxSize()) }
                     }
                 }
             }
