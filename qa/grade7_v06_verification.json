@@ -1,0 +1,126 @@
+{
+  "status": "PASS",
+  "version": "0.6.0-grade7-1405",
+  "versionCode": 7,
+  "verifiedAtUtc": "2026-10-20T16:17:02.918Z",
+  "sourceCommit": "589f01a7714789dd49db9c9647797b75802f061b",
+  "runUrl": "https://github.com/nranjbar/oloomyar7/actions/runs/39453661269",
+  "workflowConclusion": "success",
+  "unit": {
+    "status": "PASS",
+    "task": ":app:testDebugUnitTest",
+    "testMethodsInSource": 41,
+    "testCountEvidence": "Source inventory; execution XML is retained in the workflow reports artifact."
+  },
+  "androidApi35": {
+    "status": "PASS",
+    "tests": 40,
+    "failures": 0,
+    "skipped": 0
+  },
+  "installAndProcessRestore": {
+    "status": "PASS",
+    "oldVersion": "0.5.0",
+    "newVersion": "0.6.0",
+    "installReplacement": true,
+    "oldCompletionPreserved": true,
+    "draftSelectionsHintsAndSeedPreserved": true,
+    "viewportPreserved": true,
+    "answerStayedLocked": true,
+    "bookmarksAndDisplaySettingsPreserved": true,
+    "pidBefore": "6136",
+    "pidAfterStop": "",
+    "pidRestored": "6190",
+    "tests": 3
+  },
+  "packages": [
+    {
+      "kind": "debug",
+      "path": "app/build/outputs/apk/debug/app-debug.apk",
+      "bytes": 33318143,
+      "sha256": "67c073e0eecaf9db62e20c28700f61536437deee05849ba5cae30a1f29892d36",
+      "assetEntries": 85,
+      "compressedAssetBytes": 14140171,
+      "previousThreeChapterApkBytes": 47596130
+    },
+    {
+      "kind": "releaseBundle",
+      "path": "app/build/outputs/bundle/release/app-release.aab",
+      "bytes": 18120900,
+      "sha256": "11ab8fb8189ff47999bd9c7c8d7c592148552e786721c8c22822168f85586057",
+      "assetEntries": 85,
+      "compressedAssetBytes": 14015211,
+      "previousThreeChapterApkBytes": 47596130
+    }
+  ],
+  "content": {
+    "status": "PASS",
+    "chapters": 15,
+    "questions": 317,
+    "learningGroups": 334,
+    "hints": 668,
+    "nativeQuestions": 104,
+    "nativeAnswers": 104,
+    "firstFiveChapterCounts": [
+      8,
+      20,
+      31,
+      23,
+      22
+    ],
+    "chaptersSixToFifteenQuestions": 213,
+    "chaptersSixToFifteenDataUnchanged": true,
+    "fullQuestionOrAnswerScreenshotsInNativeBlocks": 0,
+    "nativeTables": 6,
+    "nativeMathBlocks": 8,
+    "standaloneScientificFigureBlocks": 43,
+    "manualPdfReauditThisTurn": false,
+    "contentRequiringAuthorConfirmation": [
+      "g7_ch13_mcq03"
+    ],
+    "finalQuestionsIncluded": false
+  },
+  "tableRegression": {
+    "status": "PASS",
+    "fontScales": [
+      1.5,
+      1.7
+    ],
+    "tests": [
+      "tenTableCellsCanBeEditedInPlaceAtLargeFontWithoutUnlockingAnIncompleteAnswer",
+      "quantityDefinitionIsSelectedInsideItsTableCellAtLargeFont"
+    ],
+    "testedBehaviours": [
+      "real touch after vertical and horizontal positioning",
+      "lazy option list scrolling",
+      "all ten selected values persisted",
+      "editing clears only the selected cell",
+      "incomplete answers stay locked",
+      "correct solution still requires explicit reference reveal"
+    ]
+  },
+  "artifacts": [
+    {
+      "id": 12280361525,
+      "name": "OloomYar7-UI-Reports",
+      "archiveBytes": 26339384,
+      "digest": "sha256:6cc580bc859f7b1c2b252f2a11e77da5f6405f855463839ba205778bf91364de",
+      "expiresAt": "2027-01-18T16:00:56Z"
+    },
+    {
+      "id": 12279851239,
+      "name": "OloomYar7-1405-All15-APK",
+      "archiveBytes": 32709370,
+      "digest": "sha256:5e2e532d671c7bd110023e94fc73d5049c50be3a403bccca9ee643d22ef05446",
+      "expiresAt": "2026-11-03T16:06:19Z"
+    },
+    {
+      "id": 12278019914,
+      "name": "OloomYar7-0.6-Unsigned-AAB",
+      "archiveBytes": 17987912,
+      "digest": "sha256:c34ec5611eb2a26ba5511070333c568d8383556df94daf2886a811a158a847f9",
+      "expiresAt": "2027-01-18T16:00:56Z"
+    }
+  ],
+  "summaryFa": "ساخت APK و AAB، آزمون‌های واحد، هر ۴۰ آزمون رابط روی API 35 و هر ۳ آزمون ارتقا از ۰٫۵ به ۰٫۶ و بازیابی پس از پایان فرایند موفق شدند. نمایش متنی ۱۰۴ سؤال پنج فصل اول آماده است؛ تبدیل کامل نمایشی ۲۱۳ سؤال فصل‌های ۶ تا ۱۵ همچنان باقی است."
+}
