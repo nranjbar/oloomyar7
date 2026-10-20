@@ -47,7 +47,7 @@ internal fun InlineFillBlanksQuestion(
         }
         active = -1
     }
-    val chipStyle = if (compact) MaterialTheme.typography.bodySmall else MaterialTheme.typography.bodyMedium
+    val chipStyle = if (compact) MaterialTheme.typography.labelMedium else MaterialTheme.typography.bodyMedium
     val blank: @Composable (Int, Modifier) -> Unit = { index, sizing ->
         val value = values.getOrElse(index) { "" }
         val state = mark(index)
@@ -81,14 +81,26 @@ internal fun InlineFillBlanksQuestion(
             border = BorderStroke(if (state == ResponseMark.EMPTY) 1.dp else 2.dp, ink.copy(alpha = .65f)),
             shape = RoundedCornerShape(12.dp)
         ) {
-            Row(Modifier.padding(horizontal = if (compact) 4.dp else 8.dp), verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.Center) {
-                Text(workbookBidi(value.ifBlank { if (compact) workbookFa(index + 1) else "انتخاب ${workbookFa(index + 1)}" }), modifier = Modifier.weight(1f, fill = false), style = chipStyle, fontWeight = FontWeight.Bold)
+            val symbol = when(state) {
+                ResponseMark.CORRECT -> Icons.Default.Check
+                ResponseMark.INCORRECT -> Icons.Default.Close
+                else -> Icons.Default.ExpandMore
+            }
+            if (compact) {
+                // Give narrow portrait cells their full text width. A side icon
+                // otherwise splits short Persian units into individual letters.
+                Column(Modifier.padding(horizontal=4.dp,vertical=4.dp),
+                    horizontalAlignment=Alignment.CenterHorizontally,
+                    verticalArrangement=Arrangement.spacedBy(2.dp,Alignment.CenterVertically)) {
+                    Text(workbookBidi(value.ifBlank { workbookFa(index + 1) }),
+                        modifier=Modifier.fillMaxWidth(),style=chipStyle,fontWeight=FontWeight.Bold,
+                        textAlign=androidx.compose.ui.text.style.TextAlign.Center)
+                    Icon(symbol,null,Modifier.size(13.dp))
+                }
+            } else Row(Modifier.padding(horizontal=8.dp), verticalAlignment=Alignment.CenterVertically, horizontalArrangement=Arrangement.Center) {
+                Text(workbookBidi(value.ifBlank { "انتخاب ${workbookFa(index + 1)}" }), modifier=Modifier.weight(1f,fill=false),style=chipStyle,fontWeight=FontWeight.Bold)
                 Spacer(Modifier.width(3.dp))
-                Icon(when(state) {
-                    ResponseMark.CORRECT -> Icons.Default.Check
-                    ResponseMark.INCORRECT -> Icons.Default.Close
-                    else -> Icons.Default.ExpandMore
-                }, null, Modifier.size(if (compact) 13.dp else 16.dp))
+                Icon(symbol,null,Modifier.size(16.dp))
             }
         }
     }
