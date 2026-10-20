@@ -22,6 +22,7 @@ import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.semantics.*
+import androidx.compose.ui.text.rememberTextMeasurer
 import androidx.compose.ui.unit.*
 import com.oloomyar.app.model.*
 import com.oloomyar.app.ui.theme.*
@@ -249,9 +250,19 @@ private fun NativeBarChart(step: LearningStep, state: QuestionPractice?, exam: B
         mark = { state?.mark(step, it) ?: ResponseMark.EMPTY }, locked = { !exam && (state?.revealed == true || state?.locked(step, it) == true) },
         showInstructions = false, nativeLayout = true) { onChange(step, it) }
     CompositionLocalProvider(LocalLayoutDirection provides LayoutDirection.Ltr) {
-        Row(Modifier.fillMaxWidth().height(210.dp).testTag("student-bar-chart"), verticalAlignment = Alignment.Bottom) {
-            Column(Modifier.width(66.dp).fillMaxHeight(), verticalArrangement = Arrangement.SpaceBetween, horizontalAlignment = Alignment.End) {
-                for (i in 4 downTo 0) Text(if (scale > 0) workbookFa((scale*i).toInt()) else "—", color = Muted, style = MaterialTheme.typography.bodySmall)
+        BoxWithConstraints(Modifier.fillMaxWidth()) {
+        val density = LocalDensity.current
+        val measurer = rememberTextMeasurer()
+        val labels = (4 downTo 0).map { if (scale > 0) workbookFa((scale*it).toInt()) else "—" }
+        val labelStyle = MaterialTheme.typography.bodySmall
+        val naturalWidth = with(density) { labels.maxOf { measurer.measure(it,style=labelStyle).size.width }.toDp() } + 8.dp
+        val axisWidth = maxOf(52.dp,naturalWidth).coerceAtMost(maxWidth*.45f)
+        val labelHeight = labels.sumOf { measurer.measure(it,style=labelStyle,
+            constraints=Constraints(maxWidth=with(density) { axisWidth.roundToPx() })).size.height }
+        val chartHeight = maxOf(210.dp,with(density) { labelHeight.toDp() }+16.dp)
+        Row(Modifier.fillMaxWidth().height(chartHeight).testTag("student-bar-chart"), verticalAlignment = Alignment.Bottom) {
+            Column(Modifier.width(axisWidth).fillMaxHeight(), verticalArrangement = Arrangement.SpaceBetween, horizontalAlignment = Alignment.End) {
+                labels.forEach { Text(it, color = Muted, style = labelStyle) }
             }
             Row(Modifier.weight(1f).fillMaxHeight().border(1.dp, Border).padding(horizontal = 8.dp), horizontalArrangement = Arrangement.spacedBy(10.dp), verticalAlignment = Alignment.Bottom) {
                 (0..4).forEach { bar ->
@@ -264,6 +275,7 @@ private fun NativeBarChart(step: LearningStep, state: QuestionPractice?, exam: B
                     }
                 }
             }
+        }
         }
     }
     Text("تولید سیمان ( تن )", color = Muted, style = MaterialTheme.typography.bodySmall)

@@ -81,7 +81,7 @@ internal fun InlineFillBlanksQuestion(
             border = BorderStroke(if (state == ResponseMark.EMPTY) 1.dp else 2.dp, ink.copy(alpha = .65f)),
             shape = RoundedCornerShape(12.dp)
         ) {
-            Row(Modifier.padding(horizontal = if (compact) 4.dp else 8.dp, vertical = 6.dp), verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.Center) {
+            Row(Modifier.padding(horizontal = if (compact) 4.dp else 8.dp), verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.Center) {
                 Text(workbookBidi(value.ifBlank { if (compact) workbookFa(index + 1) else "انتخاب ${workbookFa(index + 1)}" }), modifier = Modifier.weight(1f, fill = false), style = chipStyle, fontWeight = FontWeight.Bold)
                 Spacer(Modifier.width(3.dp))
                 Icon(when(state) {

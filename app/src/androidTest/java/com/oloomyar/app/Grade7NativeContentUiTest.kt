@@ -81,6 +81,8 @@ class Grade7NativeContentUiTest {
     private fun capture(name:String) {
         compose.waitForIdle()
         InstrumentationRegistry.getInstrumentation().uiAutomation.waitForIdle(100,5000)
+        InstrumentationRegistry.getInstrumentation().waitForIdleSync()
+        android.os.SystemClock.sleep(250)
         val values=ContentValues().apply { put(MediaStore.Images.Media.DISPLAY_NAME,"$name.png");put(MediaStore.Images.Media.MIME_TYPE,"image/png");put(MediaStore.Images.Media.RELATIVE_PATH,"Download/grade7-screenshots") }
         val uri=context.contentResolver.insert(MediaStore.Downloads.EXTERNAL_CONTENT_URI,values)!!
         val bitmap=checkNotNull(InstrumentationRegistry.getInstrumentation().uiAutomation.takeScreenshot())
@@ -246,6 +248,7 @@ class Grade7NativeContentUiTest {
             }
         }
         val report=JSONArray()
+        val issues=mutableListOf<String>()
         val controls=SemanticsMatcher("editable source control") {
             val tag=it.config.getOrElse(SemanticsProperties.TestTag) { "" }
             tag.startsWith("blank-") || tag.startsWith("table-choice-")
@@ -256,11 +259,15 @@ class Grade7NativeContentUiTest {
                 for(answer in listOf(false,true)) {
                     compose.runOnIdle { current.value=AuditFrame(q,answer,width,font) }
                     compose.waitForIdle()
+                    var controlCount=0
+                    val before=issues.size
+                    try {
                     val rootTag=if(answer)"native-reference-answer" else "native-source-question"
                     val root=compose.onNodeWithTag(rootTag).fetchSemanticsNode()
                     val bounds=Rect(root.positionInRoot,root.size.toSize())
                     val nodes=compose.onAllNodes(controls).fetchSemanticsNodes()
                     val rectangles=nodes.map { it.config[SemanticsProperties.TestTag] to Rect(it.positionInRoot,it.size.toSize()) }
+                    controlCount=rectangles.size
                     rectangles.forEach { (tag,rect) ->
                         assertTrue("${q.id} $width/$font $tag extends past the question: $rect / $bounds",rect.left>=bounds.left-1f && rect.right<=bounds.right+1f)
                     }
@@ -278,13 +285,17 @@ class Grade7NativeContentUiTest {
                     repeat(count) { index ->
                         val layouts=mutableListOf<TextLayoutResult>()
                         compose.onAllNodes(textNodes,useUnmergedTree=true)[index].performSemanticsAction(SemanticsActions.GetTextLayoutResult) { it(layouts) }
-                        layouts.forEach { layout -> assertFalse("${q.id} $width/$font clips text ${layout.layoutInput.text}",layout.hasVisualOverflow) }
+                        layouts.forEach { layout -> assertFalse("${q.id} $width/$font clips text ${layout.layoutInput.text}; constraints=${layout.layoutInput.constraints}; size=${layout.size}; overflow=${layout.didOverflowWidth}/${layout.didOverflowHeight}; lines=${layout.lineCount}; font=${layout.layoutInput.style.fontSize}; line=${layout.layoutInput.style.lineHeight}",layout.hasVisualOverflow) }
                     }
-                    report.put(JSONObject().put("question",q.id).put("answer",answer).put("screenWidthDp",width).put("fontScale",font).put("controls",rectangles.size).put("status","PASS"))
                     if(width==320 && font==1f && !answer && q.canonicalForAudit() in setOf("g7_ch02_q02","g7_ch02_q15","g7_ch03_q17","g7_ch03_q21","g7_ch05_q02")) {
                         if(q.canonicalForAudit()=="g7_ch03_q21") compose.onNodeWithTag("blank-${q.steps.first().id}-0").performScrollTo()
                         capture("layout-${q.canonicalForAudit()}")
                     }
+                    } catch (error:AssertionError) {
+                        issues.add("${q.id} answer=$answer width=$width font=$font: ${error.message}")
+                        if(issues.size<=4) capture("layout-error-${q.canonicalForAudit()}-$width-$font-${if(answer)"key" else "question"}")
+                    }
+                    report.put(JSONObject().put("question",q.id).put("answer",answer).put("screenWidthDp",width).put("fontScale",font).put("controls",controlCount).put("status",if(issues.size==before)"PASS" else "FAIL").put("error",if(issues.size==before)JSONObject.NULL else issues.last()))
                 }
             }
         }
@@ -295,7 +306,8 @@ class Grade7NativeContentUiTest {
             put(MediaStore.Downloads.RELATIVE_PATH,"Download/grade7-screenshots")
         }
         val uri=context.contentResolver.insert(MediaStore.Downloads.EXTERNAL_CONTENT_URI,values)!!
-        context.contentResolver.openOutputStream(uri)!!.use { it.write(JSONObject().put("status","PASS").put("cases",report).toString(2).toByteArray()) }
+        context.contentResolver.openOutputStream(uri)!!.use { it.write(JSONObject().put("status",if(issues.isEmpty())"PASS" else "FAIL").put("cases",report).put("failures",JSONArray(issues)).toString(2).toByteArray()) }
+        assertTrue(issues.take(40).joinToString("\n"),issues.isEmpty())
     }
     private fun ChapterQuestion.canonicalForAudit()="g7_ch${relatedChapter.toString().padStart(2,'0')}_${if(section=="چهارگزینه‌ای")"mcq" else "q"}${sourceNumber.toString().padStart(2,'0')}"
 
@@ -308,7 +320,7 @@ class Grade7NativeContentUiTest {
         state=state.change(second,state.values(second).toMutableList().apply { this[0]=second.pairs[0].choices.first { it!=second.pairs[0].right } }).submit(q)
         store.saveDraft(q.id,QuestionDraftCodec.encode(state))
         open(q)
-        compose.onNodeWithTag("native-hints").performScrollTo()
+        compose.onNodeWithTag("question-body").performScrollToNode(hasTestTag("native-hints"))
         compose.onAllNodesWithText("راهنمایی ۱").assertCountEquals(1)
         compose.onNodeWithTag("native-hint-2").assertDoesNotExist()
         compose.onNodeWithText(workbookBidi(first.prompt)).assertExists()
@@ -317,7 +329,7 @@ class Grade7NativeContentUiTest {
         select(first,0,first.pairs[0].choices.first { it!=first.pairs[0].right && it!=state.values(first)[0] })
         select(second,0,second.pairs[0].choices.first { it!=second.pairs[0].right && it!=state.values(second)[0] })
         compose.onNodeWithText("بررسی پاسخ").performClick()
-        compose.onNodeWithTag("native-hints").performScrollTo()
+        compose.onNodeWithTag("question-body").performScrollToNode(hasTestTag("native-hints"))
         compose.onAllNodesWithText("راهنمایی ۱").assertCountEquals(1)
         compose.onAllNodesWithText("راهنمایی ۲").assertCountEquals(1)
         compose.onNodeWithTag("reveal-answer").assertIsEnabled()

@@ -57,7 +57,7 @@ class Grade7PersistenceUiTest {
             compose.onNodeWithTag("reveal-answer").assertIsNotEnabled()
             compose.onNodeWithTag("question-body").performScrollToIndex(0)
             compose.onNodeWithTag("bookmark-question").performClick()
-            compose.onNodeWithTag("native-hints").performScrollTo()
+            compose.onNodeWithTag("question-body").performScrollToNode(hasTestTag("native-hints"))
             compose.waitForIdle()
             val raw = checkNotNull(store.draft(q.id))
             assertTrue(JSONObject(raw).getInt("scrollIndex") > 0 || JSONObject(raw).getInt("scrollOffset") > 0)
