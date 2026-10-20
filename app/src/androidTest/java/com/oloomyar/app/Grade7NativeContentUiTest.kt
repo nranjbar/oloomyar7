@@ -9,6 +9,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.geometry.Rect
 import androidx.compose.ui.semantics.SemanticsProperties
 import androidx.compose.ui.text.TextLayoutResult
+import androidx.compose.ui.text.TextMeasurer
+import androidx.compose.ui.unit.Constraints
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.toSize
 import org.json.JSONObject
@@ -254,6 +256,7 @@ class Grade7NativeContentUiTest {
             tag.startsWith("blank-") || tag.startsWith("table-choice-")
         }
         val textNodes=SemanticsMatcher.keyIsDefined(SemanticsActions.GetTextLayoutResult)
+        var clippingOracleChecked=false
         for((width,font) in listOf(320 to 1f,360 to 1.5f,320 to 2f)) {
             questions.forEach { q ->
                 for(answer in listOf(false,true)) {
@@ -285,7 +288,24 @@ class Grade7NativeContentUiTest {
                     repeat(count) { index ->
                         val layouts=mutableListOf<TextLayoutResult>()
                         compose.onAllNodes(textNodes,useUnmergedTree=true)[index].performSemanticsAction(SemanticsActions.GetTextLayoutResult) { it(layouts) }
-                        layouts.forEach { layout -> assertFalse("${q.id} $width/$font clips text ${layout.layoutInput.text}; constraints=${layout.layoutInput.constraints}; size=${layout.size}; overflow=${layout.didOverflowWidth}/${layout.didOverflowHeight}; lines=${layout.lineCount}; font=${layout.layoutInput.style.fontSize}; line=${layout.layoutInput.style.lineHeight}",layout.hasVisualOverflow) }
+                        layouts.forEach { layout ->
+                            val input=layout.layoutInput
+                            // Plain Text's semantics rebuilds MultiParagraph at its original
+                            // loose maxWidth but returns the actual, narrower layoutSize.
+                            // Re-measure inside that real paint box before checking overflow.
+                            // AndroidX ParagraphLayoutCache.slowCreateTextLayoutResultOrNull.
+                            val measurer=TextMeasurer(input.fontFamilyResolver,input.density,input.layoutDirection,cacheSize=0)
+                            if(!clippingOracleChecked && input.text.isNotEmpty()) {
+                                assertTrue("The oracle must reject real width clipping",measurer.measure(input.text,style=input.style,softWrap=false,constraints=Constraints(maxWidth=1)).didOverflowWidth)
+                                assertTrue("The oracle must reject real height clipping",measurer.measure(input.text,style=input.style,constraints=Constraints(maxWidth=layout.size.width,maxHeight=1)).didOverflowHeight)
+                                clippingOracleChecked=true
+                            }
+                            val painted=measurer.measure(
+                                text=input.text,style=input.style,overflow=input.overflow,softWrap=input.softWrap,
+                                maxLines=input.maxLines,placeholders=input.placeholders,
+                                constraints=Constraints(minWidth=layout.size.width,maxWidth=layout.size.width,maxHeight=layout.size.height))
+                            assertFalse("${q.id} $width/$font clips text ${input.text}; paintBox=${layout.size}; measured=${painted.size}; overflow=${painted.didOverflowWidth}/${painted.didOverflowHeight}; lines=${painted.lineCount}",painted.hasVisualOverflow)
+                        }
                     }
                     if(width==320 && font==1f && !answer && q.canonicalForAudit() in setOf("g7_ch02_q02","g7_ch02_q15","g7_ch03_q17","g7_ch03_q21","g7_ch05_q02")) {
                         if(q.canonicalForAudit()=="g7_ch03_q21") compose.onNodeWithTag("blank-${q.steps.first().id}-0").performScrollTo()
@@ -299,6 +319,7 @@ class Grade7NativeContentUiTest {
                 }
             }
         }
+        assertTrue("Real clipping negative controls must run",clippingOracleChecked)
         assertEquals(624,report.length())
         val values=ContentValues().apply {
             put(MediaStore.Downloads.DISPLAY_NAME,"native-layout-audit.json")
