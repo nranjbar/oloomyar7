@@ -2,12 +2,13 @@
 from native_first_five import write as first_five
 from native_chapters_six_to_ten import write as next_five
 from clarify_practice_choices import write as clarify
+from apply_owner_art import write as owner_art
 import hashlib
 import json
 from pathlib import Path
 
 def write():
-    first_five();next_five();clarify()
+    first_five();next_five();clarify();owner_art()
     root=Path(__file__).resolve().parents[1]
     for name,chapters in [('native-first-five-manifest.json',range(1,6)),('native-chapters-six-to-ten-manifest.json',range(6,11))]:
         manifest=[]

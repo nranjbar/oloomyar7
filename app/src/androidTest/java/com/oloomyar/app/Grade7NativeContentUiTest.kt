@@ -185,7 +185,11 @@ class Grade7NativeContentUiTest {
     }
     @Test fun scientificRasterRegionsPreserveEverySourcePixelWithoutAnotherPackagedImage() {
         val q=question(3,15)
-        val crops=q.nativeQuestion.mapNotNull { it.asset }.mapNotNull { a -> RasterSource.parse(a)?.let { a to it } }
+        assertEquals(listOf("g7_ch03_q15_question.webp"),q.nativeQuestion.filter { it.type=="figure" }.map { it.asset })
+        // Retain the decoder's two exact-region checks while the owner now asks
+        // to show the complete original concept map before the controls.
+        val crops=listOf("crop:g7_ch03_q15_question.webp#1850,105,2140,605",
+            "crop:g7_ch03_q15_question.webp#1490,315,1830,450").map { it to checkNotNull(RasterSource.parse(it)) }
         assertEquals(2,crops.size)
         crops.forEach { (asset,r) ->
             val original=checkNotNull(SourceBitmap.load(context,r.file)); val region=checkNotNull(SourceBitmap.load(context,asset))
@@ -195,6 +199,12 @@ class Grade7NativeContentUiTest {
             assertArrayEquals(a,b)
         }
         open(q);compose.onNodeWithTag("reveal-answer").assertIsNotEnabled()
+        val fullTag="workbook-image-enlarge-g7_ch03_q15_question.webp"
+        compose.waitUntil(10000) { compose.onAllNodesWithTag(fullTag).fetchSemanticsNodes().singleOrNull()?.config?.contains(SemanticsProperties.Disabled)==false }
+        val afterImage=compose.onNodeWithTag(fullTag).getUnclippedBoundsInRoot().bottom
+        val firstBlank=compose.onNodeWithTag("blank-${q.steps.single().id}-0").getUnclippedBoundsInRoot().top
+        assertTrue("The complete supplied carbon map must precede the interactive editor",afterImage<=firstBlank)
+        assertEquals(8,q.steps.single().pairs.size)
         capture("native-04-scientific-map")
     }
     @Test fun oldAlloySelectionsMigrateToSeparateCellsWithoutFabricatingChoices() {
@@ -539,6 +549,64 @@ class Grade7NativeContentUiTest {
         compose.runOnIdle { shown.value=false }
         compose.onNodeWithTag("navigation-disposed").assertExists()
         compose.onNodeWithTag("native-source-question").assertDoesNotExist()
+    }
+
+    private fun bitmapRgbaDigest(bitmap:Bitmap):String {
+        val digest=java.security.MessageDigest.getInstance("SHA-256")
+        val pixels=IntArray(bitmap.width);val bytes=ByteArray(bitmap.width*4)
+        for(y in 0 until bitmap.height) {
+            bitmap.getPixels(pixels,0,bitmap.width,0,y,bitmap.width,1)
+            pixels.forEachIndexed { x,pixel ->
+                bytes[x*4]=(pixel shr 16).toByte();bytes[x*4+1]=(pixel shr 8).toByte()
+                bytes[x*4+2]=pixel.toByte();bytes[x*4+3]=(pixel ushr 24).toByte()
+            }
+            digest.update(bytes)
+        }
+        return digest.digest().joinToString("") { "%02x".format(it.toInt() and 255) }
+    }
+    @Test fun all47OwnerScientificIllustrationsRetainTheirOriginalPixelsOnAndroid() {
+        val rows=context.assets.open("content/owner-scientific-art.json").bufferedReader().use { JSONObject(it.readText()).getJSONArray("scientific") }
+        assertEquals(47,rows.length())
+        repeat(rows.length()) { index ->
+            val row=rows.getJSONObject(index);val asset=row.getString("asset")
+            val bitmap=checkNotNull(SourceBitmap.load(context,asset)) { asset }
+            assertEquals(row.getInt("width"),bitmap.width);assertEquals(row.getInt("height"),bitmap.height)
+            assertEquals(asset,row.getString("decodedRgbaSha256"),bitmapRgbaDigest(bitmap))
+        }
+    }
+    @Test fun suppliedAnswerArtWaitsForCorrectSubmissionAndExplicitReveal() {
+        val q=question(2,9);val asset=checkNotNull(q.answerStudyVisual)
+        val store=WorkbookProgress(context,"native_ui",listOf(q));store.saveDraft(q.id,QuestionDraftCodec.encode(filled(q).submit(q)))
+        open(q)
+        val tag="workbook-image-enlarge-$asset"
+        compose.onNodeWithTag(tag).assertDoesNotExist()
+        compose.onNodeWithTag("question-body").performScrollToNode(hasTestTag("state-art-correct"))
+        compose.onNodeWithTag("state-art-correct").assertIsDisplayed()
+        compose.onNodeWithTag("reveal-answer").assertIsEnabled().performClick()
+        compose.onNodeWithTag("question-body").performScrollToNode(hasTestTag(tag))
+        compose.waitUntil(10000) { compose.onAllNodesWithTag(tag).fetchSemanticsNodes().singleOrNull()?.config?.contains(SemanticsProperties.Disabled)==false }
+        compose.onNodeWithTag(tag).assertIsEnabled()
+        compose.onAllNodesWithTag("native-equation").assertCountEquals(2)
+        capture("v08-supplied-density-answer")
+    }
+    @Test fun suppliedAnswerArtUsesTheSameGateAfterTwoDistinctFailuresAndBothHintIcons() {
+        val q=question(1,5);val s=q.steps.single();val right=filled(q)
+        val wrong=s.matchChoices.filter { it!=s.pairs.first().right }.take(2);assertEquals(2,wrong.size)
+        var state=right.change(s,right.values(s).toMutableList().apply { this[0]=wrong[0] }).submit(q)
+        state=state.change(s,state.values(s).toMutableList().apply { this[0]=wrong[1] }).submit(q)
+        assertTrue(state.canReveal(q));assertEquals(2,state.shownHints)
+        WorkbookProgress(context,"native_ui",listOf(q)).saveDraft(q.id,QuestionDraftCodec.encode(state))
+        open(q,1.5f);val tag="workbook-image-enlarge-${q.answerStudyVisual}"
+        compose.onNodeWithTag(tag).assertDoesNotExist()
+        compose.onNodeWithTag("question-body").performScrollToNode(hasTestTag("native-hints"))
+        compose.onAllNodesWithTag("state-art-hint_lightbulb").assertCountEquals(2)
+        compose.onNodeWithTag("question-body").performScrollToNode(hasTestTag("state-art-incorrect"))
+        compose.onNodeWithTag("state-art-incorrect").assertIsDisplayed()
+        compose.onNodeWithTag("reveal-answer").assertIsEnabled().performClick()
+        compose.onNodeWithTag("question-body").performScrollToNode(hasTestTag(tag))
+        compose.waitUntil(10000) { compose.onAllNodesWithTag(tag).fetchSemanticsNodes().singleOrNull()?.config?.contains(SemanticsProperties.Disabled)==false }
+        compose.onNodeWithTag(tag).assertIsEnabled()
+        capture("v08-supplied-hinted-answer")
     }
 
 }

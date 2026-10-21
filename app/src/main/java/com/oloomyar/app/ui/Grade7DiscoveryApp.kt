@@ -306,6 +306,8 @@ private fun ReviewShortcuts(summary: LearningSummary, onReview: (String) -> Unit
 @Composable
 private fun ProgressPanel(s: LearningSummary) {
     OloomCard(accent = Blue) {
+        if (s.completed == 0) SuppliedArtwork("ui_empty_progress_notebook.webp", "دفتر پیشرفت یادگیری",
+            Modifier.size(112.dp).align(Alignment.CenterHorizontally))
         Text("یادگیری، قدم‌به‌قدم", style = MaterialTheme.typography.headlineSmall)
         OloomProgressBar(s.fraction, Blue)
         Text("${workbookFa(s.completed)} از ${workbookFa(s.total)} سؤال کامل شده", color = Blue, style = MaterialTheme.typography.titleMedium, modifier = Modifier.testTag("completed-count"))
@@ -328,10 +330,10 @@ private fun MetricLine(label: String, value: Int, color: Color) {
 @Composable
 private fun BadgePanel(s: LearningSummary) {
     OloomCard(accent = Purple, color = PurpleSoft) {
-        Text("کشف‌های کوچک تو", style = MaterialTheme.typography.titleMedium)
+        WorkbookArtLabel("trophy", "کشف‌های کوچک تو", Purple)
         if (s.badges.isEmpty()) Text("با حل سؤال‌ها، نشان‌های یادگیری اینجا ظاهر می‌شوند.", color = Muted)
         s.badges.forEach { badge -> Row(verticalAlignment = Alignment.CenterVertically) {
-            Icon(Icons.Default.WorkspacePremium, null, tint = Purple); Spacer(Modifier.width(9.dp)); Text(badge, style = MaterialTheme.typography.bodyLarge)
+            SuppliedArtwork("ui_icon_trophy_320.webp", "نشان یادگیری", Modifier.size(32.dp)); Spacer(Modifier.width(9.dp)); Text(badge, style = MaterialTheme.typography.bodyLarge)
         } }
     }
 }
@@ -347,6 +349,7 @@ private fun LazyListScope.reviewItems(catalog: Grade7Catalog, filter: String, se
         if (filter == "bookmarks") c.progress.bookmarked(q.id) else c.progress.mistake(q.id)
     }.map { c to it } }
     if (entries.isEmpty()) item { OloomCard {
+        SuppliedArtwork("ui_icon_empty_notebook_320.webp", "دفتر مرور", Modifier.size(96.dp).align(Alignment.CenterHorizontally))
         Text(if (filter == "bookmarks") "هنوز سؤالی نشان‌گذاری نکرده‌ای." else "هنوز سؤالی برای مرور ثبت نشده است.", style = MaterialTheme.typography.titleMedium)
         Text(if (filter == "bookmarks") "با لمس نشان بالای هر سؤال، آن را برای بعد نگه دار." else "سؤال‌های دارای اشتباه و پاسخ دیده‌شده، اینجا برای تمرین دوباره در دسترس‌اند.", color = Muted)
     } }

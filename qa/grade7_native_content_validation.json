@@ -77,11 +77,7 @@
     },
     {
       "question": "g7_ch03_q15",
-      "asset": "crop:g7_ch03_q15_question.webp#1850,105,2140,605"
-    },
-    {
-      "question": "g7_ch03_q15",
-      "asset": "crop:g7_ch03_q15_question.webp#1490,315,1830,450"
+      "asset": "g7_ch03_q15_question.webp"
     },
     {
       "question": "g7_ch03_q16",
@@ -125,7 +121,7 @@
     },
     {
       "question": "g7_ch04_q08",
-      "asset": "pdf:workbook.pdf#13,45,35,303,143"
+      "asset": "owner_20261021_g7_ch04_q08_question.webp"
     },
     {
       "question": "g7_ch04_q10",
@@ -181,11 +177,11 @@
     },
     {
       "question": "g7_ch05_q15",
-      "asset": "pdf:workbook.pdf#18,58,576,350,777"
+      "asset": "owner_20261021_g7_ch05_q15_question.webp"
     },
     {
       "question": "g7_ch05_q17",
-      "asset": "pdf:workbook.pdf#19,65,96,207,311"
+      "asset": "owner_20261021_g7_ch05_q17_question.webp"
     },
     {
       "question": "g7_ch05_mcq05",
@@ -197,7 +193,7 @@
     },
     {
       "question": "g7_ch06_q06",
-      "asset": "native_1405_g7_ch06_q06.webp"
+      "asset": "owner_20261021_g7_ch06_q06_question.webp"
     },
     {
       "question": "g7_ch06_q10",
@@ -221,7 +217,7 @@
     },
     {
       "question": "g7_ch07_q05",
-      "asset": "native_1405_g7_ch07_q05.webp"
+      "asset": "owner_20261021_g7_ch07_q05_question.webp"
     },
     {
       "question": "g7_ch07_q13",
@@ -229,7 +225,7 @@
     },
     {
       "question": "g7_ch07_q14",
-      "asset": "pdf:workbook.pdf#26,45,629.24,242.48,800.19"
+      "asset": "owner_20261021_g7_ch07_q14_question.webp"
     },
     {
       "question": "g7_ch07_q19",
@@ -241,7 +237,7 @@
     },
     {
       "question": "g7_ch07_q23",
-      "asset": "pdf:workbook.pdf#28,39.75,265.51,269.2,380.26"
+      "asset": "owner_20261021_g7_ch07_q23_question.webp"
     },
     {
       "question": "g7_ch07_q25",
@@ -257,7 +253,7 @@
     },
     {
       "question": "g7_ch07_mcq06",
-      "asset": "pdf:workbook.pdf#29,34.45,649.51,324.7,787.51"
+      "asset": "owner_20261021_g7_ch07_mcq06_question.webp"
     },
     {
       "question": "g7_ch08_q02",
@@ -265,19 +261,15 @@
     },
     {
       "question": "g7_ch08_q03",
-      "asset": "native_1405_g7_ch08_q03.webp"
+      "asset": "owner_20261021_g7_ch08_q03_question.webp"
     },
     {
       "question": "g7_ch08_q04",
-      "asset": "native_1405_g7_ch08_q04_12.webp"
-    },
-    {
-      "question": "g7_ch08_q04",
-      "asset": "native_1405_g7_ch08_q04_3.webp"
+      "asset": "owner_20261021_g7_ch08_q04_question.webp"
     },
     {
       "question": "g7_ch08_q07",
-      "asset": "native_1405_g7_ch08_q07.webp"
+      "asset": "owner_20261021_g7_ch08_q07_question.webp"
     },
     {
       "question": "g7_ch08_q08",
@@ -297,7 +289,7 @@
     },
     {
       "question": "g7_ch08_q19",
-      "asset": "pdf:workbook.pdf#33,35.65,676.69,334.1,784.98"
+      "asset": "owner_20261021_g7_ch08_q19_question.webp"
     },
     {
       "question": "g7_ch08_mcq05",
@@ -313,7 +305,7 @@
     },
     {
       "question": "g7_ch09_q04",
-      "asset": "native_1405_g7_ch09_q04.webp"
+      "asset": "owner_20261021_g7_ch09_q04_question.webp"
     },
     {
       "question": "g7_ch09_q08",
@@ -329,7 +321,7 @@
     },
     {
       "question": "g7_ch09_q11",
-      "asset": "pdf:workbook.pdf#37,37,35.65,381.52,127.9"
+      "asset": "owner_20261021_g7_ch09_q11_question.webp"
     },
     {
       "question": "g7_ch09_q12",
@@ -337,15 +329,15 @@
     },
     {
       "question": "g7_ch09_q13",
-      "asset": "native_1405_g7_ch09_q13.webp"
+      "asset": "owner_20261021_g7_ch09_q13_question.webp"
     },
     {
       "question": "g7_ch09_q15",
-      "asset": "pdf:workbook.pdf#38,34.25,269.79,286,517.24"
+      "asset": "owner_20261021_g7_ch09_q15_question.webp"
     },
     {
       "question": "g7_ch09_mcq03",
-      "asset": "pdf:workbook.pdf#38,30.75,668.97,317.18,794.07"
+      "asset": "owner_20261021_g7_ch09_mcq03_question.webp"
     },
     {
       "question": "g7_ch10_q02",
@@ -365,7 +357,7 @@
     },
     {
       "question": "g7_ch10_q14",
-      "asset": "pdf:workbook.pdf#41,44.25,480.02,152.25,630.77"
+      "asset": "owner_20261021_g7_ch10_q14_question.webp"
     },
     {
       "question": "g7_ch10_q15",
@@ -373,15 +365,11 @@
     },
     {
       "question": "g7_ch10_q16",
-      "asset": "pdf:workbook.pdf#42,235.5,112.48,399.75,203.98"
-    },
-    {
-      "question": "g7_ch10_q16",
-      "asset": "pdf:workbook.pdf#42,37.5,95.23,211.55,199.48"
+      "asset": "owner_20261021_g7_ch10_q16_question.webp"
     },
     {
       "question": "g7_ch10_q18",
-      "asset": "pdf:workbook.pdf#42,29,421.8,210,576|-42,29,420,210,432"
+      "asset": "owner_20261021_g7_ch10_q18_question.webp"
     },
     {
       "question": "g7_ch10_q19",
@@ -409,11 +397,11 @@
     },
     {
       "question": "g7_ch10_q24",
-      "asset": "pdf:workbook.pdf#44,47.5,58.7,117.38,185.8"
+      "asset": "owner_20261021_g7_ch10_q24_question.webp"
     },
     {
       "question": "g7_ch10_mcq02",
-      "asset": "native_1405_g7_ch10_mcq02.webp"
+      "asset": "owner_20261021_g7_ch10_mcq02_question.webp"
     },
     {
       "question": "g7_ch10_mcq03",

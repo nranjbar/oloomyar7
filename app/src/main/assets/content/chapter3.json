@@ -1377,17 +1377,12 @@
       },
       {
         "type": "figure",
-        "asset": "crop:g7_ch03_q15_question.webp#1850,105,2140,605",
-        "text": "ماده"
+        "asset": "g7_ch03_q15_question.webp",
+        "text": ""
       },
       {
         "type": "text",
         "text": "نوع ذره سازنده\nمولکول کربن دی اکسید"
-      },
-      {
-        "type": "figure",
-        "asset": "crop:g7_ch03_q15_question.webp#1490,315,1830,450",
-        "text": ""
       },
       {
         "type": "cloze",

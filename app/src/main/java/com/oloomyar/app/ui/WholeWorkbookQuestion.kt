@@ -163,7 +163,7 @@ internal fun WholeWorkbookQuestion(
                         if (steps.isNotEmpty()) {
                             Surface(color = OrangeSoft, shape = RoundedCornerShape(16.dp)) {
                                 Column(Modifier.fillMaxWidth().padding(14.dp), verticalArrangement = Arrangement.spacedBy(10.dp)) {
-                                    Text("راهنمایی ${workbookFa(level)}", color = Orange,
+                                    WorkbookArtLabel("hint_lightbulb", "راهنمایی ${workbookFa(level)}", color = Orange,
                                         style = MaterialTheme.typography.titleMedium,
                                         modifier = Modifier.testTag("native-hint-$level"))
                                     steps.forEachIndexed { index, step ->
@@ -193,11 +193,11 @@ internal fun WholeWorkbookQuestion(
                     if (!exam && hintLevel > 0 && state.checked[step.id]?.let { !WorkbookAnswers.isCorrect(step, it) } == true) {
                         Surface(color = OrangeSoft, shape = RoundedCornerShape(16.dp)) {
                             Column(Modifier.padding(14.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
-                                Text("راهنمایی ۱", color = Orange, style = MaterialTheme.typography.titleMedium)
+                                WorkbookArtLabel("hint_lightbulb", "راهنمایی ۱", color = Orange)
                                 WorkbookText(step.hint1)
                                 if (hintLevel >= 2) {
                                     HorizontalDivider()
-                                    Text("راهنمایی ۲", color = Orange, style = MaterialTheme.typography.titleMedium)
+                                    WorkbookArtLabel("hint_lightbulb", "راهنمایی ۲", color = Orange)
                                     WorkbookText(step.hint2)
                                 }
                             }
@@ -215,10 +215,10 @@ internal fun WholeWorkbookQuestion(
                         }
                     }
                     Surface(color = if (allCorrect) GreenSoft else SelectionSoft, shape = RoundedCornerShape(16.dp)) {
-                        Text(if (allCorrect) { if (question.sourceReviewNote != null && question.practiceUsesPrintedKey) "پاسخ با کلید چاپی مطابقت دارد" else if (!question.practiceUsesPrintedKey) "پاسخ تمرین درست است" else "پاسخ درست است" }
+                        WorkbookArtLabel(if (allCorrect) "correct" else "incorrect", if (allCorrect) { if (question.sourceReviewNote != null && question.practiceUsesPrintedKey) "پاسخ با کلید چاپی مطابقت دارد" else if (!question.practiceUsesPrintedKey) "پاسخ تمرین درست است" else "پاسخ درست است" }
                             else if (question.sourceReviewNote != null && question.practiceUsesPrintedKey) "انتخاب با کلید چاپی مطابقت ندارد؛ یادداشت بررسی مؤلف را بخوان."
                             else "${workbookFa(correctParts)} پاسخ درست؛ پاسخ‌های نادرست را اصلاح کن و دوباره بررسی کن.",
-                            Modifier.fillMaxWidth().padding(14.dp).semantics { liveRegion = LiveRegionMode.Polite },
+                            modifier = Modifier.fillMaxWidth().padding(14.dp).semantics { liveRegion = LiveRegionMode.Polite },
                             color = if (allCorrect) Green else SelectionInk)
                     }
                 }
@@ -240,7 +240,7 @@ internal fun WholeWorkbookQuestion(
                 // Original answer only: no generated answer card, rewritten explanation, or shared key strip.
                 if (!exam && state.revealed && state.canReveal(question)) {
                     WorkbookPanel(accent = Green) {
-                        Text("پاسخ کتاب‌کار", color = Green, style = MaterialTheme.typography.titleLarge)
+                        WorkbookArtLabel("science_book", "پاسخ کتاب‌کار", color = Green, style = MaterialTheme.typography.titleLarge)
                         if (question.nativeAnswer.isNotEmpty()) NativeWorkbookContent(question, question.nativeAnswer)
                         else question.answerVisual?.let { WorkbookImage(it, "تصویر پاسخ سؤال ${workbookFa(question.sourceNumber)}", trimAnswerWhitespace = true,
                             onImageReady = {
@@ -249,6 +249,12 @@ internal fun WholeWorkbookQuestion(
                                 jump(referenceIndex)
                                 }
                             }) }
+                        question.answerStudyVisual?.let { asset ->
+                            HorizontalDivider(color = Border)
+                            Text("تصویر آموزشیِ پاسخ", color = Green, style = MaterialTheme.typography.titleMedium)
+                            WorkbookImage(asset, "تصویر آموزشی پاسخ سؤال ${workbookFa(question.sourceNumber)}",
+                                caption = question.answerStudyCaption, maxImageHeight = 420.dp)
+                        }
                     }
                 }
             }

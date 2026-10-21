@@ -72,7 +72,10 @@ data class ChapterQuestion(
     val nativeQuestion: List<SourceBlock> = emptyList(),
     val nativeAnswer: List<SourceBlock> = emptyList(),
     /** False only for documented scientific/figure corrections in practice. */
-    val practiceUsesPrintedKey: Boolean = true
+    val practiceUsesPrintedKey: Boolean = true,
+    /** Owner-supplied learning illustration, separately labelled after the gated source answer. */
+    val answerStudyVisual: String? = null,
+    val answerStudyCaption: String? = null
 )
 
 data class SourceBlock(
