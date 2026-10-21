@@ -215,8 +215,8 @@ internal fun WholeWorkbookQuestion(
                         }
                     }
                     Surface(color = if (allCorrect) GreenSoft else SelectionSoft, shape = RoundedCornerShape(16.dp)) {
-                        Text(if (allCorrect) { if (question.sourceReviewNote != null) "پاسخ با کلید چاپی مطابقت دارد" else "پاسخ درست است" }
-                            else if (question.sourceReviewNote != null) "انتخاب با کلید چاپی مطابقت ندارد؛ یادداشت بررسی مؤلف را بخوان."
+                        Text(if (allCorrect) { if (question.sourceReviewNote != null && question.practiceUsesPrintedKey) "پاسخ با کلید چاپی مطابقت دارد" else if (!question.practiceUsesPrintedKey) "پاسخ تمرین درست است" else "پاسخ درست است" }
+                            else if (question.sourceReviewNote != null && question.practiceUsesPrintedKey) "انتخاب با کلید چاپی مطابقت ندارد؛ یادداشت بررسی مؤلف را بخوان."
                             else "${workbookFa(correctParts)} پاسخ درست؛ پاسخ‌های نادرست را اصلاح کن و دوباره بررسی کن.",
                             Modifier.fillMaxWidth().padding(14.dp).semantics { liveRegion = LiveRegionMode.Polite },
                             color = if (allCorrect) Green else SelectionInk)

@@ -33,7 +33,9 @@ data class LearningStep(
     val acceptedOrders: List<List<Int>> = emptyList(),
     /** Verbatim source text; {{0}}, {{1}}, ... replace only the printed blank marks. */
     val clozeTemplate: String? = null,
-    val allowTokenReuse: Boolean = true
+    val allowTokenReuse: Boolean = true,
+    /** Earlier practice labels mapped to their clarified equivalents; source keys are untouched. */
+    val choiceAliases: Map<String, String> = emptyMap()
 )
 
 data class ChapterQuestion(
@@ -68,7 +70,9 @@ data class ChapterQuestion(
     val sourceReviewNote: String? = null,
     /** Visually checked print text and standalone figures. No page-image fallback. */
     val nativeQuestion: List<SourceBlock> = emptyList(),
-    val nativeAnswer: List<SourceBlock> = emptyList()
+    val nativeAnswer: List<SourceBlock> = emptyList(),
+    /** False only for documented scientific/figure corrections in practice. */
+    val practiceUsesPrintedKey: Boolean = true
 )
 
 data class SourceBlock(

@@ -188,16 +188,13 @@ internal fun WordBankBottomSheet(
             Text("یک گزینه را انتخاب کن", color = Muted, modifier = Modifier.padding(vertical = 8.dp))
             LazyColumn(Modifier.fillMaxWidth().heightIn(max = 440.dp).testTag("choice-sheet"), verticalArrangement = Arrangement.spacedBy(8.dp)) {
                 items(order, key = { it }) { choice ->
-                    val capacity = if (step.allowTokenReuse || step.kind == StepKind.CLASSIFY) Int.MAX_VALUE else
-                        step.pairs.count { it.right == choice }.coerceAtLeast(1)
-                    val usedElsewhere = values.indices.count { it != row && values[it] == choice }
-                    val available = usedElsewhere < capacity
-                    OutlinedButton(onClick = { onSelect(choice) }, enabled = available,
+                    // A bank is a set of possible answers, never a consumable inventory.
+                    // Reusing a choice must not clear, move or disable another blank.
+                    OutlinedButton(onClick = { onSelect(choice) },
                         modifier = Modifier.fillMaxWidth().heightIn(min = 54.dp).testTag("cloze-choice-$choice"),
                         shape = RoundedCornerShape(14.dp),
                         colors = ButtonDefaults.outlinedButtonColors(containerColor = if (values.getOrNull(row) == choice) SelectionSoft else MaterialTheme.colorScheme.surface)) {
                         WorkbookText(choice, Modifier.weight(1f))
-                        if (!available) Text("استفاده شده", style = MaterialTheme.typography.labelSmall)
                     }
                 }
                 item {

@@ -24,10 +24,66 @@ object QuestionDraftCodec {
             shownHints = if (current) o.optInt("shownHints") else 0,
             revealed = current && o.optBoolean("revealed"),
             shuffleSeed = if (o.has("shuffleSeed")) o.getInt("shuffleSeed") else kotlin.random.Random.nextInt()
-        ).let { migrateInstrumentLabel(it, question) }
+        ).let { migrateChoiceLabels(it, question) }
+            .let { migrateTenChapterControls(it, question) }
+            .let { migrateInstrumentLabel(it, question) }
             .let { migrateAlloyCells(it, question) }
             .let { if (it.revealed && !it.canReveal(question)) it.copy(revealed = false) else it }
     }.getOrElse { QuestionPractice() }
+
+    /** Apply the same label migration to drafts, checks and failed-attempt fingerprints.
+     * This preserves locks/hints without counting a wording change as a new attempt.
+     */
+    private fun migrateChoiceLabels(state: QuestionPractice, question: ChapterQuestion?): QuestionPractice {
+        if (question == null || question.steps.none { it.choiceAliases.isNotEmpty() }) return state
+        fun normalize(index: Int, values: List<String>): List<String> {
+            val aliases = question.steps.getOrNull(index)?.choiceAliases.orEmpty()
+            return values.map { aliases[it] ?: it }
+        }
+        fun normalizeMap(values: Map<String, List<String>>) = values.mapValues { (id, rows) ->
+            normalize(question.steps.indexOfFirst { it.id == id }, rows)
+        }
+        val attempts = state.incorrectSubmissions.map { attempt ->
+            attempt.mapIndexed { index, rows -> normalize(index, rows) }
+        }.distinct()
+        return state.copy(answers=normalizeMap(state.answers),checked=normalizeMap(state.checked),
+            incorrectSubmissions=attempts,shownHints=minOf(state.shownHints,attempts.size.coerceAtMost(2)))
+    }
+
+    /** Keep existing learning history when compound cells become independent.
+     * Only the old preparation-order draft needs a fresh check: it did not answer
+     * the new convection-direction task and cannot authorize its reference key.
+     */
+    private fun migrateTenChapterControls(state: QuestionPractice, question: ChapterQuestion?): QuestionPractice {
+        if (question == null || question.section != "تمرین‌های اصلی") return state
+        val step=question.steps.singleOrNull() ?: return state
+        val id=question.relatedChapter to question.sourceNumber
+        fun expand(values:List<String>):List<String> = when {
+            id==(7 to 19) && values.size==5 -> values.take(3) +
+                (if(values[3]=="دشت‌ها و دامنهٔ کوه‌ها")listOf("دشت‌ها","دامنهٔ کوه‌ها")else listOf(values[3],"")) +
+                (if(values[4]=="چاه و قنات")listOf("چاه","قنات")else listOf(values[4],""))
+            id==(7 to 20) && values.size==4 -> values.take(3) +
+                (if(values[3]=="کوهستانی و شیب دار")listOf("کوهستانی","شیب دار")else listOf(values[3],""))
+            id==(9 to 3) && values.size==2 -> {
+                fun group(value:String)=when {
+                    value.contains("باد") || value.contains("امواج") -> "تجدید پذیر"
+                    value.contains("نفت") || value.contains("هسته") -> "تجدید نا پذیر"
+                    else -> ""
+                }
+                step.classifyItems.map { group(values[if(it.category=="تجدید پذیر")0 else 1]) }
+            }
+            else -> values
+        }
+        val oldDirections=id==(10 to 13) && state.answers[step.id]?.let { values ->
+            values.isNotEmpty() && values.all { value -> value.toIntOrNull()?.let { it in 0..3 }==true }
+        }==true
+        if(oldDirections)return state.copy(answers=state.answers+(step.id to List(4){""}),checked=state.checked-step.id,
+            incorrectSubmissions=emptyList(),shownHints=0,revealed=false)
+        if(id !in setOf(7 to 19,7 to 20,9 to 3))return state
+        fun mapped(values:Map<String,List<String>>)=values[step.id]?.let { values+(step.id to expand(it)) } ?: values
+        return state.copy(answers=mapped(state.answers),checked=mapped(state.checked),
+            incorrectSubmissions=state.incorrectSubmissions.map { attempt -> attempt.map { expand(it) } }.distinct())
+    }
 
     private fun migrateInstrumentLabel(state: QuestionPractice, question: ChapterQuestion?): QuestionPractice {
         if (question?.relatedChapter != 2 || question.sourceNumber != 15 || question.section != "تمرین‌های اصلی") return state

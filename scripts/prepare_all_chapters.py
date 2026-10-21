@@ -142,7 +142,7 @@ def main():
     for p in (ASSETS/'images').iterdir():
         if p.is_file() and p.name not in keep:p.unlink()
     dump(ASSETS/'content/image-dimensions.json',{p.name:list(Image.open(p).size)for p in (ASSETS/'images').glob('*.webp')if p.name in keep})
-    from native_first_five import write as write_native
+    from native_first_ten import write as write_native
     write_native()
     print('Prepared',len(content),'questions;',sum(x['steps'] for x in catalog),'learning groups;',sum(x.stat().st_size for x in ASSETS.rglob('*') if x.is_file()),'asset bytes')
 

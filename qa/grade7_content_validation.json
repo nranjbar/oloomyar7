@@ -173,12 +173,21 @@
     "match": 194,
     "multi": 40,
     "single": 79,
-    "order": 19,
-    "classify": 2
+    "order": 18,
+    "classify": 3
   },
-  "packagedAssetBytes": 16020408,
+  "packagedAssetBytes": 16167010,
   "contentRequiringAuthorConfirmation": [
     "g7_ch13_mcq03"
+  ],
+  "documentedPracticeCorrections": [
+    "g7_ch07_q14",
+    "g7_ch09_q15",
+    "g7_ch10_q21",
+    "g7_ch10_mcq04"
+  ],
+  "printedUnitReviewNotes": [
+    "g7_ch08_mcq03"
   ],
   "wholeFloatingFiguresRestored": 46,
   "neighbouringFigureFragmentsExcluded": 43,

@@ -65,7 +65,7 @@
         ],
         "id": "g7-ch02-main-001-1405-s01",
         "clozeTemplate": "۱- از بین کلمات داخل کادر ، کلمه مناسب برای هر جمله را انتخاب کنید .\n(( طول – ظرف های مدرج – جرم – ثانیه – فرضیه سازی – زمان – لیتر – اندازه گیری – حجم – کیلو گرم ))\na – مقدار ماده تشکیل دهنده جسم ، {{0}} نام دارد .\nb – فاصله بین دو نقطه و مسافتی را که یک جسم طی می کند ، با یکای {{1}} اندازه می گیریم .\nc – یک {{2}} برابر حجم ظرف مکعبی شکل به طول ، عرض و ارتفاع ۱۰ سانتی متر است . یعنی معادل ۱۰۰۰ سانتی متر مکعب است .\nd – از {{3}} برای اندازه گیری حجم مقدارهای کم مایع استفاده می کنیم .\ne – یک مرحله مهم برای جمع آوری اطلاعات ، {{4}} است که دقت آن به دقت شخص و دقت وسیله بستگی دارد .\nf – برای اینکه بتوانیم به سؤال « چه وقت » و « چه مدت » پاسخ دهیم ، {{5}} را اندازه می گیریم .\ng – یکای اندازه گیری زمان ، {{6}} است .",
-        "allowTokenReuse": false
+        "allowTokenReuse": true
       }
     ],
     "visual": null,
@@ -150,7 +150,7 @@
         ],
         "choices": [],
         "id": "g7-ch02-main-002-1405-s01",
-        "allowTokenReuse": false
+        "allowTokenReuse": true
       },
       {
         "kind": "match",
@@ -190,7 +190,7 @@
         ],
         "choices": [],
         "id": "g7-ch02-main-002-1405-s02",
-        "allowTokenReuse": false
+        "allowTokenReuse": true
       },
       {
         "kind": "single",
@@ -249,7 +249,7 @@
         ],
         "choices": [],
         "id": "g7-ch02-main-002-1405-s04",
-        "allowTokenReuse": false
+        "allowTokenReuse": true
       }
     ],
     "visual": "g7_ch02_q02.webp",
@@ -434,7 +434,7 @@
           "۳۰۰۰ نیوتون"
         ],
         "id": "g7-ch02-main-004-1405-s01",
-        "allowTokenReuse": false
+        "allowTokenReuse": true
       }
     ],
     "visual": null,
@@ -587,7 +587,7 @@
           "سانتی‌متر"
         ],
         "id": "g7-ch02-main-006-1405-s01",
-        "allowTokenReuse": false
+        "allowTokenReuse": true
       },
       {
         "kind": "single",
@@ -1132,7 +1132,7 @@
           "برابر"
         ],
         "id": "g7-ch02-main-011-1405-s01",
-        "allowTokenReuse": false
+        "allowTokenReuse": true
       }
     ],
     "visual": "g7_ch02_q11.webp",
@@ -1208,7 +1208,7 @@
           "نیروسنج"
         ],
         "id": "g7-ch02-main-012-1405-s01",
-        "allowTokenReuse": false
+        "allowTokenReuse": true
       },
       {
         "kind": "match",
@@ -1232,7 +1232,7 @@
           "ساعت"
         ],
         "id": "g7-ch02-main-012-1405-s02",
-        "allowTokenReuse": false
+        "allowTokenReuse": true
       },
       {
         "kind": "multi",
@@ -1427,7 +1427,7 @@
           "۱۱ سانتی‌متر"
         ],
         "id": "g7-ch02-main-014-1405-s01",
-        "allowTokenReuse": false
+        "allowTokenReuse": true
       },
       {
         "kind": "single",
@@ -1539,7 +1539,7 @@
           "زمان‌سنج"
         ],
         "id": "g7-ch02-main-015-1405-s01",
-        "allowTokenReuse": false
+        "allowTokenReuse": true
       },
       {
         "kind": "match",
@@ -1569,7 +1569,7 @@
           "زمان"
         ],
         "id": "g7-ch02-main-015-1405-s02",
-        "allowTokenReuse": false
+        "allowTokenReuse": true
       }
     ],
     "visual": "g7_ch02_q15.webp",

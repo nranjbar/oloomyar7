@@ -68,6 +68,7 @@ open class AssetQuestionRepository(
                         nativeAnswer = parseBlocks(q.optJSONArray("nativeAnswer")),
                         bookPrompt = optionalText(q, "bookPrompt") ?: q.getString("source"),
                         sourceNumber = q.optInt("sourceNumber", q.getInt("number")),
+                        practiceUsesPrintedKey = q.optBoolean("practiceUsesPrintedKey", true),
                         sourcePage = q.optInt("sourcePage"),
                         relatedChapter = q.optInt("relatedChapter"),
                         visualCaption = optionalText(q, "visualCaption"),
@@ -275,6 +276,9 @@ open class AssetQuestionRepository(
             prompt = o.getString("prompt"),
             clozeTemplate = optionalText(o, "clozeTemplate"),
             allowTokenReuse = o.optBoolean("allowTokenReuse", true),
+            choiceAliases = o.optJSONObject("choiceAliases")?.let { aliases ->
+                aliases.keys().asSequence().associateWith { aliases.getString(it) }
+            }.orEmpty(),
             options = options,
             pick = if (kind == StepKind.MULTI) o.optInt("pick") else 0,
             pairs = pairs,

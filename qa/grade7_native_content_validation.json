@@ -1,18 +1,23 @@
 {
   "status": "PASS",
   "edition": 1405,
-  "nativeQuestions": 104,
-  "nativeAnswers": 104,
+  "nativeQuestions": 232,
+  "nativeAnswers": 232,
   "chapterCounts": [
     8,
     20,
     31,
     23,
-    22
+    22,
+    21,
+    34,
+    26,
+    18,
+    29
   ],
-  "nativeTables": 6,
-  "nativeMathBlocks": 8,
-  "inlinePrintedBlanks": 139,
+  "nativeTables": 10,
+  "nativeMathBlocks": 20,
+  "inlinePrintedBlanks": 326,
   "standaloneScientificFigures": [
     {
       "question": "g7_ch01_q07",
@@ -185,9 +190,229 @@
     {
       "question": "g7_ch05_mcq05",
       "asset": "pdf:workbook.pdf#19,79,644,175,792"
+    },
+    {
+      "question": "g7_ch06_q03",
+      "asset": "pdf:workbook.pdf#20,36,424,248,580"
+    },
+    {
+      "question": "g7_ch06_q06",
+      "asset": "pdf:workbook.pdf#21,42.6,57.3,282.31,217.35"
+    },
+    {
+      "question": "g7_ch06_q10",
+      "asset": "pdf:workbook.pdf#21,38.2,699.9,282.45,811.65"
+    },
+    {
+      "question": "g7_ch06_q11",
+      "asset": "pdf:workbook.pdf#22,45,122,400,233"
+    },
+    {
+      "question": "g7_ch06_q12",
+      "asset": "pdf:workbook.pdf#22,42.6,304.92,177.48,435.62"
+    },
+    {
+      "question": "g7_ch06_q16",
+      "asset": "pdf:workbook.pdf#23,70,203,265,307"
+    },
+    {
+      "question": "g7_ch07_q04",
+      "asset": "pdf:workbook.pdf#24,38.4,624.21,243.11,733.21"
+    },
+    {
+      "question": "g7_ch07_q05",
+      "asset": "pdf:workbook.pdf#25,31.5,51,159,137.25"
+    },
+    {
+      "question": "g7_ch07_q13",
+      "asset": "pdf:workbook.pdf#26,40,444,221,560"
+    },
+    {
+      "question": "g7_ch07_q14",
+      "asset": "pdf:workbook.pdf#26,45,629.24,242.48,800.19"
+    },
+    {
+      "question": "g7_ch07_q19",
+      "asset": "pdf:workbook.pdf#27,38.4,366.38,303.84,480.98"
+    },
+    {
+      "question": "g7_ch07_q20",
+      "asset": "pdf:workbook.pdf#27,30.05,585.41,331.29,725.91"
+    },
+    {
+      "question": "g7_ch07_q23",
+      "asset": "pdf:workbook.pdf#28,39.75,265.51,269.2,380.26"
+    },
+    {
+      "question": "g7_ch07_q25",
+      "asset": "pdf:workbook.pdf#28,39.75,468.74,222,555.74"
+    },
+    {
+      "question": "g7_ch07_q26",
+      "asset": "pdf:workbook.pdf#28,61.5,588.36,129.15,679.88"
+    },
+    {
+      "question": "g7_ch07_q28",
+      "asset": "pdf:workbook.pdf#29,39.8,55.95,265.55,196.38"
+    },
+    {
+      "question": "g7_ch07_mcq06",
+      "asset": "pdf:workbook.pdf#29,34.45,649.51,324.7,787.51"
+    },
+    {
+      "question": "g7_ch08_q02",
+      "asset": "pdf:workbook.pdf#30,34.95,396.98,189.4,546.5"
+    },
+    {
+      "question": "g7_ch08_q03",
+      "asset": "pdf:workbook.pdf#30,34.95,617.92,474.53,791.92"
+    },
+    {
+      "question": "g7_ch08_q04",
+      "asset": "pdf:workbook.pdf#31,22.4,48.9,468.3,174"
+    },
+    {
+      "question": "g7_ch08_q07",
+      "asset": "pdf:workbook.pdf#31,35.65,416,177.55,590.05"
+    },
+    {
+      "question": "g7_ch08_q08",
+      "asset": "pdf:workbook.pdf#31,28.5,716.53,105.75,775.03"
+    },
+    {
+      "question": "g7_ch08_q14",
+      "asset": "pdf:workbook.pdf#32,34.95,678.64,263.5,782.08"
+    },
+    {
+      "question": "g7_ch08_q15",
+      "asset": "pdf:workbook.pdf#33,34.95,62.2,257.17,192.2"
+    },
+    {
+      "question": "g7_ch08_q17",
+      "asset": "pdf:workbook.pdf#33,57,252.1,404.25,376.69"
+    },
+    {
+      "question": "g7_ch08_q19",
+      "asset": "pdf:workbook.pdf#33,35.65,676.69,334.1,784.98"
+    },
+    {
+      "question": "g7_ch08_mcq05",
+      "asset": "pdf:workbook.pdf#34,31.45,350.5,257.65,426.65"
+    },
+    {
+      "question": "g7_ch08_mcq06",
+      "asset": "pdf:workbook.pdf#34,37.7,506.25,239.61,596.1"
+    },
+    {
+      "question": "g7_ch08_mcq07",
+      "asset": "pdf:workbook.pdf#34,34,647,307,794"
+    },
+    {
+      "question": "g7_ch09_q04",
+      "asset": "pdf:workbook.pdf#35,39.1,597.64,284.4,761.84"
+    },
+    {
+      "question": "g7_ch09_q08",
+      "asset": "pdf:workbook.pdf#36,48.2,299.15,205.45,413.03"
+    },
+    {
+      "question": "g7_ch09_q09",
+      "asset": "pdf:workbook.pdf#36,34.95,483.96,189.34,604.16"
+    },
+    {
+      "question": "g7_ch09_q10",
+      "asset": "pdf:workbook.pdf#36,34.95,626.57,175.3,777.52"
+    },
+    {
+      "question": "g7_ch09_q11",
+      "asset": "pdf:workbook.pdf#37,37,35.65,381.52,127.9"
+    },
+    {
+      "question": "g7_ch09_q12",
+      "asset": "pdf:workbook.pdf#37,28.65,308.36,405.22,374.76"
+    },
+    {
+      "question": "g7_ch09_q13",
+      "asset": "pdf:workbook.pdf#37,37,557.11,291.25,723.41"
+    },
+    {
+      "question": "g7_ch09_q15",
+      "asset": "pdf:workbook.pdf#38,34.25,269.79,286,517.24"
+    },
+    {
+      "question": "g7_ch09_mcq03",
+      "asset": "pdf:workbook.pdf#38,30.75,668.97,317.18,794.07"
+    },
+    {
+      "question": "g7_ch10_q02",
+      "asset": "pdf:workbook.pdf#39,32.15,341.93,183.1,478.84"
+    },
+    {
+      "question": "g7_ch10_q09",
+      "asset": "pdf:workbook.pdf#40,33,546.63,192.75,689.13"
+    },
+    {
+      "question": "g7_ch10_q13",
+      "asset": "pdf:workbook.pdf#41,37,290.76,162.1,459.77"
+    },
+    {
+      "question": "g7_ch10_q13",
+      "asset": "pdf:answers10.pdf#2,37.35,464.6,197.05,629.61"
+    },
+    {
+      "question": "g7_ch10_q14",
+      "asset": "pdf:workbook.pdf#41,44.25,480.02,152.25,630.77"
+    },
+    {
+      "question": "g7_ch10_q15",
+      "asset": "pdf:workbook.pdf#41,37,671.05,195.5,785.65"
+    },
+    {
+      "question": "g7_ch10_q16",
+      "asset": "pdf:workbook.pdf#42,235.5,112.48,399.75,203.98"
+    },
+    {
+      "question": "g7_ch10_q16",
+      "asset": "pdf:workbook.pdf#42,37.5,95.23,211.55,199.48"
+    },
+    {
+      "question": "g7_ch10_q18",
+      "asset": "pdf:workbook.pdf#42,25,421.8,210,576"
+    },
+    {
+      "question": "g7_ch10_q19",
+      "asset": "pdf:workbook.pdf#42,63,682,225,794"
+    },
+    {
+      "question": "g7_ch10_q21",
+      "asset": "pdf:workbook.pdf#43,32,130,277,260"
+    },
+    {
+      "question": "g7_ch10_q21",
+      "asset": "pdf:workbook.pdf#43,49.6,397.02,219.35,473.71"
+    },
+    {
+      "question": "g7_ch10_q21",
+      "asset": "pdf:workbook.pdf#43,36.75,520.48,145.5,602.23"
+    },
+    {
+      "question": "g7_ch10_q22",
+      "asset": "pdf:workbook.pdf#43,36.75,620.27,159.7,729.52"
+    },
+    {
+      "question": "g7_ch10_q24",
+      "asset": "pdf:workbook.pdf#44,47.5,58.7,117.38,185.8"
+    },
+    {
+      "question": "g7_ch10_mcq02",
+      "asset": "pdf:workbook.pdf#44,47.5,414.39,317.9,593.92"
+    },
+    {
+      "question": "g7_ch10_mcq03",
+      "asset": "pdf:workbook.pdf#44,47.5,611.54,200.55,705.82"
     }
   ],
   "fullQuestionOrKeyScreenshots": 0,
-  "chaptersSixToFifteenDataUnchanged": true,
-  "sourceReview": "All workbook pages 2–19 and chapter answer PDFs 01–05 visually reviewed; PDF text-layer inventories are secondary checks, not OCR certification."
+  "chaptersElevenToFifteenDataUnchanged": true,
+  "sourceReview": "All workbook pages 2–44 and chapter answer PDFs 01–10 visually reviewed; practice revisions and printed-key conflicts are separately recorded."
 }

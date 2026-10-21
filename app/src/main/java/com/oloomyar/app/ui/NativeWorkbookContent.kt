@@ -53,7 +53,7 @@ internal fun NativeWorkbookContent(
         if (practice == null) {
             if (template != null) WorkbookText(Regex("""\{\{\d+\}\}""").replace(template, "................"))
             else if (step.kind in setOf(StepKind.SINGLE, StepKind.MULTI)) step.options.forEach { WorkbookText(it.text) }
-        } else if (template != null && step.kind == StepKind.MATCH) {
+        } else if (template != null && step.kind in setOf(StepKind.MATCH, StepKind.CLASSIFY)) {
             InlineFillBlanksQuestion(step.copy(clozeTemplate = template), display?.values(step).orEmpty(), display?.shuffleSeed ?: 0,
                 mark = { display?.mark(step, it) ?: ResponseMark.EMPTY },
                 locked = { !exam && (display?.revealed == true || display?.locked(step, it) == true) },
@@ -161,7 +161,7 @@ private fun SourceTable(block: SourceBlock, question: ChapterQuestion, state: Qu
                                 if (token == null || state == null) WorkbookText(Regex("""\{\{\d+(?::\d+)?\}\}""").replace(cell, "................"), bold = row == 0, style = MaterialTheme.typography.bodySmall)
                                 else {
                                     val step = question.steps[token.groupValues[1].toInt()]
-                                    if (step.kind == StepKind.MATCH) {
+                                    if (step.kind in setOf(StepKind.MATCH, StepKind.CLASSIFY)) {
                                         val template = Regex("""\{\{\d+:(\d+)\}\}""").replace(cell) { "{{${it.groupValues[1]}}}" }
                                         InlineFillBlanksQuestion(step.copy(clozeTemplate = template), state.values(step), state.shuffleSeed,
                                             mark = { state.mark(step, it) }, locked = { !exam && (state.revealed || state.locked(step, it)) },

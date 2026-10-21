@@ -58,8 +58,10 @@ for c,expected in enumerate(EXPECTED,1):
         if c>=4 and r['kind']=='mcq':
             assert r['keyLetter']==PRINTED_KEYS[c][r['number']-1]
             correct=[o['text'] for o in q['steps'][0]['options'] if o['correct']]
-            if c<=5:
-                assert len(correct)==1 and correct[0].startswith(r['keyLetter']+'- ')
+            if c<=10:
+                expected_key='ج' if cid=='g7_ch10_mcq04' else r['keyLetter']
+                assert len(correct)==1 and correct[0].startswith(expected_key+'- ')
+                if cid=='g7_ch10_mcq04':assert not q['practiceUsesPrintedKey'] and q['sourceReviewNote']
             else: assert correct==['گزینهٔ '+r['keyLetter']]
             assert len(r['answerSegments'])==1 and r['answerSegments'][0]['bbox'][2]-r['answerSegments'][0]['bbox'][0]<60
         if c<=3:
@@ -126,7 +128,7 @@ for entry in load(ROOT/'qa/source/design-assets-1405.json'):
 catalog=load(ASSETS/'content/catalog.json');assert [x['questions']for x in catalog]==EXPECTED
 assert [x['steps']for x in catalog]==[sum(len(q['steps'])for q in qs_all if q['relatedChapter']==c)for c in range(1,16)]
 app_gradle=(ROOT/'app/build.gradle.kts').read_text();assert 'ignoreAssetsPattern = "*.png:'in app_gradle
-assert 'com.oloomyar.app.grade7'in app_gradle and 'versionCode = 8'in app_gradle
+assert 'com.oloomyar.app.grade7'in app_gradle and 'versionCode = 9'in app_gradle
 assert 'android.permission.INTERNET'not in(ROOT/'app/src/main/AndroidManifest.xml').read_text()
 packaged=[p for p in ASSETS.rglob('*')if p.is_file()and p.suffix!='.png'and not p.name.startswith('.')]
 report=dict(status='PASS',edition=1405,chapters=15,questions=317,learningGroups=334,hintPairs=len(hint_pairs),
@@ -134,6 +136,8 @@ report=dict(status='PASS',edition=1405,chapters=15,questions=317,learningGroups=
     immutableSourcePdfs=16,sourceQuestionRegions=317,isolatedSourceAnswers=317,scientificWebpAssets=len(images),
     interactionKinds=dict(kinds),packagedAssetBytes=sum(p.stat().st_size for p in packaged),
     contentRequiringAuthorConfirmation=['g7_ch13_mcq03'],
+    documentedPracticeCorrections=['g7_ch07_q14','g7_ch09_q15','g7_ch10_q21','g7_ch10_mcq04'],
+    printedUnitReviewNotes=['g7_ch08_mcq03'],
     wholeFloatingFiguresRestored=sum(len(r.get('paperAdditions',[]))for r in records),
     neighbouringFigureFragmentsExcluded=sum(len(r.get('paperExclusions',[]))for r in records),
     notes=['Original question and answer PDFs are immutable and SHA-256 verified',

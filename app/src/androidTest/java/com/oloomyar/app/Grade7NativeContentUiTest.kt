@@ -90,18 +90,18 @@ class Grade7NativeContentUiTest {
         val bitmap=checkNotNull(InstrumentationRegistry.getInstrumentation().uiAutomation.takeScreenshot())
         context.contentResolver.openOutputStream(uri)!!.use { bitmap.compress(Bitmap.CompressFormat.PNG,100,it) };bitmap.recycle()
     }
-    @Test fun all104QuestionsAndKeysHaveNativeContentAndNoPageScreenshotFallback() {
-        val chapters=catalog.chapters.take(5)
-        assertEquals(listOf(8,20,31,23,22),chapters.map { it.questions.size })
+    @Test fun all232QuestionsAndKeysHaveNativeContentAndNoPageScreenshotFallback() {
+        val chapters=catalog.chapters.take(10)
+        assertEquals(listOf(8,20,31,23,22,21,34,26,18,29),chapters.map { it.questions.size })
         chapters.flatMap { it.questions }.forEach { q ->
             assertTrue(q.id,q.nativeQuestion.isNotEmpty());assertTrue(q.id,q.nativeAnswer.isNotEmpty())
             assertTrue(q.id,q.nativeQuestion.none { it.asset==q.sourceQuestionVisual || it.asset==q.answerVisual })
-            assertTrue(q.id,q.nativeAnswer.all { it.type in setOf("text","math","table") })
+            assertTrue(q.id,q.nativeAnswer.all { it.type in setOf("text","math","table","figure") })
         }
-        assertTrue(catalog.chapters.drop(5).flatMap { it.questions }.all { it.nativeQuestion.isEmpty() })
+        assertTrue(catalog.chapters.drop(10).flatMap { it.questions }.all { it.nativeQuestion.isEmpty() })
     }
-    @Test fun everyFirstFiveQuestionRendersOnAndroidIncludingAllTableAndReactionSchemas() {
-        val questions=catalog.chapters.take(5).flatMap { it.questions }
+    @Test fun everyFirstTenQuestionRendersOnAndroidIncludingAllTableAndReactionSchemas() {
+        val questions=catalog.chapters.take(10).flatMap { it.questions }
         val current=mutableStateOf(questions.first())
         compose.setContent {
             OloomYarTheme {
@@ -230,8 +230,8 @@ class Grade7NativeContentUiTest {
         return state
     }
     private data class AuditFrame(val q:ChapterQuestion,val answer:Boolean=false,val width:Int=320,val font:Float=1f)
-    @Test fun all104FilledQuestionsAndAnswersHaveNoOverlappingBlanksOrClippedTablesAtPhoneWidths() {
-        val questions=catalog.chapters.take(5).flatMap { it.questions }
+    @Test fun all232FilledQuestionsAndAnswersHaveNoOverlappingBlanksOrClippedTablesAtPhoneWidths() {
+        val questions=catalog.chapters.take(10).flatMap { it.questions }
         val current=mutableStateOf(AuditFrame(questions.first()))
         compose.setContent {
             val frame=current.value
@@ -307,7 +307,7 @@ class Grade7NativeContentUiTest {
                             assertFalse("${q.id} $width/$font clips text ${input.text}; paintBox=${layout.size}; measured=${painted.size}; overflow=${painted.didOverflowWidth}/${painted.didOverflowHeight}; lines=${painted.lineCount}",painted.hasVisualOverflow)
                         }
                     }
-                    if(width==320 && font==1f && !answer && q.canonicalForAudit() in setOf("g7_ch02_q02","g7_ch02_q15","g7_ch03_q17","g7_ch03_q21","g7_ch05_q02")) {
+                    if(width==320 && font==1f && !answer && q.canonicalForAudit() in setOf("g7_ch02_q02","g7_ch02_q15","g7_ch03_q17","g7_ch03_q21","g7_ch05_q02","g7_ch06_q06","g7_ch07_q19","g7_ch08_q12","g7_ch08_q18","g7_ch09_q03","g7_ch10_q16")) {
                         if(q.canonicalForAudit()=="g7_ch03_q21") compose.onNodeWithTag("blank-${q.steps.first().id}-0").performScrollTo()
                         capture("layout-${q.canonicalForAudit()}")
                     }
@@ -320,7 +320,7 @@ class Grade7NativeContentUiTest {
             }
         }
         assertTrue("Real clipping negative controls must run",clippingOracleChecked)
-        assertEquals(624,report.length())
+        assertEquals(1392,report.length())
         val values=ContentValues().apply {
             put(MediaStore.Downloads.DISPLAY_NAME,"native-layout-audit.json")
             put(MediaStore.Downloads.MIME_TYPE,"application/json")
@@ -365,6 +365,102 @@ class Grade7NativeContentUiTest {
             compose.onNodeWithTag("chapter-study-progress").performScrollTo().assertTextEquals("${workbookFa(chapter.questions.count { chapter.progress.done(it.id) })} از ۳۱ سؤال")
             capture("layout-chapter-3-cover-progress")
             compose.onNodeWithTag("chapter-study-continue").performScrollTo().assertIsEnabled().performClick()
+            compose.onNodeWithTag("native-source-question").assertExists()
+            compose.onNodeWithTag("reveal-answer").assertIsNotEnabled()
+        }
+    }
+
+    @Test fun trueFalseChoicesStayEnabledAndReusableWithoutMovingOtherAnswers() {
+        val q=question(1,2);val s=q.steps.single();open(q)
+        select(s,0,"غلط");select(s,1,"غلط");select(s,2,"غلط")
+        val store=WorkbookProgress(context,"native_ui",listOf(q))
+        assertEquals(listOf("غلط","غلط","غلط"),QuestionDraftCodec.decode(store.draft(q.id),q).values(s))
+        select(s,0,"صحیح");select(s,1,"صحیح")
+        compose.onNodeWithText("بررسی پاسخ").performClick()
+        assertTrue(QuestionDraftCodec.decode(store.draft(q.id),q).correct(q))
+    }
+
+    @Test fun clarifiedBalloonChoicesStayAvailableForBothContainersAndClearOnlyOneBlank() {
+        val q=question(3,22);val s=q.steps.single();open(q,1.5f)
+        val hot=s.pairs[0].right;val cold=s.pairs[1].right
+        assertFalse(WorkbookAnswers.choices(s,0).any { it.contains("این اتفاق") || it.contains("برعکس") })
+        select(s,0,hot);select(s,1,hot)
+        val store=WorkbookProgress(context,"native_ui",listOf(q))
+        assertEquals(listOf(hot,hot),QuestionDraftCodec.decode(store.draft(q.id),q).values(s))
+        select(s,1,cold)
+        capture("v08-balloon-clear-choices")
+        assertEquals(listOf(hot,cold),QuestionDraftCodec.decode(store.draft(q.id),q).values(s))
+        controlInQuestion("blank-${s.id}-0").performClick()
+        compose.onNodeWithTag("choice-sheet").performScrollToNode(hasText("بستن"))
+        compose.onNodeWithText("بستن").performClick()
+        assertEquals(listOf("",cold),QuestionDraftCodec.decode(store.draft(q.id),q).values(s))
+        select(s,0,hot)
+        compose.onNodeWithText("بررسی پاسخ").performClick()
+        compose.onNodeWithTag("reveal-answer").assertIsEnabled()
+    }
+
+    @Test fun elevenEnergySourcesCanReuseBothClassificationChoicesInsideTheCompleteTable() {
+        val q=question(9,3);val s=q.steps.single();assertEquals(StepKind.CLASSIFY,s.kind);open(q,1.5f)
+        s.classifyItems.forEachIndexed { row,item ->select(s,row,item.category) }
+        compose.onNodeWithText("بررسی پاسخ").performClick()
+        val state=QuestionDraftCodec.decode(WorkbookProgress(context,"native_ui",listOf(q)).draft(q.id),q)
+        assertTrue(state.correct(q));assertEquals(11,state.values(s).size)
+        compose.onNodeWithTag("reveal-answer").assertIsEnabled()
+        capture("v08-energy-classification-complete")
+    }
+
+    @Test fun rewrittenChoicesAndSplitCellsMigrateWithoutUnlockingOldWrongSubmissions() {
+        val q=question(3,22);val s=q.steps.single()
+        val old=listOf("هوای داخل بطری گرم شده و حجمش بیشتر می شود و به داخل بادکنک می رود و بادکنک باد می شود.","این اتفاق نمی افتد و برعکس است.")
+        val state=QuestionPractice(answers=mapOf(s.id to old),checked=mapOf(s.id to old),shuffleSeed=982)
+        val migrated=QuestionDraftCodec.decode(QuestionDraftCodec.encode(state),q)
+        assertEquals(s.pairs.map { it.right },migrated.values(s));assertTrue(migrated.correct(q));assertEquals(982,migrated.shuffleSeed)
+        val free=question(7,19);val fs=free.steps.single()
+        val compound=listOf("آزاد","نفوذ پذیر","نفوذ ناپذیر","دشت‌ها و دامنهٔ کوه‌ها","چاه و قنات")
+        val previous=QuestionPractice(answers=mapOf(fs.id to compound),checked=mapOf(fs.id to compound),shuffleSeed=983)
+        val restored=QuestionDraftCodec.decode(QuestionDraftCodec.encode(previous),free)
+        assertEquals(fs.pairs.map { it.right },restored.values(fs));assertTrue(restored.correct(free))
+        val confined=question(7,20);val cs=confined.steps.single()
+        val cv=listOf("تحت فشار","نفوذ پذیر","نفوذ ناپذیر","کوهستانی و شیب دار")
+        assertEquals(cs.pairs.map { it.right },QuestionDraftCodec.decode(QuestionDraftCodec.encode(QuestionPractice(answers=mapOf(cs.id to cv))),confined).values(cs))
+    }
+
+    @Test fun newDirectionsRequireFreshCheckingAndLegacyClassificationKeepsItsSelections() {
+        val q=question(10,13);val s=q.steps.single()
+        val old=QuestionPractice(answers=mapOf(s.id to listOf("0","1","2","3")),checked=mapOf(s.id to listOf("0","1","2","3")),shownHints=2,revealed=true,shuffleSeed=778)
+        val restored=QuestionDraftCodec.decode(QuestionDraftCodec.encode(old),q)
+        assertEquals(List(4){""},restored.values(s));assertFalse(restored.canReveal(q));assertFalse(restored.revealed);assertEquals(778,restored.shuffleSeed)
+        val energy=question(9,3);val es=energy.steps.single()
+        val groups=listOf("باد، خورشید، امواج دریا، جزر و مد، زمین گرمایی، سوخت زیستی، برق آبی","گاز طبیعی، زغال سنگ، نفت و سوخت هسته‌ای")
+        val previous=QuestionPractice(answers=mapOf(es.id to groups),checked=mapOf(es.id to groups),shuffleSeed=779)
+        val migrated=QuestionDraftCodec.decode(QuestionDraftCodec.encode(previous),energy)
+        assertEquals(es.classifyItems.map { it.category },migrated.values(es));assertTrue(migrated.correct(energy))
+    }
+
+    @Test fun documentedScientificCorrectionsKeepTheLiteralReferenceKeyAndDoNotPromoteOldWrongChoices() {
+        val hydro=question(9,15);val s=hydro.steps.single()
+        assertEquals("مولد (ژنراتور)",s.pairs[1].right);assertEquals("توربین",s.pairs[2].right)
+        assertFalse(hydro.practiceUsesPrintedKey);assertNotNull(hydro.sourceReviewNote)
+        assertTrue(hydro.nativeAnswer.single().text.contains("۱- توربین"))
+        val old=s.pairs.map { it.right }.toMutableList().apply { set(1,"توربین");set(2,"مولد (ژنراتور)") }
+        val previous=QuestionPractice(answers=mapOf(s.id to old),checked=mapOf(s.id to old),revealed=true)
+        val migrated=QuestionDraftCodec.decode(QuestionDraftCodec.encode(previous),hydro)
+        assertEquals("توربین",migrated.values(s)[1]);assertFalse(migrated.correct(hydro));assertFalse(migrated.revealed)
+        val mcq=catalog.chapters[9].questions.first { it.section=="چهارگزینه‌ای" && it.sourceNumber==4 }
+        assertEquals(2,mcq.steps.single().options.indexOfFirst { it.correct })
+        assertEquals("الف",mcq.nativeAnswer.single().text);assertFalse(mcq.practiceUsesPrintedKey)
+        val tea=question(10,21)
+        assertTrue(tea.steps.single().pairs[3].right.contains("به‌تنهایی"))
+        assertTrue(tea.steps.single().pairs[4].right.contains("استتار"));assertFalse(tea.practiceUsesPrintedKey)
+    }
+
+    @Test fun chapterTenUsesTheNewCoverAndContinuesIntoItsNativeQuestion() {
+        val intent=Intent(context,Grade7WorkbookActivity::class.java).putExtra("chapter",10)
+        ActivityScenario.launch<Grade7WorkbookActivity>(intent).use {
+            compose.waitUntil(10000) { compose.onAllNodesWithTag("chapter-study-cover").fetchSemanticsNodes().isNotEmpty() }
+            compose.onNodeWithTag("chapter-study-cover").assertExists()
+            capture("v08-chapter-10-cover")
+            compose.onNodeWithTag("chapter-study-continue").performScrollTo().performClick()
             compose.onNodeWithTag("native-source-question").assertExists()
             compose.onNodeWithTag("reveal-answer").assertIsNotEnabled()
         }

@@ -186,14 +186,7 @@ internal fun OrderedMatchEditor(
 
         choices.forEach { value ->
             val selectedHere = activePair?.let { answers[it.left] == value } == true
-            val rowSpecificChoices = activePair?.choices?.isNotEmpty() == true
-            val usesSingleUseWordBank = step.matchChoices.isNotEmpty()
-            val usedByIndex = if (rowSpecificChoices || !usesSingleUseWordBank) {
-                -1
-            } else {
-                step.pairs.indexOfFirst { it.left != activePair?.left && answers[it.left] == value }
-            }
-            val available = !locked && (usedByIndex < 0 || selectedHere)
+            val available = !locked
             OutlinedButton(
                 onClick = {
                     val pair = activePair ?: return@OutlinedButton
@@ -224,14 +217,6 @@ internal fun OrderedMatchEditor(
                 Spacer(Modifier.width(8.dp))
                 Column(Modifier.weight(1f), horizontalAlignment = Alignment.End) {
                     Text(value, textAlign = TextAlign.Right, lineHeight = 23.sp)
-                    if (usedByIndex >= 0) {
-                        Text(
-                            "انتخاب‌شده برای ${if (isBlankQuestion) "جای خالی" else "مورد"} ${toPersianNumber(usedByIndex + 1)}",
-                            color = Muted,
-                            fontSize = 11.sp,
-                            textAlign = TextAlign.Right
-                        )
-                    }
                 }
             }
         }
