@@ -239,7 +239,7 @@ internal fun WholeWorkbookQuestion(
             item(key = "reference") {
                 // Original answer only: no generated answer card, rewritten explanation, or shared key strip.
                 if (!exam && state.revealed && state.canReveal(question)) {
-                    WorkbookPanel(accent = Green) {
+                    WorkbookPanel(accent = Green, modifier = Modifier.testTag("workbook-reference-answer")) {
                         WorkbookArtLabel("science_book", "پاسخ کتاب‌کار", color = Green, style = MaterialTheme.typography.titleLarge)
                         if (question.nativeAnswer.isNotEmpty()) NativeWorkbookContent(question, question.nativeAnswer)
                         else question.answerVisual?.let { WorkbookImage(it, "تصویر پاسخ سؤال ${workbookFa(question.sourceNumber)}", trimAnswerWhitespace = true,

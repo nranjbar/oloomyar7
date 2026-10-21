@@ -27,8 +27,10 @@ internal fun Grade7LaunchSplash(content: @Composable () -> Unit) {
     if (LaunchSplashController.visible) key(ticket) {
         val context = LocalContext.current
         val loaded by produceState<Pair<Bitmap?,Boolean>>(null to false) {
-            value = withContext(Dispatchers.IO) {
-                runCatching { context.assets.open("ui_art/launch_grade7.webp").use { BitmapFactory.decodeStream(it) } }.getOrNull() to true
+            withContext(Dispatchers.Main.immediate) {
+                value = withContext(Dispatchers.IO) {
+                    runCatching { context.assets.open("ui_art/launch_grade7.webp").use { BitmapFactory.decodeStream(it) } }.getOrNull() to true
+                }
             }
         }
         LaunchedEffect(loaded.second) {

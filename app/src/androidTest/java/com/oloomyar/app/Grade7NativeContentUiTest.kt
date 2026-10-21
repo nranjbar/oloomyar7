@@ -250,6 +250,119 @@ class Grade7NativeContentUiTest {
         }
         return state
     }
+
+    /** Both submissions remain wrong, including every independently gated part. */
+    private fun twiceIncorrect(q:ChapterQuestion):QuestionPractice {
+        var state=QuestionPractice(shuffleSeed=1405)
+        repeat(2) { attempt ->
+            q.steps.forEach { step ->
+                val values=when(step.kind) {
+                    StepKind.SINGLE -> listOf(step.options.indices.filter { !step.options[it].correct }[attempt].toString())
+                    StepKind.MATCH -> {
+                        val base=step.pairs.indices.map { row -> WorkbookAnswers.choices(step,row).first { it!=step.pairs[row].right } }
+                        if(attempt==0)base else base.toMutableList().apply {
+                            val other=WorkbookAnswers.choices(step,0).firstOrNull { it!=step.pairs[0].right && it!=base[0] }
+                            this[0]=other ?: step.pairs[0].right
+                        }
+                    }
+                    else -> error("Add a deliberate incorrect response for ${step.kind}")
+                }
+                assertTrue(q.id,WorkbookAnswers.isComplete(step,values))
+                assertFalse(q.id,WorkbookAnswers.isCorrect(step,values))
+                state=state.change(step,values)
+            }
+            assertTrue(q.id,state.canCheck(q));state=state.submit(q)
+        }
+        assertEquals(q.id,2,state.shownHints);assertTrue(q.id,state.canReveal(q))
+        return state
+    }
+
+    @Test fun correctAndHintRoutesShowTheSameCompletePrintedAnswerAcrossAllAnswerFormats() {
+        // Text, multi-part numerical answers, fractions, complete tables, source
+        // diagram and owner answer art all go through the actual question screen.
+        val questions=listOf(question(1,5),question(2,9),question(5,2),question(10,13),question(14,10),question(15,8),
+            catalog.chapters[12].questions.first { it.section=="چهارگزینه‌ای" && it.sourceNumber==3 })
+        val current=mutableStateOf<Pair<ChapterQuestion,Boolean>?>(null)
+        compose.setContent {
+            val frame=current.value
+            if(frame!=null)key(frame.first.id,frame.second) {
+                val q=frame.first
+                val density=LocalDensity.current
+                CompositionLocalProvider(LocalDensity provides Density(density.density,1.5f)) {
+                    OloomYarTheme {
+                        WholeWorkbookQuestion(q,WorkbookProgress(context,"native_ui",listOf(q)),false,false,0,
+                            "بررسی مسیر پاسخ",Modifier.fillMaxSize()) { _,_-> }
+                    }
+                }
+            }
+        }
+        val report=JSONArray()
+        questions.forEach { q ->
+            val snapshots=mutableListOf<List<String>>()
+            for(hinted in listOf(false,true)) {
+                val draft=if(hinted)twiceIncorrect(q) else filled(q)
+                compose.runOnIdle {
+                    WorkbookProgress(context,"native_ui",listOf(q)).saveDraft(q.id,QuestionDraftCodec.encode(draft))
+                    current.value=q to hinted
+                }
+                compose.onNodeWithTag("workbook-reference-answer").assertDoesNotExist()
+                if(!hinted)compose.onNodeWithText("بررسی پاسخ").assertIsEnabled().performClick()
+                compose.onNodeWithTag("workbook-reference-answer").assertDoesNotExist()
+                compose.onNodeWithTag("reveal-answer").assertIsEnabled().performClick()
+                compose.onNodeWithTag("workbook-reference-answer").assertExists()
+                compose.waitUntil(10000) {
+                    compose.onAllNodes(hasContentDescription("پاسخ کتاب‌کار") and
+                        hasAnyAncestor(hasTestTag("workbook-reference-answer")),useUnmergedTree=true).fetchSemanticsNodes().isNotEmpty()
+                }
+                val figures=q.nativeAnswer.filter { it.type=="figure" }.mapNotNull { it.asset }+listOfNotNull(q.answerStudyVisual)
+                figures.forEach { asset ->
+                    val tag="workbook-image-enlarge-$asset"
+                    compose.waitUntil(10000) {
+                        compose.onAllNodesWithTag(tag).fetchSemanticsNodes().singleOrNull()?.config?.contains(SemanticsProperties.Disabled)==false
+                    }
+                    compose.onNode(hasTestTag(tag) and hasAnyAncestor(hasTestTag("workbook-reference-answer"))).assertIsEnabled()
+                }
+                val nodes=compose.onAllNodes(hasAnyAncestor(hasTestTag("workbook-reference-answer")),useUnmergedTree=true).fetchSemanticsNodes()
+                val texts=nodes.flatMap { node ->
+                    if(node.config.contains(SemanticsProperties.Text))node.config[SemanticsProperties.Text].map { it.text } else emptyList()
+                }
+                q.nativeAnswer.forEach { block ->
+                    val expected=when(block.type) {
+                        "text" -> listOf(block.text)
+                        "table" -> block.headers+block.rows.flatten()
+                        "math" -> block.parts.flatMap { part ->
+                            if(part.numerator!=null && part.denominator!=null)listOf(part.numerator,part.denominator) else listOf(part.text)
+                        }
+                        else -> emptyList()
+                    }
+                    expected.forEach { assertTrue("${q.id} missing printed answer: $it",workbookBidi(it) in texts) }
+                }
+                q.answerStudyCaption?.let { assertTrue(q.id,workbookBidi(it) in texts) }
+                val snapshot=nodes.flatMap { node ->
+                    buildList {
+                        if(node.config.contains(SemanticsProperties.Text))addAll(node.config[SemanticsProperties.Text].map { "text:${it.text}" })
+                        if(node.config.contains(SemanticsProperties.ContentDescription))addAll(node.config[SemanticsProperties.ContentDescription].map { "image:$it" })
+                        if(node.config.contains(SemanticsProperties.TestTag))add("tag:${node.config[SemanticsProperties.TestTag]}")
+                    }
+                }.sorted()
+                snapshots.add(snapshot)
+                if(q==questions[1])capture(if(hinted)"v09-reference-density-after-hints" else "v09-reference-density-after-correct")
+            }
+            assertEquals("${q.id}: routes must show identical complete reference content",snapshots[0],snapshots[1])
+            report.put(JSONObject().put("question",q.id).put("nativeBlocks",q.nativeAnswer.size)
+                .put("answerFigures",figuresForReport(q)).put("status","PASS"))
+        }
+        val values=ContentValues().apply {
+            put(MediaStore.MediaColumns.DISPLAY_NAME,"reference-route-parity.json")
+            put(MediaStore.MediaColumns.MIME_TYPE,"application/json")
+            put(MediaStore.MediaColumns.RELATIVE_PATH,"Download/grade7-screenshots")
+        }
+        val uri=context.contentResolver.insert(MediaStore.Downloads.EXTERNAL_CONTENT_URI,values)!!
+        context.contentResolver.openOutputStream(uri)!!.use { it.write(report.toString(2).toByteArray()) }
+    }
+
+    private fun figuresForReport(q:ChapterQuestion)=q.nativeAnswer.count { it.type=="figure" }+if(q.answerStudyVisual!=null)1 else 0
+
     private data class AuditFrame(val q:ChapterQuestion,val answer:Boolean=false,val width:Int=320,val font:Float=1f)
     @Test fun all317FilledQuestionsAndAnswersHaveNoOverlappingBlanksOrClippedTablesAtPhoneWidths() {
         val questions=catalog.chapters.flatMap { it.questions }

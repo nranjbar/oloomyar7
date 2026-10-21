@@ -51,8 +51,12 @@ private fun WorkbookSourceImage(asset: String, description: String, caption: Str
                                 onImageReady: (() -> Unit)?, maxImageHeight: androidx.compose.ui.unit.Dp?) {
     val context = LocalContext.current
     val loaded by produceState<Pair<Bitmap?, Boolean>>(null to false, asset, trimAnswerWhitespace) {
-        value = withContext(Dispatchers.IO) {
-            SourceBitmap.load(context, asset, trimAnswerWhitespace) to true
+        // Decode off the UI thread, but confine publication and cancellation to
+        // Main even when an instrumentation continuation intercepts this effect.
+        withContext(Dispatchers.Main.immediate) {
+            value = withContext(Dispatchers.IO) {
+                SourceBitmap.load(context, asset, trimAnswerWhitespace) to true
+            }
         }
     }
     var enlarged by remember { mutableStateOf(false) }

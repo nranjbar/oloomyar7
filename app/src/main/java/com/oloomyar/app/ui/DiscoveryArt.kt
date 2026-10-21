@@ -29,7 +29,9 @@ internal fun SuppliedArtwork(asset: String, description: String, modifier: Modif
     key(asset) {
     val context = LocalContext.current
     val bitmap by produceState<android.graphics.Bitmap?>(null, asset) {
-        value = withContext(Dispatchers.IO) { SourceBitmap.load(context, asset) }
+        withContext(Dispatchers.Main.immediate) {
+            value = withContext(Dispatchers.IO) { SourceBitmap.load(context, asset) }
+        }
     }
     bitmap?.let { Image(it.asImageBitmap(), description, modifier, contentScale = ContentScale.Fit) }
         ?: Spacer(modifier)

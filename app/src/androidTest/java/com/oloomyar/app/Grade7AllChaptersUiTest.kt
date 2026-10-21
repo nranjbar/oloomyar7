@@ -25,6 +25,8 @@ class Grade7AllChaptersUiTest {
     private fun capture(name:String) {
         compose.waitForIdle()
         InstrumentationRegistry.getInstrumentation().uiAutomation.waitForIdle(100,5000)
+        InstrumentationRegistry.getInstrumentation().waitForIdleSync()
+        android.os.SystemClock.sleep(250)
         val values=ContentValues().apply {
             put(MediaStore.Images.Media.DISPLAY_NAME,"$name.png");put(MediaStore.Images.Media.MIME_TYPE,"image/png")
             put(MediaStore.Images.Media.RELATIVE_PATH,"Download/grade7-screenshots")
