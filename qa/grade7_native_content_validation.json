@@ -197,7 +197,7 @@
     },
     {
       "question": "g7_ch06_q06",
-      "asset": "pdf:workbook.pdf#21,42.6,57.3,282.31,217.35"
+      "asset": "native_1405_g7_ch06_q06.webp"
     },
     {
       "question": "g7_ch06_q10",
@@ -217,11 +217,11 @@
     },
     {
       "question": "g7_ch07_q04",
-      "asset": "pdf:workbook.pdf#24,38.4,624.21,243.11,733.21"
+      "asset": "native_1405_g7_ch07_q04.webp"
     },
     {
       "question": "g7_ch07_q05",
-      "asset": "pdf:workbook.pdf#25,31.5,51,159,137.25"
+      "asset": "native_1405_g7_ch07_q05.webp"
     },
     {
       "question": "g7_ch07_q13",
@@ -237,7 +237,7 @@
     },
     {
       "question": "g7_ch07_q20",
-      "asset": "pdf:workbook.pdf#27,30.05,585.41,331.29,725.91"
+      "asset": "pdf:workbook.pdf#27,30.05,585.41,331.29,725.91|-27,280,582,332,591"
     },
     {
       "question": "g7_ch07_q23",
@@ -265,23 +265,27 @@
     },
     {
       "question": "g7_ch08_q03",
-      "asset": "pdf:workbook.pdf#30,34.95,617.92,474.53,791.92"
+      "asset": "native_1405_g7_ch08_q03.webp"
     },
     {
       "question": "g7_ch08_q04",
-      "asset": "pdf:workbook.pdf#31,22.4,48.9,468.3,174"
+      "asset": "native_1405_g7_ch08_q04_12.webp"
+    },
+    {
+      "question": "g7_ch08_q04",
+      "asset": "native_1405_g7_ch08_q04_3.webp"
     },
     {
       "question": "g7_ch08_q07",
-      "asset": "pdf:workbook.pdf#31,35.65,416,177.55,590.05"
+      "asset": "native_1405_g7_ch08_q07.webp"
     },
     {
       "question": "g7_ch08_q08",
-      "asset": "pdf:workbook.pdf#31,28.5,716.53,105.75,775.03"
+      "asset": "crop:native_1405_g7_ch08_q08.webp#0,0,180,124"
     },
     {
       "question": "g7_ch08_q14",
-      "asset": "pdf:workbook.pdf#32,34.95,678.64,263.5,782.08"
+      "asset": "native_1405_g7_ch08_q14.webp"
     },
     {
       "question": "g7_ch08_q15",
@@ -289,7 +293,7 @@
     },
     {
       "question": "g7_ch08_q17",
-      "asset": "pdf:workbook.pdf#33,57,252.1,404.25,376.69"
+      "asset": "pdf:workbook.pdf#33,45,275,500,378"
     },
     {
       "question": "g7_ch08_q19",
@@ -297,7 +301,7 @@
     },
     {
       "question": "g7_ch08_mcq05",
-      "asset": "pdf:workbook.pdf#34,31.45,350.5,257.65,426.65"
+      "asset": "native_1405_g7_ch08_mcq05.webp"
     },
     {
       "question": "g7_ch08_mcq06",
@@ -309,7 +313,7 @@
     },
     {
       "question": "g7_ch09_q04",
-      "asset": "pdf:workbook.pdf#35,39.1,597.64,284.4,761.84"
+      "asset": "native_1405_g7_ch09_q04.webp"
     },
     {
       "question": "g7_ch09_q08",
@@ -321,7 +325,7 @@
     },
     {
       "question": "g7_ch09_q10",
-      "asset": "pdf:workbook.pdf#36,34.95,626.57,175.3,777.52"
+      "asset": "pdf:workbook.pdf#36,34.95,626.57,175.3,777.52|-36,150,755,176,779"
     },
     {
       "question": "g7_ch09_q11",
@@ -333,7 +337,7 @@
     },
     {
       "question": "g7_ch09_q13",
-      "asset": "pdf:workbook.pdf#37,37,557.11,291.25,723.41"
+      "asset": "native_1405_g7_ch09_q13.webp"
     },
     {
       "question": "g7_ch09_q15",
@@ -349,7 +353,7 @@
     },
     {
       "question": "g7_ch10_q09",
-      "asset": "pdf:workbook.pdf#40,33,546.63,192.75,689.13"
+      "asset": "native_1405_g7_ch10_q09.webp"
     },
     {
       "question": "g7_ch10_q13",
@@ -377,7 +381,7 @@
     },
     {
       "question": "g7_ch10_q18",
-      "asset": "pdf:workbook.pdf#42,25,421.8,210,576"
+      "asset": "pdf:workbook.pdf#42,29,421.8,210,576|-42,29,420,210,432"
     },
     {
       "question": "g7_ch10_q19",
@@ -389,7 +393,11 @@
     },
     {
       "question": "g7_ch10_q21",
-      "asset": "pdf:workbook.pdf#43,49.6,397.02,219.35,473.71"
+      "asset": "native_1405_g7_ch10_q21_dark.webp"
+    },
+    {
+      "question": "g7_ch10_q21",
+      "asset": "native_1405_g7_ch10_q21_light.webp"
     },
     {
       "question": "g7_ch10_q21",
@@ -405,14 +413,15 @@
     },
     {
       "question": "g7_ch10_mcq02",
-      "asset": "pdf:workbook.pdf#44,47.5,414.39,317.9,593.92"
+      "asset": "native_1405_g7_ch10_mcq02.webp"
     },
     {
       "question": "g7_ch10_mcq03",
-      "asset": "pdf:workbook.pdf#44,47.5,611.54,200.55,705.82"
+      "asset": "native_1405_g7_ch10_mcq03.webp"
     }
   ],
   "fullQuestionOrKeyScreenshots": 0,
+  "originalEmbeddedFiguresPixelIdentical": 17,
   "originalQuestionAndKeyFieldsUnchanged": true,
   "reusableSelectionBanks": true,
   "chaptersElevenToFifteenDataUnchanged": true,

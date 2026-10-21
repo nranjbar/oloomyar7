@@ -36,9 +36,14 @@ for ch in range(1,11):
                 if a.startswith('pdf:'):
                     file=a[4:].split('#')[0]
                     assert file=='workbook.pdf' or (cid=='g7_ch10_q13' and file=='answers10.pdf')
-                    p,x0,y0,x1,y1=map(float,a.split('#')[1].split(',')); rect=fitz.Rect(x0,y0,x1,y1)
+                    regions=a.split('#')[1].split('|')
+                    p,x0,y0,x1,y1=map(float,regions[0].split(',')); rect=fitz.Rect(x0,y0,x1,y1)
                     doc=pdf if file=='workbook.pdf' else fitz.open(ASSETS/'source'/file)
                     assert p==int(p) and rect.width>0 and rect.height>0 and doc[int(p)-1].rect.contains(rect)
+                    for exclusion in regions[1:]:
+                        assert exclusion.startswith('-')
+                        ep,*bb=map(float,exclusion[1:].split(','))
+                        assert ep==int(ep) and doc[int(ep)-1].rect.contains(fitz.Rect(bb))
                 elif a.startswith('crop:'):
                     filename,coords=a[5:].split('#'); x0,y0,x1,y1=map(int,coords.split(','))
                     w,h=Image.open(ASSETS/'images'/filename).size
@@ -65,6 +70,15 @@ for ch in range(1,11):
             assert practice_key==('ج' if cid=='g7_ch10_mcq04' else key)
             assert q['nativeAnswer']==[dict(type='text',text=key)]
 assert counts==[8,20,31,23,22,21,34,26,18,29]
+from native_scientific_figures import decode_original
+extracts=json.loads((ROOT/'qa/source/native-scientific-extractions.json').read_text())
+assert len(extracts)==17
+for entry in extracts:
+    path=ASSETS/'images'/entry['asset'];assert hashlib.sha256(path.read_bytes()).hexdigest()==entry['webpSha256']
+    original=decode_original(pdf,entry['xref'],entry['smask']);decoded=Image.open(path).convert('RGBA')
+    assert original.size==decoded.size==(entry['width'],entry['height'])
+    assert original.tobytes()==decoded.tobytes()
+    assert hashlib.sha256(decoded.tobytes()).hexdigest()==entry['decodedRgbaSha256']
 # The remaining five chapters must be byte-identical to the last accepted data.
 baseline='7fc2ab9b6fa9a5ecb61a63a6950cf270df45d982'
 for ch in range(1,11):
@@ -82,7 +96,7 @@ for ch in range(11,16):
     assert (ROOT/path).read_bytes()==subprocess.check_output(['git','show',baseline+':'+path],cwd=ROOT)
 report=dict(status='PASS',edition=1405,nativeQuestions=sum(counts),nativeAnswers=sum(counts),chapterCounts=counts,
     nativeTables=tables,nativeMathBlocks=maths,inlinePrintedBlanks=slots,standaloneScientificFigures=figures,
-    fullQuestionOrKeyScreenshots=0,originalQuestionAndKeyFieldsUnchanged=True,reusableSelectionBanks=True,chaptersElevenToFifteenDataUnchanged=True,
+    fullQuestionOrKeyScreenshots=0,originalEmbeddedFiguresPixelIdentical=len(extracts),originalQuestionAndKeyFieldsUnchanged=True,reusableSelectionBanks=True,chaptersElevenToFifteenDataUnchanged=True,
     sourceReview='All workbook pages 2–44 and chapter answer PDFs 01–10 visually reviewed; practice revisions and printed-key conflicts are separately recorded.')
 (ROOT/'qa/grade7_native_content_validation.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
 print(json.dumps({k:v for k,v in report.items()if k!='standaloneScientificFigures'},ensure_ascii=False))

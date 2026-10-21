@@ -1,0 +1,314 @@
+[
+  {
+    "question": "g7_ch06_q06",
+    "asset": "native_1405_g7_ch06_q06.webp",
+    "pdf": "workbook.pdf",
+    "page": 21,
+    "xref": 161,
+    "smask": 0,
+    "sourceBox": [
+      42.599998474121094,
+      57.29997253417969,
+      282.30999755859375,
+      217.3499755859375
+    ],
+    "width": 345,
+    "height": 218,
+    "decodedRgbaSha256": "bacbaf68080388170f8d6b049004d5f20665639b32d5ca5bf2d5880cfd46b817",
+    "webpSha256": "5e694d0044ba9eb2e62f157abeb300625227915f70b29c51af64d14874414899"
+  },
+  {
+    "question": "g7_ch07_q04",
+    "asset": "native_1405_g7_ch07_q04.webp",
+    "pdf": "workbook.pdf",
+    "page": 24,
+    "xref": 169,
+    "smask": 0,
+    "sourceBox": [
+      38.400001525878906,
+      624.2099609375,
+      243.11001586914062,
+      733.2099609375
+    ],
+    "width": 667,
+    "height": 230,
+    "decodedRgbaSha256": "bd520056d720ef6cdbdd266282b47f960fd1642fed543073305c1ccfa58a5513",
+    "webpSha256": "f8a647790a1aff004e34fad5a1e0c026824b426e3d3cb989edd620978f06263f"
+  },
+  {
+    "question": "g7_ch07_q05",
+    "asset": "native_1405_g7_ch07_q05.webp",
+    "pdf": "workbook.pdf",
+    "page": 25,
+    "xref": 172,
+    "smask": 0,
+    "sourceBox": [
+      31.5,
+      51.0,
+      159.0,
+      137.25
+    ],
+    "width": 332,
+    "height": 114,
+    "decodedRgbaSha256": "e5e83f3ae0e312b82674db265d19cd8ca1e6d276ae765cb70e52b4c4b1a79da1",
+    "webpSha256": "d13aa110664ab19ba2496dce4ccb263ca705a27bec0408259188146410b3ab16"
+  },
+  {
+    "question": "g7_ch08_q03",
+    "asset": "native_1405_g7_ch08_q03.webp",
+    "pdf": "workbook.pdf",
+    "page": 30,
+    "xref": 204,
+    "smask": 0,
+    "sourceBox": [
+      34.95000076293945,
+      617.9239501953125,
+      474.5299987792969,
+      791.9239501953125
+    ],
+    "width": 572,
+    "height": 293,
+    "decodedRgbaSha256": "605aa79296a687afa12f9a3232737908bc082a45dfee9b26fc976d1fdf20cb4e",
+    "webpSha256": "6163c6292ee849cb8d15d66d3cbe612c656339c93a591bcd9900bf437aa349cb"
+  },
+  {
+    "question": "g7_ch08_q04",
+    "asset": "native_1405_g7_ch08_q04_12.webp",
+    "pdf": "workbook.pdf",
+    "page": 31,
+    "xref": 209,
+    "smask": 0,
+    "sourceBox": [
+      22.399999618530273,
+      48.900001525878906,
+      336.1000061035156,
+      154.44000244140625
+    ],
+    "width": 558,
+    "height": 118,
+    "decodedRgbaSha256": "7120ab34f7da96063058dde7e2e3cf9792a1b5c33aa1f60b664f010b1d73a534",
+    "webpSha256": "4c95754c54cd1b1b05292b53ee47f1534cafa99fae6bd09ddd531733b2c04679"
+  },
+  {
+    "question": "g7_ch08_q04",
+    "asset": "native_1405_g7_ch08_q04_3.webp",
+    "pdf": "workbook.pdf",
+    "page": 31,
+    "xref": 210,
+    "smask": 0,
+    "sourceBox": [
+      382.3500061035156,
+      56.59998321533203,
+      468.29998779296875,
+      158.6099853515625
+    ],
+    "width": 206,
+    "height": 272,
+    "decodedRgbaSha256": "9f4ba1a5e76c394e2a6356c132ef04effb80e6272b005cb65fe2f3c5369b63f2",
+    "webpSha256": "f3ca24d6d6de4fab966a24338f5a9c6f19ca421363a1614fa7f7bcaff3ad96bf"
+  },
+  {
+    "question": "g7_ch08_q07",
+    "asset": "native_1405_g7_ch08_q07.webp",
+    "pdf": "workbook.pdf",
+    "page": 31,
+    "xref": 208,
+    "smask": 0,
+    "sourceBox": [
+      35.650001525878906,
+      416.0,
+      177.54998779296875,
+      590.0499877929688
+    ],
+    "width": 280,
+    "height": 168,
+    "decodedRgbaSha256": "73149c408946a137b27033d0535a1d8be089f918d48c6809ed1b5c55b06aeefc",
+    "webpSha256": "f9f10bc660ae8840600e50ef5b2abb4b86c270613542b3f4fe588facaf828b79"
+  },
+  {
+    "question": "g7_ch08_q08",
+    "asset": "native_1405_g7_ch08_q08.webp",
+    "pdf": "workbook.pdf",
+    "page": 31,
+    "xref": 207,
+    "smask": 0,
+    "sourceBox": [
+      28.5,
+      716.531005859375,
+      105.75,
+      775.031005859375
+    ],
+    "width": 180,
+    "height": 136,
+    "decodedRgbaSha256": "a8d7d63eda131aad1ae1d6a2d276a209410337ac9c1e20afa05ba485a834f955",
+    "webpSha256": "0bce10bd3b0928884ce27de03d10096b4c9b3e12d423c2eea0eeb0b33c829c8b",
+    "displayCrop": [
+      0,
+      0,
+      180,
+      124
+    ]
+  },
+  {
+    "question": "g7_ch08_q14",
+    "asset": "native_1405_g7_ch08_q14.webp",
+    "pdf": "workbook.pdf",
+    "page": 32,
+    "xref": 213,
+    "smask": 0,
+    "sourceBox": [
+      34.95000076293945,
+      678.6439819335938,
+      263.5,
+      782.083984375
+    ],
+    "width": 526,
+    "height": 169,
+    "decodedRgbaSha256": "91e91987cfb01c035cea02c44eb670c9dbd040ee24cac5ec65b734e142515df0",
+    "webpSha256": "b2e13fb6f654abac510e9b07082f22e249479a4a774d06f88830256b2d34b3c0"
+  },
+  {
+    "question": "g7_ch08_mcq05",
+    "asset": "native_1405_g7_ch08_mcq05.webp",
+    "pdf": "workbook.pdf",
+    "page": 34,
+    "xref": 222,
+    "smask": 0,
+    "sourceBox": [
+      31.450000762939453,
+      350.5049743652344,
+      257.6499938964844,
+      426.64996337890625
+    ],
+    "width": 512,
+    "height": 98,
+    "decodedRgbaSha256": "00282a79365c0392f994c8752683a79b47c02652136a83497c610ce9c8d1f790",
+    "webpSha256": "008788ed0ae7d50e7df50182cfd10b9d3ee5c54ce89044226af644ccfa962c70"
+  },
+  {
+    "question": "g7_ch09_q04",
+    "asset": "native_1405_g7_ch09_q04.webp",
+    "pdf": "workbook.pdf",
+    "page": 35,
+    "xref": 225,
+    "smask": 0,
+    "sourceBox": [
+      39.099998474121094,
+      597.635986328125,
+      284.3999938964844,
+      761.8359985351562
+    ],
+    "width": 670,
+    "height": 259,
+    "decodedRgbaSha256": "33de20360202b8e42f50492e60ca36e9442d7299f3571e35007b9964ffad662a",
+    "webpSha256": "c2c9764b1cea859fee3f7e9b0ddbc7297ac17f70238d2d5a8d9f6b1cebe165bb"
+  },
+  {
+    "question": "g7_ch09_q13",
+    "asset": "native_1405_g7_ch09_q13.webp",
+    "pdf": "workbook.pdf",
+    "page": 37,
+    "xref": 233,
+    "smask": 0,
+    "sourceBox": [
+      37.0,
+      557.1099853515625,
+      291.25,
+      723.4099731445312
+    ],
+    "width": 564,
+    "height": 282,
+    "decodedRgbaSha256": "1f031309001eef9c3fc212abb3e9b43ad10ffad9af31b77d3cc2d7cb8082dc1f",
+    "webpSha256": "8a0176c46884057130123e85a6716be29cce8d070dd08f3a2c999edd9c539585"
+  },
+  {
+    "question": "g7_ch10_q09",
+    "asset": "native_1405_g7_ch10_q09.webp",
+    "pdf": "workbook.pdf",
+    "page": 40,
+    "xref": 245,
+    "smask": 0,
+    "sourceBox": [
+      33.0,
+      546.6300048828125,
+      192.75,
+      689.1300048828125
+    ],
+    "width": 428,
+    "height": 262,
+    "decodedRgbaSha256": "fc23b99818f3a25d1bfce9229a548056d9467a5b3d4d7519d29ffdc8a65f2a89",
+    "webpSha256": "1e759b569279c0258661860d96276d098f2a4cf00aab7231c1ff523d569bc51d"
+  },
+  {
+    "question": "g7_ch10_q21",
+    "asset": "native_1405_g7_ch10_q21_dark.webp",
+    "pdf": "workbook.pdf",
+    "page": 43,
+    "xref": 263,
+    "smask": 0,
+    "sourceBox": [
+      49.599998474121094,
+      407.52996826171875,
+      129.85000610351562,
+      467.52996826171875
+    ],
+    "width": 183,
+    "height": 183,
+    "decodedRgbaSha256": "410edd7e6e4a17a3adb02946df58c387b7e9f1440c44fa428cb812d37288402c",
+    "webpSha256": "671b0b1043da924ac3802130ed250219e84d9dffa44ac5c64a17d6f53af15831"
+  },
+  {
+    "question": "g7_ch10_q21",
+    "asset": "native_1405_g7_ch10_q21_light.webp",
+    "pdf": "workbook.pdf",
+    "page": 43,
+    "xref": 264,
+    "smask": 0,
+    "sourceBox": [
+      145.35000610351562,
+      397.02301025390625,
+      219.35000610351562,
+      473.71002197265625
+    ],
+    "width": 192,
+    "height": 183,
+    "decodedRgbaSha256": "52f295c7a79f44e324a286a0247d2a4d9141ac08d38bacb9bdcde4cd4c49cde7",
+    "webpSha256": "6928e2fbaf6ff843a56f16b32741d74bd394d08e1a893443a1c52b2e65d29dfa"
+  },
+  {
+    "question": "g7_ch10_mcq02",
+    "asset": "native_1405_g7_ch10_mcq02.webp",
+    "pdf": "workbook.pdf",
+    "page": 44,
+    "xref": 270,
+    "smask": 0,
+    "sourceBox": [
+      47.5,
+      414.3899841308594,
+      317.8999938964844,
+      593.9199829101562
+    ],
+    "width": 282,
+    "height": 181,
+    "decodedRgbaSha256": "5e7dd25d824aa9dfc4e54573fa693d13c3e141332f36dcc274afc4cdb68bf171",
+    "webpSha256": "391a89150a5f7d5b67c0e0938aa46bf404c8bfc184d1a864df92f1260115b50b"
+  },
+  {
+    "question": "g7_ch10_mcq03",
+    "asset": "native_1405_g7_ch10_mcq03.webp",
+    "pdf": "workbook.pdf",
+    "page": 44,
+    "xref": 271,
+    "smask": 0,
+    "sourceBox": [
+      47.5,
+      611.54296875,
+      200.5500030517578,
+      705.8199462890625
+    ],
+    "width": 197,
+    "height": 182,
+    "decodedRgbaSha256": "8ca7810f8d4198c843ca9f99a005a848d321beef3e6ddfc7fde15bea97f8e1ac",
+    "webpSha256": "3731635bdacf587df1e6db35e1b1011e9992785d635c30b7cd5cf442f40868d4"
+  }
+]

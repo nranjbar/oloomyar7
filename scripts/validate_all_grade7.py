@@ -87,6 +87,7 @@ for c,expected in enumerate(EXPECTED,1):
                 n=sum(o['correct']for o in opts)
                 assert (n==1 and len(opts)>1)if k=='single'else 0<s['pick']<=n<len(opts)
             elif k=='match':
+                if s.get('choices'):assert all(p['right']in s['choices']for p in s['pairs']),(cid,'stale shared word bank')
                 for pair in s['pairs']:
                     choices=pair.get('choices')or s.get('choices')or[p['right']for p in s['pairs']]
                     assert pair['right']in choices and len(choices)==len(set(choices)) and len(choices)>=2,(cid,pair)

@@ -471,4 +471,29 @@ class Grade7NativeContentUiTest {
         }
     }
 
+    @Test fun newEmbeddedScientificFiguresKeepEveryDecodedSourcePixelOnAndroid() {
+        val records=context.assets.open("content/native-scientific-extractions.json").bufferedReader().use { JSONArray(it.readText()) }
+        assertEquals(17,records.length())
+        repeat(records.length()) { index ->
+            val record=records.getJSONObject(index)
+            val bitmap=checkNotNull(SourceBitmap.load(context,record.getString("asset")))
+            assertEquals(record.getInt("width"),bitmap.width);assertEquals(record.getInt("height"),bitmap.height)
+            val pixels=IntArray(bitmap.width*bitmap.height);bitmap.getPixels(pixels,0,bitmap.width,0,0,bitmap.width,bitmap.height)
+            val bytes=ByteArray(pixels.size*4)
+            pixels.forEachIndexed { i,pixel ->
+                bytes[i*4]=(pixel shr 16).toByte();bytes[i*4+1]=(pixel shr 8).toByte()
+                bytes[i*4+2]=pixel.toByte();bytes[i*4+3]=(pixel ushr 24).toByte()
+            }
+            val digest=java.security.MessageDigest.getInstance("SHA-256").digest(bytes).joinToString("") { "%02x".format(it.toInt() and 255) }
+            assertEquals(record.getString("asset"),record.getString("decodedRgbaSha256"),digest)
+            if(record.has("displayCrop")) {
+                val crop=record.getJSONArray("displayCrop")
+                val asset="crop:${record.getString("asset")}#${crop.getInt(0)},${crop.getInt(1)},${crop.getInt(2)},${crop.getInt(3)}"
+                val shown=checkNotNull(SourceBitmap.load(context,asset))
+                assertEquals(crop.getInt(2)-crop.getInt(0),shown.width);assertEquals(crop.getInt(3)-crop.getInt(1),shown.height)
+                assertEquals(bitmap.getPixel(5,5),shown.getPixel(5,5))
+            }
+        }
+    }
+
 }

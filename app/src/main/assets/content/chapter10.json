@@ -738,7 +738,7 @@
       },
       {
         "type": "figure",
-        "asset": "pdf:workbook.pdf#40,33,546.63,192.75,689.13",
+        "asset": "native_1405_g7_ch10_q09.webp",
         "text": ""
       }
     ],
@@ -1495,7 +1495,7 @@
       },
       {
         "type": "figure",
-        "asset": "pdf:workbook.pdf#42,25,421.8,210,576",
+        "asset": "pdf:workbook.pdf#42,29,421.8,210,576|-42,29,420,210,432",
         "text": ""
       }
     ],
@@ -1798,8 +1798,13 @@
       },
       {
         "type": "figure",
-        "asset": "pdf:workbook.pdf#43,49.6,397.02,219.35,473.71",
-        "text": ""
+        "asset": "native_1405_g7_ch10_q21_dark.webp",
+        "text": "چای پررنگ"
+      },
+      {
+        "type": "figure",
+        "asset": "native_1405_g7_ch10_q21_light.webp",
+        "text": "چای کم‌رنگ"
       },
       {
         "type": "cloze",
@@ -2258,7 +2263,7 @@
       },
       {
         "type": "figure",
-        "asset": "pdf:workbook.pdf#44,47.5,414.39,317.9,593.92",
+        "asset": "native_1405_g7_ch10_mcq02.webp",
         "text": ""
       },
       {
@@ -2342,7 +2347,7 @@
       },
       {
         "type": "figure",
-        "asset": "pdf:workbook.pdf#44,47.5,611.54,200.55,705.82",
+        "asset": "native_1405_g7_ch10_mcq03.webp",
         "text": ""
       },
       {
