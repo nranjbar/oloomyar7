@@ -31,8 +31,8 @@ for ch in range(1,16):
         assert q['nativeQuestion'] and q['nativeAnswer']
         assert all(b['type']in ['text','math','table','figure']for b in q['nativeAnswer']),cid
         for b in q['nativeQuestion']+q['nativeAnswer']:
-            assert b['type'] in ['text','cloze','figure','input','table','math','reaction','barChart']
-            if b['type'] in ['cloze','reaction','input','barChart']:assert b.get('step',0)in range(len(q['steps']))
+            assert b['type'] in ['text','cloze','figure','input','table','math','reaction','flow','barChart']
+            if b['type'] in ['cloze','reaction','flow','input','barChart']:assert b.get('step',0)in range(len(q['steps']))
             if b['type']=='figure':
                 a=b['asset'];assert a not in [q['sourceQuestionVisual'],q['answerVisual']],cid
                 if a.startswith('pdf:'):
@@ -58,7 +58,7 @@ for ch in range(1,16):
                     for token in re.finditer(r'\{\{(\d+)(?::(\d+))?}}',cell):
                         s=q['steps'][int(token[1])]
                         if token[2]:assert int(token[2])in range(len(s.get('pairs',s.get('items',[]))))
-            if b['type']in ['cloze','reaction']:
+            if b['type']in ['cloze','reaction','flow']:
                 s=q['steps'][b.get('step',0)];assert s['kind']=='match'
                 for index in re.findall(r'\{\{(\d+)}}',b['text']):assert int(index)in range(len(s['pairs']));slots+=1
             if b['type']=='math':

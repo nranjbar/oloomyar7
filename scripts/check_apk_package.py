@@ -21,7 +21,7 @@ for kind,relative in [('debug','app/build/outputs/apk/debug/app-debug.apk'),('re
         native=qs
         assert len(native)==317 and all(q['nativeQuestion'] and q['nativeAnswer']for q in native)
         assert not any(b.get('asset')==q['sourceQuestionVisual']for q in native for b in q['nativeQuestion'])
-        assert not any(b['type']in['input','cloze','barChart','reaction']for q in native for b in q['nativeAnswer'])
+        assert not any(b['type']in['input','cloze','barChart','reaction','flow']for q in native for b in q['nativeAnswer'])
         reference_figures=[(q['canonicalId'],b['asset'])for q in native for b in q['nativeAnswer']if b['type']=='figure']
         assert reference_figures==[('g7_ch10_q13','pdf:answers10.pdf#2,37.35,464.6,197.05,629.61')]
         # The owner supplied 42 additional lossless scientific illustrations.

@@ -58,7 +58,11 @@ class Grade7NativeContentUiTest {
                 OloomYarTheme { AuditedWorkbookApp("فصل ${q.relatedChapter}",listOf(q),store,initialQuestionId=q.id,onExit={}) }
             }
         }
-        compose.waitUntil(10000) { compose.onAllNodesWithTag("native-source-question").fetchSemanticsNodes().isNotEmpty() }
+        compose.waitUntil(10000) { compose.onAllNodesWithTag("question-body").fetchSemanticsNodes().isNotEmpty() }
+        // A long source-review note can fill the heading item at large fonts.
+        // Scroll the actual viewport rather than wait for an offscreen lazy item.
+        compose.onNodeWithTag("question-body").performScrollToIndex(1)
+        compose.onNodeWithTag("native-source-question").assertExists()
     }
     /** Send a real touch only after the control is inside the question viewport. */
     private fun controlInQuestion(tag:String):SemanticsNodeInteraction {
@@ -644,6 +648,20 @@ class Grade7NativeContentUiTest {
             assertEquals(914,restored.shuffleSeed);assertFalse(q.practiceUsesPrintedKey)
             assertTrue(QuestionPractice().change(s,s.pairs.map { it.right }).submit(q).correct(q))
         }
+    }
+
+    @Test fun circulationReturnPathPreservesSourceDirectionAndSharesAllFourSelections() {
+        val q=question(14,4);val s=q.steps.single();open(q,1.5f)
+        compose.onNodeWithTag("native-ltr-flow").performScrollTo().assertExists()
+        compose.onNodeWithText("مسیر را از چپ به راست کامل کن.").assertExists()
+        s.pairs.forEachIndexed { row,pair ->select(s,row,pair.right) }
+        val state=QuestionDraftCodec.decode(WorkbookProgress(context,"native_ui",listOf(q)).draft(q.id),q)
+        assertEquals(s.pairs.map { it.right },state.values(s))
+        compose.onNodeWithText("بررسی پاسخ").performClick()
+        compose.onNodeWithTag("native-reference-answer").assertDoesNotExist()
+        compose.onNodeWithTag("reveal-answer").assertIsEnabled().performClick()
+        compose.onNodeWithText(workbookBidi(q.nativeAnswer.single().text)).performScrollTo().assertIsDisplayed()
+        capture("v09-circulation-path")
     }
 
 }

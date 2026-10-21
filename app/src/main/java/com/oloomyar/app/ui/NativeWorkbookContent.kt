@@ -41,7 +41,7 @@ internal fun NativeWorkbookContent(
 ) {
     val embedded = remember(blocks) { mutableSetOf<Int>().apply {
         blocks.forEach { block ->
-            if (block.type in setOf("cloze", "reaction", "input", "barChart")) add(block.step)
+            if (block.type in setOf("cloze", "reaction", "flow", "input", "barChart")) add(block.step)
             block.rows.flatten().forEach { cell ->
                 Regex("""\{\{(\d+)(?::\d+)?\}\}""").findAll(cell).forEach { add(it.groupValues[1].toInt()) }
             }
@@ -63,19 +63,19 @@ internal fun NativeWorkbookContent(
                 "input" -> NativeWorkbookEdit(question, block.step, null, display, exam, onChange)
                 "table" -> SourceTable(block, question, display, exam, onChange)
                 "math" -> SourceEquation(block.parts)
-                "reaction" -> {
-                    if (practice == null) WorkbookText(Regex("""\{\{\d+\}\}""").replace(block.text, "................"))
-                    else {
-                    Text("معادله را از چپ به راست کامل کن.", color = Muted, style = MaterialTheme.typography.bodySmall)
+                "reaction", "flow" -> {
+                    if(practice!=null) Text(if(block.type=="flow") "مسیر را از چپ به راست کامل کن." else "معادله را از چپ به راست کامل کن.", color = Muted, style = MaterialTheme.typography.bodySmall)
                     CompositionLocalProvider(LocalLayoutDirection provides LayoutDirection.Ltr) {
                         Column {
-                            FlowRow(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(12.dp), verticalArrangement = Arrangement.spacedBy(12.dp)) {
+                            FlowRow(Modifier.fillMaxWidth().testTag(if(block.type=="flow")"native-ltr-flow" else "native-reaction"), horizontalArrangement = Arrangement.spacedBy(12.dp), verticalArrangement = Arrangement.spacedBy(12.dp)) {
                                 block.text.split(Regex("(?=[+→])|(?<=[+→])")).forEach { fragment ->
-                                    Box(Modifier.widthIn(min = 24.dp, max = 180.dp)) { editReactionFragment(fragment, block.step, question, display, exam, onChange) }
+                                    Box(Modifier.widthIn(min = 24.dp, max = 180.dp)) {
+                                        if(practice==null)WorkbookText(Regex("""\{\{\d+\}\}""").replace(fragment.trim(),"................"))
+                                        else editReactionFragment(fragment, block.step, question, display, exam, onChange)
+                                    }
                                 }
                             }
                         }
-                    }
                     }
                 }
                 "barChart" -> if (practice != null) NativeBarChart(question.steps[block.step], display, exam, onChange)
