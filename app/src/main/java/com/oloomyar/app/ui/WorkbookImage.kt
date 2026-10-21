@@ -39,6 +39,16 @@ import kotlinx.coroutines.withContext
 
 @Composable
 internal fun WorkbookImage(asset: String, description: String, caption: String? = null, trimAnswerWhitespace: Boolean = false, compact: Boolean = false, onImageReady: (() -> Unit)? = null, maxImageHeight: androidx.compose.ui.unit.Dp? = null) {
+    // A new source owns its decode, loading geometry and zoom state. A completed
+    // decode from the preceding question cannot enter this figure's composition.
+    key(asset, trimAnswerWhitespace) {
+        WorkbookSourceImage(asset,description,caption,trimAnswerWhitespace,compact,onImageReady,maxImageHeight)
+    }
+}
+
+@Composable
+private fun WorkbookSourceImage(asset: String, description: String, caption: String?, trimAnswerWhitespace: Boolean, compact: Boolean,
+                                onImageReady: (() -> Unit)?, maxImageHeight: androidx.compose.ui.unit.Dp?) {
     val context = LocalContext.current
     val loaded by produceState<Pair<Bitmap?, Boolean>>(null to false, asset, trimAnswerWhitespace) {
         value = withContext(Dispatchers.IO) {

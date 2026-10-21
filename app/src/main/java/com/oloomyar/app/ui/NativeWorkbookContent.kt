@@ -48,26 +48,10 @@ internal fun NativeWorkbookContent(
         }
     } }
     val display = if (exam) practice?.copy(checked = emptyMap(), revealed = false) else practice
-    val edit: @Composable (Int, String?) -> Unit = { index, template ->
-        val step = question.steps[index]
-        if (practice == null) {
-            if (template != null) WorkbookText(Regex("""\{\{\d+\}\}""").replace(template, "................"))
-            else if (step.kind in setOf(StepKind.SINGLE, StepKind.MULTI)) step.options.forEach { WorkbookText(it.text) }
-        } else if (template != null && step.kind in setOf(StepKind.MATCH, StepKind.CLASSIFY)) {
-            InlineFillBlanksQuestion(step.copy(clozeTemplate = template), display?.values(step).orEmpty(), display?.shuffleSeed ?: 0,
-                mark = { display?.mark(step, it) ?: ResponseMark.EMPTY },
-                locked = { !exam && (display?.revealed == true || display?.locked(step, it) == true) },
-                showInstructions = false, nativeLayout = true) { onChange(step, it) }
-        } else {
-            WorkbookInput(step, display?.values(step).orEmpty(),
-                !exam && (display?.revealed == true || (step.kind !in setOf(StepKind.MATCH, StepKind.CLASSIFY) && display?.locked(step) == true)),
-                display) { onChange(step, it) }
-        }
-    }
     Column(Modifier.fillMaxWidth().testTag(if (practice == null) "native-reference-answer" else "native-source-question"),
         verticalArrangement = Arrangement.spacedBy(16.dp)) {
         blocks.forEachIndexed { index, block ->
-            key(index) { when (block.type) {
+            key(question.id, index, block.type, block.asset) { when (block.type) {
                 "text" -> WorkbookText(block.text, Modifier.fillMaxWidth())
                 "figure" -> block.asset?.let { asset ->
                     Column(verticalArrangement = Arrangement.spacedBy(5.dp)) {
@@ -75,8 +59,8 @@ internal fun NativeWorkbookContent(
                         WorkbookImage(asset, block.text.ifBlank { "شکل سؤال ${workbookFa(question.sourceNumber)}" }, maxImageHeight = 300.dp)
                     }
                 }
-                "cloze" -> edit(block.step, block.text)
-                "input" -> edit(block.step, null)
+                "cloze" -> NativeWorkbookEdit(question, block.step, block.text, display, exam, onChange)
+                "input" -> NativeWorkbookEdit(question, block.step, null, display, exam, onChange)
                 "table" -> SourceTable(block, question, display, exam, onChange)
                 "math" -> SourceEquation(block.parts)
                 "reaction" -> {
@@ -104,9 +88,31 @@ internal fun NativeWorkbookContent(
                 Text(if (question.steps.size == 1) "پاسخ تعاملی" else "پاسخ تعاملی • قسمت ${workbookFa(index + 1)}",
                     color = Blue, style = MaterialTheme.typography.titleMedium)
                 WorkbookText(step.prompt)
-                edit(index, null)
+                NativeWorkbookEdit(question, index, null, display, exam, onChange)
             }
         }
+    }
+}
+
+/** A static composable call site for each editor, scoped to its actual source ID.
+ * Avoid retaining a captured composable lambda as heterogeneous source blocks
+ * are removed/replaced during question navigation and screen disposal.
+ */
+@Composable
+private fun NativeWorkbookEdit(question: ChapterQuestion, index: Int, template: String?, state: QuestionPractice?, exam: Boolean,
+                               onChange: (LearningStep, List<String>) -> Unit) {
+    val step = question.steps[index]
+    key(question.id, step.id, template) {
+        if (state == null) {
+            if (template != null) WorkbookText(Regex("""\{\{\d+\}\}""").replace(template, "................"))
+            else if (step.kind in setOf(StepKind.SINGLE, StepKind.MULTI)) step.options.forEach { WorkbookText(it.text) }
+        } else if (template != null && step.kind in setOf(StepKind.MATCH, StepKind.CLASSIFY)) {
+            InlineFillBlanksQuestion(step.copy(clozeTemplate = template), state.values(step), state.shuffleSeed,
+                mark = { state.mark(step, it) }, locked = { !exam && state.locked(step, it) },
+                showInstructions = false, nativeLayout = true) { onChange(step, it) }
+        } else WorkbookInput(step, state.values(step),
+            !exam && (state.revealed || (step.kind !in setOf(StepKind.MATCH, StepKind.CLASSIFY) && state.locked(step))),
+            state) { onChange(step, it) }
     }
 }
 

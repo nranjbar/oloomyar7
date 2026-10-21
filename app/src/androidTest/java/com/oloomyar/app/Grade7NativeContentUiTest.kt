@@ -113,9 +113,17 @@ class Grade7NativeContentUiTest {
             }
         }
         questions.forEach { q ->
+            android.util.Log.d("Grade7NativeReview","empty-source ${q.id}")
             compose.runOnIdle { current.value=q }
             compose.onNodeWithTag("native-source-question").assertExists()
             compose.onNodeWithTag("native-reference-answer").assertDoesNotExist()
+            q.nativeQuestion.filter { it.type=="figure" }.forEach { block ->
+                val tag="workbook-image-enlarge-${block.asset}"
+                compose.waitUntil(10000) {
+                    compose.onAllNodesWithTag(tag).fetchSemanticsNodes().singleOrNull()?.config?.contains(SemanticsProperties.Disabled)==false
+                }
+                compose.onNodeWithTag(tag).assertIsEnabled()
+            }
         }
     }
     @Test fun tenTableCellsCanBeEditedInPlaceAtLargeFontWithoutUnlockingAnIncompleteAnswer() {
@@ -494,6 +502,27 @@ class Grade7NativeContentUiTest {
                 assertEquals(bitmap.getPixel(5,5),shown.getPixel(5,5))
             }
         }
+    }
+
+    @Test fun rapidRealQuestionNavigationKeepsSourceIdentityAndDisposesPendingImageLoads() {
+        val questions=listOf(question(6,6),question(7,20),question(8,4),question(8,17),question(10,18))
+        val store=WorkbookProgress(context,"native_ui",questions)
+        val shown=mutableStateOf(true)
+        compose.setContent {
+            OloomYarTheme {
+                if(shown.value)AuditedWorkbookApp("مرور شکل‌ها",questions,store,initialQuestionId=questions.first().id,onExit={})
+                else androidx.compose.material3.Text("مرور بسته شد",Modifier.testTag("navigation-disposed"))
+            }
+        }
+        repeat(3) {
+            repeat(questions.size-1) { compose.onNodeWithTag("next-question").assertIsEnabled().performClick() }
+            repeat(questions.size-1) { compose.onNodeWithTag("previous-question").assertIsEnabled().performClick() }
+        }
+        assertEquals(questions.first().id,LearningPreferences(context).lastLocation()!!.questionId)
+        compose.onNodeWithTag("reveal-answer").assertIsNotEnabled()
+        compose.runOnIdle { shown.value=false }
+        compose.onNodeWithTag("navigation-disposed").assertExists()
+        compose.onNodeWithTag("native-source-question").assertDoesNotExist()
     }
 
 }
