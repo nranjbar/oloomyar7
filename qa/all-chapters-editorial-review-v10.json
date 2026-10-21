@@ -1251,7 +1251,9 @@
       ],
       "practiceRevision": 0,
       "scientificNote": null,
-      "changes": []
+      "changes": [
+        "Use the mine in the question context, rather than an unrelated factory, in hint 1"
+      ]
     },
     {
       "id": "g7_ch05_q13",

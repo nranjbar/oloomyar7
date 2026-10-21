@@ -251,6 +251,33 @@ class Grade7NativeContentUiTest {
         return state
     }
 
+    /** Accepted pair orders can lock rows that differ from the canonical key.
+     * Build a genuinely new wrong answer through the same row locks as the UI.
+     */
+    private fun nextIncorrectMatch(state:QuestionPractice,step:LearningStep):List<String> {
+        val correct=step.pairs.map { it.right }
+        val previous=state.values(step)
+        val seeds=buildList {
+            add(correct)
+            if(WorkbookAnswers.isComplete(step,previous))add(previous)
+            add(step.pairs.indices.map { row -> WorkbookAnswers.choices(step,row).first { it!=correct[row] } })
+            repeat(step.pairs.indices.maxOf { WorkbookAnswers.choices(step,it).size }) { offset ->
+                add(step.pairs.indices.map { row -> WorkbookAnswers.choices(step,row).let { it[offset%it.size] } })
+                add(step.pairs.indices.map { row -> WorkbookAnswers.choices(step,row).let { it[(row+offset)%it.size] } })
+            }
+        }
+        val candidates=(seeds+seeds.flatMap { seed ->
+            step.pairs.indices.flatMap { row -> WorkbookAnswers.choices(step,row).map { choice ->
+                seed.toMutableList().apply { this[row]=choice }
+            } }
+        }).map { state.change(step,it).values(step) }.distinct()
+        return candidates.filter { values ->
+            WorkbookAnswers.isComplete(step,values) && !WorkbookAnswers.isCorrect(step,values) &&
+                values!=state.checked[step.id]
+        }.maxByOrNull { WorkbookAnswers.incorrectRows(step,it).size }
+            ?: error("No distinct wrong matching fixture for ${step.id}")
+    }
+
     /** The whole question stays wrong. A binary part has only one possible wrong
      * selection, so solve that part on the second attempt; other parts still need
      * two distinct failures before their reference can be opened.
@@ -262,13 +289,7 @@ class Grade7NativeContentUiTest {
                 val values=when(step.kind) {
                     StepKind.SINGLE -> listOf((step.options.indices.filter { !step.options[it].correct }.getOrNull(attempt)
                         ?: step.options.indexOfFirst { it.correct }).toString())
-                    StepKind.MATCH -> {
-                        val base=step.pairs.indices.map { row -> WorkbookAnswers.choices(step,row).first { it!=step.pairs[row].right } }
-                        if(attempt==0)base else base.toMutableList().apply {
-                            val other=WorkbookAnswers.choices(step,0).firstOrNull { it!=step.pairs[0].right && it!=base[0] }
-                            this[0]=other ?: step.pairs[0].right
-                        }
-                    }
+                    StepKind.MATCH -> nextIncorrectMatch(state,step)
                     StepKind.MULTI -> {
                         val right=step.options.indices.filter { step.options[it].correct }
                         val wrong=step.options.indices.filter { !step.options[it].correct }
@@ -290,7 +311,7 @@ class Grade7NativeContentUiTest {
                 state=state.change(step,values)
             }
             assertFalse(q.id,q.steps.all { WorkbookAnswers.isCorrect(it,state.values(it)) })
-            assertTrue(q.id,state.canCheck(q));state=state.submit(q)
+            assertTrue("${q.id}: attempt ${attempt+1} must be complete and new",state.canCheck(q));state=state.submit(q)
         }
         assertEquals(q.id,2,state.shownHints);assertTrue(q.id,state.canReveal(q))
         return state

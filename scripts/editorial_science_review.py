@@ -145,6 +145,8 @@ def write():
     right(q(5,10),1,'در معرف عمومی pH، رنگ متناظر با عدد بیشتر از ۷، نشانهٔ بازی بودن است')
     revised(q(5,10));note(q(5,10),'رنگ را باید با جدول همان کاغذ pH مقایسه کرد؛ برای محلول بازی، pH بیشتر از ۷ است. آبی‌شدنِ ذکرشده در پاسخنامه مربوط به رنگ معرف به‌کاررفته است و قاعدهٔ همهٔ شناساگرها نیست.')
     note(q(5,15),'این نمودار یک پیش‌بینی آموزشی بر پایهٔ فرض‌های کتاب است؛ تاریخ قطعی پایان منابع یا آمار به‌روز جهان نیست. زمان باقی‌مانده به ذخایر شناخته‌شده، فناوری، بازیافت و مقدار مصرف وابسته است.')
+    hints(q(5,12),first='پیامد اقتصادی معدن را از پیامدهای محیطی و اجتماعی آن جدا بررسی کن.')
+    record(q(5,12),'Use the mine in the question context, rather than an unrelated factory, in hint 1')
     # Water coverage and precipitation mechanisms.
     replace(q(6,1),'nativeQuestion','زیرا تقریبا','زیرا حدود ۷۱ درصد سطح زمین، نزدیک به','Correct surface-water coverage')
     replace(q(6,1),'nativeQuestion','سطح زمین ( بیش از ۷۵ درصد ) را','سطح زمین را','Remove incorrect greater-than-75-percent claim')
