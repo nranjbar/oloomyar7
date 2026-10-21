@@ -1,0 +1,129 @@
+{
+  "status": "PASS",
+  "version": "0.9.0-grade7-1405",
+  "versionCode": 10,
+  "conclusion": "success",
+  "testedSourceCommit": "09441896d203babc5649e7275337f0a883ad5ee4",
+  "runId": 39624080760,
+  "runUrl": "https://github.com/nranjbar/oloomyar7/actions/runs/39624080760",
+  "apkArtifactId": 12355768838,
+  "apkArchiveSha256": "4c34c00e1ca9dd2a12abaa37f251af912e31c46f097966a8e3765b2a0dbd99d9",
+  "reportArtifactId": 12357786285,
+  "reportArchiveSha256": "de9ae6b5260483b3a67e782801f4e71c31f2a71068e9b9bec9499fe802675cd2",
+  "releaseBundleArtifactId": 12355424205,
+  "releaseBundleArchiveSha256": "fccdea915c96bc3fd4373a5b38b06ad407b2c35088789bb0c869ed850e36acef",
+  "unit": {
+    "tests": 41,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "androidApi35": {
+    "tests": 59,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "nativeGeometry": {
+    "status": "PASS",
+    "frames": 1902,
+    "questions": 317,
+    "configurations": [
+      {
+        "widthDp": 320,
+        "fontScale": 1
+      },
+      {
+        "widthDp": 360,
+        "fontScale": 1.5
+      },
+      {
+        "widthDp": 320,
+        "fontScale": 2
+      }
+    ]
+  },
+  "referenceRouteParity": {
+    "status": "PASS",
+    "actualQuestionScreens": 7,
+    "completeNativeBlocksAndFigures": true,
+    "explicitRevealBothRoutes": true,
+    "report": "qa/reference_route_parity_v09.json"
+  },
+  "persistence": {
+    "status": "PASS",
+    "oldVersion": "0.8.0",
+    "newVersion": "0.9.0",
+    "installReplacement": true,
+    "oldCompletionPreserved": true,
+    "draftSelectionsHintsAndSeedPreserved": true,
+    "viewportPreserved": true,
+    "answerStayedLocked": true,
+    "bookmarksAndDisplaySettingsPreserved": true,
+    "pidBefore": "6633",
+    "pidAfterStop": "",
+    "pidRestored": "6681",
+    "tests": 3
+  },
+  "packages": [
+    {
+      "kind": "debug",
+      "path": "app/build/outputs/apk/debug/app-debug.apk",
+      "bytes": 66416055,
+      "sha256": "2641b9ab189b99c3d32720026cffc48a1a020a0c3e0524256eee95d68c00263e",
+      "assetEntries": 150,
+      "nativeQuestions": 317,
+      "nativeAnswers": 317,
+      "compressedAssetBytes": 47188074,
+      "previousThreeChapterApkBytes": 47596130
+    },
+    {
+      "kind": "releaseBundle",
+      "path": "app/build/outputs/bundle/release/app-release.aab",
+      "bytes": 51214734,
+      "sha256": "46ab6811d465bd4999b54d32bc7b6a903edd2403f22cf82dbf1ca0036079308a",
+      "assetEntries": 150,
+      "nativeQuestions": 317,
+      "nativeAnswers": 317,
+      "compressedAssetBytes": 47039332,
+      "previousThreeChapterApkBytes": 47596130
+    }
+  ],
+  "packagedAssetsIdenticalToReviewedSource": 150,
+  "ownerArt": {
+    "scientificFigures": 59,
+    "questionFigures": 52,
+    "gatedAnswerIllustrations": 7,
+    "newLosslessScientificAssets": 42,
+    "originalSourceFiguresPixelTest": 19,
+    "ownerScientificPixelsOnAndroid": 59,
+    "isolatedBiologyDiagramPages": 4,
+    "derivedEmbeddedImagesPixelIdentical": 6,
+    "uiAssets": 7
+  },
+  "content": {
+    "questions": 317,
+    "nativeQuestions": 317,
+    "nativeAnswers": 317,
+    "reviewedChapter10To15Questions": 114,
+    "newNativeQuestions": 85,
+    "learningGroups": 334,
+    "hints": 668,
+    "originalPdfs": 16,
+    "remainingNativeChapterQuestions": 0
+  },
+  "screenshots": [
+    "qa/screenshots/v09/v09-chapter-15-study-cover.png",
+    "qa/screenshots/v09/layout-g7_ch11_q06.png",
+    "qa/screenshots/v09/layout-g7_ch12_q17.png",
+    "qa/screenshots/v09/layout-g7_ch13_mcq03.png",
+    "qa/screenshots/v09/v09-dental-literal-key-and-science.png",
+    "qa/screenshots/v09/v09-circulation-path.png",
+    "qa/screenshots/v09/layout-g7_ch14_q10.png",
+    "qa/screenshots/v09/layout-g7_ch15_q02.png",
+    "qa/screenshots/v09/layout-g7_ch15_q12.png",
+    "qa/screenshots/v09/v09-reference-density-after-correct.png",
+    "qa/screenshots/v09/v09-reference-density-after-hints.png",
+    "qa/screenshots/v09/grade7-15-solved-original-answer.png"
+  ]
+}
