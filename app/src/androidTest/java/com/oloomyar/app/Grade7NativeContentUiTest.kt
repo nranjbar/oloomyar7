@@ -514,11 +514,27 @@ class Grade7NativeContentUiTest {
                 else androidx.compose.material3.Text("مرور بسته شد",Modifier.testTag("navigation-disposed"))
             }
         }
-        repeat(3) {
-            repeat(questions.size-1) { compose.onNodeWithTag("next-question").assertIsEnabled().performClick() }
-            repeat(questions.size-1) { compose.onNodeWithTag("previous-question").assertIsEnabled().performClick() }
+        fun assertCurrent(index:Int) {
+            val expected=questions[index]
+            // performClick dispatches the touch; synchronize with the resulting
+            // composition before reading a preference written by LaunchedEffect.
+            compose.onNodeWithText("سؤال ${workbookFa(expected.sourceNumber)} • ${expected.title}").assertIsDisplayed()
+            compose.runOnIdle {
+                assertEquals(expected.id,LearningPreferences(context).lastLocation()!!.questionId)
+            }
         }
-        assertEquals(questions.first().id,LearningPreferences(context).lastLocation()!!.questionId)
+        assertCurrent(0)
+        repeat(3) {
+            for(index in 1 until questions.size) {
+                compose.onNodeWithTag("next-question").assertIsEnabled().performClick()
+                assertCurrent(index)
+            }
+            for(index in questions.lastIndex-1 downTo 0) {
+                compose.onNodeWithTag("previous-question").assertIsEnabled().performClick()
+                assertCurrent(index)
+            }
+        }
+        compose.onNodeWithTag("previous-question").assertIsNotEnabled()
         compose.onNodeWithTag("reveal-answer").assertIsNotEnabled()
         compose.runOnIdle { shown.value=false }
         compose.onNodeWithTag("navigation-disposed").assertExists()
