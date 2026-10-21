@@ -1,0 +1,126 @@
+{
+  "status": "PASS",
+  "version": "0.8.0-grade7-1405",
+  "versionCode": 9,
+  "conclusion": "success",
+  "testedSourceCommit": "6aa0e4e3e2882f10cb23a8b03a5ccfac5cdaae87",
+  "runId": 39582164798,
+  "runUrl": "https://github.com/nranjbar/oloomyar7/actions/runs/39582164798",
+  "apkArtifactId": 12336962635,
+  "apkArchiveSha256": "4484471e9ce2a3b0e45e56f2fcc8b37d1b1a443524847e31249e318f1d2b5ce1",
+  "reportArtifactId": 12338587476,
+  "reportArchiveSha256": "0464228c3bb3ccae3cb80af141018abeb5b54082714f448946fe616a44824a6b",
+  "unit": {
+    "tests": 41,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "androidApi35": {
+    "tests": 55,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "nativeGeometry": {
+    "status": "PASS",
+    "frames": 1392,
+    "questions": 232,
+    "configurations": [
+      {
+        "widthDp": 320,
+        "fontScale": 1
+      },
+      {
+        "widthDp": 360,
+        "fontScale": 1.5
+      },
+      {
+        "widthDp": 320,
+        "fontScale": 2
+      }
+    ]
+  },
+  "persistence": {
+    "status": "PASS",
+    "oldVersion": "0.7.0",
+    "newVersion": "0.8.0",
+    "installReplacement": true,
+    "oldCompletionPreserved": true,
+    "draftSelectionsHintsAndSeedPreserved": true,
+    "viewportPreserved": true,
+    "answerStayedLocked": true,
+    "bookmarksAndDisplaySettingsPreserved": true,
+    "pidBefore": "6492",
+    "pidAfterStop": "",
+    "pidRestored": "6550",
+    "tests": 3
+  },
+  "packages": [
+    {
+      "kind": "debug",
+      "path": "app/build/outputs/apk/debug/app-debug.apk",
+      "bytes": 60025209,
+      "sha256": "5b4c97a8c9de5c3d94299586d44a836380093dbc483bfe029afccb96fa3ed7dc",
+      "assetEntries": 135,
+      "nativeQuestions": 232,
+      "nativeAnswers": 232,
+      "compressedAssetBytes": 40801220,
+      "previousThreeChapterApkBytes": 47596130
+    },
+    {
+      "kind": "releaseBundle",
+      "path": "app/build/outputs/bundle/release/app-release.aab",
+      "bytes": 44831298,
+      "sha256": "9e4c3f99b59f8322a30d6a9599776e5cb7365788c240da62d860ea59ca5c9bef",
+      "assetEntries": 135,
+      "nativeQuestions": 232,
+      "nativeAnswers": 232,
+      "compressedAssetBytes": 40661408,
+      "previousThreeChapterApkBytes": 47596130
+    }
+  ],
+  "ownerArt": {
+    "scientificFigures": 47,
+    "questionFigures": 40,
+    "gatedAnswerIllustrations": 7,
+    "newLosslessScientificAssets": 30,
+    "originalSourceFiguresPixelTest": 17,
+    "ownerScientificPixelsOnAndroid": 47,
+    "uiAssets": 7,
+    "completeCarbonMapBeforeInteractive": true
+  },
+  "content": {
+    "questions": 317,
+    "nativeQuestions": 232,
+    "learningGroups": 334,
+    "hints": 668,
+    "originalPdfs": 16,
+    "remainingNativeQuestions": 85,
+    "remainingNativeChapters": [
+      11,
+      12,
+      13,
+      14,
+      15
+    ]
+  },
+  "answerIllustrationPlan": {
+    "questionsReviewed": 204,
+    "questionUses": 119,
+    "distinctFiles": 95,
+    "path": "review/answer-illustrations-ch3-10.json"
+  },
+  "screenshots": [
+    "qa/screenshots/v08/native-04-scientific-map.png",
+    "qa/screenshots/v08/v08-supplied-density-answer.png",
+    "qa/screenshots/v08/v08-supplied-hinted-answer.png",
+    "qa/screenshots/v08/v08-balloon-clear-choices.png",
+    "qa/screenshots/v08/v08-chapter-10-cover.png",
+    "qa/screenshots/v08/layout-g7_ch07_q19.png",
+    "qa/screenshots/v08/layout-g7_ch08_q18.png",
+    "qa/screenshots/v08/layout-g7_ch10_q16.png",
+    "qa/screenshots/v08/layout-hints-two-parts-first-level.png",
+    "qa/screenshots/v08/layout-hints-two-parts-second-level.png"
+  ]
+}
