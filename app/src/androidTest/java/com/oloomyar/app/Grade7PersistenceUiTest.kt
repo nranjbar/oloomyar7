@@ -65,6 +65,24 @@ class Grade7PersistenceUiTest {
             capture("discovery-12-before-process-termination")
         }
     }
+    @Test fun upgradeRetainsCompletionButRequiresFreshAuthorizationForChangedScience() {
+        val questions=Grade7Chapter1Repository(context).questions
+        val q=questions.first { it.sourceNumber==7 && it.section=="تمرین‌های اصلی" }
+        val progress=WorkbookProgress(context,"grade7_chapter1",questions)
+        assertTrue(progress.done(q.id))
+        val old=checkNotNull(progress.draft(q.id))
+        assertEquals(0,JSONObject(old).optInt("contentRevision",0))
+        val fresh=QuestionDraftCodec.decode(old,q)
+        assertEquals(7417,fresh.shuffleSeed);assertEquals(q.practiceRevision,fresh.contentRevision)
+        assertTrue(fresh.answers.isEmpty());assertTrue(fresh.checked.isEmpty())
+        assertFalse(fresh.revealed);assertFalse(fresh.canReveal(q));assertEquals(0,fresh.shownHints)
+        ActivityScenario.launch<Grade7Chapter1Activity>(Intent(context,Grade7Chapter1Activity::class.java).putExtra("question_id",q.id)).use {
+            compose.onNodeWithTag("reveal-answer").assertIsNotEnabled()
+            compose.onNodeWithTag("workbook-reference-answer").assertDoesNotExist()
+            assertTrue(progress.done(q.id))
+            capture("v10-real-upgrade-scientific-draft-reset")
+        }
+    }
     @Test fun restoreCheckpointAfterRealProcessTermination() {
         val q = question;val store = WorkbookProgress(context,"grade7_chapter2",listOf(q))
         val expected = QuestionDraftCodec.decode(context.getSharedPreferences("grade7_checkpoint_test",Context.MODE_PRIVATE).getString("expected",null))

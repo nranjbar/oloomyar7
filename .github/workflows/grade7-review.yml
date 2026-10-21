@@ -30,7 +30,7 @@ jobs:
           echo "sdk.dir=$ANDROID_SDK_ROOT" > local.properties
           chmod +x gradlew
       - name: Install source audit tools
-        run: python3 -m pip install PyMuPDF==1.26.6 Pillow==11.3.0
+        run: python3 -m pip install PyMuPDF==1.26.6 Pillow==11.3.0 numpy==2.2.6 scipy==1.15.3
       - name: Validate all Grade 7 questions and source images
         run: python3 scripts/validate_grade7.py
       - name: Install emulator image with the selected Android command line tools
@@ -42,12 +42,12 @@ jobs:
       - name: Build the previous signed review for real update verification
         run: |
           GRADE7_BASELINE_PROJECT="$RUNNER_TEMP/grade7-upgrade-baseline"
-          git worktree add --detach "$GRADE7_BASELINE_PROJECT" 6aa0e4e3e2882f10cb23a8b03a5ccfac5cdaae87
+          git worktree add --detach "$GRADE7_BASELINE_PROJECT" 09441896d203babc5649e7275337f0a883ad5ee4
           cp local.properties "$GRADE7_BASELINE_PROJECT/local.properties"
           chmod +x "$GRADE7_BASELINE_PROJECT/gradlew"
           "$GRADE7_BASELINE_PROJECT/gradlew" -p "$GRADE7_BASELINE_PROJECT" --no-daemon :app:assembleDebug
           mkdir -p app/build/upgrade
-          cp "$GRADE7_BASELINE_PROJECT/app/build/outputs/apk/debug/app-debug.apk" app/build/upgrade/grade7_0.8.0.apk
+          cp "$GRADE7_BASELINE_PROJECT/app/build/outputs/apk/debug/app-debug.apk" app/build/upgrade/grade7_0.9.0.apk
       - name: Upload installable Grade 7 APK
         uses: actions/upload-artifact@v4
         with:
@@ -58,7 +58,7 @@ jobs:
       - name: Upload unsigned release bundle for production signing
         uses: actions/upload-artifact@v4
         with:
-          name: OloomYar7-0.9-Unsigned-AAB
+          name: OloomYar7-0.10-Unsigned-AAB
           path: app/build/outputs/bundle/release/app-release.aab
           if-no-files-found: error
       - name: Enable KVM
@@ -89,6 +89,8 @@ jobs:
             qa/grade7_content_validation.json
             qa/grade7_native_content_validation.json
             qa/android_package_size.json
+            qa/source/image-optimization-v10.json
+            qa/all-chapters-editorial-review-v10.json
   cleanup-merged-grade7-branches:
     if: github.event_name == 'push' && github.ref == 'refs/heads/main' && github.repository == 'nranjbar/oloomyar7'
     needs: grade7

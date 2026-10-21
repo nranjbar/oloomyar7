@@ -5,12 +5,13 @@ from native_chapters_eleven_to_fifteen import write as last_five
 from clarify_practice_choices import write as clarify
 from apply_owner_art import write as owner_art
 from native_biology_diagrams import write as biology_diagrams
+from editorial_science_review import write as science_review
 import hashlib
 import json
 from pathlib import Path
 
 def write():
-    first_five();next_five();clarify();last_five();biology_diagrams();review_ten();owner_art()
+    first_five();next_five();clarify();last_five();biology_diagrams();review_ten();owner_art();science_review()
     root=Path(__file__).resolve().parents[1]
     for name,chapters in [('native-first-five-manifest.json',range(1,6)),('native-chapters-six-to-ten-manifest.json',range(6,11)),('native-chapters-eleven-to-fifteen-manifest.json',range(11,16))]:
         manifest=[]

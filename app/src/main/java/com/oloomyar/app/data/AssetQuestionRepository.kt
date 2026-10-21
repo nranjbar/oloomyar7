@@ -61,6 +61,8 @@ open class AssetQuestionRepository(
                         answerVisualCaption = optionalText(q, "answerVisualCaption"),
                         answerStudyVisual = optionalText(q, "answerStudyVisual"),
                         answerStudyCaption = optionalText(q, "answerStudyCaption"),
+                        answerReviewNote = optionalText(q, "answerReviewNote"),
+                        practiceRevision = q.optInt("practiceRevision", 0),
                         sourceQuestionVisual = optionalText(q, "sourceQuestionVisual"),
                         promptVisual = optionalText(q, "promptVisual"),
                         readablePrompt = optionalText(q, "readablePrompt"),

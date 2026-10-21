@@ -1,0 +1,354 @@
+{
+  "baseline": "09441896d203babc5649e7275337f0a883ad5ee4",
+  "authorization": "2026-10-21 owner requests complete scientific and editorial review; original source fields/PDFs retained",
+  "revisions": [
+    {
+      "id": "g7_ch01_q07",
+      "beforeNativeSha256": "642f4e6f942fed5e3c5b08884726876ff9789d530c7289ba13812a8b6748caea",
+      "afterNativeSha256": "b3256129297a6c9424ef6047dcd577d03691eff93318c1cb4824d4aac214e2a8",
+      "reasons": [
+        "Fresh check required; old scientific selections/hints/reveal are not migrated",
+        "Separate gated scientific clarification",
+        "Compact printed blank marks; native controls remain the only editable fields"
+      ]
+    },
+    {
+      "id": "g7_ch02_q01",
+      "beforeNativeSha256": "913289144eceb7b994786a7c4b1c7d9c1bd05e8a182fd99fca4429374a249c78",
+      "afterNativeSha256": "4d2bee5da1d06ce88dfba68515482433803341fdcdaf6e2003a0cf9aa4d348f5",
+      "reasons": [
+        "Length is a quantity, not a unit"
+      ]
+    },
+    {
+      "id": "g7_ch02_q03",
+      "beforeNativeSha256": "1698ce53c913529dc8e1053616d5723f7e70fbf5302cf8c72f22cc0597383189",
+      "afterNativeSha256": "45b2abe0d37f042b646230bcfa1f1584aaca9471a47a69db6a890821fabd2fd7",
+      "reasons": [
+        "Native spelling/grammar correction; original source retained"
+      ]
+    },
+    {
+      "id": "g7_ch02_q08",
+      "beforeNativeSha256": "728afcdcf4093ec10de9cfd841ff635eddd665b00ddbbad6ea06b2cbea56fbc5",
+      "afterNativeSha256": "d82651fe8ec1116c39d459c2d1ed56db76f2690871fbd095bf17536627152905",
+      "reasons": [
+        "Unambiguous decimal separator; fractions retained as numerator/denominator"
+      ]
+    },
+    {
+      "id": "g7_ch02_q10",
+      "beforeNativeSha256": "bb85af76fcc698540645428c63e9973786c18e3924d95bacc15fb599834a5554",
+      "afterNativeSha256": "785c3107b9ed692e2b54e8c3d033bb1deb53f4440fef294ff073a4b11b4deb5a",
+      "reasons": [
+        "Unambiguous decimal separator; fractions retained as numerator/denominator"
+      ]
+    },
+    {
+      "id": "g7_ch02_q11",
+      "beforeNativeSha256": "6ce00c32126c63b0e0381052fecefadb7b210e640131d58db06608fbb5763dfc",
+      "afterNativeSha256": "7a0924c841f5d24945fe3f64e4ca9c755c8e844abc50c985c1a5a902e3648f50",
+      "reasons": [
+        "Native spelling/grammar correction; original source retained"
+      ]
+    },
+    {
+      "id": "g7_ch02_q12",
+      "beforeNativeSha256": "4c44d277dafd6c43bfc7558cb80f3bcf67ad4e134df3da844f7c3f18aa900041",
+      "afterNativeSha256": "28a7fc361c2d1c17845c20a51a617fadf1a8ebd97f7886aea1f5be9fc43672e2",
+      "reasons": [
+        "Explicit labels match the corrected figure"
+      ]
+    },
+    {
+      "id": "g7_ch02_q15",
+      "beforeNativeSha256": "b371cb313aaed5ee2d005dcd4587931dd5c02867e3d4d27333793037dc49f731",
+      "afterNativeSha256": "eee8c1bcd7f69cbfe20688e1cc430e9259111ccb86ca959b8536522ef4298aa9",
+      "reasons": [
+        "Same complete source facts reordered by authoritative figure numbers"
+      ]
+    },
+    {
+      "id": "g7_ch02_mcq05",
+      "beforeNativeSha256": "6a94b2727fb19e31abd7a1d6c281c40be8405a70b345b680fb3a6fbd7703ee64",
+      "afterNativeSha256": "9ed543f6b96116368d0e48eff0f41c629108a592b255630a328d72b807b3a14d",
+      "reasons": [
+        "Unambiguous decimal separator; fractions retained as numerator/denominator"
+      ]
+    },
+    {
+      "id": "g7_ch03_q01",
+      "beforeNativeSha256": "9062f689269b9f69b721356f06642ef25e64c475bb16ae1a7b78fb8c13bb8fb9",
+      "afterNativeSha256": "45030708c312e4309ff1a7aaab216d6d2cbff5b9f017b845b9a6ab2dd89c9729",
+      "reasons": [
+        "Distinguish a compound from a mixture"
+      ]
+    },
+    {
+      "id": "g7_ch03_q08",
+      "beforeNativeSha256": "68340ab9cd02edf45f86883ca945b9dc3509d7acbcaa8e70a2e6f01cb225609d",
+      "afterNativeSha256": "5e9f363efbd738787bd65f5faccf26f9fca691f315eeb556a33e78c799ce01cb",
+      "reasons": [
+        "Replace invalid nonmetal floatation generalization",
+        "Keep cloze adaptation consistent",
+        "Fresh check required; old scientific selections/hints/reveal are not migrated",
+        "Separate gated scientific clarification"
+      ]
+    },
+    {
+      "id": "g7_ch03_q18",
+      "beforeNativeSha256": "f5feaae584d071ac1efc989b7ff27a46f2977b4547f07e442c9dcddab0dadc2a",
+      "afterNativeSha256": "80b0d08804a2570b772c33604ca3cd9ecc198a854d8f45218826615b5828c9a5",
+      "reasons": [
+        "Native spelling/grammar correction; original source retained"
+      ]
+    },
+    {
+      "id": "g7_ch03_mcq02",
+      "beforeNativeSha256": "2994ba2389301b5966094982ac6f390f197cc2a5280778b8582a3bac28dfc26a",
+      "afterNativeSha256": "70c634eeacf7c25144ae33febf631f399fa6ee83709f702f8df6e8131b0580c9",
+      "reasons": [
+        "Scope the approximate natural-element count",
+        "Fresh check required; old scientific selections/hints/reveal are not migrated",
+        "Separate gated scientific clarification"
+      ]
+    },
+    {
+      "id": "g7_ch03_mcq07",
+      "beforeNativeSha256": "df1bccf9a12b23461e4e29855cd2ce2f2e0503fec663f78627ca89181054595e",
+      "afterNativeSha256": "879f205ece2d7db4dfbf32355bf77c5dd43772f1b17bbec9452eaee3ff20f09e",
+      "reasons": [
+        "Native spelling/grammar correction; original source retained"
+      ]
+    },
+    {
+      "id": "g7_ch04_q01",
+      "beforeNativeSha256": "1a3e283c99a52e2cb6210fddfd1929cbcb3e0dfb935f827dcd2c93b43e6b23fd",
+      "afterNativeSha256": "5e093af2d4cba1125655f6929ffba8bc1d14e79c31af39ec051e13a555a9d7da",
+      "reasons": [
+        "Native spelling/grammar correction; original source retained"
+      ]
+    },
+    {
+      "id": "g7_ch04_q07",
+      "beforeNativeSha256": "aec6a556caa380bffd70fc3339b61b53ea55200eeaa5582bc39add08157cbf31",
+      "afterNativeSha256": "63c3abf2a37599d2dff34c6eec3caa6b8dddf8f3f9e051d7210b805d95b7b606",
+      "reasons": [
+        "Native spelling/grammar correction; original source retained"
+      ]
+    },
+    {
+      "id": "g7_ch04_q13",
+      "beforeNativeSha256": "0cf5b67cece8dee97503048a8c5590483f02c538a061b77ddf01ff5158a3e74a",
+      "afterNativeSha256": "78309b64fe884f2805a0fdc9cb142256930624760d353f7d91ef3d96d9c7db11",
+      "reasons": [
+        "Owner question figure replaces four isolated source figures; native part g retained"
+      ]
+    },
+    {
+      "id": "g7_ch04_q14",
+      "beforeNativeSha256": "0f8b80ce706184426f02f9f3efb2e0a21d65e6b47280f49fd557e2c7188f1259",
+      "afterNativeSha256": "387eed0471be2149bcd1c56b47273908ffae72863e8d9e9bbd0a933339aadf39",
+      "reasons": [
+        "Native spelling/grammar correction; original source retained"
+      ]
+    },
+    {
+      "id": "g7_ch05_q02",
+      "beforeNativeSha256": "f6bf2f81e8be6d1d007655e1db1ca995b18bf556f88c13fee0caace0fe46993f",
+      "afterNativeSha256": "7b2baaafa3e61ba9a9bbb845224d7eae0ab3fc8d27345825ce38f20663a3ad08",
+      "reasons": [
+        "Native spelling/grammar correction; original source retained",
+        "Native spelling/grammar correction; original source retained"
+      ]
+    },
+    {
+      "id": "g7_ch05_q03",
+      "beforeNativeSha256": "6a5d55ecd5f89dc85078514e2696b869aadb8ce57cf44187b557f7bafc69b7eb",
+      "afterNativeSha256": "f789f22b363486f67e99e9b319413026a9e6c74c46485416fc01d70d6b3afa2d",
+      "reasons": [
+        "Native spelling/grammar correction; original source retained",
+        "Separate gated scientific clarification"
+      ]
+    },
+    {
+      "id": "g7_ch05_q08",
+      "beforeNativeSha256": "bc5ff638353d0c6ae3043abd4d32d136ab37bd9a598232d070e606a836a82941",
+      "afterNativeSha256": "1cbc69e25be3ccfe8fd8d5ce72648a6f1ce45084c7da11aa1a2e9cf97d55f6ed",
+      "reasons": [
+        "Native spelling/grammar correction; original source retained"
+      ]
+    },
+    {
+      "id": "g7_ch05_q15",
+      "beforeNativeSha256": "08a4483b50fd4ba338f1bdea338974eeb2c69a19eb47d55d0a3bc340c95d6406",
+      "afterNativeSha256": "d44fa361a34a281d5f72036b39a899ecd15f53a14581f5b8e7446a7c4bc8261a",
+      "reasons": [
+        "Native spelling/grammar correction; original source retained",
+        "Separate gated scientific clarification"
+      ]
+    },
+    {
+      "id": "g7_ch06_q01",
+      "beforeNativeSha256": "6d79d179e66cfeab90c87949c0b0b81f06fbfe9e8a2e39d10896ff964a323a9c",
+      "afterNativeSha256": "d76df3a23ba6f24142a08cd06102cbbda723167308ea7b7631684c9ff32fb0fb",
+      "reasons": [
+        "Correct surface-water coverage",
+        "Remove incorrect greater-than-75-percent claim",
+        "Separate gated scientific clarification"
+      ]
+    },
+    {
+      "id": "g7_ch06_q10",
+      "beforeNativeSha256": "806ab7e206f989b3aad5a6422c4e32a64894710a5ac20d53dca150b31fa4d66c",
+      "afterNativeSha256": "28d2475b27326805af09b1310e1edd3d11a7ac7a39b6707af3fb27575d06dc1a",
+      "reasons": [
+        "Owner water-cycle question figure replaces source figure"
+      ]
+    },
+    {
+      "id": "g7_ch07_q18",
+      "beforeNativeSha256": "7f7f54e4b8f2320813e180a0276f8c29743ad112933b246c09f7e975e7abf1f7",
+      "afterNativeSha256": "a8a16992cfac4c2c740a2096c7fa141f8df9c9ce09ea4d22d32c29dfb94259d1",
+      "reasons": [
+        "Compact printed blank marks; native controls remain the only editable fields"
+      ]
+    },
+    {
+      "id": "g7_ch08_q01",
+      "beforeNativeSha256": "34a2a234ee7104ea859c97d7d32d7e9b74323f891916f1fb1dbdb26bb1e6efc4",
+      "afterNativeSha256": "6a1a2ae70817f7a1170a0562789dd64ca63a024f19172cb344a8b0bdfd52978a",
+      "reasons": [
+        "Do not imply that most radio energy necessarily becomes sound"
+      ]
+    },
+    {
+      "id": "g7_ch08_q06",
+      "beforeNativeSha256": "cf41772e65f60f29c2dec45ac227c55574fb9b801dbcaad765404decd87b002a",
+      "afterNativeSha256": "ce72a1a2ffb2b73ba55912ba0ee34fe969c5cde839a6c3fdae94612eec42c30c",
+      "reasons": [
+        "Unambiguous decimal separator; fractions retained as numerator/denominator",
+        "Unambiguous decimal separator; fractions retained as numerator/denominator"
+      ]
+    },
+    {
+      "id": "g7_ch08_q18",
+      "beforeNativeSha256": "43196fc0b2e4673a68afbe415aadb6468f12a37a0137cb032c7f8a7be3ec2a06",
+      "afterNativeSha256": "d6fc1c5a5885ac0a25c68de4a039e9da4eb3094225b880664120c3d2d2da5013",
+      "reasons": [
+        "Unambiguous decimal separator; fractions retained as numerator/denominator",
+        "Unambiguous decimal separator; fractions retained as numerator/denominator"
+      ]
+    },
+    {
+      "id": "g7_ch08_mcq03",
+      "beforeNativeSha256": "e9b818934977350420ee41a937121ed816966c8fabaa6a1a607e27d640865755",
+      "afterNativeSha256": "4625d8ce8a244a236c45de3267e199050faa141f8a418caeab2a1dd9b250917c",
+      "reasons": [
+        "Unambiguous decimal separator; fractions retained as numerator/denominator",
+        "Correct total-energy unit; retain original source and review note"
+      ]
+    },
+    {
+      "id": "g7_ch09_q01",
+      "beforeNativeSha256": "9a0787d985bbd263d3a50676155bbf2c13acf3d8579a6c84f74aff7dccc44681",
+      "afterNativeSha256": "0d97ec493e973dc2888207c3d31a67559c163b01b709cdaf026fd408dd985138",
+      "reasons": [
+        "Qualify renewable-energy claims",
+        "Scope historical quantity to source data",
+        "Separate gated scientific clarification",
+        "Fresh check required; old scientific selections/hints/reveal are not migrated"
+      ]
+    },
+    {
+      "id": "g7_ch09_mcq02",
+      "beforeNativeSha256": "ca23e3f99e7f41438ff742cbcc8e62c59ca6dec9db62d58fb9fae81d73d08611",
+      "afterNativeSha256": "317484a5a32181f722d0d8df7bc5c58068ccef5973175f78eb9d208d3370fb95",
+      "reasons": [
+        "Avoid presenting historical book statistics as current data",
+        "Separate gated scientific clarification"
+      ]
+    },
+    {
+      "id": "g7_ch10_q17",
+      "beforeNativeSha256": "c82728596c7666d7f2c6b9824827c2be9d27cc437de40ede77e63941bede2046",
+      "afterNativeSha256": "944314f1da0c436f61e756706c8bec3ce8dcf387c5712e87215d45ab27438bbd",
+      "reasons": [
+        "Compact printed blank marks; native controls remain the only editable fields"
+      ]
+    },
+    {
+      "id": "g7_ch10_mcq01",
+      "beforeNativeSha256": "246111876024e7521b8f7b07896d5ccdbc3f92ba20a26015d55a0d69c323a9cc",
+      "afterNativeSha256": "e02a0162f3640e33622ef6eb2a2bd0665bab15eb23914dc1da66d9d8f3a72a0e",
+      "reasons": [
+        "Compact printed blank marks; native controls remain the only editable fields"
+      ]
+    },
+    {
+      "id": "g7_ch11_q13",
+      "beforeNativeSha256": "10acb2f82ff60e27bf936a495b66d18e1c25bfdb1780af53c78be2b20228a492",
+      "afterNativeSha256": "5a06ed13706bd73c47cccf0c5aa9147e8f3ef13fb3bf200a368f8dd16c389ea5",
+      "reasons": [
+        "Compact printed blank marks; native controls remain the only editable fields"
+      ]
+    },
+    {
+      "id": "g7_ch12_q05",
+      "beforeNativeSha256": "3417a6ff477fceb72c9cc12fd7875e3d7e98a3418ec5e2ad02fc23adeffc55f1",
+      "afterNativeSha256": "170a299646693df2639f84f80d1e69f85db7c7007aef80dc0cb9bfac070c5e4e",
+      "reasons": [
+        "Compact printed blank marks; native controls remain the only editable fields"
+      ]
+    },
+    {
+      "id": "g7_ch12_q17",
+      "beforeNativeSha256": "95e6c1138261f7513021aa14bfcd2eb7802d1b675f4a53657726224f9bdb45ab",
+      "afterNativeSha256": "c14c4a86275ce0db12c5074d2ea780c1d81057169a709973723a69502b8d8fb0",
+      "reasons": [
+        "Compact printed blank marks; native controls remain the only editable fields"
+      ]
+    },
+    {
+      "id": "g7_ch13_q01",
+      "beforeNativeSha256": "a95e7c45b022074f532c52fe13ad51868c3e932e2ac926c166c19ea6bfcb4199",
+      "afterNativeSha256": "f9f3ac6b188cfe8f4e3ae838e940a22bebaeffc5cf670901d96f2d63cc3b853d",
+      "reasons": [
+        "Correct duplicate subpart letter"
+      ]
+    },
+    {
+      "id": "g7_ch14_mcq01",
+      "beforeNativeSha256": "40b44c6fcf4337103001043b533f060e0ca330e96d2747f14f66ee67ebde4ed0",
+      "afterNativeSha256": "7e5ed18c787c806ea99eb451677bf50404d10a6c3263a1ada2c4cb8b8090921a",
+      "reasons": [
+        "Separate gated scientific clarification",
+        "Compact printed blank marks; native controls remain the only editable fields"
+      ]
+    },
+    {
+      "id": "g7_ch15_q01",
+      "beforeNativeSha256": "cef96f8d3e4a7014d2aa10139ad6fb0c6e55f8c0d3ec06ec81a4dd882fc32231",
+      "afterNativeSha256": "43236f70d58f482f96afd3634071b44d019f396fff3708a8558089461b6015ac",
+      "reasons": [
+        "Native spelling/grammar correction; original source retained"
+      ]
+    },
+    {
+      "id": "g7_ch15_q08",
+      "beforeNativeSha256": "493f2f091e6ee6e7e159b6fdc27af2283c1dc80f6fd6aaab4b344982230cd116",
+      "afterNativeSha256": "26de5ee24a99937a6ed43f029ca7827a9383927ebfa84636a8ec7562c5884172",
+      "reasons": [
+        "Native spelling/grammar correction; original source retained"
+      ]
+    },
+    {
+      "id": "g7_ch15_mcq03",
+      "beforeNativeSha256": "c564bd0a6a669a54a8bc1f603a51ba32cf1b7e8ad0807d543352080150ad23f0",
+      "afterNativeSha256": "56cd51f583b0575beb5d3fbc58200bb2d338e290dd99a58593673b9f14bf97e0",
+      "reasons": [
+        "Native spelling/grammar correction; original source retained"
+      ]
+    }
+  ]
+}

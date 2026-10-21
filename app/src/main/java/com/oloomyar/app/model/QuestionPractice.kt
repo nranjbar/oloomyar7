@@ -9,7 +9,8 @@ data class QuestionPractice(
     val incorrectSubmissions: List<List<List<String>>> = emptyList(),
     val shownHints: Int = 0,
     val revealed: Boolean = false,
-    val shuffleSeed: Int = kotlin.random.Random.nextInt()
+    val shuffleSeed: Int = kotlin.random.Random.nextInt(),
+    val contentRevision: Int = 0
 ) {
     companion object { const val VERSION = 3 }
 
@@ -32,11 +33,11 @@ data class QuestionPractice(
             .distinct().size.coerceIn(0, 2)
     }
     fun canReveal(question: ChapterQuestion? = null) =
-        (question != null && correct(question)) ||
+        (question == null || contentRevision >= question.practiceRevision) && ((question != null && correct(question)) ||
         (PracticeAttempts.canReveal(incorrectSubmissions.distinct().size, shownHints) &&
             (question == null || question.steps.all { step ->
                 checked[step.id]?.let { WorkbookAnswers.isCorrect(step, it) } == true || hintLevel(question, step) >= 2
-            }))
+            })))
 
     fun mark(step: LearningStep, row: Int): ResponseMark {
         val current = values(step)
@@ -68,7 +69,7 @@ data class QuestionPractice(
         val snapshot = question.steps.associate { it.id to values(it).toList() }
         val wrong = !question.steps.all { WorkbookAnswers.isCorrect(it, values(it)) }
         val history = if (wrong) incorrectSubmissions + listOf(signature(question)) else incorrectSubmissions
-        return copy(answers = snapshot, checked = snapshot, incorrectSubmissions = history,
+        return copy(answers = snapshot, checked = snapshot, incorrectSubmissions = history, contentRevision = question.practiceRevision,
             shownHints = if (wrong) PracticeAttempts.hintLevel(history.size) else shownHints)
     }
 

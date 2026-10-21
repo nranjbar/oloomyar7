@@ -75,7 +75,11 @@ data class ChapterQuestion(
     val practiceUsesPrintedKey: Boolean = true,
     /** Owner-supplied learning illustration, separately labelled after the gated source answer. */
     val answerStudyVisual: String? = null,
-    val answerStudyCaption: String? = null
+    val answerStudyCaption: String? = null,
+    /** Reviewed explanation, clearly separate from the literal printed key/art. */
+    val answerReviewNote: String? = null,
+    /** A scientific control change must never reuse authorization from old drafts. */
+    val practiceRevision: Int = 0
 )
 
 data class SourceBlock(

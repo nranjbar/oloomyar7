@@ -23,14 +23,25 @@ object QuestionDraftCodec {
             },
             shownHints = if (current) o.optInt("shownHints") else 0,
             revealed = current && o.optBoolean("revealed"),
-            shuffleSeed = if (o.has("shuffleSeed")) o.getInt("shuffleSeed") else kotlin.random.Random.nextInt()
-        ).let { migrateChoiceLabels(it, question) }
+            shuffleSeed = if (o.has("shuffleSeed")) o.getInt("shuffleSeed") else kotlin.random.Random.nextInt(),
+            contentRevision = o.optInt("contentRevision", 0)
+        ).let { migrateReviewedScience(it, question) }
+            .let { migrateChoiceLabels(it, question) }
             .let { migrateDentalScienceControls(it, question) }
             .let { migrateTenChapterControls(it, question) }
             .let { migrateInstrumentLabel(it, question) }
             .let { migrateAlloyCells(it, question) }
             .let { if (it.revealed && !it.canReveal(question)) it.copy(revealed = false) else it }
     }.getOrElse { QuestionPractice() }
+
+    /** Old indices/labels can represent a scientifically different claim. Keep
+     * the shuffle seed and recorded chapter progress, but require a fresh check
+     * of this question instead of translating a wrong claim into a correct one.
+     */
+    private fun migrateReviewedScience(state: QuestionPractice, question: ChapterQuestion?): QuestionPractice {
+        if (question == null || state.contentRevision >= question.practiceRevision) return state
+        return QuestionPractice(shuffleSeed=state.shuffleSeed, contentRevision=question.practiceRevision)
+    }
 
     /** The pending source MCQ key is retained; its separate science exercise
      * now checks three tooth functions. A checked option index cannot count as
@@ -140,5 +151,6 @@ object QuestionDraftCodec {
         put("shownHints", state.shownHints)
         put("revealed", state.revealed)
         put("shuffleSeed", state.shuffleSeed)
+        put("contentRevision", state.contentRevision)
     }.toString()
 }

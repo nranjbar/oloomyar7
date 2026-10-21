@@ -210,13 +210,13 @@ class Grade7NativeContentUiTest {
         assertEquals(8,q.steps.single().pairs.size)
         capture("native-04-scientific-map")
     }
-    @Test fun oldAlloySelectionsMigrateToSeparateCellsWithoutFabricatingChoices() {
+    @Test fun oldAlloyScienceCannotAuthorizeTheRevisedApplicationButInstrumentLabelsStillMigrate() {
         val q=question(4,17);val s=q.steps.single()
         val old=listOf("آهن و نیکل و کروم","ساخت قاشق و چنگال","کربن و آهن","ساخت کلنگ و تیشه و تبر")
         val state=QuestionPractice(answers=mapOf(s.id to old),checked=mapOf(s.id to old),shuffleSeed=142)
         val migrated=QuestionDraftCodec.decode(QuestionDraftCodec.encode(state),q)
-        assertEquals(s.pairs.map { it.right },migrated.values(s));assertTrue(migrated.correct(q));assertEquals(142,migrated.shuffleSeed)
-        assertFalse(migrated.revealed)
+        assertTrue(migrated.values(s).isEmpty());assertFalse(migrated.correct(q));assertEquals(142,migrated.shuffleSeed)
+        assertEquals(q.practiceRevision,migrated.contentRevision);assertFalse(migrated.revealed);assertFalse(migrated.canReveal(q))
         val equipment=question(2,15);val names=equipment.steps.first()
         val oldNames=listOf("ترازو","استوانه مدرج","انواع نیروسنج")
         val oldEquipment=QuestionPractice(answers=equipment.steps.associate { it.id to if(it.id==names.id)oldNames else it.pairs.map { p->p.right } },
@@ -237,7 +237,7 @@ class Grade7NativeContentUiTest {
         }
     }
     private fun filled(q:ChapterQuestion):QuestionPractice {
-        var state=QuestionPractice(shuffleSeed=1405)
+        var state=QuestionPractice(shuffleSeed=1405,contentRevision=q.practiceRevision)
         q.steps.forEach { step ->
             val value=when(step.kind) {
                 StepKind.MATCH -> step.pairs.map { it.right }
@@ -251,13 +251,17 @@ class Grade7NativeContentUiTest {
         return state
     }
 
-    /** Both submissions remain wrong, including every independently gated part. */
+    /** The whole question stays wrong. A binary part has only one possible wrong
+     * selection, so solve that part on the second attempt; other parts still need
+     * two distinct failures before their reference can be opened.
+     */
     private fun twiceIncorrect(q:ChapterQuestion):QuestionPractice {
-        var state=QuestionPractice(shuffleSeed=1405)
+        var state=QuestionPractice(shuffleSeed=1405,contentRevision=q.practiceRevision)
         repeat(2) { attempt ->
             q.steps.forEach { step ->
                 val values=when(step.kind) {
-                    StepKind.SINGLE -> listOf(step.options.indices.filter { !step.options[it].correct }[attempt].toString())
+                    StepKind.SINGLE -> listOf((step.options.indices.filter { !step.options[it].correct }.getOrNull(attempt)
+                        ?: step.options.indexOfFirst { it.correct }).toString())
                     StepKind.MATCH -> {
                         val base=step.pairs.indices.map { row -> WorkbookAnswers.choices(step,row).first { it!=step.pairs[row].right } }
                         if(attempt==0)base else base.toMutableList().apply {
@@ -265,12 +269,27 @@ class Grade7NativeContentUiTest {
                             this[0]=other ?: step.pairs[0].right
                         }
                     }
-                    else -> error("Add a deliberate incorrect response for ${step.kind}")
+                    StepKind.MULTI -> {
+                        val right=step.options.indices.filter { step.options[it].correct }
+                        val wrong=step.options.indices.filter { !step.options[it].correct }
+                        (right.take((step.pick-1).coerceAtLeast(0))+listOf(wrong[attempt])).map { it.toString() }
+                    }
+                    StepKind.ORDER -> buildList {
+                        for(a in step.correctOrder.indices)for(b in a+1 until step.correctOrder.size) {
+                            val candidate=step.correctOrder.toMutableList().apply { java.util.Collections.swap(this,a,b) }.map { it.toString() }
+                            if(!WorkbookAnswers.isCorrect(step,candidate))add(candidate)
+                        }
+                    }.distinct()[attempt]
+                    StepKind.CLASSIFY -> step.classifyItems.mapIndexed { index,item ->
+                        if(attempt==1 && index==0)item.category else step.categories.first { it!=item.category }
+                    }
                 }
                 assertTrue(q.id,WorkbookAnswers.isComplete(step,values))
-                assertFalse(q.id,WorkbookAnswers.isCorrect(step,values))
+                if(!(attempt==1 && step.kind==StepKind.SINGLE && step.options.count { !it.correct }==1))
+                    assertFalse(q.id,WorkbookAnswers.isCorrect(step,values))
                 state=state.change(step,values)
             }
+            assertFalse(q.id,q.steps.all { WorkbookAnswers.isCorrect(it,state.values(it)) })
             assertTrue(q.id,state.canCheck(q));state=state.submit(q)
         }
         assertEquals(q.id,2,state.shownHints);assertTrue(q.id,state.canReveal(q))
@@ -280,8 +299,10 @@ class Grade7NativeContentUiTest {
     @Test fun correctAndHintRoutesShowTheSameCompletePrintedAnswerAcrossAllAnswerFormats() {
         // Text, multi-part numerical answers, fractions, complete tables, source
         // diagram and owner answer art all go through the actual question screen.
-        val questions=listOf(question(1,5),question(2,9),question(5,2),question(10,13),question(14,10),question(15,8),
-            catalog.chapters[12].questions.first { it.section=="چهارگزینه‌ای" && it.sourceNumber==3 })
+        val questions=(catalog.chapters.flatMap { it.questions }.filter { it.answerStudyVisual!=null }+
+            listOf(question(5,2),question(14,10),question(15,8),
+            catalog.chapters[12].questions.first { it.section=="چهارگزینه‌ای" && it.sourceNumber==3 })).distinctBy { it.id }
+        assertEquals(75,questions.size)
         val current=mutableStateOf<Pair<ChapterQuestion,Boolean>?>(null)
         compose.setContent {
             val frame=current.value
@@ -338,6 +359,7 @@ class Grade7NativeContentUiTest {
                     expected.forEach { assertTrue("${q.id} missing printed answer: $it",workbookBidi(it) in texts) }
                 }
                 q.answerStudyCaption?.let { assertTrue(q.id,workbookBidi(it) in texts) }
+                q.answerReviewNote?.let { assertTrue(q.id,workbookBidi(it) in texts) }
                 val snapshot=nodes.flatMap { node ->
                     buildList {
                         if(node.config.contains(SemanticsProperties.Text))addAll(node.config[SemanticsProperties.Text].map { "text:${it.text}" })
@@ -346,7 +368,10 @@ class Grade7NativeContentUiTest {
                     }
                 }.sorted()
                 snapshots.add(snapshot)
-                if(q==questions[1])capture(if(hinted)"v09-reference-density-after-hints" else "v09-reference-density-after-correct")
+                if((q.relatedChapter to q.sourceNumber) in setOf(2 to 9,6 to 7,7 to 14,10 to 18)) {
+                    if(q.answerStudyVisual!=null)compose.onNodeWithTag("workbook-image-enlarge-${q.answerStudyVisual}").performScrollTo()
+                    capture("v10-reference-${q.relatedChapter}-${q.sourceNumber}-${if(hinted)"hints" else "correct"}")
+                }
             }
             assertEquals("${q.id}: routes must show identical complete reference content",snapshots[0],snapshots[1])
             report.put(JSONObject().put("question",q.id).put("nativeBlocks",q.nativeAnswer.size)
@@ -375,8 +400,8 @@ class Grade7NativeContentUiTest {
                     Box(Modifier.fillMaxSize(),contentAlignment=Alignment.TopStart) {
                         key(frame) {
                             Column(Modifier.width(frame.width.dp).verticalScroll(rememberScrollState()).padding(horizontal=34.dp).testTag("layout-audit-viewport")) {
-                                NativeWorkbookContent(frame.q,if(frame.answer)frame.q.nativeAnswer else frame.q.nativeQuestion,
-                                    if(frame.answer)null else filled(frame.q))
+                                if(frame.answer)WorkbookReferenceContent(frame.q)
+                                else NativeWorkbookContent(frame.q,frame.q.nativeQuestion,filled(frame.q))
                             }
                         }
                     }
@@ -680,14 +705,31 @@ class Grade7NativeContentUiTest {
         }
         return digest.digest().joinToString("") { "%02x".format(it.toInt() and 255) }
     }
-    @Test fun all59OwnerScientificIllustrationsRetainTheirOriginalPixelsOnAndroid() {
+    @Test fun all125OwnerScientificIllustrationsMatchReviewedFullResolutionDecodedPixelsOnAndroid() {
         val rows=context.assets.open("content/owner-scientific-art.json").bufferedReader().use { JSONObject(it.readText()).getJSONArray("scientific") }
-        assertEquals(59,rows.length())
+        assertEquals(125,rows.length())
         repeat(rows.length()) { index ->
             val row=rows.getJSONObject(index);val asset=row.getString("asset")
             val bitmap=checkNotNull(SourceBitmap.load(context,asset)) { asset }
             assertEquals(row.getInt("width"),bitmap.width);assertEquals(row.getInt("height"),bitmap.height)
             assertEquals(asset,row.getString("decodedRgbaSha256"),bitmapRgbaDigest(bitmap))
+        }
+    }
+    @Test fun scientificallyChangedControlsRejectOldIndicesLabelsAndHintAuthorizationButKeepFreshDrafts() {
+        val questions=catalog.chapters.flatMap { it.questions }.filter { it.practiceRevision>0 }
+        assertTrue(questions.size>=15)
+        questions.forEach { q ->
+            val current=filled(q).submit(q).reveal(q)
+            assertTrue(q.id,current.correct(q));assertTrue(q.id,current.revealed)
+            val old=current.copy(contentRevision=0,shownHints=2)
+            val migrated=QuestionDraftCodec.decode(QuestionDraftCodec.encode(old),q)
+            assertEquals(q.id,q.practiceRevision,migrated.contentRevision)
+            assertEquals(q.id,old.shuffleSeed,migrated.shuffleSeed)
+            assertTrue(q.id,migrated.answers.isEmpty());assertTrue(q.id,migrated.checked.isEmpty())
+            assertTrue(q.id,migrated.incorrectSubmissions.isEmpty());assertEquals(q.id,0,migrated.shownHints)
+            assertFalse(q.id,migrated.revealed);assertFalse(q.id,migrated.canReveal(q))
+            val restored=QuestionDraftCodec.decode(QuestionDraftCodec.encode(current),q)
+            assertEquals(q.id,current,restored)
         }
     }
     @Test fun suppliedAnswerArtWaitsForCorrectSubmissionAndExplicitReveal() {

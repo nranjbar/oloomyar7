@@ -4,7 +4,7 @@
     "asset": "chapter_01.webp",
     "source": "chapter_01_final_original.png",
     "originalSha256": "776d2ff4223f8d55e2bab136623c3e2e19ce8a0dc9571ad27b0e66aa96d1be11",
-    "bytes": 77686,
+    "bytes": 65756,
     "width": 384,
     "height": 384
   },
@@ -13,7 +13,7 @@
     "asset": "chapter_02.webp",
     "source": "chapter_02_final_original.png",
     "originalSha256": "bfa057fc6a99052648e0834f10aee69cd9648b6f86a48e9484ff01cea85d65db",
-    "bytes": 62262,
+    "bytes": 54772,
     "width": 384,
     "height": 384
   },
@@ -22,7 +22,7 @@
     "asset": "chapter_03.webp",
     "source": "chapter_03_final_original.png",
     "originalSha256": "ebb4e6cb54b896c7e2e589d48c44fa379d0f1141f123aa3303eabfe53c792df0",
-    "bytes": 59338,
+    "bytes": 53362,
     "width": 384,
     "height": 384
   },
@@ -31,7 +31,7 @@
     "asset": "chapter_04.webp",
     "source": "chapter_04_final_original.png",
     "originalSha256": "465adf726fe8de72feb2f97625d1fa9778bc36dd386b55667288b70b3b631e52",
-    "bytes": 80184,
+    "bytes": 69122,
     "width": 384,
     "height": 384
   },
@@ -40,7 +40,7 @@
     "asset": "chapter_05.webp",
     "source": "chapter_05_final_original.png",
     "originalSha256": "ea59f9e5d948d72c9d58fb7d6bdf3034cd582ac8ac750ab73458fe4471e081f6",
-    "bytes": 110842,
+    "bytes": 97130,
     "width": 384,
     "height": 384
   },
@@ -49,7 +49,7 @@
     "asset": "chapter_06.webp",
     "source": "chapter_06_final_original.png",
     "originalSha256": "bdf25221b702848b68eab780a681aa2446f55246ebc22f9c26941b51ee189ae3",
-    "bytes": 101044,
+    "bytes": 90028,
     "width": 384,
     "height": 384
   },
@@ -58,7 +58,7 @@
     "asset": "chapter_07.webp",
     "source": "chapter_07_final_original.png",
     "originalSha256": "803722b501149d1fd59fc6f99af1fb39a518bb560c4707b317acad30f9d249c9",
-    "bytes": 129690,
+    "bytes": 115184,
     "width": 384,
     "height": 384
   },
@@ -67,7 +67,7 @@
     "asset": "chapter_08.webp",
     "source": "chapter_08_final_original.png",
     "originalSha256": "f5ecbbbfc70cab0de8a585049ba6e20d22e0c3cbef1ec3135496340333e8d1e5",
-    "bytes": 75084,
+    "bytes": 64586,
     "width": 384,
     "height": 384
   },
@@ -76,7 +76,7 @@
     "asset": "chapter_09.webp",
     "source": "chapter_09_final_original.png",
     "originalSha256": "d598cc248c56b5d142a488bd0e29d300da411c84a09ed346b8f7076bad0294e5",
-    "bytes": 76148,
+    "bytes": 66052,
     "width": 384,
     "height": 384
   },
@@ -85,7 +85,7 @@
     "asset": "chapter_10.webp",
     "source": "chapter_10_final_original.png",
     "originalSha256": "8fdef1f24ef13756a1ec0c8813a88bc5330b75fb0bc1eedb06e88eac720cff31",
-    "bytes": 82682,
+    "bytes": 69990,
     "width": 384,
     "height": 384
   },
@@ -94,7 +94,7 @@
     "asset": "chapter_11.webp",
     "source": "chapter_11_final_original.png",
     "originalSha256": "bf267a818bb81860554284cd89bc31da1beddcce8cb133e177b6ebcdb7c990a8",
-    "bytes": 82804,
+    "bytes": 69922,
     "width": 384,
     "height": 384
   },
@@ -103,7 +103,7 @@
     "asset": "chapter_12.webp",
     "source": "chapter_12_final_original.png",
     "originalSha256": "be3bcc8a0f25b07b54dc28773d8739d89eef69188ba33e10205b2a378a860bf8",
-    "bytes": 111166,
+    "bytes": 98680,
     "width": 384,
     "height": 384
   },
@@ -112,7 +112,7 @@
     "asset": "chapter_13.webp",
     "source": "chapter_13_final_original.png",
     "originalSha256": "47096462f6f8f272e2f5fb982f4400bcb306f0568c656dd673375c412d0518c6",
-    "bytes": 47938,
+    "bytes": 41322,
     "width": 384,
     "height": 384
   },
@@ -121,7 +121,7 @@
     "asset": "chapter_14.webp",
     "source": "chapter_14_final_original.png",
     "originalSha256": "1c18a685ebb9747d3364b99e0f789b95d503b09a6b02ad8bd85a7dedb257a43d",
-    "bytes": 72106,
+    "bytes": 61236,
     "width": 384,
     "height": 384
   },
@@ -130,7 +130,7 @@
     "asset": "chapter_15.webp",
     "source": "chapter_15_final_original.png",
     "originalSha256": "a29823336473a3f4883361678a8367bfc792ec3ba20c40374e9bcc5a0ae73536",
-    "bytes": 89414,
+    "bytes": 75236,
     "width": 384,
     "height": 384
   },

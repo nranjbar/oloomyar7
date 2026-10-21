@@ -37,6 +37,15 @@ class QuestionPracticeTest {
         assertTrue(done.canReveal(q));assertFalse(done.revealed);assertTrue(done.reveal(q).revealed)
         assertFalse(done.canCheck(q));assertEquals(done,done.change(single,listOf("1")))
     }
+    @Test fun aPriorScientificRevisionCannotAuthorizeTheNewReference() {
+        val previous=question(single)
+        val old=QuestionPractice().change(single,listOf("0")).submit(previous).reveal(previous)
+        val revised=previous.copy(practiceRevision=1)
+        assertFalse(old.canReveal(revised));assertFalse(old.copy(revealed=false).reveal(revised).revealed)
+        val fresh=QuestionPractice(contentRevision=1).change(single,listOf("0")).submit(revised)
+        assertTrue(fresh.canReveal(revised));assertFalse(fresh.revealed)
+        assertTrue(fresh.reveal(revised).revealed)
+    }
     @Test fun clearingAnUnlockedBlankNeverCountsAnAttemptOrChangesAnotherBlank() {
         val q=question(blank)
         val state=QuestionPractice(shuffleSeed=93).change(blank,listOf("C","D"))

@@ -1,111 +1,103 @@
 {
+  "chapter_01.webp": [
+    768,
+    768
+  ],
+  "chapter_02.webp": [
+    768,
+    768
+  ],
+  "chapter_03.webp": [
+    768,
+    768
+  ],
+  "chapter_04.webp": [
+    768,
+    768
+  ],
+  "chapter_05.webp": [
+    768,
+    768
+  ],
+  "chapter_06.webp": [
+    768,
+    768
+  ],
+  "chapter_07.webp": [
+    768,
+    768
+  ],
+  "chapter_08.webp": [
+    768,
+    768
+  ],
+  "chapter_09.webp": [
+    768,
+    768
+  ],
   "chapter_10.webp": [
-    384,
-    384
+    768,
+    768
   ],
-  "g7_ch02_mcq04.webp": [
-    336,
-    273
-  ],
-  "mascot_welcome_480w.webp": [
-    480,
-    600
+  "chapter_11.webp": [
+    768,
+    768
   ],
   "chapter_12.webp": [
-    384,
-    384
+    768,
+    768
   ],
-  "g7_ch03_q17_question.webp": [
-    358,
-    258
+  "chapter_13.webp": [
+    768,
+    768
+  ],
+  "chapter_14.webp": [
+    768,
+    768
+  ],
+  "chapter_15.webp": [
+    768,
+    768
+  ],
+  "g7_ch01_q07.webp": [
+    403,
+    236
   ],
   "g7_ch02_mcq03.webp": [
     210,
     309
   ],
-  "chapter_02.webp": [
-    384,
-    384
-  ],
-  "chapter_09.webp": [
-    384,
-    384
-  ],
-  "chapter_11.webp": [
-    384,
-    384
-  ],
-  "g7_ch03_q12_a_question.webp": [
-    1254,
-    1254
-  ],
-  "g7_ch03_q15_question.webp": [
-    2172,
-    638
+  "g7_ch02_mcq04.webp": [
+    336,
+    273
   ],
   "g7_ch02_mcq05.webp": [
     200,
     240
   ],
-  "mascot_encourage_480w.webp": [
-    480,
-    600
-  ],
-  "g7_ch03_q18_source_figure.webp": [
-    396,
-    87
-  ],
-  "g7_ch02_q09.webp": [
-    1448,
-    1086
-  ],
-  "mascot_master_480w.webp": [
-    480,
-    600
-  ],
-  "chapter_06.webp": [
-    384,
-    384
-  ],
-  "g7_ch02_q11.webp": [
-    483,
-    291
-  ],
   "g7_ch02_q02.webp": [
     1548,
     894
-  ],
-  "chapter_07.webp": [
-    384,
-    384
-  ],
-  "chapter_15.webp": [
-    384,
-    384
-  ],
-  "chapter_13.webp": [
-    384,
-    384
-  ],
-  "g7_ch03_q12_b_question.webp": [
-    1254,
-    1254
-  ],
-  "mascot_success_480w.webp": [
-    480,
-    600
   ],
   "g7_ch02_q07.webp": [
     1448,
     1086
   ],
-  "chapter_05.webp": [
-    384,
-    384
+  "g7_ch02_q09.webp": [
+    1448,
+    1086
   ],
-  "g7_ch03_q24_source_figure.webp": [
-    785,
-    248
+  "g7_ch02_q11.webp": [
+    483,
+    291
+  ],
+  "g7_ch02_q12.webp": [
+    1448,
+    1086
+  ],
+  "g7_ch02_q14.webp": [
+    1176,
+    318
   ],
   "g7_ch02_q15.webp": [
     2166,
@@ -115,21 +107,37 @@
     572,
     264
   ],
+  "g7_ch03_mcq07_source_figure.webp": [
+    260,
+    296
+  ],
+  "g7_ch03_q03_source_figure.webp": [
+    699,
+    433
+  ],
+  "g7_ch03_q12_a_question.webp": [
+    1254,
+    1254
+  ],
+  "g7_ch03_q12_b_question.webp": [
+    1254,
+    1254
+  ],
   "g7_ch03_q12_c_question.webp": [
     1254,
     1254
   ],
-  "chapter_04.webp": [
-    384,
-    384
+  "g7_ch03_q15_question.webp": [
+    2172,
+    638
   ],
-  "chapter_03.webp": [
-    384,
-    384
+  "g7_ch03_q17_question.webp": [
+    358,
+    258
   ],
-  "g7_ch03_mcq07_source_figure.webp": [
-    260,
-    296
+  "g7_ch03_q18_source_figure.webp": [
+    396,
+    87
   ],
   "g7_ch03_q21_source_figure.webp": [
     915,
@@ -139,41 +147,33 @@
     696,
     477
   ],
-  "g7_ch02_q14.webp": [
-    1176,
-    318
+  "g7_ch03_q24_source_figure.webp": [
+    785,
+    248
   ],
-  "mascot_thinking_480w.webp": [
+  "mascot_encourage_480w.webp": [
     480,
     600
-  ],
-  "g7_ch03_q03_source_figure.webp": [
-    699,
-    433
-  ],
-  "g7_ch01_q07.webp": [
-    403,
-    236
-  ],
-  "chapter_14.webp": [
-    384,
-    384
-  ],
-  "g7_ch02_q12.webp": [
-    1448,
-    1086
-  ],
-  "chapter_08.webp": [
-    384,
-    384
   ],
   "mascot_guidance_480w.webp": [
     480,
     600
   ],
-  "chapter_01.webp": [
-    384,
-    384
+  "mascot_master_480w.webp": [
+    480,
+    600
+  ],
+  "mascot_success_480w.webp": [
+    480,
+    600
+  ],
+  "mascot_thinking_480w.webp": [
+    480,
+    600
+  ],
+  "mascot_welcome_480w.webp": [
+    480,
+    600
   ],
   "native_1405_g7_ch06_q06.webp": [
     345,
@@ -187,9 +187,21 @@
     332,
     114
   ],
+  "native_1405_g7_ch08_mcq05.webp": [
+    512,
+    98
+  ],
   "native_1405_g7_ch08_q03.webp": [
     572,
     293
+  ],
+  "native_1405_g7_ch08_q04_12.webp": [
+    558,
+    118
+  ],
+  "native_1405_g7_ch08_q04_3.webp": [
+    206,
+    272
   ],
   "native_1405_g7_ch08_q07.webp": [
     280,
@@ -203,10 +215,6 @@
     526,
     169
   ],
-  "native_1405_g7_ch08_mcq05.webp": [
-    512,
-    98
-  ],
   "native_1405_g7_ch09_q04.webp": [
     670,
     259
@@ -214,6 +222,14 @@
   "native_1405_g7_ch09_q13.webp": [
     564,
     282
+  ],
+  "native_1405_g7_ch10_mcq02.webp": [
+    282,
+    181
+  ],
+  "native_1405_g7_ch10_mcq03.webp": [
+    197,
+    182
   ],
   "native_1405_g7_ch10_q09.webp": [
     428,
@@ -226,114 +242,6 @@
   "native_1405_g7_ch10_q21_light.webp": [
     192,
     183
-  ],
-  "native_1405_g7_ch10_mcq02.webp": [
-    282,
-    181
-  ],
-  "native_1405_g7_ch10_mcq03.webp": [
-    197,
-    182
-  ],
-  "native_1405_g7_ch08_q04_12.webp": [
-    558,
-    118
-  ],
-  "native_1405_g7_ch08_q04_3.webp": [
-    206,
-    272
-  ],
-  "owner_20261021_g7_ch04_q08_question.webp": [
-    1165,
-    707
-  ],
-  "owner_20261021_g7_ch05_q15_question.webp": [
-    1448,
-    1086
-  ],
-  "owner_20261021_g7_ch05_q17_question.webp": [
-    1086,
-    1448
-  ],
-  "owner_20261021_g7_ch06_q06_question.webp": [
-    1448,
-    1086
-  ],
-  "owner_20261021_g7_ch07_mcq06_question.webp": [
-    1672,
-    941
-  ],
-  "owner_20261021_g7_ch07_q05_question.webp": [
-    1448,
-    1086
-  ],
-  "owner_20261021_g7_ch07_q14_question.webp": [
-    1448,
-    1086
-  ],
-  "owner_20261021_g7_ch07_q23_question.webp": [
-    1448,
-    1086
-  ],
-  "owner_20261021_g7_ch08_q03_question.webp": [
-    2037,
-    772
-  ],
-  "owner_20261021_g7_ch08_q04_question.webp": [
-    2172,
-    724
-  ],
-  "owner_20261021_g7_ch08_q07_question.webp": [
-    1672,
-    941
-  ],
-  "owner_20261021_g7_ch08_q19_question.webp": [
-    2170,
-    725
-  ],
-  "owner_20261021_g7_ch09_mcq03_question.webp": [
-    1672,
-    941
-  ],
-  "owner_20261021_g7_ch09_q04_question.webp": [
-    1672,
-    941
-  ],
-  "owner_20261021_g7_ch09_q11_question.webp": [
-    2172,
-    724
-  ],
-  "owner_20261021_g7_ch09_q12_question.webp": [
-    3300,
-    690
-  ],
-  "owner_20261021_g7_ch09_q13_question.webp": [
-    1448,
-    1086
-  ],
-  "owner_20261021_g7_ch09_q15_question.webp": [
-    2960,
-    2960
-  ],
-  "owner_20261021_g7_ch10_mcq02_question.webp": [
-    1448,
-    1086
-  ],
-  "owner_20261021_g7_ch10_q14_question.webp": [
-    1086,
-    1448
-  ],
-  "owner_20261021_g7_ch10_q16_question.webp": [
-    1672,
-    941
-  ],
-  "owner_20261021_g7_ch10_q18_question.webp": [
-    1448,
-    1086
-  ],
-  "owner_20261021_g7_ch10_q24_question.webp": [
-    1086,
-    1448
   ],
   "owner_20261021_g7_ch01_q05_answer.webp": [
     2163,
@@ -363,33 +271,361 @@
     1672,
     941
   ],
-  "ui_icon_correct_320.webp": [
-    320,
-    320
+  "owner_20261021_g7_ch03_q05_answer.webp": [
+    1536,
+    1024
   ],
-  "ui_icon_incorrect_320.webp": [
-    320,
-    320
+  "owner_20261021_g7_ch03_q10_answer.webp": [
+    1448,
+    1086
   ],
-  "ui_icon_science_book_320.webp": [
-    320,
-    320
+  "owner_20261021_g7_ch03_q12_answer.webp": [
+    1448,
+    1086
   ],
-  "ui_icon_trophy_320.webp": [
-    320,
-    320
+  "owner_20261021_g7_ch03_q15_answer.webp": [
+    1229,
+    361
   ],
-  "ui_icon_hint_lightbulb_320.webp": [
-    320,
-    320
+  "owner_20261021_g7_ch03_q17_answer.webp": [
+    1448,
+    1086
   ],
-  "ui_icon_empty_notebook_320.webp": [
-    320,
-    320
+  "owner_20261021_g7_ch03_q19_answer.webp": [
+    1672,
+    940
   ],
-  "ui_empty_progress_notebook.webp": [
-    512,
-    512
+  "owner_20261021_g7_ch03_q21_answer.webp": [
+    3200,
+    2290
+  ],
+  "owner_20261021_g7_ch03_q22_answer.webp": [
+    3310,
+    1900
+  ],
+  "owner_20261021_g7_ch03_q24_answer.webp": [
+    3000,
+    1740
+  ],
+  "owner_20261021_g7_ch04_q08_question.webp": [
+    1165,
+    707
+  ],
+  "owner_20261021_g7_ch04_q10_answer.webp": [
+    1448,
+    1086
+  ],
+  "owner_20261021_g7_ch04_q11_answer.webp": [
+    1448,
+    1086
+  ],
+  "owner_20261021_g7_ch04_q13_question.webp": [
+    1987,
+    2203
+  ],
+  "owner_20261021_g7_ch05_q03_answer.webp": [
+    1619,
+    971
+  ],
+  "owner_20261021_g7_ch05_q04_answer.webp": [
+    1448,
+    1086
+  ],
+  "owner_20261021_g7_ch05_q06_answer.webp": [
+    1672,
+    941
+  ],
+  "owner_20261021_g7_ch05_q11_answer.webp": [
+    1536,
+    1024
+  ],
+  "owner_20261021_g7_ch05_q15_answer.webp": [
+    1536,
+    1024
+  ],
+  "owner_20261021_g7_ch05_q15_question.webp": [
+    1448,
+    1086
+  ],
+  "owner_20261021_g7_ch05_q17_answer.webp": [
+    1086,
+    1448
+  ],
+  "owner_20261021_g7_ch05_q17_question.webp": [
+    1086,
+    1448
+  ],
+  "owner_20261021_g7_ch06_q05_answer.webp": [
+    1448,
+    1086
+  ],
+  "owner_20261021_g7_ch06_q06_answer.webp": [
+    1448,
+    1086
+  ],
+  "owner_20261021_g7_ch06_q06_question.webp": [
+    1448,
+    1086
+  ],
+  "owner_20261021_g7_ch06_q07_answer.webp": [
+    1448,
+    1086
+  ],
+  "owner_20261021_g7_ch06_q09_answer.webp": [
+    1536,
+    1024
+  ],
+  "owner_20261021_g7_ch06_q10_question.webp": [
+    1854,
+    848
+  ],
+  "owner_20261021_g7_ch06_q11_answer.webp": [
+    1629,
+    966
+  ],
+  "owner_20261021_g7_ch06_q19_answer.webp": [
+    1448,
+    1086
+  ],
+  "owner_20261021_g7_ch06_q20_answer.webp": [
+    1448,
+    1086
+  ],
+  "owner_20261021_g7_ch07_mcq06_answer.webp": [
+    1671,
+    941
+  ],
+  "owner_20261021_g7_ch07_mcq06_question.webp": [
+    1672,
+    941
+  ],
+  "owner_20261021_g7_ch07_q04_answer.webp": [
+    1448,
+    1086
+  ],
+  "owner_20261021_g7_ch07_q05_answer.webp": [
+    3300,
+    1950
+  ],
+  "owner_20261021_g7_ch07_q05_question.webp": [
+    1448,
+    1086
+  ],
+  "owner_20261021_g7_ch07_q11_answer.webp": [
+    1448,
+    1086
+  ],
+  "owner_20261021_g7_ch07_q13_answer.webp": [
+    1672,
+    941
+  ],
+  "owner_20261021_g7_ch07_q14_answer.webp": [
+    1448,
+    1086
+  ],
+  "owner_20261021_g7_ch07_q14_question.webp": [
+    1448,
+    1086
+  ],
+  "owner_20261021_g7_ch07_q15_answer.webp": [
+    1536,
+    1024
+  ],
+  "owner_20261021_g7_ch07_q16_answer.webp": [
+    1774,
+    887
+  ],
+  "owner_20261021_g7_ch07_q19_answer.webp": [
+    1536,
+    1024
+  ],
+  "owner_20261021_g7_ch07_q20_answer.webp": [
+    1854,
+    848
+  ],
+  "owner_20261021_g7_ch07_q23_answer.webp": [
+    1774,
+    887
+  ],
+  "owner_20261021_g7_ch07_q23_question.webp": [
+    1448,
+    1086
+  ],
+  "owner_20261021_g7_ch07_q28_answer.webp": [
+    1536,
+    1024
+  ],
+  "owner_20261021_g7_ch08_q02_answer.webp": [
+    3200,
+    1960
+  ],
+  "owner_20261021_g7_ch08_q03_answer.webp": [
+    1536,
+    1024
+  ],
+  "owner_20261021_g7_ch08_q03_question.webp": [
+    2037,
+    772
+  ],
+  "owner_20261021_g7_ch08_q04_answer.webp": [
+    1448,
+    1086
+  ],
+  "owner_20261021_g7_ch08_q04_question.webp": [
+    2172,
+    724
+  ],
+  "owner_20261021_g7_ch08_q07_answer.webp": [
+    1920,
+    1380
+  ],
+  "owner_20261021_g7_ch08_q07_question.webp": [
+    1672,
+    941
+  ],
+  "owner_20261021_g7_ch08_q08_answer.webp": [
+    1448,
+    1086
+  ],
+  "owner_20261021_g7_ch08_q12_answer.webp": [
+    3200,
+    1900
+  ],
+  "owner_20261021_g7_ch08_q13_answer.webp": [
+    1491,
+    1055
+  ],
+  "owner_20261021_g7_ch08_q17_answer.webp": [
+    1672,
+    941
+  ],
+  "owner_20261021_g7_ch08_q19_answer.webp": [
+    1983,
+    793
+  ],
+  "owner_20261021_g7_ch08_q19_question.webp": [
+    2170,
+    725
+  ],
+  "owner_20261021_g7_ch09_mcq03_question.webp": [
+    1672,
+    941
+  ],
+  "owner_20261021_g7_ch09_q04_answer.webp": [
+    1774,
+    887
+  ],
+  "owner_20261021_g7_ch09_q04_question.webp": [
+    1672,
+    941
+  ],
+  "owner_20261021_g7_ch09_q09_answer.webp": [
+    3200,
+    1900
+  ],
+  "owner_20261021_g7_ch09_q10_answer.webp": [
+    1536,
+    1024
+  ],
+  "owner_20261021_g7_ch09_q11_answer.webp": [
+    2400,
+    1270
+  ],
+  "owner_20261021_g7_ch09_q11_question.webp": [
+    2172,
+    724
+  ],
+  "owner_20261021_g7_ch09_q12_answer.webp": [
+    1672,
+    941
+  ],
+  "owner_20261021_g7_ch09_q12_question.webp": [
+    3300,
+    690
+  ],
+  "owner_20261021_g7_ch09_q13_question.webp": [
+    1448,
+    1086
+  ],
+  "owner_20261021_g7_ch09_q14_answer.webp": [
+    1448,
+    1086
+  ],
+  "owner_20261021_g7_ch09_q15_answer.webp": [
+    1536,
+    1024
+  ],
+  "owner_20261021_g7_ch09_q15_question.webp": [
+    2960,
+    2960
+  ],
+  "owner_20261021_g7_ch10_mcq02_question.webp": [
+    1448,
+    1086
+  ],
+  "owner_20261021_g7_ch10_q02_answer.webp": [
+    2400,
+    1430
+  ],
+  "owner_20261021_g7_ch10_q04_answer.webp": [
+    1942,
+    809
+  ],
+  "owner_20261021_g7_ch10_q05_answer.webp": [
+    1536,
+    1024
+  ],
+  "owner_20261021_g7_ch10_q08_answer.webp": [
+    2600,
+    1480
+  ],
+  "owner_20261021_g7_ch10_q09_answer.webp": [
+    3200,
+    2020
+  ],
+  "owner_20261021_g7_ch10_q13_answer.webp": [
+    1448,
+    1086
+  ],
+  "owner_20261021_g7_ch10_q14_answer.webp": [
+    1448,
+    1086
+  ],
+  "owner_20261021_g7_ch10_q14_question.webp": [
+    1086,
+    1448
+  ],
+  "owner_20261021_g7_ch10_q15_answer.webp": [
+    1619,
+    971
+  ],
+  "owner_20261021_g7_ch10_q16_answer.webp": [
+    2400,
+    1650
+  ],
+  "owner_20261021_g7_ch10_q16_question.webp": [
+    1672,
+    941
+  ],
+  "owner_20261021_g7_ch10_q18_answer.webp": [
+    3072,
+    2048
+  ],
+  "owner_20261021_g7_ch10_q18_question.webp": [
+    1448,
+    1086
+  ],
+  "owner_20261021_g7_ch10_q19_answer.webp": [
+    2700,
+    1530
+  ],
+  "owner_20261021_g7_ch10_q24_answer.webp": [
+    3072,
+    2048
+  ],
+  "owner_20261021_g7_ch10_q24_question.webp": [
+    1086,
+    1448
   ],
   "owner_20261021_g7_ch11_q04_question.webp": [
     650,
@@ -438,6 +674,34 @@
   "owner_20261021_g7_ch15_q12_question.webp": [
     350,
     356
+  ],
+  "ui_empty_progress_notebook.webp": [
+    512,
+    512
+  ],
+  "ui_icon_correct_320.webp": [
+    320,
+    320
+  ],
+  "ui_icon_empty_notebook_320.webp": [
+    320,
+    320
+  ],
+  "ui_icon_hint_lightbulb_320.webp": [
+    320,
+    320
+  ],
+  "ui_icon_incorrect_320.webp": [
+    320,
+    320
+  ],
+  "ui_icon_science_book_320.webp": [
+    320,
+    320
+  ],
+  "ui_icon_trophy_320.webp": [
+    320,
+    320
   ],
   "native_1405_g7_ch14_q04.webp": [
     370,

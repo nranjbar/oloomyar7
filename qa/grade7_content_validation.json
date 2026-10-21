@@ -176,20 +176,45 @@
     "order": 18,
     "classify": 3
   },
-  "packagedAssetBytes": 49337191,
+  "packagedAssetBytes": 44042609,
   "contentRequiringAuthorConfirmation": [
     "g7_ch13_mcq03"
   ],
   "documentedPracticeCorrections": [
+    "g7_ch01_q07",
+    "g7_ch03_q07",
+    "g7_ch03_q08",
+    "g7_ch03_q14",
+    "g7_ch03_q16",
+    "g7_ch03_mcq02",
+    "g7_ch03_mcq05",
+    "g7_ch04_q16",
+    "g7_ch04_q17",
+    "g7_ch05_q06",
+    "g7_ch05_q09",
+    "g7_ch05_q10",
+    "g7_ch06_q07",
+    "g7_ch06_q13",
+    "g7_ch07_q11",
+    "g7_ch07_q12",
     "g7_ch07_q14",
+    "g7_ch07_q24",
+    "g7_ch08_q02",
+    "g7_ch08_q13",
+    "g7_ch09_q01",
+    "g7_ch09_q07",
+    "g7_ch09_q14",
     "g7_ch09_q15",
+    "g7_ch10_q20",
     "g7_ch10_q21",
     "g7_ch10_mcq04",
     "g7_ch11_q03",
+    "g7_ch11_q07",
     "g7_ch12_q08",
     "g7_ch12_q10",
     "g7_ch13_q03",
-    "g7_ch13_mcq03"
+    "g7_ch13_mcq03",
+    "g7_ch14_q08"
   ],
   "printedUnitReviewNotes": [
     "g7_ch08_mcq03"

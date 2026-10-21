@@ -117,22 +117,30 @@ assert all(any(cid.startswith(f'g7_ch{c:02}_')for cid in inline)for c in range(1
 for asset in images:
     assert asset.endswith('.webp'),asset
     im=Image.open(ASSETS/'images'/asset);im.verify()
+owner={r['asset']:r for r in load(ROOT/'qa/source/owner-art-2026-10-21.json')['scientific']}
 for entry in load(ROOT/'qa/source/lossless-scientific-assets.json'):
-    out=ASSETS/'images'/entry['asset'];assert sha(out)==entry['webpSha256']
-    raw=Image.open(out).convert('RGBA').tobytes();assert hashlib.sha256(raw).hexdigest()==entry['decodedRgbaSha256']
+    out=ASSETS/'images'/entry['asset'];reviewed=owner.get(entry['asset'])
+    assert sha(out)==(reviewed['webpSha256'] if reviewed else entry['webpSha256'])
+    raw=Image.open(out).convert('RGBA').tobytes()
+    assert hashlib.sha256(raw).hexdigest()==(reviewed['decodedRgbaSha256'] if reviewed else entry['decodedRgbaSha256'])
+    if reviewed:assert reviewed['sourceRgbaSha256']==entry['decodedRgbaSha256']
     original=ROOT/entry['originalRepositoryPath'] if entry.get('originalRepositoryPath') else ASSETS/'images'/entry['source']
     if original.exists():assert sha(original)==entry['originalSha256']
     else:
         data=subprocess.check_output(['git','show','2787d494bce98497049e83431daa9b1f1b51a11b:app/src/main/assets/images/'+entry['source']],cwd=ROOT)
         assert hashlib.sha256(data).hexdigest()==entry['originalSha256']
-    if original.exists():assert Image.open(original).convert('RGBA').tobytes()==raw
-    # The manifest compares pixels, not just file sizes or suffixes.
+    if original.exists():
+        expected=Image.open(original).convert('RGBA').tobytes()
+        assert hashlib.sha256(expected).hexdigest()==entry['decodedRgbaSha256']
+        if not reviewed or reviewed['encoding']['mode']=='lossless':assert expected==raw
+    # Original-pixel provenance stays strict. Optimized derivatives have separate
+    # measured quality and decoded-pixel checks in validate_owner_art.py.
 for entry in load(ROOT/'qa/source/design-assets-1405.json'):
     assert (ASSETS/'images'/entry['asset']).stat().st_size==entry['bytes']
 catalog=load(ASSETS/'content/catalog.json');assert [x['questions']for x in catalog]==EXPECTED
 assert [x['steps']for x in catalog]==[sum(len(q['steps'])for q in qs_all if q['relatedChapter']==c)for c in range(1,16)]
 app_gradle=(ROOT/'app/build.gradle.kts').read_text();assert 'ignoreAssetsPattern = "*.png:'in app_gradle
-assert 'com.oloomyar.app.grade7'in app_gradle and 'versionCode = 10'in app_gradle
+assert 'com.oloomyar.app.grade7'in app_gradle and 'versionCode = 11'in app_gradle
 assert 'android.permission.INTERNET'not in(ROOT/'app/src/main/AndroidManifest.xml').read_text()
 packaged=[p for p in ASSETS.rglob('*')if p.is_file()and p.suffix!='.png'and not p.name.startswith('.')]
 report=dict(status='PASS',edition=1405,chapters=15,questions=317,learningGroups=334,hintPairs=len(hint_pairs),

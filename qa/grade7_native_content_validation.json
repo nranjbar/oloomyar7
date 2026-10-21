@@ -21,7 +21,7 @@
     20
   ],
   "nativeTables": 15,
-  "nativeMathBlocks": 20,
+  "nativeMathBlocks": 19,
   "inlinePrintedBlanks": 511,
   "standaloneScientificFigures": [
     {
@@ -138,19 +138,7 @@
     },
     {
       "question": "g7_ch04_q13",
-      "asset": "pdf:workbook.pdf#14,40,92,167,168"
-    },
-    {
-      "question": "g7_ch04_q13",
-      "asset": "pdf:workbook.pdf#14,33,222,128,276"
-    },
-    {
-      "question": "g7_ch04_q13",
-      "asset": "pdf:workbook.pdf#14,44,311,128,363"
-    },
-    {
-      "question": "g7_ch04_q13",
-      "asset": "pdf:workbook.pdf#14,59,371,127,439"
+      "asset": "owner_20261021_g7_ch04_q13_question.webp"
     },
     {
       "question": "g7_ch04_q16",
@@ -202,7 +190,7 @@
     },
     {
       "question": "g7_ch06_q10",
-      "asset": "pdf:workbook.pdf#21,38.2,699.9,282.45,811.65"
+      "asset": "owner_20261021_g7_ch06_q10_question.webp"
     },
     {
       "question": "g7_ch06_q11",
@@ -525,7 +513,8 @@
   "originalEmbeddedFiguresPixelIdentical": 19,
   "originalQuestionAndKeyFieldsUnchanged": true,
   "reusableSelectionBanks": true,
-  "firstTenNativeLayoutsUnchanged": true,
+  "explicitlyReviewedNativeRevisions": 41,
+  "unlistedNativeChanges": 0,
   "isolatedBiologyDiagramPages": 4,
   "derivedDiagramEmbeddedImagesPixelIdentical": 6,
   "sourceReview": "All workbook pages 2–59 and chapter answer PDFs 01–15 visually reviewed; practice revisions and printed-key conflicts are separately recorded."

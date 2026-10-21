@@ -115,14 +115,28 @@ for ch in range(1,16):
             if step['kind']in['match','classify']:assert step.get('allowTokenReuse',True)
             choices=[o['text']for o in step.get('options',[])]+step.get('choices',[])+[c for p in step.get('pairs',[])for c in p.get('choices',[])]
             assert not any('این اتفاق نمی افتد و برعکس است' in c for c in choices)
-for ch in range(1,11):
+editorial=json.loads((ROOT/'qa/source/native-editorial-revisions-v10.json').read_text())
+approved={r['id']:r for r in editorial['revisions']}
+native_hash=lambda q:hashlib.sha256(json.dumps(dict(question=q['nativeQuestion'],answer=q['nativeAnswer']),ensure_ascii=False,sort_keys=True).encode()).hexdigest()
+# Retain the old layout guard. Only individually listed, exact before/after
+# revisions authorized by the owner's new review request may differ.
+seen=set()
+for ch in range(1,16):
     path=f'app/src/main/assets/content/chapter{ch}.json'
-    previous=json.loads(subprocess.check_output(['git','show','3b076647f1eb50ced51fc69f792943fe0f394fb0:'+path],cwd=ROOT))
+    reference='3b076647f1eb50ced51fc69f792943fe0f394fb0' if ch<=10 else editorial['baseline']
+    previous=json.loads(subprocess.check_output(['git','show',reference+':'+path],cwd=ROOT))
     for q,old in zip(json.loads((ROOT/path).read_text()),previous):
-        assert q['nativeQuestion']==old['nativeQuestion'] and q['nativeAnswer']==old['nativeAnswer'],q['canonicalId']
+        cid=q['canonicalId']
+        if q['nativeQuestion']!=old['nativeQuestion'] or q['nativeAnswer']!=old['nativeAnswer']:
+            assert cid in approved,(cid,'unlisted native revision')
+            assert native_hash(old)==approved[cid]['beforeNativeSha256'],(cid,'unexpected original native content')
+            assert native_hash(q)==approved[cid]['afterNativeSha256'],(cid,'unexpected revised native content')
+            assert approved[cid]['reasons'],cid
+            seen.add(cid)
+assert seen==set(approved)
 report=dict(status='PASS',edition=1405,nativeQuestions=sum(counts),nativeAnswers=sum(counts),chapterCounts=counts,
     nativeTables=tables,nativeMathBlocks=maths,inlinePrintedBlanks=slots,standaloneScientificFigures=figures,
-    fullQuestionOrKeyScreenshots=0,originalEmbeddedFiguresPixelIdentical=len(extracts),originalQuestionAndKeyFieldsUnchanged=True,reusableSelectionBanks=True,firstTenNativeLayoutsUnchanged=True,
+    fullQuestionOrKeyScreenshots=0,originalEmbeddedFiguresPixelIdentical=len(extracts),originalQuestionAndKeyFieldsUnchanged=True,reusableSelectionBanks=True,explicitlyReviewedNativeRevisions=len(approved),unlistedNativeChanges=0,
     isolatedBiologyDiagramPages=4,derivedDiagramEmbeddedImagesPixelIdentical=len(image_hashes),
     sourceReview='All workbook pages 2–59 and chapter answer PDFs 01–15 visually reviewed; practice revisions and printed-key conflicts are separately recorded.')
 (ROOT/'qa/grade7_native_content_validation.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')

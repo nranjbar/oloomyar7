@@ -1,0 +1,1727 @@
+{
+  "policy": {
+    "scientificMinLumaSsim": 0.995,
+    "scientificResize": false,
+    "alpha": "exact",
+    "smallDiagrams": "lossless",
+    "pdfFigures": "unchanged lossless",
+    "uiIcons": "unchanged lossless"
+  },
+  "archiveSha256": "6059c0a74debd9ff616721f395b0bf74a19faa932890075ca0bda45ae5ca87e6",
+  "beforeAssets": 112,
+  "beforeImageBytes": 41312008,
+  "afterAssets": 178,
+  "afterImageBytes": 35890966,
+  "addedAnswerImages": 64,
+  "addedQuestionImages": 2,
+  "assets": [
+    {
+      "asset": "g7_ch01_q07.webp",
+      "role": "question",
+      "sourceBytes": 86690,
+      "previousBytes": 35908,
+      "bytes": 35528,
+      "mode": "lossless",
+      "quality": 100,
+      "lumaSsim": 1.0
+    },
+    {
+      "asset": "g7_ch02_mcq03.webp",
+      "role": "question",
+      "sourceBytes": 14195,
+      "previousBytes": 6862,
+      "bytes": 6774,
+      "mode": "lossless",
+      "quality": 100,
+      "lumaSsim": 1.0
+    },
+    {
+      "asset": "g7_ch02_mcq04.webp",
+      "role": "question",
+      "sourceBytes": 11338,
+      "previousBytes": 8138,
+      "bytes": 7818,
+      "mode": "lossless",
+      "quality": 100,
+      "lumaSsim": 1.0
+    },
+    {
+      "asset": "g7_ch02_mcq05.webp",
+      "role": "question",
+      "sourceBytes": 50475,
+      "previousBytes": 25962,
+      "bytes": 25510,
+      "mode": "lossless",
+      "quality": 100,
+      "lumaSsim": 1.0
+    },
+    {
+      "asset": "g7_ch02_q02.webp",
+      "role": "question",
+      "sourceBytes": 64757,
+      "previousBytes": 24302,
+      "bytes": 24252,
+      "mode": "lossless",
+      "quality": 100,
+      "lumaSsim": 1.0
+    },
+    {
+      "asset": "g7_ch02_q07.webp",
+      "role": "question",
+      "sourceBytes": 1054134,
+      "previousBytes": 728126,
+      "bytes": 102284,
+      "mode": "lossy",
+      "quality": 94,
+      "lumaSsim": 0.99556839
+    },
+    {
+      "asset": "g7_ch02_q09.webp",
+      "role": "question",
+      "sourceBytes": 1106870,
+      "previousBytes": 783538,
+      "bytes": 199500,
+      "mode": "lossy",
+      "quality": 98,
+      "lumaSsim": 0.99589705
+    },
+    {
+      "asset": "g7_ch02_q11.webp",
+      "role": "question",
+      "sourceBytes": 16846,
+      "previousBytes": 7884,
+      "bytes": 7878,
+      "mode": "lossless",
+      "quality": 100,
+      "lumaSsim": 1.0
+    },
+    {
+      "asset": "g7_ch02_q12.webp",
+      "role": "question",
+      "sourceBytes": 1608310,
+      "previousBytes": 1002104,
+      "bytes": 267106,
+      "mode": "lossy",
+      "quality": 98,
+      "lumaSsim": 0.99584973
+    },
+    {
+      "asset": "g7_ch02_q14.webp",
+      "role": "question",
+      "sourceBytes": 496540,
+      "previousBytes": 191472,
+      "bytes": 68846,
+      "mode": "lossy",
+      "quality": 98,
+      "lumaSsim": 0.99608058
+    },
+    {
+      "asset": "g7_ch02_q15.webp",
+      "role": "question",
+      "sourceBytes": 1295619,
+      "previousBytes": 847108,
+      "bytes": 155374,
+      "mode": "lossy",
+      "quality": 94,
+      "lumaSsim": 0.99506927
+    },
+    {
+      "asset": "g7_ch03_mcq05_question.webp",
+      "role": "question",
+      "sourceBytes": 131564,
+      "previousBytes": 79026,
+      "bytes": 79150,
+      "mode": "lossless",
+      "quality": 100,
+      "lumaSsim": 1.0
+    },
+    {
+      "asset": "g7_ch03_q12_a_question.webp",
+      "role": "question",
+      "sourceBytes": 1242117,
+      "previousBytes": 721274,
+      "bytes": 74066,
+      "mode": "lossy",
+      "quality": 94,
+      "lumaSsim": 0.99514776
+    },
+    {
+      "asset": "g7_ch03_q12_b_question.webp",
+      "role": "question",
+      "sourceBytes": 1238804,
+      "previousBytes": 831322,
+      "bytes": 101924,
+      "mode": "lossy",
+      "quality": 94,
+      "lumaSsim": 0.99549723
+    },
+    {
+      "asset": "g7_ch03_q12_c_question.webp",
+      "role": "question",
+      "sourceBytes": 1423757,
+      "previousBytes": 856388,
+      "bytes": 180834,
+      "mode": "lossy",
+      "quality": 98,
+      "lumaSsim": 0.99539512
+    },
+    {
+      "asset": "g7_ch03_q15_question.webp",
+      "role": "question",
+      "sourceBytes": 1440525,
+      "previousBytes": 774800,
+      "bytes": 142942,
+      "mode": "lossy",
+      "quality": 94,
+      "lumaSsim": 0.99537599
+    },
+    {
+      "asset": "g7_ch03_q17_question.webp",
+      "role": "question",
+      "sourceBytes": 44148,
+      "previousBytes": 24862,
+      "bytes": 24786,
+      "mode": "lossless",
+      "quality": 100,
+      "lumaSsim": 1.0
+    },
+    {
+      "asset": "owner_20261021_g7_ch04_q08_question.webp",
+      "role": "question",
+      "sourceBytes": 652110,
+      "previousBytes": 420730,
+      "bytes": 66750,
+      "mode": "lossy",
+      "quality": 94,
+      "lumaSsim": 0.99507231
+    },
+    {
+      "asset": "owner_20261021_g7_ch05_q15_question.webp",
+      "role": "question",
+      "sourceBytes": 1083455,
+      "previousBytes": 539160,
+      "bytes": 41290,
+      "mode": "lossy",
+      "quality": 94,
+      "lumaSsim": 0.99560481
+    },
+    {
+      "asset": "owner_20261021_g7_ch05_q17_question.webp",
+      "role": "question",
+      "sourceBytes": 1468896,
+      "previousBytes": 884524,
+      "bytes": 156720,
+      "mode": "lossy",
+      "quality": 94,
+      "lumaSsim": 0.99538279
+    },
+    {
+      "asset": "owner_20261021_g7_ch06_q06_question.webp",
+      "role": "question",
+      "sourceBytes": 1253445,
+      "previousBytes": 694036,
+      "bytes": 84668,
+      "mode": "lossy",
+      "quality": 94,
+      "lumaSsim": 0.99543208
+    },
+    {
+      "asset": "owner_20261021_g7_ch07_mcq06_question.webp",
+      "role": "question",
+      "sourceBytes": 1472141,
+      "previousBytes": 979828,
+      "bytes": 241624,
+      "mode": "lossy",
+      "quality": 100,
+      "lumaSsim": 0.99524713
+    },
+    {
+      "asset": "owner_20261021_g7_ch07_q05_question.webp",
+      "role": "question",
+      "sourceBytes": 1850031,
+      "previousBytes": 1274188,
+      "bytes": 272052,
+      "mode": "lossy",
+      "quality": 94,
+      "lumaSsim": 0.99525887
+    },
+    {
+      "asset": "owner_20261021_g7_ch07_q14_question.webp",
+      "role": "question",
+      "sourceBytes": 1576190,
+      "previousBytes": 1086638,
+      "bytes": 1075266,
+      "mode": "lossless",
+      "quality": 100,
+      "lumaSsim": 1.0
+    },
+    {
+      "asset": "owner_20261021_g7_ch07_q23_question.webp",
+      "role": "question",
+      "sourceBytes": 1913189,
+      "previousBytes": 1237676,
+      "bytes": 414952,
+      "mode": "lossy",
+      "quality": 98,
+      "lumaSsim": 0.99574488
+    },
+    {
+      "asset": "owner_20261021_g7_ch08_q03_question.webp",
+      "role": "question",
+      "sourceBytes": 1333478,
+      "previousBytes": 779248,
+      "bytes": 145032,
+      "mode": "lossy",
+      "quality": 98,
+      "lumaSsim": 0.99533385
+    },
+    {
+      "asset": "owner_20261021_g7_ch08_q04_question.webp",
+      "role": "question",
+      "sourceBytes": 1550211,
+      "previousBytes": 899460,
+      "bytes": 154728,
+      "mode": "lossy",
+      "quality": 100,
+      "lumaSsim": 0.99506354
+    },
+    {
+      "asset": "owner_20261021_g7_ch08_q07_question.webp",
+      "role": "question",
+      "sourceBytes": 1302776,
+      "previousBytes": 753608,
+      "bytes": 116298,
+      "mode": "lossy",
+      "quality": 94,
+      "lumaSsim": 0.99522287
+    },
+    {
+      "asset": "owner_20261021_g7_ch08_q19_question.webp",
+      "role": "question",
+      "sourceBytes": 1307260,
+      "previousBytes": 792986,
+      "bytes": 210046,
+      "mode": "lossy",
+      "quality": 98,
+      "lumaSsim": 0.99571025
+    },
+    {
+      "asset": "owner_20261021_g7_ch09_mcq03_question.webp",
+      "role": "question",
+      "sourceBytes": 1379690,
+      "previousBytes": 838802,
+      "bytes": 149548,
+      "mode": "lossy",
+      "quality": 94,
+      "lumaSsim": 0.99527109
+    },
+    {
+      "asset": "owner_20261021_g7_ch09_q04_question.webp",
+      "role": "question",
+      "sourceBytes": 1650087,
+      "previousBytes": 1069446,
+      "bytes": 321552,
+      "mode": "lossy",
+      "quality": 98,
+      "lumaSsim": 0.99577659
+    },
+    {
+      "asset": "owner_20261021_g7_ch09_q11_question.webp",
+      "role": "question",
+      "sourceBytes": 1328734,
+      "previousBytes": 792064,
+      "bytes": 201060,
+      "mode": "lossy",
+      "quality": 98,
+      "lumaSsim": 0.99560052
+    },
+    {
+      "asset": "owner_20261021_g7_ch09_q12_question.webp",
+      "role": "question",
+      "sourceBytes": 276516,
+      "previousBytes": 136382,
+      "bytes": 119384,
+      "mode": "lossless",
+      "quality": 100,
+      "lumaSsim": 1.0
+    },
+    {
+      "asset": "owner_20261021_g7_ch09_q13_question.webp",
+      "role": "question",
+      "sourceBytes": 1264177,
+      "previousBytes": 740340,
+      "bytes": 168182,
+      "mode": "lossy",
+      "quality": 98,
+      "lumaSsim": 0.99522531
+    },
+    {
+      "asset": "owner_20261021_g7_ch09_q15_question.webp",
+      "role": "question",
+      "sourceBytes": 1894412,
+      "previousBytes": 1110228,
+      "bytes": 222914,
+      "mode": "lossy",
+      "quality": 94,
+      "lumaSsim": 0.99748218
+    },
+    {
+      "asset": "owner_20261021_g7_ch10_mcq02_question.webp",
+      "role": "question",
+      "sourceBytes": 982685,
+      "previousBytes": 390012,
+      "bytes": 50044,
+      "mode": "lossy",
+      "quality": 94,
+      "lumaSsim": 0.99539042
+    },
+    {
+      "asset": "owner_20261021_g7_ch10_q14_question.webp",
+      "role": "question",
+      "sourceBytes": 1319694,
+      "previousBytes": 780116,
+      "bytes": 115252,
+      "mode": "lossy",
+      "quality": 94,
+      "lumaSsim": 0.9954052
+    },
+    {
+      "asset": "owner_20261021_g7_ch10_q16_question.webp",
+      "role": "question",
+      "sourceBytes": 1441024,
+      "previousBytes": 1014994,
+      "bytes": 212818,
+      "mode": "lossy",
+      "quality": 98,
+      "lumaSsim": 0.99518621
+    },
+    {
+      "asset": "owner_20261021_g7_ch10_q18_question.webp",
+      "role": "question",
+      "sourceBytes": 1541207,
+      "previousBytes": 936144,
+      "bytes": 245168,
+      "mode": "lossy",
+      "quality": 98,
+      "lumaSsim": 0.9955892
+    },
+    {
+      "asset": "owner_20261021_g7_ch10_q24_question.webp",
+      "role": "question",
+      "sourceBytes": 1114087,
+      "previousBytes": 709966,
+      "bytes": 85488,
+      "mode": "lossy",
+      "quality": 94,
+      "lumaSsim": 0.99547702
+    },
+    {
+      "asset": "owner_20261021_g7_ch01_q05_answer.webp",
+      "role": "answer",
+      "sourceBytes": 1579343,
+      "previousBytes": 1164948,
+      "bytes": 344394,
+      "mode": "lossy",
+      "quality": 98,
+      "lumaSsim": 0.99578816
+    },
+    {
+      "asset": "owner_20261021_g7_ch02_q02_answer.webp",
+      "role": "answer",
+      "sourceBytes": 1492875,
+      "previousBytes": 1098414,
+      "bytes": 279666,
+      "mode": "lossy",
+      "quality": 98,
+      "lumaSsim": 0.99532264
+    },
+    {
+      "asset": "owner_20261021_g7_ch02_q07_answer.webp",
+      "role": "answer",
+      "sourceBytes": 1503174,
+      "previousBytes": 929462,
+      "bytes": 235396,
+      "mode": "lossy",
+      "quality": 98,
+      "lumaSsim": 0.99507773
+    },
+    {
+      "asset": "owner_20261021_g7_ch02_q09_answer.webp",
+      "role": "answer",
+      "sourceBytes": 1398802,
+      "previousBytes": 1026404,
+      "bytes": 277004,
+      "mode": "lossy",
+      "quality": 98,
+      "lumaSsim": 0.99556655
+    },
+    {
+      "asset": "owner_20261021_g7_ch02_q10_answer.webp",
+      "role": "answer",
+      "sourceBytes": 1343784,
+      "previousBytes": 971598,
+      "bytes": 223834,
+      "mode": "lossy",
+      "quality": 98,
+      "lumaSsim": 0.99542767
+    },
+    {
+      "asset": "owner_20261021_g7_ch02_q11_answer.webp",
+      "role": "answer",
+      "sourceBytes": 1074661,
+      "previousBytes": 797304,
+      "bytes": 171588,
+      "mode": "lossy",
+      "quality": 98,
+      "lumaSsim": 0.99512589
+    },
+    {
+      "asset": "owner_20261021_g7_ch02_q14_answer.webp",
+      "role": "answer",
+      "sourceBytes": 1120360,
+      "previousBytes": 804178,
+      "bytes": 236764,
+      "mode": "lossy",
+      "quality": 100,
+      "lumaSsim": 0.9954052
+    },
+    {
+      "asset": "owner_20261021_g7_ch11_q04_question.webp",
+      "role": "question",
+      "sourceBytes": 318094,
+      "previousBytes": 190664,
+      "bytes": 68542,
+      "mode": "lossy",
+      "quality": 98,
+      "lumaSsim": 0.99709767
+    },
+    {
+      "asset": "owner_20261021_g7_ch11_q06_question.webp",
+      "role": "question",
+      "sourceBytes": 335361,
+      "previousBytes": 195442,
+      "bytes": 194850,
+      "mode": "lossless",
+      "quality": 100,
+      "lumaSsim": 1.0
+    },
+    {
+      "asset": "owner_20261021_g7_ch11_q12_question.webp",
+      "role": "question",
+      "sourceBytes": 1736614,
+      "previousBytes": 1211280,
+      "bytes": 271132,
+      "mode": "lossy",
+      "quality": 94,
+      "lumaSsim": 0.99534589
+    },
+    {
+      "asset": "owner_20261021_g7_ch13_mcq01_question.webp",
+      "role": "question",
+      "sourceBytes": 272249,
+      "previousBytes": 158866,
+      "bytes": 158456,
+      "mode": "lossless",
+      "quality": 100,
+      "lumaSsim": 1.0
+    },
+    {
+      "asset": "owner_20261021_g7_ch13_mcq03_question.webp",
+      "role": "question",
+      "sourceBytes": 1248754,
+      "previousBytes": 668166,
+      "bytes": 131708,
+      "mode": "lossy",
+      "quality": 98,
+      "lumaSsim": 0.99557281
+    },
+    {
+      "asset": "owner_20261021_g7_ch13_q02_question.webp",
+      "role": "question",
+      "sourceBytes": 139576,
+      "previousBytes": 78960,
+      "bytes": 78960,
+      "mode": "lossless",
+      "quality": 100,
+      "lumaSsim": 1.0
+    },
+    {
+      "asset": "owner_20261021_g7_ch13_q03_question.webp",
+      "role": "question",
+      "sourceBytes": 1553270,
+      "previousBytes": 893656,
+      "bytes": 229138,
+      "mode": "lossy",
+      "quality": 98,
+      "lumaSsim": 0.99533349
+    },
+    {
+      "asset": "owner_20261021_g7_ch14_q07_question.webp",
+      "role": "question",
+      "sourceBytes": 1890730,
+      "previousBytes": 1163056,
+      "bytes": 380040,
+      "mode": "lossy",
+      "quality": 98,
+      "lumaSsim": 0.99590015
+    },
+    {
+      "asset": "owner_20261021_g7_ch14_q09_question.webp",
+      "role": "question",
+      "sourceBytes": 1554878,
+      "previousBytes": 951930,
+      "bytes": 265030,
+      "mode": "lossy",
+      "quality": 98,
+      "lumaSsim": 0.9952057
+    },
+    {
+      "asset": "owner_20261021_g7_ch15_q08_question.webp",
+      "role": "question",
+      "sourceBytes": 195510,
+      "previousBytes": 121526,
+      "bytes": 121608,
+      "mode": "lossless",
+      "quality": 100,
+      "lumaSsim": 1.0
+    },
+    {
+      "asset": "owner_20261021_g7_ch15_q10_question.webp",
+      "role": "question",
+      "sourceBytes": 103897,
+      "previousBytes": 55880,
+      "bytes": 55650,
+      "mode": "lossless",
+      "quality": 100,
+      "lumaSsim": 1.0
+    },
+    {
+      "asset": "owner_20261021_g7_ch15_q12_question.webp",
+      "role": "question",
+      "sourceBytes": 97163,
+      "previousBytes": 51172,
+      "bytes": 50954,
+      "mode": "lossless",
+      "quality": 100,
+      "lumaSsim": 1.0
+    },
+    {
+      "asset": "owner_20261021_g7_ch03_q05_answer.webp",
+      "role": "answer",
+      "sourceBytes": 2275281,
+      "previousBytes": 0,
+      "bytes": 488560,
+      "mode": "lossy",
+      "quality": 98,
+      "lumaSsim": 0.99509215
+    },
+    {
+      "asset": "owner_20261021_g7_ch03_q10_answer.webp",
+      "role": "answer",
+      "sourceBytes": 1381983,
+      "previousBytes": 0,
+      "bytes": 126284,
+      "mode": "lossy",
+      "quality": 94,
+      "lumaSsim": 0.99513555
+    },
+    {
+      "asset": "owner_20261021_g7_ch03_q12_answer.webp",
+      "role": "answer",
+      "sourceBytes": 1583387,
+      "previousBytes": 0,
+      "bytes": 190862,
+      "mode": "lossy",
+      "quality": 94,
+      "lumaSsim": 0.99545318
+    },
+    {
+      "asset": "owner_20261021_g7_ch03_q15_answer.webp",
+      "role": "answer",
+      "sourceBytes": 566443,
+      "previousBytes": 0,
+      "bytes": 63476,
+      "mode": "lossy",
+      "quality": 94,
+      "lumaSsim": 0.99557966
+    },
+    {
+      "asset": "owner_20261021_g7_ch03_q17_answer.webp",
+      "role": "answer",
+      "sourceBytes": 1297870,
+      "previousBytes": 0,
+      "bytes": 175790,
+      "mode": "lossy",
+      "quality": 98,
+      "lumaSsim": 0.99539989
+    },
+    {
+      "asset": "owner_20261021_g7_ch03_q19_answer.webp",
+      "role": "answer",
+      "sourceBytes": 1701095,
+      "previousBytes": 0,
+      "bytes": 219678,
+      "mode": "lossy",
+      "quality": 94,
+      "lumaSsim": 0.99528241
+    },
+    {
+      "asset": "owner_20261021_g7_ch03_q21_answer.webp",
+      "role": "answer",
+      "sourceBytes": 209847,
+      "previousBytes": 0,
+      "bytes": 111962,
+      "mode": "lossy",
+      "quality": 94,
+      "lumaSsim": 0.99946737
+    },
+    {
+      "asset": "owner_20261021_g7_ch03_q22_answer.webp",
+      "role": "answer",
+      "sourceBytes": 2619015,
+      "previousBytes": 0,
+      "bytes": 363938,
+      "mode": "lossy",
+      "quality": 94,
+      "lumaSsim": 0.99578476
+    },
+    {
+      "asset": "owner_20261021_g7_ch03_q24_answer.webp",
+      "role": "answer",
+      "sourceBytes": 223249,
+      "previousBytes": 0,
+      "bytes": 84086,
+      "mode": "lossless",
+      "quality": 100,
+      "lumaSsim": 1.0
+    },
+    {
+      "asset": "owner_20261021_g7_ch04_q10_answer.webp",
+      "role": "answer",
+      "sourceBytes": 1403753,
+      "previousBytes": 0,
+      "bytes": 228502,
+      "mode": "lossy",
+      "quality": 98,
+      "lumaSsim": 0.99566191
+    },
+    {
+      "asset": "owner_20261021_g7_ch04_q11_answer.webp",
+      "role": "answer",
+      "sourceBytes": 1481503,
+      "previousBytes": 0,
+      "bytes": 152058,
+      "mode": "lossy",
+      "quality": 94,
+      "lumaSsim": 0.99503237
+    },
+    {
+      "asset": "owner_20261021_g7_ch04_q13_question.webp",
+      "role": "question",
+      "sourceBytes": 1531391,
+      "previousBytes": 0,
+      "bytes": 279168,
+      "mode": "lossy",
+      "quality": 94,
+      "lumaSsim": 0.99779344
+    },
+    {
+      "asset": "owner_20261021_g7_ch05_q03_answer.webp",
+      "role": "answer",
+      "sourceBytes": 1716957,
+      "previousBytes": 0,
+      "bytes": 336736,
+      "mode": "lossy",
+      "quality": 98,
+      "lumaSsim": 0.99571294
+    },
+    {
+      "asset": "owner_20261021_g7_ch05_q04_answer.webp",
+      "role": "answer",
+      "sourceBytes": 1999091,
+      "previousBytes": 0,
+      "bytes": 311252,
+      "mode": "lossy",
+      "quality": 94,
+      "lumaSsim": 0.99516588
+    },
+    {
+      "asset": "owner_20261021_g7_ch05_q06_answer.webp",
+      "role": "answer",
+      "sourceBytes": 1805864,
+      "previousBytes": 0,
+      "bytes": 255952,
+      "mode": "lossy",
+      "quality": 94,
+      "lumaSsim": 0.99500364
+    },
+    {
+      "asset": "owner_20261021_g7_ch05_q11_answer.webp",
+      "role": "answer",
+      "sourceBytes": 1162362,
+      "previousBytes": 0,
+      "bytes": 85310,
+      "mode": "lossy",
+      "quality": 94,
+      "lumaSsim": 0.99557996
+    },
+    {
+      "asset": "owner_20261021_g7_ch05_q15_answer.webp",
+      "role": "answer",
+      "sourceBytes": 1263702,
+      "previousBytes": 0,
+      "bytes": 115578,
+      "mode": "lossy",
+      "quality": 94,
+      "lumaSsim": 0.99531788
+    },
+    {
+      "asset": "owner_20261021_g7_ch05_q17_answer.webp",
+      "role": "answer",
+      "sourceBytes": 1616064,
+      "previousBytes": 0,
+      "bytes": 202892,
+      "mode": "lossy",
+      "quality": 94,
+      "lumaSsim": 0.99527174
+    },
+    {
+      "asset": "owner_20261021_g7_ch06_q05_answer.webp",
+      "role": "answer",
+      "sourceBytes": 1817666,
+      "previousBytes": 0,
+      "bytes": 254224,
+      "mode": "lossy",
+      "quality": 94,
+      "lumaSsim": 0.99507678
+    },
+    {
+      "asset": "owner_20261021_g7_ch06_q06_answer.webp",
+      "role": "answer",
+      "sourceBytes": 1484121,
+      "previousBytes": 0,
+      "bytes": 246732,
+      "mode": "lossy",
+      "quality": 98,
+      "lumaSsim": 0.99534941
+    },
+    {
+      "asset": "owner_20261021_g7_ch06_q07_answer.webp",
+      "role": "answer",
+      "sourceBytes": 2083417,
+      "previousBytes": 0,
+      "bytes": 455760,
+      "mode": "lossy",
+      "quality": 98,
+      "lumaSsim": 0.99503464
+    },
+    {
+      "asset": "owner_20261021_g7_ch06_q09_answer.webp",
+      "role": "answer",
+      "sourceBytes": 2389548,
+      "previousBytes": 0,
+      "bytes": 556240,
+      "mode": "lossy",
+      "quality": 98,
+      "lumaSsim": 0.9952026
+    },
+    {
+      "asset": "owner_20261021_g7_ch06_q10_question.webp",
+      "role": "question",
+      "sourceBytes": 2578657,
+      "previousBytes": 0,
+      "bytes": 502478,
+      "mode": "lossy",
+      "quality": 94,
+      "lumaSsim": 0.99543846
+    },
+    {
+      "asset": "owner_20261021_g7_ch06_q11_answer.webp",
+      "role": "answer",
+      "sourceBytes": 2200137,
+      "previousBytes": 0,
+      "bytes": 395240,
+      "mode": "lossy",
+      "quality": 94,
+      "lumaSsim": 0.9953413
+    },
+    {
+      "asset": "owner_20261021_g7_ch06_q19_answer.webp",
+      "role": "answer",
+      "sourceBytes": 1353151,
+      "previousBytes": 0,
+      "bytes": 181290,
+      "mode": "lossy",
+      "quality": 98,
+      "lumaSsim": 0.99557424
+    },
+    {
+      "asset": "owner_20261021_g7_ch06_q20_answer.webp",
+      "role": "answer",
+      "sourceBytes": 1757508,
+      "previousBytes": 0,
+      "bytes": 353832,
+      "mode": "lossy",
+      "quality": 98,
+      "lumaSsim": 0.99579519
+    },
+    {
+      "asset": "owner_20261021_g7_ch07_mcq06_answer.webp",
+      "role": "answer",
+      "sourceBytes": 1970035,
+      "previousBytes": 0,
+      "bytes": 1415604,
+      "mode": "lossless",
+      "quality": 100,
+      "lumaSsim": 1.0
+    },
+    {
+      "asset": "owner_20261021_g7_ch07_q04_answer.webp",
+      "role": "answer",
+      "sourceBytes": 1892143,
+      "previousBytes": 0,
+      "bytes": 412630,
+      "mode": "lossy",
+      "quality": 98,
+      "lumaSsim": 0.99571753
+    },
+    {
+      "asset": "owner_20261021_g7_ch07_q05_answer.webp",
+      "role": "answer",
+      "sourceBytes": 1869071,
+      "previousBytes": 0,
+      "bytes": 480798,
+      "mode": "lossy",
+      "quality": 94,
+      "lumaSsim": 0.99845588
+    },
+    {
+      "asset": "owner_20261021_g7_ch07_q11_answer.webp",
+      "role": "answer",
+      "sourceBytes": 1912635,
+      "previousBytes": 0,
+      "bytes": 291982,
+      "mode": "lossy",
+      "quality": 94,
+      "lumaSsim": 0.99511385
+    },
+    {
+      "asset": "owner_20261021_g7_ch07_q13_answer.webp",
+      "role": "answer",
+      "sourceBytes": 1643562,
+      "previousBytes": 0,
+      "bytes": 308550,
+      "mode": "lossy",
+      "quality": 98,
+      "lumaSsim": 0.99576306
+    },
+    {
+      "asset": "owner_20261021_g7_ch07_q14_answer.webp",
+      "role": "answer",
+      "sourceBytes": 1658680,
+      "previousBytes": 0,
+      "bytes": 355688,
+      "mode": "lossy",
+      "quality": 100,
+      "lumaSsim": 0.99530053
+    },
+    {
+      "asset": "owner_20261021_g7_ch07_q15_answer.webp",
+      "role": "answer",
+      "sourceBytes": 2351689,
+      "previousBytes": 0,
+      "bytes": 556906,
+      "mode": "lossy",
+      "quality": 98,
+      "lumaSsim": 0.99566841
+    },
+    {
+      "asset": "owner_20261021_g7_ch07_q16_answer.webp",
+      "role": "answer",
+      "sourceBytes": 2103849,
+      "previousBytes": 0,
+      "bytes": 507402,
+      "mode": "lossy",
+      "quality": 98,
+      "lumaSsim": 0.99598002
+    },
+    {
+      "asset": "owner_20261021_g7_ch07_q19_answer.webp",
+      "role": "answer",
+      "sourceBytes": 2200849,
+      "previousBytes": 0,
+      "bytes": 461228,
+      "mode": "lossy",
+      "quality": 94,
+      "lumaSsim": 0.99622071
+    },
+    {
+      "asset": "owner_20261021_g7_ch07_q20_answer.webp",
+      "role": "answer",
+      "sourceBytes": 2268615,
+      "previousBytes": 0,
+      "bytes": 399594,
+      "mode": "lossy",
+      "quality": 94,
+      "lumaSsim": 0.99513286
+    },
+    {
+      "asset": "owner_20261021_g7_ch07_q23_answer.webp",
+      "role": "answer",
+      "sourceBytes": 2618486,
+      "previousBytes": 0,
+      "bytes": 677960,
+      "mode": "lossy",
+      "quality": 98,
+      "lumaSsim": 0.99602997
+    },
+    {
+      "asset": "owner_20261021_g7_ch07_q28_answer.webp",
+      "role": "answer",
+      "sourceBytes": 2540643,
+      "previousBytes": 0,
+      "bytes": 715396,
+      "mode": "lossy",
+      "quality": 100,
+      "lumaSsim": 0.99547428
+    },
+    {
+      "asset": "owner_20261021_g7_ch08_q02_answer.webp",
+      "role": "answer",
+      "sourceBytes": 283030,
+      "previousBytes": 0,
+      "bytes": 116286,
+      "mode": "lossless",
+      "quality": 100,
+      "lumaSsim": 1.0
+    },
+    {
+      "asset": "owner_20261021_g7_ch08_q03_answer.webp",
+      "role": "answer",
+      "sourceBytes": 983542,
+      "previousBytes": 0,
+      "bytes": 127622,
+      "mode": "lossy",
+      "quality": 94,
+      "lumaSsim": 0.99517477
+    },
+    {
+      "asset": "owner_20261021_g7_ch08_q04_answer.webp",
+      "role": "answer",
+      "sourceBytes": 1330324,
+      "previousBytes": 0,
+      "bytes": 121344,
+      "mode": "lossy",
+      "quality": 94,
+      "lumaSsim": 0.99531966
+    },
+    {
+      "asset": "owner_20261021_g7_ch08_q07_answer.webp",
+      "role": "answer",
+      "sourceBytes": 769642,
+      "previousBytes": 0,
+      "bytes": 192396,
+      "mode": "lossy",
+      "quality": 94,
+      "lumaSsim": 0.99803221
+    },
+    {
+      "asset": "owner_20261021_g7_ch08_q08_answer.webp",
+      "role": "answer",
+      "sourceBytes": 1264827,
+      "previousBytes": 0,
+      "bytes": 176076,
+      "mode": "lossy",
+      "quality": 98,
+      "lumaSsim": 0.99550837
+    },
+    {
+      "asset": "owner_20261021_g7_ch08_q12_answer.webp",
+      "role": "answer",
+      "sourceBytes": 1482527,
+      "previousBytes": 0,
+      "bytes": 412462,
+      "mode": "lossy",
+      "quality": 94,
+      "lumaSsim": 0.99780053
+    },
+    {
+      "asset": "owner_20261021_g7_ch08_q13_answer.webp",
+      "role": "answer",
+      "sourceBytes": 1777029,
+      "previousBytes": 0,
+      "bytes": 337944,
+      "mode": "lossy",
+      "quality": 98,
+      "lumaSsim": 0.99573028
+    },
+    {
+      "asset": "owner_20261021_g7_ch08_q17_answer.webp",
+      "role": "answer",
+      "sourceBytes": 1339125,
+      "previousBytes": 0,
+      "bytes": 126172,
+      "mode": "lossy",
+      "quality": 94,
+      "lumaSsim": 0.99509537
+    },
+    {
+      "asset": "owner_20261021_g7_ch08_q19_answer.webp",
+      "role": "answer",
+      "sourceBytes": 1645642,
+      "previousBytes": 0,
+      "bytes": 321064,
+      "mode": "lossy",
+      "quality": 98,
+      "lumaSsim": 0.99569654
+    },
+    {
+      "asset": "owner_20261021_g7_ch09_q04_answer.webp",
+      "role": "answer",
+      "sourceBytes": 2116047,
+      "previousBytes": 0,
+      "bytes": 498424,
+      "mode": "lossy",
+      "quality": 98,
+      "lumaSsim": 0.99584115
+    },
+    {
+      "asset": "owner_20261021_g7_ch09_q09_answer.webp",
+      "role": "answer",
+      "sourceBytes": 273884,
+      "previousBytes": 0,
+      "bytes": 107186,
+      "mode": "lossless",
+      "quality": 100,
+      "lumaSsim": 1.0
+    },
+    {
+      "asset": "owner_20261021_g7_ch09_q10_answer.webp",
+      "role": "answer",
+      "sourceBytes": 1822598,
+      "previousBytes": 0,
+      "bytes": 1245968,
+      "mode": "lossless",
+      "quality": 100,
+      "lumaSsim": 1.0
+    },
+    {
+      "asset": "owner_20261021_g7_ch09_q11_answer.webp",
+      "role": "answer",
+      "sourceBytes": 1102058,
+      "previousBytes": 0,
+      "bytes": 270462,
+      "mode": "lossy",
+      "quality": 94,
+      "lumaSsim": 0.99732322
+    },
+    {
+      "asset": "owner_20261021_g7_ch09_q12_answer.webp",
+      "role": "answer",
+      "sourceBytes": 1475276,
+      "previousBytes": 0,
+      "bytes": 260750,
+      "mode": "lossy",
+      "quality": 98,
+      "lumaSsim": 0.99572241
+    },
+    {
+      "asset": "owner_20261021_g7_ch09_q14_answer.webp",
+      "role": "answer",
+      "sourceBytes": 1773046,
+      "previousBytes": 0,
+      "bytes": 260646,
+      "mode": "lossy",
+      "quality": 94,
+      "lumaSsim": 0.99568045
+    },
+    {
+      "asset": "owner_20261021_g7_ch09_q15_answer.webp",
+      "role": "answer",
+      "sourceBytes": 1780260,
+      "previousBytes": 0,
+      "bytes": 1141486,
+      "mode": "lossless",
+      "quality": 100,
+      "lumaSsim": 1.0
+    },
+    {
+      "asset": "owner_20261021_g7_ch10_q02_answer.webp",
+      "role": "answer",
+      "sourceBytes": 178064,
+      "previousBytes": 0,
+      "bytes": 75204,
+      "mode": "lossless",
+      "quality": 100,
+      "lumaSsim": 1.0
+    },
+    {
+      "asset": "owner_20261021_g7_ch10_q04_answer.webp",
+      "role": "answer",
+      "sourceBytes": 1487837,
+      "previousBytes": 0,
+      "bytes": 274078,
+      "mode": "lossy",
+      "quality": 100,
+      "lumaSsim": 0.99505228
+    },
+    {
+      "asset": "owner_20261021_g7_ch10_q05_answer.webp",
+      "role": "answer",
+      "sourceBytes": 1376909,
+      "previousBytes": 0,
+      "bytes": 306956,
+      "mode": "lossy",
+      "quality": 98,
+      "lumaSsim": 0.99570876
+    },
+    {
+      "asset": "owner_20261021_g7_ch10_q08_answer.webp",
+      "role": "answer",
+      "sourceBytes": 1012994,
+      "previousBytes": 0,
+      "bytes": 248066,
+      "mode": "lossy",
+      "quality": 94,
+      "lumaSsim": 0.99757028
+    },
+    {
+      "asset": "owner_20261021_g7_ch10_q09_answer.webp",
+      "role": "answer",
+      "sourceBytes": 239185,
+      "previousBytes": 0,
+      "bytes": 94522,
+      "mode": "lossless",
+      "quality": 100,
+      "lumaSsim": 1.0
+    },
+    {
+      "asset": "owner_20261021_g7_ch10_q13_answer.webp",
+      "role": "answer",
+      "sourceBytes": 1255662,
+      "previousBytes": 0,
+      "bytes": 154444,
+      "mode": "lossy",
+      "quality": 98,
+      "lumaSsim": 0.99554116
+    },
+    {
+      "asset": "owner_20261021_g7_ch10_q14_answer.webp",
+      "role": "answer",
+      "sourceBytes": 1455923,
+      "previousBytes": 0,
+      "bytes": 211450,
+      "mode": "lossy",
+      "quality": 100,
+      "lumaSsim": 0.99517339
+    },
+    {
+      "asset": "owner_20261021_g7_ch10_q15_answer.webp",
+      "role": "answer",
+      "sourceBytes": 1507461,
+      "previousBytes": 0,
+      "bytes": 965460,
+      "mode": "lossless",
+      "quality": 100,
+      "lumaSsim": 1.0
+    },
+    {
+      "asset": "owner_20261021_g7_ch10_q16_answer.webp",
+      "role": "answer",
+      "sourceBytes": 1485607,
+      "previousBytes": 0,
+      "bytes": 309202,
+      "mode": "lossy",
+      "quality": 94,
+      "lumaSsim": 0.99658811
+    },
+    {
+      "asset": "owner_20261021_g7_ch10_q18_answer.webp",
+      "role": "answer",
+      "sourceBytes": 3488553,
+      "previousBytes": 0,
+      "bytes": 546284,
+      "mode": "lossy",
+      "quality": 94,
+      "lumaSsim": 0.99561268
+    },
+    {
+      "asset": "owner_20261021_g7_ch10_q19_answer.webp",
+      "role": "answer",
+      "sourceBytes": 683105,
+      "previousBytes": 0,
+      "bytes": 212554,
+      "mode": "lossy",
+      "quality": 94,
+      "lumaSsim": 0.99838662
+    },
+    {
+      "asset": "owner_20261021_g7_ch10_q24_answer.webp",
+      "role": "answer",
+      "sourceBytes": 3267939,
+      "previousBytes": 0,
+      "bytes": 501278,
+      "mode": "lossy",
+      "quality": 94,
+      "lumaSsim": 0.99579787
+    },
+    {
+      "asset": "chapter_01.webp",
+      "role": "decorative",
+      "previousBytes": 77686,
+      "bytes": 65756,
+      "mode": "lossy",
+      "quality": 90,
+      "lumaSsim": 0.99420285
+    },
+    {
+      "asset": "chapter_02.webp",
+      "role": "decorative",
+      "previousBytes": 62262,
+      "bytes": 54772,
+      "mode": "lossy",
+      "quality": 90,
+      "lumaSsim": 0.99593073
+    },
+    {
+      "asset": "chapter_03.webp",
+      "role": "decorative",
+      "previousBytes": 59338,
+      "bytes": 53362,
+      "mode": "lossy",
+      "quality": 90,
+      "lumaSsim": 0.99655426
+    },
+    {
+      "asset": "chapter_04.webp",
+      "role": "decorative",
+      "previousBytes": 80184,
+      "bytes": 69122,
+      "mode": "lossy",
+      "quality": 90,
+      "lumaSsim": 0.99465591
+    },
+    {
+      "asset": "chapter_05.webp",
+      "role": "decorative",
+      "previousBytes": 110842,
+      "bytes": 97130,
+      "mode": "lossy",
+      "quality": 90,
+      "lumaSsim": 0.99519426
+    },
+    {
+      "asset": "chapter_06.webp",
+      "role": "decorative",
+      "previousBytes": 101044,
+      "bytes": 90028,
+      "mode": "lossy",
+      "quality": 90,
+      "lumaSsim": 0.99533027
+    },
+    {
+      "asset": "chapter_07.webp",
+      "role": "decorative",
+      "previousBytes": 129690,
+      "bytes": 115184,
+      "mode": "lossy",
+      "quality": 90,
+      "lumaSsim": 0.9949891
+    },
+    {
+      "asset": "chapter_08.webp",
+      "role": "decorative",
+      "previousBytes": 75084,
+      "bytes": 64586,
+      "mode": "lossy",
+      "quality": 90,
+      "lumaSsim": 0.99473023
+    },
+    {
+      "asset": "chapter_09.webp",
+      "role": "decorative",
+      "previousBytes": 76148,
+      "bytes": 66052,
+      "mode": "lossy",
+      "quality": 90,
+      "lumaSsim": 0.99554247
+    },
+    {
+      "asset": "chapter_10.webp",
+      "role": "decorative",
+      "previousBytes": 82682,
+      "bytes": 69990,
+      "mode": "lossy",
+      "quality": 90,
+      "lumaSsim": 0.99423558
+    },
+    {
+      "asset": "chapter_11.webp",
+      "role": "decorative",
+      "previousBytes": 82804,
+      "bytes": 69922,
+      "mode": "lossy",
+      "quality": 90,
+      "lumaSsim": 0.99446565
+    },
+    {
+      "asset": "chapter_12.webp",
+      "role": "decorative",
+      "previousBytes": 111166,
+      "bytes": 98680,
+      "mode": "lossy",
+      "quality": 90,
+      "lumaSsim": 0.99644965
+    },
+    {
+      "asset": "chapter_13.webp",
+      "role": "decorative",
+      "previousBytes": 47938,
+      "bytes": 41322,
+      "mode": "lossy",
+      "quality": 90,
+      "lumaSsim": 0.99695241
+    },
+    {
+      "asset": "chapter_14.webp",
+      "role": "decorative",
+      "previousBytes": 72106,
+      "bytes": 61236,
+      "mode": "lossy",
+      "quality": 90,
+      "lumaSsim": 0.994627
+    },
+    {
+      "asset": "chapter_15.webp",
+      "role": "decorative",
+      "previousBytes": 89414,
+      "bytes": 75236,
+      "mode": "lossy",
+      "quality": 90,
+      "lumaSsim": 0.99284267
+    },
+    {
+      "asset": "g7_ch03_mcq07_source_figure.webp",
+      "role": "retained-lossless",
+      "previousBytes": 40248,
+      "bytes": 40248,
+      "mode": "unchanged",
+      "lumaSsim": 1.0
+    },
+    {
+      "asset": "g7_ch03_q03_source_figure.webp",
+      "role": "retained-lossless",
+      "previousBytes": 13538,
+      "bytes": 13538,
+      "mode": "unchanged",
+      "lumaSsim": 1.0
+    },
+    {
+      "asset": "g7_ch03_q18_source_figure.webp",
+      "role": "retained-lossless",
+      "previousBytes": 1518,
+      "bytes": 1518,
+      "mode": "unchanged",
+      "lumaSsim": 1.0
+    },
+    {
+      "asset": "g7_ch03_q21_source_figure.webp",
+      "role": "retained-lossless",
+      "previousBytes": 7524,
+      "bytes": 7524,
+      "mode": "unchanged",
+      "lumaSsim": 1.0
+    },
+    {
+      "asset": "g7_ch03_q22_source_figure.webp",
+      "role": "retained-lossless",
+      "previousBytes": 13608,
+      "bytes": 13608,
+      "mode": "unchanged",
+      "lumaSsim": 1.0
+    },
+    {
+      "asset": "g7_ch03_q24_source_figure.webp",
+      "role": "retained-lossless",
+      "previousBytes": 127544,
+      "bytes": 127544,
+      "mode": "unchanged",
+      "lumaSsim": 1.0
+    },
+    {
+      "asset": "mascot_encourage_480w.webp",
+      "role": "decorative",
+      "previousBytes": 30972,
+      "bytes": 30972,
+      "mode": "retained-original",
+      "lumaSsim": 1.0
+    },
+    {
+      "asset": "mascot_guidance_480w.webp",
+      "role": "decorative",
+      "previousBytes": 29660,
+      "bytes": 29660,
+      "mode": "retained-original",
+      "lumaSsim": 1.0
+    },
+    {
+      "asset": "mascot_master_480w.webp",
+      "role": "decorative",
+      "previousBytes": 29844,
+      "bytes": 29844,
+      "mode": "retained-original",
+      "lumaSsim": 1.0
+    },
+    {
+      "asset": "mascot_success_480w.webp",
+      "role": "decorative",
+      "previousBytes": 31512,
+      "bytes": 31512,
+      "mode": "retained-original",
+      "lumaSsim": 1.0
+    },
+    {
+      "asset": "mascot_thinking_480w.webp",
+      "role": "decorative",
+      "previousBytes": 29384,
+      "bytes": 29384,
+      "mode": "retained-original",
+      "lumaSsim": 1.0
+    },
+    {
+      "asset": "mascot_welcome_480w.webp",
+      "role": "decorative",
+      "previousBytes": 31026,
+      "bytes": 31026,
+      "mode": "retained-original",
+      "lumaSsim": 1.0
+    },
+    {
+      "asset": "native_1405_g7_ch06_q06.webp",
+      "role": "retained-lossless",
+      "previousBytes": 39322,
+      "bytes": 39322,
+      "mode": "unchanged",
+      "lumaSsim": 1.0
+    },
+    {
+      "asset": "native_1405_g7_ch07_q04.webp",
+      "role": "retained-lossless",
+      "previousBytes": 117404,
+      "bytes": 117404,
+      "mode": "unchanged",
+      "lumaSsim": 1.0
+    },
+    {
+      "asset": "native_1405_g7_ch07_q05.webp",
+      "role": "retained-lossless",
+      "previousBytes": 33536,
+      "bytes": 33536,
+      "mode": "unchanged",
+      "lumaSsim": 1.0
+    },
+    {
+      "asset": "native_1405_g7_ch08_mcq05.webp",
+      "role": "retained-lossless",
+      "previousBytes": 19640,
+      "bytes": 19640,
+      "mode": "unchanged",
+      "lumaSsim": 1.0
+    },
+    {
+      "asset": "native_1405_g7_ch08_q03.webp",
+      "role": "retained-lossless",
+      "previousBytes": 72886,
+      "bytes": 72886,
+      "mode": "unchanged",
+      "lumaSsim": 1.0
+    },
+    {
+      "asset": "native_1405_g7_ch08_q04_12.webp",
+      "role": "retained-lossless",
+      "previousBytes": 33988,
+      "bytes": 33988,
+      "mode": "unchanged",
+      "lumaSsim": 1.0
+    },
+    {
+      "asset": "native_1405_g7_ch08_q04_3.webp",
+      "role": "retained-lossless",
+      "previousBytes": 34600,
+      "bytes": 34600,
+      "mode": "unchanged",
+      "lumaSsim": 1.0
+    },
+    {
+      "asset": "native_1405_g7_ch08_q07.webp",
+      "role": "retained-lossless",
+      "previousBytes": 7296,
+      "bytes": 7296,
+      "mode": "unchanged",
+      "lumaSsim": 1.0
+    },
+    {
+      "asset": "native_1405_g7_ch08_q08.webp",
+      "role": "retained-lossless",
+      "previousBytes": 14966,
+      "bytes": 14966,
+      "mode": "unchanged",
+      "lumaSsim": 1.0
+    },
+    {
+      "asset": "native_1405_g7_ch08_q14.webp",
+      "role": "retained-lossless",
+      "previousBytes": 37288,
+      "bytes": 37288,
+      "mode": "unchanged",
+      "lumaSsim": 1.0
+    },
+    {
+      "asset": "native_1405_g7_ch09_q04.webp",
+      "role": "retained-lossless",
+      "previousBytes": 91914,
+      "bytes": 91914,
+      "mode": "unchanged",
+      "lumaSsim": 1.0
+    },
+    {
+      "asset": "native_1405_g7_ch09_q13.webp",
+      "role": "retained-lossless",
+      "previousBytes": 93854,
+      "bytes": 93854,
+      "mode": "unchanged",
+      "lumaSsim": 1.0
+    },
+    {
+      "asset": "native_1405_g7_ch10_mcq02.webp",
+      "role": "retained-lossless",
+      "previousBytes": 3600,
+      "bytes": 3600,
+      "mode": "unchanged",
+      "lumaSsim": 1.0
+    },
+    {
+      "asset": "native_1405_g7_ch10_mcq03.webp",
+      "role": "retained-lossless",
+      "previousBytes": 15328,
+      "bytes": 15328,
+      "mode": "unchanged",
+      "lumaSsim": 1.0
+    },
+    {
+      "asset": "native_1405_g7_ch10_q09.webp",
+      "role": "retained-lossless",
+      "previousBytes": 38112,
+      "bytes": 38112,
+      "mode": "unchanged",
+      "lumaSsim": 1.0
+    },
+    {
+      "asset": "native_1405_g7_ch10_q21_dark.webp",
+      "role": "retained-lossless",
+      "previousBytes": 14432,
+      "bytes": 14432,
+      "mode": "unchanged",
+      "lumaSsim": 1.0
+    },
+    {
+      "asset": "native_1405_g7_ch10_q21_light.webp",
+      "role": "retained-lossless",
+      "previousBytes": 17250,
+      "bytes": 17250,
+      "mode": "unchanged",
+      "lumaSsim": 1.0
+    },
+    {
+      "asset": "native_1405_g7_ch14_q04.webp",
+      "role": "retained-lossless",
+      "previousBytes": 134272,
+      "bytes": 134272,
+      "mode": "unchanged",
+      "lumaSsim": 1.0
+    },
+    {
+      "asset": "native_1405_g7_ch15_q06.webp",
+      "role": "retained-lossless",
+      "previousBytes": 45044,
+      "bytes": 45044,
+      "mode": "unchanged",
+      "lumaSsim": 1.0
+    },
+    {
+      "asset": "ui_empty_progress_notebook.webp",
+      "role": "retained-lossless",
+      "previousBytes": 18044,
+      "bytes": 18044,
+      "mode": "unchanged",
+      "lumaSsim": 1.0
+    },
+    {
+      "asset": "ui_icon_correct_320.webp",
+      "role": "retained-lossless",
+      "previousBytes": 49798,
+      "bytes": 49798,
+      "mode": "unchanged",
+      "lumaSsim": 1.0
+    },
+    {
+      "asset": "ui_icon_empty_notebook_320.webp",
+      "role": "retained-lossless",
+      "previousBytes": 84042,
+      "bytes": 84042,
+      "mode": "unchanged",
+      "lumaSsim": 1.0
+    },
+    {
+      "asset": "ui_icon_hint_lightbulb_320.webp",
+      "role": "retained-lossless",
+      "previousBytes": 70090,
+      "bytes": 70090,
+      "mode": "unchanged",
+      "lumaSsim": 1.0
+    },
+    {
+      "asset": "ui_icon_incorrect_320.webp",
+      "role": "retained-lossless",
+      "previousBytes": 57140,
+      "bytes": 57140,
+      "mode": "unchanged",
+      "lumaSsim": 1.0
+    },
+    {
+      "asset": "ui_icon_science_book_320.webp",
+      "role": "retained-lossless",
+      "previousBytes": 80734,
+      "bytes": 80734,
+      "mode": "unchanged",
+      "lumaSsim": 1.0
+    },
+    {
+      "asset": "ui_icon_trophy_320.webp",
+      "role": "retained-lossless",
+      "previousBytes": 100104,
+      "bytes": 100104,
+      "mode": "unchanged",
+      "lumaSsim": 1.0
+    }
+  ],
+  "retainedOtherImageAssets": [
+    {
+      "asset": "ui_art/launch_grade7.webp",
+      "bytes": 125568,
+      "reason": "Existing small shared UI art; no scientific or decorative duplicate added"
+    }
+  ],
+  "beforeAllImageBytes": 41437576,
+  "afterAllImageBytes": 36016534,
+  "visualQualityReview": {
+    "sourceSheets": "All 71 supplied answer illustrations reviewed in full sheets",
+    "fullPixelComparisons": [
+      "g7_ch03_q15_answer",
+      "g7_ch06_q07_answer",
+      "g7_ch07_q14_answer",
+      "g7_ch10_q19_answer"
+    ],
+    "result": "Persian letters, digits, arrows and colour legends remain legible; scientific dimensions unchanged"
+  }
+}

@@ -1,0 +1,4052 @@
+{
+  "questions": 317,
+  "learningSteps": 334,
+  "hints": 668,
+  "policy": "Complete native key retained; reviewed science notes separately gated; pending dental source key unchanged",
+  "primarySources": [
+    "https://www.aao.org/eye-health/tips-prevention/five-vision-myths",
+    "https://openstax.org/books/chemistry-2e/pages/18-4-structure-and-general-properties-of-the-nonmetals",
+    "https://openstax.org/books/chemistry-2e/pages/2-3-atomic-structure-and-symbolism",
+    "https://hultafors.com/en-gb/products/hatchet",
+    "https://archive.nptel.ac.in/content/storage2/courses/112108150/pdf/PPTs/MTS_09_m.pdf",
+    "https://www.lodgecastiron.com/products/round-cast-iron-classic-skillet",
+    "https://isotopes.gov/isotope-basics",
+    "https://www.nssl.noaa.gov/education/svrwx101/hail/",
+    "https://www.weather.gov/lmk/winter-precip",
+    "https://www.usgs.gov/water-science-school/science/how-much-water-there-earth",
+    "https://pubs.usgs.gov/gip/gw/glossary.html",
+    "https://pubs.usgs.gov/gip/gw/how_b.html",
+    "https://www.eia.gov/energyexplained/energy-and-the-environment/",
+    "https://www.eia.gov/energyexplained/biomass/"
+  ],
+  "reviewed": [
+    {
+      "id": "g7_ch01_q01",
+      "sourcePage": 2,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch01_q02",
+      "sourcePage": 2,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch01_q03",
+      "sourcePage": 2,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "multi"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch01_q04",
+      "sourcePage": 2,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 4,
+      "interactionKinds": [
+        "single",
+        "single"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch01_q05",
+      "sourcePage": 2,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch01_q06",
+      "sourcePage": 2,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 4,
+      "interactionKinds": [
+        "single",
+        "multi"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch01_q07",
+      "sourcePage": 2,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 4,
+      "interactionKinds": [
+        "single",
+        "single"
+      ],
+      "practiceRevision": 1,
+      "scientificNote": "استفادهٔ طولانی و بدون وقفه می‌تواند به خستگی یا خشکی چشم و کاهش تحرک بینجامد. خستگی چشم را نباید با آسیب دائمی یا ضعیف‌شدن قطعی بینایی یکی دانست؛ «تنبلی» نیز پیامد حتمی استفاده از رایانه نیست.",
+      "changes": [
+        "Fresh check required; old scientific selections/hints/reveal are not migrated",
+        "Separate gated scientific clarification",
+        "Compact printed blank marks; native controls remain the only editable fields"
+      ]
+    },
+    {
+      "id": "g7_ch01_q08",
+      "sourcePage": 2,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "multi"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch02_q01",
+      "sourcePage": 3,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": [
+        "Length is a quantity, not a unit"
+      ]
+    },
+    {
+      "id": "g7_ch02_q02",
+      "sourcePage": 3,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 8,
+      "interactionKinds": [
+        "match",
+        "match",
+        "single",
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch02_q03",
+      "sourcePage": 3,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "single"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": [
+        "Native spelling/grammar correction; original source retained"
+      ]
+    },
+    {
+      "id": "g7_ch02_q04",
+      "sourcePage": 4,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch02_q05",
+      "sourcePage": 4,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "multi"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch02_q06",
+      "sourcePage": 4,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 4,
+      "interactionKinds": [
+        "match",
+        "single"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch02_q07",
+      "sourcePage": 4,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "order"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch02_q08",
+      "sourcePage": 4,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "single"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": [
+        "Unambiguous decimal separator; fractions retained as numerator/denominator"
+      ]
+    },
+    {
+      "id": "g7_ch02_q09",
+      "sourcePage": 4,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 4,
+      "interactionKinds": [
+        "single",
+        "single"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": "خواندن استوانه پیش از سنگ ۶۰ و پس از سنگ ۷۲ سانتی‌متر مکعب است؛ اختلاف آن‌ها، یعنی ۱۲ سانتی‌متر مکعب، حجم سنگ است. عدد ۱۲ زیر استوانهٔ سمت راستِ تصویر آموزشی، حجم خود سنگ است و نباید به جای حجم کل ۷۲ خوانده شود.",
+      "changes": [
+        "Separate gated scientific clarification"
+      ]
+    },
+    {
+      "id": "g7_ch02_q10",
+      "sourcePage": 5,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 4,
+      "interactionKinds": [
+        "single",
+        "single"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": [
+        "Unambiguous decimal separator; fractions retained as numerator/denominator"
+      ]
+    },
+    {
+      "id": "g7_ch02_q11",
+      "sourcePage": 5,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": [
+        "Native spelling/grammar correction; original source retained"
+      ]
+    },
+    {
+      "id": "g7_ch02_q12",
+      "sourcePage": 5,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 6,
+      "interactionKinds": [
+        "match",
+        "match",
+        "multi"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": [
+        "Explicit labels match the corrected figure"
+      ]
+    },
+    {
+      "id": "g7_ch02_q13",
+      "sourcePage": 5,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "multi"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch02_q14",
+      "sourcePage": 5,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 4,
+      "interactionKinds": [
+        "match",
+        "single"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch02_q15",
+      "sourcePage": 6,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 4,
+      "interactionKinds": [
+        "match",
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": [
+        "Same complete source facts reordered by authoritative figure numbers"
+      ]
+    },
+    {
+      "id": "g7_ch02_mcq01",
+      "sourcePage": 6,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "single"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch02_mcq02",
+      "sourcePage": 6,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "single"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch02_mcq03",
+      "sourcePage": 6,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "single"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch02_mcq04",
+      "sourcePage": 6,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "single"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch02_mcq05",
+      "sourcePage": 6,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "single"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": [
+        "Unambiguous decimal separator; fractions retained as numerator/denominator"
+      ]
+    },
+    {
+      "id": "g7_ch03_q01",
+      "sourcePage": 7,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": [
+        "Distinguish a compound from a mixture"
+      ]
+    },
+    {
+      "id": "g7_ch03_q02",
+      "sourcePage": 7,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "multi"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch03_q03",
+      "sourcePage": 7,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "multi"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch03_q04",
+      "sourcePage": 7,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "multi"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch03_q05",
+      "sourcePage": 7,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "single"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch03_q06",
+      "sourcePage": 7,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "multi"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch03_q07",
+      "sourcePage": 7,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "multi"
+      ],
+      "practiceRevision": 1,
+      "scientificNote": "روی آب ماندن ویژگی عمومی نافلزها نیست؛ شناوری به چگالی نمونه و مایع بستگی دارد. ویژگی‌های رسانایی و جلای نافلزها هم استثنا دارند؛ مثلاً گرافیت برق و الماس گرما را خوب منتقل می‌کنند.",
+      "changes": [
+        "Fresh check required; old scientific selections/hints/reveal are not migrated",
+        "Separate gated scientific clarification"
+      ]
+    },
+    {
+      "id": "g7_ch03_q08",
+      "sourcePage": 8,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 1,
+      "scientificNote": "این دسته‌بندی دربارهٔ ویژگی‌های معمول نمونه‌هاست و استثنا دارد. بند h در نمایش تمرینی به «رسانایی ضعیف گرما» اصلاح شده است؛ شناوری به چگالی وابسته است، نه صرفاً فلز یا نافلز بودن.",
+      "changes": [
+        "Replace invalid nonmetal floatation generalization",
+        "Keep cloze adaptation consistent",
+        "Fresh check required; old scientific selections/hints/reveal are not migrated",
+        "Separate gated scientific clarification"
+      ]
+    },
+    {
+      "id": "g7_ch03_q09",
+      "sourcePage": 8,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "classify"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch03_q10",
+      "sourcePage": 8,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch03_q11",
+      "sourcePage": 8,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "classify"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch03_q12",
+      "sourcePage": 8,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch03_q13",
+      "sourcePage": 8,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "single"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch03_q14",
+      "sourcePage": 9,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 1,
+      "scientificNote": "ترکیب شیمیایی، ماده‌ای خالص از دو یا چند عنصر با نسبت معین و پیوند شیمیایی است. مخلوط چند ماده نیز چند نوع اتم دارد؛ پس وجود اتم‌های متفاوت به‌تنهایی تعریف کاملی برای ترکیب نیست.",
+      "changes": [
+        "Fresh check required; old scientific selections/hints/reveal are not migrated",
+        "Separate gated scientific clarification"
+      ]
+    },
+    {
+      "id": "g7_ch03_q15",
+      "sourcePage": 9,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": "عددهای نوترون در این مدل مربوط به کربن-۱۲ و اکسیژن-۱۶ هستند. برای اتم‌های خنثیِ شکل، تعداد الکترون و پروتون برابر است؛ ایزوتوپ‌های دیگر می‌توانند تعداد نوترون متفاوتی داشته باشند.",
+      "changes": [
+        "Separate gated scientific clarification"
+      ]
+    },
+    {
+      "id": "g7_ch03_q16",
+      "sourcePage": 9,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "multi"
+      ],
+      "practiceRevision": 1,
+      "scientificNote": "هیدروژنِ معمولی (هیدروژن-۱) در هستهٔ خود یک پروتون و هیچ نوترونی ندارد. برابری تعداد پروتون و الکترون مربوط به اتم خنثی است؛ مدل کروی این فصل نیز ساده‌سازی آموزشی است.",
+      "changes": [
+        "Fresh check required; old scientific selections/hints/reveal are not migrated",
+        "Separate gated scientific clarification"
+      ]
+    },
+    {
+      "id": "g7_ch03_q17",
+      "sourcePage": 9,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch03_q18",
+      "sourcePage": 9,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 4,
+      "interactionKinds": [
+        "order",
+        "single"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": [
+        "Native spelling/grammar correction; original source retained"
+      ]
+    },
+    {
+      "id": "g7_ch03_q19",
+      "sourcePage": 10,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "order"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": "منظور، مقایسهٔ تراکم‌پذیری ماده‌هاست. هوای میان دانه‌های شن ممکن است با فشار خارج شود و دانه‌ها جابه‌جا شوند؛ این را با فشرده‌شدن خودِ مادهٔ جامد یکی ندانید.",
+      "changes": [
+        "Separate gated scientific clarification"
+      ]
+    },
+    {
+      "id": "g7_ch03_q20",
+      "sourcePage": 10,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 4,
+      "interactionKinds": [
+        "single",
+        "single"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch03_q21",
+      "sourcePage": 10,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 4,
+      "interactionKinds": [
+        "match",
+        "single"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": "ترتیب نشان‌داده‌شده فقط نتیجهٔ مقایسهٔ همین چهار نمونه در شرایط آزمایش کتاب است؛ از این نمودار نمی‌توان دربارهٔ همهٔ فلزها و نافلزها حکم کلی داد.",
+      "changes": [
+        "Separate gated scientific clarification"
+      ]
+    },
+    {
+      "id": "g7_ch03_q22",
+      "sourcePage": 10,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch03_q23",
+      "sourcePage": 10,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch03_q24",
+      "sourcePage": 11,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 4,
+      "interactionKinds": [
+        "single",
+        "single"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": "شکل‌ها مدلِ کیفیِ آرایش ذره‌ها هستند و مقیاس دقیق چگالی ندارند. دربارهٔ آب، یخ از آب مایع کم‌چگال‌تر است؛ پاسخ این سؤال با شناسایی حالت گاز از روی شکل تعیین می‌شود.",
+      "changes": [
+        "Separate gated scientific clarification"
+      ]
+    },
+    {
+      "id": "g7_ch03_mcq01",
+      "sourcePage": 11,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "single"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch03_mcq02",
+      "sourcePage": 11,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "single"
+      ],
+      "practiceRevision": 1,
+      "scientificNote": "عدد این تست، تقریب آموزشیِ شمار عنصرهای طبیعی در این فصل است؛ تعداد همهٔ عنصرهای شناخته‌شده ۱۱۸ است. اصل گزینه‌ها و حرف کلید منبع حفظ شده‌اند.",
+      "changes": [
+        "Scope the approximate natural-element count",
+        "Fresh check required; old scientific selections/hints/reveal are not migrated",
+        "Separate gated scientific clarification"
+      ]
+    },
+    {
+      "id": "g7_ch03_mcq03",
+      "sourcePage": 11,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "single"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch03_mcq04",
+      "sourcePage": 11,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "single"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch03_mcq05",
+      "sourcePage": 11,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "single"
+      ],
+      "practiceRevision": 1,
+      "scientificNote": "کلید «همهٔ موارد» را در چارچوب مدل‌های همین شکل بخوانید. هستهٔ هیدروژن-۱ نوترون ندارد؛ عبارتِ دارای پروتون و نوترون را نمی‌توان بدون استثنا به همهٔ اتم‌ها تعمیم داد.",
+      "changes": [
+        "Fresh check required; old scientific selections/hints/reveal are not migrated",
+        "Separate gated scientific clarification"
+      ]
+    },
+    {
+      "id": "g7_ch03_mcq06",
+      "sourcePage": 11,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "single"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch03_mcq07",
+      "sourcePage": 11,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "single"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": [
+        "Native spelling/grammar correction; original source retained"
+      ]
+    },
+    {
+      "id": "g7_ch04_q01",
+      "sourcePage": 12,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": [
+        "Native spelling/grammar correction; original source retained"
+      ]
+    },
+    {
+      "id": "g7_ch04_q02",
+      "sourcePage": 12,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch04_q03",
+      "sourcePage": 12,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "multi"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch04_q04",
+      "sourcePage": 12,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch04_q05",
+      "sourcePage": 12,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "multi"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch04_q06",
+      "sourcePage": 12,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch04_q07",
+      "sourcePage": 12,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": [
+        "Native spelling/grammar correction; original source retained"
+      ]
+    },
+    {
+      "id": "g7_ch04_q08",
+      "sourcePage": 13,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch04_q09",
+      "sourcePage": 13,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch04_q10",
+      "sourcePage": 13,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch04_q11",
+      "sourcePage": 13,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch04_q12",
+      "sourcePage": 14,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "multi"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch04_q13",
+      "sourcePage": 14,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": [
+        "Owner question figure replaces four isolated source figures; native part g retained"
+      ]
+    },
+    {
+      "id": "g7_ch04_q14",
+      "sourcePage": 14,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": [
+        "Native spelling/grammar correction; original source retained"
+      ]
+    },
+    {
+      "id": "g7_ch04_q15",
+      "sourcePage": 14,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch04_q16",
+      "sourcePage": 14,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 1,
+      "scientificNote": "آلیاژ الزاماً فقط از فلزها ساخته نمی‌شود؛ کربنِ نافلز از اجزای فولاد و چدن است. همچنین همهٔ انواع فولاد زنگ‌نزن نیکل ندارند؛ مثال کتاب مربوط به یک نوع رایج آن است.",
+      "changes": [
+        "Fresh check required; old scientific selections/hints/reveal are not migrated",
+        "Separate gated scientific clarification"
+      ]
+    },
+    {
+      "id": "g7_ch04_q17",
+      "sourcePage": 15,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 1,
+      "scientificNote": "نمونهٔ کاربرد چدن در کلید نیاز به اصلاح دارد: تیغهٔ تبر و ابزار ضربه‌ای معمولاً از فولاد مناسب ساخته می‌شود. برای چدن، ظرف چدنی و بدنهٔ برخی ماشین‌آلات مثال مناسب‌تری است. ترتیب دو جزء هر آلیاژ در تمرین آزاد است.",
+      "changes": [
+        "Fresh check required; old scientific selections/hints/reveal are not migrated",
+        "Separate gated scientific clarification"
+      ]
+    },
+    {
+      "id": "g7_ch04_q18",
+      "sourcePage": 15,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "multi"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch04_q19",
+      "sourcePage": 15,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch04_mcq01",
+      "sourcePage": 15,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "single"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch04_mcq02",
+      "sourcePage": 15,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "single"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch04_mcq03",
+      "sourcePage": 15,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "single"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch04_mcq04",
+      "sourcePage": 15,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "single"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch05_q01",
+      "sourcePage": 16,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch05_q02",
+      "sourcePage": 16,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": [
+        "Native spelling/grammar correction; original source retained",
+        "Native spelling/grammar correction; original source retained"
+      ]
+    },
+    {
+      "id": "g7_ch05_q03",
+      "sourcePage": 16,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "order"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": "در این آزمایش، رسوب قهوه‌ای مایل به قرمزِ هیدروکسید آهن(III)، نشانهٔ یون آهن(III) است. آماده‌کردن دو محلول می‌تواند با هر ترتیبی انجام شود؛ تصویر، مدل آزمایش کلاسی با نظارت دبیر است.",
+      "changes": [
+        "Native spelling/grammar correction; original source retained",
+        "Separate gated scientific clarification"
+      ]
+    },
+    {
+      "id": "g7_ch05_q04",
+      "sourcePage": 16,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "order"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch05_q05",
+      "sourcePage": 16,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch05_q06",
+      "sourcePage": 17,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "order"
+      ],
+      "practiceRevision": 1,
+      "scientificNote": "پس از حرارت‌دادن، نمونه باید سرد شود و سپس محصول بررسی شود؛ «۳۰ ثانیه» را زمان تضمینی سردشدن ندانید. جذب آهن‌ربا در چارچوب مواد و مراحل همین آزمایش تفسیر می‌شود.",
+      "changes": [
+        "Separate gated scientific clarification",
+        "Fresh check required; old scientific selections/hints/reveal are not migrated"
+      ]
+    },
+    {
+      "id": "g7_ch05_q07",
+      "sourcePage": 17,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch05_q08",
+      "sourcePage": 17,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": [
+        "Native spelling/grammar correction; original source retained"
+      ]
+    },
+    {
+      "id": "g7_ch05_q09",
+      "sourcePage": 17,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 1,
+      "scientificNote": "بتن معمولی از سیمان، آب و سنگ‌دانه‌ها، از جمله ماسه و معمولاً شن، ساخته می‌شود. عبارت کوتاه کتاب نام شن را جداگانه نیاورده است.",
+      "changes": [
+        "Separate gated scientific clarification",
+        "Fresh check required; old scientific selections/hints/reveal are not migrated"
+      ]
+    },
+    {
+      "id": "g7_ch05_q10",
+      "sourcePage": 17,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 1,
+      "scientificNote": "رنگ را باید با جدول همان کاغذ pH مقایسه کرد؛ برای محلول بازی، pH بیشتر از ۷ است. آبی‌شدنِ ذکرشده در پاسخنامه مربوط به رنگ معرف به‌کاررفته است و قاعدهٔ همهٔ شناساگرها نیست.",
+      "changes": [
+        "Fresh check required; old scientific selections/hints/reveal are not migrated",
+        "Separate gated scientific clarification"
+      ]
+    },
+    {
+      "id": "g7_ch05_q11",
+      "sourcePage": 17,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch05_q12",
+      "sourcePage": 18,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch05_q13",
+      "sourcePage": 18,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "order"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch05_q14",
+      "sourcePage": 18,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch05_q15",
+      "sourcePage": 18,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": "این نمودار یک پیش‌بینی آموزشی بر پایهٔ فرض‌های کتاب است؛ تاریخ قطعی پایان منابع یا آمار به‌روز جهان نیست. زمان باقی‌مانده به ذخایر شناخته‌شده، فناوری، بازیافت و مقدار مصرف وابسته است.",
+      "changes": [
+        "Native spelling/grammar correction; original source retained",
+        "Separate gated scientific clarification"
+      ]
+    },
+    {
+      "id": "g7_ch05_q16",
+      "sourcePage": 19,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "multi"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch05_q17",
+      "sourcePage": 19,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch05_mcq01",
+      "sourcePage": 19,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "single"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch05_mcq02",
+      "sourcePage": 19,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "single"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch05_mcq03",
+      "sourcePage": 19,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "single"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch05_mcq04",
+      "sourcePage": 19,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "single"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch05_mcq05",
+      "sourcePage": 19,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "single"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch06_q01",
+      "sourcePage": 20,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": "آب حدود ۷۱ درصد سطح زمین را می‌پوشاند؛ عبارت «بیش از ۷۵ درصد» متن چاپی دقیق نیست. سه‌چهارم فقط یک تقریبِ ساده است.",
+      "changes": [
+        "Correct surface-water coverage",
+        "Remove incorrect greater-than-75-percent claim",
+        "Separate gated scientific clarification"
+      ]
+    },
+    {
+      "id": "g7_ch06_q02",
+      "sourcePage": 20,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch06_q03",
+      "sourcePage": 20,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch06_q04",
+      "sourcePage": 20,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch06_q05",
+      "sourcePage": 20,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "order"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch06_q06",
+      "sourcePage": 21,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch06_q07",
+      "sourcePage": 21,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 1,
+      "scientificNote": "تگرگ در ابرهای توفانی، با کمک جریان‌های صعودی و یخ‌زدن قطره‌های فوق‌سرد روی دانهٔ یخ رشد می‌کند؛ صرف عبور باران از هوای سردِ زیر ابر، تعریف درستی برای تگرگ نیست. باران ممکن است از ذوب برف در لایهٔ گرم‌تر هم پدید آید، پس دمای تمام ابر لازم نیست بالاتر از صفر باشد. توضیح‌های کوتاه تصویر و پاسخنامه را با این دقت بخوانید.",
+      "changes": [
+        "Fresh check required; old scientific selections/hints/reveal are not migrated",
+        "Separate gated scientific clarification"
+      ]
+    },
+    {
+      "id": "g7_ch06_q08",
+      "sourcePage": 21,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch06_q09",
+      "sourcePage": 21,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "order"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch06_q10",
+      "sourcePage": 21,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "multi"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": [
+        "Owner water-cycle question figure replaces source figure"
+      ]
+    },
+    {
+      "id": "g7_ch06_q11",
+      "sourcePage": 22,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch06_q12",
+      "sourcePage": 22,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch06_q13",
+      "sourcePage": 22,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 1,
+      "scientificNote": "نداشتن راه خروج طبیعی، شرط همهٔ دریاچه‌ها نیست. بعضی دریاچه‌ها به رود خروجی و در نهایت دریا راه دارند؛ دریاچهٔ بسته خروجی رودخانه‌ای ندارد.",
+      "changes": [
+        "Fresh check required; old scientific selections/hints/reveal are not migrated",
+        "Separate gated scientific clarification"
+      ]
+    },
+    {
+      "id": "g7_ch06_q14",
+      "sourcePage": 22,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch06_q15",
+      "sourcePage": 23,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch06_q16",
+      "sourcePage": 23,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch06_q17",
+      "sourcePage": 23,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "multi"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch06_q18",
+      "sourcePage": 23,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "multi"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch06_q19",
+      "sourcePage": 23,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch06_q20",
+      "sourcePage": 23,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch06_q21",
+      "sourcePage": 23,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch07_q01",
+      "sourcePage": 24,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch07_q02",
+      "sourcePage": 24,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "multi"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch07_q03",
+      "sourcePage": 24,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch07_q04",
+      "sourcePage": 24,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": "مقایسه مربوط به مدل شکل و برابر بودن شرایط دیگر است. تصمیم واقعی دربارهٔ ساخت سد به بررسی زمین‌شناسی، آب، محیط زیست و نیاز منطقه وابسته است و از نبود پوشش گیاهی به‌تنهایی نتیجه نمی‌شود.",
+      "changes": [
+        "Separate gated scientific clarification"
+      ]
+    },
+    {
+      "id": "g7_ch07_q05",
+      "sourcePage": 25,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": "نسبتِ دو‌سوم رس و یک‌سوم ماسه، پاسخِ مقایسهٔ مدل همین سؤال است؛ نسخهٔ ثابت برای هر گیاه یا خاک واقعی نیست. بافت، گیاخاک، تهویه، زهکشی و نیاز گیاه نیز مهم‌اند.",
+      "changes": [
+        "Separate gated scientific clarification"
+      ]
+    },
+    {
+      "id": "g7_ch07_q06",
+      "sourcePage": 25,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "multi"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch07_q07",
+      "sourcePage": 25,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch07_q08",
+      "sourcePage": 25,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch07_q09",
+      "sourcePage": 26,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch07_q10",
+      "sourcePage": 26,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "order"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch07_q11",
+      "sourcePage": 26,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "order"
+      ],
+      "practiceRevision": 1,
+      "scientificNote": "ماسه باید در آغاز خشک باشد. آب را آرام اضافه کنید تا فضای بین دانه‌ها پر شود، نه اینکه لایه‌ای آب بالای ماسه جمع شود. حجم آب مصرف‌شده، در این شرایط، تقریب حجم فضای خالی است.",
+      "changes": [
+        "Fresh check required; old scientific selections/hints/reveal are not migrated",
+        "Separate gated scientific clarification"
+      ]
+    },
+    {
+      "id": "g7_ch07_q12",
+      "sourcePage": 26,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 1,
+      "scientificNote": "برای چاه، تنها مقدار فضای خالی کافی نیست؛ آب باید بتواند از فضاهای به‌هم‌پیوسته حرکت کند. رس نیز می‌تواند تخلخل زیاد اما نفوذپذیری و آب‌دهی کمی داشته باشد؛ جنس آبرفت‌ها هم یکسان نیست.",
+      "changes": [
+        "Fresh check required; old scientific selections/hints/reveal are not migrated",
+        "Separate gated scientific clarification"
+      ]
+    },
+    {
+      "id": "g7_ch07_q13",
+      "sourcePage": 26,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": "نتیجه مربوط به آرایش دانه‌های همین دو شکل است: ذرات ریز، بخشی از فاصله‌های شکل دیگر را پر کرده‌اند. تخلخل فقط با درشتی دانه تعیین نمی‌شود؛ جورشدگی و چیدمان ذرات مهم‌اند و نفوذپذیری به اتصال فضاها نیز بستگی دارد.",
+      "changes": [
+        "Separate gated scientific clarification"
+      ]
+    },
+    {
+      "id": "g7_ch07_q14",
+      "sourcePage": 26,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 1,
+      "scientificNote": "راهنمای درست شماره‌ها: ۱ فاصلهٔ سطح زمین تا سطح ایستابی (عمق سطح ایستابی)؛ ۲ مرز بالایی منطقهٔ اشباع (سطح ایستابی)؛ ۳ خودِ منطقهٔ اشباع. برچسبِ «منطقهٔ بالای اشباع» در تصویر آموزشی جایگزین نام کمیتِ شمارهٔ ۱ نیست. در این مدلِ نفوذپذیر، بخش اشباع آبخوان است؛ لایهٔ اشباعِ بسیار کم‌نفوذ الزاماً آبخوان با آب‌دهی مناسب نیست. پاسخ جداگانهٔ بخش ب در کلید چاپی نیامده است.",
+      "changes": [
+        "Fresh check required; old scientific selections/hints/reveal are not migrated",
+        "Separate gated scientific clarification"
+      ]
+    },
+    {
+      "id": "g7_ch07_q15",
+      "sourcePage": 27,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "order"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch07_q16",
+      "sourcePage": 27,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch07_q17",
+      "sourcePage": 27,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "multi"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch07_q18",
+      "sourcePage": 27,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "multi"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": [
+        "Compact printed blank marks; native controls remain the only editable fields"
+      ]
+    },
+    {
+      "id": "g7_ch07_q19",
+      "sourcePage": 27,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch07_q20",
+      "sourcePage": 27,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": "چاهِ خودجوش فقط وقتی آب را به بیرون می‌رساند که تراز فشار آب از سطح زمین بالاتر باشد. محصور و تحت‌فشار بودن آبخوان، به‌تنهایی خودجوش بودن هر چاه را تضمین نمی‌کند.",
+      "changes": [
+        "Separate gated scientific clarification"
+      ]
+    },
+    {
+      "id": "g7_ch07_q21",
+      "sourcePage": 28,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch07_q22",
+      "sourcePage": 28,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch07_q23",
+      "sourcePage": 28,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "multi"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch07_q24",
+      "sourcePage": 28,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "multi"
+      ],
+      "practiceRevision": 1,
+      "scientificNote": "دما و ترکیب آب زیرزمینی ثابتِ مطلق نیستند؛ اقلیم، عمق، جنس زمین، تغذیه و ورود آلاینده اثر دارند. بی‌رنگ و بی‌بو بودن نیز به‌تنهایی پاکی یا مناسب‌بودن آب برای آشامیدن را اثبات نمی‌کند.",
+      "changes": [
+        "Fresh check required; old scientific selections/hints/reveal are not migrated",
+        "Separate gated scientific clarification"
+      ]
+    },
+    {
+      "id": "g7_ch07_q25",
+      "sourcePage": 28,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch07_q26",
+      "sourcePage": 28,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch07_q27",
+      "sourcePage": 28,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch07_q28",
+      "sourcePage": 29,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch07_mcq01",
+      "sourcePage": 29,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "single"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch07_mcq02",
+      "sourcePage": 29,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "single"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch07_mcq03",
+      "sourcePage": 29,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "single"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch07_mcq04",
+      "sourcePage": 29,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "single"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch07_mcq05",
+      "sourcePage": 29,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "single"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch07_mcq06",
+      "sourcePage": 29,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "single"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch08_q01",
+      "sourcePage": 30,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": [
+        "Do not imply that most radio energy necessarily becomes sound"
+      ]
+    },
+    {
+      "id": "g7_ch08_q02",
+      "sourcePage": 30,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 1,
+      "scientificNote": "برای بررسی اثر جابه‌جایی، نیرو را ثابت نگه دارید؛ برای بررسی اثر نیرو، جابه‌جایی را ثابت بگیرید. رابطهٔ سادهٔ کار = نیرو × جابه‌جایی در این سؤال، برای نیروی ثابت و هم‌جهت با جابه‌جایی است.",
+      "changes": [
+        "Fresh check required; old scientific selections/hints/reveal are not migrated",
+        "Separate gated scientific clarification"
+      ]
+    },
+    {
+      "id": "g7_ch08_q03",
+      "sourcePage": 30,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch08_q04",
+      "sourcePage": 31,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch08_q05",
+      "sourcePage": 31,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch08_q06",
+      "sourcePage": 31,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": [
+        "Unambiguous decimal separator; fractions retained as numerator/denominator",
+        "Unambiguous decimal separator; fractions retained as numerator/denominator"
+      ]
+    },
+    {
+      "id": "g7_ch08_q07",
+      "sourcePage": 31,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch08_q08",
+      "sourcePage": 31,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch08_q09",
+      "sourcePage": 32,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "multi"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch08_q10",
+      "sourcePage": 32,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch08_q11",
+      "sourcePage": 32,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "multi"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch08_q12",
+      "sourcePage": 32,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch08_q13",
+      "sourcePage": 32,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 1,
+      "scientificNote": "برای مقایسهٔ وزن، ارتفاع و شکل و اندازهٔ بیرونی گلوله‌ها و شرایط سطح برخورد را یکسان بگیرید؛ برای مقایسهٔ ارتفاع، همان گلوله را به کار ببرید. شکل گلوله‌های تصویر مقیاس دقیق ندارد. اثر فرورفتگی در ماسه، شاخص روشن‌تری از بلندی صدای برخورد است.",
+      "changes": [
+        "Fresh check required; old scientific selections/hints/reveal are not migrated",
+        "Separate gated scientific clarification"
+      ]
+    },
+    {
+      "id": "g7_ch08_q14",
+      "sourcePage": 32,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch08_q15",
+      "sourcePage": 33,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch08_q16",
+      "sourcePage": 33,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch08_q17",
+      "sourcePage": 33,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch08_q18",
+      "sourcePage": 33,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": [
+        "Unambiguous decimal separator; fractions retained as numerator/denominator",
+        "Unambiguous decimal separator; fractions retained as numerator/denominator"
+      ]
+    },
+    {
+      "id": "g7_ch08_q19",
+      "sourcePage": 33,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch08_mcq01",
+      "sourcePage": 34,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "single"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch08_mcq02",
+      "sourcePage": 34,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "single"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch08_mcq03",
+      "sourcePage": 34,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "single"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": [
+        "Unambiguous decimal separator; fractions retained as numerator/denominator",
+        "Correct total-energy unit; retain original source and review note"
+      ]
+    },
+    {
+      "id": "g7_ch08_mcq04",
+      "sourcePage": 34,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "single"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch08_mcq05",
+      "sourcePage": 34,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "single"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch08_mcq06",
+      "sourcePage": 34,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "single"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch08_mcq07",
+      "sourcePage": 34,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "single"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch09_q01",
+      "sourcePage": 35,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 1,
+      "scientificNote": "آمار حجم انتقال نفت، دادهٔ نقل‌شده در کتاب است. تجدیدپذیر بودن با صفر بودن آلودگی یا نامحدود بودن برداشت برابر نیست؛ فناوری و شیوهٔ بهره‌برداری اهمیت دارند.",
+      "changes": [
+        "Qualify renewable-energy claims",
+        "Scope historical quantity to source data",
+        "Separate gated scientific clarification",
+        "Fresh check required; old scientific selections/hints/reveal are not migrated"
+      ]
+    },
+    {
+      "id": "g7_ch09_q02",
+      "sourcePage": 35,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": "تجدیدپذیر بودن یعنی منبع در فرایندهای طبیعی جایگزین می‌شود؛ برداشت بیش از ظرفیت، مثلاً از زیست‌توده یا ذخیرهٔ محلی زمین‌گرمایی، می‌تواند پایداری آن را مختل کند.",
+      "changes": [
+        "Separate gated scientific clarification"
+      ]
+    },
+    {
+      "id": "g7_ch09_q03",
+      "sourcePage": 35,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "classify"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch09_q04",
+      "sourcePage": 35,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch09_q05",
+      "sourcePage": 36,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch09_q06",
+      "sourcePage": 36,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "multi"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch09_q07",
+      "sourcePage": 36,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "multi"
+      ],
+      "practiceRevision": 1,
+      "scientificNote": "تجدیدپذیر به معنی بی‌اثر بودن بر محیط نیست. ساخت تجهیزات، استفاده از زمین و بعضی شیوه‌های بهره‌برداری پیامد محیطی دارند؛ سوخت زیستی نیز هنگام سوختن آلاینده و کربن دی‌اکسید آزاد می‌کند. جایگزینی منابعی مانند زیست‌توده به مدیریت برداشت وابسته است.",
+      "changes": [
+        "Fresh check required; old scientific selections/hints/reveal are not migrated",
+        "Separate gated scientific clarification"
+      ]
+    },
+    {
+      "id": "g7_ch09_q08",
+      "sourcePage": 36,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch09_q09",
+      "sourcePage": 36,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "order"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": "این دستگاه آبگرم‌کن خورشیدی است. در مدل گردش طبیعی (ترموسیفون)، آب گرم‌تر به مخزن بالاتر می‌رود و آب سردتر به جمع‌کننده برمی‌گردد. دمای ۶۰ تا ۷۰ درجه، مثال کتاب است و به طراحی دستگاه و تابش و مصرف وابسته است.",
+      "changes": [
+        "Separate gated scientific clarification"
+      ]
+    },
+    {
+      "id": "g7_ch09_q10",
+      "sourcePage": 36,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch09_q11",
+      "sourcePage": 37,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "order"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch09_q12",
+      "sourcePage": 37,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch09_q13",
+      "sourcePage": 37,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch09_q14",
+      "sourcePage": 38,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 1,
+      "scientificNote": "سوخت مایع زیستی مستقیماً همان تفاله نیست؛ مادهٔ گیاهی باید فرآوری شود، مثلاً قند برای تولید اتانول تخمیر می‌شود. زغالِ این بخش، زغال چوب است و با زغال‌سنگ فسیلی تفاوت دارد.",
+      "changes": [
+        "Fresh check required; old scientific selections/hints/reveal are not migrated",
+        "Separate gated scientific clarification"
+      ]
+    },
+    {
+      "id": "g7_ch09_q15",
+      "sourcePage": 38,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch09_mcq01",
+      "sourcePage": 38,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "single"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch09_mcq02",
+      "sourcePage": 38,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "single"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": "عدد ۸۵ درصد، آمار منبع آموزشی است و به عنوان آمار به‌روز سال جاری ارائه نمی‌شود؛ سهم هر منبع به سال، روش محاسبه و تعریف انرژی بستگی دارد.",
+      "changes": [
+        "Avoid presenting historical book statistics as current data",
+        "Separate gated scientific clarification"
+      ]
+    },
+    {
+      "id": "g7_ch09_mcq03",
+      "sourcePage": 38,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "single"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch10_q01",
+      "sourcePage": 39,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch10_q02",
+      "sourcePage": 39,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "order"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": "دو نقطهٔ مرجع صفر و صد درجهٔ سلسیوس برای آب خالص و فشار معمولِ سطح دریا بیان شده‌اند؛ نقطهٔ جوش با فشار تغییر می‌کند. این یک مدل آموزشیِ درجه‌بندی دماسنجِ مناسب این بازه است.",
+      "changes": [
+        "Separate gated scientific clarification"
+      ]
+    },
+    {
+      "id": "g7_ch10_q03",
+      "sourcePage": 39,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch10_q04",
+      "sourcePage": 39,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch10_q05",
+      "sourcePage": 40,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": "در مدل سادهٔ این فصل، دمای بیشتر با میانگین انرژی جنبشی بیشترِ ذرات مرتبط است. در تعادل، دماها برابرند؛ این به معنای یکسان بودن سرعت تک‌تک ذره‌ها، به‌ویژه برای ذرات با جرم متفاوت، نیست.",
+      "changes": [
+        "Separate gated scientific clarification"
+      ]
+    },
+    {
+      "id": "g7_ch10_q06",
+      "sourcePage": 40,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch10_q07",
+      "sourcePage": 40,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "multi"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch10_q08",
+      "sourcePage": 40,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "order"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch10_q09",
+      "sourcePage": 40,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch10_q10",
+      "sourcePage": 40,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch10_q11",
+      "sourcePage": 41,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch10_q12",
+      "sourcePage": 41,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch10_q13",
+      "sourcePage": 41,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch10_q14",
+      "sourcePage": 41,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch10_q15",
+      "sourcePage": 41,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch10_q16",
+      "sourcePage": 42,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch10_q17",
+      "sourcePage": 42,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": [
+        "Compact printed blank marks; native controls remain the only editable fields"
+      ]
+    },
+    {
+      "id": "g7_ch10_q18",
+      "sourcePage": 42,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch10_q19",
+      "sourcePage": 42,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": "قوطی‌ها باید هم‌اندازه، دارای مقدار آب و دمای آغازین یکسان و در محیط یکسان باشند. نتیجهٔ تصویر، فرضِ پوشش سیاه با گسیلندگی فروسرخ بیشتر از پوشش سفیدِ مقایسه‌شده را دارد؛ رنگِ مرئی به‌تنهایی گسیلندگی همهٔ سطح‌ها را تعیین نمی‌کند. هر دو در پایان به دمای محیط نزدیک می‌شوند.",
+      "changes": [
+        "Separate gated scientific clarification"
+      ]
+    },
+    {
+      "id": "g7_ch10_q20",
+      "sourcePage": 43,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 1,
+      "scientificNote": "علاوه بر دما، مساحت و ویژگی گسیلندگیِ سطح بر توان تابش اثر دارند. در مقایسهٔ کتاب، سطح‌ها و شرایط دیگر برابر فرض شده‌اند؛ «تیره‌تر» را به همهٔ مواد و همهٔ طول موج‌ها تعمیم ندهید.",
+      "changes": [
+        "Separate gated scientific clarification",
+        "Fresh check required; old scientific selections/hints/reveal are not migrated"
+      ]
+    },
+    {
+      "id": "g7_ch10_q21",
+      "sourcePage": 43,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch10_q22",
+      "sourcePage": 43,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch10_q23",
+      "sourcePage": 43,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "multi"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch10_q24",
+      "sourcePage": 44,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": "خلأ رسانش و همرفت بین دو جداره را بسیار کم می‌کند، ولی مانع تابش نیست. سطح بازتابنده و درپوش عایق، مسیرهای دیگر اتلاف را کم می‌کنند؛ اتلاف گرما هرگز کاملاً صفر نمی‌شود.",
+      "changes": [
+        "Separate gated scientific clarification"
+      ]
+    },
+    {
+      "id": "g7_ch10_q25",
+      "sourcePage": 44,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch10_mcq01",
+      "sourcePage": 44,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "single"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": [
+        "Compact printed blank marks; native controls remain the only editable fields"
+      ]
+    },
+    {
+      "id": "g7_ch10_mcq02",
+      "sourcePage": 44,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "single"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch10_mcq03",
+      "sourcePage": 44,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "single"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch10_mcq04",
+      "sourcePage": 44,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "single"
+      ],
+      "practiceRevision": 1,
+      "scientificNote": "در چارچوب نمودار کتاب، سطح تیره گسیلنده‌تر فرض شده است. بیان دقیق‌تر، تابش بیشتر در دمای بالاتر و گسیلندگی بیشترِ سطح است؛ رنگ مرئی به‌تنهایی معیار همهٔ سطح‌ها نیست. حرف کلید چاپی منبع، جدا از معیار تمرین حفظ شده است.",
+      "changes": [
+        "Fresh check required; old scientific selections/hints/reveal are not migrated",
+        "Separate gated scientific clarification"
+      ]
+    },
+    {
+      "id": "g7_ch11_q01",
+      "sourcePage": 45,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch11_q02",
+      "sourcePage": 45,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch11_q03",
+      "sourcePage": 45,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch11_q04",
+      "sourcePage": 45,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch11_q05",
+      "sourcePage": 46,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch11_q06",
+      "sourcePage": 46,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch11_q07",
+      "sourcePage": 46,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 1,
+      "scientificNote": "مقایسه دربارهٔ یاخته‌های نشان‌داده‌شده در شکل است. همهٔ یاخته‌های گیاه سبزدیسه ندارند؛ برای مثال، بسیاری از یاخته‌های ریشه فاقد سبزدیسه‌اند.",
+      "changes": [
+        "Fresh check required; old scientific selections/hints/reveal are not migrated",
+        "Separate gated scientific clarification"
+      ]
+    },
+    {
+      "id": "g7_ch11_q08",
+      "sourcePage": 47,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch11_q09",
+      "sourcePage": 47,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch11_q10",
+      "sourcePage": 47,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch11_q11",
+      "sourcePage": 47,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch11_q12",
+      "sourcePage": 47,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch11_q13",
+      "sourcePage": 47,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "order"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": [
+        "Compact printed blank marks; native controls remain the only editable fields"
+      ]
+    },
+    {
+      "id": "g7_ch12_q01",
+      "sourcePage": 48,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch12_q02",
+      "sourcePage": 48,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "multi"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch12_q03",
+      "sourcePage": 48,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch12_q04",
+      "sourcePage": 48,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch12_q05",
+      "sourcePage": 48,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "multi"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": [
+        "Compact printed blank marks; native controls remain the only editable fields"
+      ]
+    },
+    {
+      "id": "g7_ch12_q06",
+      "sourcePage": 48,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch12_q07",
+      "sourcePage": 48,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "multi"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch12_q08",
+      "sourcePage": 49,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch12_q09",
+      "sourcePage": 49,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch12_q10",
+      "sourcePage": 49,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch12_q11",
+      "sourcePage": 49,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch12_q12",
+      "sourcePage": 49,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch12_q13",
+      "sourcePage": 49,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "multi"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch12_q14",
+      "sourcePage": 50,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch12_q15",
+      "sourcePage": 50,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch12_q16",
+      "sourcePage": 50,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch12_q17",
+      "sourcePage": 50,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": [
+        "Compact printed blank marks; native controls remain the only editable fields"
+      ]
+    },
+    {
+      "id": "g7_ch12_q18",
+      "sourcePage": 50,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch12_q19",
+      "sourcePage": 50,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch12_q20",
+      "sourcePage": 50,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch13_q01",
+      "sourcePage": 51,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": [
+        "Correct duplicate subpart letter"
+      ]
+    },
+    {
+      "id": "g7_ch13_q02",
+      "sourcePage": 51,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch13_q03",
+      "sourcePage": 51,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch13_q04",
+      "sourcePage": 52,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch13_q05",
+      "sourcePage": 52,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch13_q06",
+      "sourcePage": 52,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch13_q07",
+      "sourcePage": 52,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "multi"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch13_q08",
+      "sourcePage": 52,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch13_q09",
+      "sourcePage": 52,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "multi"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": "صفرا آنزیم گوارشی ندارد؛ چربی را به قطره‌های ریزتر پراکنده می‌کند تا آنزیم‌ها بهتر اثر کنند. ساخت صفرا در کبد و ذخیرهٔ آن در کیسهٔ صفرا انجام می‌شود.",
+      "changes": [
+        "Separate gated scientific clarification"
+      ]
+    },
+    {
+      "id": "g7_ch13_q10",
+      "sourcePage": 52,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch13_q11",
+      "sourcePage": 53,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch13_q12",
+      "sourcePage": 53,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch13_mcq01",
+      "sourcePage": 53,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "single"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch13_mcq02",
+      "sourcePage": 53,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "single"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch13_mcq03",
+      "sourcePage": 53,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch13_mcq04",
+      "sourcePage": 53,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "single"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch13_mcq05",
+      "sourcePage": 53,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "single"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch14_q01",
+      "sourcePage": 54,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch14_q02",
+      "sourcePage": 54,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch14_q03",
+      "sourcePage": 54,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch14_q04",
+      "sourcePage": 55,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch14_q05",
+      "sourcePage": 55,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch14_q06",
+      "sourcePage": 55,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": "این توالی، مدل سادهٔ چرخهٔ قلب است. بخش عمدهٔ پرشدن بطن‌ها هنگام شل‌بودن آن‌ها رخ می‌دهد و انقباض دهلیزها پرشدن را کامل می‌کند؛ ورود خون به دهلیزها فقط به یک لحظهٔ استراحت محدود نیست.",
+      "changes": [
+        "Separate gated scientific clarification"
+      ]
+    },
+    {
+      "id": "g7_ch14_q07",
+      "sourcePage": 55,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch14_q08",
+      "sourcePage": 55,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 1,
+      "scientificNote": "نبض، موج فشار در سرخرگ است و در شرایط معمول برای برآورد شمار ضربان به کار می‌رود. گوش‌دادن به قلب اطلاعات دیگری هم می‌دهد؛ این دو روش در همهٔ شرایط جایگزین کامل یکدیگر نیستند.",
+      "changes": [
+        "Fresh check required; old scientific selections/hints/reveal are not migrated",
+        "Separate gated scientific clarification"
+      ]
+    },
+    {
+      "id": "g7_ch14_q09",
+      "sourcePage": 56,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch14_q10",
+      "sourcePage": 56,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": "گویچهٔ قرمز بالغ انسان هسته ندارد. پلاکت، قطعهٔ کوچکِ یاخته‌ای است و یاختهٔ کامل به حساب نمی‌آید. شکل گویچهٔ سفید نیز می‌تواند هنگام فعالیت تغییر کند؛ شکل‌های جدول، مدل سادهٔ آموزشی‌اند.",
+      "changes": [
+        "Separate gated scientific clarification"
+      ]
+    },
+    {
+      "id": "g7_ch14_mcq01",
+      "sourcePage": 56,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "single"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": "این اعداد تقریبِ آموزشی برای قلب بزرگسال‌اند؛ جرم قلب و حجم سالانهٔ خونِ پمپ‌شده با اندازهٔ بدن، فعالیت و شرایط فرد تغییر می‌کند و مقدار ثابتی برای همه نیست.",
+      "changes": [
+        "Separate gated scientific clarification",
+        "Compact printed blank marks; native controls remain the only editable fields"
+      ]
+    },
+    {
+      "id": "g7_ch14_mcq02",
+      "sourcePage": 56,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "single"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch14_mcq03",
+      "sourcePage": 56,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "single"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch14_mcq04",
+      "sourcePage": 56,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "single"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch14_mcq05",
+      "sourcePage": 56,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "single"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch15_q01",
+      "sourcePage": 57,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": [
+        "Native spelling/grammar correction; original source retained"
+      ]
+    },
+    {
+      "id": "g7_ch15_q02",
+      "sourcePage": 57,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch15_q03",
+      "sourcePage": 57,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch15_q04",
+      "sourcePage": 57,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch15_q05",
+      "sourcePage": 58,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "multi"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch15_q06",
+      "sourcePage": 58,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch15_q07",
+      "sourcePage": 58,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch15_q08",
+      "sourcePage": 58,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": [
+        "Native spelling/grammar correction; original source retained"
+      ]
+    },
+    {
+      "id": "g7_ch15_q09",
+      "sourcePage": 58,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "order"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch15_q10",
+      "sourcePage": 58,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch15_q11",
+      "sourcePage": 58,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "multi"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch15_q12",
+      "sourcePage": 59,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch15_q13",
+      "sourcePage": 59,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch15_q14",
+      "sourcePage": 59,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "match"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch15_mcq01",
+      "sourcePage": 59,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "single"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch15_mcq02",
+      "sourcePage": 59,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "single"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch15_mcq03",
+      "sourcePage": 59,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "single"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": [
+        "Native spelling/grammar correction; original source retained"
+      ]
+    },
+    {
+      "id": "g7_ch15_mcq04",
+      "sourcePage": 59,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "single"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch15_mcq05",
+      "sourcePage": 59,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "single"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    },
+    {
+      "id": "g7_ch15_mcq06",
+      "sourcePage": 59,
+      "nativeQuestionAndFullKeyReviewed": true,
+      "hintsReviewed": 2,
+      "interactionKinds": [
+        "single"
+      ],
+      "practiceRevision": 0,
+      "scientificNote": null,
+      "changes": []
+    }
+  ]
+}

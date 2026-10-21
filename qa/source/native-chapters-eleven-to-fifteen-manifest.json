@@ -90,7 +90,7 @@
       "questionId": "g7-ch11-main-013-1405",
       "sourceQuestion": "pdf:workbook.pdf#47,20,724.19,583.3200073242188,803",
       "sourceAnswer": "pdf:answers11.pdf#2,20,676.96,583.3200073242188,803",
-      "nativeSha256": "10acb2f82ff60e27bf936a495b66d18e1c25bfdb1780af53c78be2b20228a492"
+      "nativeSha256": "5a06ed13706bd73c47cccf0c5aa9147e8f3ef13fb3bf200a368f8dd16c389ea5"
     },
     {
       "id": "g7_ch12_q01",
@@ -125,7 +125,7 @@
       "questionId": "g7-ch12-main-005-1405",
       "sourceQuestion": "pdf:workbook.pdf#48,20,608.27,583.3200073242188,646.27",
       "sourceAnswer": "pdf:answers12.pdf#1,20,324.23,583.3200073242188,351.43",
-      "nativeSha256": "3417a6ff477fceb72c9cc12fd7875e3d7e98a3418ec5e2ad02fc23adeffc55f1"
+      "nativeSha256": "170a299646693df2639f84f80d1e69f85db7c7007aef80dc0cb9bfac070c5e4e"
     },
     {
       "id": "g7_ch12_q06",
@@ -209,7 +209,7 @@
       "questionId": "g7-ch12-main-017-1405",
       "sourceQuestion": "pdf:workbook.pdf#50,20,261.66,583.3200073242188,376.34",
       "sourceAnswer": "pdf:answers12.pdf#2,20,451.55,583.3200073242188,492.81",
-      "nativeSha256": "95e6c1138261f7513021aa14bfcd2eb7802d1b675f4a53657726224f9bdb45ab"
+      "nativeSha256": "c14c4a86275ce0db12c5074d2ea780c1d81057169a709973723a69502b8d8fb0"
     },
     {
       "id": "g7_ch12_q18",
@@ -237,7 +237,7 @@
       "questionId": "g7-ch13-main-001-1405",
       "sourceQuestion": "pdf:workbook.pdf#51,20,73.95,583.3200073242188,295.82|-51,41.65,294.16,179.7,527.15",
       "sourceAnswer": "pdf:answers13.pdf#1,20,70.74,583.3200073242188,112.0",
-      "nativeSha256": "a95e7c45b022074f532c52fe13ad51868c3e932e2ac926c166c19ea6bfcb4199"
+      "nativeSha256": "f9f3ac6b188cfe8f4e3ae838e940a22bebaeffc5cf670901d96f2d63cc3b853d"
     },
     {
       "id": "g7_ch13_q02",
@@ -426,7 +426,7 @@
       "questionId": "g7-ch14-mcq-001-1405",
       "sourceQuestion": "pdf:workbook.pdf#56,20,436.32,583.3200073242188,491.56",
       "sourceAnswer": "pdf:answers14.pdf#2,386.51,733.24,402.34,756.87",
-      "nativeSha256": "40b44c6fcf4337103001043b533f060e0ca330e96d2747f14f66ee67ebde4ed0"
+      "nativeSha256": "7e5ed18c787c806ea99eb451677bf50404d10a6c3263a1ada2c4cb8b8090921a"
     },
     {
       "id": "g7_ch14_mcq02",
@@ -461,7 +461,7 @@
       "questionId": "g7-ch15-main-001-1405",
       "sourceQuestion": "pdf:workbook.pdf#57,20,73.95,583.3200073242188,361.22",
       "sourceAnswer": "pdf:answers15.pdf#1,20,85.4,583.3200073242188,140.68",
-      "nativeSha256": "cef96f8d3e4a7014d2aa10139ad6fb0c6e55f8c0d3ec06ec81a4dd882fc32231"
+      "nativeSha256": "43236f70d58f482f96afd3634071b44d019f396fff3708a8558089461b6015ac"
     },
     {
       "id": "g7_ch15_q02",
@@ -510,7 +510,7 @@
       "questionId": "g7-ch15-main-008-1405",
       "sourceQuestion": "pdf:workbook.pdf#58,20,275.1,583.3200073242188,472.12",
       "sourceAnswer": "pdf:answers15.pdf#1,20,395.27,583.3200073242188,422.35",
-      "nativeSha256": "493f2f091e6ee6e7e159b6fdc27af2283c1dc80f6fd6aaab4b344982230cd116"
+      "nativeSha256": "26de5ee24a99937a6ed43f029ca7827a9383927ebfa84636a8ec7562c5884172"
     },
     {
       "id": "g7_ch15_q09",
@@ -573,7 +573,7 @@
       "questionId": "g7-ch15-mcq-003-1405",
       "sourceQuestion": "pdf:workbook.pdf#59,20,571.88,583.3200073242188,627.07",
       "sourceAnswer": "pdf:answers15.pdf#1,247.03,761.44,272.33,785.07",
-      "nativeSha256": "c564bd0a6a669a54a8bc1f603a51ba32cf1b7e8ad0807d543352080150ad23f0"
+      "nativeSha256": "56cd51f583b0575beb5d3fbc58200bb2d338e290dd99a58593673b9f14bf97e0"
     },
     {
       "id": "g7_ch15_mcq04",
