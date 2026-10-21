@@ -452,6 +452,11 @@ class Grade7NativeContentUiTest {
         val tea=question(10,21)
         assertTrue(tea.steps.single().pairs[3].right.contains("به‌تنهایی"))
         assertTrue(tea.steps.single().pairs[4].right.contains("استتار"));assertFalse(tea.practiceUsesPrintedKey)
+        val iceCream=catalog.chapters[7].questions.first { it.section=="چهارگزینه‌ای" && it.sourceNumber==3 }
+        assertTrue(iceCream.steps.single().options.all { it.text.endsWith("کیلوژول") })
+        val heating=catalog.chapters[9].questions.first { it.section=="چهارگزینه‌ای" && it.sourceNumber==2 }
+        assertTrue(heating.steps.single().options.first().correct)
+        assertFalse(heating.steps.single().options.any { it.text.contains("زیرا") })
     }
 
     @Test fun chapterTenUsesTheNewCoverAndContinuesIntoItsNativeQuestion() {

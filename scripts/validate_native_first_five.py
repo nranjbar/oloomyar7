@@ -67,12 +67,22 @@ for ch in range(1,11):
 assert counts==[8,20,31,23,22,21,34,26,18,29]
 # The remaining five chapters must be byte-identical to the last accepted data.
 baseline='7fc2ab9b6fa9a5ecb61a63a6950cf270df45d982'
+for ch in range(1,11):
+    path=f'app/src/main/assets/content/chapter{ch}.json'
+    previous={q['id']:q for q in json.loads(subprocess.check_output(['git','show',baseline+':'+path],cwd=ROOT))}
+    for q in json.loads((ROOT/path).read_text()):
+        for field in ['bookPrompt','sourceQuestionVisual','answerVisual','sourceAnswerTextExtracted']:
+            assert q.get(field)==previous[q['id']].get(field),(q['canonicalId'],field,'original source field changed')
+        for step in q['steps']:
+            if step['kind']in['match','classify']:assert step.get('allowTokenReuse',True)
+            choices=[o['text']for o in step.get('options',[])]+step.get('choices',[])+[c for p in step.get('pairs',[])for c in p.get('choices',[])]
+            assert not any('این اتفاق نمی افتد و برعکس است' in c for c in choices)
 for ch in range(11,16):
     path=f'app/src/main/assets/content/chapter{ch}.json'
     assert (ROOT/path).read_bytes()==subprocess.check_output(['git','show',baseline+':'+path],cwd=ROOT)
 report=dict(status='PASS',edition=1405,nativeQuestions=sum(counts),nativeAnswers=sum(counts),chapterCounts=counts,
     nativeTables=tables,nativeMathBlocks=maths,inlinePrintedBlanks=slots,standaloneScientificFigures=figures,
-    fullQuestionOrKeyScreenshots=0,chaptersElevenToFifteenDataUnchanged=True,
+    fullQuestionOrKeyScreenshots=0,originalQuestionAndKeyFieldsUnchanged=True,reusableSelectionBanks=True,chaptersElevenToFifteenDataUnchanged=True,
     sourceReview='All workbook pages 2–44 and chapter answer PDFs 01–10 visually reviewed; practice revisions and printed-key conflicts are separately recorded.')
 (ROOT/'qa/grade7_native_content_validation.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
 print(json.dumps({k:v for k,v in report.items()if k!='standaloneScientificFigures'},ensure_ascii=False))

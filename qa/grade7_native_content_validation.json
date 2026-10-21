@@ -413,6 +413,8 @@
     }
   ],
   "fullQuestionOrKeyScreenshots": 0,
+  "originalQuestionAndKeyFieldsUnchanged": true,
+  "reusableSelectionBanks": true,
   "chaptersElevenToFifteenDataUnchanged": true,
   "sourceReview": "All workbook pages 2–44 and chapter answer PDFs 01–10 visually reviewed; practice revisions and printed-key conflicts are separately recorded."
 }

@@ -144,7 +144,7 @@ open class AssetQuestionRepository(
                 if (step.kind == StepKind.MATCH) requireValidMatchChoices(step)
             }
 
-            (listOfNotNull(q.visual, q.answerVisual, q.sourceQuestionVisual, q.promptVisual, q.originalFigureVisual) + q.visuals.map { it.asset } + q.nativeQuestion.mapNotNull { it.asset }).forEach { asset ->
+            (listOfNotNull(q.visual, q.answerVisual, q.sourceQuestionVisual, q.promptVisual, q.originalFigureVisual) + q.visuals.map { it.asset } + q.nativeQuestion.mapNotNull { it.asset } + q.nativeAnswer.mapNotNull { it.asset }).forEach { asset ->
                 val pdf = PdfSource.parse(asset)
                 val raster=RasterSource.parse(asset)
                 val path = pdf?.let { "source/${it.file}" } ?: "${if (asset.lowercase().endsWith(".svg")) "svg" else "images"}/${raster?.file ?: asset}"

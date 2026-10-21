@@ -2085,19 +2085,19 @@
         "prompt": "گزینهٔ چاپی کتاب را انتخاب کن.",
         "options": [
           {
-            "text": "الف- ۵۹۳",
+            "text": "الف- ۵۹۳ کیلوژول",
             "correct": false
           },
           {
-            "text": "ب- ۵۹/۳",
+            "text": "ب- ۵۹/۳ کیلوژول",
             "correct": false
           },
           {
-            "text": "ج- ۴۶۵",
+            "text": "ج- ۴۶۵ کیلوژول",
             "correct": true
           },
           {
-            "text": "د- ۴۶۵۰",
+            "text": "د- ۴۶۵۰ کیلوژول",
             "correct": false
           }
         ],
