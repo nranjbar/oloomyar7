@@ -35,8 +35,10 @@ def decode_original(doc,xref,smask):
     return Image.frombytes('RGBA'if pix.alpha else'RGB',[pix.width,pix.height],pix.samples).convert('RGBA')
 
 class OriginalFigures:
-    def __init__(self):
+    def __init__(self,preserve_existing=False):
         self.doc=fitz.open(ASSETS/'source/workbook.pdf');self.records={}
+        if preserve_existing:
+            self.records={e['asset']:e for e in json.loads((ROOT/'qa/source/native-scientific-extractions.json').read_text())}
         self.dimensions=json.loads((ASSETS/'content/image-dimensions.json').read_text())
     def extract(self,cid,spec,suffix=''):
         page,x0,y0=spec

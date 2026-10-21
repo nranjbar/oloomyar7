@@ -18,13 +18,13 @@ for kind,relative in [('debug','app/build/outputs/apk/debug/app-debug.apk'),('re
         qs=[q for c in range(1,16)for q in json.loads(archive.read(prefix+f'content/chapter{c}.json'))]
         assert len(qs)==317
         assert all(q['answerVisual'].startswith('pdf:answers')for q in qs)
-        native=[q for q in qs if q['relatedChapter']<=10]
-        assert len(native)==232 and all(q['nativeQuestion'] and q['nativeAnswer']for q in native)
+        native=qs
+        assert len(native)==317 and all(q['nativeQuestion'] and q['nativeAnswer']for q in native)
         assert not any(b.get('asset')==q['sourceQuestionVisual']for q in native for b in q['nativeQuestion'])
         assert not any(b['type']in['input','cloze','barChart','reaction']for q in native for b in q['nativeAnswer'])
         reference_figures=[(q['canonicalId'],b['asset'])for q in native for b in q['nativeAnswer']if b['type']=='figure']
         assert reference_figures==[('g7_ch10_q13','pdf:answers10.pdf#2,37.35,464.6,197.05,629.61')]
-        # The owner supplied 30 additional lossless scientific illustrations.
+        # The owner supplied 42 additional lossless scientific illustrations.
         # Keep their original pixels; the former screenshot-only budget no longer
         # describes the approved asset set.
         assert path.stat().st_size<67_000_000,'Review output exceeds the approved lossless-illustration budget'

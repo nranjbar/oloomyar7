@@ -1,8 +1,8 @@
 {
   "status": "PASS",
   "edition": 1405,
-  "nativeQuestions": 232,
-  "nativeAnswers": 232,
+  "nativeQuestions": 317,
+  "nativeAnswers": 317,
   "chapterCounts": [
     8,
     20,
@@ -13,11 +13,16 @@
     34,
     26,
     18,
-    29
+    29,
+    13,
+    20,
+    17,
+    15,
+    20
   ],
-  "nativeTables": 10,
+  "nativeTables": 15,
   "nativeMathBlocks": 20,
-  "inlinePrintedBlanks": 326,
+  "inlinePrintedBlanks": 511,
   "standaloneScientificFigures": [
     {
       "question": "g7_ch01_q07",
@@ -406,12 +411,122 @@
     {
       "question": "g7_ch10_mcq03",
       "asset": "native_1405_g7_ch10_mcq03.webp"
+    },
+    {
+      "question": "g7_ch11_q03",
+      "asset": "pdf:workbook.pdf#45,37.7,396.3,304.62,455.7"
+    },
+    {
+      "question": "g7_ch11_q04",
+      "asset": "owner_20261021_g7_ch11_q04_question.webp"
+    },
+    {
+      "question": "g7_ch11_q05",
+      "asset": "pdf:workbook.pdf#46,47,35,246,150"
+    },
+    {
+      "question": "g7_ch11_q06",
+      "asset": "owner_20261021_g7_ch11_q06_question.webp"
+    },
+    {
+      "question": "g7_ch11_q07",
+      "asset": "pdf:native_diagrams_11_15.pdf#1,0,0,266.8800048828125,163.0"
+    },
+    {
+      "question": "g7_ch11_q11",
+      "asset": "pdf:workbook.pdf#47,34,410,431,500"
+    },
+    {
+      "question": "g7_ch11_q12",
+      "asset": "owner_20261021_g7_ch11_q12_question.webp"
+    },
+    {
+      "question": "g7_ch12_q18",
+      "asset": "pdf:native_diagrams_11_15.pdf#2,0,0,193.0,128.0"
+    },
+    {
+      "question": "g7_ch12_q19",
+      "asset": "pdf:workbook.pdf#50,31,553,208,678"
+    },
+    {
+      "question": "g7_ch13_q02",
+      "asset": "owner_20261021_g7_ch13_q02_question.webp"
+    },
+    {
+      "question": "g7_ch13_q03",
+      "asset": "owner_20261021_g7_ch13_q03_question.webp"
+    },
+    {
+      "question": "g7_ch13_q05",
+      "asset": "pdf:workbook.pdf#52,36,174,246,328"
+    },
+    {
+      "question": "g7_ch13_q06",
+      "asset": "pdf:workbook.pdf#52,36,358,265,427"
+    },
+    {
+      "question": "g7_ch13_q07",
+      "asset": "pdf:workbook.pdf#52,31.5,441.77,125.75,527.92"
+    },
+    {
+      "question": "g7_ch13_q08",
+      "asset": "pdf:workbook.pdf#52,32,531,230,653"
+    },
+    {
+      "question": "g7_ch13_mcq01",
+      "asset": "owner_20261021_g7_ch13_mcq01_question.webp"
+    },
+    {
+      "question": "g7_ch13_mcq03",
+      "asset": "owner_20261021_g7_ch13_mcq03_question.webp"
+    },
+    {
+      "question": "g7_ch14_q02",
+      "asset": "pdf:native_diagrams_11_15.pdf#3,0,0,197.6999969482422,192.17999267578125"
+    },
+    {
+      "question": "g7_ch14_q04",
+      "asset": "native_1405_g7_ch14_q04.webp"
+    },
+    {
+      "question": "g7_ch14_q07",
+      "asset": "owner_20261021_g7_ch14_q07_question.webp"
+    },
+    {
+      "question": "g7_ch14_q08",
+      "asset": "pdf:workbook.pdf#55,35.65,673.13,102,772.35"
+    },
+    {
+      "question": "g7_ch14_q09",
+      "asset": "owner_20261021_g7_ch14_q09_question.webp"
+    },
+    {
+      "question": "g7_ch15_q02",
+      "asset": "pdf:native_diagrams_11_15.pdf#4,0,0,210.0,248.0"
+    },
+    {
+      "question": "g7_ch15_q06",
+      "asset": "native_1405_g7_ch15_q06.webp"
+    },
+    {
+      "question": "g7_ch15_q08",
+      "asset": "owner_20261021_g7_ch15_q08_question.webp"
+    },
+    {
+      "question": "g7_ch15_q10",
+      "asset": "owner_20261021_g7_ch15_q10_question.webp"
+    },
+    {
+      "question": "g7_ch15_q12",
+      "asset": "owner_20261021_g7_ch15_q12_question.webp"
     }
   ],
   "fullQuestionOrKeyScreenshots": 0,
-  "originalEmbeddedFiguresPixelIdentical": 17,
+  "originalEmbeddedFiguresPixelIdentical": 19,
   "originalQuestionAndKeyFieldsUnchanged": true,
   "reusableSelectionBanks": true,
-  "chaptersElevenToFifteenDataUnchanged": true,
-  "sourceReview": "All workbook pages 2–44 and chapter answer PDFs 01–10 visually reviewed; practice revisions and printed-key conflicts are separately recorded."
+  "firstTenNativeLayoutsUnchanged": true,
+  "isolatedBiologyDiagramPages": 4,
+  "derivedDiagramEmbeddedImagesPixelIdentical": 6,
+  "sourceReview": "All workbook pages 2–59 and chapter answer PDFs 01–15 visually reviewed; practice revisions and printed-key conflicts are separately recorded."
 }

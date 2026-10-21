@@ -57,7 +57,7 @@ fun AuditedWorkbookApp(
     var confirmExit by remember { mutableStateOf(false) }
     var handledInitial by rememberSaveable { mutableStateOf(false) }
     var questionSearch by rememberSaveable(part) { mutableStateOf("") }
-    val refreshedChapter = !conceptual && (questions.firstOrNull()?.relatedChapter ?: 0) in 1..10
+    val refreshedChapter = !conceptual && (questions.firstOrNull()?.relatedChapter ?: 0) in 1..15
     val parts = if (conceptual) {
         listOf("مفهومی")
     } else {

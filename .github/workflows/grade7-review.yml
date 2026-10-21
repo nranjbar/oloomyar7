@@ -42,12 +42,12 @@ jobs:
       - name: Build the previous signed review for real update verification
         run: |
           GRADE7_BASELINE_PROJECT="$RUNNER_TEMP/grade7-upgrade-baseline"
-          git worktree add --detach "$GRADE7_BASELINE_PROJECT" 9bf62ff782da876ad1c33c038210de8cb63c560d
+          git worktree add --detach "$GRADE7_BASELINE_PROJECT" 6aa0e4e3e2882f10cb23a8b03a5ccfac5cdaae87
           cp local.properties "$GRADE7_BASELINE_PROJECT/local.properties"
           chmod +x "$GRADE7_BASELINE_PROJECT/gradlew"
           "$GRADE7_BASELINE_PROJECT/gradlew" -p "$GRADE7_BASELINE_PROJECT" --no-daemon :app:assembleDebug
           mkdir -p app/build/upgrade
-          cp "$GRADE7_BASELINE_PROJECT/app/build/outputs/apk/debug/app-debug.apk" app/build/upgrade/grade7_0.7.0.apk
+          cp "$GRADE7_BASELINE_PROJECT/app/build/outputs/apk/debug/app-debug.apk" app/build/upgrade/grade7_0.8.0.apk
       - name: Upload installable Grade 7 APK
         uses: actions/upload-artifact@v4
         with:
@@ -58,7 +58,7 @@ jobs:
       - name: Upload unsigned release bundle for production signing
         uses: actions/upload-artifact@v4
         with:
-          name: OloomYar7-0.8-Unsigned-AAB
+          name: OloomYar7-0.9-Unsigned-AAB
           path: app/build/outputs/bundle/release/app-release.aab
           if-no-files-found: error
       - name: Enable KVM

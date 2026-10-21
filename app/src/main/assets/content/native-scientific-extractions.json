@@ -310,5 +310,41 @@
     "height": 182,
     "decodedRgbaSha256": "8ca7810f8d4198c843ca9f99a005a848d321beef3e6ddfc7fde15bea97f8e1ac",
     "webpSha256": "3731635bdacf587df1e6db35e1b1011e9992785d635c30b7cd5cf442f40868d4"
+  },
+  {
+    "question": "g7_ch14_q04",
+    "asset": "native_1405_g7_ch14_q04.webp",
+    "pdf": "workbook.pdf",
+    "page": 55,
+    "xref": 314,
+    "smask": 0,
+    "sourceBox": [
+      23.100000381469727,
+      64.29995727539062,
+      132.75,
+      256.449951171875
+    ],
+    "width": 370,
+    "height": 560,
+    "decodedRgbaSha256": "e360c18b908785e0697d9c379129f9c66a31388b30ca1981c05818e933f72023",
+    "webpSha256": "c5bc129f91a5b747c4fb56e7d4eb475c78835de29cdc48c547f87bfbc413eedc"
+  },
+  {
+    "question": "g7_ch15_q06",
+    "asset": "native_1405_g7_ch15_q06.webp",
+    "pdf": "workbook.pdf",
+    "page": 58,
+    "xref": 326,
+    "smask": 0,
+    "sourceBox": [
+      42.0,
+      108.01995849609375,
+      103.5,
+      226.51995849609375
+    ],
+    "width": 177,
+    "height": 315,
+    "decodedRgbaSha256": "0805a211207b71d3964b10191b8a20df71694fdc521fc2ecdf4928b0b94cd0fa",
+    "webpSha256": "563bf465bdeb15511222889493413d36769a18764d3aa5e37747a72a03c5d9d3"
   }
 ]

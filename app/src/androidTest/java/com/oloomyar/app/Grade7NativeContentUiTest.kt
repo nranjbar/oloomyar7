@@ -90,18 +90,17 @@ class Grade7NativeContentUiTest {
         val bitmap=checkNotNull(InstrumentationRegistry.getInstrumentation().uiAutomation.takeScreenshot())
         context.contentResolver.openOutputStream(uri)!!.use { bitmap.compress(Bitmap.CompressFormat.PNG,100,it) };bitmap.recycle()
     }
-    @Test fun all232QuestionsAndKeysHaveNativeContentAndNoPageScreenshotFallback() {
-        val chapters=catalog.chapters.take(10)
-        assertEquals(listOf(8,20,31,23,22,21,34,26,18,29),chapters.map { it.questions.size })
+    @Test fun all317QuestionsAndKeysHaveNativeContentAndNoPageScreenshotFallback() {
+        val chapters=catalog.chapters
+        assertEquals(listOf(8,20,31,23,22,21,34,26,18,29,13,20,17,15,20),chapters.map { it.questions.size })
         chapters.flatMap { it.questions }.forEach { q ->
             assertTrue(q.id,q.nativeQuestion.isNotEmpty());assertTrue(q.id,q.nativeAnswer.isNotEmpty())
             assertTrue(q.id,q.nativeQuestion.none { it.asset==q.sourceQuestionVisual || it.asset==q.answerVisual })
             assertTrue(q.id,q.nativeAnswer.all { it.type in setOf("text","math","table","figure") })
         }
-        assertTrue(catalog.chapters.drop(10).flatMap { it.questions }.all { it.nativeQuestion.isEmpty() })
     }
-    @Test fun everyFirstTenQuestionRendersOnAndroidIncludingAllTableAndReactionSchemas() {
-        val questions=catalog.chapters.take(10).flatMap { it.questions }
+    @Test fun everyQuestionRendersOnAndroidIncludingAllFifteenChapterSchemas() {
+        val questions=catalog.chapters.flatMap { it.questions }
         val current=mutableStateOf(questions.first())
         compose.setContent {
             OloomYarTheme {
@@ -248,8 +247,8 @@ class Grade7NativeContentUiTest {
         return state
     }
     private data class AuditFrame(val q:ChapterQuestion,val answer:Boolean=false,val width:Int=320,val font:Float=1f)
-    @Test fun all232FilledQuestionsAndAnswersHaveNoOverlappingBlanksOrClippedTablesAtPhoneWidths() {
-        val questions=catalog.chapters.take(10).flatMap { it.questions }
+    @Test fun all317FilledQuestionsAndAnswersHaveNoOverlappingBlanksOrClippedTablesAtPhoneWidths() {
+        val questions=catalog.chapters.flatMap { it.questions }
         val current=mutableStateOf(AuditFrame(questions.first()))
         compose.setContent {
             val frame=current.value
@@ -325,7 +324,7 @@ class Grade7NativeContentUiTest {
                             assertFalse("${q.id} $width/$font clips text ${input.text}; paintBox=${layout.size}; measured=${painted.size}; overflow=${painted.didOverflowWidth}/${painted.didOverflowHeight}; lines=${painted.lineCount}",painted.hasVisualOverflow)
                         }
                     }
-                    if(width==320 && font==1f && !answer && q.canonicalForAudit() in setOf("g7_ch02_q02","g7_ch02_q15","g7_ch03_q17","g7_ch03_q21","g7_ch05_q02","g7_ch06_q06","g7_ch07_q19","g7_ch08_q12","g7_ch08_q18","g7_ch09_q03","g7_ch10_q16")) {
+                    if(width==320 && font==1f && !answer && q.canonicalForAudit() in setOf("g7_ch02_q02","g7_ch02_q15","g7_ch03_q17","g7_ch03_q21","g7_ch05_q02","g7_ch06_q06","g7_ch07_q19","g7_ch08_q12","g7_ch08_q18","g7_ch09_q03","g7_ch10_q16","g7_ch11_q06","g7_ch12_q17","g7_ch13_mcq03","g7_ch14_q10","g7_ch15_q02","g7_ch15_q12")) {
                         if(q.canonicalForAudit()=="g7_ch03_q21") compose.onNodeWithTag("blank-${q.steps.first().id}-0").performScrollTo()
                         capture("layout-${q.canonicalForAudit()}")
                     }
@@ -338,7 +337,7 @@ class Grade7NativeContentUiTest {
             }
         }
         assertTrue("Real clipping negative controls must run",clippingOracleChecked)
-        assertEquals(1392,report.length())
+        assertEquals(1902,report.length())
         val values=ContentValues().apply {
             put(MediaStore.Downloads.DISPLAY_NAME,"native-layout-audit.json")
             put(MediaStore.Downloads.MIME_TYPE,"application/json")
@@ -491,7 +490,7 @@ class Grade7NativeContentUiTest {
 
     @Test fun newEmbeddedScientificFiguresKeepEveryDecodedSourcePixelOnAndroid() {
         val records=context.assets.open("content/native-scientific-extractions.json").bufferedReader().use { JSONArray(it.readText()) }
-        assertEquals(17,records.length())
+        assertEquals(19,records.length())
         repeat(records.length()) { index ->
             val record=records.getJSONObject(index)
             val bitmap=checkNotNull(SourceBitmap.load(context,record.getString("asset")))
@@ -564,9 +563,9 @@ class Grade7NativeContentUiTest {
         }
         return digest.digest().joinToString("") { "%02x".format(it.toInt() and 255) }
     }
-    @Test fun all47OwnerScientificIllustrationsRetainTheirOriginalPixelsOnAndroid() {
+    @Test fun all59OwnerScientificIllustrationsRetainTheirOriginalPixelsOnAndroid() {
         val rows=context.assets.open("content/owner-scientific-art.json").bufferedReader().use { JSONObject(it.readText()).getJSONArray("scientific") }
-        assertEquals(47,rows.length())
+        assertEquals(59,rows.length())
         repeat(rows.length()) { index ->
             val row=rows.getJSONObject(index);val asset=row.getString("asset")
             val bitmap=checkNotNull(SourceBitmap.load(context,asset)) { asset }
@@ -607,6 +606,44 @@ class Grade7NativeContentUiTest {
         compose.waitUntil(10000) { compose.onAllNodesWithTag(tag).fetchSemanticsNodes().singleOrNull()?.config?.contains(SemanticsProperties.Disabled)==false }
         compose.onNodeWithTag(tag).assertIsEnabled()
         capture("v08-supplied-hinted-answer")
+    }
+
+    @Test fun pendingDentalPrintKeyHasASeparateScientificTaskAndOldOptionCannotUnlockIt() {
+        val q=catalog.chapters[12].questions.first { it.section=="چهارگزینه‌ای" && it.sourceNumber==3 }
+        val s=q.steps.single()
+        assertEquals(StepKind.MATCH,s.kind);assertEquals(listOf("آسیا","پیش","نیش"),s.pairs.map { it.right })
+        assertEquals("ج",q.nativeAnswer.single().text);assertFalse(q.practiceUsesPrintedKey)
+        assertTrue(q.sourceReviewNote!!.contains("تأیید مؤلف"))
+        val old=QuestionPractice(answers=mapOf(s.id to listOf("2")),checked=mapOf(s.id to listOf("2")),
+            incorrectSubmissions=listOf(listOf(listOf("0")),listOf(listOf("1"))),shownHints=2,revealed=true,shuffleSeed=913)
+        val migrated=QuestionDraftCodec.decode(QuestionDraftCodec.encode(old),q)
+        assertEquals(913,migrated.shuffleSeed);assertEquals(List(3){""},migrated.values(s))
+        assertFalse(migrated.canReveal(q));assertFalse(migrated.revealed);assertEquals(0,migrated.shownHints)
+        open(q,1.5f)
+        select(s,0,"آسیا");select(s,1,"پیش")
+        compose.onNodeWithText("بررسی پاسخ").assertIsNotEnabled()
+        select(s,2,"نیش")
+        compose.onNodeWithText("بررسی پاسخ").assertIsEnabled().performClick()
+        compose.onNodeWithTag("native-reference-answer").assertDoesNotExist()
+        compose.onNodeWithTag("reveal-answer").assertIsEnabled().performClick()
+        compose.onNodeWithTag("native-reference-answer").assertExists()
+        compose.onNodeWithText(workbookBidi("ج")).performScrollTo().assertIsDisplayed()
+        capture("v09-dental-literal-key-and-science")
+    }
+
+    @Test fun oldPrintedBiologyClaimsAreNotPromotedToTheReviewedScientificAnswers() {
+        for((q,row,obsolete) in listOf(
+            Triple(question(11,3),3,"غشا، هسته و میان یاخته"),
+            Triple(question(12,10),0,"نرسیدن بعضی آمینو اسیدهای ضروری و کمبود پروتئین"),
+            Triple(question(13,3),1,"لولهٔ انسان بزرگ‌تر و پیچیده‌تر، با باریک روده و فراخ روده؛ پرنده یک روده دارد")
+        )) {
+            val s=q.steps.single();val values=s.pairs.map { it.right }.toMutableList().apply { this[row]=obsolete }
+            val old=QuestionPractice(answers=mapOf(s.id to values),checked=mapOf(s.id to values),revealed=true,shuffleSeed=914)
+            val restored=QuestionDraftCodec.decode(QuestionDraftCodec.encode(old),q)
+            assertEquals(obsolete,restored.values(s)[row]);assertFalse(restored.correct(q));assertFalse(restored.revealed)
+            assertEquals(914,restored.shuffleSeed);assertFalse(q.practiceUsesPrintedKey)
+            assertTrue(QuestionPractice().change(s,s.pairs.map { it.right }).submit(q).correct(q))
+        }
     }
 
 }

@@ -25,11 +25,25 @@ object QuestionDraftCodec {
             revealed = current && o.optBoolean("revealed"),
             shuffleSeed = if (o.has("shuffleSeed")) o.getInt("shuffleSeed") else kotlin.random.Random.nextInt()
         ).let { migrateChoiceLabels(it, question) }
+            .let { migrateDentalScienceControls(it, question) }
             .let { migrateTenChapterControls(it, question) }
             .let { migrateInstrumentLabel(it, question) }
             .let { migrateAlloyCells(it, question) }
             .let { if (it.revealed && !it.canReveal(question)) it.copy(revealed = false) else it }
     }.getOrElse { QuestionPractice() }
+
+    /** The pending source MCQ key is retained; its separate science exercise
+     * now checks three tooth functions. A checked option index cannot count as
+     * three answers or carry its old reveal/hint authorization into that task.
+     */
+    private fun migrateDentalScienceControls(state: QuestionPractice, question: ChapterQuestion?): QuestionPractice {
+        if (question?.relatedChapter != 13 || question.sourceNumber != 3 || question.section != "چهارگزینه‌ای") return state
+        val step=question.steps.singleOrNull() ?: return state
+        val previous=state.answers[step.id] ?: state.checked[step.id] ?: return state
+        if (previous.size != 1 || previous.single().toIntOrNull()?.let { it in 0..3 } != true) return state
+        return state.copy(answers=state.answers+(step.id to List(3){""}),checked=state.checked-step.id,
+            incorrectSubmissions=emptyList(),shownHints=0,revealed=false)
+    }
 
     /** Apply the same label migration to drafts, checks and failed-attempt fingerprints.
      * This preserves locks/hints without counting a wording change as a new attempt.

@@ -170,13 +170,13 @@
   "isolatedSourceAnswers": 317,
   "scientificWebpAssets": 23,
   "interactionKinds": {
-    "match": 194,
+    "match": 195,
     "multi": 40,
-    "single": 79,
+    "single": 78,
     "order": 18,
     "classify": 3
   },
-  "packagedAssetBytes": 42836681,
+  "packagedAssetBytes": 49337114,
   "contentRequiringAuthorConfirmation": [
     "g7_ch13_mcq03"
   ],
@@ -184,7 +184,12 @@
     "g7_ch07_q14",
     "g7_ch09_q15",
     "g7_ch10_q21",
-    "g7_ch10_mcq04"
+    "g7_ch10_mcq04",
+    "g7_ch11_q03",
+    "g7_ch12_q08",
+    "g7_ch12_q10",
+    "g7_ch13_q03",
+    "g7_ch13_mcq03"
   ],
   "printedUnitReviewNotes": [
     "g7_ch08_mcq03"

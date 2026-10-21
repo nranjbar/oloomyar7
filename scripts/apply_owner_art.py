@@ -5,7 +5,7 @@ ROOT=Path(__file__).resolve().parents[1];ASSETS=ROOT/'app/src/main/assets'
 
 def write():
     rows=json.loads((ROOT/'qa/source/owner-art-2026-10-21.json').read_text())['scientific']
-    for ch in range(1,11):
+    for ch in range(1,16):
         path=ASSETS/f'content/chapter{ch}.json';qs=json.loads(path.read_text())
         for q in qs:
             entries=[r for r in rows if r['question']==q['canonicalId']]

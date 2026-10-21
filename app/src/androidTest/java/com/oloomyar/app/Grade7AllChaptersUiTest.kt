@@ -90,11 +90,12 @@ class Grade7AllChaptersUiTest {
             compose.onNodeWithContentDescription("جلد فصل 15").assertExists()
             capture("grade7-15-supplied-cover")
             compose.onNodeWithTag("chapter-15").performClick()
-            compose.onAllNodesWithText("ورود به این بخش").onFirst().performClick()
-            compose.onNode(hasScrollAction()).performScrollToNode(hasText("سؤال ۱ •",substring=true))
-            compose.onNodeWithText("سؤال ۱ •",substring=true).performClick()
+            compose.onNodeWithTag("chapter-study-cover").assertExists()
+            capture("v09-chapter-15-study-cover")
+            compose.onNodeWithTag("chapter-study-continue").performScrollTo().performClick()
             val q=Grade7Catalog(context).chapters.last().questions.first()
             compose.onNodeWithTag("blank-${q.steps.single().id}-0").assertExists()
+            compose.onNodeWithTag("native-source-question").assertExists()
             compose.onNodeWithTag("reveal-answer").assertIsNotEnabled()
         }
     }
@@ -117,7 +118,7 @@ class Grade7AllChaptersUiTest {
             compose.onNodeWithTag("reveal-answer").assertIsNotEnabled()
         }
     }
-    @Test fun correctRouteOpensTheOriginalAnswerAndFullWidthZoomWithoutAutoAdvance() {
+    @Test fun correctRouteOpensTheNativeLiteralKeyAndFigureZoomWithoutAutoAdvance() {
         clear(15)
         val chapter=Grade7Catalog(context).chapters.last();val q=chapter.questions.first { it.sourceNumber==8 };val s=q.steps.single()
         val intent=Intent(context,Grade7WorkbookActivity::class.java).putExtra("chapter",15).putExtra("question_id",q.id)
@@ -128,13 +129,17 @@ class Grade7AllChaptersUiTest {
             compose.onNodeWithText("پاسخ کتاب‌کار").assertDoesNotExist()
             assertEquals(q.id,LearningPreferences(context).lastLocation()!!.questionId)
             compose.onNodeWithTag("reveal-answer").performClick()
-            val description="تصویر پاسخ سؤال ۸"
-            compose.waitUntil(20000) { compose.onAllNodesWithContentDescription(description).fetchSemanticsNodes().isNotEmpty() }
-            compose.onNodeWithContentDescription(description).assertIsDisplayed()
+            compose.onNodeWithTag("native-reference-answer").assertExists()
+            compose.onNodeWithText(com.oloomyar.app.ui.workbookBidi(q.nativeAnswer.single().text)).performScrollTo().assertIsDisplayed()
+            compose.onNodeWithContentDescription("تصویر پاسخ سؤال ۸").assertDoesNotExist()
             val result=chapter.progress.snapshot().first { it.id==q.id }
             assertEquals(CompletionKind.INDEPENDENT,result.kind);assertFalse(result.mistake);assertTrue(result.viewedAnswer)
             capture("grade7-15-solved-original-answer")
-            compose.onNodeWithText("مشاهدهٔ کامل و بزرگ‌نمایی پاسخ").performScrollTo().performClick()
+            val figure=q.nativeQuestion.first { it.type=="figure" }.asset!!
+            val figureTag="workbook-image-enlarge-$figure"
+            compose.onNodeWithTag(figureTag).performScrollTo()
+            compose.waitUntil(10000) { compose.onAllNodesWithTag(figureTag).fetchSemanticsNodes().singleOrNull()?.config?.contains(androidx.compose.ui.semantics.SemanticsProperties.Disabled)==false }
+            compose.onNodeWithTag(figureTag).performClick()
             compose.onNodeWithTag("workbook-image-viewer").assertIsDisplayed()
             compose.onNodeWithText("نمایش کامل").assertIsDisplayed()
             compose.onNodeWithText("بستن").performClick()
