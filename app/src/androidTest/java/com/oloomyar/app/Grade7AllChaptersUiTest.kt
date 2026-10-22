@@ -139,6 +139,7 @@ class Grade7AllChaptersUiTest {
             capture("grade7-15-solved-original-answer")
             val figure=q.nativeQuestion.first { it.type=="figure" }.asset!!
             val figureTag="workbook-image-enlarge-$figure"
+            compose.onNodeWithTag("question-body").performScrollToNode(hasTestTag(figureTag))
             compose.onNodeWithTag(figureTag).performScrollTo()
             compose.waitUntil(10000) { compose.onAllNodesWithTag(figureTag).fetchSemanticsNodes().singleOrNull()?.config?.contains(androidx.compose.ui.semantics.SemanticsProperties.Disabled)==false }
             compose.onNodeWithTag(figureTag).performClick()
