@@ -246,7 +246,9 @@
       }
     ],
     "nativeEdition": "1405-visual-transcription-v3",
-    "sourceReviewNote": "در بخش D، باریک‌روده محل اصلی جذب مواد مغذی است؛ با این دقت که همهٔ مواد مستقیماً وارد خون نمی‌شوند و بخشی از چربی‌ها ابتدا وارد رگ‌های لنفی می‌شوند. نام اندام و کلید چاپی تغییر نکرده است."
+    "sourceReviewNote": "در بخش D، باریک‌روده محل اصلی جذب مواد مغذی است؛ با این دقت که همهٔ مواد مستقیماً وارد خون نمی‌شوند و بخشی از چربی‌ها ابتدا وارد رگ‌های لنفی می‌شوند. نام اندام و کلید چاپی تغییر نکرده است.",
+    "answerStudyVisual": "owner_20261022_g7_ch13_q02_answer.webp",
+    "answerStudyCaption": "تصویر آموزشیِ ارسالی، در کنار پاسخ کامل متنی؛ برای خواندن جزئیات روی تصویر بزنید."
   },
   {
     "id": "g7-ch13-main-003-1405",
@@ -328,7 +330,9 @@
     ],
     "nativeEdition": "1405-visual-transcription-v3",
     "practiceUsesPrintedKey": false,
-    "sourceReviewNote": "بخش آخر پاسخ چاپی دقیق نیست: پرندگان نیز رودهٔ باریک و بزرگ دارند. نبودن نام یک بخش در شکل ساده‌شده، نبودن آن اندام را اثبات نمی‌کند. معیار تمرین این تفاوت را لحاظ می‌کند؛ اصل پاسخنامه حفظ شده است."
+    "sourceReviewNote": "بخش آخر پاسخ چاپی دقیق نیست: پرندگان نیز رودهٔ باریک و بزرگ دارند. نبودن نام یک بخش در شکل ساده‌شده، نبودن آن اندام را اثبات نمی‌کند. معیار تمرین این تفاوت را لحاظ می‌کند؛ اصل پاسخنامه حفظ شده است.",
+    "answerStudyVisual": "owner_20261022_g7_ch13_q03_answer.webp",
+    "answerStudyCaption": "تصویر آموزشیِ ارسالی، در کنار پاسخ کامل متنی؛ برای خواندن جزئیات روی تصویر بزنید."
   },
   {
     "id": "g7-ch13-main-004-1405",
@@ -517,7 +521,9 @@
         "text": "الف- از بالا به پایین : مینای دندان – عاج دندان – مغز دندان\nب- باکتری های دهان با مصرف قند هایی که در دهان مانده است ، اسید تولید می کنند که این اسید مینای دندان را حل می کند و دندان پوسیده می شود ."
       }
     ],
-    "nativeEdition": "1405-visual-transcription-v3"
+    "nativeEdition": "1405-visual-transcription-v3",
+    "answerStudyVisual": "owner_20261022_g7_ch13_q05_answer.webp",
+    "answerStudyCaption": "تصویر آموزشیِ ارسالی، در کنار پاسخ کامل متنی؛ برای خواندن جزئیات روی تصویر بزنید."
   },
   {
     "id": "g7-ch13-main-006-1405",
@@ -588,7 +594,9 @@
         "text": "سطح تماس غذا را با روده بیش تر می کنند ، در نتیجه مواد مغذی بیشتر جذب خون می شوند ."
       }
     ],
-    "nativeEdition": "1405-visual-transcription-v3"
+    "nativeEdition": "1405-visual-transcription-v3",
+    "answerStudyVisual": "owner_20261022_g7_ch13_q06_answer.webp",
+    "answerStudyCaption": "تصویر آموزشیِ ارسالی، در کنار پاسخ کامل متنی؛ برای خواندن جزئیات روی تصویر بزنید."
   },
   {
     "id": "g7-ch13-main-007-1405",
@@ -766,7 +774,9 @@
         "text": "۱- معده  ۲- لوزالمعده ( پانکراس )  ۳- کبد ( جگر )  ۴- کیسه صفرا"
       }
     ],
-    "nativeEdition": "1405-visual-transcription-v3"
+    "nativeEdition": "1405-visual-transcription-v3",
+    "answerStudyVisual": "owner_20261022_g7_ch13_q08_answer.webp",
+    "answerStudyCaption": "تصویر آموزشیِ ارسالی، در کنار پاسخ کامل متنی؛ برای خواندن جزئیات روی تصویر بزنید."
   },
   {
     "id": "g7-ch13-main-009-1405",
@@ -1085,7 +1095,8 @@
         "hint2": "غذا باید به لولهٔ گوارش وارد شود؛ وظیفهٔ زبان کوچک و برچاکنای را با محل هر راه تطبیق بده.",
         "id": "g7-ch13-mcq-001-1405-s01",
         "answer": "–ب",
-        "explanation": ""
+        "explanation": "",
+        "preserveOptionOrder": true
       }
     ],
     "grade": 7,
@@ -1125,7 +1136,9 @@
         "text": "ب"
       }
     ],
-    "nativeEdition": "1405-visual-transcription-v3"
+    "nativeEdition": "1405-visual-transcription-v3",
+    "answerStudyVisual": "owner_20261022_g7_ch13_mcq01_answer.webp",
+    "answerStudyCaption": "تصویر آموزشیِ ارسالی، در کنار پاسخ کامل متنی؛ برای خواندن جزئیات روی تصویر بزنید."
   },
   {
     "id": "g7-ch13-mcq-002-1405",
@@ -1162,7 +1175,8 @@
         "hint2": "مسیر عادی غذا از حلق را با لولهٔ تنفسی جدا کن؛ واکنش سرفه به محافظت از همین مسیر مربوط می‌شود.",
         "id": "g7-ch13-mcq-002-1405-s01",
         "answer": "-الف",
-        "explanation": ""
+        "explanation": "",
+        "preserveOptionOrder": true
       }
     ],
     "grade": 7,
@@ -1310,7 +1324,9 @@
       "ج- ۱- آسیا  ۲- نیش  ۳- پیش",
       "د- ۱- آسیا  ۲- پیش  ۳- نیش"
     ],
-    "practiceUsesPrintedKey": false
+    "practiceUsesPrintedKey": false,
+    "answerStudyVisual": "owner_20261022_g7_ch13_mcq03_answer.webp",
+    "answerStudyCaption": "تصویر آموزشیِ ارسالی، در کنار پاسخ کامل متنی؛ برای خواندن جزئیات روی تصویر بزنید."
   },
   {
     "id": "g7-ch13-mcq-004-1405",
@@ -1347,7 +1363,8 @@
         "hint2": "لایهٔ بیرونی تاج را از لایهٔ زیر آن و بخش مرکزی جدا کن؛ اسید ابتدا به سطح در دسترس اثر می‌گذارد.",
         "id": "g7-ch13-mcq-004-1405-s01",
         "answer": "الف",
-        "explanation": ""
+        "explanation": "",
+        "preserveOptionOrder": true
       }
     ],
     "grade": 7,
@@ -1419,7 +1436,8 @@
         "hint2": "نوع خوراک، مقدار خوراک و فعالیت را جدا ارزیابی کن؛ انتخاب تنها یکی، همهٔ راه‌های در اختیار فرد را پوشش نمی‌دهد.",
         "id": "g7-ch13-mcq-005-1405-s01",
         "answer": "د",
-        "explanation": ""
+        "explanation": "",
+        "preserveOptionOrder": true
       }
     ],
     "grade": 7,

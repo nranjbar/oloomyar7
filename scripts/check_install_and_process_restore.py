@@ -22,7 +22,7 @@ def install(path):
     assert path.exists(),path
     output=run('adb','install','-r',str(path));assert 'Success' in output,output
 
-baseline=ROOT/'app/build/upgrade/grade7_0.9.0.apk'
+baseline=ROOT/'app/build/upgrade/grade7_0.10.0.apk'
 current=ROOT/'app/build/outputs/apk/debug/app-debug.apk'
 test_apk=ROOT/'app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk'
 run('adb','uninstall',APP) if 'package:'+APP in run('adb','shell','pm','list','packages',APP).splitlines() else None
@@ -34,15 +34,20 @@ values=['دانش','کنجکاوی','فناوری'];step=q['steps'][0]['id']
 draft=dict(questionPracticeVersion=3,answers={step:values},checked={step:values},incorrectSubmissions=[[values]],shownHints=1,revealed=False,shuffleSeed=7413,scrollIndex=1,scrollOffset=0)
 xml=ET.Element('map')
 ET.SubElement(xml,'string',name='draft_'+q['id']).text=json.dumps(draft,ensure_ascii=False)
-revised=next(x for x in qs if x['sourceNumber']==7 and x['section']=='تمرین‌های اصلی')
-old_science={s['id']:[str(next(i for i,o in enumerate(s['options']) if o['correct']))] for s in revised['steps']}
-ET.SubElement(xml,'string',name='draft_'+revised['id']).text=json.dumps(dict(questionPracticeVersion=3,
-    answers=old_science,checked=old_science,incorrectSubmissions=[],shownHints=0,revealed=True,shuffleSeed=7417),ensure_ascii=False)
-ET.SubElement(xml,'boolean',name='done_'+revised['id'],value='true')
+# The prior 0.10 draft uses the advanced wording replaced by the owner's
+# approved school-level explanation. Completion survives, authorization does not.
+previous_questions=json.loads(subprocess.check_output(['git','show','c4c942100ce0365e9e865e9e254e4a0ef1ad27f3:app/src/main/assets/content/chapter7.json'],cwd=ROOT))
+revised=next(x for x in previous_questions if x['sourceNumber']==14 and x['section']=='تمرین‌های اصلی')
+old_values={s['id']:[p['right']for p in s['pairs']] for s in revised['steps']}
+xml7=ET.Element('map')
+ET.SubElement(xml7,'string',name='draft_'+revised['id']).text=json.dumps(dict(questionPracticeVersion=3,
+    answers=old_values,checked=old_values,incorrectSubmissions=[],shownHints=0,revealed=True,shuffleSeed=7417,contentRevision=1),ensure_ascii=False)
+ET.SubElement(xml7,'boolean',name='done_'+revised['id'],value='true')
 for key,value in [('done_'+legacy['id'],True),('perfect_'+legacy['id'],False),('mistake_'+legacy['id'],True)]:ET.SubElement(xml,'boolean',name=key,value=str(value).lower())
 raw=ET.tostring(xml,encoding='unicode',xml_declaration=True)
 run('adb','shell','run-as',APP,'mkdir','-p','shared_prefs')
 run('adb','shell','run-as',APP,'sh','-c',"'cat > shared_prefs/workbook_1405_grade7_chapter1.xml'",input=raw)
+run('adb','shell','run-as',APP,'sh','-c',"'cat > shared_prefs/workbook_1405_grade7_chapter7.xml'",input=ET.tostring(xml7,encoding='unicode',xml_declaration=True))
 # Installation must replace the APK while retaining the old data directory.
 install(current);install(test_apk)
 test('upgradeKeepsLegacyCompletionSelectionsAndLockedHints')
@@ -56,7 +61,7 @@ pid_after=subprocess.run(['adb','shell','pidof',APP],capture_output=True,text=Tr
 run('adb','shell','am','start','-W','-n',f'{APP}/com.oloomyar.app.MainActivity')
 pid_restored=run('adb','shell','pidof',APP).strip();assert pid_restored and pid_restored != pid_before
 test('restoreCheckpointAfterRealProcessTermination')
-report=dict(status='PASS',oldVersion='0.9.0',newVersion='0.10.0',installReplacement=True,oldCompletionPreserved=True,
+report=dict(status='PASS',oldVersion='0.10.0',newVersion='0.11.0',installReplacement=True,oldCompletionPreserved=True,
     draftSelectionsHintsAndSeedPreserved=True,viewportPreserved=True,answerStayedLocked=True,bookmarksAndDisplaySettingsPreserved=True,
     changedScienceAuthorizationReset=True,pidBefore=pid_before,pidAfterStop=pid_after,pidRestored=pid_restored,tests=4)
 (OUT/'result.json').write_text(json.dumps(report,indent=2)+'\n')

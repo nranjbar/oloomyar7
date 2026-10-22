@@ -66,21 +66,21 @@ class Grade7PersistenceUiTest {
         }
     }
     @Test fun upgradeRetainsCompletionButRequiresFreshAuthorizationForChangedScience() {
-        val questions=Grade7Chapter1Repository(context).questions
-        val q=questions.first { it.sourceNumber==7 && it.section=="تمرین‌های اصلی" }
-        val progress=WorkbookProgress(context,"grade7_chapter1",questions)
+        val chapter=Grade7Catalog(context).chapters[6]
+        val q=chapter.questions.first { it.sourceNumber==14 && it.section=="تمرین‌های اصلی" }
+        val progress=chapter.progress
         assertTrue(progress.done(q.id))
         val old=checkNotNull(progress.draft(q.id))
-        assertEquals(0,JSONObject(old).optInt("contentRevision",0))
+        assertEquals(1,JSONObject(old).optInt("contentRevision",0))
         val fresh=QuestionDraftCodec.decode(old,q)
-        assertEquals(7417,fresh.shuffleSeed);assertEquals(q.practiceRevision,fresh.contentRevision)
+        assertEquals(7417,fresh.shuffleSeed);assertEquals(2,fresh.contentRevision)
         assertTrue(fresh.answers.isEmpty());assertTrue(fresh.checked.isEmpty())
         assertFalse(fresh.revealed);assertFalse(fresh.canReveal(q));assertEquals(0,fresh.shownHints)
-        ActivityScenario.launch<Grade7Chapter1Activity>(Intent(context,Grade7Chapter1Activity::class.java).putExtra("question_id",q.id)).use {
+        ActivityScenario.launch<Grade7WorkbookActivity>(Intent(context,Grade7WorkbookActivity::class.java).putExtra("chapter",7).putExtra("question_id",q.id)).use {
             compose.onNodeWithTag("reveal-answer").assertIsNotEnabled()
             compose.onNodeWithTag("workbook-reference-answer").assertDoesNotExist()
             assertTrue(progress.done(q.id))
-            capture("v10-real-upgrade-scientific-draft-reset")
+            capture("v11-real-upgrade-owner-approved-draft-reset")
         }
     }
     @Test fun restoreCheckpointAfterRealProcessTermination() {

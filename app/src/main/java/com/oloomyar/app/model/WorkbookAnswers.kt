@@ -2,6 +2,10 @@ package com.oloomyar.app.model
 
 /** Pure evaluation shared by practice, exams and regression tests. */
 object WorkbookAnswers {
+    fun optionOrder(step: LearningStep, shuffleSeed: Int): List<Int> =
+        if (step.preserveOptionOrder) step.options.indices.toList()
+        else step.options.indices.shuffled(kotlin.random.Random(shuffleSeed xor step.id.hashCode()))
+
     fun isComplete(step: LearningStep, answers: List<String>): Boolean = when (step.kind) {
         StepKind.SINGLE -> answers.size == 1 && answers[0].toIntOrNull()?.let { it in step.options.indices } == true
         StepKind.MULTI -> answers.size == step.pick && answers.distinct().size == answers.size &&

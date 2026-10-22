@@ -11,8 +11,8 @@ android {
         applicationId = "com.oloomyar.app.grade7"
         minSdk = 23
         targetSdk = 37
-        versionCode = 11
-        versionName = "0.10.0-grade7-1405"
+        versionCode = 12
+        versionName = "0.11.0-grade7-1405"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         buildConfigField("int", "WORKBOOK_GRADE", "7")
     }

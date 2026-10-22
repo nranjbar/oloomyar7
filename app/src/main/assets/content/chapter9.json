@@ -1453,7 +1453,8 @@
         "hint2": "فرایند فتوسنتز انرژی تابش را در پیوندهای مادهٔ آلی ذخیره می‌کند؛ گزینه‌ها را با این ویژگی بسنج.",
         "id": "g7-ch09-mcq-001-1405-s01",
         "answer": "ب",
-        "explanation": ""
+        "explanation": "",
+        "preserveOptionOrder": true
       }
     ],
     "grade": 7,
@@ -1525,7 +1526,8 @@
         "hint2": "سه سوخت حاصل از ذخایر دیرینهٔ جانداران را در یک گروه قرار بده و منبع غالبِ آمار کتاب را از منابع دیگر جدا کن.",
         "id": "g7-ch09-mcq-002-1405-s01",
         "answer": "د",
-        "explanation": ""
+        "explanation": "",
+        "preserveOptionOrder": true
       }
     ],
     "grade": 7,
@@ -1598,7 +1600,8 @@
         "hint2": "پسماند گیاهی یا جانوری در فرایند تولید گاز با سوخت سنگ معدن یا شکافت هسته تفاوت دارد.",
         "id": "g7-ch09-mcq-003-1405-s01",
         "answer": "-ج",
-        "explanation": ""
+        "explanation": "",
+        "preserveOptionOrder": true
       }
     ],
     "grade": 7,

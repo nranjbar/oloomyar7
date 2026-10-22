@@ -35,7 +35,9 @@ data class LearningStep(
     val clozeTemplate: String? = null,
     val allowTokenReuse: Boolean = true,
     /** Earlier practice labels mapped to their clarified equivalents; source keys are untouched. */
-    val choiceAliases: Map<String, String> = emptyMap()
+    val choiceAliases: Map<String, String> = emptyMap(),
+    /** Printed MCQ options keep their original الف، ب، ج، د order in every session. */
+    val preserveOptionOrder: Boolean = false
 )
 
 data class ChapterQuestion(

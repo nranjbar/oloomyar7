@@ -28,7 +28,7 @@ internal fun WorkbookInput(step: LearningStep, answers: List<String>, locked: Bo
                 Text("${workbookFa(step.pick)} گزینه انتخاب کن • ${workbookFa(answers.size)} انتخاب شده", color = Muted)
                 if (answers.size == step.pick && !locked) Text("برای جایگزینی یک گزینه، ابتدا یکی از انتخاب‌ها را لغو کن.", color = Muted)
             }
-            step.options.indices.shuffled(kotlin.random.Random((practice?.shuffleSeed ?: 0) xor step.id.hashCode())).forEach { index ->
+            WorkbookAnswers.optionOrder(step, practice?.shuffleSeed ?: 0).forEach { index ->
                 val option = step.options[index]
                 val selected = index.toString() in answers
                 ChoiceSurface(option.text, selected, !locked, multi = step.kind == StepKind.MULTI,

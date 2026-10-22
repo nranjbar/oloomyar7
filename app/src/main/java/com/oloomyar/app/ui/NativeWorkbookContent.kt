@@ -233,7 +233,7 @@ private fun NativeOptionCell(step: LearningStep, state: QuestionPractice, exam: 
         LazyColumn(Modifier.fillMaxWidth().heightIn(max = 520.dp).padding(20.dp).navigationBarsPadding()
             .testTag("table-choice-sheet-${step.id}"), verticalArrangement = Arrangement.spacedBy(10.dp)) {
             item { Text("انتخاب پاسخ", style = MaterialTheme.typography.titleLarge) }
-            items(step.options.indices.shuffled(Random(state.shuffleSeed xor step.id.hashCode())), key = { it }) { i ->
+            items(WorkbookAnswers.optionOrder(step, state.shuffleSeed), key = { it }) { i ->
                 OutlinedButton(onClick = { if (open) { open = false; onChange(listOf(i.toString())) } },
                     modifier = Modifier.fillMaxWidth().heightIn(min = 56.dp).testTag("table-option-${step.id}-$i")) {
                     WorkbookText(step.options[i].text)

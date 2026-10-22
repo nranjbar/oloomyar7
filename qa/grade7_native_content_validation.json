@@ -29,6 +29,10 @@
       "asset": "g7_ch01_q07.webp"
     },
     {
+      "question": "g7_ch02_q02",
+      "asset": "pdf:workbook.pdf#3,29,343,555,645"
+    },
+    {
       "question": "g7_ch02_q07",
       "asset": "g7_ch02_q07.webp"
     },
@@ -145,6 +149,10 @@
       "asset": "pdf:workbook.pdf#14,28,628,293,698"
     },
     {
+      "question": "g7_ch04_q17",
+      "asset": "pdf:workbook.pdf#15,53,64,566,172"
+    },
+    {
       "question": "g7_ch04_mcq03",
       "asset": "pdf:workbook.pdf#15,63.75,561.01,284.25,650.26"
     },
@@ -153,8 +161,16 @@
       "asset": "pdf:workbook.pdf#15,33,686,282,796"
     },
     {
+      "question": "g7_ch05_q02",
+      "asset": "pdf:workbook.pdf#16,28,366,568,470"
+    },
+    {
       "question": "g7_ch05_q08",
       "asset": "pdf:workbook.pdf#17,52,211,190,373"
+    },
+    {
+      "question": "g7_ch05_q11",
+      "asset": "pdf:workbook.pdf#17,392,563,535,690"
     },
     {
       "question": "g7_ch05_q12",
@@ -279,6 +295,10 @@
     {
       "question": "g7_ch08_q17",
       "asset": "pdf:workbook.pdf#33,45,275,500,378"
+    },
+    {
+      "question": "g7_ch08_q18",
+      "asset": "pdf:workbook.pdf#33,46,449,220,581"
     },
     {
       "question": "g7_ch08_q19",
@@ -514,6 +534,9 @@
   "originalQuestionAndKeyFieldsUnchanged": true,
   "reusableSelectionBanks": true,
   "explicitlyReviewedNativeRevisions": 41,
+  "ownerPresentationRevisionsV11": 6,
+  "originalPrintedTablesBeforeNative": 5,
+  "printedMCQOrder": true,
   "unlistedNativeChanges": 0,
   "isolatedBiologyDiagramPages": 4,
   "derivedDiagramEmbeddedImagesPixelIdentical": 6,

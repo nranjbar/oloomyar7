@@ -1,0 +1,71 @@
+{
+  "sourceWorkbookSha256": "c67f3709bc3134ae50566722257b38f38726d64f4620d7800da71ec8c8800321",
+  "printedTables": [
+    {
+      "question": "g7_ch02_q02",
+      "questionId": "g7-ch02-main-002-1405",
+      "asset": "pdf:workbook.pdf#3,29,343,555,645",
+      "sourcePage": 3,
+      "bounds": [
+        29,
+        343,
+        555,
+        645
+      ],
+      "beforeNativeTable": true
+    },
+    {
+      "question": "g7_ch04_q17",
+      "questionId": "g7-ch04-main-017-1405",
+      "asset": "pdf:workbook.pdf#15,53,64,566,172",
+      "sourcePage": 15,
+      "bounds": [
+        53,
+        64,
+        566,
+        172
+      ],
+      "beforeNativeTable": true
+    },
+    {
+      "question": "g7_ch05_q02",
+      "questionId": "g7-ch05-main-002-1405",
+      "asset": "pdf:workbook.pdf#16,28,366,568,470",
+      "sourcePage": 16,
+      "bounds": [
+        28,
+        366,
+        568,
+        470
+      ],
+      "beforeNativeTable": true
+    },
+    {
+      "question": "g7_ch05_q11",
+      "questionId": "g7-ch05-main-011-1405",
+      "asset": "pdf:workbook.pdf#17,392,563,535,690",
+      "sourcePage": 17,
+      "bounds": [
+        392,
+        563,
+        535,
+        690
+      ],
+      "beforeNativeTable": true
+    },
+    {
+      "question": "g7_ch08_q18",
+      "questionId": "g7-ch08-main-018-1405",
+      "asset": "pdf:workbook.pdf#33,46,449,220,581",
+      "sourcePage": 33,
+      "bounds": [
+        46,
+        449,
+        220,
+        581
+      ],
+      "beforeNativeTable": true
+    }
+  ],
+  "policy": "Five actual printed tables found among the fourteen native question tables. Other native tables adapt prose, comparison lists or figures; no nonexistent printed table is invented."
+}

@@ -227,7 +227,7 @@ internal fun WholeWorkbookQuestion(
                 if (!exam) {
                     Text(when {
                         state.revealed -> "پاسخ کتاب نمایش داده شده؛ برای ادامه دکمهٔ پایین را بزن."
-                        allCorrect -> "همهٔ پاسخ‌ها درست‌اند؛ می‌توانی پاسخ اصلی کتاب را ببینی یا ادامه بدهی."
+                        allCorrect -> "پاسخ درست است؛ پاسخ کامل کتاب‌کار و تصویر آن در ادامه آمده است."
                         !state.complete(question) -> "همهٔ قسمت‌ها را کامل کن؛ انتخاب‌ها پیش از بررسی زرد هستند."
                         !state.canCheck(question) -> "این پاسخ قبلاً بررسی شده؛ یکی از موارد اشتباه را تغییر بده."
                         state.canReveal(question) -> "دوباره تلاش کن یا «دیدن پاسخ» را بزن."
@@ -237,8 +237,9 @@ internal fun WholeWorkbookQuestion(
                 }
             }
             item(key = "reference") {
-                // Both reveal routes share this complete key, review note and owner art.
-                if (!exam && state.revealed && state.canReveal(question)) {
+                // A correct check automatically shows the very same complete reference
+                // body as an authorized manual reveal. Exams never disclose it here.
+                if (!exam && (allCorrect || state.revealed) && state.canReveal(question)) {
                     WorkbookPanel(accent = Green, modifier = Modifier.testTag("workbook-reference-answer")) {
                         WorkbookArtLabel("science_book", "پاسخ کتاب‌کار", color = Green, style = MaterialTheme.typography.titleLarge)
                         WorkbookReferenceContent(question, onImageReady = {
@@ -270,9 +271,12 @@ internal fun WholeWorkbookQuestion(
                             val latest = QuestionDraftCodec.decode(json, question)
                             if (latest.canReveal(question)) {
                                 pendingReferenceScroll = true
-                                update(latest.reveal(question)); progress.recordReveal(question.id, latest.correct(question))
-                                // Only an explicit request to view the key moves the viewport.
-                                // Selection and checking keep the current sentence in place.
+                                if (!latest.correct(question)) {
+                                    update(latest.reveal(question))
+                                }
+                                progress.recordReveal(question.id, latest.correct(question))
+                                // A correct answer is already visible. This button simply
+                                // returns to it without changing the earned perfect score.
                                 // Compose the target first; final alignment waits for actual PDF/image layout.
                                 coroutine.launch { withFrameNanos { }; list.scrollToItem(referenceIndex) }
                             }
@@ -295,6 +299,11 @@ internal fun WholeWorkbookQuestion(
                             val checked = latest.submit(question)
                             update(checked)
                             progress.recordCheck(question, latest, checked)
+                            if (checked.correct(question)) {
+                                progress.recordReveal(question.id, true)
+                                pendingReferenceScroll = true
+                                coroutine.launch { withFrameNanos { }; list.scrollToItem(referenceIndex) }
+                            }
                         }
                     }) { Text(if (exam) "ثبت پاسخ این سؤال" else if (finished) "سؤال بعدی" else "بررسی پاسخ") }
             }

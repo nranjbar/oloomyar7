@@ -244,7 +244,7 @@
       "questionId": "g7-ch07-main-014-1405",
       "sourceQuestion": "pdf:workbook.pdf#26,20,614.27,583.3200073242188,806;27,20,36,583.3200073242188,38.25",
       "sourceAnswer": "pdf:answers07.pdf#2,20,334.79,583.3200073242188,418.27",
-      "nativeSha256": "c9f755e972f83d0d00902121b359e782f0a80f451e82eaa6a2874e0355a93660"
+      "nativeSha256": "d624998bc8c61ac64ef34284afe088d3b2dcbdb51dac2d944a6933e1710bef02"
     },
     {
       "id": "g7_ch07_q15",
@@ -510,7 +510,7 @@
       "questionId": "g7-ch08-main-018-1405",
       "sourceQuestion": "pdf:workbook.pdf#33,20,392.7,583.3200073242188,669.55",
       "sourceAnswer": "pdf:answers08.pdf#2,20,479.77,583.3200073242188,647.76",
-      "nativeSha256": "d6fc1c5a5885ac0a25c68de4a039e9da4eb3094225b880664120c3d2d2da5013"
+      "nativeSha256": "c8a0ab554514691a8d800a4ba9e4ec6121860b7ed9025501776dd8478c97156a"
     },
     {
       "id": "g7_ch08_q19",

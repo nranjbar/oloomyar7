@@ -107,12 +107,12 @@ class Grade7WorkbookUiTest {
         compose.onNodeWithText(workbookBidi(q.nativeAnswer.single().text)).performScrollTo().assertIsDisplayed()
         compose.onNodeWithText("پاسخ کتاب‌کار").assertExists();capture("grade7-04-original-answer")
     }
-    @Test fun correctSubmissionUnlocksCanonicalAnswerAndWaitsForExplicitNext() {
+    @Test fun correctSubmissionShowsCanonicalAnswerAutomaticallyAndWaitsForExplicitNext() {
         val q=Grade7Chapter1Repository(context).questions.first();val s=q.steps.single();open(q)
         listOf("دانش","آزمایش","فناوری").forEachIndexed { i,v->selectBlank(s,i,v) };check()
         compose.onNodeWithText("سؤال بعدی").assertIsDisplayed()
         compose.onNodeWithTag("reveal-answer").assertIsEnabled()
-        compose.onNodeWithText("پاسخ کتاب‌کار").assertDoesNotExist()
+        compose.onNodeWithText("پاسخ کتاب‌کار").assertExists()
         compose.onNodeWithText("تمرین کامل شد").assertDoesNotExist()
         compose.onNodeWithText("سؤال بعدی").performClick()
         assertTrue(WorkbookProgress(context,"g7_ui",listOf(q)).done(q.id))

@@ -323,7 +323,7 @@ class Grade7NativeContentUiTest {
         val questions=(catalog.chapters.flatMap { it.questions }.filter { it.answerStudyVisual!=null }+
             listOf(question(5,2),question(14,10),question(15,8),
             catalog.chapters[12].questions.first { it.section=="چهارگزینه‌ای" && it.sourceNumber==3 })).distinctBy { it.id }
-        assertEquals(75,questions.size)
+        assertEquals(99,questions.size)
         val current=mutableStateOf<Pair<ChapterQuestion,Boolean>?>(null)
         compose.setContent {
             val frame=current.value
@@ -348,9 +348,13 @@ class Grade7NativeContentUiTest {
                     current.value=q to hinted
                 }
                 compose.onNodeWithTag("workbook-reference-answer").assertDoesNotExist()
-                if(!hinted)compose.onNodeWithText("بررسی پاسخ").assertIsEnabled().performClick()
-                compose.onNodeWithTag("workbook-reference-answer").assertDoesNotExist()
-                compose.onNodeWithTag("reveal-answer").assertIsEnabled().performClick()
+                if(!hinted) {
+                    compose.onNodeWithText("بررسی پاسخ").assertIsEnabled().performClick()
+                    // Correct submissions show the full text and illustration automatically.
+                } else {
+                    compose.onNodeWithTag("workbook-reference-answer").assertDoesNotExist()
+                    compose.onNodeWithTag("reveal-answer").assertIsEnabled().performClick()
+                }
                 compose.onNodeWithTag("workbook-reference-answer").assertExists()
                 compose.waitUntil(10000) {
                     compose.onAllNodes(hasContentDescription("پاسخ کتاب‌کار") and
@@ -391,7 +395,7 @@ class Grade7NativeContentUiTest {
                 snapshots.add(snapshot)
                 if((q.relatedChapter to q.sourceNumber) in setOf(2 to 9,6 to 7,7 to 14,10 to 18)) {
                     if(q.answerStudyVisual!=null)compose.onNodeWithTag("workbook-image-enlarge-${q.answerStudyVisual}").performScrollTo()
-                    capture("v10-reference-${q.relatedChapter}-${q.sourceNumber}-${if(hinted)"hints" else "correct"}")
+                    capture("v11-reference-${q.relatedChapter}-${q.sourceNumber}-${if(hinted)"hints" else "correct"}")
                 }
             }
             assertEquals("${q.id}: routes must show identical complete reference content",snapshots[0],snapshots[1])
@@ -410,6 +414,67 @@ class Grade7NativeContentUiTest {
     private fun figuresForReport(q:ChapterQuestion)=q.nativeAnswer.count { it.type=="figure" }+if(q.answerStudyVisual!=null)1 else 0
 
     private data class AuditFrame(val q:ChapterQuestion,val answer:Boolean=false,val width:Int=320,val font:Float=1f)
+    @Test fun printedMCQOptionsKeepSourceLetterOrderAcrossSeedsSelectionCheckingAndExam() {
+        val questions=catalog.chapters.flatMap { it.questions }.filter { it.section=="چهارگزینه‌ای" && it.steps.single().options.isNotEmpty() }
+        assertTrue(questions.size>40)
+        data class Frame(val q:ChapterQuestion,val seed:Int,val checked:Boolean,val exam:Boolean)
+        val current=mutableStateOf(Frame(questions.first(),1,false,false))
+        compose.setContent {
+            val f=current.value
+            val initial=filled(f.q).copy(shuffleSeed=f.seed)
+            val state=if(f.checked)initial.submit(f.q) else initial
+            OloomYarTheme {
+                Column(Modifier.fillMaxWidth().verticalScroll(rememberScrollState()).testTag("mcq-order-viewport")) {
+                    key(f) { NativeWorkbookContent(f.q,f.q.nativeQuestion,state,f.exam) }
+                }
+            }
+        }
+        questions.forEach { q ->
+            val s=q.steps.single()
+            assertTrue(q.id,s.preserveOptionOrder)
+            assertEquals(listOf("الف","ب","ج","د"),s.options.map { it.text.substringBefore("-") })
+            for((seed,checked,exam)in listOf(Triple(1,false,false),Triple(1405,true,false),Triple(-91,false,true))) {
+                compose.runOnIdle { current.value=Frame(q,seed,checked,exam) }
+                val options=s.options.map { compose.onNodeWithText(workbookBidi(it.text)).fetchSemanticsNode() }
+                assertTrue("${q.id}: source A–D order must remain stable",options.zipWithNext().all { (a,b)->a.positionInRoot.y<b.positionInRoot.y })
+                assertEquals(listOf(0,1,2,3),WorkbookAnswers.optionOrder(s,seed))
+            }
+        }
+    }
+
+    @Test fun everyPrintedTableAppearsCompletelyBeforeItsNativeInteractiveAdaptation() {
+        val source=context.assets.open("content/original-tables.json").bufferedReader().use { JSONObject(it.readText()).getJSONArray("printedTables") }
+        assertEquals(5,source.length())
+        val questions=catalog.chapters.flatMap { it.questions }
+        val current=mutableStateOf(questions.first { it.relatedChapter==2 && it.sourceNumber==2 && it.section=="تمرین‌های اصلی" })
+        compose.setContent {
+            val q=current.value
+            OloomYarTheme {
+                Column(Modifier.width(320.dp).verticalScroll(rememberScrollState()).padding(16.dp)) {
+                    key(q.id) { NativeWorkbookContent(q,q.nativeQuestion,filled(q)) }
+                }
+            }
+        }
+        repeat(source.length()) { i ->
+            val row=source.getJSONObject(i)
+            val q=questions.first { it.id==row.getString("questionId") }
+            val asset=row.getString("asset")
+            compose.runOnIdle { current.value=q }
+            val tag="workbook-image-enlarge-$asset"
+            compose.waitUntil(10000) { compose.onAllNodesWithTag(tag).fetchSemanticsNodes().singleOrNull()?.config?.contains(SemanticsProperties.Disabled)==false }
+            val image=compose.onNodeWithTag(tag).fetchSemanticsNode()
+            val table=compose.onNodeWithTag("native-source-table").fetchSemanticsNode()
+            assertTrue(q.id,image.boundsInRoot.height>0f)
+            assertTrue("${q.id}: original table must come first",image.positionInRoot.y<table.positionInRoot.y)
+            val bitmap=checkNotNull(SourceBitmap.load(context,asset))
+            assertTrue(q.id,bitmap.width>0 && bitmap.height>0)
+            compose.onNodeWithTag(tag).performScrollTo().performClick()
+            compose.onNodeWithTag("workbook-image-viewer").assertIsDisplayed()
+            capture("v11-original-table-${q.relatedChapter}-${q.sourceNumber}")
+            compose.onNodeWithText("بستن").performClick()
+        }
+    }
+
     @Test fun all317FilledQuestionsAndAnswersHaveNoOverlappingBlanksOrClippedTablesAtPhoneWidths() {
         val questions=catalog.chapters.flatMap { it.questions }
         val current=mutableStateOf(AuditFrame(questions.first()))
@@ -726,9 +791,9 @@ class Grade7NativeContentUiTest {
         }
         return digest.digest().joinToString("") { "%02x".format(it.toInt() and 255) }
     }
-    @Test fun all125OwnerScientificIllustrationsMatchReviewedFullResolutionDecodedPixelsOnAndroid() {
+    @Test fun all151OwnerScientificIllustrationsMatchReviewedFullResolutionDecodedPixelsOnAndroid() {
         val rows=context.assets.open("content/owner-scientific-art.json").bufferedReader().use { JSONObject(it.readText()).getJSONArray("scientific") }
-        assertEquals(125,rows.length())
+        assertEquals(151,rows.length())
         repeat(rows.length()) { index ->
             val row=rows.getJSONObject(index);val asset=row.getString("asset")
             val bitmap=checkNotNull(SourceBitmap.load(context,asset)) { asset }
@@ -753,12 +818,13 @@ class Grade7NativeContentUiTest {
             assertEquals(q.id,current,restored)
         }
     }
-    @Test fun suppliedAnswerArtWaitsForCorrectSubmissionAndExplicitReveal() {
+    @Test fun suppliedAnswerArtAppearsAutomaticallyAfterCorrectCheckAndStillWaitsForExplicitNext() {
         val q=question(2,9);val asset=checkNotNull(q.answerStudyVisual)
         val store=WorkbookProgress(context,"native_ui",listOf(q));store.saveDraft(q.id,QuestionDraftCodec.encode(filled(q).submit(q)))
         open(q)
         val tag="workbook-image-enlarge-$asset"
-        compose.onNodeWithTag(tag).assertDoesNotExist()
+        compose.onNodeWithTag("question-body").performScrollToNode(hasTestTag("workbook-reference-answer"))
+        compose.onNodeWithTag(tag).assertExists()
         compose.onNodeWithTag("question-body").performScrollToNode(hasTestTag("state-art-correct"))
         compose.onNodeWithTag("state-art-correct").assertIsDisplayed()
         compose.onNodeWithTag("reveal-answer").assertIsEnabled().performClick()
@@ -804,9 +870,8 @@ class Grade7NativeContentUiTest {
         compose.onNodeWithText("بررسی پاسخ").assertIsNotEnabled()
         select(s,2,"نیش")
         compose.onNodeWithText("بررسی پاسخ").assertIsEnabled().performClick()
-        compose.onNodeWithTag("native-reference-answer").assertDoesNotExist()
-        compose.onNodeWithTag("reveal-answer").assertIsEnabled().performClick()
         compose.onNodeWithTag("native-reference-answer").assertExists()
+        compose.onNodeWithTag("reveal-answer").assertIsEnabled().performClick()
         compose.onNodeWithText(workbookBidi("ج")).performScrollTo().assertIsDisplayed()
         capture("v09-dental-literal-key-and-science")
     }

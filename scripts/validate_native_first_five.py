@@ -73,6 +73,8 @@ for ch in range(1,16):
                 assert not q['practiceUsesPrintedKey'] and 'تأیید مؤلف'in q['sourceReviewNote']
             else:
                 assert all(re.match(r'^(الف|ب|ج|د)- .+',o['text'])for o in q['steps'][0]['options'])
+                assert q['steps'][0].get('preserveOptionOrder'),cid
+                assert [o['text'].split('-')[0]for o in q['steps'][0]['options']]==['الف','ب','ج','د'],cid
                 practice_key=next(o['text'].split('-')[0]for o in q['steps'][0]['options']if o['correct'])
                 assert practice_key==('ج' if cid=='g7_ch10_mcq04' else key)
             assert q['nativeAnswer']==[dict(type='text',text=key)]
@@ -121,11 +123,13 @@ native_hash=lambda q:hashlib.sha256(json.dumps(dict(question=q['nativeQuestion']
 # Retain the old layout guard. Only individually listed, exact before/after
 # revisions authorized by the owner's new review request may differ.
 seen=set()
+v11=json.loads((ROOT/'qa/source/native-editorial-revisions-v11.json').read_text())
 for ch in range(1,16):
     path=f'app/src/main/assets/content/chapter{ch}.json'
     reference='3b076647f1eb50ced51fc69f792943fe0f394fb0' if ch<=10 else editorial['baseline']
     previous=json.loads(subprocess.check_output(['git','show',reference+':'+path],cwd=ROOT))
-    for q,old in zip(json.loads((ROOT/path).read_text()),previous):
+    retained=json.loads(subprocess.check_output(['git','show',v11['baseline']+':'+path],cwd=ROOT))
+    for q,old in zip(retained,previous):
         cid=q['canonicalId']
         if q['nativeQuestion']!=old['nativeQuestion'] or q['nativeAnswer']!=old['nativeAnswer']:
             assert cid in approved,(cid,'unlisted native revision')
@@ -134,9 +138,29 @@ for ch in range(1,16):
             assert approved[cid]['reasons'],cid
             seen.add(cid)
 assert seen==set(approved)
+latest={r['id']:r for r in v11['revisions']};seen_latest=set()
+for ch in range(1,16):
+    path=f'app/src/main/assets/content/chapter{ch}.json'
+    old={q['canonicalId']:q for q in json.loads(subprocess.check_output(['git','show',v11['baseline']+':'+path],cwd=ROOT))}
+    for q in json.loads((ROOT/path).read_text()):
+        cid=q['canonicalId']
+        if native_hash(q)!=native_hash(old[cid]):
+            assert cid in latest,(cid,'unlisted v11 native revision')
+            assert native_hash(old[cid])==latest[cid]['beforeNativeSha256']
+            assert native_hash(q)==latest[cid]['afterNativeSha256'] and latest[cid]['reasons']
+            seen_latest.add(cid)
+assert seen_latest==set(latest)
+all_questions={q['canonicalId']:q for ch in range(1,16)for q in json.loads((ASSETS/f'content/chapter{ch}.json').read_text())}
+original_tables=json.loads((ROOT/'qa/source/original-tables-v11.json').read_text())
+assert len(original_tables['printedTables'])==5
+assert original_tables['sourceWorkbookSha256']==hashlib.sha256((ASSETS/'source/workbook.pdf').read_bytes()).hexdigest()
+for r in original_tables['printedTables']:
+    blocks=all_questions[r['question']]['nativeQuestion']
+    i=next(i for i,b in enumerate(blocks)if b['type']=='figure'and b.get('text')=='جدول اصلی کتاب‌کار')
+    assert blocks[i]['asset']==r['asset'] and blocks[i+1]['type']=='table'
 report=dict(status='PASS',edition=1405,nativeQuestions=sum(counts),nativeAnswers=sum(counts),chapterCounts=counts,
     nativeTables=tables,nativeMathBlocks=maths,inlinePrintedBlanks=slots,standaloneScientificFigures=figures,
-    fullQuestionOrKeyScreenshots=0,originalEmbeddedFiguresPixelIdentical=len(extracts),originalQuestionAndKeyFieldsUnchanged=True,reusableSelectionBanks=True,explicitlyReviewedNativeRevisions=len(approved),unlistedNativeChanges=0,
+    fullQuestionOrKeyScreenshots=0,originalEmbeddedFiguresPixelIdentical=len(extracts),originalQuestionAndKeyFieldsUnchanged=True,reusableSelectionBanks=True,explicitlyReviewedNativeRevisions=len(approved),ownerPresentationRevisionsV11=len(latest),originalPrintedTablesBeforeNative=5,printedMCQOrder=True,unlistedNativeChanges=0,
     isolatedBiologyDiagramPages=4,derivedDiagramEmbeddedImagesPixelIdentical=len(image_hashes),
     sourceReview='All workbook pages 2–59 and chapter answer PDFs 01–15 visually reviewed; practice revisions and printed-key conflicts are separately recorded.')
 (ROOT/'qa/grade7_native_content_validation.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')

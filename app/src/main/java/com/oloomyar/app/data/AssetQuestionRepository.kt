@@ -280,6 +280,7 @@ open class AssetQuestionRepository(
             prompt = o.getString("prompt"),
             clozeTemplate = optionalText(o, "clozeTemplate"),
             allowTokenReuse = o.optBoolean("allowTokenReuse", true),
+            preserveOptionOrder = o.optBoolean("preserveOptionOrder", false),
             choiceAliases = o.optJSONObject("choiceAliases")?.let { aliases ->
                 aliases.keys().asSequence().associateWith { aliases.getString(it) }
             }.orEmpty(),

@@ -272,7 +272,9 @@
         "text": "الف- ۱- بینی  ۲- حلق  ۳- حنجره  ۴- نای  ۵- نایژه  ۶- نایژک ها\nب- به ترتیب : حلق – حنجره – نایژه – نایژه ها – نایژک ها – نایژک ها"
       }
     ],
-    "nativeEdition": "1405-visual-transcription-v3"
+    "nativeEdition": "1405-visual-transcription-v3",
+    "answerStudyVisual": "owner_20261022_g7_ch15_q02_answer.webp",
+    "answerStudyCaption": "تصویر آموزشیِ ارسالی، در کنار پاسخ کامل متنی؛ برای خواندن جزئیات روی تصویر بزنید."
   },
   {
     "id": "g7-ch15-main-003-1405",
@@ -411,7 +413,9 @@
         "text": "در پایین قفسه سینه – با تغییر شکل خود باعث دم و بازدم می شود ."
       }
     ],
-    "nativeEdition": "1405-visual-transcription-v3"
+    "nativeEdition": "1405-visual-transcription-v3",
+    "answerStudyVisual": "owner_20261022_g7_ch15_q04_answer.webp",
+    "answerStudyCaption": "تصویر آموزشیِ ارسالی، در کنار پاسخ کامل متنی؛ برای خواندن جزئیات روی تصویر بزنید."
   },
   {
     "id": "g7-ch15-main-005-1405",
@@ -726,7 +730,9 @@
         "text": "به ترتیب : اکسیژن – کربن دی اکسید – کربن دی اکسید – اکسیژن"
       }
     ],
-    "nativeEdition": "1405-visual-transcription-v3"
+    "nativeEdition": "1405-visual-transcription-v3",
+    "answerStudyVisual": "owner_20261022_g7_ch15_q08_answer.webp",
+    "answerStudyCaption": "تصویر آموزشیِ ارسالی، در کنار پاسخ کامل متنی؛ برای خواندن جزئیات روی تصویر بزنید."
   },
   {
     "id": "g7-ch15-main-009-1405",
@@ -788,7 +794,9 @@
         "text": "اگر با یک نی نوشابه در آب آهک شفاف بدمیم ، رنگ آن کدر می شود که این نشان می دهد که هوای بازدم ما گاز کربن دی اکسید دارد ."
       }
     ],
-    "nativeEdition": "1405-visual-transcription-v3"
+    "nativeEdition": "1405-visual-transcription-v3",
+    "answerStudyVisual": "owner_20261022_g7_ch15_q09_answer.webp",
+    "answerStudyCaption": "تصویر آموزشیِ ارسالی، در کنار پاسخ کامل متنی؛ برای خواندن جزئیات روی تصویر بزنید."
   },
   {
     "id": "g7-ch15-main-010-1405",
@@ -906,7 +914,9 @@
         "text": "الف- دستگاه دفع ادرار\nب- ۱- کلیه  ۲- میزنای  ۳- مثانه\nج- به ترتیب : سرخرگ – سیاهرگ"
       }
     ],
-    "nativeEdition": "1405-visual-transcription-v3"
+    "nativeEdition": "1405-visual-transcription-v3",
+    "answerStudyVisual": "owner_20261022_g7_ch15_q10_answer.webp",
+    "answerStudyCaption": "تصویر آموزشیِ ارسالی، در کنار پاسخ کامل متنی؛ برای خواندن جزئیات روی تصویر بزنید."
   },
   {
     "id": "g7-ch15-main-011-1405",
@@ -1111,7 +1121,9 @@
         "text": "الف- ۱- هرم  ۲- لگنچه  ۳- میزنای\nب- به ترتیب : مویرگ ها – لگنچه – میزنای – مثانه – مثانه"
       }
     ],
-    "nativeEdition": "1405-visual-transcription-v3"
+    "nativeEdition": "1405-visual-transcription-v3",
+    "answerStudyVisual": "owner_20261022_g7_ch15_q12_answer.webp",
+    "answerStudyCaption": "تصویر آموزشیِ ارسالی، در کنار پاسخ کامل متنی؛ برای خواندن جزئیات روی تصویر بزنید."
   },
   {
     "id": "g7-ch15-main-013-1405",
@@ -1289,7 +1301,8 @@
         "hint2": "از میان استخوان‌های نام‌برده، مجموعهٔ دور فضای سینه را با ساختارهای سر و پشت مقایسه کن.",
         "id": "g7-ch15-mcq-001-1405-s01",
         "answer": "ج",
-        "explanation": ""
+        "explanation": "",
+        "preserveOptionOrder": true
       }
     ],
     "grade": 7,
@@ -1361,7 +1374,8 @@
         "hint2": "لولهٔ انتقال هوا را با سطح نازکِ تبادل گاز اشتباه نگیر؛ انتهای شاخه‌ها را در شکل دنبال کن.",
         "id": "g7-ch15-mcq-002-1405-s01",
         "answer": "–ج",
-        "explanation": ""
+        "explanation": "",
+        "preserveOptionOrder": true
       }
     ],
     "grade": 7,
@@ -1433,7 +1447,8 @@
         "hint2": "جهت خروج هوا از شش به محیط را از جهت ورود آن جدا کن؛ این ماده در مسیر گاز تنفسی دفع می‌شود.",
         "id": "g7-ch15-mcq-003-1405-s01",
         "answer": "الف",
-        "explanation": ""
+        "explanation": "",
+        "preserveOptionOrder": true
       }
     ],
     "grade": 7,
@@ -1505,7 +1520,8 @@
         "hint2": "ترکیب هوای دم را با هوای بازدم یکی ندان؛ سهم گاز مورد سؤال را از گاز فراوان‌ترِ هوا جدا کن.",
         "id": "g7-ch15-mcq-004-1405-s01",
         "answer": "–د",
-        "explanation": ""
+        "explanation": "",
+        "preserveOptionOrder": true
       }
     ],
     "grade": 7,
@@ -1577,7 +1593,8 @@
         "hint2": "گاز مورد نیاز این فرایند با گاز دفعیِ حاصل از آن یکسان نیست؛ نقش ورود و خروج را جدا کن.",
         "id": "g7-ch15-mcq-005-1405-s01",
         "answer": "د",
-        "explanation": ""
+        "explanation": "",
+        "preserveOptionOrder": true
       }
     ],
     "grade": 7,
@@ -1649,7 +1666,8 @@
         "hint2": "ساخت صفرا، تبادل گاز و دفع باقیماندهٔ غذا وظایف دیگرند؛ دو کار صورت سؤال باید متعلق به یک اندام باشند.",
         "id": "g7-ch15-mcq-006-1405-s01",
         "answer": "-\n ب",
-        "explanation": ""
+        "explanation": "",
+        "preserveOptionOrder": true
       }
     ],
     "grade": 7,

@@ -9,7 +9,7 @@ import androidx.compose.ui.unit.dp
 import com.oloomyar.app.model.ChapterQuestion
 import com.oloomyar.app.ui.theme.*
 
-/** One complete reference body for both explicitly authorized reveal routes. */
+/** One complete reference body for a correct check and an authorized manual reveal. */
 @Composable
 internal fun WorkbookReferenceContent(question: ChapterQuestion, onImageReady: () -> Unit = {}) {
     if (question.nativeAnswer.isNotEmpty()) NativeWorkbookContent(question, question.nativeAnswer)

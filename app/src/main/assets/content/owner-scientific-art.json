@@ -1963,22 +1963,22 @@
       "role": "answer",
       "asset": "owner_20261021_g7_ch07_q14_answer.webp",
       "originalRepositoryPath": null,
-      "sourceFilename": "answers/g7_ch07_q14_answer.png",
-      "deliveredSource": "answers/g7_ch07_q14_answer.png",
+      "sourceFilename": "g7_ch07_q14_answer.png",
+      "deliveredSource": "g7_ch07_q14_answer.png",
       "applyFullQuestionFigure": false,
-      "sourceSha256": "cc777dc05cd8c913dcbbff802bf120e72d92e3ff1ae513bf2bfbe7b12868e9c9",
-      "sourceRgbaSha256": "b04fd26b833d2eaec0ed7e84f775a21587c2889b962235002de66605191f2c6d",
+      "sourceSha256": "0b5ea6dd0f7bab3773e07726605b1a80a659be7d767eaafcdd3d0e79b2540ddc",
+      "sourceRgbaSha256": "d38644b8f5cf49efc95a8f7dcb942fc6295db13da1cbb3680185814b2f0139c9",
       "width": 1448,
       "height": 1086,
-      "webpSha256": "29b41f7d3cdbfc63bc0ea7ad8ea2756bb71e6eae1ff5342d13eb00c2727d1271",
-      "decodedRgbaSha256": "8de4186c52e1777c7939db87057480f3b5e707d2a62810ad7181de378581cb8b",
+      "webpSha256": "ed6b5ebd4e210eed942b771c4fdcb8689bb3c601256582d6d33021782f35dd00",
+      "decodedRgbaSha256": "b9f89a25b1fd3fc3b4d2e37cfd8f6757dac445f36990914a45ea74ea1318cc11",
       "encoding": {
         "mode": "lossy",
         "quality": 100,
-        "lumaSsim": 0.99530053
+        "lumaSsim": 0.99532735
       },
-      "sourceBytes": 1658680,
-      "encodedBytes": 355688
+      "sourceBytes": 2406706,
+      "encodedBytes": 353324
     },
     {
       "question": "g7_ch07_q15",
@@ -2727,6 +2727,578 @@
       },
       "sourceBytes": 3267939,
       "encodedBytes": 501278
+    },
+    {
+      "question": "g7_ch11_q03",
+      "role": "answer",
+      "asset": "owner_20261022_g7_ch11_q03_answer.webp",
+      "applyFullQuestionFigure": false,
+      "originalRepositoryPath": null,
+      "sourceFilename": "g7_ch11_q03_answer.png",
+      "deliveredSource": "answers11-15.zip:g7_ch11_q03_answer.png",
+      "sourceSha256": "4b39c2f94b16a5a76f94c93303ae61ab61983333e601bcd86ad6c8ebed838748",
+      "sourceRgbaSha256": "3a2d021695d3704bcbaf060817a56d68cd318f53030bd6ed07f931b13cca9ba7",
+      "width": 1448,
+      "height": 1086,
+      "webpSha256": "c744f156d6975ce66b02282a3ad5c8c7e8b710bef6c6a61938ac2871e7a094dc",
+      "decodedRgbaSha256": "78615b52a2c1e6419089bbb75f8e874f09ec23eafb840aa5fcea3dd798cfac8f",
+      "encoding": {
+        "mode": "lossy",
+        "quality": 98,
+        "lumaSsim": 0.99567938
+      },
+      "sourceBytes": 1502088,
+      "encodedBytes": 279304
+    },
+    {
+      "question": "g7_ch11_q04",
+      "role": "answer",
+      "asset": "owner_20261022_g7_ch11_q04_answer.webp",
+      "applyFullQuestionFigure": false,
+      "originalRepositoryPath": null,
+      "sourceFilename": "g7_ch11_q04_answer.png",
+      "deliveredSource": "answers11-15.zip:g7_ch11_q04_answer.png",
+      "sourceSha256": "b959668f4ba252e772a4a5ae69c58ea004d2254c686c10e1566ff0b98e09bb37",
+      "sourceRgbaSha256": "c6b68218c8a9c556e6a311af079ee88385ac50495097cea2775f059529cfe7a0",
+      "width": 1448,
+      "height": 1086,
+      "webpSha256": "0253e15353f0ce40c19644ce2abdf7c4f504a8a65a151816c8f89f7a56fb7362",
+      "decodedRgbaSha256": "e04c4331e23546f910796ed433653800529ab7e62880399e21383d331acc2563",
+      "encoding": {
+        "mode": "lossy",
+        "quality": 94,
+        "lumaSsim": 0.99505115
+      },
+      "sourceBytes": 1917262,
+      "encodedBytes": 297968
+    },
+    {
+      "question": "g7_ch11_q06",
+      "role": "answer",
+      "asset": "owner_20261022_g7_ch11_q06_answer.webp",
+      "applyFullQuestionFigure": false,
+      "originalRepositoryPath": null,
+      "sourceFilename": "g7_ch11_q06_answer.png",
+      "deliveredSource": "answers11-15.zip:g7_ch11_q06_answer.png",
+      "sourceSha256": "041c9b53cb3c63c5883a42459b8104afa8aa02dd17cfc9af15a61c3f6c1f849d",
+      "sourceRgbaSha256": "c4cf51022946af8f58369ab3ac6b88c41eaca62039780b354b446a1dc62de573",
+      "width": 1536,
+      "height": 1024,
+      "webpSha256": "9349a1d42fb971cc58ecbd53608e8dc31bc2a809625464c385c3cbe5aa27718c",
+      "decodedRgbaSha256": "de8c4542a02e042dc3d9bcbe486a311681648063096cc6163c506d2882cee622",
+      "encoding": {
+        "mode": "lossy",
+        "quality": 98,
+        "lumaSsim": 0.99510497
+      },
+      "sourceBytes": 1829178,
+      "encodedBytes": 390354
+    },
+    {
+      "question": "g7_ch11_q07",
+      "role": "answer",
+      "asset": "owner_20261022_g7_ch11_q07_answer.webp",
+      "applyFullQuestionFigure": false,
+      "originalRepositoryPath": null,
+      "sourceFilename": "g7_ch11_q07_answer.png",
+      "deliveredSource": "answers11-15.zip:g7_ch11_q07_answer.png",
+      "sourceSha256": "a5c7632f3e950b8f86b6c05d64b08046fb022ddf1e64c6af58bb3ad0feae591f",
+      "sourceRgbaSha256": "4ac727121b6ec87b459d657c14137293a5b6de72ebbde8cdc84a2f0c1aa86efd",
+      "width": 1448,
+      "height": 1086,
+      "webpSha256": "fa05b12f84a80230d5fe8eb847a527071fec86762913e6de8f0004fc133ac8fb",
+      "decodedRgbaSha256": "a3c5be3abe9ca1528260a9c5623a31d805ab1938efd4facb449d4e2b64cabcea",
+      "encoding": {
+        "mode": "lossy",
+        "quality": 98,
+        "lumaSsim": 0.99561226
+      },
+      "sourceBytes": 1852680,
+      "encodedBytes": 379186
+    },
+    {
+      "question": "g7_ch12_q04",
+      "role": "answer",
+      "asset": "owner_20261022_g7_ch12_q04_answer.webp",
+      "applyFullQuestionFigure": false,
+      "originalRepositoryPath": null,
+      "sourceFilename": "g7_ch12_q04_answer.png",
+      "deliveredSource": "answers11-15.zip:g7_ch12_q04_answer.png",
+      "sourceSha256": "15d38a942f2689ea0172430c9a2701b92fff35517ec1969a0df4617332b68456",
+      "sourceRgbaSha256": "3e1cf0c83fa99c1f9a9c2a3591a36d93df39279733a115222c4b621bb6fb43e4",
+      "width": 1536,
+      "height": 1024,
+      "webpSha256": "91d312baf0ad2cd5cecedfd2d5c7983c0de38825ac177018a930062c3d90ce2f",
+      "decodedRgbaSha256": "486b24edd7788af84803967f19bdd3012d93d1a1f7b2340a48b327ec3b9599e7",
+      "encoding": {
+        "mode": "lossy",
+        "quality": 100,
+        "lumaSsim": 0.99528289
+      },
+      "sourceBytes": 1924322,
+      "encodedBytes": 383146
+    },
+    {
+      "question": "g7_ch12_q06",
+      "role": "answer",
+      "asset": "owner_20261022_g7_ch12_q06_answer.webp",
+      "applyFullQuestionFigure": false,
+      "originalRepositoryPath": null,
+      "sourceFilename": "g7_ch12_q06_answer.png",
+      "deliveredSource": "answers11-15.zip:g7_ch12_q06_answer.png",
+      "sourceSha256": "f9f163e8133ee410b6c090a18d543c89c942a5deae525fbfa2cb995b07405d93",
+      "sourceRgbaSha256": "f1c7858e67d87097245cda3768afe7024155eed6e7a2ff84cbfbdef95c20306e",
+      "width": 1536,
+      "height": 1024,
+      "webpSha256": "3aae120c3e92af53b6d727e265fdbd3aa40b76f8680ac6f00cafabe274622e8c",
+      "decodedRgbaSha256": "f1c7858e67d87097245cda3768afe7024155eed6e7a2ff84cbfbdef95c20306e",
+      "encoding": {
+        "mode": "lossless",
+        "quality": 100,
+        "lumaSsim": 1.0
+      },
+      "sourceBytes": 1897003,
+      "encodedBytes": 1266648
+    },
+    {
+      "question": "g7_ch12_q18",
+      "role": "answer",
+      "asset": "owner_20261022_g7_ch12_q18_answer.webp",
+      "applyFullQuestionFigure": false,
+      "originalRepositoryPath": null,
+      "sourceFilename": "g7_ch12_q18_answer.png",
+      "deliveredSource": "answers11-15.zip:g7_ch12_q18_answer.png",
+      "sourceSha256": "94f2fc9eea4c8e90b05591c78922e7297eef57e5d287f7ffd33da947617b8dd1",
+      "sourceRgbaSha256": "c4d4aa7c50461f44e27f80488c5d8174318f9122e639185d5fd519af0fd8b388",
+      "width": 1448,
+      "height": 1086,
+      "webpSha256": "f53cdf27e9c5b2578234403f3558b908e7a777e9f09376d857f1ac6ca1e2ab5d",
+      "decodedRgbaSha256": "e7111dd38728085b6b6bfcc75b4484a430253ea77734076053cffb039228d57b",
+      "encoding": {
+        "mode": "lossy",
+        "quality": 94,
+        "lumaSsim": 0.99508137
+      },
+      "sourceBytes": 1261849,
+      "encodedBytes": 108304
+    },
+    {
+      "question": "g7_ch12_q19",
+      "role": "answer",
+      "asset": "owner_20261022_g7_ch12_q19_answer.webp",
+      "applyFullQuestionFigure": false,
+      "originalRepositoryPath": null,
+      "sourceFilename": "g7_ch12_q19_answer.png",
+      "deliveredSource": "answers11-15.zip:g7_ch12_q19_answer.png",
+      "sourceSha256": "a2eadd4666341990d57038ec5384f32664a97008d7956617cda81639f7c429dc",
+      "sourceRgbaSha256": "a38d7624894f6a314c661abbd5300f6aa6c8c79dbdc5463f32e79207705e27f0",
+      "width": 3200,
+      "height": 1900,
+      "webpSha256": "35e85f4341b6c12b7675f7d701ee85181696073a56a00135e96c52b2abf94f8c",
+      "decodedRgbaSha256": "a38d7624894f6a314c661abbd5300f6aa6c8c79dbdc5463f32e79207705e27f0",
+      "encoding": {
+        "mode": "lossless",
+        "quality": 100,
+        "lumaSsim": 1.0
+      },
+      "sourceBytes": 247945,
+      "encodedBytes": 100710
+    },
+    {
+      "question": "g7_ch13_mcq01",
+      "role": "answer",
+      "asset": "owner_20261022_g7_ch13_mcq01_answer.webp",
+      "applyFullQuestionFigure": false,
+      "originalRepositoryPath": null,
+      "sourceFilename": "g7_ch13_mcq01_answer.png",
+      "deliveredSource": "answers11-15.zip:g7_ch13_mcq01_answer.png",
+      "sourceSha256": "caabba4657d11c642a195330f852d53082025a0876e2be5cf0567b76fe28bb2e",
+      "sourceRgbaSha256": "8346a4cccaca3d9b843370873017b194d8711f39a71708a4311bf4517755013b",
+      "width": 2400,
+      "height": 1500,
+      "webpSha256": "e8f0c030d11841cf3f27bf8fee45fc60c2a2838c7b89ca42dd64135a901b1f9f",
+      "decodedRgbaSha256": "8346a4cccaca3d9b843370873017b194d8711f39a71708a4311bf4517755013b",
+      "encoding": {
+        "mode": "lossless",
+        "quality": 100,
+        "lumaSsim": 1.0
+      },
+      "sourceBytes": 225835,
+      "encodedBytes": 120510
+    },
+    {
+      "question": "g7_ch13_mcq03",
+      "role": "answer",
+      "asset": "owner_20261022_g7_ch13_mcq03_answer.webp",
+      "applyFullQuestionFigure": false,
+      "originalRepositoryPath": null,
+      "sourceFilename": "g7_ch13_mcq03_answer.png",
+      "deliveredSource": "answers11-15.zip:g7_ch13_mcq03_answer.png",
+      "sourceSha256": "ae90083d82cb11b302a928a6cf58c9a754f6f7762bb7ee5053181b1226fd568a",
+      "sourceRgbaSha256": "daa729d9c69d63ee9367c73fcfc0362a4f39973ab5c41ddd0330746fd3f4976e",
+      "width": 3072,
+      "height": 2048,
+      "webpSha256": "36cdcbffab7f02f7c031bb04dbe2380a7c9cdc5e5c0465296eb2c4553afeffcc",
+      "decodedRgbaSha256": "c27d3928ede1193a7f19e5dc19ad5b64e7b8c0cca99a0813d48cce8a8874f4e9",
+      "encoding": {
+        "mode": "lossy",
+        "quality": 94,
+        "lumaSsim": 0.99536788
+      },
+      "sourceBytes": 2905998,
+      "encodedBytes": 392422
+    },
+    {
+      "question": "g7_ch13_q02",
+      "role": "answer",
+      "asset": "owner_20261022_g7_ch13_q02_answer.webp",
+      "applyFullQuestionFigure": false,
+      "originalRepositoryPath": null,
+      "sourceFilename": "g7_ch13_q02_answer.png",
+      "deliveredSource": "answers11-15.zip:g7_ch13_q02_answer.png",
+      "sourceSha256": "b18955c41c84401ffb27c778da1ec6c2b05e5a5bd4d396d5b645c7b314d19b3c",
+      "sourceRgbaSha256": "61043c59a27c2eede2627e04340064d20b6978ede84c0e2de58b9129f8e2cbfa",
+      "width": 1448,
+      "height": 1086,
+      "webpSha256": "a4a6c8afb11e1e98920fe5835bfbafa45506da91eb402dc93e55a60732497b38",
+      "decodedRgbaSha256": "11cb1179a89e16d30fd0ae746a455af60868e545d151ff645aadb7e3ad50f20e",
+      "encoding": {
+        "mode": "lossy",
+        "quality": 98,
+        "lumaSsim": 0.99580234
+      },
+      "sourceBytes": 1702347,
+      "encodedBytes": 325342
+    },
+    {
+      "question": "g7_ch13_q03",
+      "role": "answer",
+      "asset": "owner_20261022_g7_ch13_q03_answer.webp",
+      "applyFullQuestionFigure": false,
+      "originalRepositoryPath": null,
+      "sourceFilename": "g7_ch13_q03_answer.png",
+      "deliveredSource": "answers11-15.zip:g7_ch13_q03_answer.png",
+      "sourceSha256": "9bc2ba77f9a0a3e412403f1127f7e52161ec4bba606a7f80e91b359723b81e2b",
+      "sourceRgbaSha256": "ef6f2dde68912325796cdee5410c9b89f5efd900b06c3c31af3fb681f0f0c4cc",
+      "width": 2400,
+      "height": 1860,
+      "webpSha256": "e1388ab2e68eab7c7d8a97b1f6515bd8ee6700c312fd213d598a7649f71643d7",
+      "decodedRgbaSha256": "68c9a71ea76d14770e8292b0ec1514ea5dc8fc5b4aff97f9705d77d4e7fc353a",
+      "encoding": {
+        "mode": "lossy",
+        "quality": 94,
+        "lumaSsim": 0.99688745
+      },
+      "sourceBytes": 2095764,
+      "encodedBytes": 357768
+    },
+    {
+      "question": "g7_ch13_q05",
+      "role": "answer",
+      "asset": "owner_20261022_g7_ch13_q05_answer.webp",
+      "applyFullQuestionFigure": false,
+      "originalRepositoryPath": null,
+      "sourceFilename": "g7_ch13_q05_answer.png",
+      "deliveredSource": "answers11-15.zip:g7_ch13_q05_answer.png",
+      "sourceSha256": "cd964540c16e7de1e0e7f5bdef681466b7f87ff3db01df5b0a7fde28696fc50e",
+      "sourceRgbaSha256": "0dc7d74b362f8bbc6a252b466e9893f3a9d298782be9688a55d89c082ba3ddf8",
+      "width": 1536,
+      "height": 1024,
+      "webpSha256": "9c07593701f7e4bc0b6a897854b28ffdc19085361394d18cfa15e2656e238a7f",
+      "decodedRgbaSha256": "19ec15a4d663710dac0c53a4c03720c471b8ebbca7277f0c768164ba5f5b7a9e",
+      "encoding": {
+        "mode": "lossy",
+        "quality": 100,
+        "lumaSsim": 0.99511224
+      },
+      "sourceBytes": 1887779,
+      "encodedBytes": 439774
+    },
+    {
+      "question": "g7_ch13_q06",
+      "role": "answer",
+      "asset": "owner_20261022_g7_ch13_q06_answer.webp",
+      "applyFullQuestionFigure": false,
+      "originalRepositoryPath": null,
+      "sourceFilename": "g7_ch13_q06_answer.png",
+      "deliveredSource": "answers11-15.zip:g7_ch13_q06_answer.png",
+      "sourceSha256": "da0ec7b1c82bcb420d814bdaba8de9ae8b70ef1f9111e935fb3f9b5c77f36fee",
+      "sourceRgbaSha256": "123239b2897fd9a3970161cd9affbbcab9066134c0b767141811bc109bfd39e3",
+      "width": 1536,
+      "height": 1024,
+      "webpSha256": "c91c4c707f941d8d9689923c79962f8d3ef0d8144578d31c928efa0c09018b3e",
+      "decodedRgbaSha256": "f6580fcb7d3267dd046603bf20697d1dfe40bede364cddc520f7211d5da93fc8",
+      "encoding": {
+        "mode": "lossy",
+        "quality": 98,
+        "lumaSsim": 0.99557769
+      },
+      "sourceBytes": 1944620,
+      "encodedBytes": 472540
+    },
+    {
+      "question": "g7_ch13_q08",
+      "role": "answer",
+      "asset": "owner_20261022_g7_ch13_q08_answer.webp",
+      "applyFullQuestionFigure": false,
+      "originalRepositoryPath": null,
+      "sourceFilename": "g7_ch13_q08_answer.png",
+      "deliveredSource": "answers11-15.zip:g7_ch13_q08_answer.png",
+      "sourceSha256": "091c40f6ab74307a92495247b822e2817474097b5477109e1a1cc0ec0bb7e8ba",
+      "sourceRgbaSha256": "6d72aab9a3d73c7ccd2a701848144da4bac59b6a63ee87bd6aabb7b31449ae4b",
+      "width": 1536,
+      "height": 1024,
+      "webpSha256": "c1fac4045a980ba8a1c01e7a383e0bc3a38e68ac021c37d320c0d13c40200a8f",
+      "decodedRgbaSha256": "6959914fee57df8a69d3348414fcc97842a465cfdec03dbf5115022f376872a2",
+      "encoding": {
+        "mode": "lossy",
+        "quality": 98,
+        "lumaSsim": 0.99509746
+      },
+      "sourceBytes": 1684303,
+      "encodedBytes": 325538
+    },
+    {
+      "question": "g7_ch14_q02",
+      "role": "answer",
+      "asset": "owner_20261022_g7_ch14_q02_answer.webp",
+      "applyFullQuestionFigure": false,
+      "originalRepositoryPath": null,
+      "sourceFilename": "g7_ch14_q02_answer.png",
+      "deliveredSource": "answers11-15.zip:g7_ch14_q02_answer.png",
+      "sourceSha256": "cec133ce60dc469e6b4451cfff3edecaf8da2582f0c86e64e83a96d0d243bb3f",
+      "sourceRgbaSha256": "1be961d4eb8efee720d59f7cf155bc37689363be53e220aabc96b80429c25930",
+      "width": 1448,
+      "height": 1086,
+      "webpSha256": "4c80841b5ac1e95f12398fdf8062826365db9308885ee2fa3e550472d8c85bb0",
+      "decodedRgbaSha256": "1610b1320d36e4182f6035045238e81e5960aadd390c751e4bbb9a4d0fe1d55c",
+      "encoding": {
+        "mode": "lossy",
+        "quality": 98,
+        "lumaSsim": 0.99570328
+      },
+      "sourceBytes": 1977914,
+      "encodedBytes": 428358
+    },
+    {
+      "question": "g7_ch14_q04",
+      "role": "answer",
+      "asset": "owner_20261022_g7_ch14_q04_answer.webp",
+      "applyFullQuestionFigure": false,
+      "originalRepositoryPath": null,
+      "sourceFilename": "g7_ch14_q04_answer.png",
+      "deliveredSource": "answers11-15.zip:g7_ch14_q04_answer.png",
+      "sourceSha256": "026e47fdeea2ee4559c20a4dcf6513ca18d2adb575ec7bb3a1d0a4916667a750",
+      "sourceRgbaSha256": "0ecc1aaa314e33d6facd6db1810c437c1c94e85926ce3e8ac3c84800ec3d46e3",
+      "width": 1536,
+      "height": 1024,
+      "webpSha256": "c19b5112ec2c2f986f1b1e7c41da17c4a092bd6d895add3fdc837350021fdb7b",
+      "decodedRgbaSha256": "009d58f733c0ea9697eb97e8083c4de5269f1a190436f5386deaa2b288a24d55",
+      "encoding": {
+        "mode": "lossy",
+        "quality": 98,
+        "lumaSsim": 0.99541432
+      },
+      "sourceBytes": 1636998,
+      "encodedBytes": 332898
+    },
+    {
+      "question": "g7_ch14_q06",
+      "role": "answer",
+      "asset": "owner_20261022_g7_ch14_q06_answer.webp",
+      "applyFullQuestionFigure": false,
+      "originalRepositoryPath": null,
+      "sourceFilename": "g7_ch14_q06_answer.png",
+      "deliveredSource": "answers11-15.zip:g7_ch14_q06_answer.png",
+      "sourceSha256": "0b51b22e88330ff9e58397d9fc84404aeac879878416058bf55c80787fb31838",
+      "sourceRgbaSha256": "f65c57ed96f68a92f5ed0f255e91aa1e10b575657c0b43e6b4d7e6f24b0c7245",
+      "width": 1448,
+      "height": 1086,
+      "webpSha256": "80fadb8d6b67eb6a9e1cb55eba65cfbfb0e5c622b3b07e527ecef72a1e1ab972",
+      "decodedRgbaSha256": "bc4226f0221720ded69503de9f60ffc162446eefed2ac07bbc3a7a525bc00b18",
+      "encoding": {
+        "mode": "lossy",
+        "quality": 94,
+        "lumaSsim": 0.99503368
+      },
+      "sourceBytes": 2011808,
+      "encodedBytes": 328290
+    },
+    {
+      "question": "g7_ch14_q07",
+      "role": "answer",
+      "asset": "owner_20261022_g7_ch14_q07_answer.webp",
+      "applyFullQuestionFigure": false,
+      "originalRepositoryPath": null,
+      "sourceFilename": "g7_ch14_q07_answer.png",
+      "deliveredSource": "answers11-15.zip:g7_ch14_q07_answer.png",
+      "sourceSha256": "2c3dd610f0f82ea754bdf30d3f599a62537116a4eee9236deb840ba33d599a5e",
+      "sourceRgbaSha256": "741632e9cdf13eb94cffcdcf04ca02cc819feef470661a211f0118a53f1b7253",
+      "width": 1448,
+      "height": 1086,
+      "webpSha256": "d7f4150d2c01a73b2f49b719b0935a083dc672cf6958df7871951fe4d2176c16",
+      "decodedRgbaSha256": "314944667d3e40c6f9fdf770c843728e355aa64dd467f32bd37bf16f4712c74a",
+      "encoding": {
+        "mode": "lossy",
+        "quality": 98,
+        "lumaSsim": 0.99588102
+      },
+      "sourceBytes": 1979137,
+      "encodedBytes": 402562
+    },
+    {
+      "question": "g7_ch14_q09",
+      "role": "answer",
+      "asset": "owner_20261022_g7_ch14_q09_answer.webp",
+      "applyFullQuestionFigure": false,
+      "originalRepositoryPath": null,
+      "sourceFilename": "g7_ch14_q09_answer.png",
+      "deliveredSource": "answers11-15.zip:g7_ch14_q09_answer.png",
+      "sourceSha256": "973567099d8959db914044348b8c324f70317c52d43681a0cb78d46923fe3fe5",
+      "sourceRgbaSha256": "67c420c9c7e2e30d74ae01fda5fddead51ffab627d8b561963cb7120d019d97b",
+      "width": 1536,
+      "height": 1024,
+      "webpSha256": "5fe52ce495cec5c87f365b22dec5083515d54614512997496fa0128fe2e1bc70",
+      "decodedRgbaSha256": "10f83edaa71a83f0bb9364951877f19b85bdfa383ac585889c45aaf635d6120f",
+      "encoding": {
+        "mode": "lossy",
+        "quality": 100,
+        "lumaSsim": 0.99532449
+      },
+      "sourceBytes": 1849866,
+      "encodedBytes": 421644
+    },
+    {
+      "question": "g7_ch15_q02",
+      "role": "answer",
+      "asset": "owner_20261022_g7_ch15_q02_answer.webp",
+      "applyFullQuestionFigure": false,
+      "originalRepositoryPath": null,
+      "sourceFilename": "g7_ch15_q02_answer.png",
+      "deliveredSource": "answers11-15.zip:g7_ch15_q02_answer.png",
+      "sourceSha256": "b2fc401cf48965eaee1813b582065104c7a08ac95b053863b674912ec75285bf",
+      "sourceRgbaSha256": "400e726ec48bcc4aca7a66568ab1f8c74b939c12919e213d3153322f11ad2723",
+      "width": 2304,
+      "height": 1536,
+      "webpSha256": "dd99d8f7ff36e425c119a2e2e47c8cab19bae309cf169191aef18f40e64c910b",
+      "decodedRgbaSha256": "2f7081f0fafa5be9043e6a887f568ec5129c1e225a339ded8ae11142d7675218",
+      "encoding": {
+        "mode": "lossy",
+        "quality": 98,
+        "lumaSsim": 0.99503535
+      },
+      "sourceBytes": 3624567,
+      "encodedBytes": 723336
+    },
+    {
+      "question": "g7_ch15_q04",
+      "role": "answer",
+      "asset": "owner_20261022_g7_ch15_q04_answer.webp",
+      "applyFullQuestionFigure": false,
+      "originalRepositoryPath": null,
+      "sourceFilename": "g7_ch15_q04_answer.png",
+      "deliveredSource": "answers11-15.zip:g7_ch15_q04_answer.png",
+      "sourceSha256": "14298761a941e1c989bd9db259dca463f5fd5a5be864a74bb8abb7a9b5d02b58",
+      "sourceRgbaSha256": "b9229a619058bd9070850bf50b23edd0c761a902ab26a34122909986d61a4e79",
+      "width": 1536,
+      "height": 1024,
+      "webpSha256": "0fb5a555ff96c36db88dcf89bf2f3eec87ac305149b2878bdbbc16b2db93efee",
+      "decodedRgbaSha256": "01f97f87815b9a9e60b0f2d3741623c43d1a0d8f3968f46f35eca78df222511c",
+      "encoding": {
+        "mode": "lossy",
+        "quality": 100,
+        "lumaSsim": 0.9953599
+      },
+      "sourceBytes": 1763578,
+      "encodedBytes": 453450
+    },
+    {
+      "question": "g7_ch15_q08",
+      "role": "answer",
+      "asset": "owner_20261022_g7_ch15_q08_answer.webp",
+      "applyFullQuestionFigure": false,
+      "originalRepositoryPath": null,
+      "sourceFilename": "g7_ch15_q08_answer.png",
+      "deliveredSource": "answers11-15.zip:g7_ch15_q08_answer.png",
+      "sourceSha256": "0955009a039e96d0b728c3291b949ada0675ae58bcc45ae82ad4a2a78016338b",
+      "sourceRgbaSha256": "d18756af9d795168e91d7a859beeb52aff81cc7fd4dc956e24955add40b7cea5",
+      "width": 2400,
+      "height": 1500,
+      "webpSha256": "8cf6db2916dfc9f8760b00fa4d6b9d5ef033813957a105dcf008cc08eb2b4580",
+      "decodedRgbaSha256": "d18756af9d795168e91d7a859beeb52aff81cc7fd4dc956e24955add40b7cea5",
+      "encoding": {
+        "mode": "lossless",
+        "quality": 100,
+        "lumaSsim": 1.0
+      },
+      "sourceBytes": 209145,
+      "encodedBytes": 85906
+    },
+    {
+      "question": "g7_ch15_q09",
+      "role": "answer",
+      "asset": "owner_20261022_g7_ch15_q09_answer.webp",
+      "applyFullQuestionFigure": false,
+      "originalRepositoryPath": null,
+      "sourceFilename": "g7_ch15_q09_answer.png",
+      "deliveredSource": "answers11-15.zip:g7_ch15_q09_answer.png",
+      "sourceSha256": "2c12a00d1420009fabb16e513dbddb08b81de9eb755b3ffc7b50e83fea775ee9",
+      "sourceRgbaSha256": "4105951ae73570653b3153308465ee0bb547cd65ed86100126b3a3ba77cafc88",
+      "width": 1774,
+      "height": 1051,
+      "webpSha256": "629c937a55cd1c0e77889ebd5ac2bd3d1b28c839abeb12d3e37b0ee9b4406fd7",
+      "decodedRgbaSha256": "4e330bd906300ed760123bc6f89537a56bb56b31e7230f4bc7e47d2cd61afc41",
+      "encoding": {
+        "mode": "lossy",
+        "quality": 98,
+        "lumaSsim": 0.9956429
+      },
+      "sourceBytes": 1470360,
+      "encodedBytes": 307852
+    },
+    {
+      "question": "g7_ch15_q10",
+      "role": "answer",
+      "asset": "owner_20261022_g7_ch15_q10_answer.webp",
+      "applyFullQuestionFigure": false,
+      "originalRepositoryPath": null,
+      "sourceFilename": "g7_ch15_q10_answer.png",
+      "deliveredSource": "answers11-15.zip:g7_ch15_q10_answer.png",
+      "sourceSha256": "56d5a0b84b4347a3e1eca5b7922bb88ea0804a63bcbd333b8fb93a09ea858a31",
+      "sourceRgbaSha256": "e43a0144405c5a1b69eb097d5a15cb74a4535aaa737133d3f084f80051a85974",
+      "width": 1374,
+      "height": 1145,
+      "webpSha256": "9e7f8f726c82938d48178cd88786bafb5593d87e11effeffb0c75f53a1025a69",
+      "decodedRgbaSha256": "0fec4bc79e148a52c8335bc8443cec9483822b57448b2bf6b3728eaaa3f0ad99",
+      "encoding": {
+        "mode": "lossy",
+        "quality": 98,
+        "lumaSsim": 0.99551064
+      },
+      "sourceBytes": 1140845,
+      "encodedBytes": 202766
+    },
+    {
+      "question": "g7_ch15_q12",
+      "role": "answer",
+      "asset": "owner_20261022_g7_ch15_q12_answer.webp",
+      "applyFullQuestionFigure": false,
+      "originalRepositoryPath": null,
+      "sourceFilename": "g7_ch15_q12_answer.png",
+      "deliveredSource": "answers11-15.zip:g7_ch15_q12_answer.png",
+      "sourceSha256": "6b4103f1e59a93bf0a6b6661958e564205eeeffd28dc0f7faa3e6794f53621e9",
+      "sourceRgbaSha256": "caab8ff0a70ca173acb22b9d2a0d84328defc16d3bd7c61c30cc732ad4a6efa4",
+      "width": 1122,
+      "height": 1402,
+      "webpSha256": "dc7f78d535aa2248b1e9f37408d4147533030a74bca22b5f31c6dfbfb17e0a95",
+      "decodedRgbaSha256": "49de49c0f2f99b73ba0960faabdd149d27db955a2da8f61eba0b61241c2d6bb9",
+      "encoding": {
+        "mode": "lossy",
+        "quality": 98,
+        "lumaSsim": 0.99581575
+      },
+      "sourceBytes": 1870158,
+      "encodedBytes": 383642
     }
   ],
   "ui": [
@@ -2818,7 +3390,7 @@
   "deferredOutsideCurrentChapterScope": [
     "question_images/g7_final_q12_question.png"
   ],
-  "provenance": "Owner originals are retained in Grade7_Images_Review-All.zip. Full resolution is preserved. Small scientific figures remain pixel-identical lossless WebP; large illustrations use measured adaptive WebP (luminance SSIM >= 0.995) or lossless. Original and reviewed derivative pixel hashes are recorded separately.",
+  "provenance": "Owner originals are retained in Grade7_Images_Review-All.zip. Full resolution is preserved. Small scientific figures remain pixel-identical lossless WebP; large illustrations use measured adaptive WebP (luminance SSIM >= 0.995) or lossless. Original and reviewed derivative pixel hashes are recorded separately. Additional delivery on 2026-10-22: answers11-15.zip (26 answers) and corrected g7_ch07_q14_answer.png.",
   "scope": "chapters 1–15; the separate final examination remains outside this request",
   "optimizationPolicy": {
     "scientificMinLumaSsim": 0.995,
@@ -2827,5 +3399,17 @@
     "smallDiagrams": "lossless",
     "pdfFigures": "unchanged lossless",
     "uiIcons": "unchanged lossless"
-  }
+  },
+  "additionalDeliveries": [
+    {
+      "filename": "answers11-15.zip",
+      "sha256": "3fe6ad03def5df819cec666a6dc13fda31eaec77a26f0b281904d61f2ae904f2",
+      "answerImages": 26
+    },
+    {
+      "filename": "g7_ch07_q14_answer.png",
+      "sha256": "0b5ea6dd0f7bab3773e07726605b1a80a659be7d767eaafcdd3d0e79b2540ddc",
+      "replaces": "g7_ch07_q14:answer"
+    }
+  ]
 }

@@ -128,7 +128,7 @@ class Grade7AllChaptersUiTest {
             s.pairs.forEachIndexed { i,p->select(s,i,p.right) }
             compose.onNodeWithText("بررسی پاسخ").performClick()
             compose.onNodeWithTag("reveal-answer").assertIsEnabled()
-            compose.onNodeWithText("پاسخ کتاب‌کار").assertDoesNotExist()
+            compose.onNodeWithText("پاسخ کتاب‌کار").assertExists()
             assertEquals(q.id,LearningPreferences(context).lastLocation()!!.questionId)
             compose.onNodeWithTag("reveal-answer").performClick()
             compose.onNodeWithTag("native-reference-answer").assertExists()
@@ -152,7 +152,9 @@ class Grade7AllChaptersUiTest {
             compose.onNodeWithTag("next-question").assertIsDisplayed().performClick()
             compose.waitUntil(10000) { LearningPreferences(context).lastLocation()?.questionId==q.id }
             assertEquals(q.id,LearningPreferences(context).lastLocation()!!.questionId)
-            compose.onNodeWithTag("reveal-answer").assertIsNotEnabled() // already explicitly displayed, not reset
+            compose.onNodeWithTag("question-body").performScrollToNode(hasTestTag("workbook-reference-answer"))
+            compose.onNodeWithTag("workbook-reference-answer").assertExists() // correct answer survives returning
+            compose.onNodeWithTag("reveal-answer").assertIsEnabled() // shortcut to the same already-visible answer
         }
     }
     @Test fun reviewAndShareExistOnlyInMoreAndAllFifteenChaptersAreCounted() {

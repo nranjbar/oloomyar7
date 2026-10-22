@@ -6,6 +6,19 @@ import org.junit.Test
 class WorkbookAnswersTest {
     private fun step(kind: StepKind) = LearningStep("test", kind, "prompt", answer = "answer", hint1 = "one", hint2 = "two", explanation = "why")
 
+    @Test fun printedMCQOrderDoesNotRemapCorrectIndicesOrConsumeOptions() {
+        val source=step(StepKind.SINGLE).copy(preserveOptionOrder=true,
+            options=listOf(OptionItem("الف",false),OptionItem("ب",false),OptionItem("ج",true),OptionItem("د",false)))
+        for(seed in listOf(0,1,1405,-91,Int.MAX_VALUE)) {
+            assertEquals(listOf(0,1,2,3),WorkbookAnswers.optionOrder(source,seed))
+            assertTrue(WorkbookAnswers.isCorrect(source,listOf("2")))
+            assertFalse(WorkbookAnswers.isCorrect(source,listOf("1")))
+        }
+        val bank=source.copy(preserveOptionOrder=false)
+        assertTrue((0..20).map { WorkbookAnswers.optionOrder(bank,it) }.distinct().size>1)
+        assertTrue((0..20).all { WorkbookAnswers.optionOrder(bank,it).sorted()==listOf(0,1,2,3) })
+    }
+
     @Test fun blanksRequireEveryPositionAndAcceptBothValidReactantOrders() {
         val value = step(StepKind.MATCH).copy(
             pairs = listOf(PairItem("blank1", "N"), PairItem("blank2", "H")),

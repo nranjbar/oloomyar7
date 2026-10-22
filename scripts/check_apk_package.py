@@ -24,11 +24,14 @@ for kind,relative in [('debug','app/build/outputs/apk/debug/app-debug.apk'),('re
         assert not any(b['type']in['input','cloze','barChart','reaction','flow']for q in native for b in q['nativeAnswer'])
         reference_figures=[(q['canonicalId'],b['asset'])for q in native for b in q['nativeAnswer']if b['type']=='figure']
         assert reference_figures==[('g7_ch10_q13','pdf:answers10.pdf#2,37.35,464.6,197.05,629.61')]
-        assert sum(bool(q.get('answerStudyVisual')) for q in qs)==71
+        assert sum(bool(q.get('answerStudyVisual')) for q in qs)==97
         for q in qs:
             if q.get('answerStudyVisual'):assert prefix+'images/'+q['answerStudyVisual'] in names
-        # Sixty-four additional answers must fit within the previous APK budget.
-        assert path.stat().st_size<66_416_055,'Review output should be smaller than 0.9 despite the additional art'
+        # All 26 new answers retain their original resolution. Bound growth by
+        # measured new image bytes and a small allowance for code/JSON metadata.
+        optimization=json.loads((ROOT/'qa/source/image-optimization-v11.json').read_text())
+        image_growth=optimization['afterImageBytes']-optimization['beforeImageBytes']
+        assert path.stat().st_size<61_047_246+image_growth+500_000,'Unexplained package growth beyond the new measured artwork'
         outputs.append(dict(kind=kind,path=relative,bytes=path.stat().st_size,sha256=hashlib.sha256(path.read_bytes()).hexdigest(),
             assetEntries=len(assets),nativeQuestions=len(native),nativeAnswers=len(native),compressedAssetBytes=sum(archive.getinfo(n).compress_size for n in assets),
             previousThreeChapterApkBytes=47_596_130))

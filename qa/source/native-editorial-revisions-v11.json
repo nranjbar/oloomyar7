@@ -1,0 +1,54 @@
+{
+  "baseline": "c4c942100ce0365e9e865e9e254e4a0ef1ad27f3",
+  "authorization": "2026-10-22 owner requests printed MCQ order, original tables first, automatic complete reference after a correct check, corrected 7/14 and all new chapter 11–15 answer art; preserve school-level simplifications",
+  "revisions": [
+    {
+      "id": "g7_ch02_q02",
+      "beforeNativeSha256": "5d197d44109d1cfaae70d2347e2b46addc8a8016bb447dc24e22432960f63b4c",
+      "afterNativeSha256": "252d4458e2b939a59427919a1f048a0550d6b1c50bd009d343dc45a1f8afb8f6",
+      "reasons": [
+        "Owner requests the complete original printed table before its native interactive adaptation; exact bounded source-PDF region, no additional raster asset"
+      ]
+    },
+    {
+      "id": "g7_ch04_q17",
+      "beforeNativeSha256": "fca07c8ed915347f3877ead46c4d0fe016cd97691264d6840e7e6569ccc0aede",
+      "afterNativeSha256": "06dbcf1f9300d32de1e36c0f2b0ea852f643368a70c2ceabd494a5cd9bf19188",
+      "reasons": [
+        "Owner requests the complete original printed table before its native interactive adaptation; exact bounded source-PDF region, no additional raster asset"
+      ]
+    },
+    {
+      "id": "g7_ch05_q02",
+      "beforeNativeSha256": "7b2baaafa3e61ba9a9bbb845224d7eae0ab3fc8d27345825ce38f20663a3ad08",
+      "afterNativeSha256": "62752ad62d0e9d8b0ba0b99d81dbc03c9559d062906a98ffbf0f0e2b09da1f79",
+      "reasons": [
+        "Owner requests the complete original printed table before its native interactive adaptation; exact bounded source-PDF region, no additional raster asset"
+      ]
+    },
+    {
+      "id": "g7_ch05_q11",
+      "beforeNativeSha256": "85e2ffc73c938a89bc3260055aeae1704604ef4ef586013b6be3b8a6000a6670",
+      "afterNativeSha256": "91b0790d699f22750d74658c882c17dca42a33e96fd3493cbe088e2718de4e2f",
+      "reasons": [
+        "Owner requests the complete original printed table before its native interactive adaptation; exact bounded source-PDF region, no additional raster asset"
+      ]
+    },
+    {
+      "id": "g7_ch07_q14",
+      "beforeNativeSha256": "c9f755e972f83d0d00902121b359e782f0a80f451e82eaa6a2874e0355a93660",
+      "afterNativeSha256": "d624998bc8c61ac64ef34284afe088d3b2dcbdb51dac2d944a6933e1710bef02",
+      "reasons": [
+        "Owner-approved corrected answer image supplies part ب; retain the Grade 7 explanation and matching full text without the obsolete correction warning; literal original key remains immutable"
+      ]
+    },
+    {
+      "id": "g7_ch08_q18",
+      "beforeNativeSha256": "d6fc1c5a5885ac0a25c68de4a039e9da4eb3094225b880664120c3d2d2da5013",
+      "afterNativeSha256": "c8a0ab554514691a8d800a4ba9e4ec6121860b7ed9025501776dd8478c97156a",
+      "reasons": [
+        "Owner requests the complete original printed table before its native interactive adaptation; exact bounded source-PDF region, no additional raster asset"
+      ]
+    }
+  ]
+}
