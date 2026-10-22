@@ -96,7 +96,7 @@ class Grade7AllChaptersUiTest {
             capture("v09-chapter-15-study-cover")
             compose.onNodeWithTag("chapter-study-continue").assertDoesNotExist()
             compose.onNode(hasScrollAction()).performScrollToNode(hasTestTag("chapter-section-تمرین‌های اصلی"))
-            compose.onNode(hasText("ورود به این بخش") and hasAnyAncestor(hasTestTag("chapter-section-تمرین‌های اصلی"))).performClick()
+            compose.onNode(hasText("ورود به این بخش") and hasAnyAncestor(hasTestTag("chapter-section-تمرین‌های اصلی"))).performScrollTo().performClick()
             compose.onNode(hasScrollAction()).performScrollToNode(hasText("سؤال ۱", substring = true))
             compose.onAllNodesWithText("سؤال ۱", substring = true)[0].performClick()
             val q=Grade7Catalog(context).chapters.last().questions.first()

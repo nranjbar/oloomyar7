@@ -616,7 +616,7 @@ class Grade7NativeContentUiTest {
             capture("layout-chapter-3-cover-progress")
             compose.onNodeWithTag("chapter-study-continue").assertDoesNotExist()
             compose.onNode(hasScrollAction()).performScrollToNode(hasTestTag("chapter-section-تمرین‌های اصلی"))
-            compose.onNode(hasText("ورود به این بخش") and hasAnyAncestor(hasTestTag("chapter-section-تمرین‌های اصلی"))).performClick()
+            compose.onNode(hasText("ورود به این بخش") and hasAnyAncestor(hasTestTag("chapter-section-تمرین‌های اصلی"))).performScrollTo().performClick()
             compose.onNode(hasScrollAction()).performScrollToNode(hasTestTag("question-list-${chapter.questions.first().id}"))
             compose.onNodeWithTag("question-list-${chapter.questions.first().id}").performClick()
             compose.onNodeWithTag("native-source-question").assertExists()
@@ -721,7 +721,7 @@ class Grade7NativeContentUiTest {
             capture("v08-chapter-10-cover")
             compose.onNodeWithTag("chapter-study-continue").assertDoesNotExist()
             compose.onNode(hasScrollAction()).performScrollToNode(hasTestTag("chapter-section-تمرین‌های اصلی"))
-            compose.onNode(hasText("ورود به این بخش") and hasAnyAncestor(hasTestTag("chapter-section-تمرین‌های اصلی"))).performClick()
+            compose.onNode(hasText("ورود به این بخش") and hasAnyAncestor(hasTestTag("chapter-section-تمرین‌های اصلی"))).performScrollTo().performClick()
             compose.onNode(hasScrollAction()).performScrollToNode(hasTestTag("question-list-${catalog.chapters[9].questions.first().id}"))
             compose.onNodeWithTag("question-list-${catalog.chapters[9].questions.first().id}").performClick()
             compose.onNodeWithTag("native-source-question").assertExists()
@@ -768,7 +768,8 @@ class Grade7NativeContentUiTest {
             val expected=questions[index]
             // performClick dispatches the touch; synchronize with the resulting
             // composition before reading a preference written by LaunchedEffect.
-            compose.onNodeWithText("سؤال ${workbookFa(expected.sourceNumber)} • ${expected.title}").assertIsDisplayed()
+            compose.onNodeWithText("سؤال ${workbookFa(index + 1)} از ${workbookFa(questions.size)}").assertIsDisplayed()
+            compose.onNodeWithText("سؤال ${workbookFa(expected.sourceNumber)} • ${expected.title}").assertDoesNotExist()
             compose.runOnIdle {
                 assertEquals(expected.id,LearningPreferences(context).lastLocation()!!.questionId)
             }
