@@ -26,7 +26,11 @@ internal class BazaarReceiptStorage(context: Context) : BillingStorage {
             primary != null || secondary != null || legacy.contains("verified_non_consumable_skus"))
     }
     override fun save(data: StoredBillingData): Boolean {
-        val encoded = JSONObject(BillingSnapshotCodec.encode(data)).put("sequence", ++sequence).toString()
+        // Another chapter/activity may have completed a purchase since this
+        // instance loaded. A stale empty writer must never erase that proof.
+        val existing = runCatching { load().receipts }.getOrDefault(emptyList())
+        val merged = data.copy(receipts = (existing + data.receipts).distinct())
+        val encoded = JSONObject(BillingSnapshotCodec.encode(merged)).put("sequence", ++sequence).toString()
         // Two independent atomic copies prevent a broken preference file from
         // making a legitimate customer appear to have lost their purchase.
         val primarySaved = runCatching { preferences.edit().putString("snapshot", encoded).commit() }.getOrDefault(false)

@@ -46,14 +46,16 @@ internal class BillingCoordinator(
     }
 
     fun start() {
-        if (closed || operation != null) return
+        if (closed) return
+        refreshCachedReceipts()
+        if (operation != null) return
         if (state.value.connectionState == BillingConnectionState.READY) {
             restore(silent = true)
             return
         }
         if (!verifier.configured) {
             update { it.copy(connectionState = BillingConnectionState.CONFIGURATION_REQUIRED,
-                message = "کلید عمومی پرداخت معتبر نیست؛ با پشتیبانی برنامه تماس بگیرید.", warning = true) }
+                message = "امکان پرداخت در این نسخه فراهم نیست؛ با پشتیبانی برنامه تماس بگیرید.", warning = true) }
             return
         }
         val epoch = ++connectionEpoch
@@ -77,7 +79,14 @@ internal class BillingCoordinator(
     }
 
     fun onForeground() {
-        if (closed || operation != null) return
+        if (closed) return
+        // Another activity can finish a purchase while this one is stopped.
+        // Refresh its durable proof before any connection, including offline.
+        val cached = try { storage.load().receipts } catch (error: Exception) { emptyList() }
+        val incoming = cached.mapNotNull { runCatching { verifier.verify(it) }.getOrNull() }
+        records = select(records.map(verifier::verify) + select(incoming).map(verifier::verify))
+        update { it.copy(purchasedSkus = skus(records)) }
+        if (operation != null) return
         if (state.value.connectionState != BillingConnectionState.READY) start()
         else if (refreshAfterPayment || pending != null || lastRestore == Long.MIN_VALUE || scheduler.now() - lastRestore >= 60_000) {
             refreshAfterPayment = false
@@ -87,6 +96,7 @@ internal class BillingCoordinator(
 
     fun purchase(sku: String) {
         if (closed || sku !in BazaarProducts.allSkus || operation != null) return
+        refreshCachedReceipts()
         if (BazaarProducts.isActive(sku, state.value.purchasedSkus)) {
             notice("این محتوا از قبل برای شما فعال است.")
             return
@@ -227,6 +237,14 @@ internal class BillingCoordinator(
         operation = null
         timer?.cancel(); timer = null
         inventoryCancel?.cancel(); inventoryCancel = null
+    }
+    private fun refreshCachedReceipts() {
+        val cached = try { storage.load().receipts } catch (ignored: Exception) { emptyList() }
+        val verified = cached.mapNotNull { receipt ->
+            try { verifier.verify(receipt) } catch (ignored: Exception) { null }
+        }
+        records = select(records.map(verifier::verify) + verified)
+        update { it.copy(purchasedSkus = skus(records)) }
     }
     private fun save(): Boolean = try { storage.save(StoredBillingData(records, pending)) } catch (error: Exception) { false }
     private fun select(infos: List<ir.cafebazaar.poolakey.entity.PurchaseInfo>) =

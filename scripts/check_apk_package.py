@@ -28,10 +28,11 @@ for kind,relative in [('debug','app/build/outputs/apk/debug/app-debug.apk'),('re
         for q in qs:
             if q.get('answerStudyVisual'):assert prefix+'images/'+q['answerStudyVisual'] in names
         # All 26 new answers retain their original resolution. Bound growth by
-        # measured new image bytes and a small allowance for code/JSON metadata.
+        # measured new image bytes and 1 MB for code/JSON metadata plus the Bazaar SDK.
+        # v0.11 used 0.5 MB; the additional 0.5 MB budgets the billing dependency.
         optimization=json.loads((ROOT/'qa/source/image-optimization-v11.json').read_text())
         image_growth=optimization['afterImageBytes']-optimization['beforeImageBytes']
-        assert path.stat().st_size<61_047_246+image_growth+500_000,'Unexplained package growth beyond the new measured artwork'
+        assert path.stat().st_size<61_047_246+image_growth+1_000_000,'Unexplained package growth beyond the new measured artwork'
         outputs.append(dict(kind=kind,path=relative,bytes=path.stat().st_size,sha256=hashlib.sha256(path.read_bytes()).hexdigest(),
             assetEntries=len(assets),nativeQuestions=len(native),nativeAnswers=len(native),compressedAssetBytes=sum(archive.getinfo(n).compress_size for n in assets),
             previousThreeChapterApkBytes=47_596_130))

@@ -70,5 +70,13 @@ class PermanentReceiptStorageTest {
         val loaded=BazaarReceiptStorage(context).load()
         assertNull(loaded.pending);assertEquals(setOf(product),verified(loaded))
     }
+    @Test fun anOlderActivityCannotOverwriteANewerPaidReceiptWithEmptyInventory() {
+        val old = BazaarReceiptStorage(context); old.load()
+        val buyer = BazaarReceiptStorage(context); buyer.load()
+        assertTrue(buyer.save(StoredBillingData(listOf(receipt()))))
+        assertTrue(old.save(StoredBillingData()))
+        assertEquals(setOf(product),verified(BazaarReceiptStorage(context).load()))
+    }
+
 }
 

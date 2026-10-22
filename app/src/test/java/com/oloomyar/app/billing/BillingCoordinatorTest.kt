@@ -372,5 +372,17 @@ class BillingCoordinatorTest {
         assertEquals(setOf(sku), Fixture(f.storage.data).state.purchasedSkus)
         f.controller.purchase(sku); assertTrue(f.gateway.purchases.isEmpty())
     }
+    @Test fun returningToAnOlderActivityReadsTheNewReceiptBeforeTryingTheNetwork() {
+        val storage = Storage()
+        val gateway = Gateway()
+        val controller = BillingCoordinator(BillingReceiptFixtures.PACKAGE,gateway,storage,
+            BillingReceiptFixtures.verifier(),Clock())
+        storage.save(StoredBillingData(listOf(receipt())))
+        controller.onForeground()
+        (1..15).forEach { assertTrue(ChapterAccessPolicy.isUnlocked(it,controller.state.value.purchasedSkus)) }
+        gateway.connections.last().failure(IllegalStateException("offline"))
+        (1..15).forEach { assertTrue(ChapterAccessPolicy.isUnlocked(it,controller.state.value.purchasedSkus)) }
+    }
+
 }
 
