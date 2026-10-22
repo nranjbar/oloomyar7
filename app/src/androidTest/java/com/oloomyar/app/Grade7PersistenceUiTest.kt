@@ -99,7 +99,7 @@ class Grade7PersistenceUiTest {
             compose.onNodeWithTag("hub-list").performScrollToNode(hasTestTag("chapter-2"))
             compose.onNodeWithTag("chapter-2").performClick()
             compose.onNode(hasScrollAction()).performScrollToNode(hasTestTag("chapter-section-تمرین‌های اصلی"))
-            compose.onNodeWithTag("chapter-section-تمرین‌های اصلی").performClick()
+            compose.onNode(hasText("ورود به این بخش") and hasAnyAncestor(hasTestTag("chapter-section-تمرین‌های اصلی"))).performClick()
             compose.onNode(hasScrollAction()).performScrollToNode(hasTestTag("question-list-${q.id}"))
             compose.onNodeWithTag("question-list-${q.id}").performClick()
             compose.onNodeWithTag("reveal-answer").assertIsNotEnabled()

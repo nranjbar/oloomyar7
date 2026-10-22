@@ -320,6 +320,7 @@ class Grade7NativeContentUiTest {
         return state
     }
 
+    @androidx.test.filters.LargeTest
     @Test fun correctAndHintRoutesShowTheSameCompletePrintedAnswerAcrossAllAnswerFormats() {
         // Text, multi-part numerical answers, fractions, complete tables, source
         // diagram and owner answer art all go through the actual question screen.
@@ -478,6 +479,7 @@ class Grade7NativeContentUiTest {
         }
     }
 
+    @androidx.test.filters.LargeTest
     @Test fun all317FilledQuestionsAndAnswersHaveNoOverlappingBlanksOrClippedTablesAtPhoneWidths() {
         val questions=catalog.chapters.flatMap { it.questions }
         val current=mutableStateOf(AuditFrame(questions.first()))
@@ -614,7 +616,7 @@ class Grade7NativeContentUiTest {
             capture("layout-chapter-3-cover-progress")
             compose.onNodeWithTag("chapter-study-continue").assertDoesNotExist()
             compose.onNode(hasScrollAction()).performScrollToNode(hasTestTag("chapter-section-تمرین‌های اصلی"))
-            compose.onNodeWithTag("chapter-section-تمرین‌های اصلی").performClick()
+            compose.onNode(hasText("ورود به این بخش") and hasAnyAncestor(hasTestTag("chapter-section-تمرین‌های اصلی"))).performClick()
             compose.onNode(hasScrollAction()).performScrollToNode(hasTestTag("question-list-${chapter.questions.first().id}"))
             compose.onNodeWithTag("question-list-${chapter.questions.first().id}").performClick()
             compose.onNodeWithTag("native-source-question").assertExists()
@@ -719,7 +721,7 @@ class Grade7NativeContentUiTest {
             capture("v08-chapter-10-cover")
             compose.onNodeWithTag("chapter-study-continue").assertDoesNotExist()
             compose.onNode(hasScrollAction()).performScrollToNode(hasTestTag("chapter-section-تمرین‌های اصلی"))
-            compose.onNodeWithTag("chapter-section-تمرین‌های اصلی").performClick()
+            compose.onNode(hasText("ورود به این بخش") and hasAnyAncestor(hasTestTag("chapter-section-تمرین‌های اصلی"))).performClick()
             compose.onNode(hasScrollAction()).performScrollToNode(hasTestTag("question-list-${catalog.chapters[9].questions.first().id}"))
             compose.onNodeWithTag("question-list-${catalog.chapters[9].questions.first().id}").performClick()
             compose.onNodeWithTag("native-source-question").assertExists()

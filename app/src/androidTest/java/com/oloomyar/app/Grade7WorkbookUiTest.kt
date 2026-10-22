@@ -239,6 +239,7 @@ class Grade7WorkbookUiTest {
         compose.onNodeWithText("سؤال ${fa(q.sourceNumber)} • ${q.title}").assertDoesNotExist()
         compose.onNodeWithTag("question-body").performScrollToNode(hasTestTag("native-source-question"))
         compose.onNodeWithTag("native-source-question").assertExists()
+        capture("v12-question-prompt-without-list-title")
         compose.onNodeWithContentDescription("برگشت").performClick()
         compose.onNodeWithTag("question-list-${q.id}").assertExists()
         compose.onNodeWithText("سؤال ${fa(q.sourceNumber)} • ${q.title}").assertExists()
