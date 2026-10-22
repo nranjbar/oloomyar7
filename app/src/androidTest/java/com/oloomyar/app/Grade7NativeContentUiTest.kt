@@ -231,7 +231,8 @@ class Grade7NativeContentUiTest {
             compose.onNodeWithTag("question-search").assertDoesNotExist()
             compose.onNodeWithText("آزمون همین بخش").assertDoesNotExist()
             compose.onNodeWithText("ادامهٔ تمرین").assertDoesNotExist()
-            compose.onNodeWithTag("question-list-${q.id}").performScrollTo().performClick()
+            compose.onNode(hasScrollAction()).performScrollToNode(hasTestTag("question-list-${q.id}"))
+            compose.onNodeWithTag("question-list-${q.id}").performClick()
             compose.onNodeWithTag("native-source-question").assertExists()
             assertEquals(q.id,LearningPreferences(context).lastLocation()!!.questionId)
             compose.onNodeWithContentDescription("صورت سؤال ۱۵ از کتاب").assertDoesNotExist()
@@ -416,11 +417,11 @@ class Grade7NativeContentUiTest {
     private fun figuresForReport(q:ChapterQuestion)=q.nativeAnswer.count { it.type=="figure" }+if(q.answerStudyVisual!=null)1 else 0
 
     private data class AuditFrame(val q:ChapterQuestion,val answer:Boolean=false,val width:Int=320,val font:Float=1f)
-    @Test fun printedMCQOptionsKeepSourceLetterOrderAcrossSeedsSelectionCheckingAndExam() {
+    @Test fun printedMCQOptionsKeepSourceLetterOrderAcrossSeedsSelectionAndChecking() {
         val questions=catalog.chapters.flatMap { it.questions }.filter { it.section=="چهارگزینه‌ای" && it.steps.single().options.isNotEmpty() }
         assertTrue(questions.size>40)
-        data class Frame(val q:ChapterQuestion,val seed:Int,val checked:Boolean,val exam:Boolean)
-        val current=mutableStateOf(Frame(questions.first(),1,false,false))
+        data class Frame(val q:ChapterQuestion,val seed:Int,val checked:Boolean)
+        val current=mutableStateOf(Frame(questions.first(),1,false))
         compose.setContent {
             val f=current.value
             val initial=filled(f.q).copy(shuffleSeed=f.seed)
@@ -435,8 +436,8 @@ class Grade7NativeContentUiTest {
             val s=q.steps.single()
             assertTrue(q.id,s.preserveOptionOrder)
             assertEquals(listOf("الف","ب","ج","د"),s.options.map { it.text.substringBefore("-") })
-            for((seed,checked,exam)in listOf(Triple(1,false,false),Triple(1405,true,false),Triple(-91,false,true))) {
-                compose.runOnIdle { current.value=Frame(q,seed,checked,exam) }
+            for((seed,checked)in listOf(1 to false,1405 to true,-91 to false)) {
+                compose.runOnIdle { current.value=Frame(q,seed,checked) }
                 val options=s.options.map { compose.onNodeWithText(workbookBidi(it.text)).fetchSemanticsNode() }
                 assertTrue("${q.id}: source A–D order must remain stable",options.zipWithNext().all { (a,b)->a.positionInRoot.y<b.positionInRoot.y })
                 assertEquals(listOf(0,1,2,3),WorkbookAnswers.optionOrder(s,seed))
@@ -612,9 +613,10 @@ class Grade7NativeContentUiTest {
             compose.onNodeWithTag("chapter-study-progress").performScrollTo().assertTextEquals("${workbookFa(chapter.questions.count { chapter.progress.done(it.id) })} از ۳۱ سؤال")
             capture("layout-chapter-3-cover-progress")
             compose.onNodeWithTag("chapter-study-continue").assertDoesNotExist()
-            compose.onNodeWithTag("chapter-section-تمرین‌های اصلی").performScrollTo().performClick()
-            compose.onNode(hasScrollAction()).performScrollToNode(hasText("سؤال ۱", substring = true))
-            compose.onAllNodesWithText("سؤال ۱", substring = true)[0].performClick()
+            compose.onNode(hasScrollAction()).performScrollToNode(hasTestTag("chapter-section-تمرین‌های اصلی"))
+            compose.onNodeWithTag("chapter-section-تمرین‌های اصلی").performClick()
+            compose.onNode(hasScrollAction()).performScrollToNode(hasTestTag("question-list-${chapter.questions.first().id}"))
+            compose.onNodeWithTag("question-list-${chapter.questions.first().id}").performClick()
             compose.onNodeWithTag("native-source-question").assertExists()
             compose.onNodeWithTag("reveal-answer").assertIsNotEnabled()
         }
@@ -716,9 +718,10 @@ class Grade7NativeContentUiTest {
             compose.onNodeWithTag("chapter-study-cover").assertExists()
             capture("v08-chapter-10-cover")
             compose.onNodeWithTag("chapter-study-continue").assertDoesNotExist()
-            compose.onNodeWithTag("chapter-section-تمرین‌های اصلی").performScrollTo().performClick()
-            compose.onNode(hasScrollAction()).performScrollToNode(hasText("سؤال ۱", substring = true))
-            compose.onAllNodesWithText("سؤال ۱", substring = true)[0].performClick()
+            compose.onNode(hasScrollAction()).performScrollToNode(hasTestTag("chapter-section-تمرین‌های اصلی"))
+            compose.onNodeWithTag("chapter-section-تمرین‌های اصلی").performClick()
+            compose.onNode(hasScrollAction()).performScrollToNode(hasTestTag("question-list-${catalog.chapters[9].questions.first().id}"))
+            compose.onNodeWithTag("question-list-${catalog.chapters[9].questions.first().id}").performClick()
             compose.onNodeWithTag("native-source-question").assertExists()
             compose.onNodeWithTag("reveal-answer").assertIsNotEnabled()
         }

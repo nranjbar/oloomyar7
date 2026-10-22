@@ -1,4 +1,8 @@
 import java.util.Properties
+import java.security.KeyFactory
+import java.security.interfaces.RSAPublicKey
+import java.security.spec.X509EncodedKeySpec
+import java.util.Base64
 
 plugins {
     id("com.android.application")
@@ -9,10 +13,12 @@ val paymentProperties = Properties().apply {
     rootProject.file("local.properties").takeIf { it.isFile }?.inputStream()?.use { load(it) }
 }
 // Grade 7 has its own Bazaar application and RSA key. Never reuse the Grade 9 key.
-val grade7BazaarKey = providers.gradleProperty("BAZAAR_RSA_PUBLIC_KEY")
-    .orElse(providers.environmentVariable("BAZAAR_RSA_PUBLIC_KEY"))
-    .orElse(paymentProperties.getProperty("BAZAAR_RSA_PUBLIC_KEY", ""))
-    .get().replace("\\", "\\\\").replace("\"", "\\\"")
+val grade7BazaarKey = providers.gradleProperty("GRADE7_BAZAAR_RSA_PUBLIC_KEY")
+    .orElse(providers.environmentVariable("GRADE7_BAZAAR_RSA_PUBLIC_KEY"))
+    .orElse(paymentProperties.getProperty("GRADE7_BAZAAR_RSA_PUBLIC_KEY", ""))
+    .get().filterNot { it.isWhitespace() }
+
+val grade7BazaarKeyLiteral = grade7BazaarKey.replace("\\", "\\\\").replace("\"", "\\\"")
 
 android {
     namespace = "com.oloomyar.app"
@@ -26,7 +32,7 @@ android {
         versionName = "0.12.0-grade7-1405"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         buildConfigField("int", "WORKBOOK_GRADE", "7")
-        buildConfigField("String", "BAZAAR_RSA_PUBLIC_KEY", "\"$grade7BazaarKey\"")
+        buildConfigField("String", "BAZAAR_RSA_PUBLIC_KEY", "\"$grade7BazaarKeyLiteral\"")
         buildConfigField("boolean", "REVIEW_MODE", "false")
     }
 
@@ -52,6 +58,7 @@ android {
     buildTypes {
         getByName("debug") { buildConfigField("boolean", "REVIEW_MODE", "true") }
         getByName("release") {
+            buildConfigField("boolean", "REVIEW_MODE", "false")
             isMinifyEnabled = true
             isShrinkResources = true
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
@@ -68,6 +75,23 @@ android {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
     }
+}
+
+// Compilation/review can run without the owner's public key. This explicit
+// distribution task fails closed until a real Grade 7 RSA key has been set.
+val verifyBazaarReleaseConfiguration by tasks.registering {
+    doLast {
+        val key = runCatching {
+            KeyFactory.getInstance("RSA").generatePublic(
+                X509EncodedKeySpec(Base64.getDecoder().decode(grade7BazaarKey)))
+        }.getOrNull()
+        require(key is RSAPublicKey && key.modulus.bitLength() >= 1024) {
+            "Set GRADE7_BAZAAR_RSA_PUBLIC_KEY from the Bazaar application com.oloomyar.app.grade7 before distribution."
+        }
+    }
+}
+tasks.register("prepareBazaarRelease") {
+    dependsOn(verifyBazaarReleaseConfiguration, "bundleRelease")
 }
 
 java {

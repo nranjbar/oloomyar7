@@ -1,0 +1,13 @@
+{
+  "applicationId": "com.oloomyar.app.grade7",
+  "products": [{
+    "productId": "oloomyar_g7_complete",
+    "title": "فعال‌سازی همهٔ فصل‌های علوم هفتم",
+    "type": "inapp",
+    "consumable": false,
+    "priceToman": 195000,
+    "priceRial": 1950000,
+    "unlockedChapters": [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+  }],
+  "freeChapters": [1]
+}

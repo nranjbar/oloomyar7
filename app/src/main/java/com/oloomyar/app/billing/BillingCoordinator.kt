@@ -33,7 +33,7 @@ internal class BillingCoordinator(
         val valid = stored.receipts.mapNotNull {
             try { verifier.verify(it) } catch (error: Exception) { invalid = true; null }
         }
-        records = select(valid)
+        records = select(valid.filter { BazaarPurchasePolicy.isEligible(it, packageName) })
         pending = stored.pending?.takeIf { it.sku in BazaarProducts.allSkus && it.payload.isNotBlank() }
         mutableState.value = BillingUiState(
             purchasedSkus = skus(records),
@@ -80,12 +80,7 @@ internal class BillingCoordinator(
 
     fun onForeground() {
         if (closed) return
-        // Another activity can finish a purchase while this one is stopped.
-        // Refresh its durable proof before any connection, including offline.
-        val cached = try { storage.load().receipts } catch (error: Exception) { emptyList() }
-        val incoming = cached.mapNotNull { runCatching { verifier.verify(it) }.getOrNull() }
-        records = select(records.map(verifier::verify) + select(incoming).map(verifier::verify))
-        update { it.copy(purchasedSkus = skus(records)) }
+        refreshCachedReceipts()
         if (operation != null) return
         if (state.value.connectionState != BillingConnectionState.READY) start()
         else if (refreshAfterPayment || pending != null || lastRestore == Long.MIN_VALUE || scheduler.now() - lastRestore >= 60_000) {
@@ -243,7 +238,7 @@ internal class BillingCoordinator(
         val verified = cached.mapNotNull { receipt ->
             try { verifier.verify(receipt) } catch (ignored: Exception) { null }
         }
-        records = select(records.map(verifier::verify) + verified)
+        records = select(records.map(verifier::verify) + verified.filter { BazaarPurchasePolicy.isEligible(it, packageName) })
         update { it.copy(purchasedSkus = skus(records)) }
     }
     private fun save(): Boolean = try { storage.save(StoredBillingData(records, pending)) } catch (error: Exception) { false }

@@ -13,8 +13,8 @@ def run(*args,input=None):
     p=subprocess.run(args,input=input,text=True,capture_output=True,check=True,timeout=180)
     return p.stdout+p.stderr
 
-def test(method):
-    output=run('adb','shell','am','instrument','-w','-r','-e','timeout_msec','120000','-e','class',f'com.oloomyar.app.Grade7PersistenceUiTest#{method}',RUNNER)
+def test(method, test_class='com.oloomyar.app.Grade7PersistenceUiTest'):
+    output=run('adb','shell','am','instrument','-w','-r','-e','timeout_msec','120000','-e','class',f'{test_class}#{method}',RUNNER)
     (OUT/f'{method}.txt').write_text(output)
     assert 'OK (1 test)' in output and 'FAILURES!!!' not in output and 'INSTRUMENTATION_FAILED' not in output,output
 
@@ -22,7 +22,7 @@ def install(path):
     assert path.exists(),path
     output=run('adb','install','-r',str(path));assert 'Success' in output,output
 
-baseline=ROOT/'app/build/upgrade/grade7_0.10.0.apk'
+baseline=ROOT/'app/build/upgrade/grade7_0.11.0.apk'
 current=ROOT/'app/build/outputs/apk/debug/app-debug.apk'
 test_apk=ROOT/'app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk'
 run('adb','uninstall',APP) if 'package:'+APP in run('adb','shell','pm','list','packages',APP).splitlines() else None
@@ -61,8 +61,13 @@ pid_after=subprocess.run(['adb','shell','pidof',APP],capture_output=True,text=Tr
 run('adb','shell','am','start','-W','-n',f'{APP}/com.oloomyar.app.MainActivity')
 pid_restored=run('adb','shell','pidof',APP).strip();assert pid_restored and pid_restored != pid_before
 test('restoreCheckpointAfterRealProcessTermination')
-report=dict(status='PASS',oldVersion='0.10.0',newVersion='0.11.0',installReplacement=True,oldCompletionPreserved=True,
+test('seedVerifiedReceiptBeforeProcessTermination','com.oloomyar.app.billing.BillingProcessPersistenceTest')
+run('adb','shell','am','force-stop',APP)
+assert not subprocess.run(['adb','shell','pidof',APP],capture_output=True,text=True).stdout.strip()
+test('coldProcessUnlocksEveryPaidChapterBeforeAnyConnectionAndAfterOfflineFailure','com.oloomyar.app.billing.BillingProcessPersistenceTest')
+report=dict(status='PASS',oldVersion='0.11.0',newVersion='0.12.0',installReplacement=True,oldCompletionPreserved=True,
     draftSelectionsHintsAndSeedPreserved=True,viewportPreserved=True,answerStayedLocked=True,bookmarksAndDisplaySettingsPreserved=True,
-    changedScienceAuthorizationReset=True,pidBefore=pid_before,pidAfterStop=pid_after,pidRestored=pid_restored,tests=4)
+    changedScienceAuthorizationReset=True,pidBefore=pid_before,pidAfterStop=pid_after,pidRestored=pid_restored,tests=6,
+    signedReceiptSurvivedRealProcessTermination=True,allPaidChaptersUnlockedBeforeConnection=True,offlineGatewaySimulated=True)
 (OUT/'result.json').write_text(json.dumps(report,indent=2)+'\n')
 print(json.dumps(report))

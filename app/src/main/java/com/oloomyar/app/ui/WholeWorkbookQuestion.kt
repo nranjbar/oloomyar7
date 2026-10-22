@@ -98,7 +98,7 @@ internal fun WholeWorkbookQuestion(
     }
     val referenceIndex = if (native) 3 + (if (hintedSteps.isNotEmpty()) 1 else 0) else question.steps.size + 5
     val allCorrect = state.correct(question)
-    val finished = (allCorrect || state.revealed)
+    val finished = allCorrect || state.revealed
     Column(modifier.fillMaxSize()) {
         LazyColumn(Modifier.weight(1f).fillMaxWidth().testTag("question-body"), state = list,
             contentPadding = PaddingValues(16.dp), verticalArrangement = Arrangement.spacedBy(14.dp)) {

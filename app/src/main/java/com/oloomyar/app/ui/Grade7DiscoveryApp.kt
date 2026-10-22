@@ -53,7 +53,7 @@ internal fun Grade7DiscoveryApp(catalog: Grade7Catalog, resumeRevision: Int, onO
     }
     if (purchaseDialog) AlertDialog(onDismissRequest = { purchaseDialog = false },
         title = { Text("فعال‌سازی فصل‌ها") },
-        text = { androidx.compose.foundation.lazy.LazyColumn { item { Grade7PurchasePanel(billingState, billing) } } },
+        text = { androidx.compose.foundation.lazy.LazyColumn { item { Grade7PurchasePanel(billingState, { billing.purchase(BazaarProducts.COMPLETE) }, { billing.restorePurchases() }) } } },
         confirmButton = { TextButton(onClick = { purchaseDialog = false }) { Text("بستن") } })
     var tab by rememberSaveable { mutableStateOf("home") }
     var page by rememberSaveable { mutableStateOf("") }
@@ -157,7 +157,7 @@ internal fun Grade7DiscoveryApp(catalog: Grade7Catalog, resumeRevision: Int, onO
 
                                 }
                                 "chapters" -> {
-                                    item { Grade7PurchasePanel(billingState, billing) }
+                                    item { Grade7PurchasePanel(billingState, { billing.purchase(BazaarProducts.COMPLETE) }, { billing.restorePurchases() }) }
                                     item { OloomSectionHeader("یک فصل، یک کشف تازه", "تمرین‌های اصلی و چهارگزینه‌ای، هرکدام در بخش خودشان.", Blue) }
                                     items(catalog.chapters, key = { it.id }) { chapter ->
                                         DiscoveryChapterCard(chapter, unlocked = BuildConfig.REVIEW_MODE || ChapterAccessPolicy.isUnlocked(chapter.id, billingState.purchasedSkus), showSections = true, onSection = { openChapter(chapter.id, null, it, false) }) { openChapter(chapter.id, null, null, false) }
@@ -179,7 +179,7 @@ internal fun Grade7DiscoveryApp(catalog: Grade7Catalog, resumeRevision: Int, onO
                                     item { BadgePanel(summary) }
                                 }
                                 "more" -> {
-                                    item { Grade7PurchasePanel(billingState, billing) }
+                                    item { Grade7PurchasePanel(billingState, { billing.purchase(BazaarProducts.COMPLETE) }, { billing.restorePurchases() }) }
                                     item { ActionTile("دربارهٔ علوم‌یار", "کتاب کار، مؤلف و نسخهٔ برنامه", Icons.Default.Info, Blue, BlueSoft) { page = "about" } }
                                     item { ActionTile("راهنمای استفاده", "انتخاب، بررسی و یادگیری مرحله‌ای", Icons.Default.Explore, RoyalBlue, BlueSoft) { page = "guide" } }
                                     item { ActionTile("تنظیمات", "اندازهٔ متن و کاهش حرکت", Icons.Default.Tune, Purple, PurpleSoft) { page = "settings" } }
