@@ -61,40 +61,7 @@ def plain(blocks):
     return '\n'.join(out)
 
 def write():
-    OUT.mkdir(exist_ok=True)
-    rows=[]
-    for cid,item in S.items():
-        question=Q[cid];rows.append(dict(id=cid,chapter=question['relatedChapter'],number=question['sourceNumber'],
-            kind=question['section'],page=question['sourcePage'],priority='بالا',status='نیازمند آماده‌سازی',
-            filename=cid+'_answer.png',editableFilename=cid+'_answer.svg',**item,
-            sourceQuestionVisual=question['sourceQuestionVisual'],sourceAnswerVisual=question['answerVisual'],
-            questionText=plain(question['nativeQuestion']),answerText=plain(question['nativeAnswer']),
-            scientificNote=question.get('answerReviewNote')or question.get('sourceReviewNote')))
-    received=[dict(id=q['canonicalId'],chapter=10,number=q['sourceNumber'],filename=q['canonicalId']+'_answer.png',status='دریافت و اضافه شد؛ دوباره آماده نشود') for q in Q.values() if q['relatedChapter']==10 and q.get('answerStudyVisual')]
-    assert len(rows)==26 and len(received)==12
-    common='فقط شکلِ پاسخ آماده شود؛ پاسخ متنی کامل در برنامه باقی می‌ماند. فایل PNG یا WebP با ضلع بلند حدود ۱۶۰۰ تا ۲۴۰۰ پیکسل، برچسب فارسی خوانا، حاشیهٔ کافی و زمینهٔ سفید؛ SVG قابل ویرایش در صورت امکان. نوشته‌های ریز و پاراگراف بلند داخل تصویر نباشد. اعداد، شماره‌ها و جهت پیکان‌ها عین مرجع باشند. فرمول و نشانهٔ شیمیایی چپ‌به‌راست باشد. برای علمی‌بودن، توضیح اصلاحی همین فهرست بر عبارت نادقیق چاپی اولویت دارد. تصویر فقط پس از بازکردن مجاز پاسخ در برنامه نمایش داده می‌شود.'
-    data=dict(date='2026-10-21',edition=1405,chapters=list(range(10,16)),questionsReviewed=len(Q),
-        newHighPriorityFiles=len(rows),alreadySuppliedChapter10=len(received),commonSpecification=common,
-        chapter10='همهٔ ۱۲ تصویرِ اولویت بالای درخواستی فصل ۱۰ دریافت شده‌اند؛ تصویر تازهٔ الزامی برای فصل ۱۰ باقی نمانده است. تصویر تکمیلی سؤال ۲۱ اختیاری است و باید با توضیح علمیِ اصلاح‌شده ساخته شود.',
-        received=received,rows=rows)
-    (OUT/'answer-illustrations-ch10-15.json').write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n')
-    md=['# تصاویر پاسخ با اولویت بالا — فصل‌های ۱۰ تا ۱۵','',f'۲۶ فایل تازه برای فصل‌های ۱۱ تا ۱۵. هر ۱۲ تصویرِ اولویت بالای فصل ۱۰ دریافت و اضافه شده است.','',common,'','| فصل | سؤال | صفحه | نام فایل | موضوع |','|---|---|---|---|---|']
-    cards=[]
-    for row in rows:
-        label=('تست ' if row['kind']=='چهارگزینه‌ای' else 'سؤال ')+str(row['number'])
-        md.append(f'| {row["chapter"]} | {label} | {row["page"]} | `{row["filename"]}` | {row["title"]} |')
-        image=thumb(Q[row['id']]);pic=f'<img src="{image}" alt="شکل مرجع سؤال"/>' if image else ''
-        warning=f'<p class="note">{html.escape(row["scientificNote"])}</p>' if row['scientificNote'] else ''
-        reuse=f'<p>استفادهٔ مفهومی مشترک: {html.escape("، ".join(row["reuseFor"]))}؛ متن کامل هر سؤال جدا می‌ماند.</p>' if row['reuseFor'] else ''
-        cards.append(f'<article><div class="tag">فصل {row["chapter"]} · {label} · صفحهٔ {row["page"]} · اولویت بالا</div><h2>{html.escape(row["title"])}</h2><code>{row["filename"]}</code><p class="spec">{html.escape(row["spec"])}</p>{reuse}<details><summary>صورت و پاسخ متنی و شکل مرجع</summary>{pic}<h3>صورت سؤال</h3><pre>{html.escape(row["questionText"])}</pre><h3>پاسخنامهٔ منبع</h3><pre>{html.escape(row["answerText"])}</pre>{warning}</details></article>')
-    md+=['','## مشخصات هر تصویر','']
-    for row in rows:md += [f'### {row["filename"]} — {row["title"]}','',row['spec'],'']
-    md+=['## فصل ۱۰ — دریافت‌شده؛ آماده‌سازی دوباره لازم نیست','']+[f'- {r["filename"]}' for r in received]
-    md += ['', '## اصلاح تصاویر ارسالیِ موجود', '', '| فایل | اصلاح لازم |', '|---|---|', '| `g7_ch06_q07_answer.png` | تشکیل تگرگ با رشد یخ در ابر همرفتی و جریان صعودی توضیح داده شود؛ با یخ‌زدن سادهٔ باران در مسیر سقوط یکی نیست. |', '| `g7_ch07_q14_answer.png` | شمارهٔ ۱ عمق سطح ایستابی باشد؛ اشباع‌بودن به‌تنهایی برای تعریف آبخوان کافی نیست. |', '| `g7_ch09_q09_answer.png` | عنوان «ترموسیفون» با قلم فارسی خوانا و بدون مربع‌های ناشناخته بازنویسی شود؛ مسیر گردش طبیعی حفظ شود. |', '', 'تصویر فصل ۲ سؤال ۹ برچسب صحیح ۷۲ دارد؛ ۱۲ حجم خودِ سنگ است و اصلاح تصویری تازه لازم ندارد.']
-    (OUT/'Grade7_HighPriority_Images_Ch10-15.md').write_text('\n'.join(md)+'\n')
-    received_table=''.join(f'<tr><td>{r["number"]}</td><td><code>{r["filename"]}</code></td><td>{r["status"]}</td></tr>' for r in received)
-    doc=f'''<!doctype html><html lang="fa" dir="rtl"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>تصاویر پاسخِ اولویت بالا — علوم هفتم</title><style>body{{margin:0;background:#f3f6fa;color:#142d42;font-family:Tahoma,Arial,sans-serif;line-height:1.95}}main{{max-width:980px;margin:auto;padding:24px}}header,article,section{{background:white;padding:24px;border:1px solid #dbe4ec;border-radius:18px;margin:18px 0}}h1{{font-size:29px}}h2{{font-size:22px;margin:8px 0}}.tag{{color:#146570;font-size:14px}}code{{direction:ltr;unicode-bidi:isolate;display:inline-block;color:#174d86;background:#edf4fc;padding:3px 9px;border-radius:7px;font-size:14px;overflow-wrap:anywhere;max-width:95%}}p{{margin:12px 0}}.note{{background:#fff4da;padding:15px;border-radius:10px}}details{{border-top:1px solid #e1e6ef;padding-top:12px}}summary{{cursor:pointer;color:#1d6174}}pre{{font-family:inherit;white-space:pre-wrap;overflow-wrap:anywhere;font-size:14px}}img{{display:block;max-width:100%;height:auto;max-height:430px;margin:12px auto;object-fit:contain}}table{{border-collapse:collapse;width:100%;font-size:14px}}th,td{{padding:9px;border-bottom:1px solid #dfe6ed;text-align:right}}@media print{{body{{background:white}}article{{break-inside:avoid}}details{{display:block}}}} </style><main><header><div class="tag">علوم‌یار هفتم · کتاب کار ۱۴۰۵ · بازبینی ۲۱ اکتبر ۲۰۲۶</div><h1>تصاویر پاسخ با اولویت بالا</h1><p><b>۲۶ فایل تازه</b> برای فصل‌های ۱۱ تا ۱۵؛ <b>۱۲ تصویر فصل ۱۰ دریافت شده است.</b></p><p>{html.escape(common)}</p><p class="note">در تصاویر پاسخِ ارسالیِ فصل ۷ سؤال ۱۴، شمارهٔ ۱ باید «عمق سطح ایستابی» باشد؛ منطقهٔ اشباع به‌تنهایی تعریف کامل آبخوان نیست. در فصل ۶ سؤال ۷، متن تشکیل تگرگ باید با رشد یخ در ابر توفانی اصلاح شود. برنامه توضیح درست را پیش از نمایش این تصاویر می‌آورد. در فصل ۲ سؤال ۹، برچسب ۷۲ تصویر صحیح است و ۱۲ حجم خود سنگ است؛ اصلاح تصویری تازه لازم ندارد. در فایل g7_ch09_q09_answer.png نیز عنوان «ترموسیفون» باید با قلم خوانا و بدون مربع‌های ناشناخته نوشته شود؛ مسیر گردش طبیعی حفظ شود.</p></header>{''.join(cards)}<section><h2>فصل ۱۰ — آماده‌سازی دوباره لازم نیست</h2><p>{html.escape(data['chapter10'])}</p><table><thead><tr><th>سؤال</th><th>فایل دریافت‌شده</th><th>وضعیت</th></tr></thead><tbody>{received_table}</tbody></table></section></main></html>'''
-    (OUT/'Grade7_HighPriority_Images_Ch10-15.html').write_text(doc)
-    print(json.dumps(dict(newHighPriorityFiles=len(rows),alreadyReceived=len(received),chapterCounts={str(ch):sum(r['chapter']==ch for r in rows) for ch in range(10,16)})))
+    from answer_art_received_report import write as received_status
+    received_status()
 
 if __name__=='__main__':write()

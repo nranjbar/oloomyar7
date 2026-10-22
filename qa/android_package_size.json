@@ -4,23 +4,23 @@
     {
       "kind": "debug",
       "path": "app/build/outputs/apk/debug/app-debug.apk",
-      "bytes": 61047246,
-      "sha256": "c8a765a4fe30d7e64215f88b64c1d9ca5ef0038d64971566a1210c386515e7da",
-      "assetEntries": 216,
+      "bytes": 70770826,
+      "sha256": "df27956b2bce4a977c73b0f8cbc8b80f08b37154e9d0990555e0cef2cf327dbd",
+      "assetEntries": 243,
       "nativeQuestions": 317,
       "nativeAnswers": 317,
-      "compressedAssetBytes": 41801845,
+      "compressedAssetBytes": 51518279,
       "previousThreeChapterApkBytes": 47596130
     },
     {
       "kind": "releaseBundle",
       "path": "app/build/outputs/bundle/release/app-release.aab",
-      "bytes": 45833040,
-      "sha256": "d3207b9ebdd9bc06f762c7f0d6fa20f8f51f4df549c4825a4fec323ebb15fae5",
-      "assetEntries": 216,
+      "bytes": 55553510,
+      "sha256": "848fa3baeb2393c1d043a137af451a6ebd23e06176ae83c2e0136a7140aa1171",
+      "assetEntries": 243,
       "nativeQuestions": 317,
       "nativeAnswers": 317,
-      "compressedAssetBytes": 41641391,
+      "compressedAssetBytes": 51354625,
       "previousThreeChapterApkBytes": 47596130
     }
   ]

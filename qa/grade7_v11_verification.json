@@ -1,0 +1,176 @@
+{
+  "testedSourceCommit": "3c9001107f347a354570a9815709a3d7f09623a0",
+  "testedSourceTree": "bee8cbe5d9160b6842b417835766574e6dd3f9df",
+  "version": "0.11.0-grade7-1405",
+  "versionCode": 12,
+  "status": "PASS",
+  "verificationConclusion": "All verification and cleanup jobs succeeded",
+  "ciJobs": [
+    {
+      "id": 119956189546,
+      "name": "grade7",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 119967142694,
+      "name": "cleanup-merged-grade7-branches",
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ],
+  "runId": 39816472053,
+  "runAttempt": 1,
+  "runUrl": "https://github.com/nranjbar/oloomyar7/actions/runs/39816472053",
+  "apkArtifactId": 12442132692,
+  "apkArchiveSha256": "52f10a31c57da9ba3cf7e30dd5486e5a445048ee34da691f3886d79442b6cad2",
+  "reportArtifactId": 12442569819,
+  "reportArchiveSha256": "b4fe387f1cd3c77d7232602f4a98059b8d8519c6627aed6232a2a5d82b72aa39",
+  "releaseBundleArtifactId": 12443061679,
+  "releaseBundleArchiveSha256": "157d6ef6da76bd06049fa4804b178ebc1de3762b00034e396967213a79d646d8",
+  "unit": {
+    "tests": 43,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "androidApi35": {
+    "tests": 62,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "nativeGeometry": {
+    "status": "PASS",
+    "frames": 1902,
+    "questions": 317,
+    "configurations": [
+      {
+        "widthDp": 320,
+        "fontScale": 1
+      },
+      {
+        "widthDp": 320,
+        "fontScale": 2
+      },
+      {
+        "widthDp": 360,
+        "fontScale": 1.5
+      }
+    ]
+  },
+  "referenceRouteParity": {
+    "status": "PASS",
+    "actualQuestionScreens": 99,
+    "completeNativeBlocksAndFigures": true,
+    "automaticAfterCorrectCheck": true,
+    "explicitRevealAfterProtectedHintRoute": true,
+    "identicalCompleteBody": true,
+    "report": "qa/reference_route_parity_v11.json"
+  },
+  "printedMCQOrder": {
+    "sourceOrder": "الف، ب، ج، د",
+    "choiceSteps": 56,
+    "actualUISeeds": [
+      1,
+      1405,
+      -91
+    ],
+    "practiceAndExam": true
+  },
+  "originalPrintedTables": {
+    "count": 5,
+    "completeSourceRegionBeforeNativeTable": true,
+    "additionalRasterBytes": 0,
+    "report": "qa/source/original-tables-v11.json"
+  },
+  "persistence": {
+    "status": "PASS",
+    "oldVersion": "0.10.0",
+    "newVersion": "0.11.0",
+    "installReplacement": true,
+    "oldCompletionPreserved": true,
+    "draftSelectionsHintsAndSeedPreserved": true,
+    "viewportPreserved": true,
+    "answerStayedLocked": true,
+    "bookmarksAndDisplaySettingsPreserved": true,
+    "changedScienceAuthorizationReset": true,
+    "pidBefore": "6927",
+    "pidAfterStop": "",
+    "pidRestored": "6977",
+    "tests": 4
+  },
+  "apk": {
+    "bytes": 70770826,
+    "sha256": "df27956b2bce4a977c73b0f8cbc8b80f08b37154e9d0990555e0cef2cf327dbd",
+    "reviewCertificateSha256": "aee8bc4482b0cc935148a5f0aabaf105d5e7c42f31efaf080473a04d33335ab4",
+    "packagedAssetsExact": 243,
+    "offline": true,
+    "versionName": "0.11.0-grade7-1405",
+    "package": "com.oloomyar.app.grade7"
+  },
+  "appFatalExceptions": 0,
+  "ownerArt": {
+    "scientificImages": 151,
+    "questionIllustrations": 54,
+    "answerIllustrations": 97,
+    "newAnswers": 26,
+    "correctedAnswer": "g7_ch07_q14",
+    "fullOriginalDimensions": true,
+    "losslessScientificImages": 29,
+    "minMeasuredLumaSsim": 0.99500364,
+    "androidDecodedPixelsMatchAllReviewedDerivatives": true
+  },
+  "sourcePdfsAndOriginalQuestionKeyFieldsUnchanged": true,
+  "remainingHighPriorityChapter11To15Images": 0,
+  "actualScreenshots": [
+    {
+      "path": "qa/screenshots/v11/v11-original-table-2-2.png",
+      "sha256": "0241c3d1ec38ff9e12a751d2ab611b857fd03a9c02cf3f2aad16f891e45b567e"
+    },
+    {
+      "path": "qa/screenshots/v11/v11-original-table-4-17.png",
+      "sha256": "24d3c16589fec4dd708e7309469337a7d61885d278360d9facc77ce97b9a05ac"
+    },
+    {
+      "path": "qa/screenshots/v11/v11-original-table-5-2.png",
+      "sha256": "8fafa24a1d4d126eb6fd45a653da5f00f3c9c66bcc6bbe0b8cd8b0354e73c848"
+    },
+    {
+      "path": "qa/screenshots/v11/v11-original-table-5-11.png",
+      "sha256": "5c53ec327ca1c9bc468e6011e2d9cbc3e20db508f621523d734138c728ff1d23"
+    },
+    {
+      "path": "qa/screenshots/v11/v11-original-table-8-18.png",
+      "sha256": "8c6de60f1437a19d63c98224a213db877ecdeddb96997d1cc7d7fcc1376421a3"
+    },
+    {
+      "path": "qa/screenshots/v11/v11-reference-7-14-correct.png",
+      "sha256": "7b3bae6263f14d8f8474bef2cd8f3fe967b6deea6a14e23de7ec2ab08763e422"
+    },
+    {
+      "path": "qa/screenshots/v11/v11-reference-7-14-hints.png",
+      "sha256": "ec35dcd67ea6327ce560d365b954cab12f348b42e8b1fe9ec61fab07f52adf54"
+    },
+    {
+      "path": "qa/screenshots/v11/v11-reference-2-9-correct.png",
+      "sha256": "c3548f237fa487ac5decb980d4e40da0c526ac56a3bcb011e50e2c21a0535891"
+    },
+    {
+      "path": "qa/screenshots/v11/grade7-15-solved-original-answer.png",
+      "sha256": "a6677c37ec339b8163fd372baeb90de3cee06dc525c424c71147c424cd5d1bb9"
+    },
+    {
+      "path": "qa/screenshots/v11/native-01-table-font150.png",
+      "sha256": "a1d852bf6f4f4eed3523665b1e84d416bf6e3eee3202ad0f5023f680775aaf37"
+    },
+    {
+      "path": "qa/screenshots/v11/v11-real-upgrade-owner-approved-draft-reset.png",
+      "sha256": "305905fbf2b5d5bd390618749f71b53be7365f0ef35010f69e3574ca21b94881"
+    },
+    {
+      "path": "qa/screenshots/v11/discovery-13-after-process-termination.png",
+      "sha256": "09d912e4eaa1849227534860502c833a2d9205a4a3a69b5cf74a0db56ed54eeb"
+    }
+  ]
+}
