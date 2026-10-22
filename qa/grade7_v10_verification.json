@@ -1,0 +1,219 @@
+{
+  "testedSourceCommit": "c4c942100ce0365e9e865e9e254e4a0ef1ad27f3",
+  "testedSourceTree": "fee70ace32dc4bcd5ba4669931ee6ea9cf084b48",
+  "version": "0.10.0-grade7-1405",
+  "versionCode": 11,
+  "runId": 39724771390,
+  "runUrl": "https://github.com/nranjbar/oloomyar7/actions/runs/39724771390",
+  "changedPracticeQuestionIds": [
+    "g7_ch01_q07",
+    "g7_ch03_q07",
+    "g7_ch03_q08",
+    "g7_ch03_q14",
+    "g7_ch03_q16",
+    "g7_ch03_mcq02",
+    "g7_ch03_mcq05",
+    "g7_ch04_q16",
+    "g7_ch04_q17",
+    "g7_ch05_q06",
+    "g7_ch05_q09",
+    "g7_ch05_q10",
+    "g7_ch06_q07",
+    "g7_ch06_q13",
+    "g7_ch07_q11",
+    "g7_ch07_q12",
+    "g7_ch07_q14",
+    "g7_ch07_q24",
+    "g7_ch08_q02",
+    "g7_ch08_q13",
+    "g7_ch09_q01",
+    "g7_ch09_q07",
+    "g7_ch09_q14",
+    "g7_ch10_q20",
+    "g7_ch10_mcq04",
+    "g7_ch11_q07",
+    "g7_ch14_q08"
+  ],
+  "status": "PASS",
+  "conclusion": "success",
+  "runAttempt": 1,
+  "apkArtifactId": 12402593028,
+  "apkArchiveSha256": "5071db4a5cde8edcc301d6cdf70cef844b7e12eb6deecb6dc095170c3fbff473",
+  "reportArtifactId": 12403441474,
+  "reportArchiveSha256": "edf8e7de37e7b3bb465c3e57fff720f8e9b1fba25e17538197fe05ca47ccf048",
+  "releaseBundleArtifactId": 12402797600,
+  "releaseBundleArchiveSha256": "37645c14ec97d1761340e121cb8c8dab79e37bad2ba14d301fffa9b0d78af628",
+  "unit": {
+    "tests": 42,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "androidApi35": {
+    "tests": 60,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "nativeGeometry": {
+    "status": "PASS",
+    "frames": 1902,
+    "questions": 317,
+    "configurations": [
+      {
+        "widthDp": 320,
+        "fontScale": 1
+      },
+      {
+        "widthDp": 320,
+        "fontScale": 2
+      },
+      {
+        "widthDp": 360,
+        "fontScale": 1.5
+      }
+    ]
+  },
+  "referenceRouteParity": {
+    "status": "PASS",
+    "actualQuestionScreens": 75,
+    "completeNativeBlocksAndFigures": true,
+    "scientificNotesAndArtIdentical": true,
+    "explicitRevealBothRoutes": true,
+    "report": "qa/reference_route_parity_v10.json"
+  },
+  "persistence": {
+    "status": "PASS",
+    "oldVersion": "0.9.0",
+    "newVersion": "0.10.0",
+    "installReplacement": true,
+    "oldCompletionPreserved": true,
+    "draftSelectionsHintsAndSeedPreserved": true,
+    "viewportPreserved": true,
+    "answerStayedLocked": true,
+    "bookmarksAndDisplaySettingsPreserved": true,
+    "changedScienceAuthorizationReset": true,
+    "pidBefore": "6791",
+    "pidAfterStop": "",
+    "pidRestored": "6842",
+    "tests": 4
+  },
+  "packages": [
+    {
+      "kind": "debug",
+      "path": "app/build/outputs/apk/debug/app-debug.apk",
+      "bytes": 61047246,
+      "sha256": "c8a765a4fe30d7e64215f88b64c1d9ca5ef0038d64971566a1210c386515e7da",
+      "assetEntries": 216,
+      "nativeQuestions": 317,
+      "nativeAnswers": 317,
+      "compressedAssetBytes": 41801845,
+      "previousThreeChapterApkBytes": 47596130
+    },
+    {
+      "kind": "releaseBundle",
+      "path": "app/build/outputs/bundle/release/app-release.aab",
+      "bytes": 45833040,
+      "sha256": "d3207b9ebdd9bc06f762c7f0d6fa20f8f51f4df549c4825a4fec323ebb15fae5",
+      "assetEntries": 216,
+      "nativeQuestions": 317,
+      "nativeAnswers": 317,
+      "compressedAssetBytes": 41641391,
+      "previousThreeChapterApkBytes": 47596130
+    }
+  ],
+  "packageVerification": {
+    "status": "PASS",
+    "application": {
+      "versionCode": 11,
+      "versionName": "0.10.0-grade7-1405",
+      "compileSdkVersion": 37,
+      "compileSdkVersionCodename": "17",
+      "package": "com.oloomyar.app.grade7",
+      "platformBuildVersionCode": 37,
+      "platformBuildVersionName": 17
+    },
+    "sdk": {
+      "minSdkVersion": 23,
+      "targetSdkVersion": 37
+    },
+    "bytes": 61047246,
+    "sha256": "c8a765a4fe30d7e64215f88b64c1d9ca5ef0038d64971566a1210c386515e7da",
+    "packagedAssetsIdenticalToSource": 216,
+    "certificateSha256": "aee8bc4482b0cc935148a5f0aabaf105d5e7c42f31efaf080473a04d33335ab4",
+    "scientificFigures": 125,
+    "previousApkBytes": 66416055,
+    "reductionBytes": 5368809,
+    "reductionPercent": 8.084
+  },
+  "ownerArt": {
+    "scientificFigures": 125,
+    "questionFigures": 54,
+    "gatedAnswerIllustrations": 71,
+    "addedAnswers": 64,
+    "addedQuestions": 2,
+    "fullResolution": true,
+    "losslessScientificImages": 25,
+    "minMeasuredLumaSsim": 0.99500364,
+    "originalSourceFiguresPixelTest": 19,
+    "reviewedDerivativePixelsOnAndroid": 125,
+    "isolatedBiologyDiagramPages": 4,
+    "derivedEmbeddedImagesPixelIdentical": 6,
+    "uiAssets": 7
+  },
+  "imageOptimization": {
+    "beforeAllImageBytes": 41437576,
+    "afterAllImageBytes": 36016534,
+    "reductionPercent": 13.082,
+    "scientificResizing": false,
+    "originalAndDerivativeHashesSeparate": true
+  },
+  "content": {
+    "questions": 317,
+    "nativeQuestions": 317,
+    "nativeAnswers": 317,
+    "learningGroups": 334,
+    "hints": 668,
+    "originalPdfs": 16,
+    "nativePresentationRevisions": 41,
+    "practiceAuthorizationRevisions": 27,
+    "sourceFieldsUnchanged": true,
+    "pendingSourceKeyDecision": [
+      "g7_ch13_mcq03"
+    ]
+  },
+  "priorityArt": {
+    "chapters": [
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "newFiles": 26,
+    "receivedChapter10": 12,
+    "report": "review/Grade7_HighPriority_Images_Ch10-15.html"
+  },
+  "ownerImageErrata": [
+    "g7_ch06_q07_answer",
+    "g7_ch07_q14_answer"
+  ],
+  "ownerImageFontIssue": [
+    "g7_ch09_q09_answer"
+  ],
+  "screenshots": [
+    "qa/screenshots/v10/v10-reference-10-18-correct.png",
+    "qa/screenshots/v10/v10-reference-10-18-hints.png",
+    "qa/screenshots/v10/v10-reference-2-9-correct.png",
+    "qa/screenshots/v10/v10-reference-2-9-hints.png",
+    "qa/screenshots/v10/v10-reference-6-7-correct.png",
+    "qa/screenshots/v10/v10-reference-6-7-hints.png",
+    "qa/screenshots/v10/v10-reference-7-14-correct.png",
+    "qa/screenshots/v10/v10-reference-7-14-hints.png",
+    "qa/screenshots/v10/layout-g7_ch05_q02.png",
+    "qa/screenshots/v10/layout-g7_ch14_q10.png",
+    "qa/screenshots/v10/layout-g7_ch11_q06.png",
+    "qa/screenshots/v10/layout-g7_ch15_q12.png"
+  ]
+}
