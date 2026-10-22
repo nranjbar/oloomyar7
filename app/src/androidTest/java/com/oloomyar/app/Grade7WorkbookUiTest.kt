@@ -76,7 +76,7 @@ class Grade7WorkbookUiTest {
     @Test fun realHomeOpensTheThreeImplementedChapters() {
         ActivityScenario.launch(MainActivity::class.java).use {
             compose.awaitGrade7Home()
-            compose.onNodeWithText("علوم‌یار هفتم").assertIsDisplayed();capture("grade7-01-home")
+            compose.onNodeWithTag("nav-chapters").assertIsDisplayed();capture("grade7-01-home")
             compose.onNodeWithTag("nav-chapters").performClick()
             compose.onNodeWithTag("hub-list").performScrollToNode(hasText("اتم‌ها، الفبای مواد"))
             compose.onNodeWithText("اتم‌ها، الفبای مواد").performClick()
@@ -232,6 +232,16 @@ class Grade7WorkbookUiTest {
         compose.onNodeWithText("آزمون همین بخش").assertDoesNotExist()
         compose.onNodeWithText("ادامهٔ تمرین").assertDoesNotExist()
         compose.onNodeWithTag("question-search").assertDoesNotExist()
+    }
+    @Test fun openedQuestionHidesItsListTitleAndShowsTheOriginalPrompt() {
+        val q = Grade7Chapter2Repository(context).questions.first { it.sourceNumber == 11 && it.section == "تمرین‌های اصلی" }
+        open(q)
+        compose.onNodeWithText("سؤال ${fa(q.sourceNumber)} • ${q.title}").assertDoesNotExist()
+        compose.onNodeWithTag("question-body").performScrollToNode(hasTestTag("native-source-question"))
+        compose.onNodeWithTag("native-source-question").assertExists()
+        compose.onNodeWithContentDescription("برگشت").performClick()
+        compose.onNodeWithTag("question-list-${q.id}").assertExists()
+        compose.onNodeWithText("سؤال ${fa(q.sourceNumber)} • ${q.title}").assertExists()
     }
     @Test fun sourceFigureCanBeEnlargedWithoutShowingAnyAnswer() {
         val q=Grade7Chapter2Repository(context).questions.first { it.sourceNumber==11 && it.section=="تمرین‌های اصلی" };open(q)

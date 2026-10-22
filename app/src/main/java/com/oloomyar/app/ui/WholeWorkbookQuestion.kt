@@ -107,7 +107,6 @@ internal fun WholeWorkbookQuestion(
                     Row(Modifier.fillMaxWidth(), verticalAlignment = androidx.compose.ui.Alignment.CenterVertically) {
                         if (native) Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(3.dp)) {
                             Text(position, color = Blue, style = MaterialTheme.typography.bodySmall)
-                            Text("سؤال ${workbookFa(question.sourceNumber)} • ${question.title}", style = MaterialTheme.typography.titleMedium)
                             Text("فصل ${workbookFa(question.relatedChapter)} • صفحهٔ ${workbookFa(question.sourcePage)}", color = Muted, style = MaterialTheme.typography.bodySmall)
                         } else OloomPill(position, Blue, MaterialTheme.colorScheme.surface)
                         if (!native) Spacer(Modifier.weight(1f))
@@ -117,7 +116,6 @@ internal fun WholeWorkbookQuestion(
                         }
                     }
                     if (!native) {
-                        Text("سؤال ${workbookFa(question.sourceNumber)} • ${question.title}", style = MaterialTheme.typography.titleLarge)
                         Text(question.source, color = Muted, style = MaterialTheme.typography.bodySmall)
                     }
                     question.sourceReviewNote?.let { Text(it, color = Orange, style = MaterialTheme.typography.bodySmall) }
