@@ -1,7 +1,18 @@
+import java.util.Properties
+
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.plugin.compose")
 }
+
+val paymentProperties = Properties().apply {
+    rootProject.file("local.properties").takeIf { it.isFile }?.inputStream()?.use { load(it) }
+}
+// Grade 7 has its own Bazaar application and RSA key. Never reuse the Grade 9 key.
+val grade7BazaarKey = providers.gradleProperty("BAZAAR_RSA_PUBLIC_KEY")
+    .orElse(providers.environmentVariable("BAZAAR_RSA_PUBLIC_KEY"))
+    .orElse(paymentProperties.getProperty("BAZAAR_RSA_PUBLIC_KEY", ""))
+    .get().replace("\\", "\\\\").replace("\"", "\\\"")
 
 android {
     namespace = "com.oloomyar.app"
@@ -11,10 +22,12 @@ android {
         applicationId = "com.oloomyar.app.grade7"
         minSdk = 23
         targetSdk = 37
-        versionCode = 12
-        versionName = "0.11.0-grade7-1405"
+        versionCode = 13
+        versionName = "0.12.0-grade7-1405"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         buildConfigField("int", "WORKBOOK_GRADE", "7")
+        buildConfigField("String", "BAZAAR_RSA_PUBLIC_KEY", "\"$grade7BazaarKey\"")
+        buildConfigField("boolean", "REVIEW_MODE", "false")
     }
 
     // Public, review-only key: make debug updates installable across CI runners.
@@ -37,6 +50,7 @@ android {
     // and one copy of each PDF, never duplicate PNG crops.
     androidResources { ignoreAssetsPattern = "*.png:*.tmp:.*:!CVS:!thumbs.db:!picasa.ini:!*~" }
     buildTypes {
+        getByName("debug") { buildConfigField("boolean", "REVIEW_MODE", "true") }
         getByName("release") {
             isMinifyEnabled = true
             isShrinkResources = true
@@ -78,7 +92,9 @@ dependencies {
     implementation("androidx.compose.ui:ui")
     implementation("androidx.compose.ui:ui-tooling-preview")
     debugImplementation("androidx.compose.ui:ui-tooling")
+    implementation("com.github.cafebazaar.Poolakey:poolakey:2.2.0")
     testImplementation("junit:junit:4.13.2")
+    testImplementation("org.json:json:20250517")
     androidTestImplementation(composeBom)
     androidTestImplementation("androidx.compose.ui:ui-test-junit4")
     androidTestImplementation("androidx.test:runner:1.6.2")

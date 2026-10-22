@@ -87,8 +87,13 @@ class Grade7DiscoveryUiTest {
             compose.onNodeWithTag("hub-list").performScrollToNode(hasTestTag("home-progress"))
             compose.onNodeWithTag("home-progress").assertTextEquals("۰ از ۳۱۷")
             compose.onNodeWithTag("hub-list").performScrollToIndex(0)
-            compose.onNodeWithTag("home-start").assertHasClickAction();capture("discovery-01-home-360-default")
-            compose.onNodeWithTag("home-start").performClick()
+            compose.onNodeWithTag("home-start").assertDoesNotExist();capture("discovery-01-home-360-default")
+            compose.onNodeWithTag("home-start").assertDoesNotExist()
+            compose.onNodeWithTag("nav-chapters").performClick()
+            compose.onNodeWithTag("chapter-1").performScrollTo().performClick()
+            compose.onNodeWithTag("chapter-section-تمرین‌های اصلی").performScrollTo().performClick()
+            val first = Grade7Chapter1Repository(context).questions.first()
+            compose.onNodeWithTag("question-list-${first.id}").performScrollTo().performClick()
             compose.onNodeWithTag("bookmark-question").assertIsDisplayed().performClick()
             val q = Grade7Chapter1Repository(context).questions.first()
             assertTrue(WorkbookProgress(context,"grade7_chapter1",listOf(q)).bookmarked(q.id))
@@ -96,18 +101,23 @@ class Grade7DiscoveryUiTest {
             compose.onNodeWithTag("reveal-answer").assertIsNotEnabled()
         }
     }
-    @Test fun continuationOpensTheActualSavedQuestionWithItsDraft() {
+    @Test fun savedDraftOpensOnlyThroughExplicitQuestionSelection() {
         val q = Grade7Chapter2Repository(context).questions.first { it.sourceNumber == 8 && it.section == "تمرین‌های اصلی" }
-        val s = q.steps.single(); val wrong = s.options.indexOfFirst { !it.correct }
-        val state = QuestionPractice(shuffleSeed = 9142).change(s,listOf(wrong.toString())).submit(q)
-        val progress = WorkbookProgress(context,"grade7_chapter2",listOf(q));progress.saveDraft(q.id,QuestionDraftCodec.encode(state))
+        val step = q.steps.single()
+        val state = QuestionPractice(shuffleSeed=9142).change(step,listOf(step.options.indexOfFirst { !it.correct }.toString())).submit(q)
+        val progress = WorkbookProgress(context,"grade7_chapter2",listOf(q))
+        progress.saveDraft(q.id,QuestionDraftCodec.encode(state))
         LearningPreferences(context).remember(PracticeLocation(2,q.id))
         ActivityScenario.launch(MainActivity::class.java).use {
             compose.awaitGrade7Home()
-            compose.onNodeWithTag("home-start").performClick()
+            compose.onNodeWithTag("home-start").assertDoesNotExist()
+            compose.onNodeWithTag("continue-last").assertDoesNotExist()
+            compose.onNodeWithTag("nav-chapters").performClick()
+            compose.onNodeWithTag("chapter-2").performScrollTo().performClick()
+            compose.onNodeWithTag("chapter-section-تمرین‌های اصلی").performScrollTo().performClick()
+            compose.onNodeWithTag("question-list-${q.id}").performScrollTo().performClick()
             compose.onNodeWithTag("reveal-answer").assertIsNotEnabled()
             assertEquals(state,QuestionDraftCodec.decode(progress.draft(q.id)))
-            capture("discovery-02-resume-saved-question")
         }
     }
     @Test fun bookmarkReviewHasRealEntriesAndOpensTheExactQuestion() {
@@ -158,13 +168,13 @@ class Grade7DiscoveryUiTest {
         shell("wm size 1080x2160");shell("wm density 440")
         ActivityScenario.launch(MainActivity::class.java).use {
             compose.awaitGrade7Home()
-            compose.onNodeWithTag("home-start").assertIsDisplayed();capture("discovery-07-home-393")
+            compose.onNodeWithTag("nav-chapters").assertIsDisplayed();capture("discovery-07-home-393")
         }
         shell("wm size 1200x1920");shell("wm density 240")
         LearningPreferences(context).reduceMotion(true)
         ActivityScenario.launch(MainActivity::class.java).use {
             compose.awaitGrade7Home()
-            compose.onNodeWithTag("home-start").assertIsDisplayed();capture("discovery-08-tablet-800dp")
+            compose.onNodeWithTag("nav-chapters").assertIsDisplayed();capture("discovery-08-tablet-800dp")
             compose.onNodeWithTag("nav-more").performClick();hubText("دربارهٔ علوم‌یار")
             compose.onNodeWithText("کتاب کار علوم تجربی پایهٔ هفتم، چاپ ۱۴۰۵، تألیف علی رنجبر، همراه با پاسخنامهٔ همان کتاب.").assertExists()
         }

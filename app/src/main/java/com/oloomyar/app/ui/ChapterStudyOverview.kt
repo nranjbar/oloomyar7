@@ -18,7 +18,7 @@ import com.oloomyar.app.ui.theme.*
 
 /** The supplied chapter illustration is the cover, with real local progress. */
 @Composable
-internal fun ChapterStudyCover(chapter:Int,total:Int,done:Int,returning:Boolean,onContinue:()->Unit) {
+internal fun ChapterStudyCover(chapter:Int,total:Int,done:Int) {
     Surface(Modifier.fillMaxWidth().testTag("chapter-study-cover"),
         shape=RoundedCornerShape(28.dp),color=Color.White,
         border=BorderStroke(1.dp,Border),shadowElevation=2.dp) {
@@ -31,12 +31,7 @@ internal fun ChapterStudyCover(chapter:Int,total:Int,done:Int,returning:Boolean,
                         style=MaterialTheme.typography.labelLarge,modifier=Modifier.testTag("chapter-study-progress"))
                 }
                 OloomProgressBar(if(total==0)0f else done.toFloat()/total,Blue)
-                Button(onClick=onContinue,modifier=Modifier.fillMaxWidth().heightIn(min=54.dp).testTag("chapter-study-continue"),
-                    shape=RoundedCornerShape(18.dp),
-                    colors=ButtonDefaults.buttonColors(containerColor=Yellow,contentColor=Navy)) {
-                    Text(if(returning)"ادامهٔ یادگیری" else "شروع یادگیری",style=MaterialTheme.typography.titleSmall)
-                    Spacer(Modifier.width(8.dp));Icon(Icons.AutoMirrored.Filled.ArrowBack,null,Modifier.size(20.dp))
-                }
+
             }
         }
     }

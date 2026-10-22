@@ -32,7 +32,6 @@ internal fun WholeWorkbookQuestion(
     question: ChapterQuestion,
     progress: WorkbookProgress,
     conceptual: Boolean,
-    exam: Boolean,
     sessionToken: Int,
     position: String,
     modifier: Modifier,
@@ -42,8 +41,7 @@ internal fun WholeWorkbookQuestion(
     onFinish: (Int, Boolean) -> Unit
 ) {
     var json by rememberSaveable(question.id, sessionToken) {
-        mutableStateOf(if (exam) QuestionDraftCodec.encode(QuestionPractice()) else
-            progress.draft(question.id) ?: QuestionDraftCodec.encode(QuestionPractice()))
+        mutableStateOf(progress.draft(question.id) ?: QuestionDraftCodec.encode(QuestionPractice()))
     }
     val state = remember(json) { QuestionDraftCodec.decode(json, question) }
     val initialScroll = remember { runCatching { JSONObject(json) }.getOrElse { JSONObject() } }
@@ -60,12 +58,12 @@ internal fun WholeWorkbookQuestion(
         json = JSONObject(QuestionDraftCodec.encode(changed)).apply {
             put("scrollIndex", list.firstVisibleItemIndex); put("scrollOffset", list.firstVisibleItemScrollOffset)
         }.toString()
-        if (!exam) progress.saveDraft(question.id, json)
+        progress.saveDraft(question.id, json)
     }
     val latestJson by rememberUpdatedState(json)
     DisposableEffect(lifecycle, question.id) {
         val observer = LifecycleEventObserver { _, event ->
-            if (event == Lifecycle.Event.ON_STOP && !exam) progress.checkpoint(question.id,
+            if (event == Lifecycle.Event.ON_STOP) progress.checkpoint(question.id,
                 JSONObject(latestJson).apply { put("scrollIndex", list.firstVisibleItemIndex); put("scrollOffset", list.firstVisibleItemScrollOffset) }.toString())
         }
         lifecycle.lifecycle.addObserver(observer)
@@ -73,20 +71,20 @@ internal fun WholeWorkbookQuestion(
     }
     DisposableEffect(question.id) {
         onDispose {
-            if (!exam && progress.draft(question.id) != null) progress.saveDraft(question.id,
+            if (progress.draft(question.id) != null) progress.saveDraft(question.id,
                 JSONObject(latestJson).apply {
                     put("scrollIndex", list.firstVisibleItemIndex); put("scrollOffset", list.firstVisibleItemScrollOffset)
                 }.toString())
         }
     }
     LaunchedEffect(question.id) {
-        if (!exam) {
+
             update(state)
             if (question.relatedChapter in 1..15) LearningPreferences(context).remember(PracticeLocation(question.relatedChapter, question.id))
-        }
+
     }
-    LaunchedEffect(question.id, exam) {
-        if (!exam) snapshotFlow { list.isScrollInProgress }.collect { scrolling ->
+    LaunchedEffect(question.id) {
+        snapshotFlow { list.isScrollInProgress }.collect { scrolling ->
             if (!scrolling) progress.saveDraft(question.id, JSONObject(latestJson).apply {
                 put("scrollIndex", list.firstVisibleItemIndex); put("scrollOffset", list.firstVisibleItemScrollOffset)
             }.toString())
@@ -95,12 +93,12 @@ internal fun WholeWorkbookQuestion(
     val inlineStep = question.steps.singleOrNull()?.takeIf { it.clozeTemplate != null }
     val native = question.nativeQuestion.isNotEmpty()
     val hintedSteps = question.steps.filter { step ->
-        !exam && state.hintLevel(question, step) > 0 &&
+        state.hintLevel(question, step) > 0 &&
             state.checked[step.id]?.let { !WorkbookAnswers.isCorrect(step, it) } == true
     }
     val referenceIndex = if (native) 3 + (if (hintedSteps.isNotEmpty()) 1 else 0) else question.steps.size + 5
     val allCorrect = state.correct(question)
-    val finished = !exam && (allCorrect || state.revealed)
+    val finished = (allCorrect || state.revealed)
     Column(modifier.fillMaxSize()) {
         LazyColumn(Modifier.weight(1f).fillMaxWidth().testTag("question-body"), state = list,
             contentPadding = PaddingValues(16.dp), verticalArrangement = Arrangement.spacedBy(14.dp)) {
@@ -133,12 +131,12 @@ internal fun WholeWorkbookQuestion(
                 WorkbookPanel(accent = Purple) {
                     Text(if (native) "صورت سؤال" else "صورت اصلی سؤال کتاب", color = Purple, style = MaterialTheme.typography.titleMedium)
                     if (native) {
-                        NativeWorkbookContent(question, question.nativeQuestion, state, exam) { step, values ->
+                        NativeWorkbookContent(question, question.nativeQuestion, state) { step, values ->
                             update(state.change(step, values))
                         }
                     } else if (inlineStep != null) {
-                        WorkbookInput(inlineStep, state.values(inlineStep), state.revealed && !exam,
-                            practice = if (exam) state.copy(checked = emptyMap(), revealed = false) else state) {
+                        WorkbookInput(inlineStep, state.values(inlineStep), state.revealed,
+                            practice = state) {
                             update(state.change(inlineStep, it))
                         }
                     } else if (question.readablePrompt != null) {
@@ -183,14 +181,14 @@ internal fun WholeWorkbookQuestion(
                     if (inlineStep == null && !native) {
                         Text(if (question.steps.size == 1) "انتخاب پاسخ" else "قسمت ${workbookFa(index + 1)}", color = Blue, style = MaterialTheme.typography.titleMedium)
                         WorkbookText(step.prompt, bold = true)
-                        val locked = !exam && (state.revealed || (step.kind != StepKind.MATCH && step.kind != StepKind.CLASSIFY && state.locked(step)))
+                        val locked = (state.revealed || (step.kind != StepKind.MATCH && step.kind != StepKind.CLASSIFY && state.locked(step)))
                         WorkbookInput(step, state.values(step), locked,
-                            practice = if (exam) state.copy(checked = emptyMap(), revealed = false) else state) {
+                            practice = state) {
                             update(state.change(step, it))
                         }
                     }
                     val hintLevel = state.hintLevel(question, step)
-                    if (!exam && hintLevel > 0 && state.checked[step.id]?.let { !WorkbookAnswers.isCorrect(step, it) } == true) {
+                    if (hintLevel > 0 && state.checked[step.id]?.let { !WorkbookAnswers.isCorrect(step, it) } == true) {
                         Surface(color = OrangeSoft, shape = RoundedCornerShape(16.dp)) {
                             Column(Modifier.padding(14.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
                                 WorkbookArtLabel("hint_lightbulb", "راهنمایی ۱", color = Orange)
@@ -205,8 +203,8 @@ internal fun WholeWorkbookQuestion(
                     }
                 }
             }
-            if (!native || (!exam && state.checked.isNotEmpty() && !state.revealed)) item(key = "feedback") {
-                if (!exam && state.checked.isNotEmpty() && !state.revealed) {
+            if (!native || (state.checked.isNotEmpty() && !state.revealed)) item(key = "feedback") {
+                if (state.checked.isNotEmpty() && !state.revealed) {
                     val correctParts = question.steps.sumOf { step ->
                         when (step.kind) {
                             StepKind.MATCH -> step.pairs.indices.count { state.mark(step, it) == ResponseMark.CORRECT }
@@ -224,7 +222,7 @@ internal fun WholeWorkbookQuestion(
                 }
             }
             item(key = "practice-status") {
-                if (!exam) {
+
                     Text(when {
                         state.revealed -> "پاسخ کتاب نمایش داده شده؛ برای ادامه دکمهٔ پایین را بزن."
                         allCorrect -> "پاسخ درست است؛ پاسخ کامل کتاب‌کار و تصویر آن در ادامه آمده است."
@@ -234,12 +232,12 @@ internal fun WholeWorkbookQuestion(
                         state.shownHints >= 2 -> "برای دیدن پاسخ، هر قسمت نادرست را دوبار با انتخاب‌های متفاوت امتحان کن."
                         else -> "انتخاب‌ها کامل است؛ پاسخ را بررسی کن."
                     }, color = Muted, style = MaterialTheme.typography.bodySmall)
-                }
+
             }
             item(key = "reference") {
                 // A correct check automatically shows the very same complete reference
-                // body as an authorized manual reveal. Exams never disclose it here.
-                if (!exam && (allCorrect || state.revealed) && state.canReveal(question)) {
+                // body as an authorized manual reveal.
+                if ((allCorrect || state.revealed) && state.canReveal(question)) {
                     WorkbookPanel(accent = Green, modifier = Modifier.testTag("workbook-reference-answer")) {
                         WorkbookArtLabel("science_book", "پاسخ کتاب‌کار", color = Green, style = MaterialTheme.typography.titleLarge)
                         WorkbookReferenceContent(question, onImageReady = {
@@ -255,12 +253,12 @@ internal fun WholeWorkbookQuestion(
         }
         Surface(color = MaterialTheme.colorScheme.surface, shadowElevation = 6.dp) {
             Column(Modifier.fillMaxWidth().navigationBarsPadding().padding(horizontal = 16.dp, vertical = 10.dp), verticalArrangement = Arrangement.spacedBy(6.dp)) {
-                if (!exam && onQuestionList != null) Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(6.dp)) {
+                if (onQuestionList != null) Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(6.dp)) {
                     TextButton(onClick = { onPrevious?.invoke() }, enabled = onPrevious != null, modifier = Modifier.weight(1f).heightIn(min = 48.dp).testTag("previous-question")) { Text("قبلی") }
                     TextButton(onClick = onQuestionList, modifier = Modifier.weight(1f).heightIn(min = 48.dp).testTag("question-navigator")) { Text("فهرست") }
                     TextButton(onClick = { onNext?.invoke() }, enabled = onNext != null, modifier = Modifier.weight(1f).heightIn(min = 48.dp).testTag("next-question")) { Text("بعدی") }
                 }
-                if (!exam) {
+
                     Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                         TextButton(onClick = { jump(if (native || inlineStep != null) 1 else 3) }, modifier = Modifier.weight(1f)) { Text("انتخاب‌ها") }
                         TextButton(enabled = if (native) hintedSteps.isNotEmpty() else state.shownHints > 0, onClick = {
@@ -285,15 +283,14 @@ internal fun WholeWorkbookQuestion(
                             Spacer(Modifier.width(4.dp)); Text("دیدن پاسخ")
                         }
                     }
-                }
+
                 Button(modifier = Modifier.fillMaxWidth().heightIn(min = 54.dp),
                     shape = RoundedCornerShape(30.dp),
                     colors = ButtonDefaults.buttonColors(containerColor = Yellow, contentColor = Navy),
-                    enabled = if (exam) state.complete(question) else finished || state.canCheck(question), onClick = {
+                    enabled = finished || state.canCheck(question), onClick = {
                         val latest = QuestionDraftCodec.decode(json, question)
-                        if (exam || finished) {
+                        if (finished) {
                             val correct = question.steps.count { WorkbookAnswers.isCorrect(it, latest.values(it)) }
-                            if (exam) progress.recordExam(question, latest)
                             onFinish(correct, !latest.revealed && latest.incorrectSubmissions.isEmpty() && correct == question.steps.size)
                         } else {
                             val checked = latest.submit(question)
@@ -305,7 +302,7 @@ internal fun WholeWorkbookQuestion(
                                 coroutine.launch { withFrameNanos { }; list.scrollToItem(referenceIndex) }
                             }
                         }
-                    }) { Text(if (exam) "ثبت پاسخ این سؤال" else if (finished) "سؤال بعدی" else "بررسی پاسخ") }
+                    }) { Text(if (finished) "سؤال بعدی" else "بررسی پاسخ") }
             }
         }
     }

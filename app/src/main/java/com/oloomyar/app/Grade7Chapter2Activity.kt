@@ -5,6 +5,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import com.oloomyar.app.data.Grade7Chapter2Repository
 import com.oloomyar.app.data.WorkbookProgress
+import com.oloomyar.app.ui.Grade7ChapterGate
 import com.oloomyar.app.ui.AuditedWorkbookApp
 import com.oloomyar.app.ui.theme.OloomYarTheme
 
@@ -15,10 +16,12 @@ class Grade7Chapter2Activity : ComponentActivity() {
         val progress = WorkbookProgress(applicationContext, "grade7_chapter2", repository.questions)
         setContent {
             OloomYarTheme {
+                Grade7ChapterGate(2) {
                 AuditedWorkbookApp("فصل ۲ • اندازه‌گیری در علوم و ابزارهای آن", repository.questions, progress,
                     initialQuestionId = intent.getStringExtra("question_id"),
                     initialSection = intent.getStringExtra("section"),
-                    continueSequence = intent.getBooleanExtra("continue_sequence", false), onExit = { finish() })
+                    onExit = { finish() })
+                }
             }
         }
     }

@@ -1,6 +1,6 @@
 package com.oloomyar.app.model
 
-/** Pure evaluation shared by practice, exams and regression tests. */
+/** Pure evaluation shared by practice and regression tests. */
 object WorkbookAnswers {
     fun optionOrder(step: LearningStep, shuffleSeed: Int): List<Int> =
         if (step.preserveOptionOrder) step.options.indices.toList()

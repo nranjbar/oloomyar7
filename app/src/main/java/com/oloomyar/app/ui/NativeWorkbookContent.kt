@@ -36,7 +36,6 @@ internal fun NativeWorkbookContent(
     question: ChapterQuestion,
     blocks: List<SourceBlock>,
     practice: QuestionPractice? = null,
-    exam: Boolean = false,
     onChange: (LearningStep, List<String>) -> Unit = { _, _ -> }
 ) {
     val embedded = remember(blocks) { mutableSetOf<Int>().apply {
@@ -47,7 +46,7 @@ internal fun NativeWorkbookContent(
             }
         }
     } }
-    val display = if (exam) practice?.copy(checked = emptyMap(), revealed = false) else practice
+    val display = practice
     Column(Modifier.fillMaxWidth().testTag(if (practice == null) "native-reference-answer" else "native-source-question"),
         verticalArrangement = Arrangement.spacedBy(16.dp)) {
         blocks.forEachIndexed { index, block ->
@@ -59,9 +58,9 @@ internal fun NativeWorkbookContent(
                         WorkbookImage(asset, block.text.ifBlank { "شکل سؤال ${workbookFa(question.sourceNumber)}" }, maxImageHeight = 300.dp)
                     }
                 }
-                "cloze" -> NativeWorkbookEdit(question, block.step, block.text, display, exam, onChange)
-                "input" -> NativeWorkbookEdit(question, block.step, null, display, exam, onChange)
-                "table" -> SourceTable(block, question, display, exam, onChange)
+                "cloze" -> NativeWorkbookEdit(question, block.step, block.text, display, onChange)
+                "input" -> NativeWorkbookEdit(question, block.step, null, display, onChange)
+                "table" -> SourceTable(block, question, display, onChange)
                 "math" -> SourceEquation(block.parts)
                 "reaction", "flow" -> {
                     if(practice!=null) Text(if(block.type=="flow") "مسیر را از چپ به راست کامل کن." else "معادله را از چپ به راست کامل کن.", color = Muted, style = MaterialTheme.typography.bodySmall)
@@ -71,14 +70,14 @@ internal fun NativeWorkbookContent(
                                 block.text.split(Regex("(?=[+→])|(?<=[+→])")).forEach { fragment ->
                                     Box(Modifier.widthIn(min = 24.dp, max = 180.dp)) {
                                         if(practice==null)WorkbookText(Regex("""\{\{\d+\}\}""").replace(fragment.trim(),"................"))
-                                        else editReactionFragment(fragment, block.step, question, display, exam, onChange)
+                                        else editReactionFragment(fragment, block.step, question, display, onChange)
                                     }
                                 }
                             }
                         }
                     }
                 }
-                "barChart" -> if (practice != null) NativeBarChart(question.steps[block.step], display, exam, onChange)
+                "barChart" -> if (practice != null) NativeBarChart(question.steps[block.step], display, onChange)
                 else -> error("Unknown source block ${block.type}")
             } }
         }
@@ -88,7 +87,7 @@ internal fun NativeWorkbookContent(
                 Text(if (question.steps.size == 1) "پاسخ تعاملی" else "پاسخ تعاملی • قسمت ${workbookFa(index + 1)}",
                     color = Blue, style = MaterialTheme.typography.titleMedium)
                 WorkbookText(step.prompt)
-                NativeWorkbookEdit(question, index, null, display, exam, onChange)
+                NativeWorkbookEdit(question, index, null, display, onChange)
             }
         }
     }
@@ -99,7 +98,7 @@ internal fun NativeWorkbookContent(
  * are removed/replaced during question navigation and screen disposal.
  */
 @Composable
-private fun NativeWorkbookEdit(question: ChapterQuestion, index: Int, template: String?, state: QuestionPractice?, exam: Boolean,
+private fun NativeWorkbookEdit(question: ChapterQuestion, index: Int, template: String?, state: QuestionPractice?,
                                onChange: (LearningStep, List<String>) -> Unit) {
     val step = question.steps[index]
     key(question.id, step.id, template) {
@@ -108,20 +107,20 @@ private fun NativeWorkbookEdit(question: ChapterQuestion, index: Int, template: 
             else if (step.kind in setOf(StepKind.SINGLE, StepKind.MULTI)) step.options.forEach { WorkbookText(it.text) }
         } else if (template != null && step.kind in setOf(StepKind.MATCH, StepKind.CLASSIFY)) {
             InlineFillBlanksQuestion(step.copy(clozeTemplate = template), state.values(step), state.shuffleSeed,
-                mark = { state.mark(step, it) }, locked = { !exam && state.locked(step, it) },
+                mark = { state.mark(step, it) }, locked = { state.locked(step, it) },
                 showInstructions = false, nativeLayout = true) { onChange(step, it) }
         } else WorkbookInput(step, state.values(step),
-            !exam && (state.revealed || (step.kind !in setOf(StepKind.MATCH, StepKind.CLASSIFY) && state.locked(step))),
+            (state.revealed || (step.kind !in setOf(StepKind.MATCH, StepKind.CLASSIFY) && state.locked(step))),
             state) { onChange(step, it) }
     }
 }
 
 @Composable
-private fun editReactionFragment(text: String, index: Int, question: ChapterQuestion, state: QuestionPractice?, exam: Boolean,
+private fun editReactionFragment(text: String, index: Int, question: ChapterQuestion, state: QuestionPractice?,
                                  onChange: (LearningStep, List<String>) -> Unit) {
     val step = question.steps[index]
     if (text.contains("{{")) InlineFillBlanksQuestion(step.copy(clozeTemplate = text.trim()), state?.values(step).orEmpty(), state?.shuffleSeed ?: 0,
-        mark = { state?.mark(step, it) ?: ResponseMark.EMPTY }, locked = { !exam && (state?.revealed == true || state?.locked(step, it) == true) },
+        mark = { state?.mark(step, it) ?: ResponseMark.EMPTY }, locked = { (state?.revealed == true || state?.locked(step, it) == true) },
         showInstructions = false, nativeLayout = true) { onChange(step, it) }
     else WorkbookText(text.trim())
 }
@@ -144,7 +143,7 @@ private fun SourceEquation(parts: List<MathPart>) {
 }
 
 @Composable
-private fun SourceTable(block: SourceBlock, question: ChapterQuestion, state: QuestionPractice?, exam: Boolean,
+private fun SourceTable(block: SourceBlock, question: ChapterQuestion, state: QuestionPractice?,
                         onChange: (LearningStep, List<String>) -> Unit) {
     // A short, wide comparison is transposed without changing a cell or its
     // answer index. Every column then remains visible on a portrait phone.
@@ -170,9 +169,9 @@ private fun SourceTable(block: SourceBlock, question: ChapterQuestion, state: Qu
                                     if (step.kind in setOf(StepKind.MATCH, StepKind.CLASSIFY)) {
                                         val template = Regex("""\{\{\d+:(\d+)\}\}""").replace(cell) { "{{${it.groupValues[1]}}}" }
                                         InlineFillBlanksQuestion(step.copy(clozeTemplate = template), state.values(step), state.shuffleSeed,
-                                            mark = { state.mark(step, it) }, locked = { !exam && (state.revealed || state.locked(step, it)) },
+                                            mark = { state.mark(step, it) }, locked = { (state.revealed || state.locked(step, it)) },
                                             showInstructions = false, nativeLayout = true, compact = true) { onChange(step, it) }
-                                    } else NativeOptionCell(step, state, exam) { onChange(step, it) }
+                                    } else NativeOptionCell(step, state) { onChange(step, it) }
                                 }
                 }
             }
@@ -219,12 +218,12 @@ private fun SourceTableRow(cells: List<String>, weights: List<Float>, row: Int, 
 }
 
 @Composable
-private fun NativeOptionCell(step: LearningStep, state: QuestionPractice, exam: Boolean, onChange: (List<String>) -> Unit) {
+private fun NativeOptionCell(step: LearningStep, state: QuestionPractice, onChange: (List<String>) -> Unit) {
     var open by rememberSaveable(step.id) { mutableStateOf(false) }
     val selected = state.values(step).firstOrNull()?.toIntOrNull()
-    val mark = if (exam) ResponseMark.SELECTED else state.mark(step, 0)
+    val mark = state.mark(step, 0)
     val fill = when (mark) { ResponseMark.CORRECT -> GreenSoft; ResponseMark.INCORRECT -> DangerSoft; else -> SelectionSoft }
-    OutlinedButton(enabled = exam || (!state.revealed && !state.locked(step)), onClick = { onChange(emptyList()); open = true },
+    OutlinedButton(enabled = (!state.revealed && !state.locked(step)), onClick = { onChange(emptyList()); open = true },
         colors = ButtonDefaults.outlinedButtonColors(containerColor = if (selected == null) BlueSoft else fill),
         contentPadding = PaddingValues(horizontal=4.dp,vertical=6.dp),
         modifier = Modifier.fillMaxWidth().heightIn(min = 48.dp).testTag("table-choice-${step.id}")) { WorkbookText(selected?.let { step.options[it].text } ?: "انتخاب", style = MaterialTheme.typography.labelMedium) }
@@ -246,14 +245,14 @@ private fun NativeOptionCell(step: LearningStep, state: QuestionPractice, exam: 
 
 /** Student draws each bar by choosing its height; no completed chart is prefilled. */
 @Composable
-private fun NativeBarChart(step: LearningStep, state: QuestionPractice?, exam: Boolean,
+private fun NativeBarChart(step: LearningStep, state: QuestionPractice?,
                            onChange: (LearningStep, List<String>) -> Unit) {
     val values = state?.values(step).orEmpty()
     fun number(s: String) = s.map { if (it in '۰'..'۹') '0'+("۰۱۲۳۴۵۶۷۸۹".indexOf(it)) else it }.joinToString("").toFloatOrNull() ?: 0f
     val scale = number(values.getOrElse(0) { "" })
     Text("رسم تعاملی نمودار • ابتدا فاصلهٔ درجه‌های محور را انتخاب کن و سپس ارتفاع هر ستون را تنظیم کن.", color = Blue, style = MaterialTheme.typography.bodySmall)
     InlineFillBlanksQuestion(step.copy(clozeTemplate = "فاصلهٔ درجه‌های محور عمودی : {{0}}"), values, state?.shuffleSeed ?: 0,
-        mark = { state?.mark(step, it) ?: ResponseMark.EMPTY }, locked = { !exam && (state?.revealed == true || state?.locked(step, it) == true) },
+        mark = { state?.mark(step, it) ?: ResponseMark.EMPTY }, locked = { (state?.revealed == true || state?.locked(step, it) == true) },
         showInstructions = false, nativeLayout = true) { onChange(step, it) }
     CompositionLocalProvider(LocalLayoutDirection provides LayoutDirection.Ltr) {
         BoxWithConstraints(Modifier.fillMaxWidth()) {
@@ -275,7 +274,7 @@ private fun NativeBarChart(step: LearningStep, state: QuestionPractice?, exam: B
                     val value = number(values.getOrElse(bar+2) { "" })
                     Box(Modifier.weight(1f).fillMaxHeight(), contentAlignment = Alignment.BottomCenter) {
                         val fraction = if (scale > 0) (value/(scale*4)).coerceIn(0f,1f) else 0f
-                        Box(Modifier.fillMaxWidth().fillMaxHeight(fraction).background(if (exam) Blue else when (state?.mark(step,bar+2)) {
+                        Box(Modifier.fillMaxWidth().fillMaxHeight(fraction).background(when (state?.mark(step,bar+2)) {
                             ResponseMark.CORRECT -> Green; ResponseMark.INCORRECT -> Danger; else -> Yellow
                         }))
                     }
@@ -286,6 +285,6 @@ private fun NativeBarChart(step: LearningStep, state: QuestionPractice?, exam: B
     }
     Text("تولید سیمان ( تن )", color = Muted, style = MaterialTheme.typography.bodySmall)
     for (i in 0..4) InlineFillBlanksQuestion(step.copy(clozeTemplate = "${listOf("۱۳۸۳","۱۳۸۹","۱۳۹۲","۱۳۹۴","۱۳۹۶")[i]} : {{${i+2}}}"), values, state?.shuffleSeed ?: 0,
-        mark = { state?.mark(step, it) ?: ResponseMark.EMPTY }, locked = { !exam && (state?.revealed == true || state?.locked(step, it) == true) },
+        mark = { state?.mark(step, it) ?: ResponseMark.EMPTY }, locked = { (state?.revealed == true || state?.locked(step, it) == true) },
         showInstructions = false, nativeLayout = true) { onChange(step, it) }
 }

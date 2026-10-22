@@ -94,7 +94,11 @@ class Grade7PersistenceUiTest {
         assertTrue(viewport.getInt("scrollIndex") > 0 || viewport.getInt("scrollOffset") > 0)
         ActivityScenario.launch(MainActivity::class.java).use {
             compose.awaitGrade7Home()
-            compose.onNodeWithTag("home-start").performClick()
+            compose.onNodeWithTag("home-start").assertDoesNotExist()
+            compose.onNodeWithTag("nav-chapters").performClick()
+            compose.onNodeWithTag("chapter-2").performScrollTo().performClick()
+            compose.onNodeWithTag("chapter-section-تمرین‌های اصلی").performScrollTo().performClick()
+            compose.onNodeWithTag("question-list-${q.id}").performScrollTo().performClick()
             compose.onNodeWithTag("reveal-answer").assertIsNotEnabled()
             compose.onNodeWithContentDescription("تصویر پاسخ سؤال ۸").assertDoesNotExist()
             assertEquals(expected,QuestionDraftCodec.decode(store.draft(q.id)));capture("discovery-13-after-process-termination")

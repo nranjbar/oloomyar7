@@ -42,21 +42,17 @@ fun AuditedWorkbookApp(
     conceptual: Boolean = false,
     initialQuestionId: String? = null,
     initialSection: String? = null,
-    continueSequence: Boolean = false,
     onExit: () -> Unit
 ) {
     var screen by rememberSaveable { mutableStateOf("home") }
     var part by rememberSaveable { mutableStateOf(if (conceptual) "مفهومی" else "تمرین‌های اصلی") }
     var sessionIds by rememberSaveable { mutableStateOf(arrayListOf<String>()) }
     var questionIndex by rememberSaveable { mutableIntStateOf(0) }
-    var exam by rememberSaveable { mutableStateOf(false) }
-    var score by rememberSaveable { mutableIntStateOf(0) }
-    var total by rememberSaveable { mutableIntStateOf(0) }
     var completed by rememberSaveable { mutableIntStateOf(0) }
     var sessionToken by rememberSaveable { mutableIntStateOf(0) }
-    var confirmExit by remember { mutableStateOf(false) }
+
     var handledInitial by rememberSaveable { mutableStateOf(false) }
-    var questionSearch by rememberSaveable(part) { mutableStateOf("") }
+
     val refreshedChapter = !conceptual && (questions.firstOrNull()?.relatedChapter ?: 0) in 1..15
     val parts = if (conceptual) {
         listOf("مفهومی")
@@ -66,11 +62,11 @@ fun AuditedWorkbookApp(
         }
     }
     val partQuestions = questions.filter { conceptual || it.section == part }
-    val start: (List<ChapterQuestion>, Boolean) -> Unit = { chosen, isExam ->
+    val start: (List<ChapterQuestion>) -> Unit = { chosen ->
         if (chosen.isNotEmpty()) {
             sessionIds = ArrayList(chosen.map { it.id })
-            questionIndex = 0; exam = isExam; score = 0; completed = 0
-            total = chosen.sumOf { it.steps.size }; sessionToken++
+            questionIndex = 0; completed = 0
+            sessionToken++
             screen = "question"
         }
     }
@@ -81,7 +77,7 @@ fun AuditedWorkbookApp(
             if (requested != null) {
                 part = requested.section
                 val sectionQuestions = questions.filter { it.section == requested.section }
-                start(sectionQuestions, false)
+                start(sectionQuestions)
                 questionIndex = sectionQuestions.indexOfFirst { it.id == requested.id }.coerceAtLeast(0)
             } else if (initialSection in parts) {
                 part = initialSection!!; screen = "part"
@@ -92,7 +88,7 @@ fun AuditedWorkbookApp(
         when (screen) {
             "home" -> onExit()
             "part" -> screen = "home"
-            "question" -> if (exam) confirmExit = true else { screen = "part" }
+            "question" -> screen = "part"
             else -> screen = "part"
         }
     }
@@ -102,7 +98,7 @@ fun AuditedWorkbookApp(
             containerColor = Color.Transparent,
             topBar = {
                 OloomTopBar(
-                    if (screen == "home" && refreshedChapter) "فصل ${workbookFa(questions.first().relatedChapter)}" else if (screen == "home") title else if (screen == "part") "فهرست سؤال‌ها" else if (exam && screen == "question") "آزمون • $part" else part,
+                    if (screen == "home" && refreshedChapter) "فصل ${workbookFa(questions.first().relatedChapter)}" else if (screen == "home") title else if (screen == "part") "فهرست سؤال‌ها" else part,
                     goBack,
                     modifier = if (refreshedChapter) Modifier.statusBarsPadding() else Modifier
                 )
@@ -119,14 +115,7 @@ fun AuditedWorkbookApp(
                         "صورت کامل سؤال کتاب را بخوان و پاسخ را با راهنمای مرحله‌ای کامل کن."
                     }
                     if (refreshedChapter) {
-                        val pending = questions.firstOrNull { !progress.done(it.id) && progress.draft(it.id) != null }
-                            ?: questions.firstOrNull { !progress.done(it.id) } ?: questions.first()
-                        ChapterStudyCover(questions.first().relatedChapter,questions.size,questions.count { progress.done(it.id) },
-                            questions.any { progress.done(it.id) || progress.draft(it.id) != null }) {
-                            part = pending.section
-                            val chosen=questions.filter { it.section==part }
-                            start(chosen,false);questionIndex=chosen.indexOfFirst { it.id==pending.id }.coerceAtLeast(0)
-                        }
+                        ChapterStudyCover(questions.first().relatedChapter, questions.size, questions.count { progress.done(it.id) })
                     } else OloomHeroCard(
                         eyebrow = if (conceptual) "چالش مفهومی مستقل" else "مسیر تمرین فصل",
                         title = title,
@@ -137,7 +126,7 @@ fun AuditedWorkbookApp(
                     ) {
                         Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                             OloomHeroFact("${workbookFa(questions.size)} سؤال", Icons.Default.Quiz, Modifier.weight(1f))
-                            OloomHeroFact("تمرین و آزمون", Icons.Default.Assignment, Modifier.weight(1f))
+                            OloomHeroFact("تمرین با راهنما", Icons.Default.Assignment, Modifier.weight(1f))
                             OloomHeroFact("کاملاً آفلاین", Icons.Default.OfflineBolt, Modifier.weight(1f))
                         }
                     }
@@ -194,39 +183,13 @@ fun AuditedWorkbookApp(
                         questions.firstOrNull()?.relatedChapter?.takeIf { it in 1..15 }?.let { ChapterArtwork(it, Modifier.size(80.dp)) }
                     }
                 }
-                item {
-                    OutlinedTextField(value = questionSearch, onValueChange = { questionSearch = it },
-                        modifier = Modifier.fillMaxWidth().testTag("question-search"), shape = RoundedCornerShape(20.dp),
-                        label = { Text("جست‌وجوی سؤال در این فصل…") }, leadingIcon = { Icon(Icons.Default.Search, null) },
-                        singleLine = true)
-                }
-                item {
-                    val done = partQuestions.count { progress.done(it.id) }
-                    val pending = partQuestions.indexOfFirst { !progress.done(it.id) && progress.draft(it.id) != null }.takeIf { it >= 0 }
-                        ?: partQuestions.indexOfFirst { !progress.done(it.id) }.coerceAtLeast(0)
-                    Text("${workbookFa(done)} از ${workbookFa(partQuestions.size)} سؤال تمرین شده", color = Muted, style = MaterialTheme.typography.bodySmall)
-                    Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(10.dp)) {
-                        Button(onClick = { start(partQuestions, false); questionIndex = pending }, modifier = Modifier.weight(1f).heightIn(min = 52.dp),
-                            colors = ButtonDefaults.buttonColors(containerColor = Yellow, contentColor = Navy), shape = RoundedCornerShape(24.dp)) {
-                            Text(if (partQuestions.any { progress.done(it.id) || progress.draft(it.id) != null }) "ادامهٔ تمرین" else "شروع تمرین")
-                        }
-                        OutlinedButton(onClick = { start(partQuestions, true) }, modifier = Modifier.weight(1f).heightIn(min = 52.dp), shape = RoundedCornerShape(24.dp)) { Text("آزمون همین بخش") }
-                    }
-                    progress.lastExam(part)?.let { (correct,count) -> Text("آخرین آزمون: ${workbookFa(correct)} پاسخ درست از ${workbookFa(count)} مرحله", color = Muted, style = MaterialTheme.typography.bodySmall) }
-                }
-                val visibleQuestions = partQuestions.filter { q ->
-                    val search = questionSearch.trim().replace('ي','ی').replace('ك','ک')
-                    search.isBlank() || (q.title + " " + q.nativeQuestion.filter { it.type in setOf("text","cloze") }.joinToString(" ") { it.text }
-                        .ifBlank { q.readablePrompt ?: q.bookPrompt.orEmpty() }).replace('ي','ی').replace('ك','ک').contains(search)
-                }
-                if (visibleQuestions.isEmpty()) item { WorkbookPanel { Text("نتیجه‌ای پیدا نشد"); TextButton(onClick = { questionSearch = "" }) { Text("پاک‌کردن جست‌وجو") } } }
-                items(visibleQuestions, key = { it.id }) { question ->
+                items(partQuestions, key = { it.id }) { question ->
                     val draft = progress.draft(question.id) != null
                     val mistake = progress.mistake(question.id)
                     val done = progress.done(question.id)
                     val statusColor = when { mistake -> Orange; done -> Green; draft -> Purple; else -> Blue }
                     val statusSoft = when { mistake -> OrangeSoft; done -> GreenSoft; draft -> PurpleSoft; else -> BlueSoft }
-                    OloomCard(accent = statusColor, modifier = Modifier.testTag("question-list-${question.id}"), onClick = { start(partQuestions, false); questionIndex = partQuestions.indexOf(question) }) {
+                    OloomCard(accent = statusColor, modifier = Modifier.testTag("question-list-${question.id}"), onClick = { start(partQuestions); questionIndex = partQuestions.indexOf(question) }) {
                         Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
                             Surface(color = statusSoft, shape = RoundedCornerShape(16.dp)) {
                                 Box(Modifier.size(72.dp), contentAlignment = Alignment.Center) {
@@ -261,19 +224,19 @@ fun AuditedWorkbookApp(
                 val question = questions.first { it.id == sessionIds[questionIndex] }
                 key(question.id, sessionToken) {
                     WholeWorkbookQuestion(
-                        question, progress, conceptual, exam, sessionToken,
+                        question, progress, conceptual, sessionToken,
                         "سؤال ${workbookFa(questionIndex + 1)} از ${workbookFa(sessionIds.size)}",
                         Modifier.padding(padding),
-                        onPrevious = if (!exam && questionIndex > 0) ({ questionIndex-- }) else null,
-                        onNext = if (!exam && questionIndex < sessionIds.lastIndex) ({ questionIndex++ }) else null,
-                        onQuestionList = if (!exam) ({ screen = "part" }) else null
-                    ) { correct, perfect ->
-                        score += correct; completed++
+                        onPrevious = if (questionIndex > 0) ({ questionIndex-- }) else null,
+                        onNext = if (questionIndex < sessionIds.lastIndex) ({ questionIndex++ }) else null,
+                        onQuestionList = { screen = "part" }
+                    ) { _, _ ->
+                        completed++
                         // WholeWorkbookQuestion records real checks/reveals immediately.
-                        // Keep its draft and viewport; exam submissions never clear practice gates.
+                        // Keep the question draft and viewport for an explicit return.
                         if (questionIndex < sessionIds.lastIndex) questionIndex++
                         else {
-                            if (exam) progress.saveExam(part, score, total)
+
                             screen = "result"
                         }
                     }
@@ -282,49 +245,27 @@ fun AuditedWorkbookApp(
             "result" -> LazyColumn(Modifier.fillMaxSize().padding(padding), contentPadding = PaddingValues(18.dp), verticalArrangement = Arrangement.spacedBy(16.dp)) {
                 item {
                     OloomHeroCard(
-                        eyebrow = if (exam) "کارنامهٔ این نوبت" else "جلسه با موفقیت تمام شد",
-                        title = if (exam) "نتیجهٔ آزمون" else "تمرین کامل شد",
-                        description = if (exam) "${workbookFa(score)} پاسخ درست از ${workbookFa(total)} مرحله در ${workbookFa(completed)} سؤال" else "${workbookFa(completed)} سؤال را تمرین کردی.",
-                        icon = if (exam) Icons.Default.Assessment else Icons.Default.EmojiEvents,
-                        startColor = if (exam) Purple else Green,
-                        endColor = if (exam) Blue else Aqua
+                        eyebrow = "جلسه با موفقیت تمام شد",
+                        title = "تمرین کامل شد",
+                        description = "${workbookFa(completed)} سؤال را تمرین کردی.",
+                        icon = Icons.Default.EmojiEvents,
+                        startColor = Green,
+                        endColor = Aqua
                     ) {
                         Text("پاسخ با راهنمایی یا پس از اشتباه، برای مرور دوباره علامت می‌خورد.", color = Color.White.copy(alpha = .8f), style = MaterialTheme.typography.bodySmall)
                         Button(
                             onClick = { screen = "part" },
                             modifier = Modifier.fillMaxWidth().padding(top = 12.dp),
-                            colors = ButtonDefaults.buttonColors(containerColor = Color.White, contentColor = if (exam) Purple else Green)
+                            colors = ButtonDefaults.buttonColors(containerColor = Color.White, contentColor = Green)
                         ) { Text("بازگشت به فهرست سؤال‌ها") }
                     }
                 }
-                if (exam) {
-                    item { OloomSectionHeader("مرور سؤال‌های آزمون", "برای یادگیری پاسخ، هر سؤال را با دو تلاش و راهنمای مرحله‌ای تمرین کن.", Purple) }
-                    items(sessionIds) { id ->
-                        val question = questions.first { it.id == id }
-                        WorkbookPanel(accent = Purple) {
-                            Text("سؤال ${workbookFa(question.sourceNumber)}", style = MaterialTheme.typography.titleLarge)
-                            if (question.nativeQuestion.isNotEmpty()) NativeWorkbookContent(question, question.nativeQuestion)
-                            else {
-                                (question.promptVisual ?: question.sourceQuestionVisual)?.let { WorkbookImage(it, "صورت سؤال ${workbookFa(question.sourceNumber)} از کتاب") }
-                                WorkbookQuestionVisuals(question, "تصویر سؤال ${workbookFa(question.sourceNumber)}")
-                            }
-                            OutlinedButton(onClick = { start(listOf(question), false) }, modifier = Modifier.fillMaxWidth()) {
-                                Text("تمرین سؤال ${workbookFa(question.sourceNumber)} با راهنما")
-                            }
-                        }
-                    }
-                }
+
             }
         }
         }
     }
-    if (confirmExit) AlertDialog(
-        onDismissRequest = { confirmExit = false },
-        title = { Text("خروج از آزمون؟") },
-        text = { Text("نتیجهٔ آزمون نیمه‌تمام ثبت نمی‌شود. می‌توانی به پاسخ‌دادن ادامه بدهی.") },
-        confirmButton = { TextButton(onClick = { confirmExit = false; screen = "part" }) { Text("خروج") } },
-        dismissButton = { TextButton(onClick = { confirmExit = false }) { Text("ادامهٔ آزمون") } }
-    )
+
 }
 
 @Composable

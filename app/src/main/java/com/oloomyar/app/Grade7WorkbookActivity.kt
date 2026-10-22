@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import com.oloomyar.app.data.Grade7Catalog
+import com.oloomyar.app.ui.Grade7ChapterGate
 import com.oloomyar.app.ui.AuditedWorkbookApp
 import com.oloomyar.app.ui.theme.OloomYarTheme
 
@@ -16,10 +17,12 @@ class Grade7WorkbookActivity : ComponentActivity() {
             ?: run { finish(); return }
         setContent {
             OloomYarTheme {
+                Grade7ChapterGate(chapterId) {
                 AuditedWorkbookApp("فصل $chapterId • ${chapter.title}", chapter.questions, chapter.progress,
                     initialQuestionId = intent.getStringExtra("question_id"),
                     initialSection = intent.getStringExtra("section"),
-                    continueSequence = intent.getBooleanExtra("continue_sequence", false), onExit = { finish() })
+                    onExit = { finish() })
+                }
             }
         }
     }

@@ -28,6 +28,8 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.asImageBitmap
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalLayoutDirection
+import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.unit.dp
@@ -118,6 +120,7 @@ private fun WorkbookSourceImage(asset: String, description: String, caption: Str
                         TextButton(onClick = { enlarged = false }) { Text("بستن") }
                         Text(description, Modifier.weight(1f), style = MaterialTheme.typography.bodyMedium)
                     }
+                    CompositionLocalProvider(LocalLayoutDirection provides LayoutDirection.Ltr) {
                     BoxWithConstraints(Modifier.weight(1f).fillMaxWidth().clipToBounds()) {
                         val width=maxWidth
                         val transform=rememberTransformableState {zoom,offset,_->
@@ -128,6 +131,7 @@ private fun WorkbookSourceImage(asset: String, description: String, caption: Str
                             Image(bitmap.asImageBitmap(),description,Modifier.width(width*scale).aspectRatio(bitmap.width.toFloat()/bitmap.height)
                                 .testTag("workbook-viewer-bitmap"),contentScale=ContentScale.Fit)
                         }
+                    }
                     }
                     Row(Modifier.fillMaxWidth().padding(horizontal=12.dp,vertical=8.dp),verticalAlignment=Alignment.CenterVertically) {
                         IconButton(onClick={scale=(scale-.5f).coerceAtLeast(1f)},enabled=scale>1f,modifier=Modifier.size(48.dp)) {Icon(Icons.Default.Remove,"کوچک‌تر")}

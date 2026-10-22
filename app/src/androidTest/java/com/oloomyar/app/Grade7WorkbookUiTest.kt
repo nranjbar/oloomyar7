@@ -225,19 +225,13 @@ class Grade7WorkbookUiTest {
             if(cropped!==original)cropped.recycle()
         }
     }
-    @Test fun examResultDoesNotProvideAReferenceAnswerShortcut() {
+    @Test fun removedExamAndContinueControlsCannotBeOpened() {
         val q=Grade7Chapter2Repository(context).questions.first { it.sourceNumber==8 && it.section=="تمرین‌های اصلی" }
         open(q)
         compose.onNodeWithContentDescription("برگشت").performClick()
-        compose.onNode(hasScrollAction()).performScrollToNode(hasText("آزمون همین بخش"))
-        compose.onNodeWithText("آزمون همین بخش").performClick()
-        choose(q.steps.single().options.first { !it.correct }.text)
-        compose.onNodeWithText("ثبت پاسخ این سؤال").performClick()
-        compose.onNodeWithText("نتیجهٔ آزمون").assertExists()
-        compose.onNodeWithText("پاسخ کتاب‌کار").assertDoesNotExist()
-        compose.onNode(hasScrollAction()).performScrollToNode(hasText("تمرین سؤال ۸ با راهنما"))
-        compose.onNodeWithText("تمرین سؤال ۸ با راهنما").performClick()
-        compose.onNodeWithTag("reveal-answer").assertIsNotEnabled()
+        compose.onNodeWithText("آزمون همین بخش").assertDoesNotExist()
+        compose.onNodeWithText("ادامهٔ تمرین").assertDoesNotExist()
+        compose.onNodeWithTag("question-search").assertDoesNotExist()
     }
     @Test fun sourceFigureCanBeEnlargedWithoutShowingAnyAnswer() {
         val q=Grade7Chapter2Repository(context).questions.first { it.sourceNumber==11 && it.section=="تمرین‌های اصلی" };open(q)

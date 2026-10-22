@@ -57,13 +57,6 @@ class WorkbookProgress(context: Context, scope: String, private val questions: L
             .putBoolean("perfect_$id", kind == CompletionKind.INDEPENDENT)
             .putBoolean("mistake_$id", kind != CompletionKind.INDEPENDENT).apply()
     }
-    fun recordExam(question: ChapterQuestion, state: QuestionPractice) {
-        val fingerprint = "exam:${state.shuffleSeed}:${state.signature(question)}"
-        val checks = prefs.getStringSet("checks_${question.id}", emptySet()).orEmpty().toMutableSet(); checks.add(fingerprint)
-        prefs.edit().putStringSet("checks_${question.id}", checks).apply()
-        val correct = question.steps.all { WorkbookAnswers.isCorrect(it, state.values(it)) }
-        if (correct) finishPractice(question.id, CompletionKind.INDEPENDENT) else markMistake(question.id)
-    }
     fun save(id: String, perfect: Boolean) {
         prefs.edit().putBoolean("done_$id", true).putBoolean("perfect_$id", perfect)
             .putBoolean("mistake_$id", !perfect).remove("draft_$id").apply()
@@ -74,10 +67,4 @@ class WorkbookProgress(context: Context, scope: String, private val questions: L
     /** Persist the viewport before Android may terminate a background process. */
     fun checkpoint(id: String, json: String) { prefs.edit().putString("draft_$id", json).commit() }
     fun clearDraft(id: String) { prefs.edit().remove("draft_$id").apply() }
-    fun saveExam(part: String, correct: Int, total: Int) {
-        prefs.edit().putInt("exam_correct_$part", correct).putInt("exam_total_$part", total).apply()
-    }
-    fun lastExam(part: String): Pair<Int, Int>? = if (prefs.contains("exam_total_$part"))
-        prefs.getInt("exam_correct_$part", 0) to prefs.getInt("exam_total_$part", 0) else null
 }
-

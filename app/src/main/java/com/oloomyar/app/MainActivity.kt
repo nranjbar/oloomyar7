@@ -29,7 +29,7 @@ class MainActivity : ComponentActivity() {
                     target?.let {
                         startActivity(Intent(this@MainActivity, it)
                             .putExtra("chapter", chapter)
-                            .putExtra("question_id", questionId).putExtra("section", section).putExtra("continue_sequence", sequence))
+                            .putExtra("question_id", questionId).putExtra("section", section))
                     }
                 }
             }

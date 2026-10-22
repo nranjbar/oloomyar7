@@ -30,6 +30,7 @@ import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import com.oloomyar.app.billing.*
 import com.oloomyar.app.BuildConfig
 import com.oloomyar.app.data.*
 import com.oloomyar.app.model.*
@@ -42,6 +43,18 @@ private val hubTabs = listOf(HubTab("home", "خانه", Icons.Default.Home), Hub
 
 @Composable
 internal fun Grade7DiscoveryApp(catalog: Grade7Catalog, resumeRevision: Int, onOpen: OpenGrade7) {
+    val billing = rememberGrade7Billing()
+    val billingState by billing.state.collectAsState()
+    var purchaseDialog by remember { mutableStateOf(false) }
+    val openChapter: OpenGrade7 = { chapter, question, section, sequence ->
+        if (BuildConfig.REVIEW_MODE || ChapterAccessPolicy.isUnlocked(chapter, billingState.purchasedSkus))
+            onOpen(chapter, question, section, sequence)
+        else purchaseDialog = true
+    }
+    if (purchaseDialog) AlertDialog(onDismissRequest = { purchaseDialog = false },
+        title = { Text("فعال‌سازی فصل‌ها") },
+        text = { androidx.compose.foundation.lazy.LazyColumn { item { Grade7PurchasePanel(billingState, billing) } } },
+        confirmButton = { TextButton(onClick = { purchaseDialog = false }) { Text("بستن") } })
     var tab by rememberSaveable { mutableStateOf("home") }
     var page by rememberSaveable { mutableStateOf("") }
     var reviewFilter by rememberSaveable { mutableStateOf("mistakes") }
@@ -50,7 +63,6 @@ internal fun Grade7DiscoveryApp(catalog: Grade7Catalog, resumeRevision: Int, onO
     val context = LocalContext.current
     val preferences = remember { LearningPreferences(context) }
     val summary = remember(resumeRevision, localRevision) { catalog.summary() }
-    val last = remember(resumeRevision, localRevision) { catalog.validLocation(preferences.lastLocation()) }
     var reviewPending by rememberSaveable { mutableStateOf(false) }
     var reviewLeftApp by rememberSaveable { mutableStateOf(false) }
     val lifecycle = LocalLifecycleOwner.current
@@ -114,7 +126,7 @@ internal fun Grade7DiscoveryApp(catalog: Grade7Catalog, resumeRevision: Int, onO
                     LazyColumn(Modifier.fillMaxHeight().widthIn(max = 760.dp).fillMaxWidth().testTag("hub-list"),
                         state = rememberLazyListState(), contentPadding = PaddingValues(16.dp), verticalArrangement = Arrangement.spacedBy(14.dp)) {
                         when (page) {
-                            "review" -> reviewItems(catalog, reviewFilter, { reviewFilter = it }, onOpen)
+                            "review" -> reviewItems(catalog, reviewFilter, { reviewFilter = it }, openChapter)
                             "settings" -> item { SettingsPanel(preferences, summary.bookmarks, onClearBookmarks = {
                                 catalog.chapters.forEach { it.progress.clearBookmarks() }; localRevision++
                             }) }
@@ -123,12 +135,6 @@ internal fun Grade7DiscoveryApp(catalog: Grade7Catalog, resumeRevision: Int, onO
                             "privacy" -> item { PrivacyPanel() }
                             else -> when (tab) {
                                 "home" -> {
-                                    item {
-                                        val chapter = catalog.chapters.first { it.id == (last?.chapter ?: 1) }
-                                        HomeContinueHero(chapter, last != null) {
-                                            onOpen(chapter.id, last?.questionId ?: chapter.questions.first().id, null, true)
-                                        }
-                                    }
                                     item { HomeRoutes(onChapters = { tab = "chapters" }, onReview = { review("mistakes") }) }
                                     item { MiniProgress(summary) }
                                     item {
@@ -140,27 +146,23 @@ internal fun Grade7DiscoveryApp(catalog: Grade7Catalog, resumeRevision: Int, onO
                                     item {
                                         LazyRow(horizontalArrangement = Arrangement.spacedBy(12.dp)) {
                                             items(catalog.chapters, key = { it.id }) { chapter ->
-                                                OloomCard(Modifier.width(156.dp).testTag("chapter-${chapter.id}"), onClick = { onOpen(chapter.id, null, null, false) }) {
+                                                OloomCard(Modifier.width(156.dp).testTag("chapter-${chapter.id}"), onClick = { openChapter(chapter.id, null, null, false) }) {
                                                     ChapterArtwork(chapter.id, Modifier.fillMaxWidth().aspectRatio(1f))
-                                                    Text("فصل ${workbookFa(chapter.id)}", style = MaterialTheme.typography.titleMedium)
+                                                    Text("فصل ${workbookFa(chapter.id)}" + if (chapter.id > 1 && !BuildConfig.REVIEW_MODE && !ChapterAccessPolicy.isUnlocked(chapter.id, billingState.purchasedSkus)) " • قفل" else "", style = MaterialTheme.typography.titleMedium)
                                                     Text(chapter.title, style = MaterialTheme.typography.bodySmall, color = Muted)
                                                 }
                                             }
                                         }
                                     }
-                                    if (last != null) item {
-                                        val chapter = catalog.chapters.first { it.id == last.chapter }
-                                        val q = chapter.questions.first { it.id == last.questionId }
-                                        ActionTile("آخرین تمرین", "فصل ${workbookFa(chapter.id)} • ${q.section} • سؤال ${workbookFa(q.sourceNumber)}",
-                                            Icons.Default.History, Purple, PurpleSoft, Modifier.testTag("continue-last")) { onOpen(chapter.id, q.id, null, true) }
-                                    }
+
                                 }
                                 "chapters" -> {
+                                    item { Grade7PurchasePanel(billingState, billing) }
                                     item { OloomSectionHeader("یک فصل، یک کشف تازه", "تمرین‌های اصلی و چهارگزینه‌ای، هرکدام در بخش خودشان.", Blue) }
                                     items(catalog.chapters, key = { it.id }) { chapter ->
-                                        DiscoveryChapterCard(chapter, showSections = true, onSection = { onOpen(chapter.id, null, it, false) }) { onOpen(chapter.id, null, null, false) }
+                                        DiscoveryChapterCard(chapter, unlocked = BuildConfig.REVIEW_MODE || ChapterAccessPolicy.isUnlocked(chapter.id, billingState.purchasedSkus), showSections = true, onSection = { openChapter(chapter.id, null, it, false) }) { openChapter(chapter.id, null, null, false) }
                                     }
-                                    item { Text("هر ۱۵ فصل کتاب‌کار ۱۴۰۵ در دسترس است.", color = Muted, style = MaterialTheme.typography.bodySmall) }
+                                    item { Text("فصل ۱ رایگان؛ فصل‌های ۲ تا ۱۵ با یک خرید دائمی فعال می‌شوند.", color = Muted, style = MaterialTheme.typography.bodySmall) }
                                 }
                                 "progress" -> {
                                     item { ProgressPanel(summary) }
@@ -177,6 +179,7 @@ internal fun Grade7DiscoveryApp(catalog: Grade7Catalog, resumeRevision: Int, onO
                                     item { BadgePanel(summary) }
                                 }
                                 "more" -> {
+                                    item { Grade7PurchasePanel(billingState, billing) }
                                     item { ActionTile("دربارهٔ علوم‌یار", "کتاب کار، مؤلف و نسخهٔ برنامه", Icons.Default.Info, Blue, BlueSoft) { page = "about" } }
                                     item { ActionTile("راهنمای استفاده", "انتخاب، بررسی و یادگیری مرحله‌ای", Icons.Default.Explore, RoyalBlue, BlueSoft) { page = "guide" } }
                                     item { ActionTile("تنظیمات", "اندازهٔ متن و کاهش حرکت", Icons.Default.Tune, Purple, PurpleSoft) { page = "settings" } }
@@ -203,29 +206,6 @@ internal fun Grade7DiscoveryApp(catalog: Grade7Catalog, resumeRevision: Int, onO
 }
 
 private fun chapterColor(id: Int) = when (id % 4) { 2 -> RoyalBlue; 3 -> Purple; 0 -> Green; else -> Blue }
-
-@Composable
-private fun HomeContinueHero(chapter: ChapterCollection, returning: Boolean, onStart: () -> Unit) {
-    val summary = chapter.summary()
-    Surface(shape = RoundedCornerShape(28.dp), shadowElevation = 4.dp, color = BlueSoft) {
-        Column(Modifier.background(Brush.linearGradient(listOf(BlueSoft, Color(0xFFE7F2FC)))).padding(18.dp), verticalArrangement = Arrangement.spacedBy(14.dp)) {
-            Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(14.dp)) {
-                Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(6.dp)) {
-                    Text("علوم‌یار هفتم", color = Blue, style = MaterialTheme.typography.bodySmall)
-                    Text("فصل ${workbookFa(chapter.id)}", style = MaterialTheme.typography.titleMedium)
-                    Text(chapter.title, style = MaterialTheme.typography.headlineSmall)
-                }
-                ChapterArtwork(chapter.id, Modifier.size(112.dp))
-            }
-            OloomProgressBar(summary.fraction, Yellow)
-            Button(onClick = onStart, modifier = Modifier.fillMaxWidth().heightIn(min = 60.dp).testTag("home-start"),
-                shape = RoundedCornerShape(30.dp), colors = ButtonDefaults.buttonColors(containerColor = Yellow, contentColor = Navy)) {
-                Text(if (returning) "ادامهٔ تمرین" else "شروع از فصل ۱", style = MaterialTheme.typography.titleMedium)
-                Spacer(Modifier.width(10.dp)); Icon(Icons.AutoMirrored.Filled.ArrowBack, null)
-            }
-        }
-    }
-}
 
 @Composable
 private fun HomeRoutes(onChapters: () -> Unit, onReview: () -> Unit) {
@@ -258,7 +238,7 @@ private fun MiniProgress(summary: LearningSummary) {
 }
 
 @Composable
-private fun DiscoveryChapterCard(chapter: ChapterCollection, showSections: Boolean = false, onSection: (String) -> Unit = {}, onOpen: () -> Unit) {
+private fun DiscoveryChapterCard(chapter: ChapterCollection, unlocked: Boolean = true, showSections: Boolean = false, onSection: (String) -> Unit = {}, onOpen: () -> Unit) {
     val s = chapter.summary(); val color = chapterColor(chapter.id)
     OloomCard(accent = color, onClick = onOpen, modifier = Modifier.testTag("chapter-${chapter.id}")) {
         Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(12.dp)) {
@@ -266,7 +246,7 @@ private fun DiscoveryChapterCard(chapter: ChapterCollection, showSections: Boole
             Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(4.dp)) {
                 Text("فصل ${workbookFa(chapter.id)}", color = color, style = MaterialTheme.typography.labelMedium)
                 Text(chapter.title, style = MaterialTheme.typography.titleMedium)
-                Text("${workbookFa(chapter.questions.size)} سؤال • در دسترس", color = Muted, style = MaterialTheme.typography.bodySmall)
+                Text("${workbookFa(chapter.questions.size)} سؤال • " + if (unlocked) "در دسترس" else "قفل • بستهٔ کامل", color = Muted, style = MaterialTheme.typography.bodySmall)
             }
         }
         OloomProgressBar(s.fraction, color)
@@ -441,6 +421,7 @@ private fun PrivacyPanel() {
         Text("برای تمرین در علوم‌یار ثبت‌نام لازم نیست. سؤال‌ها، تصاویر، پاسخنامه و راهنماها داخل برنامه‌اند و بدون اینترنت کار می‌کنند.")
         Text("انتخاب‌ها، تلاش‌ها، پیشرفت، نشان‌ها و تنظیمات فقط در حافظهٔ محلی برنامه ذخیره می‌شوند؛ این نسخه آن‌ها را به سرور برنامه ارسال نمی‌کند و ابزار تبلیغاتی یا ردیابی ندارد.")
         Text("با لمس ثبت نظر، صفحهٔ علوم‌یار هفتم در برنامهٔ بازار یا مرورگر باز می‌شود. آن صفحه خارج از علوم‌یار است و به اینترنت و سیاست حریم خصوصی بازار وابسته است.")
+        Text("خرید از طریق بازار انجام می‌شود. رسید امضاشدهٔ خرید روی دستگاه ذخیره و برای دسترسی آفلاین بررسی می‌شود. پس از حذف برنامه، خرید با حساب قبلی بازار قابل بازیابی است.")
         Text("حذف برنامه، داده‌های محلی را پاک می‌کند. این نسخه پشتیبان‌گیری ابری خودکارِ برنامه را فعال نمی‌کند.", color = Muted)
     }
 }

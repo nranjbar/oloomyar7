@@ -224,11 +224,13 @@ class Grade7NativeContentUiTest {
         val restored=QuestionDraftCodec.decode(QuestionDraftCodec.encode(oldEquipment),equipment)
         assertEquals("نیروسنج",restored.values(names)[2]);assertTrue(restored.correct(equipment));assertFalse(restored.revealed)
     }
-    @Test fun questionSearchOpensTheSourceIdRatherThanTheFilteredIndex() {
+    @Test fun questionListHasNoSearchOrExamAndOpensTheSourceId() {
         val chapter=catalog.chapters[3];val q=chapter.questions.first { it.sourceNumber==15 }
         val intent=Intent(context,Grade7WorkbookActivity::class.java).putExtra("chapter",4).putExtra("section","تمرین‌های اصلی")
         ActivityScenario.launch<Grade7WorkbookActivity>(intent).use {
-            compose.onNodeWithTag("question-search").performScrollTo().performTextInput("مغز مداد")
+            compose.onNodeWithTag("question-search").assertDoesNotExist()
+            compose.onNodeWithText("آزمون همین بخش").assertDoesNotExist()
+            compose.onNodeWithText("ادامهٔ تمرین").assertDoesNotExist()
             compose.onNodeWithTag("question-list-${q.id}").performScrollTo().performClick()
             compose.onNodeWithTag("native-source-question").assertExists()
             assertEquals(q.id,LearningPreferences(context).lastLocation()!!.questionId)
@@ -332,7 +334,7 @@ class Grade7NativeContentUiTest {
                 val density=LocalDensity.current
                 CompositionLocalProvider(LocalDensity provides Density(density.density,1.5f)) {
                     OloomYarTheme {
-                        WholeWorkbookQuestion(q,WorkbookProgress(context,"native_ui",listOf(q)),false,false,0,
+                        WholeWorkbookQuestion(q,WorkbookProgress(context,"native_ui",listOf(q)),false,0,
                             "بررسی مسیر پاسخ",Modifier.fillMaxSize()) { _,_-> }
                     }
                 }
@@ -425,7 +427,7 @@ class Grade7NativeContentUiTest {
             val state=if(f.checked)initial.submit(f.q) else initial
             OloomYarTheme {
                 Column(Modifier.fillMaxWidth().verticalScroll(rememberScrollState()).testTag("mcq-order-viewport")) {
-                    key(f) { NativeWorkbookContent(f.q,f.q.nativeQuestion,state,f.exam) }
+                    key(f) { NativeWorkbookContent(f.q,f.q.nativeQuestion,state) }
                 }
             }
         }
@@ -609,7 +611,10 @@ class Grade7NativeContentUiTest {
             compose.onNodeWithTag("chapter-study-cover").assertExists()
             compose.onNodeWithTag("chapter-study-progress").performScrollTo().assertTextEquals("${workbookFa(chapter.questions.count { chapter.progress.done(it.id) })} از ۳۱ سؤال")
             capture("layout-chapter-3-cover-progress")
-            compose.onNodeWithTag("chapter-study-continue").performScrollTo().assertIsEnabled().performClick()
+            compose.onNodeWithTag("chapter-study-continue").assertDoesNotExist()
+            compose.onNodeWithTag("chapter-section-تمرین‌های اصلی").performScrollTo().performClick()
+            compose.onNode(hasScrollAction()).performScrollToNode(hasText("سؤال ۱", substring = true))
+            compose.onAllNodesWithText("سؤال ۱", substring = true)[0].performClick()
             compose.onNodeWithTag("native-source-question").assertExists()
             compose.onNodeWithTag("reveal-answer").assertIsNotEnabled()
         }
@@ -710,7 +715,10 @@ class Grade7NativeContentUiTest {
             compose.waitUntil(10000) { compose.onAllNodesWithTag("chapter-study-cover").fetchSemanticsNodes().isNotEmpty() }
             compose.onNodeWithTag("chapter-study-cover").assertExists()
             capture("v08-chapter-10-cover")
-            compose.onNodeWithTag("chapter-study-continue").performScrollTo().performClick()
+            compose.onNodeWithTag("chapter-study-continue").assertDoesNotExist()
+            compose.onNodeWithTag("chapter-section-تمرین‌های اصلی").performScrollTo().performClick()
+            compose.onNode(hasScrollAction()).performScrollToNode(hasText("سؤال ۱", substring = true))
+            compose.onAllNodesWithText("سؤال ۱", substring = true)[0].performClick()
             compose.onNodeWithTag("native-source-question").assertExists()
             compose.onNodeWithTag("reveal-answer").assertIsNotEnabled()
         }
