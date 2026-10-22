@@ -82,7 +82,7 @@ class BazaarInventoryReaderTest {
     }
 
     @Test fun nativeInventoryCollectsAllPagesBeforeItsOnlyCallback() {
-        val other = BazaarProducts.COMPLETE
+        val other = "another-product"
         val service = Service { if (it == null) page(next = "next") else page(other) }
         val host = Host(instrumentation.targetContext, service)
         val result = query(host)

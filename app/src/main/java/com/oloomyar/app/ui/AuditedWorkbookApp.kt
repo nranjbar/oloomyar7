@@ -209,7 +209,7 @@ fun AuditedWorkbookApp(
                                 Surface(color = statusSoft, shape = RoundedCornerShape(14.dp)) { Text(when {
                                     mistake -> "نیازمند مرور"
                                     done -> "تمرین شده • لمس برای مرور"
-                                    draft -> "تمرین نیمه‌تمام • ادامه از محل قبلی"
+                                    draft -> "تمرین نیمه‌تمام • دارای پاسخ ذخیره‌شده"
                                     else -> "آمادهٔ پاسخ‌دادن"
                                 }, color = statusColor, style = MaterialTheme.typography.labelMedium, modifier = Modifier.padding(horizontal = 10.dp, vertical = 5.dp)) }
                             }

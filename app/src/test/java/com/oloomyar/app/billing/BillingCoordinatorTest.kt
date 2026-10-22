@@ -4,6 +4,18 @@ import org.junit.Assert.*
 import org.junit.Test
 
 class BillingCoordinatorTest {
+    @Test fun homeReadsAPurchaseSavedByAnotherActivityBeforeReconnectingOffline() {
+        val f = Fixture()
+        f.ready()
+        f.storage.data = StoredBillingData(listOf(receipt()))
+        f.controller.onForeground()
+        assertEquals(setOf(sku), f.state.purchasedSkus)
+        (1..15).forEach { assertTrue(ChapterAccessPolicy.isUnlocked(it, f.state.purchasedSkus)) }
+        f.gateway.connections.last().disconnect()
+        f.controller.onForeground()
+        f.gateway.connections.last().failure(IllegalStateException("offline"))
+        assertEquals(setOf(sku), f.state.purchasedSkus)
+    }
     private val sku = BazaarProducts.COMPLETE
     private val other = "oloomyar_g9_complete"
     private fun receipt(s: String = sku, payload: String = "nonce", state: Int = 0, time: Long = 1000) =
@@ -271,7 +283,7 @@ class BillingCoordinatorTest {
         f.gateway.purchases.last().failure(IllegalStateException())
         f.gateway.inventories.last().failure(IllegalStateException())
         assertNotNull(f.storage.data.pending); assertFalse(f.state.canPurchase); assertTrue(f.state.canRestore)
-        f.controller.purchase(other)
+        f.controller.purchase(sku)
         assertEquals(1, f.gateway.purchases.size)
         f.gateway.inventories.last().success(listOf(receipt()))
         assertEquals(setOf(sku), f.state.purchasedSkus)
