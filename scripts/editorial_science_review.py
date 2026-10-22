@@ -82,7 +82,7 @@ def write():
     replace(q(2,12),'nativeAnswer','الف- زمان سنج ( کرنومتر ) – ساعت','الف- ۱: ساعت؛ ۲: زمان‌سنج (کرنومتر)','Explicit labels match the corrected figure')
     q(2,15)['nativeAnswer']=[dict(type='text',text='۱- ترازو: اندازه‌گیری جرم\n۲- استوانهٔ مدرج: اندازه‌گیری حجم مایع\n۳- نیروسنج‌ها: اندازه‌گیری نیرو، مانند وزن')]
     record(q(2,15),'Same complete source facts reordered by authoritative figure numbers')
-    note(q(2,9),'خواندن استوانه پیش از سنگ ۶۰ و پس از سنگ ۷۲ سانتی‌متر مکعب است؛ اختلاف آن‌ها، یعنی ۱۲ سانتی‌متر مکعب، حجم سنگ است. عدد ۱۲ زیر استوانهٔ سمت راستِ تصویر آموزشی، حجم خود سنگ است و نباید به جای حجم کل ۷۲ خوانده شود.')
+    note(q(2,9),'حجم آب پیش از قرار دادن سنگ ۶۰ و حجم آب و سنگ پس از آن ۷۲ سانتی‌متر مکعب است؛ اختلاف آن‌ها، یعنی ۱۲ سانتی‌متر مکعب، حجم خودِ سنگ است.')
     # Eye strain is not synonymous with permanent loss of vision or laziness.
     q(1,7)['steps'][1]['options'][1]['text']='خستگی چشم و کاهش تحرک در استفادهٔ طولانی بدون استراحت'
     revised(q(1,7));note(q(1,7),'استفادهٔ طولانی و بدون وقفه می‌تواند به خستگی یا خشکی چشم و کاهش تحرک بینجامد. خستگی چشم را نباید با آسیب دائمی یا ضعیف‌شدن قطعی بینایی یکی دانست؛ «تنبلی» نیز پیامد حتمی استفاده از رایانه نیست.')
@@ -254,7 +254,7 @@ def write():
         for question in values:
             if question.get('answerStudyVisual') and not question.get('answerStudyCaption'):
                 question['answerStudyCaption']='تصویر آموزشیِ ارسالی، در کنار پاسخ کامل متنی؛ برای خواندن جزئیات روی تصویر بزنید.'
-    for question in [q(2,9),q(6,7),q(7,14)]:
+    for question in [q(6,7),q(7,14)]:
         question['answerStudyCaption']='این تصویر عین طرح ارسالی است؛ عبارت‌ها و برچسب‌های مورد اشاره را با توضیح علمیِ اصلاحیِ بالا بخوانید. برای خواندن جزئیات روی تصویر بزنید.'
     revisions=[];review=[]
     for ch,values in chapters.items():
