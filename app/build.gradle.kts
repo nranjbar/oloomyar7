@@ -28,8 +28,8 @@ android {
         applicationId = "com.oloomyar.app.grade7"
         minSdk = 23
         targetSdk = 37
-        versionCode = 14
-        versionName = "0.13.0-grade7-1405"
+        versionCode = 15
+        versionName = "0.14.0-grade7-1405"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         buildConfigField("int", "WORKBOOK_GRADE", "7")
         buildConfigField("String", "BAZAAR_RSA_PUBLIC_KEY", "\"$grade7BazaarKeyLiteral\"")

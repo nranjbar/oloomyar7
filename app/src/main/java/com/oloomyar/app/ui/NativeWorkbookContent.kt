@@ -131,12 +131,16 @@ private fun SourceEquation(parts: List<MathPart>) {
     CompositionLocalProvider(LocalLayoutDirection provides LayoutDirection.Ltr) {
         FlowRow(Modifier.fillMaxWidth().testTag("native-equation").padding(vertical = 8.dp),
             horizontalArrangement = Arrangement.spacedBy(10.dp), verticalArrangement = Arrangement.spacedBy(12.dp)) {
-            parts.forEach { part ->
+            parts.forEachIndexed { index, part ->
                 if (part.numerator != null && part.denominator != null) Column(Modifier.align(Alignment.CenterVertically), horizontalAlignment = Alignment.CenterHorizontally) {
                     WorkbookText(part.numerator)
                     HorizontalDivider(Modifier.widthIn(min = 38.dp).width(56.dp), color = Ink)
                     WorkbookText(part.denominator)
-                } else WorkbookText(part.text, Modifier.align(Alignment.CenterVertically))
+                } else Text(workbookBidi(part.text), Modifier.align(Alignment.CenterVertically).testTag("equation-token-$index"),
+                    color = Ink, style = MaterialTheme.typography.bodyLarge.copy(
+                        textDirection = if (Regex("[آ-ی]").containsMatchIn(part.text))
+                            androidx.compose.ui.text.style.TextDirection.Rtl
+                        else androidx.compose.ui.text.style.TextDirection.Ltr))
             }
         }
     }

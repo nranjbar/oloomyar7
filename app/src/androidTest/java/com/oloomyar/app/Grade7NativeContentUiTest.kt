@@ -42,6 +42,88 @@ import org.junit.runner.RunWith
 
 @RunWith(AndroidJUnit4::class)
 class Grade7NativeContentUiTest {
+    @Test fun workCalculationsAndComparisonSignsHaveRealLeftToRightLayoutsAndSourceCrops() {
+        data class Frame(val q:ChapterQuestion,val answer:Boolean=true)
+        val current=mutableStateOf(Frame(question(8,5)))
+        compose.setContent {
+            val frame=current.value
+            OloomYarTheme {
+                Column(Modifier.fillMaxWidth().verticalScroll(rememberScrollState()).padding(16.dp)) {
+                    key(frame) { NativeWorkbookContent(frame.q,if(frame.answer)frame.q.nativeAnswer else frame.q.nativeQuestion,
+                        if(frame.answer)null else filled(frame.q)) }
+                }
+            }
+        }
+        for(q in listOf(question(8,5),question(8,6),question(8,7),question(10,9))) {
+            compose.runOnIdle { current.value=Frame(q) }
+            compose.waitForIdle()
+            val blocks=q.nativeAnswer.filter { it.type=="math" }
+            for((equation,block)in blocks.withIndex()) {
+                for((index,part)in block.parts.withIndex()) {
+                    if(!Regex("[آ-ی]").containsMatchIn(part.text)) {
+                        val layouts=mutableListOf<TextLayoutResult>()
+                        compose.onAllNodesWithTag("equation-token-$index")[equation]
+                            .performSemanticsAction(SemanticsActions.GetTextLayoutResult) { it(layouts) }
+                        assertTrue(layouts.isNotEmpty())
+                        for(layout in layouts) {
+                            assertEquals(androidx.compose.ui.text.style.ResolvedTextDirection.Ltr,layout.getParagraphDirection(0))
+                            val numbers=Regex("[0-9]+(?:\\.[0-9]+)?").findAll(layout.layoutInput.text.text).toList()
+                            numbers.zipWithNext().forEach { (a,b) ->
+                                val lineA=layout.getLineForOffset(a.range.first);val lineB=layout.getLineForOffset(b.range.first)
+                                assertTrue(lineB>lineA || (lineA==lineB && layout.getHorizontalPosition(a.range.first,true)<layout.getHorizontalPosition(b.range.first,true)))
+                            }
+                        }
+                    }
+                }
+            }
+            if(q.relatedChapter==10) {
+                val left=compose.onNodeWithTag("equation-token-0").fetchSemanticsNode().positionInRoot.x
+                val middle=compose.onNodeWithTag("equation-token-2").fetchSemanticsNode().positionInRoot.x
+                val right=compose.onNodeWithTag("equation-token-4").fetchSemanticsNode().positionInRoot.x
+                assertTrue("Iron < aluminium < copper must have physical LTR order",left<middle && middle<right)
+            }
+            val crop="workbook-image-enlarge-${q.answerVisual}"
+            compose.waitUntil(10000) { compose.onAllNodesWithTag(crop).fetchSemanticsNodes().singleOrNull()?.config?.contains(SemanticsProperties.Disabled)==false }
+            compose.onNodeWithTag(crop).performScrollTo().assertIsDisplayed()
+            capture("v14-reference-${q.relatedChapter}-${q.sourceNumber}")
+        }
+        val q=question(8,6)
+        compose.runOnIdle { current.value=Frame(q,false) }
+        val layouts=mutableListOf<TextLayoutResult>()
+        compose.onNodeWithText(workbookBidi(q.nativeQuestion.first().text))
+            .performSemanticsAction(SemanticsActions.GetTextLayoutResult) { it(layouts) }
+        assertEquals(1,q.steps.single().pairs.size)
+        assertFalse(q.steps.single().pairs.any { it.left.contains("ارتفاع") })
+        for(layout in layouts) {
+            val index=layout.layoutInput.text.text.indexOf("1.3")
+            assertTrue(index>=0)
+            assertEquals(layout.getLineForOffset(index),layout.getLineForOffset(index+2))
+            assertTrue(layout.getHorizontalPosition(index,true)<layout.getHorizontalPosition(index+2,true))
+        }
+        capture("v14-height-is-given-1.3-m")
+    }
+
+    @Test fun mcqHeaderOmitsEditorialCommentary() {
+        val q=catalog.chapters[2].questions.first { it.section=="چهارگزینه‌ای" && it.sourceNumber==2 }
+        assertNotNull(q.sourceReviewNote)
+        open(q,1.5f)
+        compose.onNodeWithTag("question-body").performScrollToIndex(0)
+        compose.onNodeWithText(q.sourceReviewNote!!).assertDoesNotExist()
+        compose.onNodeWithTag("native-source-question").assertExists()
+        capture("v14-mcq-without-editorial-heading")
+    }
+
+    @Test fun changedHeightControlAndRestoredPrintedTeaKeyNeedFreshAuthorization() {
+        for(q in listOf(question(8,6),question(10,21))) {
+            val step=q.steps.single()
+            val previous=QuestionPractice(answers=mapOf(step.id to step.pairs.map { it.right }),
+                checked=mapOf(step.id to step.pairs.map { it.right }),revealed=true,shownHints=2,shuffleSeed=1414,contentRevision=0)
+            val restored=QuestionDraftCodec.decode(QuestionDraftCodec.encode(previous),q)
+            assertEquals(1,q.practiceRevision)
+            assertFalse(restored.revealed);assertFalse(restored.canReveal(q));assertFalse(restored.correct(q))
+            assertEquals(1414,restored.shuffleSeed)
+        }
+    }
     @get:Rule val compose=createComposeRule()
     private val context get()=InstrumentationRegistry.getInstrumentation().targetContext
     private val catalog get()=Grade7Catalog(context)
@@ -324,10 +406,10 @@ class Grade7NativeContentUiTest {
     @Test fun correctAndHintRoutesShowTheSameCompletePrintedAnswerAcrossAllAnswerFormats() {
         // Text, multi-part numerical answers, fractions, complete tables, source
         // diagram and owner answer art all go through the actual question screen.
-        val questions=(catalog.chapters.flatMap { it.questions }.filter { it.answerStudyVisual!=null }+
+        val questions=(catalog.chapters.flatMap { it.questions }.filter { it.answerStudyVisual!=null || it.nativeAnswer.any { block -> block.type=="figure" } }+
             listOf(question(5,2),question(14,10),question(15,8),
             catalog.chapters[12].questions.first { it.section=="چهارگزینه‌ای" && it.sourceNumber==3 })).distinctBy { it.id }
-        assertEquals(99,questions.size)
+        assertEquals(101,questions.size)
         val current=mutableStateOf<Pair<ChapterQuestion,Boolean>?>(null)
         compose.setContent {
             val frame=current.value
@@ -704,8 +786,9 @@ class Grade7NativeContentUiTest {
         assertEquals(2,mcq.steps.single().options.indexOfFirst { it.correct })
         assertEquals("الف",mcq.nativeAnswer.single().text);assertFalse(mcq.practiceUsesPrintedKey)
         val tea=question(10,21)
-        assertTrue(tea.steps.single().pairs[3].right.contains("به‌تنهایی"))
-        assertTrue(tea.steps.single().pairs[4].right.contains("استتار"));assertFalse(tea.practiceUsesPrintedKey)
+        assertTrue(tea.steps.single().pairs[3].right.startsWith("مهران"))
+        assertTrue(tea.steps.single().pairs[4].right.contains("تابش گرمایی کمی"));assertTrue(tea.practiceUsesPrintedKey)
+        assertNull(tea.sourceReviewNote)
         val iceCream=catalog.chapters[7].questions.first { it.section=="چهارگزینه‌ای" && it.sourceNumber==3 }
         assertTrue(iceCream.steps.single().options.all { it.text.endsWith("کیلوژول") })
         val heating=catalog.chapters[9].questions.first { it.section=="چهارگزینه‌ای" && it.sourceNumber==2 }

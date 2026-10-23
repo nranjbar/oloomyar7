@@ -23,7 +23,8 @@ for kind,relative in [('debug','app/build/outputs/apk/debug/app-debug.apk'),('re
         assert not any(b.get('asset')==q['sourceQuestionVisual']for q in native for b in q['nativeQuestion'])
         assert not any(b['type']in['input','cloze','barChart','reaction','flow']for q in native for b in q['nativeAnswer'])
         reference_figures=[(q['canonicalId'],b['asset'])for q in native for b in q['nativeAnswer']if b['type']=='figure']
-        assert reference_figures==[('g7_ch10_q13','pdf:answers10.pdf#2,37.35,464.6,197.05,629.61')]
+        crops=json.loads((ROOT/'qa/source/native-editorial-revisions-v14.json').read_text())['answerCrops']
+        assert sorted(reference_figures)==sorted([('g7_ch10_q13','pdf:answers10.pdf#2,37.35,464.6,197.05,629.61')]+[(r['question'],r['asset'])for r in crops])
         assert sum(bool(q.get('answerStudyVisual')) for q in qs)==97
         for q in qs:
             if q.get('answerStudyVisual'):assert prefix+'images/'+q['answerStudyVisual'] in names

@@ -34,6 +34,28 @@ import java.util.concurrent.TimeUnit
 /** Native navigation, real local records, accessibility and external-intent fallback. */
 @RunWith(AndroidJUnit4::class)
 class Grade7DiscoveryUiTest {
+    @Test fun bothSectionsStayReachableFromTheHomeChapterMenuAndEitherQuestionList() {
+        context.getSharedPreferences("workbook_1405_grade7_chapter8",Context.MODE_PRIVATE).edit().clear().commit()
+        val chapter=Grade7Catalog(context).chapters[7]
+        val main=chapter.questions.first { it.section=="تمرین‌های اصلی" }
+        val mcq=chapter.questions.first { it.section=="چهارگزینه‌ای" }
+        ActivityScenario.launch(MainActivity::class.java).use {
+            compose.awaitGrade7Home()
+            compose.onNodeWithTag("nav-chapters").performClick()
+            compose.onNodeWithTag("hub-list").performScrollToNode(hasTestTag("chapter-8"))
+            compose.onNodeWithTag("chapter-8").performClick()
+            compose.onNodeWithTag("section-tab-تمرین‌های اصلی").assertIsDisplayed().performClick()
+            compose.onNodeWithTag("question-list-${main.id}").assertExists()
+            compose.onNodeWithTag("section-tab-چهارگزینه‌ای").assertIsDisplayed().performClick()
+            compose.onNodeWithTag("question-list-${main.id}").assertDoesNotExist()
+            compose.onNodeWithTag("question-list-${mcq.id}").assertExists().performClick()
+            compose.onNodeWithTag("native-source-question").assertExists()
+            capture("v14-home-menu-to-mcq")
+            compose.onNodeWithText("فهرست").performClick()
+            compose.onNodeWithTag("section-tab-تمرین‌های اصلی").assertIsDisplayed().performClick()
+            compose.onNodeWithTag("question-list-${main.id}").assertExists()
+        }
+    }
     @get:Rule val compose = createComposeRule()
     private val context get() = InstrumentationRegistry.getInstrumentation().targetContext
     @Before fun reset() {

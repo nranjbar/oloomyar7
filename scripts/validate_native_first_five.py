@@ -19,6 +19,8 @@ from native_first_five import MCQ as FIRST_MCQ
 from native_chapters_six_to_ten import MCQ as NEXT_MCQ
 from native_chapters_eleven_to_fifteen import MCQ as LAST_MCQ
 printed_mcq={**FIRST_MCQ,**NEXT_MCQ,**LAST_MCQ}
+v14=json.loads((ROOT/'qa/source/native-editorial-revisions-v14.json').read_text())
+answer_crops={r['question']:r['asset']for r in v14['answerCrops']}
 counts=[];figures=[];tables=0;maths=0;slots=0
 pdf=fitz.open(ASSETS/'source/workbook.pdf')
 for ch in range(1,16):
@@ -34,10 +36,12 @@ for ch in range(1,16):
             assert b['type'] in ['text','cloze','figure','input','table','math','reaction','flow','barChart']
             if b['type'] in ['cloze','reaction','flow','input','barChart']:assert b.get('step',0)in range(len(q['steps']))
             if b['type']=='figure':
-                a=b['asset'];assert a not in [q['sourceQuestionVisual'],q['answerVisual']],cid
+                a=b['asset'];assert a!=q['sourceQuestionVisual'],cid
+                secondary_answer_crop=(answer_crops.get(cid)==a and b in q['nativeAnswer'] and b.get('text')=='پاسخ اصلی کتاب‌کار')
+                assert a!=q['answerVisual'] or secondary_answer_crop,cid
                 if a.startswith('pdf:'):
                     file=a[4:].split('#')[0]
-                    assert file in ['workbook.pdf','native_diagrams_11_15.pdf']or (cid=='g7_ch10_q13' and file=='answers10.pdf')
+                    assert file in ['workbook.pdf','native_diagrams_11_15.pdf']or (cid=='g7_ch10_q13' and file=='answers10.pdf')or secondary_answer_crop
                     regions=a.split('#')[1].split('|')
                     p,x0,y0,x1,y1=map(float,regions[0].split(',')); rect=fitz.Rect(x0,y0,x1,y1)
                     doc=pdf if file=='workbook.pdf' else fitz.open(ASSETS/'source'/file)
@@ -142,7 +146,8 @@ latest={r['id']:r for r in v11['revisions']};seen_latest=set()
 for ch in range(1,16):
     path=f'app/src/main/assets/content/chapter{ch}.json'
     old={q['canonicalId']:q for q in json.loads(subprocess.check_output(['git','show',v11['baseline']+':'+path],cwd=ROOT))}
-    for q in json.loads((ROOT/path).read_text()):
+    retained=json.loads(subprocess.check_output(['git','show',v14['baseline']+':'+path],cwd=ROOT))
+    for q in retained:
         cid=q['canonicalId']
         if native_hash(q)!=native_hash(old[cid]):
             assert cid in latest,(cid,'unlisted v11 native revision')
@@ -150,6 +155,21 @@ for ch in range(1,16):
             assert native_hash(q)==latest[cid]['afterNativeSha256'] and latest[cid]['reasons']
             seen_latest.add(cid)
 assert seen_latest==set(latest)
+owner_latest={r['id']:r for r in v14['revisions']};seen_owner=set()
+for ch in range(1,16):
+    path=f'app/src/main/assets/content/chapter{ch}.json'
+    previous={q['canonicalId']:q for q in json.loads(subprocess.check_output(['git','show',v14['baseline']+':'+path],cwd=ROOT))}
+    for q in json.loads((ROOT/path).read_text()):
+        cid=q['canonicalId'];old=previous[cid]
+        if native_hash(q)!=native_hash(old):
+            assert cid in owner_latest,(cid,'unlisted v14 native revision')
+            assert native_hash(old)==owner_latest[cid]['beforeNativeSha256']
+            assert native_hash(q)==owner_latest[cid]['afterNativeSha256'] and owner_latest[cid]['reasons']
+            seen_owner.add(cid)
+        if cid in answer_crops:
+            assert answer_crops[cid]==q['answerVisual']
+            assert sum(b.get('asset')==q['answerVisual']for b in q['nativeAnswer'])==1
+assert seen_owner==set(owner_latest)
 all_questions={q['canonicalId']:q for ch in range(1,16)for q in json.loads((ASSETS/f'content/chapter{ch}.json').read_text())}
 original_tables=json.loads((ROOT/'qa/source/original-tables-v11.json').read_text())
 assert len(original_tables['printedTables'])==5
@@ -160,7 +180,7 @@ for r in original_tables['printedTables']:
     assert blocks[i]['asset']==r['asset'] and blocks[i+1]['type']=='table'
 report=dict(status='PASS',edition=1405,nativeQuestions=sum(counts),nativeAnswers=sum(counts),chapterCounts=counts,
     nativeTables=tables,nativeMathBlocks=maths,inlinePrintedBlanks=slots,standaloneScientificFigures=figures,
-    fullQuestionOrKeyScreenshots=0,originalEmbeddedFiguresPixelIdentical=len(extracts),originalQuestionAndKeyFieldsUnchanged=True,reusableSelectionBanks=True,explicitlyReviewedNativeRevisions=len(approved),ownerPresentationRevisionsV11=len(latest),originalPrintedTablesBeforeNative=5,printedMCQOrder=True,unlistedNativeChanges=0,
+    fullQuestionOrKeyScreenshots=len(answer_crops),secondaryExactAnswerCrops=len(answer_crops),wholeQuestionScreenshots=0,originalEmbeddedFiguresPixelIdentical=len(extracts),originalQuestionAndKeyFieldsUnchanged=True,reusableSelectionBanks=True,explicitlyReviewedNativeRevisions=len(approved),ownerPresentationRevisionsV11=len(latest),ownerPresentationRevisionsV14=len(owner_latest),originalPrintedTablesBeforeNative=5,printedMCQOrder=True,unlistedNativeChanges=0,
     isolatedBiologyDiagramPages=4,derivedDiagramEmbeddedImagesPixelIdentical=len(image_hashes),
     sourceReview='All workbook pages 2–59 and chapter answer PDFs 01–15 visually reviewed; practice revisions and printed-key conflicts are separately recorded.')
 (ROOT/'qa/grade7_native_content_validation.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')

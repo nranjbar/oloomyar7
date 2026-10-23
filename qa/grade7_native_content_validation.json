@@ -277,8 +277,20 @@
       "asset": "owner_20261021_g7_ch08_q04_question.webp"
     },
     {
+      "question": "g7_ch08_q05",
+      "asset": "pdf:answers08.pdf#1,20,381.23,583.3200073242188,422.47"
+    },
+    {
+      "question": "g7_ch08_q06",
+      "asset": "pdf:answers08.pdf#1,20,423.47,583.3200073242188,464.61"
+    },
+    {
       "question": "g7_ch08_q07",
       "asset": "owner_20261021_g7_ch08_q07_question.webp"
+    },
+    {
+      "question": "g7_ch08_q07",
+      "asset": "pdf:answers08.pdf#1,20,465.61,583.3200073242188,605.49"
     },
     {
       "question": "g7_ch08_q08",
@@ -359,6 +371,10 @@
     {
       "question": "g7_ch10_q09",
       "asset": "native_1405_g7_ch10_q09.webp"
+    },
+    {
+      "question": "g7_ch10_q09",
+      "asset": "pdf:answers10.pdf#2,20,43.14,583.3200073242188,182.92"
     },
     {
       "question": "g7_ch10_q13",
@@ -529,12 +545,15 @@
       "asset": "owner_20261021_g7_ch15_q12_question.webp"
     }
   ],
-  "fullQuestionOrKeyScreenshots": 0,
+  "fullQuestionOrKeyScreenshots": 4,
+  "secondaryExactAnswerCrops": 4,
+  "wholeQuestionScreenshots": 0,
   "originalEmbeddedFiguresPixelIdentical": 19,
   "originalQuestionAndKeyFieldsUnchanged": true,
   "reusableSelectionBanks": true,
   "explicitlyReviewedNativeRevisions": 41,
   "ownerPresentationRevisionsV11": 6,
+  "ownerPresentationRevisionsV14": 4,
   "originalPrintedTablesBeforeNative": 5,
   "printedMCQOrder": true,
   "unlistedNativeChanges": 0,

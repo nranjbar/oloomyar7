@@ -1,3 +1,5 @@
+@file:OptIn(androidx.compose.foundation.layout.ExperimentalLayoutApi::class)
+
 package com.oloomyar.app.ui
 
 import androidx.activity.compose.BackHandler
@@ -106,6 +108,9 @@ fun AuditedWorkbookApp(
         ) { padding ->
         when (screen) {
             "home" -> LazyColumn(Modifier.fillMaxSize().padding(padding), contentPadding = PaddingValues(18.dp), verticalArrangement = Arrangement.spacedBy(14.dp)) {
+                if (parts.size > 1) item {
+                    WorkbookSectionTabs(parts, null) { part = it; screen = "part" }
+                }
                 item {
                     val description = if (conceptual) {
                         val firstPage = questions.minOf { it.sourcePage }
@@ -174,6 +179,9 @@ fun AuditedWorkbookApp(
                 }
             }
             "part" -> LazyColumn(Modifier.fillMaxSize().padding(padding), contentPadding = PaddingValues(18.dp), verticalArrangement = Arrangement.spacedBy(12.dp)) {
+                if (parts.size > 1) item {
+                    WorkbookSectionTabs(parts, part) { part = it }
+                }
                 item {
                     Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(12.dp)) {
                         Column(Modifier.weight(1f)) {
@@ -266,6 +274,19 @@ fun AuditedWorkbookApp(
         }
     }
 
+}
+
+/** Both workbook sections are visible before the cover and in either question list. */
+@Composable
+private fun WorkbookSectionTabs(parts: List<String>, selected: String?, onSelect: (String) -> Unit) {
+    FlowRow(Modifier.fillMaxWidth().testTag("workbook-section-tabs"),
+        horizontalArrangement = Arrangement.spacedBy(8.dp), verticalArrangement = Arrangement.spacedBy(4.dp)) {
+        parts.forEach { section ->
+            FilterChip(selected = selected == section, onClick = { onSelect(section) },
+                label = { Text(section) },
+                modifier = Modifier.heightIn(min = 48.dp).testTag("section-tab-$section"))
+        }
+    }
 }
 
 @Composable

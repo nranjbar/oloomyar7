@@ -118,7 +118,9 @@ internal fun WholeWorkbookQuestion(
                     if (!native) {
                         Text(question.source, color = Muted, style = MaterialTheme.typography.bodySmall)
                     }
-                    question.sourceReviewNote?.let { Text(it, color = Orange, style = MaterialTheme.typography.bodySmall) }
+                    if (question.section != "چهارگزینه‌ای") question.sourceReviewNote?.let {
+                        Text(it, color = Orange, style = MaterialTheme.typography.bodySmall)
+                    }
                     if (finished) TextButton(onClick = { update(QuestionPractice()) }, modifier = Modifier.testTag("restart-practice")) { Text("تمرین دوباره") }
                     if (inlineStep == null && !native) TextButton(onClick = { jump(3) }) {
                         Text("رفتن به پاسخ تعاملی")
