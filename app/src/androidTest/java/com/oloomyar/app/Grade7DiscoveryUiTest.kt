@@ -189,7 +189,10 @@ class Grade7DiscoveryUiTest {
             compose.onNodeWithTag("reduce-motion").assertIsOn();capture("discovery-05-settings-360-font150")
             compose.onNodeWithTag("nav-chapters").performClick();compose.onNodeWithTag("hub-list").performScrollToNode(hasTestTag("chapter-3"))
             capture("discovery-06-chapters-360-font150")
-            compose.onNodeWithTag("chapter-3").performClick();compose.onNodeWithText("بخش‌های این فصل").assertExists()
+            compose.onNodeWithTag("chapter-3").performClick()
+            compose.onNodeWithTag("section-tab-تمرین‌های اصلی").assertIsDisplayed()
+            compose.onNodeWithTag("section-tab-چهارگزینه‌ای").assertIsDisplayed()
+            capture("v14-chapter-sections-font150")
         }
     }
     @Test fun homeAndSettingsRemainUsableOn393dpAndTablet() {

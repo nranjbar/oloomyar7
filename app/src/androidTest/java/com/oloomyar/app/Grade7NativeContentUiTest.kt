@@ -98,7 +98,9 @@ class Grade7NativeContentUiTest {
             val index=layout.layoutInput.text.text.indexOf("1.3")
             assertTrue(index>=0)
             assertEquals(layout.getLineForOffset(index),layout.getLineForOffset(index+2))
-            assertTrue(layout.getHorizontalPosition(index,true)<layout.getHorizontalPosition(index+2,true))
+            // Glyph bounds measure the printed digits. A primary caret at an
+            // isolate boundary follows the surrounding RTL paragraph instead.
+            assertTrue(layout.getBoundingBox(index).left<layout.getBoundingBox(index+2).left)
         }
         capture("v14-height-is-given-1.3-m")
     }
