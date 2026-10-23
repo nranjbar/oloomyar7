@@ -65,7 +65,8 @@ test('seedVerifiedReceiptBeforeProcessTermination','com.oloomyar.app.billing.Bil
 run('adb','shell','am','force-stop',APP)
 assert not subprocess.run(['adb','shell','pidof',APP],capture_output=True,text=True).stdout.strip()
 test('coldProcessUnlocksEveryPaidChapterBeforeAnyConnectionAndAfterOfflineFailure','com.oloomyar.app.billing.BillingProcessPersistenceTest')
-report=dict(status='PASS',oldVersion='0.11.0',newVersion='0.14.0',installReplacement=True,oldCompletionPreserved=True,
+new_version=next(line.split('"')[1] for line in (ROOT/'app/build.gradle.kts').read_text().splitlines() if line.strip().startswith('versionName = '))
+report=dict(status='PASS',oldVersion='0.11.0',newVersion=new_version,installReplacement=True,oldCompletionPreserved=True,
     draftSelectionsHintsAndSeedPreserved=True,viewportPreserved=True,answerStayedLocked=True,bookmarksAndDisplaySettingsPreserved=True,
     changedScienceAuthorizationReset=True,pidBefore=pid_before,pidAfterStop=pid_after,pidRestored=pid_restored,tests=6,
     signedReceiptSurvivedRealProcessTermination=True,allPaidChaptersUnlockedBeforeConnection=True,offlineGatewaySimulated=True)

@@ -1,0 +1,94 @@
+{
+  "versionName": "0.14.1-grade7-1405",
+  "versionCode": 16,
+  "applicationId": "com.oloomyar.app.grade7",
+  "sourceCommit": "b19d5ef1bcaaddf665e9243c35759c016d8dda13",
+  "guideCommit": "a6dd146ccda39514278acc091fcc049456d7d646",
+  "workflowRun": 39997524404,
+  "workflowUrl": "https://github.com/nranjbar/oloomyar7/actions/runs/39997524404",
+  "packageCheck": {
+    "status": "PASS",
+    "copyrightPresentInDex": true,
+    "versionNamePresentInDex": true,
+    "assetEntries": 243,
+    "allAssetsMatchSource": true,
+    "previousApkAssetsIdentical": true,
+    "apkBytes": 71060902,
+    "apkSha256": "1decb0cec6d43acbddf9632eac8ccfd715617f78e41176f96bbabb21991a5153"
+  },
+  "guideCheck": {
+    "status": "PASS",
+    "guideMatchesCurrentApp": true,
+    "product": "oloomyar_g7_complete",
+    "priceToman": 195000,
+    "versionCode": 16,
+    "sourceLinks": 10
+  },
+  "bundleSignerSmoke": {
+    "status": "PASS",
+    "tool": "bundlesigner-0.1.14.jar",
+    "toolSha256": "aef2c387f678558e3a4baddab9730fbdca64ef28a0e2e0245491e1088b4968f5",
+    "java": 17,
+    "v2": true,
+    "v3": false,
+    "inputBundle": "CI release bundle of b19d5ef1bcaaddf665e9243c35759c016d8dda13",
+    "signingKey": "ephemeral local guide-smoke key; never a production or user key",
+    "binName": "app-release.bin",
+    "binBytes": 955944,
+    "binSha256": "65b254649d17347ceb16676c03834068a4856015a6a0bf74fff37a1fe56e9443",
+    "productionDeliverable": false
+  },
+  "realBazaarPurchaseTested": false,
+  "productionSigningConfigured": false,
+  "status": "APPLICATION_CHECKS_PASS",
+  "unitTests": {
+    "tests": 98,
+    "failures": 0,
+    "errors": 0
+  },
+  "androidUiTests": {
+    "tests": 82,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "geometry": {
+    "status": "PASS",
+    "cases": 1902
+  },
+  "referenceParity": {
+    "status": "PASS",
+    "questions": 101
+  },
+  "persistenceTests": {
+    "status": "PASS",
+    "tests": 6,
+    "rawArtifactVersionLabel": "0.14.0",
+    "actualBuildVersion": "0.14.1-grade7-1405",
+    "note": "The CI script had a stale static 0.14.0 report label. The tested artifact is the 0.14.1 APK identified by the exact package-check SHA. Report-only source now reads the current Gradle version name."
+  },
+  "workflow": {
+    "runId": 39997524404,
+    "applicationJob": "success",
+    "applicationJobId": 120564831827,
+    "overallConclusion": "failure",
+    "administrativeCleanupJob": "failure",
+    "cleanupReason": "main advanced to documentation-only commits while the application checks were running; the cleanup guard refused to act",
+    "remoteBranchesObserved": [
+      "main"
+    ],
+    "noBranchDeletionNeeded": true
+  },
+  "visualReview": {
+    "status": "PASS",
+    "screenshotArtifactPath": "app/build/grade7-screenshots/v14-1-author-rights-and-permission.png",
+    "screenshotSha256": "f1e9c9b856d19060cceb9e874889bc467a8d807fa7742a70ad519fef954a390e",
+    "checked": "Author-rights heading and both ownership/permission sentences are fully visible without clipping"
+  },
+  "artifacts": {
+    "apk": 12520348353,
+    "releaseBundle": 12520951796,
+    "reports": 12521253208
+  },
+  "reportOnlyFollowup": "No application source or assets changed after the tested commit; final changes record QA and read the current version name in the persistence report."
+}
