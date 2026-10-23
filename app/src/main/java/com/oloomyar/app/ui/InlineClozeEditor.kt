@@ -181,29 +181,25 @@ internal fun WordBankBottomSheet(
     val choices = if (step.kind == StepKind.MATCH) WorkbookAnswers.choices(step, row) else step.categories
     val order = remember(step.id, row, seed) { choices.shuffled(Random(seed xor step.id.hashCode())) }
     ModalBottomSheet(onDismissRequest = onDismiss, sheetState = rememberModalBottomSheetState(skipPartiallyExpanded = true)) {
-        Column(Modifier.fillMaxWidth().padding(horizontal = 20.dp).navigationBarsPadding()) {
-            Text("جای خالی ${workbookFa(row + 1)}", style = MaterialTheme.typography.titleLarge)
-            WorkbookText(if (step.kind == StepKind.MATCH) step.pairs[row].left else step.classifyItems[row].text,
-                Modifier.padding(top = 8.dp))
-            Text("یک گزینه را انتخاب کن", color = Muted, modifier = Modifier.padding(vertical = 8.dp))
-            LazyColumn(Modifier.fillMaxWidth().heightIn(max = 440.dp).testTag("choice-sheet"), verticalArrangement = Arrangement.spacedBy(8.dp)) {
-                items(order, key = { it }) { choice ->
-                    // A bank is a set of possible answers, never a consumable inventory.
-                    // Reusing a choice must not clear, move or disable another blank.
-                    OutlinedButton(onClick = { onSelect(choice) },
-                        modifier = Modifier.fillMaxWidth().heightIn(min = 54.dp).testTag("cloze-choice-$choice"),
-                        shape = RoundedCornerShape(14.dp),
-                        colors = ButtonDefaults.outlinedButtonColors(containerColor = if (values.getOrNull(row) == choice) SelectionSoft else MaterialTheme.colorScheme.surface)) {
-                        WorkbookText(choice, Modifier.weight(1f))
-                    }
+        LazyColumn(Modifier.fillMaxWidth().heightIn(max = 560.dp).navigationBarsPadding().testTag("choice-sheet"),
+            contentPadding = PaddingValues(start = 20.dp, end = 20.dp, top = 8.dp, bottom = 20.dp),
+            verticalArrangement = Arrangement.spacedBy(8.dp)) {
+            item { Text("جای خالی ${workbookFa(row + 1)}", style = MaterialTheme.typography.titleLarge) }
+            item { WorkbookText(if (step.kind == StepKind.MATCH) step.pairs[row].left else step.classifyItems[row].text) }
+            item { Text("یک گزینه را انتخاب کن", color = Muted) }
+            items(order, key = { it }) { choice ->
+                // Every choice remains reusable; scrolling the sheet never changes a blank.
+                OutlinedButton(onClick = { onSelect(choice) },
+                    modifier = Modifier.fillMaxWidth().heightIn(min = 54.dp).testTag("cloze-choice-$choice"),
+                    shape = RoundedCornerShape(14.dp),
+                    colors = ButtonDefaults.outlinedButtonColors(containerColor = if (values.getOrNull(row) == choice) SelectionSoft else MaterialTheme.colorScheme.surface)) {
+                    WorkbookText(choice, Modifier.weight(1f))
                 }
-                item {
-                    TextButton(onClick = onDismiss, modifier = Modifier.fillMaxWidth().heightIn(min = 48.dp)) { Text("بستن") }
-                    TextButton(onClick = { onSelect("") }, enabled = values.getOrNull(row)?.isNotBlank() == true, modifier = Modifier.fillMaxWidth()) {
-                        Text("پاک‌کردن این انتخاب")
-                    }
-                }
-                item { Spacer(Modifier.height(14.dp)) }
+            }
+            item {
+                TextButton(onClick = onDismiss, modifier = Modifier.fillMaxWidth().heightIn(min = 48.dp)) { Text("بستن") }
+                TextButton(onClick = { onSelect("") }, enabled = values.getOrNull(row)?.isNotBlank() == true,
+                    modifier = Modifier.fillMaxWidth().heightIn(min = 48.dp)) { Text("پاک‌کردن این انتخاب") }
             }
         }
     }

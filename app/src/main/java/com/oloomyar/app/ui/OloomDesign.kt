@@ -181,16 +181,12 @@ internal fun OloomActionCard(
 @Composable
 internal fun OloomTopBar(title: String, onBack: () -> Unit, modifier: Modifier = Modifier) {
     Surface(modifier = modifier, color = Color.White.copy(alpha = .96f), shadowElevation = 2.dp) {
-        Row(Modifier.fillMaxWidth().padding(horizontal = 8.dp, vertical = 7.dp), verticalAlignment = Alignment.CenterVertically) {
-            TextButton(onClick = onBack, shape = RoundedCornerShape(14.dp)) {
-                Icon(Icons.AutoMirrored.Filled.ArrowBack, "برگشت", tint = Blue, modifier = Modifier.size(20.dp))
-                Spacer(Modifier.width(4.dp))
-                Text("برگشت", color = Blue, fontWeight = FontWeight.Bold)
+        Row(Modifier.fillMaxWidth().heightIn(min = 56.dp).padding(horizontal = 8.dp, vertical = 4.dp), verticalAlignment = Alignment.CenterVertically) {
+            IconButton(onClick = onBack, modifier = Modifier.size(48.dp)) {
+                Icon(Icons.AutoMirrored.Filled.ArrowBack, "برگشت", tint = Blue)
             }
             Text(title, Modifier.weight(1f), textAlign = TextAlign.Center, style = MaterialTheme.typography.titleMedium)
-            Surface(color = BlueSoft, shape = RoundedCornerShape(12.dp), modifier = Modifier.padding(horizontal = 13.dp)) {
-                Icon(Icons.Default.Science, null, tint = Blue, modifier = Modifier.padding(7.dp).size(18.dp))
-            }
+            Spacer(Modifier.width(48.dp))
         }
     }
 }

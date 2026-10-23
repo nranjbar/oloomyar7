@@ -7,6 +7,7 @@ import android.content.pm.ActivityInfo
 import android.content.res.Configuration
 import android.util.Log
 import android.graphics.Bitmap
+import androidx.compose.ui.unit.dp
 import android.content.ContentValues
 import android.provider.MediaStore
 import android.os.ParcelFileDescriptor
@@ -51,7 +52,7 @@ class Grade7DiscoveryUiTest {
             compose.onNodeWithTag("question-list-${mcq.id}").assertExists().performClick()
             compose.onNodeWithTag("native-source-question").assertExists()
             capture("v14-home-menu-to-mcq")
-            compose.onNodeWithText("فهرست").performClick()
+            compose.onNodeWithTag("question-navigator").performClick()
             compose.onNodeWithTag("section-tab-تمرین‌های اصلی").assertIsDisplayed().performClick()
             compose.onNodeWithTag("question-list-${main.id}").assertExists()
         }
@@ -211,6 +212,33 @@ class Grade7DiscoveryUiTest {
             capture("v14-1-author-rights-and-permission")
         }
     }
+    @Test fun questionActionsStayAtTheSafeBottomOnPortraitLandscapeAndTablet() {
+        val q=Grade7Catalog(context).chapters[7].questions.first { it.sourceNumber==18 && it.section=="تمرین‌های اصلی" }
+        for((name,size,density) in listOf(Triple("portrait360","1080x2160",480),Triple("landscape720","2160x1080",480),Triple("tablet800","1200x1920",240))) {
+            shell("wm size $size");shell("wm density $density")
+            LearningPreferences(context).textScale(1.5f)
+            context.getSharedPreferences("workbook_1405_grade7_chapter8",Context.MODE_PRIVATE).edit().clear().commit()
+            ActivityScenario.launch<Grade7WorkbookActivity>(Intent(context,Grade7WorkbookActivity::class.java).putExtra("chapter",8).putExtra("question_id",q.id)).use {
+                compose.onNodeWithTag("question-body").assertExists()
+                val root=compose.onRoot().getUnclippedBoundsInRoot()
+                val body=compose.onNodeWithTag("question-body").getUnclippedBoundsInRoot()
+                val dock=compose.onNodeWithTag("question-actions").getUnclippedBoundsInRoot()
+                val check=compose.onNodeWithTag("check-answer").getUnclippedBoundsInRoot()
+                assertTrue("$name: action dock covers question",body.bottom<=dock.top+1.dp)
+                assertTrue("$name: primary action floats above the bottom",dock.bottom-check.bottom<=8.dp)
+                assertTrue("$name: dock extends beyond window",dock.bottom<=root.bottom+1.dp)
+                assertTrue("$name: excess bottom gap",root.bottom-dock.bottom<=50.dp)
+                assertTrue("$name: too little reading space",body.height>=root.height*.4f)
+                assertTrue("$name: oversized dock",dock.height<=if(name=="portrait360")158.dp else 100.dp)
+                listOf("previous-question","question-navigator","next-question","return-to-choices","show-hints","reveal-answer","check-answer").forEach { tag ->
+                    val target=compose.onNodeWithTag(tag).assertIsDisplayed().getUnclippedBoundsInRoot()
+                    assertTrue("$name $tag touch target",target.width>=47.dp && target.height>=47.dp)
+                }
+                capture("v15-actions-$name-font150")
+            }
+        }
+    }
+
     @Test fun bazaarRoutingUsesOnlyGradeSevenAndHandlesEveryMissingHandler() {
         val calls = mutableListOf<Intent>()
         val web = launchBazaarReview { calls.add(it);if (calls.size == 1) throw ActivityNotFoundException() }

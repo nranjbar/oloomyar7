@@ -664,6 +664,100 @@ class Grade7NativeContentUiTest {
         context.contentResolver.openOutputStream(uri)!!.use { it.write(JSONObject().put("status",if(issues.isEmpty())"PASS" else "FAIL").put("cases",report).put("failures",JSONArray(issues)).toString(2).toByteArray()) }
         assertTrue(issues.take(40).joinToString("\n"),issues.isEmpty())
     }
+    @androidx.test.filters.LargeTest
+    @Test fun all317QuestionActionDocksStayLowReadableAndSeparateFromTheReadingArea() {
+        data class ChromeFrame(val q:ChapterQuestion,val width:Int=320,val height:Int=560,val font:Float=1f)
+        val questions=catalog.chapters.flatMap { it.questions }
+        val store=WorkbookProgress(context,"chrome_audit",questions)
+        context.getSharedPreferences("workbook_1405_chrome_audit",Context.MODE_PRIVATE).edit().clear().commit()
+        val current=mutableStateOf(ChromeFrame(questions.first()))
+        compose.setContent {
+            val frame=current.value
+            val density=LocalDensity.current
+            CompositionLocalProvider(LocalDensity provides Density(density.density,frame.font)) {
+                OloomYarTheme {
+                    Box(Modifier.fillMaxSize(),contentAlignment=Alignment.TopStart) {
+                        key(frame) {
+                            Box(Modifier.size(frame.width.dp,frame.height.dp).testTag("chrome-audit-viewport")) {
+                                AuditedWorkbookApp("فصل ${frame.q.relatedChapter}",listOf(frame.q),store,initialQuestionId=frame.q.id,onExit={})
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        val report=JSONArray()
+        val tags=listOf("return-to-choices","show-hints","reveal-answer","question-navigator","previous-question","check-answer","next-question")
+        for(profile in listOf(Triple(320,560,1f),Triple(320,560,1.5f),Triple(360,620,2f))) {
+            for(q in questions) {
+                compose.runOnIdle { current.value=ChromeFrame(q,profile.first,profile.second,profile.third) }
+                compose.waitForIdle()
+                compose.onNodeWithTag("question-body").assertExists()
+                val viewport=compose.onNodeWithTag("chrome-audit-viewport").getUnclippedBoundsInRoot()
+                val body=compose.onNodeWithTag("question-body").getUnclippedBoundsInRoot()
+                val dock=compose.onNodeWithTag("question-actions").getUnclippedBoundsInRoot()
+                val primary=compose.onNodeWithTag("check-answer").getUnclippedBoundsInRoot()
+                assertTrue("${q.id}: reading area overlaps the dock",body.bottom<=dock.top+1.dp)
+                assertTrue("${q.id}: usable reading height lost",body.height>=viewport.height*.40f)
+                assertTrue("${q.id}: primary action is lifted above the safe bottom edge",dock.bottom-primary.bottom<=8.dp)
+                val maximum=when(profile.third) { 1f->132.dp;1.5f->158.dp;else->190.dp }
+                assertTrue("${q.id}: action dock too tall at ${profile.third}: ${dock.height}",dock.height<=maximum)
+                val bounds=tags.map { tag ->
+                    val node=compose.onNodeWithTag(tag).assertIsDisplayed()
+                    val rect=node.getUnclippedBoundsInRoot()
+                    assertTrue("${q.id}: $tag too small",rect.width>=47.dp && rect.height>=47.dp)
+                    assertTrue("${q.id}: $tag outside the dock",rect.left>=dock.left-1.dp && rect.right<=dock.right+1.dp && rect.top>=dock.top-1.dp && rect.bottom<=dock.bottom+1.dp)
+                    tag to rect
+                }
+                bounds.forEachIndexed { index,(name,a) -> bounds.drop(index+1).forEach { (other,b) ->
+                    assertFalse("${q.id}: overlapping actions $name / $other",minOf(a.right,b.right)-maxOf(a.left,b.left)>1.dp && minOf(a.bottom,b.bottom)-maxOf(a.top,b.top)>1.dp)
+                } }
+                val text=SemanticsMatcher.keyIsDefined(SemanticsActions.GetTextLayoutResult) and hasAnyAncestor(hasTestTag("question-actions"))
+                repeat(compose.onAllNodes(text,useUnmergedTree=true).fetchSemanticsNodes().size) { index ->
+                    val layouts=mutableListOf<TextLayoutResult>()
+                    compose.onAllNodes(text,useUnmergedTree=true)[index].performSemanticsAction(SemanticsActions.GetTextLayoutResult) { it(layouts) }
+                    layouts.forEach { layout ->
+                        val input=layout.layoutInput
+                        val painted=TextMeasurer(input.fontFamilyResolver,input.density,input.layoutDirection,cacheSize=0).measure(input.text,style=input.style,overflow=input.overflow,softWrap=input.softWrap,maxLines=input.maxLines,
+                            constraints=Constraints(minWidth=layout.size.width,maxWidth=layout.size.width,maxHeight=layout.size.height))
+                        assertFalse("${q.id}: dock label clipped: ${input.text}",painted.hasVisualOverflow)
+                    }
+                }
+                report.put(JSONObject().put("question",q.id).put("chapter",q.relatedChapter).put("widthDp",profile.first).put("heightDp",profile.second).put("fontScale",profile.third).put("dockHeightDp",dock.height.value).put("readingHeightDp",body.height.value).put("primaryBottomGapDp",(dock.bottom-primary.bottom).value).put("status","PASS"))
+                if(profile.third==1f && q.sourceNumber==1 && q.section=="تمرین‌های اصلی" && q.relatedChapter in setOf(1,3,8,10,15)) capture("v15-chapter-${q.relatedChapter}-low-actions")
+            }
+        }
+        assertEquals(951,report.length())
+        val values=ContentValues().apply { put(MediaStore.Downloads.DISPLAY_NAME,"question-chrome-audit-v15.json");put(MediaStore.Downloads.MIME_TYPE,"application/json");put(MediaStore.Downloads.RELATIVE_PATH,"Download/grade7-screenshots") }
+        val uri=context.contentResolver.insert(MediaStore.Downloads.EXTERNAL_CONTENT_URI,values)!!
+        context.contentResolver.openOutputStream(uri)!!.use { it.write(JSONObject().put("status","PASS").put("cases",report).toString(2).toByteArray()) }
+    }
+
+    @Test fun longestOriginalOptionPromptAndEveryChoiceRemainReachableAtLargeText() {
+        val candidates=catalog.chapters.flatMap { it.questions }.flatMap { q -> q.steps.filter { it.kind==StepKind.MATCH }.flatMap { step -> step.pairs.indices.map { row -> step to row } } }
+        val (step,row)=candidates.maxBy { (s,i)->s.pairs[i].left.length+(WorkbookAnswers.choices(s,i).maxOfOrNull { it.length }?:0) }
+        val open=mutableStateOf(true)
+        var selected:String?=null
+        compose.setContent {
+            val density=LocalDensity.current
+            CompositionLocalProvider(LocalDensity provides Density(density.density,2f)) {
+                OloomYarTheme {
+                    if(open.value)WordBankBottomSheet(step,row,emptyList(),15,onSelect={ selected=it;open.value=false },onDismiss={ open.value=false })
+                }
+            }
+        }
+        val choices=WorkbookAnswers.choices(step,row)
+        for(choice in choices) {
+            compose.onNodeWithTag("choice-sheet").performScrollToNode(hasTestTag("cloze-choice-$choice"))
+            compose.onNodeWithTag("cloze-choice-$choice").assertIsDisplayed()
+        }
+        compose.onNodeWithTag("choice-sheet").performScrollToNode(hasTestTag("cloze-choice-${choices.last()}"))
+        capture("v15-long-option-sheet-font200")
+        compose.onNodeWithTag("cloze-choice-${choices.last()}").performClick()
+        compose.onNodeWithTag("choice-sheet").assertDoesNotExist()
+        assertEquals(choices.last(),selected)
+    }
+
     private fun ChapterQuestion.canonicalForAudit()="g7_ch${relatedChapter.toString().padStart(2,'0')}_${if(section=="چهارگزینه‌ای")"mcq" else "q"}${sourceNumber.toString().padStart(2,'0')}"
 
     @Test fun hintsForMultiplePartsHaveOneHeadingPerLevelAndStayPartSpecific() {

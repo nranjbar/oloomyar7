@@ -251,59 +251,44 @@ internal fun WholeWorkbookQuestion(
             }
             item(key = "footer") { Spacer(Modifier.height(8.dp)) }
         }
-        Surface(color = MaterialTheme.colorScheme.surface, shadowElevation = 6.dp) {
-            Column(Modifier.fillMaxWidth().navigationBarsPadding().padding(horizontal = 16.dp, vertical = 10.dp), verticalArrangement = Arrangement.spacedBy(6.dp)) {
-                if (onQuestionList != null) Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(6.dp)) {
-                    TextButton(onClick = { onPrevious?.invoke() }, enabled = onPrevious != null, modifier = Modifier.weight(1f).heightIn(min = 48.dp).testTag("previous-question")) { Text("قبلی") }
-                    TextButton(onClick = onQuestionList, modifier = Modifier.weight(1f).heightIn(min = 48.dp).testTag("question-navigator")) { Text("فهرست") }
-                    TextButton(onClick = { onNext?.invoke() }, enabled = onNext != null, modifier = Modifier.weight(1f).heightIn(min = 48.dp).testTag("next-question")) { Text("بعدی") }
+        WorkbookActionDock(
+            finished = finished,
+            canCheck = state.canCheck(question),
+            canHint = if (native) hintedSteps.isNotEmpty() else state.shownHints > 0,
+            canReveal = state.canReveal(question) && !state.revealed,
+            onChoices = { jump(if (native || inlineStep != null) 1 else 3) },
+            onHint = {
+                val first = question.steps.indexOfFirst { step -> state.checked[step.id]?.let { !WorkbookAnswers.isCorrect(step, it) } == true }.coerceAtLeast(0)
+                jump(if (native) 2 else first + 3)
+            },
+            onReveal = {
+                val latest = QuestionDraftCodec.decode(json, question)
+                if (latest.canReveal(question)) {
+                    pendingReferenceScroll = true
+                    if (!latest.correct(question)) update(latest.reveal(question))
+                    progress.recordReveal(question.id, latest.correct(question))
+                    coroutine.launch { withFrameNanos { }; list.scrollToItem(referenceIndex) }
                 }
-
-                    Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                        TextButton(onClick = { jump(if (native || inlineStep != null) 1 else 3) }, modifier = Modifier.weight(1f)) { Text("انتخاب‌ها") }
-                        TextButton(enabled = if (native) hintedSteps.isNotEmpty() else state.shownHints > 0, onClick = {
-                            val first = question.steps.indexOfFirst { s -> state.checked[s.id]?.let { !WorkbookAnswers.isCorrect(s, it) } == true }.coerceAtLeast(0)
-                            jump(if (native) 2 else first + 3)
-                        }, modifier = Modifier.weight(1f)) { Text("راهنما") }
-                        TextButton(enabled = state.canReveal(question) && !state.revealed, modifier = Modifier.weight(1f).testTag("reveal-answer"), onClick = {
-                            val latest = QuestionDraftCodec.decode(json, question)
-                            if (latest.canReveal(question)) {
-                                pendingReferenceScroll = true
-                                if (!latest.correct(question)) {
-                                    update(latest.reveal(question))
-                                }
-                                progress.recordReveal(question.id, latest.correct(question))
-                                // A correct answer is already visible. This button simply
-                                // returns to it without changing the earned perfect score.
-                                // Compose the target first; final alignment waits for actual PDF/image layout.
-                                coroutine.launch { withFrameNanos { }; list.scrollToItem(referenceIndex) }
-                            }
-                        }) {
-                            Icon(if (state.canReveal(question)) Icons.Default.Visibility else Icons.Default.Lock, null, Modifier.size(16.dp))
-                            Spacer(Modifier.width(4.dp)); Text("دیدن پاسخ")
-                        }
+            },
+            onCheck = {
+                val latest = QuestionDraftCodec.decode(json, question)
+                if (finished) {
+                    val correct = question.steps.count { WorkbookAnswers.isCorrect(it, latest.values(it)) }
+                    onFinish(correct, !latest.revealed && latest.incorrectSubmissions.isEmpty() && correct == question.steps.size)
+                } else {
+                    val checked = latest.submit(question)
+                    update(checked)
+                    progress.recordCheck(question, latest, checked)
+                    if (checked.correct(question)) {
+                        progress.recordReveal(question.id, true)
+                        pendingReferenceScroll = true
+                        coroutine.launch { withFrameNanos { }; list.scrollToItem(referenceIndex) }
                     }
-
-                Button(modifier = Modifier.fillMaxWidth().heightIn(min = 54.dp),
-                    shape = RoundedCornerShape(30.dp),
-                    colors = ButtonDefaults.buttonColors(containerColor = Yellow, contentColor = Navy),
-                    enabled = finished || state.canCheck(question), onClick = {
-                        val latest = QuestionDraftCodec.decode(json, question)
-                        if (finished) {
-                            val correct = question.steps.count { WorkbookAnswers.isCorrect(it, latest.values(it)) }
-                            onFinish(correct, !latest.revealed && latest.incorrectSubmissions.isEmpty() && correct == question.steps.size)
-                        } else {
-                            val checked = latest.submit(question)
-                            update(checked)
-                            progress.recordCheck(question, latest, checked)
-                            if (checked.correct(question)) {
-                                progress.recordReveal(question.id, true)
-                                pendingReferenceScroll = true
-                                coroutine.launch { withFrameNanos { }; list.scrollToItem(referenceIndex) }
-                            }
-                        }
-                    }) { Text(if (finished) "سؤال بعدی" else "بررسی پاسخ") }
-            }
-        }
+                }
+            },
+            onPrevious = onPrevious,
+            onNext = onNext,
+            onQuestionList = onQuestionList
+        )
     }
 }

@@ -121,7 +121,7 @@ internal fun Grade7DiscoveryApp(catalog: Grade7Catalog, resumeRevision: Int, onO
                 }
             }
         }) { padding ->
-            Box(Modifier.fillMaxSize().padding(padding), contentAlignment = Alignment.TopCenter) {
+            Box(Modifier.fillMaxSize().padding(padding).consumeWindowInsets(padding), contentAlignment = Alignment.TopCenter) {
                 tabStates.SaveableStateProvider("$tab:$page") {
                     LazyColumn(Modifier.fillMaxHeight().widthIn(max = 760.dp).fillMaxWidth().testTag("hub-list"),
                         state = rememberLazyListState(), contentPadding = PaddingValues(16.dp), verticalArrangement = Arrangement.spacedBy(14.dp)) {

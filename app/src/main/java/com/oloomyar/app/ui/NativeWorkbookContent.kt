@@ -233,8 +233,9 @@ private fun NativeOptionCell(step: LearningStep, state: QuestionPractice, onChan
         modifier = Modifier.fillMaxWidth().heightIn(min = 48.dp).testTag("table-choice-${step.id}")) { WorkbookText(selected?.let { step.options[it].text } ?: "انتخاب", style = MaterialTheme.typography.labelMedium) }
     if (open) ModalBottomSheet(onDismissRequest = { open = false },
         sheetState = rememberModalBottomSheetState(skipPartiallyExpanded = true)) {
-        LazyColumn(Modifier.fillMaxWidth().heightIn(max = 520.dp).padding(20.dp).navigationBarsPadding()
-            .testTag("table-choice-sheet-${step.id}"), verticalArrangement = Arrangement.spacedBy(10.dp)) {
+        LazyColumn(Modifier.fillMaxWidth().heightIn(max = 560.dp).navigationBarsPadding()
+            .testTag("table-choice-sheet-${step.id}"), contentPadding = PaddingValues(20.dp),
+            verticalArrangement = Arrangement.spacedBy(10.dp)) {
             item { Text("انتخاب پاسخ", style = MaterialTheme.typography.titleLarge) }
             items(WorkbookAnswers.optionOrder(step, state.shuffleSeed), key = { it }) { i ->
                 OutlinedButton(onClick = { if (open) { open = false; onChange(listOf(i.toString())) } },
@@ -242,7 +243,7 @@ private fun NativeOptionCell(step: LearningStep, state: QuestionPractice, onChan
                     WorkbookText(step.options[i].text)
                 }
             }
-            item { TextButton(onClick = { open = false }) { Text("بستن") } }
+            item { TextButton(onClick = { open = false }, modifier = Modifier.fillMaxWidth().heightIn(min = 48.dp)) { Text("بستن") } }
         }
     }
 }

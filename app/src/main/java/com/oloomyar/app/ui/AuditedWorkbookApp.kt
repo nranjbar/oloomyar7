@@ -234,7 +234,7 @@ fun AuditedWorkbookApp(
                     WholeWorkbookQuestion(
                         question, progress, conceptual, sessionToken,
                         "سؤال ${workbookFa(questionIndex + 1)} از ${workbookFa(sessionIds.size)}",
-                        Modifier.padding(padding),
+                        Modifier.padding(padding).consumeWindowInsets(padding),
                         onPrevious = if (questionIndex > 0) ({ questionIndex-- }) else null,
                         onNext = if (questionIndex < sessionIds.lastIndex) ({ questionIndex++ }) else null,
                         onQuestionList = { screen = "part" }
