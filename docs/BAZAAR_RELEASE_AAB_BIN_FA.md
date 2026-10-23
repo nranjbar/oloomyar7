@@ -6,7 +6,7 @@
 
 ## ۱. مشخصات برنامه و محصول در پیشخوان
 
-در [پیشخوان بازار](https://pishkhan.cafebazaar.ir) برنامهٔ هفتم را با مشخصات زیر ثبت کنید. اگر این نام بسته قبلاً در حساب خودتان وجود دارد، همان برنامه را باز کنید.
+در [پیشخوان بازار](https://pishkhan.cafebazaar.ir) از مسیر «برنامه‌ها → برنامهٔ جدید» برنامهٔ هفتم را با مشخصات زیر ثبت کنید. اگر این نام بسته قبلاً در حساب خودتان وجود دارد، همان برنامه را باز کنید.
 
 | مورد | مقدار مطابق کد |
 | --- | --- |
@@ -70,6 +70,7 @@ GRADE7_BAZAAR_RSA_PUBLIC_KEY=PASTE_THE_GRADE7_APP_PAYMENT_PUBLIC_KEY_HERE
 در macOS/Linux:
 
 ```bash
+chmod +x gradlew
 ./gradlew :app:verifyBazaarReleaseConfiguration
 ```
 
@@ -83,7 +84,7 @@ GRADE7_BAZAAR_RSA_PUBLIC_KEY=PASTE_THE_GRADE7_APP_PAYMENT_PUBLIC_KEY_HERE
 
 ۲. **Android App Bundle** را انتخاب و **Next** را بزنید.
 
-۳. ماژول `app` را انتخاب کنید. مسیر JKS انتشار، alias و رمزها را وارد کنید. برای اولین انتشار، اگر هنوز JKS ندارید، **Create new** را بزنید. نمونهٔ مسیر: `C:\OloomYarKeys\oloomyar7-release.jks`، نمونهٔ alias: `oloomyar7`. برای کلید تازه اعتبار دست‌کم ۲۵ سال در نظر بگیرید و مشخصات واقعی صاحب کلید را وارد کنید. فایل JKS و رمزهای آن را برای همهٔ به‌روزرسانی‌های آینده نگه دارید.
+۳. ماژول `app` را انتخاب کنید. مسیر JKS انتشار، alias و رمزها را وارد کنید. برای اولین انتشار، اگر هنوز JKS ندارید، **Create new** را بزنید. نمونهٔ مسیر: `C:\OloomYarKeys\oloomyar7-release.jks`، نمونهٔ alias: `oloomyar7`. برای کلید تازه اعتبار دست‌کم ۲۵ سال در نظر بگیرید و مشخصات واقعی صاحب کلید را وارد کنید. در ساخت کلید تازه، طبق راهنمای Android Studio، Password مخزن و Password کلید را یکسان انتخاب کنید. فایل JKS و رمزهای آن را برای همهٔ به‌روزرسانی‌های آینده نگه دارید.
 
 ۴. در مرحلهٔ بعد **Build variant = release** را انتخاب کنید. برای هماهنگی با فرمان پایین، Destination folder را `C:\OloomYar7\app` قرار دهید. سپس **Create / Finish** را بزنید.
 
@@ -172,5 +173,6 @@ C:\OloomYar7\release-output\app-release.bin
 - [ساخت محصول و کلید پرداخت در بازار](https://developers.cafebazaar.ir/fa/guidelines/in-app-billing/faq)
 - [معرفی پرداخت درون‌برنامه‌ای بازار](https://developers.cafebazaar.ir/fa/guidelines/in-app-billing/intro)
 - [امضای خروجی در Android Studio](https://developer.android.com/studio/publish/app-signing)
+- [راهنمای بازار برای ایجاد کلید و خروجی APK و AAB](https://developers.cafebazaar.ir/fa/guidelines/build-app/app-signature/sign-your-app-using-android-studio)
 
 مشخصات برنامه از `app/build.gradle.kts` و `BillingModels.kt`، مسیر کلید پرداخت از وظیفهٔ `verifyBazaarReleaseConfiguration` و رفتار خرید از پیاده‌سازی پرداخت همین مخزن استخراج شده است. فرمان `genbin` با راهنمای اجرایی خود JAR نسخهٔ ۰٫۱٫۱۴ بررسی شده است. این راهنما ادعای ساخت فایل انتشار با کلید خصوصی صاحب برنامه یا انجام تراکنش واقعی در حساب بازار او را ندارد.
