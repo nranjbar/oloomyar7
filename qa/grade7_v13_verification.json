@@ -1,0 +1,119 @@
+{
+  "status": "PASS",
+  "version": "0.13.0-grade7-1405",
+  "versionCode": 14,
+  "testedSourceCommit": "dfb61dd89d2fc2f81852bbd974fc1e9a5593107d",
+  "testedSourceTree": "609ff8c88f526b65e8b2b054c0835030df48d1aa",
+  "conclusion": "success",
+  "runId": 39894836339,
+  "runAttempt": 1,
+  "runUrl": "https://github.com/nranjbar/oloomyar7/actions/runs/39894836339",
+  "apkArtifactId": 12476507309,
+  "apkArchiveSha256": "3d4fc094cc3e52a030c7853f3f0a05d87aba533c0309e0025d513733f7ec3055",
+  "reportArtifactId": 12476814177,
+  "reportArchiveSha256": "1fc9ed735d49f5bb4df02c65f4ca2859dd561618e42d23fd489304736c20b302",
+  "unit": {
+    "tests": 98,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "androidApi35": {
+    "tests": 78,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "nativeGeometry": {
+    "status": "PASS",
+    "frames": 1902,
+    "questions": 317,
+    "configurations": [
+      {
+        "widthDp": 320,
+        "fontScale": 1
+      },
+      {
+        "widthDp": 360,
+        "fontScale": 1.5
+      },
+      {
+        "widthDp": 320,
+        "fontScale": 2
+      }
+    ]
+  },
+  "referenceRouteParity": {
+    "status": "PASS",
+    "actualQuestionScreens": 99,
+    "completeNativeBlocksAndFigures": true
+  },
+  "persistence": {
+    "status": "PASS",
+    "oldVersion": "0.11.0",
+    "newVersion": "0.13.0",
+    "installReplacement": true,
+    "oldCompletionPreserved": true,
+    "draftSelectionsHintsAndSeedPreserved": true,
+    "viewportPreserved": true,
+    "answerStayedLocked": true,
+    "bookmarksAndDisplaySettingsPreserved": true,
+    "changedScienceAuthorizationReset": true,
+    "pidBefore": "6864",
+    "pidAfterStop": "",
+    "pidRestored": "6915",
+    "tests": 6,
+    "signedReceiptSurvivedRealProcessTermination": true,
+    "allPaidChaptersUnlockedBeforeConnection": true,
+    "offlineGatewaySimulated": true
+  },
+  "packageChecks": {
+    "status": "PASS",
+    "testedSourceCommit": "dfb61dd89d2fc2f81852bbd974fc1e9a5593107d",
+    "apk": "/workspace/scratch/269fc6994193/output/OloomYar7-0.13.0.apk",
+    "bytes": 71044765,
+    "sha256": "63fb26dff50ddea3d85f117f7adccebcd11ed18eaaf2d323773fd561e2852c4d",
+    "assetEntries": 243,
+    "allAssetBytesMatchReviewedTree": true,
+    "reviewSigningCertificateSha256": "aee8bc4482b0cc935148a5f0aabaf105d5e7c42f31efaf080473a04d33335ab4",
+    "stableReviewSigningKey": true
+  },
+  "packages": [
+    {
+      "kind": "debug",
+      "path": "app/build/outputs/apk/debug/app-debug.apk",
+      "bytes": 71044765,
+      "sha256": "63fb26dff50ddea3d85f117f7adccebcd11ed18eaaf2d323773fd561e2852c4d",
+      "assetEntries": 243,
+      "nativeQuestions": 317,
+      "nativeAnswers": 317,
+      "compressedAssetBytes": 51523710,
+      "previousThreeChapterApkBytes": 47596130
+    },
+    {
+      "kind": "releaseBundle",
+      "path": "app/build/outputs/bundle/release/app-release.aab",
+      "bytes": 55066719,
+      "sha256": "cc7acff2f9cf8ef7fe7e2aa7b51510d7f659fd40bf230c0ab14009023556783a",
+      "assetEntries": 243,
+      "nativeQuestions": 317,
+      "nativeAnswers": 317,
+      "compressedAssetBytes": 51358141,
+      "previousThreeChapterApkBytes": 47596130
+    }
+  ],
+  "distractorReview": {
+    "questions": 317,
+    "steps": 334,
+    "authoredControls": 250,
+    "changedQuestions": 144,
+    "protectedContentSha256": "99095e1291abd71b23a9e5bcb9ed7ff5b5e0d5b9ee4703e1df5b28920847bb16",
+    "sourceOptionsAndGoldUnchanged": true
+  },
+  "realBazaarPurchaseTested": false,
+  "productionPrerequisites": [
+    "Grade 7 Bazaar RSA public key",
+    "Active permanent product oloomyar_g7_complete at 1950000 rial",
+    "Protected release signing and Bazaar tester purchase"
+  ]
+}
