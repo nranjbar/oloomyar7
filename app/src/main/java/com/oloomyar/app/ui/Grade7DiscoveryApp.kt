@@ -392,7 +392,8 @@ private fun AboutPanel() {
         Text("تمرین تعاملی علوم تجربی پایهٔ هفتم، همراه با انتخاب پاسخ و راهنمایی مرحله‌ای.")
         Text("منبع محتوا", color = Blue, style = MaterialTheme.typography.titleMedium)
         Text("کتاب کار علوم تجربی پایهٔ هفتم، چاپ ۱۴۰۵، تألیف علی رنجبر، همراه با پاسخنامهٔ همان کتاب.")
-        Text("حقوق محتوای کتاب متعلق به مؤلف و صاحبان حق نشر است. صورت سؤال و پاسخ مرجع از خود کتاب و پاسخنامه نمایش داده می‌شود.", color = Muted)
+        Text("حقوق مؤلف", color = Blue, style = MaterialTheme.typography.titleMedium)
+        Text("تمام حقوق نشر کتاب کار و پاسخنامهٔ آن متعلق به مؤلف، علی رنجبر، است. این اپلیکیشن با تأیید و اجازهٔ ایشان ساخته شده است.", color = Muted)
         Text("۱۵ فصل کتاب‌کار ۱۴۰۵ • ${BuildConfig.VERSION_NAME}", color = Muted, style = MaterialTheme.typography.bodySmall)
     }
 }

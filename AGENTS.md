@@ -1,5 +1,7 @@
 # Grade 7 project rules
 
+- Owner clarification (0.14.1, 2026-10-23): all publication rights for the workbook and answer key belong entirely to the author, Ali Ranjbar. The About screen must explicitly state that this application was created with his approval and permission.
+
 - Latest owner update (0.14, 2026-10-23): show both workbook sections before the cover and in either question list. MCQ question headers omit editorial commentary. Work equations 8/5–7 use separate RTL labels inside physical LTR equations and exact supplementary source-answer crops; 8/6 gives decimal 1.3 m and asks only work. Comparison signs must use LTR text paragraphs, including 10/9 iron < aluminium < copper. Remove advanced editorial corrections from 10/21 and use its literal Grade 7 key. Run scripts/owner_v14_presentation.py LAST; reset only 8/6 and 10/21 practice authorization while retaining earned progress. Source PDFs and original fields stay immutable.
 
 - Latest owner update (0.13, 2026-10-23): added distractors must be relevant and plausible misconceptions in the same question, with no second valid answer disguised as wrong. Keep all source wording, original printed banks/MCQs, gold answers, accepted permutations and school-level explanations. Run scripts/review_practice_distractors.py LAST after the older native, scientific and owner-presentation generators. Its assertion protects every field except generated distractor labels and row banks; do not turn an old wrong selection into correct credit.

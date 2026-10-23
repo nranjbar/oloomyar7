@@ -208,6 +208,7 @@ class Grade7DiscoveryUiTest {
             compose.onNodeWithTag("nav-chapters").assertIsDisplayed();capture("discovery-08-tablet-800dp")
             compose.onNodeWithTag("nav-more").performClick();hubText("دربارهٔ علوم‌یار")
             compose.onNodeWithText("کتاب کار علوم تجربی پایهٔ هفتم، چاپ ۱۴۰۵، تألیف علی رنجبر، همراه با پاسخنامهٔ همان کتاب.").assertExists()
+            capture("v14-1-author-rights-and-permission")
         }
     }
     @Test fun bazaarRoutingUsesOnlyGradeSevenAndHandlesEveryMissingHandler() {
