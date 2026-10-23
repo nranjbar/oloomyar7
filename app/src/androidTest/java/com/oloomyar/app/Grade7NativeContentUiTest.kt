@@ -697,15 +697,18 @@ class Grade7NativeContentUiTest {
                 val body=compose.onNodeWithTag("question-body").getUnclippedBoundsInRoot()
                 val dock=compose.onNodeWithTag("question-actions").getUnclippedBoundsInRoot()
                 val primary=compose.onNodeWithTag("check-answer").getUnclippedBoundsInRoot()
+                val dockHeight=dock.bottom-dock.top
+                val bodyHeight=body.bottom-body.top
+                val viewportHeight=viewport.bottom-viewport.top
                 assertTrue("${q.id}: reading area overlaps the dock",body.bottom<=dock.top+1.dp)
-                assertTrue("${q.id}: usable reading height lost",body.height>=viewport.height*.40f)
+                assertTrue("${q.id}: usable reading height lost",bodyHeight>=viewportHeight*.40f)
                 assertTrue("${q.id}: primary action is lifted above the safe bottom edge",dock.bottom-primary.bottom<=8.dp)
                 val maximum=when(profile.third) { 1f->132.dp;1.5f->158.dp;else->190.dp }
-                assertTrue("${q.id}: action dock too tall at ${profile.third}: ${dock.height}",dock.height<=maximum)
+                assertTrue("${q.id}: action dock too tall at ${profile.third}: ${dockHeight}",dockHeight<=maximum)
                 val bounds=tags.map { tag ->
                     val node=compose.onNodeWithTag(tag).assertIsDisplayed()
                     val rect=node.getUnclippedBoundsInRoot()
-                    assertTrue("${q.id}: $tag too small",rect.width>=47.dp && rect.height>=47.dp)
+                    assertTrue("${q.id}: $tag too small",(rect.right-rect.left)>=47.dp && (rect.bottom-rect.top)>=47.dp)
                     assertTrue("${q.id}: $tag outside the dock",rect.left>=dock.left-1.dp && rect.right<=dock.right+1.dp && rect.top>=dock.top-1.dp && rect.bottom<=dock.bottom+1.dp)
                     tag to rect
                 }
@@ -723,7 +726,7 @@ class Grade7NativeContentUiTest {
                         assertFalse("${q.id}: dock label clipped: ${input.text}",painted.hasVisualOverflow)
                     }
                 }
-                report.put(JSONObject().put("question",q.id).put("chapter",q.relatedChapter).put("widthDp",profile.first).put("heightDp",profile.second).put("fontScale",profile.third).put("dockHeightDp",dock.height.value).put("readingHeightDp",body.height.value).put("primaryBottomGapDp",(dock.bottom-primary.bottom).value).put("status","PASS"))
+                report.put(JSONObject().put("question",q.id).put("chapter",q.relatedChapter).put("widthDp",profile.first).put("heightDp",profile.second).put("fontScale",profile.third).put("dockHeightDp",dockHeight.value).put("readingHeightDp",bodyHeight.value).put("primaryBottomGapDp",(dock.bottom-primary.bottom).value).put("status","PASS"))
                 if(profile.third==1f && q.sourceNumber==1 && q.section=="تمرین‌های اصلی" && q.relatedChapter in setOf(1,3,8,10,15)) capture("v15-chapter-${q.relatedChapter}-low-actions")
             }
         }

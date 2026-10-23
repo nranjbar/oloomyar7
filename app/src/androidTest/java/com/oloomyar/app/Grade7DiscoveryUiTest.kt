@@ -219,6 +219,7 @@ class Grade7DiscoveryUiTest {
             LearningPreferences(context).textScale(1.5f)
             context.getSharedPreferences("workbook_1405_grade7_chapter8",Context.MODE_PRIVATE).edit().clear().commit()
             ActivityScenario.launch<Grade7WorkbookActivity>(Intent(context,Grade7WorkbookActivity::class.java).putExtra("chapter",8).putExtra("question_id",q.id)).use {
+                compose.waitUntil(10000) { compose.onAllNodesWithTag("question-body").fetchSemanticsNodes().isNotEmpty() }
                 compose.onNodeWithTag("question-body").assertExists()
                 val root=compose.onRoot().getUnclippedBoundsInRoot()
                 val body=compose.onNodeWithTag("question-body").getUnclippedBoundsInRoot()
@@ -228,11 +229,11 @@ class Grade7DiscoveryUiTest {
                 assertTrue("$name: primary action floats above the bottom",dock.bottom-check.bottom<=8.dp)
                 assertTrue("$name: dock extends beyond window",dock.bottom<=root.bottom+1.dp)
                 assertTrue("$name: excess bottom gap",root.bottom-dock.bottom<=50.dp)
-                assertTrue("$name: too little reading space",body.height>=root.height*.4f)
-                assertTrue("$name: oversized dock",dock.height<=if(name=="portrait360")158.dp else 100.dp)
+                assertTrue("$name: too little reading space",(body.bottom-body.top)>=(root.bottom-root.top)*.4f)
+                assertTrue("$name: oversized dock",(dock.bottom-dock.top)<=if(name=="portrait360")158.dp else 100.dp)
                 listOf("previous-question","question-navigator","next-question","return-to-choices","show-hints","reveal-answer","check-answer").forEach { tag ->
                     val target=compose.onNodeWithTag(tag).assertIsDisplayed().getUnclippedBoundsInRoot()
-                    assertTrue("$name $tag touch target",target.width>=47.dp && target.height>=47.dp)
+                    assertTrue("$name $tag touch target",(target.right-target.left)>=47.dp && (target.bottom-target.top)>=47.dp)
                 }
                 capture("v15-actions-$name-font150")
             }
