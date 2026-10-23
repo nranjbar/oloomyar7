@@ -1,5 +1,7 @@
 # Grade 7 project rules
 
+- Latest owner update (0.13, 2026-10-23): added distractors must be relevant and plausible misconceptions in the same question, with no second valid answer disguised as wrong. Keep all source wording, original printed banks/MCQs, gold answers, accepted permutations and school-level explanations. Run scripts/review_practice_distractors.py LAST after the older native, scientific and owner-presentation generators. Its assertion protects every field except generated distractor labels and row banks; do not turn an old wrong selection into correct credit.
+
 - Latest owner update: descriptive question titles appear only in the question list. Never repeat question.title in the opened question screen; show the original prompt directly. Keep source numbering, bookmarking and source-review notes.
 
 - Owner update (0.12, 2026-10-22): remove exam mode entirely, chapter question search, and all continue-practice/continue-learning shortcuts. Keep explicit question selection and local drafts. Image viewer gestures use physical LTR coordinates inside the Persian UI. Bazaar has exactly one permanent non-consumable product `oloomyar_g7_complete`, 195,000 toman (1,950,000 rial); chapter 1 free, 2–15 paid. Reuse Grade 9 verified durable receipt logic read-only, with the Grade 7 RSA key supplied separately. Never erase verified local receipts on offline/empty/failed restores. Debug review builds alone may bypass locks; release must never bypass. See docs/BAZAAR_IAP_SETUP_FA.md.

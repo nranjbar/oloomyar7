@@ -58,7 +58,7 @@ jobs:
       - name: Upload unsigned release bundle for production signing
         uses: actions/upload-artifact@v4
         with:
-          name: OloomYar7-0.12-Unsigned-AAB
+          name: OloomYar7-0.13-Unsigned-AAB
           path: app/build/outputs/bundle/release/app-release.aab
           if-no-files-found: error
       - name: Enable KVM
@@ -93,6 +93,7 @@ jobs:
             qa/source/image-optimization-v11.json
             qa/source/original-tables-v11.json
             qa/all-chapters-editorial-review-v10.json
+            qa/practice-distractors-review.json
   cleanup-merged-grade7-branches:
     if: github.event_name == 'push' && github.ref == 'refs/heads/main' && github.repository == 'nranjbar/oloomyar7'
     needs: grade7
