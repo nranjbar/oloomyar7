@@ -121,7 +121,7 @@ class Grade7WorkbookUiTest {
         val q=Grade7Chapter1Repository(context).questions.first();val s=q.steps.single();open(q)
         listOf("دانش","کنجکاوی","فناوری").forEachIndexed { i,v->selectBlank(s,i,v) };check()
         val progress=WorkbookProgress(context,"g7_ui",listOf(q));val before=QuestionDraftCodec.decode(progress.draft(q.id))
-        compose.onNodeWithContentDescription("برگشت").performClick()
+        compose.onNodeWithTag("question-navigator").performClick()
         compose.onNode(hasScrollAction()).performScrollToNode(hasText("سؤال ۱ •",substring=true))
         compose.onNodeWithText("سؤال ۱ •",substring=true).performClick()
         val after=QuestionDraftCodec.decode(progress.draft(q.id))
@@ -228,7 +228,7 @@ class Grade7WorkbookUiTest {
     @Test fun removedExamAndContinueControlsCannotBeOpened() {
         val q=Grade7Chapter2Repository(context).questions.first { it.sourceNumber==8 && it.section=="تمرین‌های اصلی" }
         open(q)
-        compose.onNodeWithContentDescription("برگشت").performClick()
+        compose.onNodeWithTag("question-navigator").performClick()
         compose.onNodeWithText("آزمون همین بخش").assertDoesNotExist()
         compose.onNodeWithText("ادامهٔ تمرین").assertDoesNotExist()
         compose.onNodeWithTag("question-search").assertDoesNotExist()
@@ -240,7 +240,7 @@ class Grade7WorkbookUiTest {
         compose.onNodeWithTag("question-body").performScrollToNode(hasTestTag("native-source-question"))
         compose.onNodeWithTag("native-source-question").assertExists()
         capture("v12-question-prompt-without-list-title")
-        compose.onNodeWithContentDescription("برگشت").performClick()
+        compose.onNodeWithTag("question-navigator").performClick()
         compose.onNodeWithTag("question-list-${q.id}").assertExists()
         compose.onNodeWithText("سؤال ${fa(q.sourceNumber)} • ${q.title}").assertExists()
     }

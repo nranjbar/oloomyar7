@@ -1,6 +1,6 @@
 # Grade 7 project rules
 
-- Owner UI/UX update (0.15, 2026-10-23): audit all 317 question screens in all 15 chapters. Keep the action dock close to the bottom safe area, avoid duplicated system-bar padding, use compact adaptive actions with 48 dp touch targets, readable large text and fully scrollable option sheets. Keep every existing check/hint/reference gate and explicit navigation unchanged.
+- Owner UI/UX update (0.15, 2026-10-23): audit all 317 question screens in all 15 chapters. Keep the action dock close to the bottom safe area, avoid duplicated system-bar padding, and give the primary action full width on phones. Persistent previous/list/next navigation and the question counter belong in the compact top bar; do not repeat the counter in the scrolling metadata card. Use 48 dp touch targets, readable large text and fully scrollable option sheets. Keep every existing check/hint/reference gate and explicit navigation unchanged.
 
 - Owner clarification (0.14.1, 2026-10-23): all publication rights for the workbook and answer key belong entirely to the author, Ali Ranjbar. The About screen must explicitly state that this application was created with his approval and permission.
 

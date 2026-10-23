@@ -687,7 +687,7 @@ class Grade7NativeContentUiTest {
             }
         }
         val report=JSONArray()
-        val tags=listOf("return-to-choices","show-hints","reveal-answer","question-navigator","previous-question","check-answer","next-question")
+        val tags=listOf("return-to-choices","show-hints","reveal-answer","check-answer")
         for(profile in listOf(Triple(320,560,1f),Triple(320,560,1.5f),Triple(360,620,2f))) {
             for(q in questions) {
                 compose.runOnIdle { current.value=ChromeFrame(q,profile.first,profile.second,profile.third) }
@@ -704,6 +704,7 @@ class Grade7NativeContentUiTest {
                 assertTrue("${q.id}: usable reading height lost",bodyHeight>=viewportHeight*.40f)
                 assertTrue("${q.id}: primary action is lifted above the safe bottom edge",dock.bottom-primary.bottom<=8.dp)
                 val maximum=when(profile.third) { 1f->132.dp;1.5f->158.dp;else->190.dp }
+                if(dockHeight>maximum)capture("v15-dock-height-${profile.first}-${profile.third}")
                 assertTrue("${q.id}: action dock too tall at ${profile.third}: ${dockHeight}",dockHeight<=maximum)
                 val bounds=tags.map { tag ->
                     val node=compose.onNodeWithTag(tag).assertIsDisplayed()
@@ -712,10 +713,16 @@ class Grade7NativeContentUiTest {
                     assertTrue("${q.id}: $tag outside the dock",rect.left>=dock.left-1.dp && rect.right<=dock.right+1.dp && rect.top>=dock.top-1.dp && rect.bottom<=dock.bottom+1.dp)
                     tag to rect
                 }
-                bounds.forEachIndexed { index,(name,a) -> bounds.drop(index+1).forEach { (other,b) ->
+                val navigation=listOf("question-navigator","previous-question","next-question").map { tag ->
+                    val rect=compose.onNodeWithTag(tag).assertIsDisplayed().getUnclippedBoundsInRoot()
+                    assertTrue("${q.id}: $tag touch target",rect.right-rect.left>=47.dp && rect.bottom-rect.top>=47.dp)
+                    assertTrue("${q.id}: navigation outside the safe header",rect.top>=viewport.top-1.dp && rect.bottom<=body.top+1.dp && rect.left>=viewport.left-1.dp && rect.right<=viewport.right+1.dp)
+                    tag to rect
+                }
+                (bounds+navigation).forEachIndexed { index,(name,a) -> (bounds+navigation).drop(index+1).forEach { (other,b) ->
                     assertFalse("${q.id}: overlapping actions $name / $other",minOf(a.right,b.right)-maxOf(a.left,b.left)>1.dp && minOf(a.bottom,b.bottom)-maxOf(a.top,b.top)>1.dp)
                 } }
-                val text=SemanticsMatcher.keyIsDefined(SemanticsActions.GetTextLayoutResult) and hasAnyAncestor(hasTestTag("question-actions"))
+                val text=SemanticsMatcher.keyIsDefined(SemanticsActions.GetTextLayoutResult) and (hasAnyAncestor(hasTestTag("question-actions")) or hasAnyAncestor(hasTestTag("question-navigation")))
                 repeat(compose.onAllNodes(text,useUnmergedTree=true).fetchSemanticsNodes().size) { index ->
                     val layouts=mutableListOf<TextLayoutResult>()
                     compose.onAllNodes(text,useUnmergedTree=true)[index].performSemanticsAction(SemanticsActions.GetTextLayoutResult) { it(layouts) }

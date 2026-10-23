@@ -99,7 +99,12 @@ fun AuditedWorkbookApp(
         Scaffold(
             containerColor = Color.Transparent,
             topBar = {
-                OloomTopBar(
+                if (screen == "question") WorkbookQuestionTopBar(
+                    questionIndex + 1, sessionIds.size, goBack,
+                    onPrevious = if (questionIndex > 0) ({ questionIndex-- }) else null,
+                    onNext = if (questionIndex < sessionIds.lastIndex) ({ questionIndex++ }) else null,
+                    modifier = if (refreshedChapter) Modifier.statusBarsPadding() else Modifier
+                ) else OloomTopBar(
                     if (screen == "home" && refreshedChapter) "فصل ${workbookFa(questions.first().relatedChapter)}" else if (screen == "home") title else if (screen == "part") "فهرست سؤال‌ها" else part,
                     goBack,
                     modifier = if (refreshedChapter) Modifier.statusBarsPadding() else Modifier
@@ -235,9 +240,6 @@ fun AuditedWorkbookApp(
                         question, progress, conceptual, sessionToken,
                         "سؤال ${workbookFa(questionIndex + 1)} از ${workbookFa(sessionIds.size)}",
                         Modifier.padding(padding).consumeWindowInsets(padding),
-                        onPrevious = if (questionIndex > 0) ({ questionIndex-- }) else null,
-                        onNext = if (questionIndex < sessionIds.lastIndex) ({ questionIndex++ }) else null,
-                        onQuestionList = { screen = "part" }
                     ) { _, _ ->
                         completed++
                         // WholeWorkbookQuestion records real checks/reveals immediately.

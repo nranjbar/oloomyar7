@@ -35,9 +35,6 @@ internal fun WholeWorkbookQuestion(
     sessionToken: Int,
     position: String,
     modifier: Modifier,
-    onPrevious: (() -> Unit)? = null,
-    onNext: (() -> Unit)? = null,
-    onQuestionList: (() -> Unit)? = null,
     onFinish: (Int, Boolean) -> Unit
 ) {
     var json by rememberSaveable(question.id, sessionToken) {
@@ -106,7 +103,6 @@ internal fun WholeWorkbookQuestion(
                 WorkbookPanel(accent = Blue, color = BlueSoft) {
                     Row(Modifier.fillMaxWidth(), verticalAlignment = androidx.compose.ui.Alignment.CenterVertically) {
                         if (native) Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(3.dp)) {
-                            Text(position, color = Blue, style = MaterialTheme.typography.bodySmall)
                             Text("فصل ${workbookFa(question.relatedChapter)} • صفحهٔ ${workbookFa(question.sourcePage)}", color = Muted, style = MaterialTheme.typography.bodySmall)
                         } else OloomPill(position, Blue, MaterialTheme.colorScheme.surface)
                         if (!native) Spacer(Modifier.weight(1f))
@@ -285,10 +281,7 @@ internal fun WholeWorkbookQuestion(
                         coroutine.launch { withFrameNanos { }; list.scrollToItem(referenceIndex) }
                     }
                 }
-            },
-            onPrevious = onPrevious,
-            onNext = onNext,
-            onQuestionList = onQuestionList
+            }
         )
     }
 }
