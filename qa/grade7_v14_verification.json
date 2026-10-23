@@ -1,0 +1,143 @@
+{
+  "status": "PASS",
+  "version": "0.14.0-grade7-1405",
+  "versionCode": 15,
+  "testedSourceCommit": "3c4b7f25c9a7bf0cc27fd2b21a498872b2f1727a",
+  "testedSourceTree": "42d16917c825303ea440b6f17499e92b453dd1aa",
+  "conclusion": "success",
+  "runId": 39992026998,
+  "runAttempt": 1,
+  "runUrl": "https://github.com/nranjbar/oloomyar7/actions/runs/39992026998",
+  "apkArtifactId": 12517628896,
+  "apkArchiveSha256": "aa1bb5882d780de5ed46a500ff8c881f2a0117ef75d008e88ad51e3a71926fa6",
+  "reportArtifactId": 12518587500,
+  "reportArchiveSha256": "7323e6369ceff4b06eb8b3de9aa37c011458ea5ad51b291bcd1e99584d7d9519",
+  "unit": {
+    "tests": 98,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "androidApi35": {
+    "tests": 80,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "nativeGeometry": {
+    "status": "PASS",
+    "frames": 1902,
+    "questions": 317
+  },
+  "referenceRouteParity": {
+    "status": "PASS",
+    "questions": 101,
+    "completeNativeBlocksAndFigures": true
+  },
+  "persistence": {
+    "status": "PASS",
+    "oldVersion": "0.11.0",
+    "newVersion": "0.14.0",
+    "installReplacement": true,
+    "oldCompletionPreserved": true,
+    "draftSelectionsHintsAndSeedPreserved": true,
+    "viewportPreserved": true,
+    "answerStayedLocked": true,
+    "bookmarksAndDisplaySettingsPreserved": true,
+    "changedScienceAuthorizationReset": true,
+    "pidBefore": "6619",
+    "pidAfterStop": "",
+    "pidRestored": "6683",
+    "tests": 6,
+    "signedReceiptSurvivedRealProcessTermination": true,
+    "allPaidChaptersUnlockedBeforeConnection": true,
+    "offlineGatewaySimulated": true
+  },
+  "packages": [
+    {
+      "kind": "debug",
+      "path": "app/build/outputs/apk/debug/app-debug.apk",
+      "bytes": 71060898,
+      "sha256": "11bf31509d2ff137be501721fabb00414cf6f4e859644630e5a0d85f23b64487",
+      "assetEntries": 243,
+      "nativeQuestions": 317,
+      "nativeAnswers": 317,
+      "compressedAssetBytes": 51523468,
+      "previousThreeChapterApkBytes": 47596130
+    },
+    {
+      "kind": "releaseBundle",
+      "path": "app/build/outputs/bundle/release/app-release.aab",
+      "bytes": 55068181,
+      "sha256": "f305464da1402ccd8a9ae6d2376a713f4993422782587f293380645d526d25a1",
+      "assetEntries": 243,
+      "nativeQuestions": 317,
+      "nativeAnswers": 317,
+      "compressedAssetBytes": 51358003,
+      "previousThreeChapterApkBytes": 47596130
+    }
+  ],
+  "packageChecks": {
+    "status": "PASS",
+    "testedSourceCommit": "cff3a7319a34ca513b1baf2906c7fd04d3460a28",
+    "bytes": 71060898,
+    "sha256": "11bf31509d2ff137be501721fabb00414cf6f4e859644630e5a0d85f23b64487",
+    "assetEntries": 243,
+    "allAssetBytesMatchReviewedTree": true,
+    "stableReviewSigningKey": true,
+    "reviewSigningCertificateSha256": "aee8bc4482b0cc935148a5f0aabaf105d5e7c42f31efaf080473a04d33335ab4"
+  },
+  "ownerRequestedRegressionTests": [
+    "bothSectionsStayReachableFromTheHomeChapterMenuAndEitherQuestionList",
+    "workCalculationsAndComparisonSignsHaveRealLeftToRightLayoutsAndSourceCrops",
+    "mcqHeaderOmitsEditorialCommentary",
+    "changedHeightControlAndRestoredPrintedTeaKeyNeedFreshAuthorization"
+  ],
+  "exactSourceAnswerCrops": [
+    {
+      "question": "g7_ch08_q05",
+      "asset": "pdf:answers08.pdf#1,20,381.23,583.3200073242188,422.47"
+    },
+    {
+      "question": "g7_ch08_q06",
+      "asset": "pdf:answers08.pdf#1,20,423.47,583.3200073242188,464.61"
+    },
+    {
+      "question": "g7_ch08_q07",
+      "asset": "pdf:answers08.pdf#1,20,465.61,583.3200073242188,605.49"
+    },
+    {
+      "question": "g7_ch10_q09",
+      "asset": "pdf:answers10.pdf#2,20,43.14,583.3200073242188,182.92"
+    }
+  ],
+  "originalSourceFieldsAndPrintedMcqsUnchanged": true,
+  "identicalAppBinaryFullSweep": {
+    "runId": 39988737840,
+    "sourceCommit": "cff3a7319a34ca513b1baf2906c7fd04d3460a28",
+    "runConclusion": "failure",
+    "supersededExpectations": [
+      "largeFontReduceMotionAndFourTabsSurviveRecreationAt360dp",
+      "workCalculationsAndComparisonSignsHaveRealLeftToRightLayoutsAndSourceCrops"
+    ],
+    "expectationsCorrectedAndPassedInFinalRun": true,
+    "reportArtifactId": 12517768150,
+    "appSha256": "11bf31509d2ff137be501721fabb00414cf6f4e859644630e5a0d85f23b64487",
+    "largeTests": [
+      "all317FilledQuestionsAndAnswersHaveNoOverlappingBlanksOrClippedTablesAtPhoneWidths",
+      "correctAndHintRoutesShowTheSameCompletePrintedAnswerAcrossAllAnswerFormats"
+    ],
+    "passCount": 2,
+    "note": "Both exhaustive tests passed in the first full run. The later commit repairs only two test expectations and rechecks all other interactions and persistence. App code/assets and the APK SHA256 are identical."
+  },
+  "distinctSuccessfulUiTests": 82,
+  "realBazaarPurchaseTested": false,
+  "screenshots": [
+    "qa/screenshots/v14/v14-chapter-sections-font150.png",
+    "qa/screenshots/v14/v14-height-is-given-1.3-m.png",
+    "qa/screenshots/v14/v14-home-menu-to-mcq.png",
+    "qa/screenshots/v14/v14-mcq-without-editorial-heading.png",
+    "qa/screenshots/v14/v14-reference-10-9.png",
+    "qa/screenshots/v14/v14-reference-8-6.png"
+  ]
+}

@@ -115,7 +115,7 @@ def write():
     path = ROOT / 'qa/practice-distractors-review.json'
     report = json.loads(path.read_text())
     for entry in report['authored']:
-        if entry['question'] == 'g7_ch10_q21':
+        if entry['question'] in ['g7_ch10_q21', 'g7_ch10_q09']:
             p = by_id[entry['question']]['steps'][entry['step']]['pairs'][entry['row']]
             entry.update(right=p['right'], choices=p['choices'])
     report['ownerFollowupV14'] = dict(ledger='qa/source/native-editorial-revisions-v14.json', originalKeyRestored='g7_ch10_q21')
