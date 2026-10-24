@@ -1,12 +1,22 @@
 """Inspect actual outputs, not an estimate, before shipping an Android build."""
-import hashlib,json,zipfile
+import base64,hashlib,json,re,zipfile
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
+public_key=re.search(r'^GRADE7_BAZAAR_RSA_PUBLIC_KEY=(\S+)$',
+    (ROOT/'config/bazaar-grade7.properties').read_text(),re.M).group(1)
+public_key_sha256=hashlib.sha256(base64.b64decode(public_key,validate=True)).hexdigest()
 outputs=[]
 for kind,relative in [('debug','app/build/outputs/apk/debug/app-debug.apk'),('releaseBundle','app/build/outputs/bundle/release/app-release.aab')]:
     path=ROOT/relative;assert path.exists(),path
+    variant='debug'if kind=='debug'else'release'
+    build_config=(ROOT/f'app/build/generated/source/buildConfig/{variant}/com/oloomyar/app/BuildConfig.java').read_text()
+    assert f'BAZAAR_RSA_PUBLIC_KEY = "{public_key}";'in build_config,'The build does not use the committed Grade 7 payment key'
+    assert 'APPLICATION_ID = "com.oloomyar.app.grade7";'in build_config
+    assert f'REVIEW_MODE = {str(variant=="debug").lower()};'in build_config,'Only debug may bypass chapter locks'
     with zipfile.ZipFile(path) as archive:
         names=archive.namelist();prefix='assets/'if kind=='debug'else'base/assets/'
+        dex_bytes=b''.join(archive.read(n)for n in names if n.endswith('.dex'))
+        assert public_key.encode('ascii')in dex_bytes,'The Grade 7 payment key is absent from the compiled package'
         assets=[n for n in names if n.startswith(prefix)]
         assert sum(n.endswith('/source/workbook.pdf')for n in assets)==1
         assert sum('/source/answers'in n and n.endswith('.pdf')for n in assets)==15
@@ -36,6 +46,7 @@ for kind,relative in [('debug','app/build/outputs/apk/debug/app-debug.apk'),('re
         assert path.stat().st_size<61_047_246+image_growth+1_000_000,'Unexplained package growth beyond the new measured artwork'
         outputs.append(dict(kind=kind,path=relative,bytes=path.stat().st_size,sha256=hashlib.sha256(path.read_bytes()).hexdigest(),
             assetEntries=len(assets),nativeQuestions=len(native),nativeAnswers=len(native),compressedAssetBytes=sum(archive.getinfo(n).compress_size for n in assets),
+            bazaarPublicKeyPresentInDex=True,bazaarPublicKeyDerSha256=public_key_sha256,reviewMode=variant=='debug',
             previousThreeChapterApkBytes=47_596_130))
 out=ROOT/'qa/android_package_size.json';out.write_text(json.dumps(dict(status='PASS',outputs=outputs),indent=2)+'\n')
 print(out.read_text())

@@ -15,7 +15,10 @@ internal class PoolakeyGateway(private val activity: ComponentActivity, private 
     override fun connect(connected: () -> Unit, failed: (Exception) -> Unit, onDisconnected: () -> Unit) {
         close()
         val expected = epoch
-        val client = Payment(activity.applicationContext, PaymentConfiguration(localSecurityCheck = SecurityCheck.Enable(publicKey)))
+        val client = Payment(activity.applicationContext, PaymentConfiguration(
+            localSecurityCheck = SecurityCheck.Enable(rsaPublicKey = publicKey),
+            shouldSupportSubscription = false,
+        ))
         payment = client
         val created = client.connect {
             connectionSucceed { if (epoch == expected) connected() }

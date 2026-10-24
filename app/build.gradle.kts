@@ -12,10 +12,18 @@ plugins {
 val paymentProperties = Properties().apply {
     rootProject.file("local.properties").takeIf { it.isFile }?.inputStream()?.use { load(it) }
 }
+val committedPaymentProperties = Properties().apply {
+    rootProject.file("config/bazaar-grade7.properties").inputStream().use { load(it) }
+}
 // Grade 7 has its own Bazaar application and RSA key. Never reuse the Grade 9 key.
+// This public key is tracked so a clean checkout builds with the owner's key.
+// Explicit nonblank local/CI overrides remain available for key rotation.
 val grade7BazaarKey = providers.gradleProperty("GRADE7_BAZAAR_RSA_PUBLIC_KEY")
-    .orElse(providers.environmentVariable("GRADE7_BAZAAR_RSA_PUBLIC_KEY"))
-    .orElse(paymentProperties.getProperty("GRADE7_BAZAAR_RSA_PUBLIC_KEY", ""))
+    .filter { it.isNotBlank() }
+    .orElse(providers.environmentVariable("GRADE7_BAZAAR_RSA_PUBLIC_KEY").filter { it.isNotBlank() })
+    .orElse(providers.provider { paymentProperties.getProperty("GRADE7_BAZAAR_RSA_PUBLIC_KEY") }
+        .filter { it.isNotBlank() })
+    .orElse(committedPaymentProperties.getProperty("GRADE7_BAZAAR_RSA_PUBLIC_KEY", ""))
     .get().filterNot { it.isWhitespace() }
 
 val grade7BazaarKeyLiteral = grade7BazaarKey.replace("\\", "\\\\").replace("\"", "\\\"")
@@ -28,8 +36,8 @@ android {
         applicationId = "com.oloomyar.app.grade7"
         minSdk = 23
         targetSdk = 37
-        versionCode = 17
-        versionName = "0.15.0-grade7-1405"
+        versionCode = 18
+        versionName = "0.15.1-grade7-1405"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         buildConfigField("int", "WORKBOOK_GRADE", "7")
         buildConfigField("String", "BAZAAR_RSA_PUBLIC_KEY", "\"$grade7BazaarKeyLiteral\"")
@@ -77,8 +85,7 @@ android {
     }
 }
 
-// Compilation/review can run without the owner's public key. This explicit
-// distribution task fails closed until a real Grade 7 RSA key has been set.
+// Validate the resolved key, including explicit overrides, before release builds.
 val verifyBazaarReleaseConfiguration by tasks.registering {
     doLast {
         val key = runCatching {
@@ -88,7 +95,11 @@ val verifyBazaarReleaseConfiguration by tasks.registering {
         require(key is RSAPublicKey && key.modulus.bitLength() >= 1024) {
             "Set GRADE7_BAZAAR_RSA_PUBLIC_KEY from the Bazaar application com.oloomyar.app.grade7 before distribution."
         }
+        logger.lifecycle("Grade 7 Bazaar RSA public key is valid ({} bits).", key.modulus.bitLength())
     }
+}
+tasks.matching { it.name == "preReleaseBuild" }.configureEach {
+    dependsOn(verifyBazaarReleaseConfiguration)
 }
 tasks.register("prepareBazaarRelease") {
     dependsOn(verifyBazaarReleaseConfiguration, "bundleRelease")
@@ -116,7 +127,7 @@ dependencies {
     implementation("androidx.compose.ui:ui")
     implementation("androidx.compose.ui:ui-tooling-preview")
     debugImplementation("androidx.compose.ui:ui-tooling")
-    implementation("com.github.cafebazaar.Poolakey:poolakey:2.2.0")
+    implementation("com.github.cafebazaar.Poolakey:poolakey:2.3.0")
     testImplementation("junit:junit:4.13.2")
     testImplementation("org.json:json:20250517")
     androidTestImplementation(composeBom)
