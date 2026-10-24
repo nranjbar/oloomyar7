@@ -1,0 +1,202 @@
+{
+  "status": "PASS",
+  "applicationId": "com.oloomyar.app.grade7",
+  "versionName": "0.15.2-grade7-1405",
+  "versionCode": 19,
+  "sourceCommit": "79685eaee216950b3b933b016264062e3240fbe1",
+  "workflowRun": 40085147722,
+  "workflowUrl": "https://github.com/nranjbar/oloomyar7/actions/runs/40085147722",
+  "workflow": {
+    "applicationJobId": 120846451578,
+    "applicationJob": "success",
+    "administrativeCleanupJobId": 120852831827,
+    "administrativeCleanupJob": "success",
+    "overallConclusion": "success"
+  },
+  "publicPaymentConfiguration": {
+    "path": "config/bazaar-grade7.properties",
+    "keyDerSha256": "93a592bccda2e6302461e8a5ddf052019e0ad6ced7ae71519567514ecbcada2c",
+    "modulusBits": 1392,
+    "authoritativeAfterPull": true,
+    "legacyLocalEnvironmentAndGradleRsaOverridesIgnored": true,
+    "buildConfigKeyUsedByPoolakeyAndReceiptVerifier": true,
+    "ownerProductionSigningFilesAdded": false
+  },
+  "keyGuardTests": {
+    "status": "PASS",
+    "tests": [
+      {
+        "name": "malformed-tracked-key",
+        "status": "PASS",
+        "exitCode": 1,
+        "expectedSuccess": false
+      },
+      {
+        "name": "mismatched-key-fingerprint",
+        "status": "PASS",
+        "exitCode": 1,
+        "expectedSuccess": false
+      },
+      {
+        "name": "legacy-overrides-cannot-replace-tracked-key",
+        "status": "PASS",
+        "exitCode": 0,
+        "expectedSuccess": true
+      }
+    ],
+    "publicKeyDerSha256": "93a592bccda2e6302461e8a5ddf052019e0ad6ced7ae71519567514ecbcada2c",
+    "trackedConfigurationRestored": true,
+    "localPropertiesRestored": true
+  },
+  "unitTests": {
+    "tests": 98,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "androidUiTests": {
+    "tests": 85,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "nativeGeometry": {
+    "status": "PASS",
+    "cases": 1902,
+    "questions": 317
+  },
+  "questionChrome": {
+    "status": "PASS",
+    "cases": 951,
+    "questions": 317,
+    "chapters": 15
+  },
+  "referenceRouteParity": {
+    "status": "PASS",
+    "questions": 101
+  },
+  "persistenceTests": {
+    "status": "PASS",
+    "oldVersion": "0.11.0",
+    "newVersion": "0.15.2-grade7-1405",
+    "installReplacement": true,
+    "oldCompletionPreserved": true,
+    "draftSelectionsHintsAndSeedPreserved": true,
+    "viewportPreserved": true,
+    "answerStayedLocked": true,
+    "bookmarksAndDisplaySettingsPreserved": true,
+    "changedScienceAuthorizationReset": true,
+    "pidBefore": "7134",
+    "pidAfterStop": "",
+    "pidRestored": "7186",
+    "tests": 6,
+    "signedReceiptSurvivedRealProcessTermination": true,
+    "allPaidChaptersUnlockedBeforeConnection": true,
+    "offlineGatewaySimulated": true
+  },
+  "packageCheck": {
+    "status": "PASS",
+    "outputs": [
+      {
+        "kind": "debug",
+        "path": "app/build/outputs/apk/debug/app-debug.apk",
+        "bytes": 71060929,
+        "sha256": "c25853db085e93d66c02308f54b10f2e7cfa0d9095edc8ac9f4e74787bef25a9",
+        "assetEntries": 243,
+        "nativeQuestions": 317,
+        "nativeAnswers": 317,
+        "compressedAssetBytes": 51523468,
+        "bazaarPublicKeyPresentInDex": true,
+        "bazaarPublicKeyDerSha256": "93a592bccda2e6302461e8a5ddf052019e0ad6ced7ae71519567514ecbcada2c",
+        "reviewMode": true,
+        "previousThreeChapterApkBytes": 47596130
+      },
+      {
+        "kind": "releaseApk",
+        "path": "app/build/outputs/apk/release/app-release-unsigned.apk",
+        "bytes": 53064092,
+        "sha256": "ed9f6ae6232614f51697ff5ef0716cd61ad724c6a5484e793096695602b5dacb",
+        "assetEntries": 245,
+        "nativeQuestions": 317,
+        "nativeAnswers": 317,
+        "compressedAssetBytes": 51407887,
+        "bazaarPublicKeyPresentInDex": true,
+        "bazaarPublicKeyDerSha256": "93a592bccda2e6302461e8a5ddf052019e0ad6ced7ae71519567514ecbcada2c",
+        "reviewMode": false,
+        "previousThreeChapterApkBytes": 47596130
+      },
+      {
+        "kind": "releaseBundle",
+        "path": "app/build/outputs/bundle/release/app-release.aab",
+        "bytes": 55079191,
+        "sha256": "e042cb6972c360a54a52745b6f712a58ab26c77893bcf32257ac6dc1f1fef5cb",
+        "assetEntries": 243,
+        "nativeQuestions": 317,
+        "nativeAnswers": 317,
+        "compressedAssetBytes": 51358003,
+        "bazaarPublicKeyPresentInDex": true,
+        "bazaarPublicKeyDerSha256": "93a592bccda2e6302461e8a5ddf052019e0ad6ced7ae71519567514ecbcada2c",
+        "reviewMode": false,
+        "previousThreeChapterApkBytes": 47596130
+      }
+    ]
+  },
+  "publication": {
+    "productId": "oloomyar_g7_complete",
+    "priceToman": 195000,
+    "priceRial": 1950000,
+    "type": "inapp, permanent, non-consumable",
+    "freeChapters": [
+      1
+    ],
+    "paidChapters": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "releaseReviewMode": false,
+    "poolakeyVersion": "2.3.0",
+    "subscriptionsEnabled": false
+  },
+  "ownerSigning": {
+    "method": "Android Studio Generate Signed Bundle / APK with owner production JKS",
+    "sameIdentityForApkAabAndBinRequired": true,
+    "ciReleaseApkAndBundleUnsigned": true,
+    "privateKeystoresAndLocalSigningPropertiesIgnoredByGit": true
+  },
+  "sourceContentAssetsUnchanged": true,
+  "realBazaarPurchaseTested": false,
+  "serverSidePurchaseVerificationImplemented": false,
+  "releaseApkInstalledOnDevice": false,
+  "scopeNote": "Android UI and real process/update tests run on the signed debug/review build, including production-gate components with review bypass disabled in tests. Release APK and AAB are compiled, minified and inspected; owner signing and real Bazaar transactions remain local owner tests.",
+  "guides": [
+    "docs/ANDROID_STUDIO_PULL_RELEASE_FA.md",
+    "docs/BAZAAR_RELEASE_AAB_BIN_FA.md",
+    "docs/BAZAAR_KOTLIN_INTEGRATION_REVIEW_FA.md"
+  ],
+  "artifacts": {
+    "reports": 12557187820,
+    "reportsZipSha256": "3d07bae4232f663416b264a1ddb5e62d9a86f0dcd3f424864fba348e60bac966",
+    "debugApk": 12556866736,
+    "unsignedReleaseApk": 12556213702,
+    "unsignedReleaseBundle": 12556368095
+  },
+  "priorAttempt": {
+    "runId": 40084815308,
+    "sourceCommit": "7337fb4069d8fd2a8d493b6aeefacf74564a9ae2",
+    "status": "FAILED_BEFORE_APPLICATION_BUILD",
+    "reason": "Unsupported old DSL buildConfigFields getter in added guard; corrected using supported AGP 9.3 public Variant API. No guard checks or limits removed."
+  },
+  "qaFollowup": "This report and guide references do not change any application source after the tested commit."
+}

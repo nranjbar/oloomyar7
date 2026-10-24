@@ -4,23 +4,43 @@
     {
       "kind": "debug",
       "path": "app/build/outputs/apk/debug/app-debug.apk",
-      "bytes": 71060888,
-      "sha256": "446945f68be48d2b57cd0f68efba943627a577bd7aa04338a652923ee05d34bb",
+      "bytes": 71060929,
+      "sha256": "c25853db085e93d66c02308f54b10f2e7cfa0d9095edc8ac9f4e74787bef25a9",
       "assetEntries": 243,
       "nativeQuestions": 317,
       "nativeAnswers": 317,
       "compressedAssetBytes": 51523468,
+      "bazaarPublicKeyPresentInDex": true,
+      "bazaarPublicKeyDerSha256": "93a592bccda2e6302461e8a5ddf052019e0ad6ced7ae71519567514ecbcada2c",
+      "reviewMode": true,
+      "previousThreeChapterApkBytes": 47596130
+    },
+    {
+      "kind": "releaseApk",
+      "path": "app/build/outputs/apk/release/app-release-unsigned.apk",
+      "bytes": 53064092,
+      "sha256": "ed9f6ae6232614f51697ff5ef0716cd61ad724c6a5484e793096695602b5dacb",
+      "assetEntries": 245,
+      "nativeQuestions": 317,
+      "nativeAnswers": 317,
+      "compressedAssetBytes": 51407887,
+      "bazaarPublicKeyPresentInDex": true,
+      "bazaarPublicKeyDerSha256": "93a592bccda2e6302461e8a5ddf052019e0ad6ced7ae71519567514ecbcada2c",
+      "reviewMode": false,
       "previousThreeChapterApkBytes": 47596130
     },
     {
       "kind": "releaseBundle",
       "path": "app/build/outputs/bundle/release/app-release.aab",
-      "bytes": 55072658,
-      "sha256": "10f388325014ee68992e8d0b048b18f454c4ee11de8bb04451e570bfce923e40",
+      "bytes": 55079191,
+      "sha256": "e042cb6972c360a54a52745b6f712a58ab26c77893bcf32257ac6dc1f1fef5cb",
       "assetEntries": 243,
       "nativeQuestions": 317,
       "nativeAnswers": 317,
       "compressedAssetBytes": 51358003,
+      "bazaarPublicKeyPresentInDex": true,
+      "bazaarPublicKeyDerSha256": "93a592bccda2e6302461e8a5ddf052019e0ad6ced7ae71519567514ecbcada2c",
+      "reviewMode": false,
       "previousThreeChapterApkBytes": 47596130
     }
   ]
