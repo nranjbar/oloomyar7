@@ -81,9 +81,23 @@ android {
     }
 }
 
-// Validate the tracked key and its owner-approved fingerprint before release builds.
+// Use the public Variant API for the final merged release fields (AGP 9.3).
+val grade7ReleaseApplicationId = objects.property(String::class.java).convention("")
+val grade7ReleaseReviewMode = objects.property(String::class.java).convention("")
+androidComponents {
+    onVariants(selector().withBuildType("release")) { variant ->
+        grade7ReleaseApplicationId.set(variant.applicationId)
+        variant.buildConfigFields?.let { fields ->
+            grade7ReleaseReviewMode.set(fields.map { it["REVIEW_MODE"]?.value.toString() })
+        }
+    }
+}
+
+// Validate the tracked key and the merged release policy before release builds.
 val verifyBazaarReleaseConfiguration by tasks.registering {
     inputs.file(grade7PaymentConfigurationFile)
+    inputs.property("releaseApplicationId", grade7ReleaseApplicationId)
+    inputs.property("releaseReviewMode", grade7ReleaseReviewMode)
     doLast {
         val key = runCatching {
             KeyFactory.getInstance("RSA").generatePublic(
@@ -97,15 +111,15 @@ val verifyBazaarReleaseConfiguration by tasks.registering {
         require(fingerprint == grade7BazaarKeyFingerprint) {
             "Grade 7 Bazaar RSA fingerprint mismatch in config/bazaar-grade7.properties. Restore the owner's approved key and fingerprint."
         }
-        require(android.defaultConfig.applicationId == "com.oloomyar.app.grade7") {
+        require(grade7ReleaseApplicationId.get() == "com.oloomyar.app.grade7") {
             "The Grade 7 Bazaar payment key must only be used with com.oloomyar.app.grade7."
         }
-        require(android.buildTypes.getByName("release").buildConfigFields["REVIEW_MODE"]?.value == "false") {
+        require(grade7ReleaseReviewMode.get() == "false") {
             "Bazaar release builds must keep REVIEW_MODE=false."
         }
         logger.lifecycle("Grade 7 Bazaar configuration: PASS")
         logger.lifecycle("Public key source: config/bazaar-grade7.properties (local RSA overrides are ignored)")
-        logger.lifecycle("Application ID: {}", android.defaultConfig.applicationId)
+        logger.lifecycle("Application ID: {}", grade7ReleaseApplicationId.get())
         logger.lifecycle("RSA public key: {} bits; SHA-256: {}", key.modulus.bitLength(), fingerprint)
         logger.lifecycle("Release REVIEW_MODE=false; chapter 1 is free, chapters 2-15 require verified ownership.")
     }
