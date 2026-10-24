@@ -4,8 +4,8 @@
     {
       "kind": "debug",
       "path": "app/build/outputs/apk/debug/app-debug.apk",
-      "bytes": 71060902,
-      "sha256": "1decb0cec6d43acbddf9632eac8ccfd715617f78e41176f96bbabb21991a5153",
+      "bytes": 71060888,
+      "sha256": "446945f68be48d2b57cd0f68efba943627a577bd7aa04338a652923ee05d34bb",
       "assetEntries": 243,
       "nativeQuestions": 317,
       "nativeAnswers": 317,
@@ -15,8 +15,8 @@
     {
       "kind": "releaseBundle",
       "path": "app/build/outputs/bundle/release/app-release.aab",
-      "bytes": 55068409,
-      "sha256": "1cc4ad1d897fff077a9a623b0c2f95643a9180ee0ecbc6de93612290745acdc9",
+      "bytes": 55072658,
+      "sha256": "10f388325014ee68992e8d0b048b18f454c4ee11de8bb04451e570bfce923e40",
       "assetEntries": 243,
       "nativeQuestions": 317,
       "nativeAnswers": 317,
