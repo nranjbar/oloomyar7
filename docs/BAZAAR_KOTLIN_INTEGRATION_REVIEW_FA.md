@@ -4,7 +4,7 @@
 
 ## مسیر کلید عمومی
 
-کلید ارائه‌شده توسط صاحب برنامه در `config/bazaar-grade7.properties` ثبت شده است. Gradle آن را به `BuildConfig.BAZAAR_RSA_PUBLIC_KEY` می‌رساند. `rememberGrade7Billing` این مقدار را به `BazaarBillingManager` می‌دهد؛ سپس همان کلید در `PoolakeyGateway` برای `SecurityCheck.Enable` و در `SignedReceiptVerifier` برای بررسی رسیدهای ذخیره‌شده استفاده می‌شود. نیازی به کپی کلید در چند فایل Kotlin نیست.
+کلید ارائه‌شده توسط صاحب برنامه در `config/bazaar-grade7.properties` همراه با اثر انگشت تأییدشده ثبت شده است. این فایل تنها مرجع RSA است؛ Gradle مقدار کلید را از تنظیمات محلی، متغیر محیطی یا پارامتر قدیمی نمی‌خواند. Gradle آن را به `BuildConfig.BAZAAR_RSA_PUBLIC_KEY` می‌رساند. `rememberGrade7Billing` این مقدار را به `BazaarBillingManager` می‌دهد؛ سپس همان کلید در `PoolakeyGateway` برای `SecurityCheck.Enable` و در `SignedReceiptVerifier` برای بررسی رسیدهای ذخیره‌شده استفاده می‌شود. نیازی به کپی کلید در چند فایل Kotlin نیست.
 
 اثر انگشت SHA-256 بایت‌های DER کلید:
 
@@ -12,7 +12,7 @@
 93a592bccda2e6302461e8a5ddf052019e0ad6ced7ae71519567514ecbcada2c
 ```
 
-کلید از نوع RSA با قالب X.509 SubjectPublicKeyInfo است. ساخت release کلید نامعتبر را نمی‌پذیرد. خروجی CI باید حضور همین کلید در APK و AAB کامپایل‌شده و `REVIEW_MODE=false` در release را نیز تأیید کند.
+کلید از نوع RSA با قالب X.509 SubjectPublicKeyInfo است. ساخت release کلید نامعتبر یا اثر انگشت نامطابق را نمی‌پذیرد. وظیفهٔ `verifyBazaarReleaseConfiguration` منبع کلید، اثر انگشت و خاموش‌بودن حالت بازبینی release را اعلام می‌کند. خروجی CI باید حضور همین کلید در APKهای debug و release و AAB کامپایل‌شده و `REVIEW_MODE=false` در release را نیز تأیید کند.
 
 ## تطبیق مراحل راهنما
 
@@ -38,4 +38,5 @@
 - [انتشار رسمی پولکی ۲٫۳٫۰](https://github.com/cafebazaar/Poolakey/releases/tag/2.3.0)
 - [نمونهٔ رسمی اتصال و خرید](https://github.com/cafebazaar/Poolakey/blob/2.3.0/app/src/main/java/ir/cafebazaar/poolakeysample/MainActivity.kt)
 - [تعریف رسمی SecurityCheck](https://github.com/cafebazaar/Poolakey/blob/2.3.0/poolakey/src/main/java/ir/cafebazaar/poolakey/config/SecurityCheck.kt)
+- [Pull، ساخت و تست APK، سپس AAB/BIN](ANDROID_STUDIO_PULL_RELEASE_FA.md)
 - [فرم محصول، ساخت AAB و BIN و آزمایش انتشار](BAZAAR_RELEASE_AAB_BIN_FA.md)

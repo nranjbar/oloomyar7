@@ -1,5 +1,6 @@
 import java.util.Properties
 import java.security.KeyFactory
+import java.security.MessageDigest
 import java.security.interfaces.RSAPublicKey
 import java.security.spec.X509EncodedKeySpec
 import java.util.Base64
@@ -9,22 +10,17 @@ plugins {
     id("org.jetbrains.kotlin.plugin.compose")
 }
 
-val paymentProperties = Properties().apply {
-    rootProject.file("local.properties").takeIf { it.isFile }?.inputStream()?.use { load(it) }
-}
+val grade7PaymentConfigurationFile = rootProject.file("config/bazaar-grade7.properties")
 val committedPaymentProperties = Properties().apply {
-    rootProject.file("config/bazaar-grade7.properties").inputStream().use { load(it) }
+    grade7PaymentConfigurationFile.inputStream().use { load(it) }
 }
 // Grade 7 has its own Bazaar application and RSA key. Never reuse the Grade 9 key.
-// This public key is tracked so a clean checkout builds with the owner's key.
-// Explicit nonblank local/CI overrides remain available for key rotation.
-val grade7BazaarKey = providers.gradleProperty("GRADE7_BAZAAR_RSA_PUBLIC_KEY")
-    .filter { it.isNotBlank() }
-    .orElse(providers.environmentVariable("GRADE7_BAZAAR_RSA_PUBLIC_KEY").filter { it.isNotBlank() })
-    .orElse(providers.provider { paymentProperties.getProperty("GRADE7_BAZAAR_RSA_PUBLIC_KEY") }
-        .filter { it.isNotBlank() })
-    .orElse(committedPaymentProperties.getProperty("GRADE7_BAZAAR_RSA_PUBLIC_KEY", ""))
-    .get().filterNot { it.isWhitespace() }
+// One tracked public configuration is authoritative after every Pull. Legacy
+// local.properties, environment and -P values cannot silently replace this key.
+val grade7BazaarKey = committedPaymentProperties
+    .getProperty("GRADE7_BAZAAR_RSA_PUBLIC_KEY", "").filterNot { it.isWhitespace() }
+val grade7BazaarKeyFingerprint = committedPaymentProperties
+    .getProperty("GRADE7_BAZAAR_RSA_PUBLIC_KEY_SHA256", "").trim()
 
 val grade7BazaarKeyLiteral = grade7BazaarKey.replace("\\", "\\\\").replace("\"", "\\\"")
 
@@ -36,8 +32,8 @@ android {
         applicationId = "com.oloomyar.app.grade7"
         minSdk = 23
         targetSdk = 37
-        versionCode = 18
-        versionName = "0.15.1-grade7-1405"
+        versionCode = 19
+        versionName = "0.15.2-grade7-1405"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         buildConfigField("int", "WORKBOOK_GRADE", "7")
         buildConfigField("String", "BAZAAR_RSA_PUBLIC_KEY", "\"$grade7BazaarKeyLiteral\"")
@@ -85,17 +81,33 @@ android {
     }
 }
 
-// Validate the resolved key, including explicit overrides, before release builds.
+// Validate the tracked key and its owner-approved fingerprint before release builds.
 val verifyBazaarReleaseConfiguration by tasks.registering {
+    inputs.file(grade7PaymentConfigurationFile)
     doLast {
         val key = runCatching {
             KeyFactory.getInstance("RSA").generatePublic(
                 X509EncodedKeySpec(Base64.getDecoder().decode(grade7BazaarKey)))
         }.getOrNull()
         require(key is RSAPublicKey && key.modulus.bitLength() >= 1024) {
-            "Set GRADE7_BAZAAR_RSA_PUBLIC_KEY from the Bazaar application com.oloomyar.app.grade7 before distribution."
+            "Invalid Grade 7 Bazaar RSA key in config/bazaar-grade7.properties. Restore the owner's public configuration from main."
         }
-        logger.lifecycle("Grade 7 Bazaar RSA public key is valid ({} bits).", key.modulus.bitLength())
+        val fingerprint = MessageDigest.getInstance("SHA-256").digest(key.encoded)
+            .joinToString("") { "%02x".format(it.toInt() and 0xff) }
+        require(fingerprint == grade7BazaarKeyFingerprint) {
+            "Grade 7 Bazaar RSA fingerprint mismatch in config/bazaar-grade7.properties. Restore the owner's approved key and fingerprint."
+        }
+        require(android.defaultConfig.applicationId == "com.oloomyar.app.grade7") {
+            "The Grade 7 Bazaar payment key must only be used with com.oloomyar.app.grade7."
+        }
+        require(android.buildTypes.getByName("release").buildConfigFields["REVIEW_MODE"]?.value == "false") {
+            "Bazaar release builds must keep REVIEW_MODE=false."
+        }
+        logger.lifecycle("Grade 7 Bazaar configuration: PASS")
+        logger.lifecycle("Public key source: config/bazaar-grade7.properties (local RSA overrides are ignored)")
+        logger.lifecycle("Application ID: {}", android.defaultConfig.applicationId)
+        logger.lifecycle("RSA public key: {} bits; SHA-256: {}", key.modulus.bitLength(), fingerprint)
+        logger.lifecycle("Release REVIEW_MODE=false; chapter 1 is free, chapters 2-15 require verified ownership.")
     }
 }
 tasks.matching { it.name == "preReleaseBuild" }.configureEach {
@@ -103,6 +115,9 @@ tasks.matching { it.name == "preReleaseBuild" }.configureEach {
 }
 tasks.register("prepareBazaarRelease") {
     dependsOn(verifyBazaarReleaseConfiguration, "bundleRelease")
+}
+tasks.register("prepareBazaarReleaseApk") {
+    dependsOn(verifyBazaarReleaseConfiguration, "assembleRelease")
 }
 
 java {

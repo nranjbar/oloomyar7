@@ -5,8 +5,13 @@ ROOT=Path(__file__).resolve().parents[1]
 public_key=re.search(r'^GRADE7_BAZAAR_RSA_PUBLIC_KEY=(\S+)$',
     (ROOT/'config/bazaar-grade7.properties').read_text(),re.M).group(1)
 public_key_sha256=hashlib.sha256(base64.b64decode(public_key,validate=True)).hexdigest()
+expected_key_sha256=re.search(r'^GRADE7_BAZAAR_RSA_PUBLIC_KEY_SHA256=(\S+)$',
+    (ROOT/'config/bazaar-grade7.properties').read_text(),re.M).group(1)
+assert public_key_sha256==expected_key_sha256,'The payment key does not match its approved fingerprint'
 outputs=[]
-for kind,relative in [('debug','app/build/outputs/apk/debug/app-debug.apk'),('releaseBundle','app/build/outputs/bundle/release/app-release.aab')]:
+for kind,relative in [('debug','app/build/outputs/apk/debug/app-debug.apk'),
+        ('releaseApk','app/build/outputs/apk/release/app-release-unsigned.apk'),
+        ('releaseBundle','app/build/outputs/bundle/release/app-release.aab')]:
     path=ROOT/relative;assert path.exists(),path
     variant='debug'if kind=='debug'else'release'
     build_config=(ROOT/f'app/build/generated/source/buildConfig/{variant}/com/oloomyar/app/BuildConfig.java').read_text()
@@ -14,7 +19,7 @@ for kind,relative in [('debug','app/build/outputs/apk/debug/app-debug.apk'),('re
     assert 'APPLICATION_ID = "com.oloomyar.app.grade7";'in build_config
     assert f'REVIEW_MODE = {str(variant=="debug").lower()};'in build_config,'Only debug may bypass chapter locks'
     with zipfile.ZipFile(path) as archive:
-        names=archive.namelist();prefix='assets/'if kind=='debug'else'base/assets/'
+        names=archive.namelist();prefix='base/assets/'if kind=='releaseBundle'else'assets/'
         dex_bytes=b''.join(archive.read(n)for n in names if n.endswith('.dex'))
         assert public_key.encode('ascii')in dex_bytes,'The Grade 7 payment key is absent from the compiled package'
         assets=[n for n in names if n.startswith(prefix)]

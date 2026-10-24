@@ -5,6 +5,14 @@ local.properties
 **/build/
 *.apk
 *.aab
+*.bin
+*.jks
+*.keystore
+*.p12
+*.pfx
+!qa/signing/grade7-review.keystore
+keystore.properties
+signing.properties
 __pycache__/
 *.pyc
 .DS_Store

@@ -35,16 +35,10 @@ jobs:
         run: python3 scripts/validate_grade7.py
       - name: Install emulator image with the selected Android command line tools
         run: '"$ANDROID_SDK_ROOT/cmdline-tools/16111833/bin/sdkmanager" "emulator" "system-images;android-35;google_apis;x86_64"'
-      - name: Verify that release setup rejects an invalid payment key
-        run: |
-          mkdir -p app/build
-          if ./gradlew --no-daemon :app:preReleaseBuild -PGRADE7_BAZAAR_RSA_PUBLIC_KEY=invalid-key-for-release-test > app/build/bazaar-release-key-rejection.log 2>&1; then
-            echo 'Release setup unexpectedly accepted an invalid Bazaar key.' >&2
-            exit 1
-          fi
-          python3 -c "from pathlib import Path; assert 'Set GRADE7_BAZAAR_RSA_PUBLIC_KEY from the Bazaar application com.oloomyar.app.grade7 before distribution.' in Path('app/build/bazaar-release-key-rejection.log').read_text()"
+      - name: Verify tracked payment key, release guards and immunity to stale local settings
+        run: python3 scripts/check_bazaar_release_key.py
       - name: Assemble Grade 7 review app
-        run: ./gradlew --no-daemon :app:verifyBazaarReleaseConfiguration :app:testDebugUnitTest :app:assembleDebug :app:assembleDebugAndroidTest :app:bundleRelease --stacktrace
+        run: ./gradlew --no-daemon :app:verifyBazaarReleaseConfiguration :app:testDebugUnitTest :app:assembleDebug :app:assembleRelease :app:assembleDebugAndroidTest :app:bundleRelease --stacktrace
       - name: Verify packaged source size and absence of duplicate PNGs
         run: python3 scripts/check_apk_package.py
       - name: Build the previous signed review for real update verification
@@ -66,8 +60,14 @@ jobs:
       - name: Upload unsigned release bundle for production signing
         uses: actions/upload-artifact@v4
         with:
-          name: OloomYar7-0.15.1-Unsigned-AAB
+          name: OloomYar7-0.15.2-Unsigned-AAB
           path: app/build/outputs/bundle/release/app-release.aab
+          if-no-files-found: error
+      - name: Upload unsigned release APK for owner signing
+        uses: actions/upload-artifact@v4
+        with:
+          name: OloomYar7-0.15.2-Unsigned-Release-APK
+          path: app/build/outputs/apk/release/app-release-unsigned.apk
           if-no-files-found: error
       - name: Enable KVM
         run: |
@@ -94,7 +94,7 @@ jobs:
             app/build/test-results/testDebugUnitTest/
             app/build/grade7-screenshots/
             app/build/persistence-verification/
-            app/build/bazaar-release-key-rejection.log
+            app/build/bazaar-key-verification/
             qa/grade7_content_validation.json
             qa/grade7_native_content_validation.json
             qa/android_package_size.json

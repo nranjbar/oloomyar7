@@ -140,7 +140,7 @@ for entry in load(ROOT/'qa/source/design-assets-1405.json'):
 catalog=load(ASSETS/'content/catalog.json');assert [x['questions']for x in catalog]==EXPECTED
 assert [x['steps']for x in catalog]==[sum(len(q['steps'])for q in qs_all if q['relatedChapter']==c)for c in range(1,16)]
 app_gradle=(ROOT/'app/build.gradle.kts').read_text();assert 'ignoreAssetsPattern = "*.png:'in app_gradle
-assert 'com.oloomyar.app.grade7'in app_gradle and 'versionCode = 18'in app_gradle
+assert 'com.oloomyar.app.grade7'in app_gradle and 'versionCode = 19'in app_gradle
 assert 'android.permission.INTERNET'not in(ROOT/'app/src/main/AndroidManifest.xml').read_text()
 packaged=[p for p in ASSETS.rglob('*')if p.is_file()and p.suffix!='.png'and not p.name.startswith('.')]
 report=dict(status='PASS',edition=1405,chapters=15,questions=317,learningGroups=334,hintPairs=len(hint_pairs),
